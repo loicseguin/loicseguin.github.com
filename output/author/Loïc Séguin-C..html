@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>WD1007+032 - Loïc Séguin-C.</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href=".././theme/css/main.css" type="text/css" />
+        <link href=".././feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="WD1007+032 ATOM Feed" />
+        
+
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href=".././css/ie.css"/>
+                <script src=".././js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href=".././css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+
+        <header id="banner" class="body">
+                <h1><a href="../.">WD1007+032 </a></h1>
+                <nav><ul>
+                
+                
+                
+                
+                
+                    <li ><a href=".././category/blogue.html">blogue</a></li>
+                
+                    <li ><a href=".././category/mathfou.html">mathfou</a></li>
+                
+                </ul></nav>
+        </header><!-- /#banner -->
+                
+
+            
+
+        
+        
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href=".././64-bits-python-installation-on-macos-x-snow-leopard.html">64 bits Python installation on MacOS X Snow Leopard</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2011-12-22T03:42:00">
+                Jeu 22 décembre 2011
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/Loïc Séguin-C..html">Loïc Séguin-C.</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a><a href=".././tag/python.html">python</a></p>
+
+
+</footer><!-- /.post-info --><p><em>N.B. : Pour une raison mystérieuse, j'ai rédigé cet article en anglais.
+Désolé pour ceux qui ne lisent pas l'anglais. J'essaierai de ne pas
+recommencer.</em></p>
+<p>Here is how I installed Python 2.6.5 on my machine. Here is what I get
+at the end:</p>
+<ol class="arabic simple">
+<li>Python 2.6.5 with both 32 bits and 64 bits executables</li>
+<li>Virtual environments with virtualenv</li>
+<li>64 bits NumPy, SciPy and Matplotlib</li>
+<li>A bunch of other useful packages</li>
+<li>The power of Python</li>
+</ol>
+<p>I based myself mostly on <a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/">this post</a> by Jesse Noller and <a class="reference external" href="http://blog.hyperjeff.net/?p=160">this one</a> by
+HyperJeff. Unfortunately, the instructions in these posts were not
+completely sufficient for me and I had to fiddle around a lot to get the
+complete setup I was looking for.</p>
+<div class="section" id="python">
+<h2>Python</h2>
+<p>Download the latest Python source code and unpack it</p>
+<pre class="literal-block">
+$ curl -O http://www.python.org/ftp/python/2.6.5/Python-2.6.5.tar.bz2
+$ tar jxvf Python-2.6.5.tar.bz2
+</pre>
+<p>To build an installer for Snow Leopard, we need to tweak one line of the
+script.</p>
+<pre class="literal-block">
+$ cd Python-2.6.5/Mac/BuildScript/
+$ mvim build-installer.py
+</pre>
+<p>Here, I used MacVIM to edit the file. Use whatever editor you like. At
+line 78, replace</p>
+<pre class="literal-block">
+SDKPATH = &quot;/Developer/SDKs/MacOSX10.4u.sdk&quot;
+</pre>
+<p>by</p>
+<pre class="literal-block">
+SDKPATH = &quot;/Developer/SDKs/MacOSX10.6.sdk&quot;
+</pre>
+<p>And around line 139 replace</p>
+<pre class="literal-block">
+if DEPTARGET &lt; '10.5':
+</pre>
+<p>by</p>
+<pre class="literal-block">
+if DEPTARGET &lt; '10.7':
+</pre>
+<p>Before running the script, I had to create the directory where
+third-party sources would be downloaded.</p>
+<pre class="literal-block">
+$ mkdir ~/Universal/other-sources
+</pre>
+<p>All you have to do, is to run the script:</p>
+<pre class="literal-block">
+$ ./build-installer.py --dep-target=10.6 --universal-archs=intel
+</pre>
+<p>This will build an installer for 64 bits Python 2.6.5 with support for
+readline. The disk image containing the installer is located in
+<tt class="docutils literal"><span class="pre">/tmp/\_py/diskimage/</span></tt>. Just mount the dmg file and install Python by
+double clicking on the pkg file.</p>
+<p>By default, python is a symlink to the 32-bit version, and so is
+pythonw.  To change that, simply modify the symlinks in
+<tt class="docutils literal">/Library/Frameworks/Python.framework/Versions/2.6/bin/</tt> as follow:</p>
+<pre class="literal-block">
+$ cd /Library/Frameworks/Python.framework/Versions/2.6/bin/
+$ sudo rm python python2.6 pythonw pythonw2.6
+$ sudo ln -s python2.6-64 python
+$ sudo ln -s python2.6-64 python2.6
+$ sudo ln -s pythonw2.6-64 pythonw
+$ sudo ln -s pythonw2.6-64 pythonw2.6
+</pre>
+</div>
+<div class="section" id="virtualenv">
+<h2>Virtualenv</h2>
+<p>This nice utility allows one to have many different python environment
+each of which is independent. You can then install a bunch of packages
+in an environment. If you need a fresh environment, you then just create
+a new virtualenv. You are free to switch from one virtualenv to another.</p>
+<p>Start by installing easy_install and pip.</p>
+<pre class="literal-block">
+$ curl -O http://peak.telecommunity.com/dist/ez\_setup.py
+$ sudo python ez\_setup.py
+$ curl -O http://pypi.python.org/packages/source/p/pip/pip-0.7.2.tar.gz
+$ tar zxvf pip-0.7.2.tar.gz
+$ cd pip-0.7.2
+$ sudo python setup.py install
+</pre>
+<p>Then, move on to install virtualenv and a wrapper script.</p>
+<pre class="literal-block">
+$ sudo pip install virtualenv
+$ sudo pip install virtualenvwrapper
+</pre>
+<p>Create a directory for you virtual environments.</p>
+<pre class="literal-block">
+$ mkdir -p ~/local/virtualenvs
+</pre>
+<p>Add the following to your <tt class="docutils literal"><span class="pre">~/.bash\_profile</span></tt>.</p>
+<pre class="literal-block">
+export WORKON\_HOME=$HOME/local/virtualenvs
+source /Library/Frameworks/Python.framework/Versions/2.6/bin/virtualenvwrapper.sh
+workon default
+</pre>
+<p>Source the <tt class="docutils literal">.bash\_profile</tt> file.</p>
+<pre class="literal-block">
+$ . ~/.bash\_profile
+</pre>
+<p>Finally, just create the default virtual environment.</p>
+<pre class="literal-block">
+$ mkvirtualenv default
+</pre>
+</div>
+<div class="section" id="numpy-and-scipy">
+<h2>Numpy and SciPy</h2>
+<p>These two are by far the most annoying (but also the most useful). They
+depend on a few libraries which are either required or enhance
+efficiency a lot.</p>
+<p>Download and install gfortran.</p>
+<pre class="literal-block">
+$ curl -O http://r.research.att.com/gfortran-4.2.3.dmg
+</pre>
+<p>Download and install FFTW.</p>
+<pre class="literal-block">
+$ curl -O http://www.fftw.org/fftw-3.2.2.tar.gz
+$ tar zxvf fftw-3.2.2.tar.gz
+$ cd fftw-3.2.2
+$ ./configure CC=&quot;gcc -arch i386 -arch x86\_64&quot; CXX=&quot;g++ -arch i386 -arch x86\_64&quot; CPP=&quot;gcc -E&quot; CXXCPP=&quot;g++ -E&quot;
+$ make
+$ sudo make install
+</pre>
+<p>Download and install UMFPACK.</p>
+<pre class="literal-block">
+$ curl -O http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz
+$ tar zxvf http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz
+$ curl -O http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz
+$ tar zxvf http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz
+$ tar zxvf http://www.cise.ufl.edu/research/sparse/amd/AMD-2.2.1.tar.gz
+</pre>
+<p>In the file <tt class="docutils literal">UFconfig/UFconfig.mk</tt>, uncommment lines 284 through 287 and
+add</p>
+<pre class="literal-block">
+-DNCHOLMOD to the UMFPACK\_CONFIG variable on line 154.
+F77 = gfortran
+CFLAGS = -O3 -fno-common -no-cpp-precomp -fexceptions
+BLAS = -framework Accelerate
+LAPACK = -framework Accelerate
+</pre>
+<p>The Makefile for UFconfig needs to be changed at line 28 in the install
+target. There is a mistake on the location of the library. The line
+should read</p>
+<pre class="literal-block">
+$(CP) libufconfig.a $(INSTALL\_LIB)/libufconfig.$(VERSION).a
+</pre>
+<p>Then, build and install the various parts.</p>
+<pre class="literal-block">
+$ cd UMFPACK
+$ make library
+$ sudo make install
+$ cd ../AMD
+$ sudo make install
+$ cd ../UFconfig
+$ make
+$ sudo make install
+</pre>
+<p>This will build UFMPACK, AMD and UFconfig and install the headers and
+libraries in <tt class="docutils literal">/usr/local</tt>.</p>
+<p>Download NumPy from the SourceForge <a class="reference external" href="http://sourceforge.net/projects/numpy/files/NumPy/1.4.1/numpy-1.4.1.tar.gz/download">download page</a>
+and then install it.</p>
+<pre class="literal-block">
+$ tar zxvf numpy-1.4.1.tar.gz
+$ cd numpy-1.4.1
+$ python setup.py build
+$ python setup.py install
+</pre>
+<p>Download SciPy from the <a class="reference external" href="http://sourceforge.net/projects/scipy/files/scipy/0.8.0b1/scipy-0.8.0b1.tar.gz/download">scipy download page</a> and then install it.</p>
+<pre class="literal-block">
+$ tar zxvf scipy-0.8.0b1.tar.gz
+$ cd scipy-0.8.0b1
+$ python setup.py build
+$ python setup.py install
+</pre>
+</div>
+<div class="section" id="matplotlib">
+<h2>Matplotlib</h2>
+<p>Download from
+<a class="reference external" href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download">http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download</a>
+and untar.</p>
+<pre class="literal-block">
+$ tar zxvf matplotlib-0.99.3.tar.gz
+$ cd matplotlib-0.99.3
+</pre>
+<p>The file <tt class="docutils literal">make.osx</tt> is what is used now. However, as of this writing,
+using this file as is does not work. First, apply <a class="reference external" href="http://sourceforge.net/tracker/download.php?group_id=80706&amp;atid=560722&amp;file_id=369204&amp;aid=2981126">this patch</a>
+and then change the zlib version in <tt class="docutils literal">make.osx</tt> to 1.2.5. Then, run</p>
+<pre class="literal-block">
+$ PREFIX=~/local/virtualenvs/default make -f make.osx fetch deps mpl\_build mpl\_install
+</pre>
+</div>
+<div class="section" id="other-useful-packages">
+<h2>Other useful packages</h2>
+<pre class="literal-block">
+$ pip install mercurial
+$ pip install ipython
+$ pip install networkx
+$ pip install nose
+$ pip install sphinx
+$ pip install sympy
+</pre>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<p><a class="reference external" href="http://matplotlib.sourceforge.net/users/installing.html">http://matplotlib.sourceforge.net/users/installing.html</a></p>
+<p><a class="reference external" href="http://blog.hyperjeff.net/?p=160">http://blog.hyperjeff.net/?p=160</a></p>
+<p><a class="reference external" href="http://docs.python.org/install/index.html">http://docs.python.org/install/index.html</a></p>
+<p><a class="reference external" href="http://cran.r-project.org/bin/macosx/tools/">http://cran.r-project.org/bin/macosx/tools/</a></p>
+<p><a class="reference external" href="http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html">http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html</a></p>
+<p><a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/">http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/</a></p>
+</div>
+
+                </article>
+                
+            </aside><!-- /#featured -->
+            
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                        <ol id="posts-list" class="hfeed">
+            
+        
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././bonne-fete-darwin.html" rel="bookmark" title="Permalink to Bonne fête Darwin !">Bonne fête Darwin !</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-02-12T15:02:00">
+                Jeu 12 février 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/Loïc Séguin-C..html">Loïc Séguin-C.</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/philosophie.html">philosophie</a><a href=".././tag/biologie.html">biologie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
+notre compréhension de la nature : Charles Darwin. Darwin fût un
+naturaliste de grand renom qui a étudié, entre autre, la botanique et
+l'entomologie. Mais sa plus grande contribution à la science moderne est
+sans ...</p>
+                <a class="readmore" href=".././bonne-fete-darwin.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada.html" rel="bookmark" title="Permalink to Consommation d'énergie et émission de gaz à effet de serre au Canada">Consommation d'énergie et émission de gaz à effet de serre au Canada</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-06-08T03:09:00">
+                Mar 08 juin 2010
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/Loïc Séguin-C..html">Loïc Séguin-C.</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/environnement.html">environnement</a><a href=".././tag/python.html">python</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>En faisant quelques recherches sur Internet, je suis tombé sur des
+données relatives à la consommation d'énergie et à l'émission de GES par
+les foyers canadiens pour la période de 1990 à 2007. Ces données sont
+rendues publiques par l'<a class="reference external" href="http://oee.nrcan.gc.ca/">Office de l'efficacité énergétique</a> de
+<a class="reference external" href="http://www.nrcan-rncan.gc.ca/com/">Ressources naturelles ...</a></p>
+                <a class="readmore" href=".././consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././copies-de-sauvegarde.html" rel="bookmark" title="Permalink to Copies de sauvegarde">Copies de sauvegarde</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-03-13T03:06:00">
+                Ven 13 mars 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/Loïc Séguin-C..html">Loïc Séguin-C.</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>J'ai finalement trouvé une solution convenable pour faire des copies de
+sauvegarde de mes documents importants : un shell script maison assez
+simple qui utilise le logiciel rsync (<a class="reference external" href="http://samba.anu.edu.au/rsync/">informations sur ce site</a>).
+rsync est un logiciel libre distribué sous licence GPL et disponible sur
+la plupart des plateformes Unix de ...</p>
+                <a class="readmore" href=".././copies-de-sauvegarde.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././des-axiomes-mathematiques.html" rel="bookmark" title="Permalink to Des axiomes mathématiques">Des axiomes mathématiques</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-02-18T01:52:00">
+                Mer 18 février 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/Loïc Séguin-C..html">Loïc Séguin-C.</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a><a href=".././tag/philosophie.html">philosophie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>En lisant <a class="reference external" href="http://www.worldcat.org/isbn/9782266079907">Le moine et le philosophe</a>, je suis tombé sur cette citation
+de Alan B. Wallace (tirée de <a class="reference external" href="http://www.worldcat.org/isbn/9782702128206">Science et Bouddhisme, à chacun sa
+réalité</a>) :</p>
+<blockquote>
+Les axiomes mathématiques étaient considérés jusqu'à récemment comme
+des évidences qu'il n'était pas nécessaire de prouver. Or au siècle
+dernier des ...</blockquote>
+                <a class="readmore" href=".././des-axiomes-mathematiques.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././dictionnaire-francais-pour-vim.html" rel="bookmark" title="Permalink to Dictionnaire français pour Vim">Dictionnaire français pour Vim</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2011-12-22T23:45:00">
+                Jeu 22 décembre 2011
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/Loïc Séguin-C..html">Loïc Séguin-C.</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Vim possède un correcteur d'orthographe. On peut l'activer avec</p>
+<div class="highlight"><pre><span class="p">:</span><span class="k">set</span> <span class="k">spell</span>
+</pre></div>
+<p>puis on passe à l'erreur suivante avec ]s.</p>
+<p>Par défaut, seuls des dictionnaires anglais sont fournis avec MacVim.
+Installer un dictionnaire français se fait automatiquement si on définit
+la variable spelllang pour le français :</p>
+<div class="highlight"><pre><span class="p">:</span><span class="k">set</span> <span class="nb">spelllang ...</span></pre></div>
+                <a class="readmore" href=".././dictionnaire-francais-pour-vim.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././hir-information-report.html" rel="bookmark" title="Permalink to HiR Information Report">HiR Information Report</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-08-04T15:33:00">
+                Mar 04 août 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/Loïc Séguin-C..html">Loïc Séguin-C.</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a><a href=".././tag/ineptie.html">ineptie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Pour les amateurs de Unix qui veulent en apprendre un peu plus sur la
+sécurité de leur système ou sur l'administration de systèmes, le blogue
+<a class="reference external" href="http://www.h-i-r.net/">HiR Information Report</a> est une source d'informations vraiment
+intéressante.
+<img alt="image0" src="https://blogger.googleusercontent.com/tracker/697344570467959391-99765279715647048?l=mathfou.blogspot.com" /></p>
+
+                <a class="readmore" href=".././hir-information-report.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
+<p class="paginator">
+    
+    Page 1 / 4
+    
+        <a href=".././author/Loïc Séguin-C.2.html">&raquo;</a>
+    
+</p>
+
+        
+
+    
+    </ol><!-- /#posts-list -->
+    </section><!-- /#content -->
+
+
+
+        <section id="extras" class="body">
+        
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                        
+                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                        
+                            <li><a href="http://python.org">Python.org</a></li>
+                        
+                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                        
+                        </ul>
+                </div><!-- /.blogroll -->
+        
+        
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href=".././feeds/all.atom.xml" rel="alternate">atom feed</a></li>
+                            
+
+                        
+                            <li><a href="#">You can add links in your config file</a></li>
+                        
+                        </ul>
+                </div><!-- /.social -->
+        
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+
+
+</body>
+</html>

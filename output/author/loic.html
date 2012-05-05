@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>A Pelican Blog - loic</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href=".././theme/css/main.css" type="text/css" />
+        <link href=".././feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog ATOM Feed" />
+        
+
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href=".././css/ie.css"/>
+                <script src=".././js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href=".././css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+
+        <header id="banner" class="body">
+                <h1><a href="../.">A Pelican Blog </a></h1>
+                <nav><ul>
+                
+                
+                
+                
+                
+                    <li ><a href=".././category/mathfou.html">mathfou</a></li>
+                
+                </ul></nav>
+        </header><!-- /#banner -->
+                
+
+            
+
+        
+        
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href=".././64-bits-python-installation-on-macos-x-snow-leopard.html">64 bits Python installation on MacOS X Snow Leopard</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2011-12-22T03:42:00">
+                Jeu 22 décembre 2011
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a><a href=".././tag/python.html">python</a></p>
+
+
+</footer><!-- /.post-info --><p><em>N.B. : Pour une raison mystérieuse, j'ai rédigé cet article en anglais.
+Désolé pour ceux qui ne lisent pas l'anglais. J'essaierai de ne pas
+recommencer.</em></p>
+<p>Here is how I installed Python 2.6.5 on my machine. Here is what I get
+at the end:</p>
+<ol class="arabic simple">
+<li>Python 2.6.5 with both 32 bits and 64 bits executables</li>
+<li>Virtual environments with virtualenv</li>
+<li>64 bits NumPy, SciPy and Matplotlib</li>
+<li>A bunch of other useful packages</li>
+<li>The power of Python</li>
+</ol>
+<p>I based myself mostly on <a href="#id1"><span class="problematic" id="id2">`this post`_</span></a> by Jesse Noller and <a href="#id3"><span class="problematic" id="id4">`this one`_</span></a> by
+HyperJeff. Unfortunately, the instructions in these posts were not
+completely sufficient for me and I had to fiddle around a lot to get the
+complete setup I was looking for.</p>
+<p><strong>Python</strong></p>
+<p>Download the latest Python source code and unpack it</p>
+<p>$ curl -O <a class="reference external" href="http://www.python.org/ftp/python/2.6.5/Python-2.6.5.tar.bz2">http://www.python.org/ftp/python/2.6.5/Python-2.6.5.tar.bz2</a></p>
+<p>$ tar jxvf Python-2.6.5.tar.bz2</p>
+<p>To build an installer for Snow Leopard, we need to tweak one line of the</p>
+<p>script.</p>
+<p>$ cd Python-2.6.5/Mac/BuildScript/</p>
+<p>$ mvim build-installer.py</p>
+<p>Here, I used MacVIM to edit the file. Use whatever editor you like. At</p>
+<p>line 78, replace</p>
+<p>SDKPATH = &quot;/Developer/SDKs/MacOSX10.4u.sdk&quot;</p>
+<p>by</p>
+<p>SDKPATH = &quot;/Developer/SDKs/MacOSX10.6.sdk&quot;</p>
+<p>And around line 139 replace</p>
+<p>if DEPTARGET &lt; '10.5':</p>
+<p>by</p>
+<p>if DEPTARGET &lt; '10.7':</p>
+<p>Before running the script, I had to create the directory where</p>
+<p>third-party sources would be downloaded.</p>
+<p>$ mkdir ~/Universal/other-sources</p>
+<p>All you have to do, is to run the script:</p>
+<p>$ ./build-installer.py --dep-target=10.6 --universal-archs=intel</p>
+<p>This will build an installer for 64 bits Python 2.6.5 with support for</p>
+<p>readline. The disk image containing the installer is located in</p>
+<p>/tmp/_py/diskimage/. Just mount the dmg file and install Python by
+double clicking on the pkg file.</p>
+<p>By default, python is a symlink to the 32-bit version, and so is
+pythonw.</p>
+<p>To change that, simply modify the symlinks in</p>
+<p>/Library/Frameworks/Python.framework/Versions/2.6/bin/ as follow:</p>
+<p>$ cd /Library/Frameworks/Python.framework/Versions/2.6/bin/</p>
+<p>$ sudo rm python python2.6 pythonw pythonw2.6</p>
+<p>$ sudo ln -s python2.6-64 python</p>
+<p>$ sudo ln -s python2.6-64 python2.6</p>
+<p>$ sudo ln -s pythonw2.6-64 pythonw</p>
+<p>$ sudo ln -s pythonw2.6-64 pythonw2.6</p>
+<p><strong>Virtualenv</strong></p>
+<p>This nice utility allows one to have many different python environment</p>
+<p>each of which is independent. You can then install a bunch of packages</p>
+<p>in an environment. If you need a fresh environment, you then just create</p>
+<p>a new virtualenv. You are free to switch from one virtualenv to another.</p>
+<p>Start by installing easy_install and pip.</p>
+<p>$ curl -O <a class="reference external" href="http://peak.telecommunity.com/dist/ez_setup.py">http://peak.telecommunity.com/dist/ez_setup.py</a></p>
+<p>$ sudo python ez_setup.py</p>
+<p>$ curl -O <a class="reference external" href="http://pypi.python.org/packages/source/p/pip/pip-0.7.2.tar.gz">http://pypi.python.org/packages/source/p/pip/pip-0.7.2.tar.gz</a></p>
+<p>$ tar zxvf pip-0.7.2.tar.gz</p>
+<p>$ cd pip-0.7.2</p>
+<p>$ sudo python setup.py install</p>
+<p>Then, move on to install virtualenv and a wrapper script.</p>
+<p>$ sudo pip install virtualenv</p>
+<p>$ sudo pip install virtualenvwrapper</p>
+<p>Create a directory for you virtual environments.</p>
+<p>$ mkdir -p ~/local/virtualenvs</p>
+<p>Add the following to your ~/.bash_profile.</p>
+<p>export WORKON_HOME=$HOME/local/virtualenvs</p>
+<p>source
+/Library/Frameworks/Python.framework/Versions/2.6/bin/virtualenvwrapper.sh</p>
+<p>workon default</p>
+<p>Source the .bash_profile file.</p>
+<p>$ . ~/.bash_profile</p>
+<p>Finally, just create the default virtual environment.</p>
+<p>$ mkvirtualenv default</p>
+<p><strong>Numpy and SciPy</strong></p>
+<p>These two are by far the most annoying (but also the most useful). They
+depend on a few libraries which are either required or enhance
+efficiency a lot.</p>
+<p>Download and install gfortran.</p>
+<p>$ curl -O <a class="reference external" href="http://r.research.att.com/gfortran-4.2.3.dmg">http://r.research.att.com/gfortran-4.2.3.dmg</a></p>
+<p>Download and install FFTW.</p>
+<p>$ curl -O <a class="reference external" href="http://www.fftw.org/fftw-3.2.2.tar.gz">http://www.fftw.org/fftw-3.2.2.tar.gz</a></p>
+<p>$ tar zxvf fftw-3.2.2.tar.gz</p>
+<p>$ cd fftw-3.2.2</p>
+<p>$ ./configure CC=&quot;gcc -arch i386 -arch x86_64&quot; CXX=&quot;g++ -arch i386
+-arch x86_64&quot; CPP=&quot;gcc -E&quot; CXXCPP=&quot;g++ -E&quot;</p>
+<p>$ make</p>
+<p>$ sudo make install</p>
+<p>Download and install UMFPACK.</p>
+<p>$ curl -O
+<a class="reference external" href="http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz">http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz</a></p>
+<p>$ tar zxvf
+<a class="reference external" href="http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz">http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz</a></p>
+<p>$ curl -O
+<a class="reference external" href="http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz">http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz</a></p>
+<p>$ tar zxvf
+<a class="reference external" href="http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz">http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz</a></p>
+<p>$ curl -O <a class="reference external" href="http://www.cise.ufl.edu/research/sparse/amd/AMD-2.2.1.tar.gz">http://www.cise.ufl.edu/research/sparse/amd/AMD-2.2.1.tar.gz</a></p>
+<p>$ tar zxvf <a class="reference external" href="http://www.cise.ufl.edu/research/sparse/amd/AMD-2.2.1.tar.gz">http://www.cise.ufl.edu/research/sparse/amd/AMD-2.2.1.tar.gz</a></p>
+<p>In the file UFconfig/UFconfig.mk, uncommment lines 284 through 287 and
+add</p>
+<p>-DNCHOLMOD to the UMFPACK_CONFIG variable on line 154.</p>
+<p>F77 = gfortran</p>
+<p>CFLAGS = -O3 -fno-common -no-cpp-precomp -fexceptions</p>
+<p>BLAS = -framework Accelerate</p>
+<p>LAPACK = -framework Accelerate</p>
+<p>The Makefile for UFconfig needs to be changed at line 28 in the install</p>
+<p>target. There is a mistake on the location of the library. The line
+should</p>
+<p>read</p>
+<p>$(CP) libufconfig.a $(INSTALL_LIB)/libufconfig.$(VERSION).a</p>
+<p>Then, build and install the various parts.</p>
+<p>$ cd UMFPACK</p>
+<p>$ make library</p>
+<p>$ sudo make install</p>
+<p>$ cd ../AMD</p>
+<p>$ sudo make install</p>
+<p>$ cd ../UFconfig</p>
+<p>$ make</p>
+<p>$ sudo make install</p>
+<p>This will build UFMPACK, AMD and UFconfig and install the headers and</p>
+<p>libraries in /usr/local.</p>
+<p>Download NumPy from the SourceForge download page</p>
+<p><a class="reference external" href="http://sourceforge.net/projects/numpy/files/NumPy/1.4.1/numpy-1.4.1.tar.gz/download">http://sourceforge.net/projects/numpy/files/NumPy/1.4.1/numpy-1.4.1.tar.gz/download</a>
+and then install it.</p>
+<p>$ tar zxvf numpy-1.4.1.tar.gz</p>
+<p>$ cd numpy-1.4.1</p>
+<p>$ python setup.py build</p>
+<p>$ python setup.py install</p>
+<p>Download SciPy from the SourceForge download page</p>
+<p><a class="reference external" href="http://sourceforge.net/projects/scipy/files/scipy/0.8.0b1/scipy-0.8.0b1.tar.gz/download">http://sourceforge.net/projects/scipy/files/scipy/0.8.0b1/scipy-0.8.0b1.tar.gz/download</a>
+and then install it.</p>
+<p>$ tar zxvf scipy-0.8.0b1.tar.gz</p>
+<p>$ cd scipy-0.8.0b1</p>
+<p>$ python setup.py build</p>
+<p>$ python setup.py install</p>
+<p><strong>Matplotlib</strong></p>
+<p>Download from
+<a class="reference external" href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download">http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download</a>
+and untar.</p>
+<p>$ tar zxvf matplotlib-0.99.3.tar.gz</p>
+<p>$ cd matplotlib-0.99.3</p>
+<p>The file make.osx is what is used now. However, as of this writing,
+using this file as is does not work. First, apply this patch</p>
+<p><a class="reference external" href="http://sourceforge.net/tracker/download.php?group_id=80706&amp;atid=560722&amp;file_id=369204&amp;aid=2981126">http://sourceforge.net/tracker/download.php?group_id=80706&amp;atid=560722&amp;file_id=369204&amp;aid=2981126</a></p>
+<p>and then change the zlib version in make.osx to 1.2.5. Then, run</p>
+<p>$ PREFIX=~/local/virtualenvs/default make -f make.osx fetch deps
+mpl_build mpl_install</p>
+<p><strong>Other useful packages</strong></p>
+<p>$ pip install mercurial</p>
+<p>$ pip install ipython</p>
+<p>$ pip install networkx</p>
+<p>$ pip install nose</p>
+<p>$ pip install sphinx</p>
+<p>$ pip install sympy</p>
+<p><strong>References</strong></p>
+<p><a class="reference external" href="http://matplotlib.sourceforge.net/users/installing.html">http://matplotlib.sourceforge.net/users/installing.html</a></p>
+<p><a class="reference external" href="http://blog.hyperjeff.net/?p=160">http://blog.hyperjeff.net/?p=160</a></p>
+<p><a class="reference external" href="http://docs.python.org/install/index.html">http://docs.python.org/install/index.html</a></p>
+<p><a class="reference external" href="http://cran.r-project.org/bin/macosx/tools/">http://cran.r-project.org/bin/macosx/tools/</a></p>
+<p><a class="reference external" href="http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html">http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html</a></p>
+<p><a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/">http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/</a></p>
+<div class="figure align-center">
+<img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-3449403071328005967?l=mathfou.blogspot.com" />
+</div>
+<!-- _this -->
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">./mathfou/64-bits-python-installation-on-macos-x-snow-leopard.rst</tt>, line 310)</p>
+malformed hyperlink target.</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">./mathfou/64-bits-python-installation-on-macos-x-snow-leopard.rst</tt>, line 311)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>post: <a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/">http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/</a>
+.. _this one: <a class="reference external" href="http://blog.hyperjeff.net/?p=160">http://blog.hyperjeff.net/?p=160</a></p>
+<div class="system-messages section">
+<h2>Docutils System Messages</h2>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">./mathfou/64-bits-python-installation-on-macos-x-snow-leopard.rst</tt>, line 19); <em><a href="#id2">backlink</a></em></p>
+Unknown target name: &quot;this post&quot;.</div>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">./mathfou/64-bits-python-installation-on-macos-x-snow-leopard.rst</tt>, line 19); <em><a href="#id4">backlink</a></em></p>
+Unknown target name: &quot;this one&quot;.</div>
+</div>
+
+                </article>
+                
+            </aside><!-- /#featured -->
+            
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                        <ol id="posts-list" class="hfeed">
+            
+        
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././bonne-fete-darwin.html" rel="bookmark" title="Permalink to Bonne fête Darwin !">Bonne fête Darwin !</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-02-12T15:02:00">
+                Jeu 12 février 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/philosophie.html">philosophie</a><a href=".././tag/biologie.html">biologie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
+notre compréhension de la nature : Charles Darwin. Darwin fût un
+naturaliste de grand renom qui a étudié, entre autre, la botanique et
+l'entomologie. Mais sa plus grande contribution à la science moderne est
+sans ...</p>
+                <a class="readmore" href=".././bonne-fete-darwin.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada.html" rel="bookmark" title="Permalink to Consommation d'énergie et émission de gaz à effet de serre au Canada">Consommation d'énergie et émission de gaz à effet de serre au Canada</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-06-08T03:09:00">
+                Mar 08 juin 2010
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/environnement.html">environnement</a><a href=".././tag/python.html">python</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>En faisant quelques recherches sur Internet, je suis tombé sur des
+données relatives à la consommation d'énergie et à l'émission de GES par
+les foyers canadiens pour la période de 1990 à 2007. Ces données sont
+rendues publiques par l'<a class="reference external" href="http://oee.nrcan.gc.ca/">Office de l'efficacité énergétique</a> de
+<a class="reference external" href="http://www.nrcan-rncan.gc.ca/com/">Ressources naturelles ...</a></p>
+                <a class="readmore" href=".././consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././copies-de-sauvegarde.html" rel="bookmark" title="Permalink to Copies de sauvegarde">Copies de sauvegarde</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-03-13T03:06:00">
+                Ven 13 mars 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>J'ai finalement trouvé une solution convenable pour faire des copies de
+sauvegarde de mes documents importants : un shell script maison assez
+simple qui utilise le logiciel rsync (<a class="reference external" href="http://samba.anu.edu.au/rsync/">informations sur ce site</a>).
+rsync est un logiciel libre distribué sous licence GPL et disponible sur
+la plupart des plateformes Unix de ...</p>
+                <a class="readmore" href=".././copies-de-sauvegarde.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././des-axiomes-mathematiques.html" rel="bookmark" title="Permalink to Des axiomes mathématiques">Des axiomes mathématiques</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-02-18T01:52:00">
+                Mer 18 février 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a><a href=".././tag/philosophie.html">philosophie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>En lisant <a href="#id1"><span class="problematic" id="id2">`Le moine et le philosophe`_</span></a>, je suis tombé sur cette citation
+de Alan B. Wallace (tirée de <a href="#id3"><span class="problematic" id="id4">`Science et Bouddhisme, à chacun sa
+réalité`_</span></a>) :</p>
+<blockquote>
+Les axiomes mathématiques étaient considérés jusqu'à récemment comme
+des évidences qu'il n'était pas nécessaire de prouver. Or au siècle ...</blockquote>
+                <a class="readmore" href=".././des-axiomes-mathematiques.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././dictionnaire-francais-pour-vim.html" rel="bookmark" title="Permalink to Dictionnaire français pour Vim">Dictionnaire français pour Vim</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2011-12-22T23:45:00">
+                Jeu 22 décembre 2011
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Vim possède un correcteur d'orthographe. On peut l'activer avec</p>
+<pre class="literal-block">
+:set spell
+</pre>
+<p>puis on passe à l'erreur suivante avec ]s.</p>
+<p>Par défaut, seuls des dictionnaires anglais sont fournis avec MacVim.
+Installer un dictionnaire français se fait automatiquement si on définit
+la variable spelllang pour le français :</p>
+<pre class="literal-block">
+:set spelllang ...</pre>
+                <a class="readmore" href=".././dictionnaire-francais-pour-vim.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././hir-information-report.html" rel="bookmark" title="Permalink to HiR Information Report">HiR Information Report</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-08-04T15:33:00">
+                Mar 04 août 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a><a href=".././tag/ineptie.html">ineptie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Pour les amateurs de Unix qui veulent en apprendre un peu plus sur la
+sécurité de leur système ou sur l'administration de systèmes, le blogue
+<a class="reference external" href="http://www.h-i-r.net/">HiR Information Report</a> est une source d'informations vraiment
+intéressante.
+<img alt="image0" src="https://blogger.googleusercontent.com/tracker/697344570467959391-99765279715647048?l=mathfou.blogspot.com" /></p>
+
+                <a class="readmore" href=".././hir-information-report.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././la-complexite-de-lenseignement.html" rel="bookmark" title="Permalink to La complexité de l'enseignement">La complexité de l'enseignement</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-10T17:23:00">
+                Mer 10 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a><a href=".././tag/ineptie.html">ineptie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Concernant le problème TEACH défini ci-dessous, j'ai obtenu un résultat
+intéressant de complexité.
+Problème : TEACH
+Exemple : Un groupe d'étudiants E = {e_1, ..., e_n}, un sujet S et un
+cours C.
+Question : Est-ce qu'au moins k étudiants vont passer le cours ?
+Le problème est difficile.
+Proposition : Le problème TEACH ...</p>
+                <a class="readmore" href=".././la-complexite-de-lenseignement.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././la-physique-et-les-maths-de-la-photo.html" rel="bookmark" title="Permalink to La physique et les maths de la photo">La physique et les maths de la photo</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-11-13T22:42:00">
+                Jeu 13 novembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a><a href=".././tag/photographie.html">photographie</a><a href=".././tag/physique.html">physique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Ceci est le premier d'une série d'article sur la physique et les
+mathématiques de la photographie. La photographie est une activité que
+beaucoup de gens pratiquent sans savoir à quel point l'appareil qu'ils
+ont entre les mains est une petite merveille de science et d'ingénierie ...</p>
+                <a class="readmore" href=".././la-physique-et-les-maths-de-la-photo.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././la-programmation-en-nombres-entiers.html" rel="bookmark" title="Permalink to La programmation en nombres entiers.">La programmation en nombres entiers.</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-11T06:23:00">
+                Jeu 11 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/recherche opérationnelle.html">recherche opérationnelle</a><a href=".././tag/maths.html">maths</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Qu'est-ce qui fait de la programmation en nombres entiers un sujet
+intéressant ? Pourquoi une poignée de mathématiciens dépensent-ils
+quelques milliers de dollars pour se réunir et en discuter ? Sans doute
+en saurais-je un peu plus à mon retour de la session de travail sur la
+programmation en nombres entiers ...</p>
+                <a class="readmore" href=".././la-programmation-en-nombres-entiers.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././lantre-de-la-bete.html" rel="bookmark" title="Permalink to L'antre de la bête">L'antre de la bête</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-30T23:37:00">
+                Mar 30 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/ineptie.html">ineptie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
+travail. On constate la grande organisation qui règne sur mon bureau...
+<a href="#id1"><span class="problematic" id="id2">`|image0|`_</span></a>
+Et voici les instruments essentiels à la tâche du mathématicien :
+<a href="#id3"><span class="problematic" id="id4">`|image1|`_</span></a>
+<img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-4984607396283200774?l=mathfou.blogspot.com" /></p>
+<div class="system-messages section">
+<h2>Docutils System Messages</h2>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">./mathfou/lantre-de-la-bete.rst</tt>, line 6); <em><a href="#id2">backlink ...</a></em></p></div></div>
+                <a class="readmore" href=".././lantre-de-la-bete.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././le-dilemme-du-prisonnier.html" rel="bookmark" title="Permalink to Le dilemme du prisonnier">Le dilemme du prisonnier</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-11T06:22:00">
+                Jeu 11 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Le &quot;jeu&quot;, au sens de la théorie des jeux, le plus connu est sans
+conteste le dilemme du prisonnier. Deux suspects sont arrêtés
+relativement à un crime donné. Ils sont interrogés séparément et ne
+peuvent communiquer d'aucune façon que ce soit. Ils connaissent tous
+deux les règles : lors de ...</p>
+                <a class="readmore" href=".././le-dilemme-du-prisonnier.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././le-lhc-demarre.html" rel="bookmark" title="Permalink to Le LHC démarre !">Le LHC démarre !</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-10T17:21:00">
+                Mer 10 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/physique.html">physique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
+sur la nature de l'univers. Le Large Hadron Collider (LHC, grand
+collisioneur de proton en français), le plus grand accélérateur de
+particule construit par l'homme, a été mis en route aujourd'hui. Sa mise
+en marche ...</p>
+                <a class="readmore" href=".././le-lhc-demarre.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././le-probleme-du-controle-de-groupes-dascenseurs.html" rel="bookmark" title="Permalink to Le problème du contrôle de groupes d'ascenseurs">Le problème du contrôle de groupes d'ascenseurs</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-10T17:21:00">
+                Mer 10 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/recherche opérationnelle.html">recherche opérationnelle</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
+de travail quotidiennement savent à quel point il peut y avoir de
+l'achalandage pour monter dans ces machines. Aux heures de pointe, il
+peut y avoir des gens qui veulent monter du rez-de-chaussée à ...</p>
+                <a class="readmore" href=".././le-probleme-du-controle-de-groupes-dascenseurs.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././les-ponts-de-konigsberg.html" rel="bookmark" title="Permalink to Les ponts de Königsberg">Les ponts de Königsberg</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-11T06:24:00">
+                Jeu 11 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p><a href="#id1"><span class="problematic" id="id2">`|image0|`_</span></a>
+Maintenant que j'ai un blogue, voyons ce que je peux en faire.
+Un des problèmes qui est à l'origine de la théorie des graphes est celui
+des ponts de Königsberg. Cette ville de Prusse (au temps où la Prusse
+existait) est aujourd'hui Kaliningrad en Russie ...</p>
+                <a class="readmore" href=".././les-ponts-de-konigsberg.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././manipuler-des-symboles.html" rel="bookmark" title="Permalink to Manipuler des symboles">Manipuler des symboles</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-23T23:15:00">
+                Mar 23 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Les mathématiques sont percues par beaucoup de gens, dont plusieurs
+mathématiciens, comme étant un ensemble de règles qui dictent comment
+manipuler des symboles. En manipulant ces symboles, on arrive à formuler
+les &quot;phrases&quot; mathématiques que sont les théorèmes. Bien sûr, la plupart
+du temps, des significations sont données à ces ...</p>
+                <a class="readmore" href=".././manipuler-des-symboles.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././optique-101-partie-1.html" rel="bookmark" title="Permalink to Optique 101 (partie 1)">Optique 101 (partie 1)</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-03-09T17:54:00">
+                Lun 09 mars 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/photographie.html">photographie</a><a href=".././tag/physique.html">physique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Pour comprendre comment fonctionne la vue et comment fonctionne un
+appareil photographique, on doit d'abord connaître quelques principes
+fondamentaux d'optique géométrique. Nous verrons la propagation de la
+lumière en ligne droite, la loi de Snell-Descartes et les propriétés des
+lentilles minces.
+La lumière visible est une onde électromagnétique ...</p>
+                <a class="readmore" href=".././optique-101-partie-1.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././pourquoi-les-nombres-entiers-sont-parfois-essentiels.html" rel="bookmark" title="Permalink to Pourquoi les nombres entiers sont parfois essentiels ?">Pourquoi les nombres entiers sont parfois essentiels ?</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-10T17:24:00">
+                Mer 10 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>On a tendance à sous-estimer l'utilité et la signification des nombres
+entiers. Dans cet <a class="reference external" href="http://www.theglobeandmail.com/servlet/story/RTGAM.20080510.wobama0510/BNStory/International/?page=rss&amp;id=RTGAM.20080510.wobama0510">article</a> du Globe and Mail du 10 mai, on peut lire
+cette charmante phrase :
+Nearly 800 superdelegates will attend the convention. Mr. Obama has
+endorsements from 275, according to the latest tally by The Associated ...</p>
+                <a class="readmore" href=".././pourquoi-les-nombres-entiers-sont-parfois-essentiels.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././protegeons-nous-avec-les-maths.html" rel="bookmark" title="Permalink to Protégeons-nous avec les maths">Protégeons-nous avec les maths</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-04-07T16:33:00">
+                Mar 07 avril 2009
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a><a href=".././tag/philosophie.html">philosophie</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Une citation toute à l'honneur des mathématiques :</p>
+<blockquote>
+It is insufficient to protect ourselves with laws; we need to
+protect ourselves with mathematics.</blockquote>
+<p>Tirée de <a class="reference external" href="http://www.worldcat.org/isbn/9780471117094">Applied Cryptography</a> par Bruce Schneier.</p>
+<div class="figure align-center">
+<img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-2265869368720871559?l=mathfou.blogspot.com" />
+</div>
+
+                <a class="readmore" href=".././protegeons-nous-avec-les-maths.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././resolution-du-probleme-des-ponts-de-konigsberg.html" rel="bookmark" title="Permalink to Résolution du problème des ponts de Königsberg">Résolution du problème des ponts de Königsberg</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-11T06:24:00">
+                Jeu 11 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va
+définir ici est appelé par certains un multigraphe). Un graphe G est
+simplement un ensemble de n points qu'on appelle des sommets S = {x_1,
+x_2, ..., x_n} reliés par des arrêtes A = {(x_i x_j ...</p>
+                <a class="readmore" href=".././resolution-du-probleme-des-ponts-de-konigsberg.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././spinify.html" rel="bookmark" title="Permalink to Spinify">Spinify</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-01-25T16:41:00">
+                Lun 25 janvier 2010
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a><a href=".././tag/maths.html">maths</a><a href=".././tag/physique.html">physique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Il y a quelques années, j'ai travaillé sur un projet qui consistait à
+développer un programme de simulation du modèle d'Ising sur des surfaces
+ayant un tenseur métrique non trivial. Ce projet n'a jamais été
+complété. Or, je m'y suis récemment remis, et j'avance à ...</p>
+                <a class="readmore" href=".././spinify.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././spinify-21.html" rel="bookmark" title="Permalink to Spinify 2.1">Spinify 2.1</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-02-16T02:00:00">
+                Mar 16 février 2010
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a><a href=".././tag/maths.html">maths</a><a href=".././tag/physique.html">physique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>La première version vraiment fonctionnelle du logiciel de simulation du
+modèle d'Ising en deux dimensions sur la sphère est maintenant
+disponible ici : <a class="reference external" href="http://bitbucket.org/loicseguin/spinify/downloads/spinify-2.1.tar.bz2">spinify-2.1.tar.bz2</a>. Le programme s'installe sur Mac
+OS X et Ubuntu 9.10 (et probablement tous les autres Unix et Linux).
+Pour plus de ...</p>
+                <a class="readmore" href=".././spinify-21.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././spinify-22.html" rel="bookmark" title="Permalink to Spinify 2.2">Spinify 2.2</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-03-02T03:30:00">
+                Mar 02 mars 2010
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/informatique.html">informatique</a><a href=".././tag/maths.html">maths</a><a href=".././tag/physique.html">physique</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Je viens tout juste de lancer la nouvelle version du logiciel de
+simulation numérique du modèle d'Ising Spinify. La version 2.2 comporte
+plusieurs corrections de bogues de même qu'une réécriture complète de
+l'interface en ligne de commande (CLI). Vous pouvez télécharger le
+programme sur bitbucket: <a class="reference external" href="http://bitbucket.org/loicseguin/spinify/downloads/spinify-2.2.tar.gz">spinify-2 ...</a></p>
+                <a class="readmore" href=".././spinify-22.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././triangulations-creatives.html" rel="bookmark" title="Permalink to Triangulations créatives">Triangulations créatives</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-12T16:30:00">
+                Ven 12 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>On peut représenter les objets tridimensionnels par des triangles collés
+les uns aux autres de telle sorte qu'ils épousent les formes de l'objet.
+On appelle une telle construction une triangulation. Une fois qu'on a
+obtenu une triangulation, on peut la raffiner en divisant les triangles
+en triangles ...</p>
+                <a class="readmore" href=".././triangulations-creatives.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href=".././une-citation-memorable-du-film-proof.html" rel="bookmark" title="Permalink to Une citation mémorable du film Proof">Une citation mémorable du film Proof</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2008-09-10T17:21:00">
+                Mer 10 septembre 2008
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/loic.html">loic</a>
+        </address>
+        
+<p>In <a href=".././category/mathfou.html">mathfou</a>. </p>
+<p>tags: <a href=".././tag/maths.html">maths</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
+que je n'ai pas aimé ce film. La performances des acteurs est mauvaise,
+l'histoire, peu enivrante. Certaines personnes ont comparé ce film à <em>A
+Beautiful Mind</em>, ce que je n'arrive pas à comprendre. Outre ...</p>
+                <a class="readmore" href=".././une-citation-memorable-du-film-proof.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
+        
+
+    
+    </ol><!-- /#posts-list -->
+    </section><!-- /#content -->
+
+
+
+        <section id="extras" class="body">
+        
+        
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+
+
+
+</body>
+</html>
