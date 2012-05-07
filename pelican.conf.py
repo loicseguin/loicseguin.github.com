@@ -7,18 +7,26 @@ SITEURL = '/'
 
 TIMEZONE = 'America/Montreal'
 
-DEFAULT_LANG='fr'
+DEFAULT_LANG = 'fr'
+DEFAULT_CATEGORY = 'misc'
+
+OUTPUT_PATH = "."
+PATH = "src/"
+
+THEME = "zentree"
+#GITHUB_URL = "https://github.com/loicseguin/loicseguin.github.com"
 
 # Blogroll
-LINKS =  (
-    ('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
-    ('Python.org', 'http://python.org'),
-    ('Jinja2', 'http://jinja.pocoo.org')
-         )
+#LINKS =  (
+    #('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
+    #('Python.org', 'http://python.org'),
+    #('Jinja2', 'http://jinja.pocoo.org')
+         #)
 
 # Social widget
 SOCIAL = (
-          ('You can add links in your config file', '#'),
+          ('twitter', 'http://twitter.com/lseguinc'),
+          ('github', 'http://github.com/loicseguin')
          )
 
 DEFAULT_PAGINATION = 7
