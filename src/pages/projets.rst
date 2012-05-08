@@ -16,14 +16,14 @@ multi-graphe), la librairie contient un grand nombre de générateurs de graphes
 et une vaste banque d'algorithmes (plus courts chemins, connectivité, arbres de
 recouvrement, isomorphismes, flots, etc.).
 
-Le projet est une inititive d'un petit groupe de chercheurs du *Los Alamos
+Le projet est une initiative d'un petit groupe de chercheurs du *Los Alamos
 National Laboratory* qui ont débuté son développement il y a près d'une dizaine
 d'années. La librairie est stable et performante et permet de se lancer dans la
 résolution de problèmes liés aux graphes sans difficulté.
 
 Je me suis joint au projet en 2010. Mes contributions principales ont été de
 convertir le code pour qu'il soit compatible avec la version 3 de Python et de
-crée le paquetage des algorithmes de flots. Depuis environ un an, je m'occupe
+créer le paquetage des algorithmes de flots. Depuis environ un an, je m'occupe
 surtout de maintenir ce même paquetage.
 
 
@@ -54,8 +54,8 @@ https://mathoscope.herokuapp.com/
 **Mathoscope** est une application web écrite avec *Ruby on Rails*. Cette
 application permet à des étudiants de tester leurs connaissances en répondant à
 des questions à choix multiples ou a réponse courte. Le professeur possède un
-accès d'administrateur qui lui permet d'ajouter des questions et de monitorer
-la progressions des étudiants.
+accès d'administrateur qui lui permet d'ajouter des questions et de suivre
+la progression des étudiants.
 
 
 Spinify
