@@ -48,7 +48,6 @@ Mathoscope
 ----------
 
 https://github.com/loicseguin/mathoscope/
-
 https://mathoscope.herokuapp.com/
 
 **Mathoscope** est une application web écrite avec *Ruby on Rails*. Cette

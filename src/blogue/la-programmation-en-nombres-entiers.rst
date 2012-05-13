@@ -1,6 +1,6 @@
 La programmation en nombres entiers.
 ####################################
-:date: 2008-09-11 06:23
+:date: 2008-03-21 06:23
 :tags: recherche opérationnelle, maths
 
 Qu'est-ce qui fait de la programmation en nombres entiers un sujet
@@ -32,6 +32,3 @@ on achemine un produit en petites quantités sur une courte période de
 temps.
 
 Plus de détails à venir éventuellement !
-|image0|
-
-.. |image0| image:: https://blogger.googleusercontent.com/tracker/697344570467959391-7721458293170359638?l=mathfou.blogspot.com

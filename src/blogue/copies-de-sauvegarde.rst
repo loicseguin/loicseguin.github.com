@@ -1,6 +1,6 @@
 Copies de sauvegarde
 ####################
-:date: 2009-03-13 03:06
+:date: 2009-03-11 03:06
 :tags: informatique
 
 J'ai finalement trouvé une solution convenable pour faire des copies de

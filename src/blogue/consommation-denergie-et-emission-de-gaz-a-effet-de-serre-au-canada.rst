@@ -18,6 +18,7 @@ Une introduction à l'utilisation de xlrd est disponible sur
 `scienceoss.com`_. Mon script Python est disponible `ici`_.
 
 |image0|
+
 |image1|
 
 Je dois avouer avoir été assez surpris du faible taux d'augmentation de
@@ -26,7 +27,7 @@ navrant qu'on parle d'augmentation alors que les objectifs du protocole
 de Kyoto étaient de réduire les émissions de GES par rapport à celles de
 1990. Néanmoins, si l'on en croit ces données, la situation n'est pas si
 terrible au Canada.
-|image2|
+
 
 .. _Office de l'efficacité énergétique: http://oee.nrcan.gc.ca/
 .. _Ressources naturelles Canada: http://www.nrcan-rncan.gc.ca/com/
@@ -38,4 +39,3 @@ terrible au Canada.
 
 .. |image0| image:: http://2.bp.blogspot.com/_HyYHulp_e30/TA2x4fN5FJI/AAAAAAAACAI/959Bj3crY-Y/s400/Secondary+Energy+Use+by+Energy+Source.jpg
 .. |image1| image:: http://3.bp.blogspot.com/_HyYHulp_e30/TA2yKDyXtlI/AAAAAAAACAQ/DLja2Y6F03I/s400/Green+House+Gas+Emissions+by+Energy+Source.jpg
-.. |image2| image:: https://blogger.googleusercontent.com/tracker/697344570467959391-6825491479768388188?l=mathfou.blogspot.com

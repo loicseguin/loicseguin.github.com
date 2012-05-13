@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = u"Loïc Séguin-C."
-SITENAME = u"WD1007+032"
+SITENAME = u"Loïc Séguin-C."
 SITEURL = '/'
 
 TIMEZONE = 'America/Montreal'
 
 DEFAULT_LANG = 'fr'
-DEFAULT_CATEGORY = 'misc'
+DEFAULT_CATEGORY = 'blogue'
 
 OUTPUT_PATH = "."
 PATH = "src/"

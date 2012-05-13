@@ -1,6 +1,6 @@
 Des axiomes mathématiques
 #########################
-:date: 2009-02-18 01:52
+:date: 2009-02-06 01:52
 :tags: maths, philosophie
 
 En lisant `Le moine et le philosophe`_, je suis tombé sur cette citation
@@ -45,9 +45,6 @@ s'appliquent au réel fait un acte de foi qui n'est pas plus valable et
 qui l'est tout autant que l'acte de foi que fait celui qui choisit de
 suivre une religion.
 
-.. figure:: https://blogger.googleusercontent.com/tracker/697344570467959391-2654339259258573274?l=mathfou.blogspot.com
-   :align: center
-   :alt: 
 
 .. _Le moine et le philosophe: http://www.worldcat.org/isbn/9782266079907
 .. _Science et Bouddhisme, à chacun sa réalité: http://www.worldcat.org/isbn/9782702128206

@@ -10,8 +10,4 @@ Une citation toute à l'honneur des mathématiques :
 
 Tirée de `Applied Cryptography`_ par Bruce Schneier.
 
-.. figure:: https://blogger.googleusercontent.com/tracker/697344570467959391-2265869368720871559?l=mathfou.blogspot.com
-   :align: center
-   :alt: 
-
 .. _Applied Cryptography: http://www.worldcat.org/isbn/9780471117094

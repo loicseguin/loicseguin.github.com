@@ -1,10 +1,12 @@
 Les ponts de Königsberg
 #######################
-:date: 2008-09-11 06:24
+:date: 2007-08-22 06:24
 :tags: maths
 
 |image0|
+
 Maintenant que j'ai un blogue, voyons ce que je peux en faire.
+
 Un des problèmes qui est à l'origine de la théorie des graphes est celui
 des ponts de Königsberg. Cette ville de Prusse (au temps où la Prusse
 existait) est aujourd'hui Kaliningrad en Russie. Elle est composée de
@@ -20,10 +22,6 @@ notions élémentaires de théorie des graphes. Maintenant que je vous ai
 mis l'eau à la bouche et que vous mourrez tous d'envie de connaître la
 preuve, je vais aller me coucher. La preuve viendra dans un futur
 rapproché.
-|image1|
 
-.. _|image2|: http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s1600-h/Konigsberg.jpeg
 
 .. |image0| image:: http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg
-.. |image1| image:: https://blogger.googleusercontent.com/tracker/697344570467959391-1434302599909355612?l=mathfou.blogspot.com
-.. |image2| image:: http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg

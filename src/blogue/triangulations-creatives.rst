@@ -26,7 +26,8 @@ dur, etc. Une méthode fréquemment utilisée consiste à trianguler la
 surface de l'objet, c'est-à-dire à recouvrir le mieux possible la
 surface de l'objet par des triangles, puis à raffiner cette
 triangulation initiale pour obtenir une meilleure représentation
-|image0| des courbes de cette surface. On arrête de raffiner lorsque
+|image0|
+des courbes de cette surface. On arrête de raffiner lorsque
 les calculs impliqués deviennent trop exigeant pour l'ordinateur.
 L'image ci-contre montre un exemple d'un objet tridimensionnel, une
 tête, et de trois triangulations de celle-ci. Les deux triangulations de

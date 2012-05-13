@@ -1,6 +1,6 @@
 Optique 101 (partie 1)
 ######################
-:date: 2009-03-09 17:54
+:date: 2008-11-14 17:54
 :tags: photographie, physique
 
 Pour comprendre comment fonctionne la vue et comment fonctionne un
@@ -28,11 +28,13 @@ Deux lois fondamentales de l'optique ont d'abord été trouvées
 empiriquement, puis expliquées théoriquement par les équations de
 Maxwell. D'abord, la loi de la réflexion, découverte environ 1000 ans
 après Jésus Christ par un arabe du nom d'Alhazen, stipule que lorsqu'un
-rayon de lumière atteint une surface, l'angle d'incidence *θ\ :sub:`i`*
-et l'angle de réflexion *θ\ :sub:`r`* (mesurés par rapport à une droite
+rayon de lumière atteint une surface, l'angle d'incidence :math:`\theta_i`
+et l'angle de réflexion :math:`\theta_r` (mesurés par rapport à une droite
 perpendiculaire à la surface, la normale) sont égaux:
-*θ\ :sub:`i`* = *θ\ :sub:`r`*
+:math:`\theta_i` = :math:`\theta_r`.
+
 |image0|
+
 De plus, le rayon incident, le rayon réfléchi et la normale
 à la surface sont dans le même plan, qu'on appelle plan d'incidence. La
 lumière se comporte donc comme une boule de billard qui frappe la bande
@@ -55,17 +57,25 @@ noté *n*. Cet indice est le rapport entre la vitesse de la lumière dans
 le vide et la vitesse de la lumière dans le milieu considéré. Par
 exemple, la lumière se propage un quart de fois moins vite dans l'eau
 que dans le vide ce qui donne pour l'eau :
-*n\ :sub:`eau`* = *v\ :sub:`vide`* / *v\ :sub:`eau`*
-*n\ :sub:`eau`* = *v\ :sub:`vide`* / ((1 - 1/4)\*\ *v\ :sub:`vide`*)
-*n\ :sub:`eau`* = 1,33
+
+.. math::
+
+    n_{\mathrm{eau}} &= v_{\mathrm{vide}} / v_{\mathrm{eau}} \\
+    n_{\mathrm{eau}} &= v_{\mathrm{vide}} / ((1 - 1/4)v_{\mathrm{vide}}) \\
+    n_{\mathrm{eau}} &= 1,33
 
 La loi de Snell-Descartes fait le lien entre les indices de réfraction
 et les angles d'incidence et de réfraction. Si un rayon de lumière passe
-du milieu 1 au milieu 2, d'indices de réfraction *n\ :sub:`1`* et
-*n\ :sub:`2`* respectivement, a un angle d'incidence *θ\ :sub:`i`*,
-alors l'angle du rayon transmis *θ\ :sub:`t`* respectera la relation :
-*n\ :sub:`1`* sin\ *θ\ :sub:`i`* = *n\ :sub:`2`* sin\ *θ\ :sub:`t`*
+du milieu 1 au milieu 2, d'indices de réfraction :math:`n_1` et
+:math:`n_2` respectivement, a un angle d'incidence :math:`\theta_i`,
+alors l'angle du rayon transmis :math:`\theta_t` respectera la relation :
+
+.. math::
+
+    n_1 \sin \theta_i = n_2 \sin \theta_t
+
 |image1|
+
 De plus, le rayon incident, le rayon transmis et la normale sont dans le
 même plan, comme pour la réflection.
 Le milieu le plus réfringent est celui avec l'indice de réfraction le
@@ -78,11 +88,7 @@ fonctionnement d'une partie cruciale d'un appareil photo : la lentille.
 Nous verrons dans le prochain article comment fonctionne une lentille.
 |image2|
 
-.. _|image3|: http://4.bp.blogspot.com/_HyYHulp_e30/SR4adIhjfXI/AAAAAAAABmw/_CTRYJxATfQ/s1600-h/reflexion.png
-.. _|image4|: http://4.bp.blogspot.com/_HyYHulp_e30/SR4adZz-6II/AAAAAAAABm4/dQsj1m_xJcM/s1600-h/refraction.png
 
 .. |image0| image:: http://4.bp.blogspot.com/_HyYHulp_e30/SR4adIhjfXI/AAAAAAAABmw/_CTRYJxATfQ/s400/reflexion.png
 .. |image1| image:: http://4.bp.blogspot.com/_HyYHulp_e30/SR4adZz-6II/AAAAAAAABm4/dQsj1m_xJcM/s400/refraction.png
 .. |image2| image:: https://blogger.googleusercontent.com/tracker/697344570467959391-8629460951480994628?l=mathfou.blogspot.com
-.. |image3| image:: http://4.bp.blogspot.com/_HyYHulp_e30/SR4adIhjfXI/AAAAAAAABmw/_CTRYJxATfQ/s400/reflexion.png
-.. |image4| image:: http://4.bp.blogspot.com/_HyYHulp_e30/SR4adZz-6II/AAAAAAAABm4/dQsj1m_xJcM/s400/refraction.png
