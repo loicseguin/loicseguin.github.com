@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Copies de sauvegarde</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
+    <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. ATOM Feed" />
+    
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!--[if lte IE 7]>
+            <link rel="stylesheet" type="text/css" media="all" href="./css/ie.css"/>
+            <script src="./js/IE8.js" type="text/javascript"></script><![endif]-->
+
+    <!--[if lt IE 7]>
+            <link rel="stylesheet" type="text/css" media="all" href="./css/ie6.css"/><![endif]-->
+</head>
+
+<body id="index" class="home">
+
+    <div class="container">
+    
+    <header id="banner">
+        <h1><a href=".">Loïc Séguin-C. </a></h1>
+    </header><!-- /#banner -->
+
+        
+            
+<section class="content body">    
+<article class="entry">
+    <header>
+    <h1>Copies de sauvegarde</h1>
+    
+    <div class="post-info">
+    <h4>
+    <abbr class="published" title="2009-03-11T03:06:00">
+        Mer 11 mars 2009
+    </abbr>
+
+    
+
+    | <a href="./tag/informatique.html">informatique</a>
+
+
+    
+    </h4>
+</div><!-- /.post-info -->
+    </header>
+
+    <div class="entry-content">
+    <p>J'ai finalement trouvé une solution convenable pour faire des copies de
+sauvegarde de mes documents importants : un shell script maison assez
+simple qui utilise le logiciel rsync (<a class="reference external" href="http://samba.anu.edu.au/rsync/">informations sur ce site</a>).
+rsync est un logiciel libre distribué sous licence GPL et disponible sur
+la plupart des plateformes Unix de même que sur MS Windows.
+Si vous utilisez Mac OS X, rsync fait déjà partie de l'installation par
+défaut. Il en est probablement de même pour les distributions de Linux
+les plus populaires. Sur OpenBSD, vous pouvez l'installer avec la
+commande :</p>
+<pre class="literal-block">
+sudo pkg\_add rsync
+</pre>
+<p>en supposant que vous avez déjà configuré sudo et que la variable
+d'environnement PKG_PATH est définie.
+Alors voici, j'ai un Macbook qui fonctionnne sous Mac OS X et il est
+relié à deux disques durs externes : Hercule et Astro. Il y a plusieurs
+dossiers et quelques fichiers de configuration (les dotfiles) que je
+veux copier. Le script ressemble à ceci.
+Mis à jour le 12 mars 2009:</p>
+<div class="highlight"><pre><span class="c">#!/bin/sh</span>
+<span class="c"># This script makes a backup of important files in</span>
+<span class="c"># my home directory to two external hard drives,</span>
+<span class="c"># Hercule and Astro, using rsync.</span>
+<span class="nv">OPTS</span><span class="o">=</span><span class="s2">&quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&quot;</span>
+<span class="nv">FOLDERS</span><span class="o">=</span><span class="s2">&quot;Desktop Documents Music Movies Programmes Sites \</span>
+<span class="s2">         Applescripts Pictures Jeux Library/Colorsync \</span>
+<span class="s2">         Library/Thunderbird .rsync&quot;</span>
+<span class="nv">FOLDER1</span><span class="o">=</span><span class="s2">&quot;Library/Application Support&quot;</span>
+<span class="nv">BACKUPDIR</span><span class="o">=</span><span class="s2">&quot;Macbook backup&quot;</span>
+<span class="nv">DOTFILES</span><span class="o">=</span><span class="s2">&quot;$BACKUPDIR/dotfiles&quot;</span>
+<span class="nv">FILES</span><span class="o">=</span><span class="s2">&quot;.emacs .vimrc .profile&quot;</span>
+<span class="nv">VOLUMES</span><span class="o">=</span><span class="s2">&quot;/Volumes/Astro /Volumes/Hercule&quot;</span>
+
+<span class="k">for </span>v in <span class="nv">$VOLUMES</span>; <span class="k">do</span>
+<span class="k">  if</span> <span class="o">[</span> -d <span class="s2">&quot;$v&quot;</span> <span class="o">]</span>; <span class="k">then</span>
+<span class="k">    if</span> <span class="o">[</span> ! -d <span class="s2">&quot;$v/$BACKUPDIR/Library&quot;</span> <span class="o">]</span>; <span class="k">then</span>
+<span class="k">      </span>mkdir -p <span class="s2">&quot;$v/$BACKUPDIR/Library&quot;</span>
+      <span class="nb">echo</span> <span class="s2">&quot;created directory&quot;</span> <span class="s2">&quot;$v/$BACKUPDIR/Library&quot;</span>
+    <span class="k">fi</span>
+
+<span class="k">    for </span>d in <span class="nv">$FOLDERS</span> <span class="s2">&quot;$FOLDER1&quot;</span>; <span class="k">do</span>
+<span class="k">      </span>rsync <span class="nv">$OPTS</span> <span class="s2">&quot;$HOME/$d/&quot;</span> <span class="s2">&quot;$v/$BACKUPDIR/$d/&quot;</span>
+    <span class="k">done</span>
+
+<span class="k">    if</span> <span class="o">[</span> ! -d <span class="s2">&quot;$v/$DOTFILES&quot;</span> <span class="o">]</span>; <span class="k">then</span>
+<span class="k">      </span>mkdir <span class="s2">&quot;$v/$DOTFILES&quot;</span>
+      <span class="nb">echo</span> <span class="s2">&quot;created directory&quot;</span> <span class="s2">&quot;$v/$DOTFILES&quot;</span>
+    <span class="k">fi</span>
+
+<span class="k">    for </span>f in <span class="nv">$FILES</span>; <span class="k">do</span>
+<span class="k">      </span>rsync <span class="nv">$OPTS</span> <span class="s2">&quot;$HOME/$f&quot;</span> <span class="s2">&quot;$v/$DOTFILES/$f&quot;</span>
+    <span class="k">done</span>
+
+<span class="k">  else</span>
+<span class="k">     </span><span class="nb">echo</span> <span class="s2">&quot;ERROR:&quot;</span> <span class="s2">&quot;$v&quot;</span> <span class="s2">&quot;not mounted&quot;</span>
+  <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div>
+<p>Et le fichier .rsync/excludes contient</p>
+<pre class="literal-block">
+.DS\_Store
+.depend
+\*.aplibrary
+.localized
+</pre>
+<p>Tout d'abord, on définit les options pour rsync :</p>
+<ul class="simple">
+<li>a : le mode archivage (c'est ce qui convient le mieux pour les copies
+de sauvegarde)</li>
+<li>v : afficher les opérations effectuées à l'écran</li>
+<li>u : update, i.e. : si un fichier sur dans la copie de sauvegarde est
+plus récent que celui sur le Macbook, on ne le recopie pas</li>
+<li>z : compresser les données</li>
+<li>C : exclure tous les fichiers normalement exclus par CVS (e.g. :
+*.o, *~, *.a)</li>
+<li>--delete : si un fichier a été effacé du Macbook, l'effacer du
+dossier de sauvegarde</li>
+<li>--exclude-from : précise le nom du fichier contenant la liste des
+exclusions</li>
+</ul>
+<p>Ensuite on définit les variables qui précise les fichiers et dossiers à
+copier. On a une boucle pour effectuer les opérations sur les deux
+disques durs externes puis une autre pour effectuer les copies de tous
+les dossiers voulus.
+Le dossier Library/Application Support a sa propre variable car
+j'obtiens des erreurs si je l'inclus dans la liste FOLDERS. J'ai essayé
+de l'inclure avec des guillemets, en échappant l'espace
+(Library/Application\ Support) mais rien ne fonctionnait. Si quelqu'un
+sait comment faire en sorte que je puisse include ce dossier dans la
+liste avec les autres, faites-moi le savoir.
+Je mets les fichiers de configuration dans un dossier nommé dotfiles que
+je crée s'il n'existe pas déjà.
+J'ai copié le script dans un dossier qui fait partie de mon $PATH. Voilà
+! C'est fait ! Des copies de sauvegarde facile en tapant backup dans un
+terminal. La magie de rsync, c'est que le logiciel ne recopie que les
+fragments de fichiers qui ont été modifiés depuis la dernière
+sauvegarde. Donc le processus est très rapide en général (sauf la
+première fois que le script fonctionne puisqu'il doit alors copier
+l'ensemble des fichiers).
+Prochaine étape : synchroniser mon Macbook et mon ordinateur de bureau
+roulant sous OpenBSD avec <a class="reference external" href="http://www.cis.upenn.edu/%7Ebcpierce/unison/">Unison</a>...</p>
+<div class="figure align-center">
+<img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-3877704818423686673?l=mathfou.blogspot.com" />
+</div>
+
+    </div><!-- /.entry-content -->
+
+    
+
+</article>
+</section>
+
+
+    </div>
+
+    <aside class="sidebar">
+        <nav id="main-nav">
+        <ul>
+            
+            
+            
+            <li ><a href="./pages/projets.html">Projets</a></li>
+            
+
+
+            
+            
+                <li class="active"><a href="./category/blogue.html">blogue</a></li>
+            
+        </ul>
+        </nav>
+
+        <section id="extras">
+        <h2>étiquettes</h2>
+        <ul>
+            
+                <li class="tag-2"><a href="./tag/philosophie.html">philosophie</a></li>
+            
+                <li class="tag-3"><a href="./tag/photographie.html">photographie</a></li>
+            
+                <li class="tag-2"><a href="./tag/physique.html">physique</a></li>
+            
+                <li class="tag-4"><a href="./tag/environnement.html">environnement</a></li>
+            
+                <li class="tag-1"><a href="./tag/informatique.html">informatique</a></li>
+            
+                <li class="tag-4"><a href="./tag/biologie.html">biologie</a></li>
+            
+                <li class="tag-3"><a href="./tag/recherche opérationnelle.html">recherche opérationnelle</a></li>
+            
+                <li class="tag-3"><a href="./tag/python.html">python</a></li>
+            
+                <li class="tag-1"><a href="./tag/maths.html">maths</a></li>
+            
+                <li class="tag-2"><a href="./tag/ineptie.html">ineptie</a></li>
+            
+        </ul>
+
+        
+        
+            <div class="social">
+                <h2>social</h2>
+                <ul>
+                    <li><a href="./feeds/all.atom.xml" rel="alternate">atom feed</a></li>
+                    
+
+                
+                    <li><a href="http://twitter.com/lseguinc">twitter</a></li>
+                
+                    <li><a href="http://github.com/loicseguin">github</a></li>
+                
+                </ul>
+            </div><!-- /.social -->
+        
+        </section><!-- /#extras -->
+    </aside>
+
+    <footer id="contentinfo">
+        <section class="content">
+            <p>Copyright &copy; 2012, Loïc Séguin-Charbonneau</p>
+        </section>
+    </footer><!-- /#contentinfo -->
+
+    
+    
+    
+</body>
+</html>

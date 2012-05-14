@@ -1,5 +1,6 @@
 Moins de Google
 ===============
+:tags: informatique
 
 Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
 d'utilisation et les politiques de confidentialité des divers services en ligne

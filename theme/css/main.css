@@ -1,0 +1,377 @@
+/*
+	Name: coffee
+	Date: May 2012
+	Version: 1.0
+	Author: Loïc Séguin-C.
+*/
+
+/* Imports */
+@import url("reset.css");
+@import url("pygment.css");
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
+
+/***** Global *****/
+/* Body */
+body {
+    background: #f0f0e8;
+    color: #4e443c;
+    font-size: 100%;
+    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 22px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+
+/* Headings */
+h1 {font-size: 2em }
+h2 {font-size: 1.571em}	/* 22px */
+h3 {font-size: 1.429em}	/* 20px */
+h5 {font-size: 1.143em}	/* 16px */
+h6 {font-size: 1em}		/* 14px */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .8em;
+    font-family: 'Yanone Kaffeesatz', serif;
+}
+
+h2, h3, h4, h5, h6 { margin-top: .8em; }
+
+
+/* Anchors */
+a {outline: 0;}
+a img {
+    border: 0;
+    text-decoration: none;
+}
+a:link, a:visited {
+	color: #0388a6;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #04b1d8;
+}
+
+/* Paragraphs */
+p + p {
+    text-indent: 1.5em;
+}
+
+/* Lists */
+ul {
+	list-style: outside disc;
+	margin: 1em 0 1.5em 1.5em;
+}
+
+ol {
+	list-style: outside decimal;
+	margin: 1em 0 1.5em 1.5em;
+}
+
+
+dl {margin: 0 0 1.5em 0;}
+dt {font-weight: bold;}
+dd {margin-left: 1.5em;}
+
+/* Code */
+pre {
+    background-color: #fff;
+    border: 1px solid #efeddd;
+    padding: 10px;
+    margin: 10px;
+    overflow: auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.math .mi, .math .mo, .math .mn {
+    color: #4e443c;
+}
+
+/* Quotes */
+blockquote {
+    margin: 20px;
+    font-style: italic;
+}
+
+/* Tables */
+table {
+    margin: .5em auto 1.5em auto;
+    width: 98%;
+}
+
+/* Thead */
+thead th {
+    padding: .5em .4em;
+    text-align: left;
+}
+
+/* Tbody */
+tbody td {padding: .5em .4em;}
+
+/* HTML5 tags */
+section, footer,
+aside, article, figure {
+	display: block;
+}
+
+/***** Layout *****/
+
+.container {
+    background: #fcfcfa url('../images/coffee.jpg') no-repeat right top;
+    float: left;
+    width: 80%;
+    min-width: 400px;
+    border-right: solid 1px #e2e0d8;
+    border-bottom: solid 1px #e2e0d8;
+}
+
+.sidebar {
+    float: left;
+    margin: 50px 0 0 10px;
+    width: 18%;
+    min-width: 100px;
+    text-transform: lowercase;
+}
+
+/*
+	Body
+*****************/
+.content, #banner {
+	margin: 2em 8% 2em auto;
+    max-width: 600px;
+	overflow: hidden;
+	padding: 35px 20px 20px 50px;
+	width: 80%;
+}
+
+#banner {
+    margin-top: 2.5em;
+    padding: 10px 20px 10px 50px;
+}
+
+
+img.right figure.right {float: right; margin: 0 0 2em 2em;}
+img.left, figure.left {float: right; margin: 0 0 2em 2em;}
+
+img {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    margin: 15px;
+}
+
+
+/*
+	Header
+*****************/
+
+/* Banner */
+#banner h1 {
+    font-size: 4em;
+    margin-bottom: 0;
+}
+
+#banner h1 a:link, #banner h1 a:visited {
+    color: #222;
+	text-decoration: none;
+}
+#banner h1 a:hover, #banner h1 a:active {
+	color: #5588aa;
+}
+
+
+/* Main Nav */
+#main-nav {
+	font-size: 1.143em;
+	margin: 0 0 3em 0;
+	padding: 0;
+}
+
+#main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#main-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+#main-nav a:link, #main-nav a:visited {
+    color: #413932;
+	display: inline-block;
+	padding: 5px 0 0 0;
+    margin: 5px 8px 0 8px;
+	text-decoration: none;
+    line-height: 1em;
+}
+#main-nav a:hover, #main-nav a:active,
+#main-nav .active a:link, #main-nav .active a:visited {
+	color: #f14e32;
+}
+
+
+
+/*
+	Extras
+*****************/
+#extras {
+    margin: 6em 0 3em 0;
+    padding: 0 8px;
+    overflow: hidden;
+}
+
+#extras ul {list-style: none; margin: 0;}
+#extras li {border-bottom: 1px solid #f6f6ec;}
+#extras h2 {
+	color: #999;
+	font-size: 1.3em;
+	margin-bottom: .25em;
+	padding: 0 3px;
+}
+
+#extras a:link, #extras a:visited {
+	display: block;
+	padding: .3em .25em;
+    font-size: 0.85em;
+}
+
+/* Blogroll */
+#extras .blogroll {
+}
+
+#extras .blogroll li {
+    margin: 0 20px 0 0;
+}
+
+/* Social */
+#extras .social {
+}
+
+#extras div[class='social'] a {
+	background-repeat: no-repeat;
+	background-position: 3px 6px;
+	padding-left: 25px;
+}
+
+/* Icons */
+.social a[href*='delicious.com'] {
+    background-image: url('../images/icons/delicious.png');
+}
+.social a[href*='digg.com'] {
+    background-image: url('../images/icons/digg.png');
+}
+.social a[href*='facebook.com'] {
+    background-image: url('../images/icons/facebook.png');
+}
+.social a[href*='last.fm'], .social a[href*='lastfm.'] {
+    background-image: url('../images/icons/lastfm.png');
+}
+.social a[href*='atom.xml'] {
+    background-image: url('../images/icons/rss.png');
+}
+.social a[href*='twitter.com'] {
+    background-image: url('../images/icons/twitter.png');
+}
+.social a[href*='linkedin.com'] {
+    background-image: url('../images/icons/linkedin.png');
+}
+.social a[href*='github.com'] {
+    background-image: url('../images/icons/github.png');
+}
+
+
+/***** Sections *****/
+/* Blog */
+.entry {
+	display: block;
+	clear: both;
+	padding: 0 0 3em 0;
+    overflow: hidden;
+}
+li:last-child .entry, .content > .entry {border: 0; margin: 0;}
+.hentry img{display : none ;}
+
+.post-info {
+    margin: 0 0 10px 0;
+    padding: 0 0 5px 0;
+}
+
+.readmore { float: right }
+
+.entry h1 {
+    margin-bottom: 2px;
+}
+
+.entry h1 a {
+    color: #f14e32;
+}
+
+.entry h4 {
+    color: #555;
+    font: italic 0.8em Georgia, serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Content */
+.entry footer {margin-bottom: 2em;}
+.entry footer address {display: inline;}
+#posts-list footer address {display: block;}
+
+/* Blog Index */
+#posts-list {list-style: none; margin: 0;}
+
+/*
+	Footer
+*****************/
+#contentinfo {
+    clear: both;
+    padding: 0;
+    font-size: 0.8em;
+    color: #999;
+    width: 80%;
+    min-width: 400px;
+}
+
+#contentinfo .content {
+    margin-bottom: 0;
+    padding-top: 1.5em;
+}
+
+/* Comments */
+#comments-list {list-style: none; margin: 0 1em;}
+#comments-list blockquote {
+	background: #f8f8f8;
+	clear: both;
+	font-style: normal;
+	margin: 0;
+	padding: 15px 20px;
+
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#comments-list footer {color: #888; padding: .5em 1em 0 0; text-align: right;}
+
+#comments-list li:nth-child(2n) blockquote {background: #F5f5f5;}
+
+/* Add a Comment */
+#add-comment label {clear: left; float: left; text-align: left; width: 150px;}
+#add-comment input[type='text'],
+#add-comment input[type='email'],
+#add-comment input[type='url'] {float: left; width: 200px;}
+
+#add-comment textarea {float: left; height: 150px; width: 495px;}
+
+#add-comment p.req {clear: both; margin: 0 .5em 1em 0; text-align: right;}
+
+#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
+#add-comment * {margin-bottom: .5em;}
