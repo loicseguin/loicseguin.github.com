@@ -14,7 +14,9 @@ OUTPUT_PATH = "."
 PATH = "src/"
 
 THEME = "zentree"
+PLUGINS = ['pelican.plugins.github_activity',]
 #GITHUB_URL = "https://github.com/loicseguin/loicseguin.github.com"
+GITHUB_ACTIVITY_FEED = 'https://github.com/loicseguin.atom'
 
 # Blogroll
 #LINKS =  (
