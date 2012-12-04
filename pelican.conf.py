@@ -3,7 +3,7 @@
 
 AUTHOR = u"Loïc Séguin-C."
 SITENAME = u"Loïc Séguin-C."
-SITEURL = '/'
+SITEURL = 'http://loicseguin.github.com/'
 
 TIMEZONE = 'America/Montreal'
 

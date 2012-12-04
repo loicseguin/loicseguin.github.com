@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>La programmation en nombres entiers.</title>
+    <title>Bessel functions in Scipy</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
     <link href="./" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. ATOM Feed" />
@@ -32,17 +32,17 @@
 <section class="content body">    
 <article class="entry">
     <header>
-    <h1>La programmation en nombres entiers.</h1>
+    <h1>Bessel functions in Scipy</h1>
     
     <div class="post-info">
     <h4>
-    <abbr class="published" title="2008-03-21T06:23:00">
-        Ven 21 mars 2008
+    <abbr class="published" title="2012-12-03T22:08:49">
+        Lun 03 décembre 2012
     </abbr>
 
     
 
-    | <a href="./tag/recherche opérationnelle.html">recherche opérationnelle</a>
+    | <a href="./tag/programmation.html">programmation</a>
 
     | <a href="./tag/maths.html">maths</a>
 
@@ -53,32 +53,62 @@
     </header>
 
     <div class="entry-content">
-    <p>Qu'est-ce qui fait de la programmation en nombres entiers un sujet
-intéressant ? Pourquoi une poignée de mathématiciens dépensent-ils
-quelques milliers de dollars pour se réunir et en discuter ? Sans doute
-en saurais-je un peu plus à mon retour de la session de travail sur la
-programmation en nombres entiers qui se tient dans une semaine à la
-Barbade.</p>
-<p>D'ici là, voici ce que j'en sais pour vous mettre l'eau à la bouche.
-Tout d'abord, la programmation en nombres entiers (PNE) est une
-sous-catégorie de problèmes de la programmation linéaire (PL). En PL, on
-veut résoudre des problèmes d'optimisation du genre :
-minimiser f(x)
-sous les contraintes c_i (x) = 0 pour i dans E
-c_i (x) &lt;= 0 pour i dans I où E et I sont des ensembles d'indices, les
-c_i et f sont des fonctions linéaires. En PNE, on rajoute la contrainte
-que la solution doit être entière. Parfois, on parle de programmation
-mixte (PM) où certaines variables seulement doivent être entières. Une
-des applications les plus importantes de la PNE est l'utilisation
-d'énoncés de type &quot;si ... alors&quot; en PL. Par exemple, si on a un problème
-qui dit &quot;si x_1 &gt; 10, alors x_2 + x_3 &lt; 5&quot;, on peut utiliser une
-nouvelle variable entière pour écrire cette implication sous forme d'une
-contrainte linéaire.</p>
-<p>La PNE peut aussi servir à résoudre des types de problèmes de transport
-où on ne peut pas accepter des solutions fractionnaires. Par exemple, si
-on achemine un produit en petites quantités sur une courte période de
-temps.</p>
-<p>Plus de détails à venir éventuellement !</p>
+    <p>Bessel functions of the first kind, <span class="math">
+\(J_l\)</span>
+ where <span class="math">
+\(l\)</span>
+ is an integer,
+are found in <tt class="docutils literal">scipy.special.jn</tt>. This is a function that takes two arguments:
+the first one is the value of <span class="math">
+\(l\)</span>
+ and the second one is the value of the
+point at which to evaluate the functions. If one is interested in <span class="math">
+\(J_0\)</span>
+
+or <span class="math">
+\(J_1\)</span>
+ only, then there are faster implementations of these functions
+as <tt class="docutils literal">j0</tt> and <tt class="docutils literal">j1</tt>.</p>
+<p>If the goal is to find the zeros of the Bessel function, then rather than using
+a root finding routine (such as <tt class="docutils literal">scipy.optimize.newton</tt>) it is more efficient
+to call <tt class="docutils literal">scipy.special.jn_zeros</tt>. This function also takes two arguments, the
+first one is the value of <span class="math">
+\(l\)</span>
+ and the second one is the number of zeros
+to display (it starts at the first positive zero).</p>
+<p>For Bessel functions of half-integer order, so called <em>spherical Bessel
+function</em>, the situation is a little bit more complicated. The appropriate
+function is <tt class="docutils literal">scipy.special.sph_jn</tt>. To compute <span class="math">
+\(J_{l + 1/2}\)</span>
+, the first
+argument to <tt class="docutils literal">sph_jn</tt> is the value of <span class="math">
+\(l\)</span>
+. The second argument is the
+value of the point at which to evaluate the function. Where it gets complicated
+is in the return value of the function. <tt class="docutils literal">sph_jn</tt> returns a pair of arrays.
+The first array contains the values of the function, and the second array
+contains the values of the derivative.  Each array has length <span class="math">
+\(l + 1\)</span>
+ and
+contains a value for all spherical Bessel functions with <span class="math">
+\(l\)</span>
+ smaller than
+or equal to the supplied value.</p>
+<p>It is useful to wrap this function into something friendlier:</p>
+<pre class="literal-block">
+def j3o2(x):
+    &quot;&quot;&quot;Compute the spherical Bessel function J_{3/2}.&quot;&quot;&quot;
+    return sph_jn(1, x)[0][1]
+
+def j5o2(x):
+    &quot;&quot;&quot;Compute the spherical Bessel function J_{5/2}.&quot;&quot;&quot;
+    return sph_jn(2, x)[0][2]
+</pre>
+<p>To obtain the zeros of the spherical Bessel function, one has to call a root
+finding procedure. For instance, <tt class="docutils literal">scipy.optimize.newton</tt> does the job quite
+well.</p>
+<p>John D. Cook has a <a class="reference external" href="http://www.johndcook.com/Bessel_functions.html">great page</a> about Bessel functions and <a class="reference external" href="http://www.johndcook.com/Bessel_python.html">another one</a>
+about how to work with the implementation in Scipy.</p>
 
     </div><!-- /.entry-content -->
 
