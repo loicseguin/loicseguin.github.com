@@ -1,11 +1,10 @@
-
 PELICAN=pelican
 PELICANOPTS=None
 
 BASEDIR=$(PWD)
-INPUTDIR=$(BASEDIR)/src
-OUTPUTDIR=$(BASEDIR)/output
-CONFFILE=$(BASEDIR)/pelican.conf.py
+INPUTDIR=$(BASEDIR)/content
+OUTPUTDIR=$(BASEDIR)
+CONFFILE=$(BASEDIR)/pelicanconf.py
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -36,8 +35,13 @@ $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE)
 
 clean:
-	rm -fr $(OUTPUTDIR)
-	mkdir $(OUTPUTDIR)
+	@rm -f $(OUTPUTDIR)/*.html
+	@rm -rf $(OUTPUTDIR)/author
+	@rm -rf $(OUTPUTDIR)/category
+	@rm -rf $(OUTPUTDIR)/feeds
+	@rm -rf $(OUTPUTDIR)/pages
+	@rm -rf $(OUTPUTDIR)/tag
+	@rm -rf $(OUTPUTDIR)/theme
 
 dropbox_upload: $(OUTPUTDIR)/index.html
 	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
