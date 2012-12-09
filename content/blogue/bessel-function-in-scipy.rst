@@ -3,6 +3,7 @@ Bessel functions in Scipy
 
 :date: 2012-12-03
 :tags: programmation, maths
+:summary: Untangling the special functions
 
 Bessel functions of the first kind, :math:`J_l` where :math:`l` is an integer,
 are found in ``scipy.special.jn``. This is a function that takes two arguments:
@@ -28,7 +29,9 @@ contains the values of the derivative.  Each array has length :math:`l + 1` and
 contains a value for all spherical Bessel functions with :math:`l` smaller than
 or equal to the supplied value.
 
-It is useful to wrap this function into something friendlier::
+It is useful to wrap this function into something friendlier:
+
+.. code-block:: python
 
     def j3o2(x):
         """Compute the spherical Bessel function J_{3/2}."""

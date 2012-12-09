@@ -2,6 +2,7 @@ Le dilemme du prisonnier
 ########################
 :date: 2008-09-07 06:22
 :tags: maths
+:summary: 
 
 Le "jeu", au sens de la théorie des jeux, le plus connu est sans
 conteste le dilemme du prisonnier. Deux suspects sont arrêtés

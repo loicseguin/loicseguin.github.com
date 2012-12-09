@@ -2,6 +2,7 @@ Spinify 2.2
 ###########
 :date: 2010-03-02 03:30
 :tags: informatique, maths, physique
+:summary:
 
 Je viens tout juste de lancer la nouvelle version du logiciel de
 simulation numérique du modèle d'Ising Spinify. La version 2.2 comporte

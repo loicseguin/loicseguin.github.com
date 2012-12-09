@@ -2,6 +2,7 @@ Spinify
 #######
 :date: 2010-01-25 16:41
 :tags: informatique, maths, physique
+:summary:
 
 Il y a quelques années, j'ai travaillé sur un projet qui consistait à
 développer un programme de simulation du modèle d'Ising sur des surfaces

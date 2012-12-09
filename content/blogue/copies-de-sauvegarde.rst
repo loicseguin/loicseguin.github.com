@@ -2,6 +2,7 @@ Copies de sauvegarde
 ####################
 :date: 2009-03-11 03:06
 :tags: informatique
+:summary: Script utilisant ``rsync``.
 
 J'ai finalement trouvé une solution convenable pour faire des copies de
 sauvegarde de mes documents importants : un shell script maison assez

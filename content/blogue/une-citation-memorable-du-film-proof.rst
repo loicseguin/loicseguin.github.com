@@ -2,6 +2,7 @@ Une citation mémorable du film Proof
 ####################################
 :date: 2007-10-28 17:21
 :tags: maths
+:summary:
 
 Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
 que je n'ai pas aimé ce film. La performances des acteurs est mauvaise,

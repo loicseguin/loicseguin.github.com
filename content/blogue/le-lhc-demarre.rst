@@ -2,6 +2,7 @@ Le LHC démarre !
 ################
 :date: 2008-09-10 17:21
 :tags: physique
+:summary: 
 
 Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
 sur la nature de l'univers. Le Large Hadron Collider (LHC, grand

@@ -2,6 +2,7 @@ Pourquoi les nombres entiers sont parfois essentiels ?
 ######################################################
 :date: 2008-05-11 17:24
 :tags: maths
+:summary: 
 
 On a tendance à sous-estimer l'utilité et la signification des nombres
 entiers. Dans cet `article`_ du Globe and Mail du 10 mai, on peut lire

@@ -2,6 +2,7 @@ HiR Information Report
 ######################
 :date: 2009-03-15 15:33
 :tags: informatique, ineptie
+:summary:
 
 Pour les amateurs de Unix qui veulent en apprendre un peu plus sur la
 sécurité de leur système ou sur l'administration de systèmes, le blogue

@@ -2,6 +2,7 @@ Des axiomes mathématiques
 #########################
 :date: 2009-02-06 01:52
 :tags: maths, philosophie
+:summary: 
 
 En lisant `Le moine et le philosophe`_, je suis tombé sur cette citation
 de Alan B. Wallace (tirée de `Science et Bouddhisme, à chacun sa

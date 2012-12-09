@@ -2,6 +2,7 @@
 ###################################################
 :date: 2010-06-13 03:42
 :tags: informatique, python
+:summary: Installing a Scipy, Numpy, Matplotlib stack.
 
 *N.B. : Pour une raison mystérieuse, j'ai rédigé cet article en anglais.
 Désolé pour ceux qui ne lisent pas l'anglais. J'essaierai de ne pas

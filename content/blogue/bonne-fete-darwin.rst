@@ -2,6 +2,7 @@ Bonne fête Darwin !
 ###################
 :date: 2009-02-12 15:02
 :tags: philosophie, biologie
+:summary: Célébrons le deux centième anniversaire de Charles Darwin.
 
 Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
 notre compréhension de la nature : Charles Darwin. Darwin fût un

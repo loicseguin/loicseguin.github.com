@@ -2,6 +2,7 @@ Résolution du problème des ponts de Königsberg
 ##############################################
 :date: 2007-08-24 06:24
 :tags: maths
+:summary: 
 
 D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
 est appelé par certains un multigraphe). Un graphe G est simplement un ensemble

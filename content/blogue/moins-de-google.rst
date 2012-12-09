@@ -3,6 +3,7 @@ Moins de Google
 
 :date: 2012-05-13
 :tags: informatique
+:summary: Alternatives aux principaux services de Google.
 
 Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
 d'utilisation et les politiques de confidentialité des divers services en ligne

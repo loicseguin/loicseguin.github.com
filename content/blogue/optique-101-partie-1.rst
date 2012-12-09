@@ -2,6 +2,7 @@ Optique 101 (partie 1)
 ######################
 :date: 2008-11-14 17:54
 :tags: photographie, physique
+:summary: 
 
 Pour comprendre comment fonctionne la vue et comment fonctionne un
 appareil photographique, on doit d'abord connaître quelques principes

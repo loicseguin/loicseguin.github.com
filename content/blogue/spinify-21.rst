@@ -2,6 +2,7 @@ Spinify 2.1
 ###########
 :date: 2010-02-16 02:00
 :tags: informatique, maths, physique
+:summary:
 
 La première version vraiment fonctionnelle du logiciel de simulation du
 modèle d'Ising en deux dimensions sur la sphère est maintenant

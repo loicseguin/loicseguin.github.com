@@ -11,10 +11,16 @@ TIMEZONE = 'America/Montreal'
 DEFAULT_LANG = 'fr'
 DEFAULT_CATEGORY = 'blogue'
 
+DATE_FORMATS = {'fr': '%d %B %Y'}
 OUTPUT_PATH = "."
 PATH = "content/"
 
-THEME = "zentree"
+MENUITEMS = [("Blogue", SITEURL)]
+THEME = "klaatu"
+
+# global metadata to all the contents
+DEFAULT_METADATA = (('summary', ''),)
+
 #PLUGINS = ['pelican.plugins.github_activity',]
 #GITHUB_URL = "http://github.com/loicseguin/"
 #GITHUB_ACTIVITY_FEED = 'https://github.com/loicseguin.atom'
@@ -32,7 +38,5 @@ SOCIAL = (
           ('github', 'http://github.com/loicseguin')
          )
 
-DEFAULT_PAGINATION = 7
+DEFAULT_PAGINATION = 12
 
-
-    

@@ -2,6 +2,7 @@ La physique et les maths de la photo
 ####################################
 :date: 2008-11-13 22:42
 :tags: maths, photographie, physique
+:summary: 
 
 Ceci est le premier d'une série d'article sur la physique et les
 mathématiques de la photographie. La photographie est une activité que

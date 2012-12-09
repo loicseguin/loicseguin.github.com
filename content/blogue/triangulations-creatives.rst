@@ -2,6 +2,7 @@ Triangulations créatives
 ########################
 :date: 2008-09-12 16:30
 :tags: maths
+:summary: Jolies images obtenues en faisant des triangulations.
 
 On peut représenter les objets tridimensionnels par des triangles collés
 les uns aux autres de telle sorte qu'ils épousent les formes de l'objet.

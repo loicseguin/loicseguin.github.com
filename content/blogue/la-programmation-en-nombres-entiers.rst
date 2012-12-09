@@ -2,6 +2,7 @@ La programmation en nombres entiers.
 ####################################
 :date: 2008-03-21 06:23
 :tags: recherche opérationnelle, maths
+:summary: 
 
 Qu'est-ce qui fait de la programmation en nombres entiers un sujet
 intéressant ? Pourquoi une poignée de mathématiciens dépensent-ils

@@ -2,6 +2,7 @@ Manipuler des symboles
 ######################
 :date: 2008-09-23 23:15
 :tags: maths
+:summary: 
 
 Les mathématiques sont percues par beaucoup de gens, dont plusieurs
 mathématiciens, comme étant un ensemble de règles qui dictent comment

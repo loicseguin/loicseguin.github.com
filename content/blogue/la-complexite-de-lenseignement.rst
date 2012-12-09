@@ -2,6 +2,7 @@ La complexité de l'enseignement
 ###############################
 :date: 2008-05-14 17:23
 :tags: maths, ineptie
+:summary: 
 
 Concernant le problème TEACH défini ci-dessous, j'ai obtenu un résultat
 intéressant de complexité.

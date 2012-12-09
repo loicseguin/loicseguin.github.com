@@ -2,6 +2,7 @@ L'antre de la bête
 ##################
 :date: 2008-09-30 23:37
 :tags: ineptie
+:summary: 
 
 Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
 travail. On constate la grande organisation qui règne sur mon bureau...

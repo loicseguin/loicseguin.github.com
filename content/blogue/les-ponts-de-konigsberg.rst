@@ -2,6 +2,7 @@ Les ponts de Königsberg
 #######################
 :date: 2007-08-22 06:24
 :tags: maths
+:summary: 
 
 |image0|
 

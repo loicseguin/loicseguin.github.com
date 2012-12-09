@@ -2,6 +2,7 @@ Dictionnaire français pour Vim
 ##############################
 :date: 2011-12-22 23:45
 :tags: informatique
+:summary: Correction orthographique en français avec Vim.
 
 Vim possède un correcteur d'orthographe. On peut l'activer avec
 

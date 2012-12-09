@@ -41,15 +41,14 @@ contains a value for all spherical Bessel functions with &lt;span class="math"&g
  smaller than
 or equal to the supplied value.&lt;/p&gt;
 &lt;p&gt;It is useful to wrap this function into something friendlier:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-def j3o2(x):
-    &amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{3/2}.&amp;quot;&amp;quot;&amp;quot;
-    return sph_jn(1, x)[0][1]
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j3o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{3/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sph_jn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
-def j5o2(x):
-    &amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{5/2}.&amp;quot;&amp;quot;&amp;quot;
-    return sph_jn(2, x)[0][2]
-&lt;/pre&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j5o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{5/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sph_jn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;To obtain the zeros of the spherical Bessel function, one has to call a root
 finding procedure. For instance, &lt;tt class="docutils literal"&gt;scipy.optimize.newton&lt;/tt&gt; does the job quite
 well.&lt;/p&gt;

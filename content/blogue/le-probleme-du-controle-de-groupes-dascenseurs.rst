@@ -2,6 +2,7 @@ Le problème du contrôle de groupes d'ascenseurs
 ###############################################
 :date: 2007-10-22 17:21
 :tags: recherche opérationnelle
+:summary: 
 
 Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
 de travail quotidiennement savent à quel point il peut y avoir de

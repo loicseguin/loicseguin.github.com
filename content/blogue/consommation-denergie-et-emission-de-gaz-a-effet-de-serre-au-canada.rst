@@ -2,6 +2,7 @@ Consommation d'énergie et émission de gaz à effet de serre au Canada
 ####################################################################
 :date: 2010-06-08 03:09
 :tags: environnement, python
+:summary: 
 
 En faisant quelques recherches sur Internet, je suis tombé sur des
 données relatives à la consommation d'énergie et à l'émission de GES par
