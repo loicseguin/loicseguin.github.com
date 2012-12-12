@@ -15,12 +15,15 @@ DATE_FORMATS = {'fr': '%d %B %Y'}
 OUTPUT_PATH = "."
 PATH = "content/"
 
-MENUITEMS = [("Blogue", SITEURL)]
+DISPLAY_CATEGORIES_ON_MENU = True
+DIRECT_TEMPLATES = ('index', 'archives')
+AUTHOR_SAVE_AS = False
+TAG_SAVE_AS = False
+#MENUITEMS = [("Blogue", SITEURL)]
 THEME = "klaatu"
 
 # global metadata to all the contents
 DEFAULT_METADATA = (('summary', ''),)
-
 #PLUGINS = ['pelican.plugins.github_activity',]
 #GITHUB_URL = "http://github.com/loicseguin/"
 #GITHUB_ACTIVITY_FEED = 'https://github.com/loicseguin.atom'

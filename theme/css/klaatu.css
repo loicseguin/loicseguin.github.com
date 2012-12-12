@@ -195,7 +195,7 @@ footer {
     margin: 0 2%;
   }
 
-  #post-list li {
+  #post-list.blogue li {
     height: 5.5em;
   }
 

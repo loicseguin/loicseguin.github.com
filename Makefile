@@ -42,6 +42,8 @@ clean:
 	@rm -rf $(OUTPUTDIR)/pages
 	@rm -rf $(OUTPUTDIR)/tag
 	@rm -rf $(OUTPUTDIR)/theme
+	@rm -rf $(OUTPUTDIR)/drafts
+	@rm -rf $(OUTPUTDIR)/static
 
 dropbox_upload: $(OUTPUTDIR)/index.html
 	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
