@@ -1,0 +1,64 @@
+Relativité restreinte
+=====================
+
+:date: 2004-06-14
+:tags: physique
+:summary: Résumé humoristique de l'histoire de la relativité restreinte.
+
+Tout d'abord, Dieu créa la Terre et le Ciel, etc.
+
+Puis, un beau jour d'il y a un ou deux siècles, un dénommé Maxwell (oui oui,
+comme le café) trouva les équations de l'électromagnétisme. Ce sont des
+équations qui décrivent tous les phénomènes électromagnétiques (comme la
+lumière et les rayons X). Et un autre jour merveilleux, un autre dénommé, dont
+je ne connais pas le nom, a trouvé (grâce à une expérience compliquée) que la
+vitesse de la lumière était de 3x10^8 m/s. Et cette valeur correspondait à 1
+divisé par deux constantes fondamentales qui apparaissaient dans les équations
+de  Maxwell : la constante magnétique et la constante électrique. Donc, Maxwell
+se demanda: "Mais pourquoi donc mes paramètres correspondent-ils à la vitesse
+de la lumière ?" Et il fit des calculs palpitants pendant longtemps. Après des
+heures de plaisir, il trouva que ses équations prédisaient une vitesse c pour
+les ondes électromagnétiques (la lumière par exemple) et que cette vitesse c
+était une constante, peut importe le référentiel. Donc, peut importe qui mesure
+la vitesse de la lumière, ça sera toujours c. Et cette conclusion était
+étrange. En effet, normalement, une personne qui se tient sur le bord de la
+voie ferrée mesure la vitesse d'un train et obtient, disons, 80 km/h. Et une
+personne sur le train obtiendrait une vitesse de 0 km/h, parce que le train ne
+se déplace pas par rapport au passager. Donc la vitesse mesurée dépend du
+référentiel de l'observateur, en temps normal.
+
+Bon, donc on a une vitesse c constante pour la lumière. Là il y a un problème:
+en physique classique, le principe de la relativité dit qu'une vitesse dépend
+du référentiel par rapport à laquelle elle est mesurée (c'est l'histoire des
+petits bonshommes et du train, chaque personnage, celui sur le train et celui à
+côté, est dans un référentiel différent et mesure une vitesse différente).
+L'existence d'une vitesse constante est très contre-intuitive.
+
+Entre en scène un célèbre personnage qui vient éclaircir la question: Albert
+Einstein. Pour lui, le principe de la relativité doit être valide en tout temps
+pour toutes les lois de la physique et la vitesse de la lumière est une
+constante. Donc, dans tous les référentiels, elle sera la même. À priori, ces
+deux postulats peuvent sembler contradictoires. Mais Einstein, réussit à
+développer une théorie complète à partir de ce derniers. Et cette théorie non
+seulement correspondait à la mécanique Newtonienne (la mécanique classique)
+pour les vitesses petites par rapport à la vitesse de la lumière, mais en plus
+elle permettait d'expliquer avec justesse des anomalies dans les observations
+astronomiques. Jusqu'à aujourd'hui, tout porte à croire que la théorie de la
+relativité restreinte d'Einstein est une bonne description de la façon dont la
+nature fonctionne.
+
+
+Maintenant, qu'en est-il de la "vitesse limite"? En quoi la théorie de la
+relativité restreinte prédit-elle une vitesse limite? D'abord, les observations
+expérimentales faites avant le développement de la théorie indiquaient que rien
+ne pouvait se déplacer plus vite que la vitesse de la lumière. Des observations
+plus récentes en physique des particules confirment ce résultat. Selon les
+équations d'Einstein, plus une particule s'approche de la vitesse de la
+lumière, plus sa masse apparente augmente et plus il faut d'énergie pour
+l'accélérer. Donc, pour augmenter la vitesse d'une particule de 99% à 100% de
+la vitesse de la lumière, il faudrait une quantité d'énergie infinie. Cela
+explique pourquoi la vitesse c est une limite. Cependant, rien n'indique que
+des objets allant plus vite que la vitesse de la lumière ne puisse pas exister.
+De tels objets, nommés tachyons, seraient confinés à des vitesses supérieures à c
+et ne pourraient pas ralentir ou s'arrêter. Les tachyons n'ont jamais été
+observés expérimentalement à ce jour.

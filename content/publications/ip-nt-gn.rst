@@ -3,6 +3,10 @@ Integer programming, number theory and the geometry of numbers
 
 :date: 2008-11-28
 :fileurl: https://dl.dropbox.com/u/1459172/Maths/IP_NT_GN-notes.pdf
+:filesize: 150 Ko
+:summary: Théorème de Minkowski, corps convexes, maillages, etc.
+:tags: maths
+:type: rapport
 
 Il existe des relations étroites entre la géométrie des nombres et la
 programmation en nombres entiers. Par exemple, un théorème de Minkowski sur

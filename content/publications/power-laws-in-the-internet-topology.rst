@@ -3,6 +3,10 @@ Power laws in the Internet topology
 
 :date: 2009-03-25
 :fileurl: https://dl.dropbox.com/u/1459172/Maths/PowerLaws.pdf
+:filesize: 170 Ko
+:summary: Croissance de l'Internet.
+:tags: maths
+:type: rapport
 
 La croissance de l'Internet s'est fait de manière désorganisée, sans contrôle
 central. Pourtant, plusieurs études ont montré une régularité dans sa topologie

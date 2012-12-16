@@ -16,9 +16,8 @@ OUTPUT_PATH = "."
 PATH = "content/"
 
 DISPLAY_CATEGORIES_ON_MENU = True
-DIRECT_TEMPLATES = ('index', 'archives')
+DISPLAY_PAGES_ON_MENU = True
 AUTHOR_SAVE_AS = False
-TAG_SAVE_AS = False
 #MENUITEMS = [("Blogue", SITEURL)]
 THEME = "klaatu"
 

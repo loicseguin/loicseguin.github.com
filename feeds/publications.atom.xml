@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.github.com/" rel="alternate"></link><link href="http://loicseguin.github.com/feeds/publications.atom.xml" rel="self"></link><id>http://loicseguin.github.com/</id><updated>2011-10-15T00:00:00-04:00</updated><entry><title>Maximum Edge-Disjoint Paths in Planar Graphs with Congestion 2</title><link href="http://loicseguin.github.com/maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html" rel="alternate"></link><updated>2011-10-15T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-10-15:maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html</id><summary type="html">&lt;p&gt;Présentation donnée dans le cadre du 52nd IEEE Symposium on Foundations of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.github.com/" rel="alternate"></link><link href="http://loicseguin.github.com/feeds/publications.atom.xml" rel="self"></link><id>http://loicseguin.github.com/</id><updated>2012-11-05T00:00:00-05:00</updated><entry><title>L'Univers est en expansion, les atomes le sont-ils ?</title><link href="http://loicseguin.github.com/lunivers-est-en-expansion-les-atomes-le-sont-ils.html" rel="alternate"></link><updated>2012-11-05T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2012-11-05:lunivers-est-en-expansion-les-atomes-le-sont-ils.html</id><summary type="html">&lt;p&gt;Imaginons l'Univers en expansion comme un pain aux raisins qui gonfle au four.
+Si un atome se comporte comme deux raisins (un qui représente le noyau, l'autre
+les électrons), alors son volume augmentera avec celui de l'Univers. Par
+contre, si un atome se comporte comme un seul raisin (après tout, un atome,
+c'est tout petit), alors l'expansion de l'Univers n'aura pas d'impact
+significatif sur son volume.&lt;/p&gt;
+&lt;p&gt;Cette présentation, donnée au Club maths et sciences du Collège militaire royal
+de Saint-Jean, explore la question avec des notions simples de mécanique et la
+loi de Coulomb. L'approche est celle présentée dans &lt;a class="citation-reference" href="#price2012" id="id1"&gt;[Price2012]&lt;/a&gt;.&lt;/p&gt;
+&lt;table class="docutils citation" frame="void" id="price2012" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[Price2012]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Price, R.H. &amp;amp; Romano, J.D., 2012. In an expanding universe, what
+doesn’t expand? American Journal of Physics, 80(5), p.376.
+Available at: &lt;a class="reference external" href="http://link.aip.org/link/AJPIAS/v80/i5/p376/s1&amp;amp;Agg=doi"&gt;http://link.aip.org/link/AJPIAS/v80/i5/p376/s1&amp;amp;Agg=doi&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</summary><category term="physique"></category></entry><entry><title>How quantum mechanics explains the size of stars</title><link href="http://loicseguin.github.com/how-quantum-mechanics-explains-the-size-of-stars.html" rel="alternate"></link><updated>2012-01-18T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2012-01-18:how-quantum-mechanics-explains-the-size-of-stars.html</id><summary type="html">&lt;p&gt;Une étoile naine blanche est un cadavre stellaire : c'est ce qui reste après
+qu'une étoile de la séquence principale (par exemple, notre Soleil) ait épuisé
+tout son carburant nucléaire. Dans ce type d'étoile, c'est un phénomène
+purement quantique, la dégénérescence électronique, qui crée une force qui
+s'oppose à l'attraction gravitationnelle et qui empêche l'étoile de s'effondrer
+sur elle-même.&lt;/p&gt;
+&lt;p&gt;Cette présentation, donnée au Collège militaire royal de Saint-Jean à l'hiver
+2012, montre les éléments de base de la mécanique quantique et de la physique
+statistique nécessaire au développement d'une théorie qui prédit (avec une
+justesse étonnante) la taille des étoiles naines blanches.&lt;/p&gt;
+</summary><category term="physique"></category></entry><entry><title>Maximum Edge-Disjoint Paths in Planar Graphs with Congestion 2</title><link href="http://loicseguin.github.com/maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html" rel="alternate"></link><updated>2011-10-15T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-10-15:maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html</id><summary type="html">&lt;p&gt;We study the maximum edge-disjoint path problem (MEDP) in planar graphs. We are
+given a set of terminal pairs and wish to find a maximum routable subset of
+demands. That is, a subset of demands that can be connected by edge-disjoint
+paths. It is well-known that there is an integrality gap of order square root
+of the number of nodes for this problem even on a grid-like graph, and hence in
+planar graphs (Garg et al.). In contrast, Chekuri et al. show that for planar
+graphs, if LP is the optimal solution to the natural linear programming
+relaxation for MEDP, then there is a subset of size OPT over the logarithm of
+the number of nodes which is routable with congestion 2. Subsequently they
+showed that it is possible to get within a constant factor of the optimal
+solution with congestion 4 instead of 2. We strengthen this latter result to
+show that a constant approximation is possible also with congestion 2 (and this
+is tight via the integrality gap grid example). We use a basic framework from
+work by Chekuri et al. At the heart of their approach is a 2-phase algorithm
+that selects an Okamura-Seymour instance. Each of their phases incurs a factor
+2 congestion. It is possible to reduce one of the phases to have congestion 1.
+In order to achieve an overall congestion 2, however, the two phases must share
+capacity more carefully. For the Phase 1 problem, we extract a problem called
+rooted clustering that appears to be an interesting problem class in itself.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Présentation : MEDP in Planar Graphs with Congestion 2</title><link href="http://loicseguin.github.com/presentation-medp-in-planar-graphs-with-congestion-2.html" rel="alternate"></link><updated>2011-10-15T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-10-15:presentation-medp-in-planar-graphs-with-congestion-2.html</id><summary type="html">&lt;p&gt;Présentation donnée dans le cadre du 52nd IEEE Symposium on Foundations of
 Computer Science à Palm Springs en 2011. La présentation décrit sommairement un
 article publié dans les proceedings de la conférence. Le résultat présenté est
 un algorithme d'approximation pour trouver une solution au problème de
@@ -7,7 +53,8 @@ maximisation des chemins disjoints dans un graphe plan. L'algorithme trouve, en
 un temps polynomial, une solution au problème qui est de l'ordre de la solution
 optimale en permettant une congestion de 2 sur les arêtes du graphe. Travail
 conjoint avec Bruce Shepherd.&lt;/p&gt;
-</summary></entry><entry><title>Notes de cours pour Mathématiques avancées</title><link href="http://loicseguin.github.com/notes-de-cours-pour-mathematiques-avancees.html" rel="alternate"></link><updated>2011-04-19T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-04-19:notes-de-cours-pour-mathematiques-avancees.html</id><summary type="html">&lt;p&gt;Le cours de Mathématiques avancées, donné au Collège militaire royal de
+&lt;p&gt;L'article peut être téléchargé à partir de &lt;a class="reference external" href="http://loicseguin.github.com/maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html"&gt;cette page&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Notes de cours pour Mathématiques avancées</title><link href="http://loicseguin.github.com/notes-de-cours-pour-mathematiques-avancees.html" rel="alternate"></link><updated>2011-04-19T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-04-19:notes-de-cours-pour-mathematiques-avancees.html</id><summary type="html">&lt;p&gt;Le cours de Mathématiques avancées, donné au Collège militaire royal de
 Saint-Jean, est le quatrième cours de mathématiques offert aux étudiants en
 sciences de la nature. Parmi les sujets présentés, on retrouve l'études des
 séries de puissance, la résolution d'équations différentielles et le calcul à
@@ -15,10 +62,10 @@ plusieurs variables.&lt;/p&gt;
 &lt;p&gt;Ces notes de cours contiennent toute la matière vue au cours d'un trimestre. La
 théorie est accompagnée de nombreux exemples provenant de la physique, de la
 biologie et des statistiques.&lt;/p&gt;
-</summary></entry><entry><title>Ellipses</title><link href="http://loicseguin.github.com/ellipses.html" rel="alternate"></link><updated>2009-11-18T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-11-18:ellipses.html</id><summary type="html">&lt;p&gt;Présentation donnée dans le cadre du Club mathématiques au Collège militaire
+</summary><category term="maths"></category></entry><entry><title>Ellipses</title><link href="http://loicseguin.github.com/ellipses.html" rel="alternate"></link><updated>2009-11-18T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-11-18:ellipses.html</id><summary type="html">&lt;p&gt;Présentation donnée dans le cadre du Club mathématiques au Collège militaire
 royal de Saint-Jean en 2009. Définitions de base concernant les ellipses et
 quelques résultats amusants lorsqu'on change la métrique.&lt;/p&gt;
-</summary></entry><entry><title>Confluent, bifurcated and unsplittable flows</title><link href="http://loicseguin.github.com/confluent-bifurcated-and-unsplittable-flows.html" rel="alternate"></link><updated>2009-07-24T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-07-24:confluent-bifurcated-and-unsplittable-flows.html</id><summary type="html">&lt;p&gt;Cette thèse étudie les problèmes de flots sur réseau. Plus particulièrement,
+</summary><category term="maths"></category></entry><entry><title>Confluent, bifurcated and unsplittable flows</title><link href="http://loicseguin.github.com/confluent-bifurcated-and-unsplittable-flows.html" rel="alternate"></link><updated>2009-07-24T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-07-24:confluent-bifurcated-and-unsplittable-flows.html</id><summary type="html">&lt;p&gt;Cette thèse étudie les problèmes de flots sur réseau. Plus particulièrement,
 nous portons notre attention sur les flots à puits unique et à multiples
 sources avec des contraintes de degré. Dans le problème de flot indivisible, la
 demande envoyée par une source doit suivre un chemin unique. Dans le problème
@@ -32,17 +79,17 @@ le problème de maximisation des chemins disjoints (en terme d'arêtes). Cet
 algorithme satisfait une fraction constante de la demande totale avec une
 congestion d'arête d'au plus 3. Il s'agit donc d'une amélioration de la
 meilleure borne précédente de 4.&lt;/p&gt;
-</summary></entry><entry><title>Power laws in the Internet topology</title><link href="http://loicseguin.github.com/power-laws-in-the-internet-topology.html" rel="alternate"></link><updated>2009-03-25T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-03-25:power-laws-in-the-internet-topology.html</id><summary type="html">&lt;p&gt;La croissance de l'Internet s'est fait de manière désorganisée, sans contrôle
+</summary><category term="maths"></category></entry><entry><title>Power laws in the Internet topology</title><link href="http://loicseguin.github.com/power-laws-in-the-internet-topology.html" rel="alternate"></link><updated>2009-03-25T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-03-25:power-laws-in-the-internet-topology.html</id><summary type="html">&lt;p&gt;La croissance de l'Internet s'est fait de manière désorganisée, sans contrôle
 central. Pourtant, plusieurs études ont montré une régularité dans sa topologie
 : la plupart des métriques obéissent à une loi de puissance. Dans cet article,
 nous présentons un survol des différentes études empiriques et des modèles qui
 expliquent une telle croissance. (En anglais seulement.)&lt;/p&gt;
 &lt;p&gt;Travail de session pour le cours Algorithmic Game Theory donné à McGill par
 Adrian Vetta.&lt;/p&gt;
-</summary></entry><entry><title>Optimization course notes</title><link href="http://loicseguin.github.com/optimization-course-notes.html" rel="alternate"></link><updated>2009-03-24T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-03-24:optimization-course-notes.html</id><summary type="html">&lt;p&gt;Quelques notes pour les cours MATH 560 du 24 et 26 mars 2009 donné à McGill.
+</summary><category term="maths"></category></entry><entry><title>Optimization course notes</title><link href="http://loicseguin.github.com/optimization-course-notes.html" rel="alternate"></link><updated>2009-03-24T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-03-24:optimization-course-notes.html</id><summary type="html">&lt;p&gt;Quelques notes pour les cours MATH 560 du 24 et 26 mars 2009 donné à McGill.
 Les notes portent sur les algorithmes d'optimisation nonlinéaire avec
 contraintes.&lt;/p&gt;
-</summary></entry><entry><title>Integer programming, number theory and the geometry of numbers</title><link href="http://loicseguin.github.com/integer-programming-number-theory-and-the-geometry-of-numbers.html" rel="alternate"></link><updated>2008-11-28T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-11-28:integer-programming-number-theory-and-the-geometry-of-numbers.html</id><summary type="html">&lt;p&gt;Il existe des relations étroites entre la géométrie des nombres et la
+</summary><category term="maths"></category></entry><entry><title>Integer programming, number theory and the geometry of numbers</title><link href="http://loicseguin.github.com/integer-programming-number-theory-and-the-geometry-of-numbers.html" rel="alternate"></link><updated>2008-11-28T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-11-28:integer-programming-number-theory-and-the-geometry-of-numbers.html</id><summary type="html">&lt;p&gt;Il existe des relations étroites entre la géométrie des nombres et la
 programmation en nombres entiers. Par exemple, un théorème de Minkowski sur
 l'existence de points de maillage dans un corps convexe permet d'établir une
 borne inférieure sur la longueur du plus court vecteur sur ce maillage. Et une
@@ -52,7 +99,7 @@ temps polynomial si la dimension est fixe. (En anglais seulement.)&lt;/p&gt;
 &lt;p&gt;Ces notes on été rédigées pour un séminaire de trois heures faisant partie d'un
 cours sur la programmation en nombres entiers donné à McGill par Bruce
 Shepherd.&lt;/p&gt;
-</summary></entry><entry><title>Cobordisme et variétés singulières</title><link href="http://loicseguin.github.com/cobordisme-et-varietes-singulieres.html" rel="alternate"></link><updated>2007-08-20T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2007-08-20:cobordisme-et-varietes-singulieres.html</id><summary type="html">&lt;p&gt;Pontryagin a démontré un résultat fort intéressant concernant les applications
+</summary><category term="maths"></category></entry><entry><title>Cobordisme et variétés singulières</title><link href="http://loicseguin.github.com/cobordisme-et-varietes-singulieres.html" rel="alternate"></link><updated>2007-08-20T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2007-08-20:cobordisme-et-varietes-singulieres.html</id><summary type="html">&lt;p&gt;Pontryagin a démontré un résultat fort intéressant concernant les applications
 f d'une m-variété M vers la sphère Sp : il existe une bijection entre les
 classes de cobordisme des sous-variétés f-1(y) de M (y étant une valeur
 régulière de f) et les classes d'homotopies des applications f. J'ai généralisé
@@ -60,4 +107,23 @@ ce résultat à des variétés singulières (i.e. : qui ont des voisinages
 ressemblant à plusieurs copies des réels).&lt;/p&gt;
 &lt;p&gt;Rapport de stage pour un projet réalisé à l'Université de Montréal sous la
 supervision d'Octav Cornea.&lt;/p&gt;
-</summary></entry></feed>
+</summary><category term="maths"></category></entry><entry><title>Simulations numériques du modèle d'Ising</title><link href="http://loicseguin.github.com/simulations-numeriques-du-modele-dising.html" rel="alternate"></link><updated>2006-08-29T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2006-08-29:simulations-numeriques-du-modele-dising.html</id><summary type="html">&lt;p&gt;Le modèle d'Ising tente de décrire le comportement des matériaux magnétiques
+(ferro- ou anti-ferro-). C'est un modèle sur réseau assez simple qui est
+beaucoup utilisé en physique statistique. Il semble que la limite du modèle sur
+réseau quand la maille (i.e. : la distance entre deux sites voisins) tend vers
+zéro soit le modèle prédit par la théorie des champs conformes. Malheureusement
+cette limite est très difficile à trouver théoriquement et à ce jour personne
+n'y est arrivé.&lt;/p&gt;
+&lt;p&gt;Ce document est un rapport de stage d'été réalisé à l'Université de Montréal
+sous la supervision de Yvan Saint-Aubin. L'approche qui a été prise dans ce
+stage était de faire des simulations numériques du modèle sur réseau et de voir
+si les mesures prises lors de ces simulations concordaient avec les résultats
+de la théorie des champs conformes. L'utilisation de réseaux aléatoires peut
+servir à faire des simulations sur des surfaces courbes comme le tore ou la
+sphère.&lt;/p&gt;
+&lt;div class="section" id="mise-a-jour"&gt;
+&lt;h2&gt;Mise à jour&lt;/h2&gt;
+&lt;p&gt;Le code de simulation a été retravaillé et développé davantage. Une version
+récente est disponible sur &lt;a class="reference external" href="https://bitbucket.org/loicseguin/spinify/wiki/Home"&gt;bitbucket&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="physique"></category></entry></feed>

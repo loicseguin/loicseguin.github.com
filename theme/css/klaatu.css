@@ -9,6 +9,13 @@ h1 {
   margin-top: 0.5em;
 }
 
+#greeting {
+  text-align: center;
+  font-size: 1.3em;
+  margin-top: 1.5em;
+  margin-bottom: 4.5em;
+}
+
 h2,
 abbr,
 th,
@@ -96,6 +103,10 @@ pre,
   font-size: .9em;
 }
 
+#contentinfo, .paginator {
+    clear: both;
+}
+
 #menu {
   overflow:hidden;
   position: absolute;
@@ -140,6 +151,14 @@ pre,
 #post-list .published, #post-list .entry-content {
   font-size: 0.7em;
   line-height: 2em;
+}
+
+#post-list .pubtype {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  border-left: 1px solid #aaa;
+  margin-left: 0.8em;
+  padding-left: 1em;
 }
 
 #post-list .entry-content p {
@@ -188,15 +207,11 @@ footer {
     overflow: hidden;
   }
 
-  #post-list li,
-  #selected-projects {
-    float: left;
+  #post-list li {
     width: 46%;
     margin: 0 2%;
-  }
-
-  #post-list.blogue li {
-    height: 5.5em;
+    height: 7.5em;
+    float: left;
   }
 
   pre {

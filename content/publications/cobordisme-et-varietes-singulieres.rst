@@ -3,6 +3,10 @@ Cobordisme et variétés singulières
 
 :date: 2007-08-20
 :fileurl: https://dl.dropbox.com/u/1459172/Maths/cobordisme2007.pdf
+:filesize: 172 Ko
+:tags: maths
+:summary: Généralisation d'un théorème de Pontryagin.
+:type: rapport
 
 Pontryagin a démontré un résultat fort intéressant concernant les applications
 f d'une m-variété M vers la sphère Sp : il existe une bijection entre les

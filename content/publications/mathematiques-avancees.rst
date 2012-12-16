@@ -3,6 +3,11 @@ Notes de cours pour Mathématiques avancées
 
 :date: 2011-04-19
 :fileurl: https://dl.dropbox.com/u/1459172/Maths/Mathematiques_Avancees.pdf
+:filesize: 962 Ko
+:summary: Séries, équations différentielles ordinaires, calcul à plusieurs
+          variables
+:tags: maths
+:type: manuel
 
 Le cours de Mathématiques avancées, donné au Collège militaire royal de
 Saint-Jean, est le quatrième cours de mathématiques offert aux étudiants en

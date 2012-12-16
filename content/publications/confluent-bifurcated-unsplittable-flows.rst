@@ -3,6 +3,10 @@ Confluent, bifurcated and unsplittable flows
 
 :date: 2009-07-24
 :fileurl: https://dl.dropbox.com/u/1459172/Master_Thesis.pdf
+:filesize: 381 Ko
+:summary: Thèse de maîtrise sur les flots avec contraintes de degré.
+:tags: maths
+:type: thèse
 
 Cette thèse étudie les problèmes de flots sur réseau. Plus particulièrement,
 nous portons notre attention sur les flots à puits unique et à multiples
