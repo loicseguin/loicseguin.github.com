@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+        <title>Utilisation de biblatex</title>
+    <meta charset="utf-8" />
+        <link href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
+                        <link href="http://loicseguin.github.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
+                    <link rel=stylesheet href=./theme/css/trac.css type="text/css" />
+    <link href=./theme/css/normalize.css rel="stylesheet" type="text/css" />
+    <link href=./theme/css/klaatu.css rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700|Alegreya+SC:400,700|PT+Mono" rel="stylesheet">
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    </head>
+
+<body id="index" class="home">
+    <div id="container">
+
+    <div id="banner">
+    <header class="body">
+        <a href="./index.html">Loïc Séguin-C. <strong></strong></a>
+    </header><!-- /#banner -->
+    <nav id="menu">
+                                      <a href="./category/blogue.html">Blogue</a>
+                      <a href="./category/publications.html">Publications</a>
+                                                <a href="./pages/projets.html">Projets</a>
+                      <a href="./pages/vita.html">Vita</a>
+                      </nav><!-- /#menu -->
+    </div>
+
+    <section id="content" class="body">
+  <header>
+    <h1 class="entry-title">
+      <a href="utilisation-de-biblatex.html" rel="bookmark"
+         title="Permalien vers Utilisation de biblatex">Utilisation de <tt class="docutils literal">biblatex</tt></a></h1>
+  
+  </header>
+  <footer class="post-info">
+    <div class="published" title="2012-12-21T00:00:00">
+      21 décembre 2012
+    </div>
+      </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p><tt class="docutils literal">biblatex</tt> est le logiciel de gestion bibliographique moderne pour accompagner
+LaTeX. Combiné avec <tt class="docutils literal">biber</tt>, il remplace complètement le système <tt class="docutils literal">bibtex</tt>.
+Il est aussi possible de conserver <tt class="docutils literal">bibtex</tt> comme engin d'arrière-plan, mais
+<tt class="docutils literal">biber</tt> présente de nombreux avantages :</p>
+<blockquote>
+Biber, the default backend of biblatex, supports Ascii, 8-bit encodings,
+UTF-8, on-the-fly reencoding, locale-specific sorting, and many other
+features. Locale-specific sorting, case-sensitive sorting, and
+upper/lowercase precedence are controlled by the options sortlocale,
+sortcase, and sortupper, respectively.</blockquote>
+<p>(tiré du <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf">manuel d'utilisation</a>).</p>
+<div class="section" id="exemple-simple">
+<h2>Exemple simple</h2>
+<p>Pour incorporer <tt class="docutils literal">biblatex</tt> dans un document, il suffit d'utiliser la commande
+<tt class="docutils literal">\usepackage{biblatex}</tt> dans le préambule du fichier source. Puis, il faut
+spécifier le fichier qui contient les références bibliographiques avec
+<tt class="docutils literal">\addbibresource{refs.bib}</tt>. Il est possible d'inclure plusieurs fichiers de
+références en ajoutant autant de <tt class="docutils literal">\addbibresource</tt> que nécessaire. La
+commande <tt class="docutils literal">\bibliography</tt> utilisée avec <tt class="docutils literal">bibtex</tt> est aussi reconnue par
+<tt class="docutils literal">biblatex</tt> pour maintenir la compatibilité, mais la nouvelle commande devrait
+être utilisée autant que possible. Il est important de noter que le nom
+complet, incluant l'extension, du fichier de référence doit être donné.</p>
+<p>Citer une référence se fait de la même manière qu'avec <tt class="docutils literal">bibtex</tt>, c'est-à-dire
+avec la commande <tt class="docutils literal">\cite{key}</tt> où <tt class="docutils literal">key</tt> est le nom d'une des références dans
+le fichier <tt class="docutils literal">bib</tt>.</p>
+<p>La bibliographie est incluse dans le document à l'aide de la commande
+<tt class="docutils literal">\printbibliography</tt>. Voici un exemple simple d'utilisation de <tt class="docutils literal">biblatex</tt>.</p>
+<p>Fichier <tt class="docutils literal">simple.tex</tt> :</p>
+<pre class="code latex literal-block">
+<span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[canadien]</span><span class="nb">{</span>babel<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+
+<span class="c">% Emplacement du fichier de références.
+</span><span class="k">\addbibresource</span><span class="nb">{</span>em.bib<span class="nb">}</span>
+
+<span class="k">\title</span><span class="nb">{</span>Exemple simple d'utilisation de <span class="k">\texttt</span><span class="nb">{</span>biblatex<span class="nb">}}</span>
+<span class="k">\author</span><span class="nb">{</span>Loïc Séguin-Charbonneau<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="k">\maketitle</span>
+
+<span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
+
+L'électricité et le magnétisme sont deux facettes d'une seule et même force
+qu'on appelle la force électromagnétique <span class="k">\cite</span><span class="nb">{</span>feynman1965<span class="nb">}</span>. Pour découvrir une
+partie de l'histoire passionnante de la découverte et de l'unification des
+lois de l'électricité et du magnétisme, on peut écouter le cours de Cathryn
+Carson <span class="k">\cite</span><span class="nb">{</span>carson2008<span class="nb">}</span>.
+
+<span class="k">\section</span><span class="nb">{</span>La loi de Coulomb<span class="nb">}</span>
+
+La loi de Coulomb décrit la force d'interaction entre deux particules chargées.
+En utilisant le Système international d'unités, la loi de Coulomb s'écrit
+<span class="k">\cite</span><span class="nb">{</span>halliday2007<span class="nb">}</span> :
+
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+  <span class="k">\vec</span><span class="nb">{</span>F<span class="nb">}</span> = <span class="k">\frac</span><span class="nb">{</span>1<span class="nb">}{</span>4 <span class="k">\pi</span> <span class="k">\epsilon</span><span class="nb">_</span>0<span class="nb">}</span> <span class="k">\frac</span><span class="nb">{</span>Q<span class="nb">_</span>1 Q<span class="nb">_</span>2<span class="nb">}{</span>r<span class="nb">^</span>2<span class="nb">}</span>.
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+
+<span class="k">\printbibliography</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre>
+<p>Fichier <tt class="docutils literal">em.bib</tt> :</p>
+<pre class="code latex literal-block">
+&#64;book<span class="nb">{</span>feynman1965,
+    title = <span class="nb">{</span>The Feynman Lectures on Physics<span class="nb">}</span>,
+    volume = <span class="nb">{{</span>II<span class="nb">}}</span>,
+    publisher = <span class="nb">{</span>Addison-Wesley<span class="nb">}</span>,
+    author = <span class="nb">{</span>Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew<span class="nb">}</span>,
+    year = <span class="nb">{</span>1965<span class="nb">}</span>
+<span class="nb">}</span>
+
+&#64;book<span class="nb">{</span>halliday2007,
+    edition = <span class="nb">{</span>8<span class="nb">}</span>,
+    title = <span class="nb">{</span>Fundamentals of Physics Extended<span class="nb">}</span>,
+    publisher = <span class="nb">{</span>Wiley<span class="nb">}</span>,
+    author = <span class="nb">{</span>Halliday, David and Resnick, Robert and Walker, Jearl<span class="nb">}</span>,
+    year = <span class="nb">{</span>2007<span class="nb">}</span>,
+<span class="nb">}</span>
+
+&#64;online<span class="nb">{</span>carson2008,
+  title = <span class="nb">{</span>History 181B:  Modern Physics<span class="nb">}</span>,
+  author = <span class="nb">{</span>Carson, Cathryn<span class="nb">}</span>,
+  url = <span class="nb">{</span>https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr<span class="nb">&amp;</span>mt=10<span class="nb">}</span>,
+  organization = <span class="nb">{</span>UC Berkeley<span class="nb">}</span>,
+  urldate = <span class="nb">{</span>2012-12-21<span class="nb">}</span>,
+<span class="nb">}</span>
+</pre>
+<p>Et voici le résultat :</p>
+<img alt="static/images/biblatex-simple.png" src="static/images/biblatex-simple.png" />
+</div>
+<div class="section" id="personalisation-inclusion-de-references-dans-un-plan-de-cours">
+<h2>Personalisation : inclusion de références dans un plan de cours</h2>
+<p>Lorsque je rédige des plans de cours, les références bibliographiques doivent
+constituer une section à part entière (avec numérotation du titre).  De plus,
+les références ne sont en général pas citées dans le texte, elles ne sont là
+que pour indiquer aux étudiants les sources qu'ils peuvent consulter.  Enfin,
+les références obligatoires doivent être clairement indiquées et j'aime
+bien séparer les sites internet du reste des références. Avec <tt class="docutils literal">biblatex</tt>, il
+est assez simple d'ajuster la bibliographie en conséquence.</p>
+<p>La commande <tt class="docutils literal">\printbibliography</tt> possède de nombreuses options
+dont celle de spécifier le format de l'en-tête. On peut simplement donner
+l'option <tt class="docutils literal">heading=bibnumbered</tt> pour que l'en-tête soit numéroté comme une
+section (ou un chapitre si la classe de document est un livre).</p>
+<p>Pour inclure des références qui ne sont pas citées dans le texte il suffit
+d'utiliser <tt class="docutils literal">\nocite{key}</tt>. Par exemple, si les <em>Feynman Lectures on Physics</em>
+doivent être affichées dans la bibliographie, il suffit d'ajouter
+<tt class="docutils literal">\nocite{feynman1965}</tt>. Il est également possible d'inclure tous les
+documents du fichier <tt class="docutils literal">bib</tt> avec l'argument <tt class="docutils literal">*</tt> à la place d'une clé
+bibliographique.</p>
+<p>L'option <tt class="docutils literal">prenote</tt> de la commande <tt class="docutils literal">\printbibliography</tt> permet d'ajouter du
+texte entre le titre et la première référence. Ce texte doit être associé à un
+une <tt class="docutils literal">bibnote</tt> qui est définie à l'aide de la commande <tt class="docutils literal">\defbibnote</tt>. Par
+exemple, on peut définir une note pour le manuel obligatoire</p>
+<pre class="literal-block">
+\defbibnote{obl}{\textbf{Obligatoire}}
+</pre>
+<p>puis la bibliographie est imprimée avec</p>
+<pre class="literal-block">
+\printbibliography[heading=bibnumbered, prenote=obl]
+</pre>
+<p>Le problème est que toutes les références seront imprimées alors que
+normalement seuls un ou deux ouvrages sont obligatoires. Il est possible
+d'ajouter dans le fichier <tt class="docutils literal">bib</tt> un champ <tt class="docutils literal">keywords</tt> et d'utiliser ce champ
+pour imprimer seulement certains documents. Si la référence <tt class="docutils literal">halliday2007</tt>
+est obligatoire, alors on ajoute</p>
+<pre class="literal-block">
+keywords = {mandatory}
+</pre>
+<p>à cet élément et on imprime la bibliographie avec</p>
+<pre class="literal-block">
+\printbibliography[heading=bibnumbered, prenote=obl, keyword=mandatory]
+</pre>
+<p>Les références non-obligatoires peuvent être ajoutées avec d'autres
+appels à la commande <tt class="docutils literal">\printbibliography</tt> en utilisant l'option
+<tt class="docutils literal">notkeyword=mandatory</tt>.  Les références d'un certain type sont imprimées avec
+l'option <tt class="docutils literal">type</tt> dont la valeur est un des types de documents <tt class="docutils literal">biblatex</tt>
+(par exemple, <tt class="docutils literal">book</tt>, <tt class="docutils literal">article</tt>, <tt class="docutils literal">online</tt>, etc.).  Pour éviter d'avoir
+un nouvel en-tête de section à chaque appel de <tt class="docutils literal">\printbibliography</tt>, il
+suffit de fournir l'option <tt class="docutils literal">heading=none</tt>. Finalement, pour éviter que la
+numérotation soit dans le désordre, <tt class="docutils literal">biblatex</tt> peut conserver l'ordre du
+fichier <tt class="docutils literal">bib</tt> si on lui fournit l'option <tt class="docutils literal">sorting=none</tt>.</p>
+<p>Ci-dessous se trouve un exemple complet.</p>
+<p>Fichier <tt class="docutils literal">simple.tex</tt> :</p>
+<pre class="code latex literal-block">
+<span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[canadien]</span><span class="nb">{</span>babel<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[sorting=none]</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+
+<span class="c">% Emplacement du fichier de références.
+</span><span class="k">\addbibresource</span><span class="nb">{</span>em.bib<span class="nb">}</span>
+
+<span class="c">% Notes pour différents types de références.
+</span><span class="k">\defbibnote</span><span class="nb">{</span>obl<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>Obligatoire<span class="nb">}}</span>
+<span class="k">\defbibnote</span><span class="nb">{</span>livres<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>Livres<span class="nb">}}</span>
+<span class="k">\defbibnote</span><span class="nb">{</span>web<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>Sites internet<span class="nb">}}</span>
+
+<span class="k">\title</span><span class="nb">{</span>Exemple simple d'utilisation de <span class="k">\texttt</span><span class="nb">{</span>biblatex<span class="nb">}}</span>
+<span class="k">\author</span><span class="nb">{</span>Loïc Séguin-Charbonneau<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="k">\maketitle</span>
+
+<span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
+
+L'électricité et le magnétisme sont deux facettes d'une seule et même force
+qu'on appelle la force électromagnétique.  Ce cours présente les principes de
+base de la théorie de l'électromagnétisme.
+
+<span class="k">\section</span><span class="nb">{</span>Évaluation<span class="nb">}</span>
+
+Les étudiants seront évalués à l'aide d'examens très difficiles.
+
+<span class="k">\nocite</span><span class="nb">{</span>*<span class="nb">}</span>
+<span class="k">\printbibliography</span><span class="na">[prenote=obl, heading=bibnumbered, keyword=mandatory]</span>
+<span class="k">\printbibliography</span><span class="na">[prenote=livres, type=book, notkeyword=mandatory, heading=none]</span>
+<span class="k">\printbibliography</span><span class="na">[prenote=web, type=online, notkeyword=mandatory, heading=none]</span>
+
+<span class="k">\section</span><span class="nb">{</span>Horaire<span class="nb">}</span>
+
+Le cours se donne du lundi au vendredi, de 8h à 9h. Les laboratoires auront
+lieu le jeudi après-midi de 13h à 17h.
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre>
+<p>Fichier <tt class="docutils literal">em.bib</tt> :</p>
+<pre class="code latex literal-block">
+&#64;book<span class="nb">{</span>halliday2007,
+    edition = <span class="nb">{</span>8<span class="nb">}</span>,
+    title = <span class="nb">{</span>Fundamentals of Physics Extended<span class="nb">}</span>,
+    publisher = <span class="nb">{</span>Wiley<span class="nb">}</span>,
+    author = <span class="nb">{</span>Halliday, David and Resnick, Robert and Walker, Jearl<span class="nb">}</span>,
+    year = <span class="nb">{</span>2007<span class="nb">}</span>,
+  keywords = <span class="nb">{</span>mandatory<span class="nb">}</span>
+<span class="nb">}</span>
+
+&#64;book<span class="nb">{</span>feynman1965,
+    title = <span class="nb">{</span>The Feynman Lectures on Physics<span class="nb">}</span>,
+    volume = <span class="nb">{{</span>II<span class="nb">}}</span>,
+    publisher = <span class="nb">{</span>Addison-Wesley<span class="nb">}</span>,
+    author = <span class="nb">{</span>Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew<span class="nb">}</span>,
+    year = <span class="nb">{</span>1965<span class="nb">}</span>
+<span class="nb">}</span>
+
+&#64;online<span class="nb">{</span>carson2008,
+  title = <span class="nb">{</span>History 181B:  Modern Physics<span class="nb">}</span>,
+  author = <span class="nb">{</span>Carson, Cathryn<span class="nb">}</span>,
+  url = <span class="nb">{</span>https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr<span class="nb">&amp;</span>mt=10<span class="nb">}</span>,
+  organization = <span class="nb">{</span>UC Berkeley<span class="nb">}</span>,
+  urldate = <span class="nb">{</span>2012-12-21<span class="nb">}</span>,
+<span class="nb">}</span>
+
+&#64;online<span class="nb">{</span>lewin2002,
+    title = <span class="nb">{</span>8.02 Electricity and Magnetism<span class="nb">}</span>,
+    url = <span class="nb">{</span>http://ocw.mit.edu/courses/physics/8-02-electricity-and-magnetism-spring-2002/<span class="nb">}</span>,
+    urldate = <span class="nb">{</span>2012-12-21<span class="nb">}</span>,
+    organization = <span class="nb">{{</span>MIT OpenCourseWare<span class="nb">}}</span>,
+    author = <span class="nb">{</span>Lewin, Walter<span class="nb">}</span>,
+<span class="nb">}</span>
+</pre>
+<p>Le résultat est le suivant :</p>
+<img alt="static/images/biblatex-pdc.png" src="static/images/biblatex-pdc.png" />
+</div>
+
+  </div><!-- /.entry-content -->
+</section>
+
+    <footer id="contentinfo" class="body">
+        <address id="about" class="vcard body">
+            Klaatu verata nicto
+        </address><!-- /#about -->
+
+                    <div class="social">
+                <a href="mailto:loicseguin@gmail.com" rel="alternate">
+                    <img src="./theme/images/email.png" alt="Courriel" />
+                </a>
+                <a href="http://twitter.com/lseguinc/" rel="alternate">
+                    <img src="./theme/images/twitter.png" alt="twitter" />
+                </a>
+                <a href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">
+                    <img src="./theme/images/atom.png" alt="Flux Atom" />
+                </a>
+                <a href="http://www.flickr.com/photos/loicseguin" rel="alternate">
+                    <img src="./theme/images/flickr.png" alt="Flickr" />
+                </a>
+                <a href="http://github.com/loicseguin/" rel="alternate">
+                    <img src="./theme/images/github.png" alt="Github" />
+                </a>
+                <a href="http://bitbucket.org/loicseguin/" rel="alternate">
+                    <img src="./theme/images/bitbucket.png" alt="Bitbucket" />
+                </a>
+            </div><!-- /.social -->
+            </footer><!-- /#contentinfo -->
+</div>
+</body>
+</html>

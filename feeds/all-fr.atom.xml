@@ -1,5 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.github.com/" rel="alternate"></link><link href="http://loicseguin.github.com/feeds/all-fr.atom.xml" rel="self"></link><id>http://loicseguin.github.com/</id><updated>2012-12-03T00:00:00-05:00</updated><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.github.com/bessel-functions-in-scipy.html" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2012-12-03:bessel-functions-in-scipy.html</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.github.com/" rel="alternate"></link><link href="http://loicseguin.github.com/feeds/all-fr.atom.xml" rel="self"></link><id>http://loicseguin.github.com/</id><updated>2012-12-21T00:00:00-05:00</updated><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.github.com/utilisation-de-biblatex.html" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.github.com,2012-12-21:utilisation-de-biblatex.html</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
+LaTeX. Combiné avec &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt;, il remplace complètement le système &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;.
+Il est aussi possible de conserver &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; comme engin d'arrière-plan, mais
+&lt;tt class="docutils literal"&gt;biber&lt;/tt&gt; présente de nombreux avantages :&lt;/p&gt;
+&lt;blockquote&gt;
+Biber, the default backend of biblatex, supports Ascii, 8-bit encodings,
+UTF-8, on-the-fly reencoding, locale-specific sorting, and many other
+features. Locale-specific sorting, case-sensitive sorting, and
+upper/lowercase precedence are controlled by the options sortlocale,
+sortcase, and sortupper, respectively.&lt;/blockquote&gt;
+&lt;p&gt;(tiré du &lt;a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf"&gt;manuel d'utilisation&lt;/a&gt;).&lt;/p&gt;
+&lt;div class="section" id="exemple-simple"&gt;
+&lt;h2&gt;Exemple simple&lt;/h2&gt;
+&lt;p&gt;Pour incorporer &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; dans un document, il suffit d'utiliser la commande
+&lt;tt class="docutils literal"&gt;\usepackage{biblatex}&lt;/tt&gt; dans le préambule du fichier source. Puis, il faut
+spécifier le fichier qui contient les références bibliographiques avec
+&lt;tt class="docutils literal"&gt;\addbibresource{refs.bib}&lt;/tt&gt;. Il est possible d'inclure plusieurs fichiers de
+références en ajoutant autant de &lt;tt class="docutils literal"&gt;\addbibresource&lt;/tt&gt; que nécessaire. La
+commande &lt;tt class="docutils literal"&gt;\bibliography&lt;/tt&gt; utilisée avec &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; est aussi reconnue par
+&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; pour maintenir la compatibilité, mais la nouvelle commande devrait
+être utilisée autant que possible. Il est important de noter que le nom
+complet, incluant l'extension, du fichier de référence doit être donné.&lt;/p&gt;
+&lt;p&gt;Citer une référence se fait de la même manière qu'avec &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;, c'est-à-dire
+avec la commande &lt;tt class="docutils literal"&gt;\cite{key}&lt;/tt&gt; où &lt;tt class="docutils literal"&gt;key&lt;/tt&gt; est le nom d'une des références dans
+le fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;La bibliographie est incluse dans le document à l'aide de la commande
+&lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt;. Voici un exemple simple d'utilisation de &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;simple.tex&lt;/tt&gt; :&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[canadien]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;babel&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[utf8]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;inputenc&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[T1]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;fontenc&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;% Emplacement du fichier de références.
+&lt;/span&gt;&lt;span class="k"&gt;\addbibresource&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;em.bib&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\title&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="k"&gt;\texttt&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\author&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\maketitle&lt;/span&gt;
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Introduction&lt;span class="nb"&gt;}&lt;/span&gt;
+
+L'électricité et le magnétisme sont deux facettes d'une seule et même force
+qu'on appelle la force électromagnétique &lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965&lt;span class="nb"&gt;}&lt;/span&gt;. Pour découvrir une
+partie de l'histoire passionnante de la découverte et de l'unification des
+lois de l'électricité et du magnétisme, on peut écouter le cours de Cathryn
+Carson &lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;carson2008&lt;span class="nb"&gt;}&lt;/span&gt;.
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;La loi de Coulomb&lt;span class="nb"&gt;}&lt;/span&gt;
+
+La loi de Coulomb décrit la force d'interaction entre deux particules chargées.
+En utilisant le Système international d'unités, la loi de Coulomb s'écrit
+&lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007&lt;span class="nb"&gt;}&lt;/span&gt; :
+
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;\vec&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;F&lt;span class="nb"&gt;}&lt;/span&gt; = &lt;span class="k"&gt;\frac&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;1&lt;span class="nb"&gt;}{&lt;/span&gt;4 &lt;span class="k"&gt;\pi&lt;/span&gt; &lt;span class="k"&gt;\epsilon&lt;/span&gt;&lt;span class="nb"&gt;_&lt;/span&gt;0&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\frac&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Q&lt;span class="nb"&gt;_&lt;/span&gt;1 Q&lt;span class="nb"&gt;_&lt;/span&gt;2&lt;span class="nb"&gt;}{&lt;/span&gt;r&lt;span class="nb"&gt;^&lt;/span&gt;2&lt;span class="nb"&gt;}&lt;/span&gt;.
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;
+
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;em.bib&lt;/tt&gt; :&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
+    volume = &lt;span class="nb"&gt;{{&lt;/span&gt;II&lt;span class="nb"&gt;}}&lt;/span&gt;,
+    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="nb"&gt;}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="nb"&gt;}&lt;/span&gt;,
+    year = &lt;span class="nb"&gt;{&lt;/span&gt;1965&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007,
+    edition = &lt;span class="nb"&gt;{&lt;/span&gt;8&lt;span class="nb"&gt;}&lt;/span&gt;,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="nb"&gt;}&lt;/span&gt;,
+    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Wiley&lt;span class="nb"&gt;}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="nb"&gt;}&lt;/span&gt;,
+    year = &lt;span class="nb"&gt;{&lt;/span&gt;2007&lt;span class="nb"&gt;}&lt;/span&gt;,
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;carson2008,
+  title = &lt;span class="nb"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
+  author = &lt;span class="nb"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="nb"&gt;}&lt;/span&gt;,
+  url = &lt;span class="nb"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="nb"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="nb"&gt;}&lt;/span&gt;,
+  organization = &lt;span class="nb"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="nb"&gt;}&lt;/span&gt;,
+  urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
+&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Et voici le résultat :&lt;/p&gt;
+&lt;img alt="static/images/biblatex-simple.png" src="static/images/biblatex-simple.png" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="personalisation-inclusion-de-references-dans-un-plan-de-cours"&gt;
+&lt;h2&gt;Personalisation : inclusion de références dans un plan de cours&lt;/h2&gt;
+&lt;p&gt;Lorsque je rédige des plans de cours, les références bibliographiques doivent
+constituer une section à part entière (avec numérotation du titre).  De plus,
+les références ne sont en général pas citées dans le texte, elles ne sont là
+que pour indiquer aux étudiants les sources qu'ils peuvent consulter.  Enfin,
+les références obligatoires doivent être clairement indiquées et j'aime
+bien séparer les sites internet du reste des références. Avec &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;, il
+est assez simple d'ajuster la bibliographie en conséquence.&lt;/p&gt;
+&lt;p&gt;La commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; possède de nombreuses options
+dont celle de spécifier le format de l'en-tête. On peut simplement donner
+l'option &lt;tt class="docutils literal"&gt;heading=bibnumbered&lt;/tt&gt; pour que l'en-tête soit numéroté comme une
+section (ou un chapitre si la classe de document est un livre).&lt;/p&gt;
+&lt;p&gt;Pour inclure des références qui ne sont pas citées dans le texte il suffit
+d'utiliser &lt;tt class="docutils literal"&gt;\nocite{key}&lt;/tt&gt;. Par exemple, si les &lt;em&gt;Feynman Lectures on Physics&lt;/em&gt;
+doivent être affichées dans la bibliographie, il suffit d'ajouter
+&lt;tt class="docutils literal"&gt;\nocite{feynman1965}&lt;/tt&gt;. Il est également possible d'inclure tous les
+documents du fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; avec l'argument &lt;tt class="docutils literal"&gt;*&lt;/tt&gt; à la place d'une clé
+bibliographique.&lt;/p&gt;
+&lt;p&gt;L'option &lt;tt class="docutils literal"&gt;prenote&lt;/tt&gt; de la commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; permet d'ajouter du
+texte entre le titre et la première référence. Ce texte doit être associé à un
+une &lt;tt class="docutils literal"&gt;bibnote&lt;/tt&gt; qui est définie à l'aide de la commande &lt;tt class="docutils literal"&gt;\defbibnote&lt;/tt&gt;. Par
+exemple, on peut définir une note pour le manuel obligatoire&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+\defbibnote{obl}{\textbf{Obligatoire}}
+&lt;/pre&gt;
+&lt;p&gt;puis la bibliographie est imprimée avec&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+\printbibliography[heading=bibnumbered, prenote=obl]
+&lt;/pre&gt;
+&lt;p&gt;Le problème est que toutes les références seront imprimées alors que
+normalement seuls un ou deux ouvrages sont obligatoires. Il est possible
+d'ajouter dans le fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; un champ &lt;tt class="docutils literal"&gt;keywords&lt;/tt&gt; et d'utiliser ce champ
+pour imprimer seulement certains documents. Si la référence &lt;tt class="docutils literal"&gt;halliday2007&lt;/tt&gt;
+est obligatoire, alors on ajoute&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+keywords = {mandatory}
+&lt;/pre&gt;
+&lt;p&gt;à cet élément et on imprime la bibliographie avec&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+\printbibliography[heading=bibnumbered, prenote=obl, keyword=mandatory]
+&lt;/pre&gt;
+&lt;p&gt;Les références non-obligatoires peuvent être ajoutées avec d'autres
+appels à la commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; en utilisant l'option
+&lt;tt class="docutils literal"&gt;notkeyword=mandatory&lt;/tt&gt;.  Les références d'un certain type sont imprimées avec
+l'option &lt;tt class="docutils literal"&gt;type&lt;/tt&gt; dont la valeur est un des types de documents &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;
+(par exemple, &lt;tt class="docutils literal"&gt;book&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;article&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;online&lt;/tt&gt;, etc.).  Pour éviter d'avoir
+un nouvel en-tête de section à chaque appel de &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt;, il
+suffit de fournir l'option &lt;tt class="docutils literal"&gt;heading=none&lt;/tt&gt;. Finalement, pour éviter que la
+numérotation soit dans le désordre, &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; peut conserver l'ordre du
+fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; si on lui fournit l'option &lt;tt class="docutils literal"&gt;sorting=none&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Ci-dessous se trouve un exemple complet.&lt;/p&gt;
+&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;simple.tex&lt;/tt&gt; :&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[canadien]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;babel&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[utf8]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;inputenc&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[T1]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;fontenc&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[sorting=none]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;% Emplacement du fichier de références.
+&lt;/span&gt;&lt;span class="k"&gt;\addbibresource&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;em.bib&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;% Notes pour différents types de références.
+&lt;/span&gt;&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;obl&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Obligatoire&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;livres&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Livres&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;web&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Sites internet&lt;span class="nb"&gt;}}&lt;/span&gt;
+
+&lt;span class="k"&gt;\title&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="k"&gt;\texttt&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\author&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\maketitle&lt;/span&gt;
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Introduction&lt;span class="nb"&gt;}&lt;/span&gt;
+
+L'électricité et le magnétisme sont deux facettes d'une seule et même force
+qu'on appelle la force électromagnétique.  Ce cours présente les principes de
+base de la théorie de l'électromagnétisme.
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Évaluation&lt;span class="nb"&gt;}&lt;/span&gt;
+
+Les étudiants seront évalués à l'aide d'examens très difficiles.
+
+&lt;span class="k"&gt;\nocite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;*&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=obl, heading=bibnumbered, keyword=mandatory]&lt;/span&gt;
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=livres, type=book, notkeyword=mandatory, heading=none]&lt;/span&gt;
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=web, type=online, notkeyword=mandatory, heading=none]&lt;/span&gt;
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Horaire&lt;span class="nb"&gt;}&lt;/span&gt;
+
+Le cours se donne du lundi au vendredi, de 8h à 9h. Les laboratoires auront
+lieu le jeudi après-midi de 13h à 17h.
+
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;em.bib&lt;/tt&gt; :&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007,
+    edition = &lt;span class="nb"&gt;{&lt;/span&gt;8&lt;span class="nb"&gt;}&lt;/span&gt;,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="nb"&gt;}&lt;/span&gt;,
+    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Wiley&lt;span class="nb"&gt;}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="nb"&gt;}&lt;/span&gt;,
+    year = &lt;span class="nb"&gt;{&lt;/span&gt;2007&lt;span class="nb"&gt;}&lt;/span&gt;,
+  keywords = &lt;span class="nb"&gt;{&lt;/span&gt;mandatory&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
+    volume = &lt;span class="nb"&gt;{{&lt;/span&gt;II&lt;span class="nb"&gt;}}&lt;/span&gt;,
+    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="nb"&gt;}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="nb"&gt;}&lt;/span&gt;,
+    year = &lt;span class="nb"&gt;{&lt;/span&gt;1965&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;carson2008,
+  title = &lt;span class="nb"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
+  author = &lt;span class="nb"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="nb"&gt;}&lt;/span&gt;,
+  url = &lt;span class="nb"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="nb"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="nb"&gt;}&lt;/span&gt;,
+  organization = &lt;span class="nb"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="nb"&gt;}&lt;/span&gt;,
+  urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;lewin2002,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;8.02 Electricity and Magnetism&lt;span class="nb"&gt;}&lt;/span&gt;,
+    url = &lt;span class="nb"&gt;{&lt;/span&gt;http://ocw.mit.edu/courses/physics/8-02-electricity-and-magnetism-spring-2002/&lt;span class="nb"&gt;}&lt;/span&gt;,
+    urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
+    organization = &lt;span class="nb"&gt;{{&lt;/span&gt;MIT OpenCourseWare&lt;span class="nb"&gt;}}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Lewin, Walter&lt;span class="nb"&gt;}&lt;/span&gt;,
+&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Le résultat est le suivant :&lt;/p&gt;
+&lt;img alt="static/images/biblatex-pdc.png" src="static/images/biblatex-pdc.png" /&gt;
+&lt;/div&gt;
+</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.github.com/bessel-functions-in-scipy.html" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2012-12-03:bessel-functions-in-scipy.html</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;
 \(J_l\)&lt;/span&gt;
  where &lt;span class="math"&gt;
 \(l\)&lt;/span&gt;

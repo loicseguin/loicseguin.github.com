@@ -72,15 +72,18 @@ pre {
   width: 100%;
 }
 
-.highlight {
+.highlight, .code {
   background: #f6f6f6;
   -moz-border-radius: .25em;
   -webkit-border-radius: .25em;
   border-radius: .25em;
   color: #586e75;
   display: inline-block;
-  padding: 0 .25em;
-  white-space: no-wrap;
+  padding: 0.5em;
+  white-space: pre;
+  word-wrap: normal;
+  font-size: 0.7em;
+  overflow: scroll;
 }
 
 .math .mi, .math .mo, .math.mn {
@@ -287,28 +290,6 @@ and (min-device-width: 481px) {
   }
 }
 
-@media screen and (min-width: 55em) {
-  body {
-    color: #666;
-    font-size: 1.5em;
-  }
-
-  #banner a {
-    color: #666;
-  }
-
-  .codehilite {
-    padding: .5em 1em;
-    margin: 0 -1em 0 -1em;
-  }
-
-  table caption,
-  figure figcaption,
-  #menu,
-  footer {
-    font-size: .7em;
-  }
-}
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
