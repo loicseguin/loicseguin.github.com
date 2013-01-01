@@ -31,7 +31,7 @@ or equal to the supplied value.
 
 It is useful to wrap this function into something friendlier:
 
-.. code-block:: python
+.. code:: python
 
     def j3o2(x):
         """Compute the spherical Bessel function J_{3/2}."""

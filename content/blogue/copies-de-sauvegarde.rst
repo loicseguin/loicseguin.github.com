@@ -26,7 +26,7 @@ dossiers et quelques fichiers de configuration (les dotfiles) que je
 veux copier. Le script ressemble à ceci.
 Mis à jour le 12 mars 2009:
 
-.. code-block:: bash
+.. code:: bash
 
     #!/bin/sh
     # This script makes a backup of important files in

@@ -86,14 +86,15 @@ contains a value for all spherical Bessel functions with <span class="math">
  smaller than
 or equal to the supplied value.</p>
 <p>It is useful to wrap this function into something friendlier:</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">j3o2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">j3o2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compute the spherical Bessel function J_{3/2}.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">sph_jn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">j5o2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compute the spherical Bessel function J_{5/2}.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">sph_jn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
+</pre>
 <p>To obtain the zeros of the spherical Bessel function, one has to call a root
 finding procedure. For instance, <tt class="docutils literal">scipy.optimize.newton</tt> does the job quite
 well.</p>
@@ -109,24 +110,12 @@ about how to work with the implementation in Scipy.</p>
         </address><!-- /#about -->
 
                     <div class="social">
-                <a href="mailto:loicseguin@gmail.com" rel="alternate">
-                    <img src="./theme/images/email.png" alt="Courriel" />
-                </a>
-                <a href="http://twitter.com/lseguinc/" rel="alternate">
-                    <img src="./theme/images/twitter.png" alt="twitter" />
-                </a>
-                <a href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">
-                    <img src="./theme/images/atom.png" alt="Flux Atom" />
-                </a>
-                <a href="http://www.flickr.com/photos/loicseguin" rel="alternate">
-                    <img src="./theme/images/flickr.png" alt="Flickr" />
-                </a>
-                <a href="http://github.com/loicseguin/" rel="alternate">
-                    <img src="./theme/images/github.png" alt="Github" />
-                </a>
-                <a href="http://bitbucket.org/loicseguin/" rel="alternate">
-                    <img src="./theme/images/bitbucket.png" alt="Bitbucket" />
-                </a>
+                <a id='email' href="mailto:loicseguin@gmail.com" rel="alternate"></a>
+                <a id='twitter' href="http://twitter.com/lseguinc/" rel="alternate"></a>
+                <a id='atom' href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a>
+                <a id='flickr' href="http://www.flickr.com/photos/loicseguin" rel="alternate"></a>
+                <a id='github' href="http://github.com/loicseguin/" rel="alternate"></a>
+                <a id='bitbucket' href="http://bitbucket.org/loicseguin/" rel="alternate"></a>
             </div><!-- /.social -->
             </footer><!-- /#contentinfo -->
 </div>

@@ -117,8 +117,8 @@ Et voici le résultat :
 .. image:: static/images/biblatex-simple.png
 
 
-Personalisation : inclusion de références dans un plan de cours
----------------------------------------------------------------
+Personnalisation : inclusion de références dans un plan de cours
+----------------------------------------------------------------
 
 Lorsque je rédige des plans de cours, les références bibliographiques doivent
 constituer une section à part entière (avec numérotation du titre).  De plus,

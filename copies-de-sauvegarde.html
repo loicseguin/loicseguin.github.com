@@ -63,45 +63,46 @@ relié à deux disques durs externes : Hercule et Astro. Il y a plusieurs
 dossiers et quelques fichiers de configuration (les dotfiles) que je
 veux copier. Le script ressemble à ceci.
 Mis à jour le 12 mars 2009:</p>
-<div class="highlight"><pre><span class="c">#!/bin/sh</span>
-<span class="c"># This script makes a backup of important files in</span>
-<span class="c"># my home directory to two external hard drives,</span>
-<span class="c"># Hercule and Astro, using rsync.</span>
-<span class="nv">OPTS</span><span class="o">=</span><span class="s2">&quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&quot;</span>
-<span class="nv">FOLDERS</span><span class="o">=</span><span class="s2">&quot;Desktop Documents Music Movies Programmes Sites \</span>
-<span class="s2">         Applescripts Pictures Jeux Library/Colorsync \</span>
-<span class="s2">         Library/Thunderbird .rsync&quot;</span>
+<pre class="code bash literal-block">
+<span class="c">#!/bin/sh
+# This script makes a backup of important files in
+# my home directory to two external hard drives,
+# Hercule and Astro, using rsync.
+</span><span class="nv">OPTS</span><span class="o">=</span><span class="s2">&quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&quot;</span>
+<span class="nv">FOLDERS</span><span class="o">=</span><span class="s2">&quot;Desktop Documents Music Movies Programmes Sites \
+         Applescripts Pictures Jeux Library/Colorsync \
+         Library/Thunderbird .rsync&quot;</span>
 <span class="nv">FOLDER1</span><span class="o">=</span><span class="s2">&quot;Library/Application Support&quot;</span>
 <span class="nv">BACKUPDIR</span><span class="o">=</span><span class="s2">&quot;Macbook backup&quot;</span>
 <span class="nv">DOTFILES</span><span class="o">=</span><span class="s2">&quot;$BACKUPDIR/dotfiles&quot;</span>
 <span class="nv">FILES</span><span class="o">=</span><span class="s2">&quot;.emacs .vimrc .profile&quot;</span>
 <span class="nv">VOLUMES</span><span class="o">=</span><span class="s2">&quot;/Volumes/Astro /Volumes/Hercule&quot;</span>
 
-<span class="k">for </span>v in <span class="nv">$VOLUMES</span>; <span class="k">do</span>
-<span class="k">  if</span> <span class="o">[</span> -d <span class="s2">&quot;$v&quot;</span> <span class="o">]</span>; <span class="k">then</span>
-<span class="k">    if</span> <span class="o">[</span> ! -d <span class="s2">&quot;$v/$BACKUPDIR/Library&quot;</span> <span class="o">]</span>; <span class="k">then</span>
-<span class="k">      </span>mkdir -p <span class="s2">&quot;$v/$BACKUPDIR/Library&quot;</span>
+<span class="k">for </span>v in <span class="nv">$VOLUMES</span>; <span class="k">do
+  if</span> <span class="o">[</span> -d <span class="s2">&quot;$v&quot;</span> <span class="o">]</span>; <span class="k">then
+    if</span> <span class="o">[</span> ! -d <span class="s2">&quot;$v/$BACKUPDIR/Library&quot;</span> <span class="o">]</span>; <span class="k">then
+      </span>mkdir -p <span class="s2">&quot;$v/$BACKUPDIR/Library&quot;</span>
       <span class="nb">echo</span> <span class="s2">&quot;created directory&quot;</span> <span class="s2">&quot;$v/$BACKUPDIR/Library&quot;</span>
-    <span class="k">fi</span>
+    <span class="k">fi
 
-<span class="k">    for </span>d in <span class="nv">$FOLDERS</span> <span class="s2">&quot;$FOLDER1&quot;</span>; <span class="k">do</span>
-<span class="k">      </span>rsync <span class="nv">$OPTS</span> <span class="s2">&quot;$HOME/$d/&quot;</span> <span class="s2">&quot;$v/$BACKUPDIR/$d/&quot;</span>
-    <span class="k">done</span>
+    for </span>d in <span class="nv">$FOLDERS</span> <span class="s2">&quot;$FOLDER1&quot;</span>; <span class="k">do
+      </span>rsync <span class="nv">$OPTS</span> <span class="s2">&quot;$HOME/$d/&quot;</span> <span class="s2">&quot;$v/$BACKUPDIR/$d/&quot;</span>
+    <span class="k">done
 
-<span class="k">    if</span> <span class="o">[</span> ! -d <span class="s2">&quot;$v/$DOTFILES&quot;</span> <span class="o">]</span>; <span class="k">then</span>
-<span class="k">      </span>mkdir <span class="s2">&quot;$v/$DOTFILES&quot;</span>
+    if</span> <span class="o">[</span> ! -d <span class="s2">&quot;$v/$DOTFILES&quot;</span> <span class="o">]</span>; <span class="k">then
+      </span>mkdir <span class="s2">&quot;$v/$DOTFILES&quot;</span>
       <span class="nb">echo</span> <span class="s2">&quot;created directory&quot;</span> <span class="s2">&quot;$v/$DOTFILES&quot;</span>
-    <span class="k">fi</span>
+    <span class="k">fi
 
-<span class="k">    for </span>f in <span class="nv">$FILES</span>; <span class="k">do</span>
-<span class="k">      </span>rsync <span class="nv">$OPTS</span> <span class="s2">&quot;$HOME/$f&quot;</span> <span class="s2">&quot;$v/$DOTFILES/$f&quot;</span>
-    <span class="k">done</span>
+    for </span>f in <span class="nv">$FILES</span>; <span class="k">do
+      </span>rsync <span class="nv">$OPTS</span> <span class="s2">&quot;$HOME/$f&quot;</span> <span class="s2">&quot;$v/$DOTFILES/$f&quot;</span>
+    <span class="k">done
 
-<span class="k">  else</span>
-<span class="k">     </span><span class="nb">echo</span> <span class="s2">&quot;ERROR:&quot;</span> <span class="s2">&quot;$v&quot;</span> <span class="s2">&quot;not mounted&quot;</span>
-  <span class="k">fi</span>
-<span class="k">done</span>
-</pre></div>
+  else
+     </span><span class="nb">echo</span> <span class="s2">&quot;ERROR:&quot;</span> <span class="s2">&quot;$v&quot;</span> <span class="s2">&quot;not mounted&quot;</span>
+  <span class="k">fi
+done</span>
+</pre>
 <p>Et le fichier .rsync/excludes contient</p>
 <pre class="literal-block">
 .DS\_Store
@@ -158,24 +159,12 @@ roulant sous OpenBSD avec <a class="reference external" href="http://www.cis.upe
         </address><!-- /#about -->
 
                     <div class="social">
-                <a href="mailto:loicseguin@gmail.com" rel="alternate">
-                    <img src="./theme/images/email.png" alt="Courriel" />
-                </a>
-                <a href="http://twitter.com/lseguinc/" rel="alternate">
-                    <img src="./theme/images/twitter.png" alt="twitter" />
-                </a>
-                <a href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">
-                    <img src="./theme/images/atom.png" alt="Flux Atom" />
-                </a>
-                <a href="http://www.flickr.com/photos/loicseguin" rel="alternate">
-                    <img src="./theme/images/flickr.png" alt="Flickr" />
-                </a>
-                <a href="http://github.com/loicseguin/" rel="alternate">
-                    <img src="./theme/images/github.png" alt="Github" />
-                </a>
-                <a href="http://bitbucket.org/loicseguin/" rel="alternate">
-                    <img src="./theme/images/bitbucket.png" alt="Bitbucket" />
-                </a>
+                <a id='email' href="mailto:loicseguin@gmail.com" rel="alternate"></a>
+                <a id='twitter' href="http://twitter.com/lseguinc/" rel="alternate"></a>
+                <a id='atom' href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a>
+                <a id='flickr' href="http://www.flickr.com/photos/loicseguin" rel="alternate"></a>
+                <a id='github' href="http://github.com/loicseguin/" rel="alternate"></a>
+                <a id='bitbucket' href="http://bitbucket.org/loicseguin/" rel="alternate"></a>
             </div><!-- /.social -->
             </footer><!-- /#contentinfo -->
 </div>

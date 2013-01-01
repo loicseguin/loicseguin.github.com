@@ -5,8 +5,12 @@ body {
 
 h1 {
   font-size: 2.5em;
-  text-align: left;
   margin-top: 0.5em;
+  text-align: left;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
 }
 
 #greeting {
@@ -34,6 +38,7 @@ a:hover {
 
 img {
   max-width: 100%;
+  border: 3px solid #eee;
 }
 
 table,
@@ -61,29 +66,27 @@ table caption {
 }
 
 blockquote {
-  font-style: italic;
+  font-size: 0.85em;
   margin-left: 1em;
   margin-right: 0;
 }
 
 .highlight,
 pre {
-  font-family: "PT Mono", monospace;
-  width: 100%;
-}
-
-.highlight, .code {
-  background: #f6f6f6;
+  background-color: #f6f6f6;
   -moz-border-radius: .25em;
   -webkit-border-radius: .25em;
   border-radius: .25em;
+  border: 1px solid #eee;
   color: #586e75;
   display: inline-block;
+  font-family: "PT Mono", monospace;
+  margin: 0 -.5em 0 -.5em;
+  overflow: scroll;
   padding: 0.5em;
   white-space: pre;
+  width: 100%;
   word-wrap: normal;
-  font-size: 0.7em;
-  overflow: scroll;
 }
 
 .math .mi, .math .mo, .math.mn {
@@ -103,7 +106,7 @@ figure figcaption,
 footer,
 pre,
 .highlight {
-  font-size: .9em;
+  font-size: .85em;
 }
 
 #contentinfo, .paginator {
@@ -152,8 +155,8 @@ pre,
 }
 
 #post-list .published, #post-list .entry-content {
-  font-size: 0.8em;
-  line-height: 1.75em;
+  font-size: 0.85em;
+  line-height: 1.65em;
 }
 
 #post-list .pubtype {
@@ -180,11 +183,6 @@ article ul {
   padding-left: 0;
 }
 
-.codehilite {
-  padding: .25em .5em;
-  margin: 0 -.5em 0 -.5em;
-}
-
 .more,
 .post-info {
   font-style: italic;
@@ -200,6 +198,26 @@ footer {
   margin-top: 3em;
   text-align: center;
 }
+
+footer #about {
+  margin-bottom: 0.3em;
+}
+
+footer#contentinfo a {
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  opacity: 0.8;
+}
+
+footer#contentinfo a:hover { opacity: 1; }
+footer a#email { background-image: url('../images/email.png'); }
+footer a#twitter { background-image: url('../images/twitter.png'); }
+footer a#atom { background-image: url('../images/atom.png'); }
+footer a#flickr { background-image: url('../images/flickr.png'); }
+footer a#github { background-image: url('../images/github.png'); }
+footer a#bitbucket { background-image: url('../images/bitbucket.png'); }
 
 @media screen and (min-width: 35em)
 and (min-device-width: 481px) {
@@ -245,13 +263,6 @@ and (min-device-width: 481px) {
   body {
     font-size: 1.3em;
   }
-}
-
-
-@media screen and (min-width: 50em) {
-  body {
-    font-size: 1.4em;
-  }
 
   table {
     display: table;
@@ -289,7 +300,6 @@ and (min-device-width: 481px) {
     font-size: .75em;
   }
 }
-
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 

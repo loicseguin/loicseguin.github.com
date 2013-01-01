@@ -32,13 +32,13 @@ La situation actuelle
 Voici la liste des services de Google que j'utilise actuellement, classés en
 ordre décroissant de leur fréquence d'utilisation.
 
-    - Gmail (courriels)
-    - Google Search (recherche)
-    - Google Reader (fils RSS)
-    - Google Scholar (recherche dans la littérature scientifique)
-    - Google Maps (cartes géographiques et itinéraires)
-    - Google Bookmarks (signets)
-    - Blogger (blogue)
+- Gmail (courriels)
+- Google Search (recherche)
+- Google Reader (fils RSS)
+- Google Scholar (recherche dans la littérature scientifique)
+- Google Maps (cartes géographiques et itinéraires)
+- Google Bookmarks (signets)
+- Blogger (blogue)
 
 Il est clair que Google détient une quantité importante d'information sur moi.
 Comment cette compagnie gère-t-elle mes informations? Puis-je trouver des
@@ -53,13 +53,13 @@ appareils qu'ils utilisent. Voici une liste non exhaustive des informations que
 Google peut collecter (pour une liste complète, voir les `Règles de
 confidentialité`_):
 
-    - modèle de l'appareil utilisé
-    - version du système d'exploitation
-    - numéro de téléphone
-    - requêtes de recherche
-    - adresse IP
-    - données de plantage de l'appareil utilisé
-    - données de localisation GPS
+- modèle de l'appareil utilisé
+- version du système d'exploitation
+- numéro de téléphone
+- requêtes de recherche
+- adresse IP
+- données de plantage de l'appareil utilisé
+- données de localisation GPS
 
 Google peut ensuite corréler ces données avec celles que les utilisateurs lui
 fournissent de plein gré, c'est à dire tout ce qu'ils mettent sur Gmail,

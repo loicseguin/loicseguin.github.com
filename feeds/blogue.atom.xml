@@ -95,8 +95,8 @@ En utilisant le Système international d'unités, la loi de Coulomb s'écrit
 &lt;p&gt;Et voici le résultat :&lt;/p&gt;
 &lt;img alt="static/images/biblatex-simple.png" src="static/images/biblatex-simple.png" /&gt;
 &lt;/div&gt;
-&lt;div class="section" id="personalisation-inclusion-de-references-dans-un-plan-de-cours"&gt;
-&lt;h2&gt;Personalisation : inclusion de références dans un plan de cours&lt;/h2&gt;
+&lt;div class="section" id="personnalisation-inclusion-de-references-dans-un-plan-de-cours"&gt;
+&lt;h2&gt;Personnalisation : inclusion de références dans un plan de cours&lt;/h2&gt;
 &lt;p&gt;Lorsque je rédige des plans de cours, les références bibliographiques doivent
 constituer une section à part entière (avec numérotation du titre).  De plus,
 les références ne sont en général pas citées dans le texte, elles ne sont là
@@ -272,14 +272,15 @@ contains a value for all spherical Bessel functions with &lt;span class="math"&g
  smaller than
 or equal to the supplied value.&lt;/p&gt;
 &lt;p&gt;It is useful to wrap this function into something friendlier:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j3o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j3o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{3/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sph_jn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j5o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{5/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sph_jn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;
 &lt;p&gt;To obtain the zeros of the spherical Bessel function, one has to call a root
 finding procedure. For instance, &lt;tt class="docutils literal"&gt;scipy.optimize.newton&lt;/tt&gt; does the job quite
 well.&lt;/p&gt;
@@ -301,7 +302,6 @@ web, mais l'heure est maintenant venue pour moi de faire mes devoirs.&lt;/p&gt;
 &lt;h2&gt;La situation actuelle&lt;/h2&gt;
 &lt;p&gt;Voici la liste des services de Google que j'utilise actuellement, classés en
 ordre décroissant de leur fréquence d'utilisation.&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Gmail (courriels)&lt;/li&gt;
 &lt;li&gt;Google Search (recherche)&lt;/li&gt;
@@ -311,7 +311,6 @@ ordre décroissant de leur fréquence d'utilisation.&lt;/p&gt;
 &lt;li&gt;Google Bookmarks (signets)&lt;/li&gt;
 &lt;li&gt;Blogger (blogue)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;Il est clair que Google détient une quantité importante d'information sur moi.
 Comment cette compagnie gère-t-elle mes informations? Puis-je trouver des
 alternatives aux services qu'elle offre?&lt;/p&gt;
@@ -322,7 +321,6 @@ alternatives aux services qu'elle offre?&lt;/p&gt;
 appareils qu'ils utilisent. Voici une liste non exhaustive des informations que
 Google peut collecter (pour une liste complète, voir les &lt;a class="reference external" href="http://www.google.com/intl/fr/policies/privacy/"&gt;Règles de
 confidentialité&lt;/a&gt;):&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;modèle de l'appareil utilisé&lt;/li&gt;
 &lt;li&gt;version du système d'exploitation&lt;/li&gt;
@@ -332,7 +330,6 @@ confidentialité&lt;/a&gt;):&lt;/p&gt;
 &lt;li&gt;données de plantage de l'appareil utilisé&lt;/li&gt;
 &lt;li&gt;données de localisation GPS&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;Google peut ensuite corréler ces données avec celles que les utilisateurs lui
 fournissent de plein gré, c'est à dire tout ce qu'ils mettent sur Gmail,
 Google+, Picasa, Blogger, etc.  Le but de cette collecte est, selon Google, de
@@ -791,45 +788,46 @@ relié à deux disques durs externes : Hercule et Astro. Il y a plusieurs
 dossiers et quelques fichiers de configuration (les dotfiles) que je
 veux copier. Le script ressemble à ceci.
 Mis à jour le 12 mars 2009:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
-&lt;span class="c"&gt;# This script makes a backup of important files in&lt;/span&gt;
-&lt;span class="c"&gt;# my home directory to two external hard drives,&lt;/span&gt;
-&lt;span class="c"&gt;# Hercule and Astro, using rsync.&lt;/span&gt;
-&lt;span class="nv"&gt;OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;FOLDERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Desktop Documents Music Movies Programmes Sites \&lt;/span&gt;
-&lt;span class="s2"&gt;         Applescripts Pictures Jeux Library/Colorsync \&lt;/span&gt;
-&lt;span class="s2"&gt;         Library/Thunderbird .rsync&amp;quot;&lt;/span&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="c"&gt;#!/bin/sh
+# This script makes a backup of important files in
+# my home directory to two external hard drives,
+# Hercule and Astro, using rsync.
+&lt;/span&gt;&lt;span class="nv"&gt;OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;FOLDERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Desktop Documents Music Movies Programmes Sites \
+         Applescripts Pictures Jeux Library/Colorsync \
+         Library/Thunderbird .rsync&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;FOLDER1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Library/Application Support&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;BACKUPDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Macbook backup&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;DOTFILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$BACKUPDIR/dotfiles&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;FILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;.emacs .vimrc .profile&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;VOLUMES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/Volumes/Astro /Volumes/Hercule&amp;quot;&lt;/span&gt;
 
-&lt;span class="k"&gt;for &lt;/span&gt;v in &lt;span class="nv"&gt;$VOLUMES&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
-&lt;span class="k"&gt;  if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-&lt;span class="k"&gt;    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-&lt;span class="k"&gt;      &lt;/span&gt;mkdir -p &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;for &lt;/span&gt;v in &lt;span class="nv"&gt;$VOLUMES&lt;/span&gt;; &lt;span class="k"&gt;do
+  if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+      &lt;/span&gt;mkdir -p &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
       &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;fi&lt;/span&gt;
+    &lt;span class="k"&gt;fi
 
-&lt;span class="k"&gt;    for &lt;/span&gt;d in &lt;span class="nv"&gt;$FOLDERS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FOLDER1&amp;quot;&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
-&lt;span class="k"&gt;      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$d/&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/$d/&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;done&lt;/span&gt;
+    for &lt;/span&gt;d in &lt;span class="nv"&gt;$FOLDERS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FOLDER1&amp;quot;&lt;/span&gt;; &lt;span class="k"&gt;do
+      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$d/&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/$d/&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;done
 
-&lt;span class="k"&gt;    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-&lt;span class="k"&gt;      &lt;/span&gt;mkdir &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
+    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+      &lt;/span&gt;mkdir &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
       &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;fi&lt;/span&gt;
+    &lt;span class="k"&gt;fi
 
-&lt;span class="k"&gt;    for &lt;/span&gt;f in &lt;span class="nv"&gt;$FILES&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
-&lt;span class="k"&gt;      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$f&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES/$f&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;done&lt;/span&gt;
+    for &lt;/span&gt;f in &lt;span class="nv"&gt;$FILES&lt;/span&gt;; &lt;span class="k"&gt;do
+      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$f&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES/$f&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;done
 
-&lt;span class="k"&gt;  else&lt;/span&gt;
-&lt;span class="k"&gt;     &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ERROR:&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;not mounted&amp;quot;&lt;/span&gt;
-  &lt;span class="k"&gt;fi&lt;/span&gt;
-&lt;span class="k"&gt;done&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+  else
+     &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ERROR:&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;not mounted&amp;quot;&lt;/span&gt;
+  &lt;span class="k"&gt;fi
+done&lt;/span&gt;
+&lt;/pre&gt;
 &lt;p&gt;Et le fichier .rsync/excludes contient&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 .DS\_Store
