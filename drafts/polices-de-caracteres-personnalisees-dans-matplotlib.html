@@ -3,8 +3,8 @@
 <head>
         <title>Polices de caractères personnalisées dans matplotlib</title>
     <meta charset="utf-8" />
-        <link href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
-                        <link href="http://loicseguin.github.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
+        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
+                        <link href="http://loicseguin.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
                     <link rel=stylesheet href=../theme/css/trac.css type="text/css" />
     <link href=../theme/css/normalize.css rel="stylesheet" type="text/css" />
     <link href=../theme/css/klaatu.css rel="stylesheet" type="text/css" />
@@ -45,19 +45,19 @@
       </footer><!-- /.post-info -->
   <div class="entry-content">
     <pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.font_manager</span> <span class="kn">as</span> <span class="nn">fm</span>
+<span class="keyword namespace">import</span> <span class="name namespace">matplotlib.pyplot</span> <span class="keyword namespace">as</span> <span class="name namespace">plt</span>
+<span class="keyword namespace">import</span> <span class="name namespace">matplotlib.font_manager</span> <span class="keyword namespace">as</span> <span class="name namespace">fm</span>
 
-<span class="n">font</span> <span class="o">=</span> <span class="n">fm</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span>
-        <span class="n">family</span> <span class="o">=</span> <span class="s">'Complex'</span><span class="p">,</span> <span class="n">fname</span> <span class="o">=</span> <span class="s">'/Users/loic/Library/Fonts/complex.ttf'</span><span class="p">)</span>
+<span class="name">font</span> <span class="operator">=</span> <span class="name">fm</span><span class="operator">.</span><span class="name">FontProperties</span><span class="punctuation">(</span>
+        <span class="name">family</span> <span class="operator">=</span> <span class="literal string">'Complex'</span><span class="punctuation">,</span> <span class="name">fname</span> <span class="operator">=</span> <span class="literal string">'/Users/loic/Library/Fonts/complex.ttf'</span><span class="punctuation">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_yticks</span><span class="p">(),</span> <span class="n">fontproperties</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticks</span><span class="p">(),</span> <span class="n">fontproperties</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Everything is crazy!!!'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">fontproperties</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'stuff.pdf'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="name">plt</span><span class="operator">.</span><span class="name">plot</span><span class="punctuation">(</span><span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">))</span>
+<span class="name">ax</span> <span class="operator">=</span> <span class="name">plt</span><span class="operator">.</span><span class="name">gca</span><span class="punctuation">()</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">set_yticklabels</span><span class="punctuation">(</span><span class="name">ax</span><span class="operator">.</span><span class="name">get_yticks</span><span class="punctuation">(),</span> <span class="name">fontproperties</span><span class="operator">=</span><span class="name">font</span><span class="punctuation">)</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">set_xticklabels</span><span class="punctuation">(</span><span class="name">ax</span><span class="operator">.</span><span class="name">get_xticks</span><span class="punctuation">(),</span> <span class="name">fontproperties</span><span class="operator">=</span><span class="name">font</span><span class="punctuation">)</span>
+<span class="name">plt</span><span class="operator">.</span><span class="name">title</span><span class="punctuation">(</span><span class="literal string">'Everything is crazy!!!'</span><span class="punctuation">,</span> <span class="name">size</span><span class="operator">=</span><span class="literal number integer">32</span><span class="punctuation">,</span> <span class="name">fontproperties</span><span class="operator">=</span><span class="name">font</span><span class="punctuation">)</span>
+<span class="name">plt</span><span class="operator">.</span><span class="name">savefig</span><span class="punctuation">(</span><span class="literal string">'stuff.pdf'</span><span class="punctuation">)</span>
+<span class="name">plt</span><span class="operator">.</span><span class="name">show</span><span class="punctuation">()</span>
 </pre>
 
   </div><!-- /.entry-content -->
@@ -71,7 +71,7 @@
                     <div class="social">
                 <a id='email' href="mailto:loicseguin@gmail.com" rel="alternate"></a>
                 <a id='twitter' href="http://twitter.com/lseguinc/" rel="alternate"></a>
-                <a id='atom' href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a>
+                <a id='atom' href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a>
                 <a id='flickr' href="http://www.flickr.com/photos/loicseguin" rel="alternate"></a>
                 <a id='github' href="http://github.com/loicseguin/" rel="alternate"></a>
                 <a id='bitbucket' href="http://bitbucket.org/loicseguin/" rel="alternate"></a>

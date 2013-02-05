@@ -3,8 +3,8 @@
 <head>
         <title>Conservation de la masse en hydrodynamique</title>
     <meta charset="utf-8" />
-        <link href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
-                        <link href="http://loicseguin.github.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
+        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
+                        <link href="http://loicseguin.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
                     <link rel=stylesheet href=../theme/css/trac.css type="text/css" />
     <link href=../theme/css/normalize.css rel="stylesheet" type="text/css" />
     <link href=../theme/css/klaatu.css rel="stylesheet" type="text/css" />
@@ -66,66 +66,49 @@ chose</em> (une masse de fluide) soit entré ou sorti.</p>
 <em>eulérienne</em>, le fluide se déplace par rapport à un système de référence fixe.
 Les quantité physiques qui caractérisent le fluide sont des champs scalaires
 (comme pour la température) ou vectoriels (pour la vitesse) qui dépendent du
-temps et de la position dans l'espace <span class="math">
-\(\mathbf{r}\)</span>
+temps et de la position dans l'espace <span class="math">\(\mathbf{r}\)</span>
 .  La seconde approche,
 <em>lagrangienne</em>, consiste à suivre le mouvement d'un élément de fluide. Cet
-élément est caractérisé par une position <span class="math">
-\(\mathbf{\xi}\)</span>
+élément est caractérisé par une position <span class="math">\(\mathbf{\xi}\)</span>
  qui dépend du
 temps. Dans ce billet, l'approche eulérienne est utilisée.</p>
 <p>La densité de masse du fluide varie dans le temps et dans l'espace :
-<span class="math">
-\(\rho = \rho(t, \mathbf{r})\)</span>
-.  Le champ de vitesse <span class="math">
-\(\mathbf{u}(t,
+<span class="math">\(\rho = \rho(t, \mathbf{r})\)</span>
+.  Le champ de vitesse <span class="math">\(\mathbf{u}(t,
 \mathbf{r})\)</span>
  décrit la vitesse de l'élément de fluide qui se trouve à la
-position <span class="math">
-\(\mathbf{r}\)</span>
- au temps <span class="math">
-\(t\)</span>
+position <span class="math">\(\mathbf{r}\)</span>
+ au temps <span class="math">\(t\)</span>
 .</p>
-<p>L'espace est divisé en deux par une surface fermée <span class="math">
-\(S\)</span>
+<p>L'espace est divisé en deux par une surface fermée <span class="math">\(S\)</span>
  qui englobe une
-région de volume <span class="math">
-\(V\)</span>
+région de volume <span class="math">\(V\)</span>
 .  À chaque élément de surface correspond un vecteur
-<span class="math">
-\(d\mathbf{a}\)</span>
+<span class="math">\(d\mathbf{a}\)</span>
  dont la longueur est l'aire de l'élément de surface, et la
 direction est perpendiculaire au plan tangent à la surface et vers l'extérieur.
 La figure ci-contre illustre ces différentes quantités.</p>
 <div class="figure">
 <img alt="Élément de surface" src="static/images/surf-elem.png" />
-<p class="caption">Un élément de surface <span class="math">
-\(d\mathbf{a}\)</span>
- d'une surface fermée <span class="math">
-\(S\)</span>
+<p class="caption">Un élément de surface <span class="math">\(d\mathbf{a}\)</span>
+ d'une surface fermée <span class="math">\(S\)</span>
 
-qui définit un volume <span class="math">
-\(V\)</span>
+qui définit un volume <span class="math">\(V\)</span>
 .</p>
 </div>
-<p>Si <span class="math">
-\(\mathbf{\hat{n}}\)</span>
+<p>Si <span class="math">\(\mathbf{\hat{n}}\)</span>
  est un vecteur unitaire perpendiculaire à la
-surface et pointant vers l'extérieur, alors  <span class="math">
-\(d\mathbf{a} =
+surface et pointant vers l'extérieur, alors  <span class="math">\(d\mathbf{a} =
 \mathbf{\hat{n}} da\)</span>
- où <span class="math">
-\(da\)</span>
+ où <span class="math">\(da\)</span>
  est l'aire de l'élément de surface.
 Cette représentation sera utile pour la suite.</p>
 </div>
 <div class="section" id="changement-de-masse-dans-le-volume">
 <h2>Changement de masse dans le volume</h2>
-<p>La masse totale dans le volume <span class="math">
-\(V\)</span>
+<p>La masse totale dans le volume <span class="math">\(V\)</span>
  est une quantité qui peut varier dans
-le temps : <span class="math">
-\(M = M(t)\)</span>
+le temps : <span class="math">\(M = M(t)\)</span>
 .  Cette masse est obtenue en intégrant la densité
 sur la totalité du volume :</p>
 <div class="math">
@@ -143,8 +126,7 @@ temps, il suffit de dériver cette équation par rapport au temps :</p>
 <p>En supposant que toutes les fonctions et les surfaces sont lisses et que
 l'intégrale converge (ce qui est toujours le cas, sauf peut-être dans les trous
 noirs), il est possible d'inverser l'ordre de la dérivée et de l'intégrale du
-côté droit de l'égalité.  La masse de fluide contenue dans le volume <span class="math">
-\(V\)</span>
+côté droit de l'égalité.  La masse de fluide contenue dans le volume <span class="math">\(V\)</span>
 
 varie donc selon</p>
 <div class="math">
@@ -153,8 +135,7 @@ varie donc selon</p>
 \end{equation*}
 </div>
 <p>La dérivée temporelle a été remplacée par une dérivée partielle parce que la
-densité, par opposition à la masse totale de fluide dans le volume <span class="math">
-\(V\)</span>
+densité, par opposition à la masse totale de fluide dans le volume <span class="math">\(V\)</span>
 ,
 dépend non seulement du temps, mais aussi de la position.</p>
 </div>
@@ -170,44 +151,33 @@ magnitude de la vitesse n'a aucune incidence sur le flux de matière qui
 traverse la surface.  L'angle entre le vecteur vitesse et la surface joue donc
 un rôle important : seule la composante de cette vitesse qui est
 perpendiculaire à l'élément de surface contribue au flux.  Par conséquent, la
-composante de la vitesse à considérer est <span class="math">
-\(\mathbf{u} \cdot
+composante de la vitesse à considérer est <span class="math">\(\mathbf{u} \cdot
 \mathbf{\hat{n}}\)</span>
 .</p>
 <div class="figure">
 <img alt="Vitesse perpendiculaire" src="static/images/vitesse-perpendiculaire.png" />
 </div>
 <p>Au premier ordre, la vitesse du fluide est constante partout sur un élément de
-surface infinitésimal <span class="math">
-\(\mathbf{\hat{n}}da\)</span>
+surface infinitésimal <span class="math">\(\mathbf{\hat{n}}da\)</span>
 . De plus, à une distance
 suffisamment petite de l'élément, la vitesse est approximativement constante.
-Dans un temps très court <span class="math">
-\(\Delta t\)</span>
+Dans un temps très court <span class="math">\(\Delta t\)</span>
 , seul le fluide situé dans un
-cylindre de section <span class="math">
-\(da\)</span>
- et de longueur <span class="math">
-\(\Delta t \mathbf{u} \cdot
+cylindre de section <span class="math">\(da\)</span>
+ et de longueur <span class="math">\(\Delta t \mathbf{u} \cdot
 \mathbf{\hat{n}}\)</span>
- traverse l'élément de surface. Puisque <span class="math">
-\(da\)</span>
+ traverse l'élément de surface. Puisque <span class="math">\(da\)</span>
  et
-<span class="math">
-\(\Delta t\)</span>
+<span class="math">\(\Delta t\)</span>
  sont infinitésimaux, la densité de masse est constante dans ce
-cylindre et la masse qui y est contenue est donc <span class="math">
-\(\rho \Delta t
+cylindre et la masse qui y est contenue est donc <span class="math">\(\rho \Delta t
 \mathbf{u} \cdot \mathbf{\hat{n}} da\)</span>
 . Cette masse traverse la surface en un
-temps <span class="math">
-\(\Delta t\)</span>
-, d'où un flux de masse de <span class="math">
-\(\rho \mathbf{u} \cdot
+temps <span class="math">\(\Delta t\)</span>
+, d'où un flux de masse de <span class="math">\(\rho \mathbf{u} \cdot
 \mathbf{\hat{n}} da\)</span>
  qui peut s'écrire de façon légèrement plus compacte comme
-<span class="math">
-\(\rho \mathbf{u} \cdot d\mathbf{a}\)</span>
+<span class="math">\(\rho \mathbf{u} \cdot d\mathbf{a}\)</span>
 .</p>
 <div class="figure">
 <img alt="Cylindre de matière" src="static/images/cylindre-de-matiere.png" />
@@ -220,8 +190,7 @@ travers chaque élément de surface :</p>
 \end{equation*}
 </div>
 <p>Il est important de noter que l'orientation de l'élément de surface
-<span class="math">
-\(d\mathbf{a}\)</span>
+<span class="math">\(d\mathbf{a}\)</span>
  vers l'extérieur fait en sorte que le flux ci-dessus est
 interprété comme sortant de la surface s'il est positif et entrant dans la
 surface s'il est négatif.</p>
@@ -230,8 +199,7 @@ surface s'il est négatif.</p>
 <h2>Équation de continuité</h2>
 <p>Par conservation de la masse, toute matière qui traverse la surface doit
 contribuer à faire augmenter ou diminuer la masse contenue dans le volume
-<span class="math">
-\(V\)</span>
+<span class="math">\(V\)</span>
 . Il faut donc que le changement de masse dans le temps soit
 strictement égal au flux de masse à travers la surface. Avec la convention de
 signe adoptée plus haut, un flux sortant est positif et correspond à une
@@ -249,8 +217,7 @@ utilisant le théorème de Gauss (ou de la divergence).</p>
 \int_V \frac{\partial}{\partial t} \rho(t, \mathbf{r}) dV = -\int_V \mathbf{\nabla} (\rho \mathbf{u}) dV.
 \end{equation*}
 </div>
-<p>Puisque cette égalité doit être valide pour n'importe quel volume <span class="math">
-\(V\)</span>
+<p>Puisque cette égalité doit être valide pour n'importe quel volume <span class="math">\(V\)</span>
 , il
 faut que les intégrands soient identiquement égaux, i.e. :</p>
 <div class="math">
@@ -271,7 +238,7 @@ faut que les intégrands soient identiquement égaux, i.e. :</p>
                     <div class="social">
                 <a id='email' href="mailto:loicseguin@gmail.com" rel="alternate"></a>
                 <a id='twitter' href="http://twitter.com/lseguinc/" rel="alternate"></a>
-                <a id='atom' href="http://loicseguin.github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a>
+                <a id='atom' href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a>
                 <a id='flickr' href="http://www.flickr.com/photos/loicseguin" rel="alternate"></a>
                 <a id='github' href="http://github.com/loicseguin/" rel="alternate"></a>
                 <a id='bitbucket' href="http://bitbucket.org/loicseguin/" rel="alternate"></a>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.github.com/" rel="alternate"></link><link href="http://loicseguin.github.com/feeds/all-fr.atom.xml" rel="self"></link><id>http://loicseguin.github.com/</id><updated>2012-12-21T00:00:00-05:00</updated><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.github.com/utilisation-de-biblatex.html" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.github.com,2012-12-21:utilisation-de-biblatex.html</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/all-fr.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2012-12-21T00:00:00-05:00</updated><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.com/utilisation-de-biblatex.html" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2012-12-21:utilisation-de-biblatex.html</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
 LaTeX. Combiné avec &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt;, il remplace complètement le système &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;.
 Il est aussi possible de conserver &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; comme engin d'arrière-plan, mais
 &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt; présente de nombreux avantages :&lt;/p&gt;
@@ -28,69 +28,69 @@ le fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt;.&lt;/p&gt;
 &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt;. Voici un exemple simple d'utilisation de &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;simple.tex&lt;/tt&gt; :&lt;/p&gt;
 &lt;pre class="code latex literal-block"&gt;
-&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[canadien]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;babel&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[utf8]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;inputenc&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[T1]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;fontenc&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\documentclass&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;article&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\usepackage&lt;/span&gt;&lt;span class="name attribute"&gt;[canadien]&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;babel&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\usepackage&lt;/span&gt;&lt;span class="name attribute"&gt;[utf8]&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;inputenc&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\usepackage&lt;/span&gt;&lt;span class="name attribute"&gt;[T1]&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;fontenc&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\usepackage&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;biblatex&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="c"&gt;% Emplacement du fichier de références.
-&lt;/span&gt;&lt;span class="k"&gt;\addbibresource&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;em.bib&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="comment"&gt;% Emplacement du fichier de références.
+&lt;/span&gt;&lt;span class="keyword"&gt;\addbibresource&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;em.bib&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;\title&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="k"&gt;\texttt&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;span class="k"&gt;\author&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\title&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="keyword"&gt;\texttt&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;biblatex&lt;span class="name builtin"&gt;}}&lt;/span&gt;
+&lt;span class="keyword"&gt;\author&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\begin&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;document&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;\maketitle&lt;/span&gt;
+&lt;span class="keyword"&gt;\maketitle&lt;/span&gt;
 
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Introduction&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\section&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Introduction&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
 L'électricité et le magnétisme sont deux facettes d'une seule et même force
-qu'on appelle la force électromagnétique &lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965&lt;span class="nb"&gt;}&lt;/span&gt;. Pour découvrir une
+qu'on appelle la force électromagnétique &lt;span class="keyword"&gt;\cite&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;feynman1965&lt;span class="name builtin"&gt;}&lt;/span&gt;. Pour découvrir une
 partie de l'histoire passionnante de la découverte et de l'unification des
 lois de l'électricité et du magnétisme, on peut écouter le cours de Cathryn
-Carson &lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;carson2008&lt;span class="nb"&gt;}&lt;/span&gt;.
+Carson &lt;span class="keyword"&gt;\cite&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;carson2008&lt;span class="name builtin"&gt;}&lt;/span&gt;.
 
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;La loi de Coulomb&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\section&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;La loi de Coulomb&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
 La loi de Coulomb décrit la force d'interaction entre deux particules chargées.
 En utilisant le Système international d'unités, la loi de Coulomb s'écrit
-&lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007&lt;span class="nb"&gt;}&lt;/span&gt; :
+&lt;span class="keyword"&gt;\cite&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;halliday2007&lt;span class="name builtin"&gt;}&lt;/span&gt; :
 
-&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
-  &lt;span class="k"&gt;\vec&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;F&lt;span class="nb"&gt;}&lt;/span&gt; = &lt;span class="k"&gt;\frac&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;1&lt;span class="nb"&gt;}{&lt;/span&gt;4 &lt;span class="k"&gt;\pi&lt;/span&gt; &lt;span class="k"&gt;\epsilon&lt;/span&gt;&lt;span class="nb"&gt;_&lt;/span&gt;0&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\frac&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Q&lt;span class="nb"&gt;_&lt;/span&gt;1 Q&lt;span class="nb"&gt;_&lt;/span&gt;2&lt;span class="nb"&gt;}{&lt;/span&gt;r&lt;span class="nb"&gt;^&lt;/span&gt;2&lt;span class="nb"&gt;}&lt;/span&gt;.
-&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\begin&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;equation&lt;span class="name builtin"&gt;}&lt;/span&gt;
+  &lt;span class="keyword"&gt;\vec&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;F&lt;span class="name builtin"&gt;}&lt;/span&gt; = &lt;span class="keyword"&gt;\frac&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;1&lt;span class="name builtin"&gt;}{&lt;/span&gt;4 &lt;span class="keyword"&gt;\pi&lt;/span&gt; &lt;span class="keyword"&gt;\epsilon&lt;/span&gt;&lt;span class="name builtin"&gt;_&lt;/span&gt;0&lt;span class="name builtin"&gt;}&lt;/span&gt; &lt;span class="keyword"&gt;\frac&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Q&lt;span class="name builtin"&gt;_&lt;/span&gt;1 Q&lt;span class="name builtin"&gt;_&lt;/span&gt;2&lt;span class="name builtin"&gt;}{&lt;/span&gt;r&lt;span class="name builtin"&gt;^&lt;/span&gt;2&lt;span class="name builtin"&gt;}&lt;/span&gt;.
+&lt;span class="keyword"&gt;\end&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;equation&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;
+&lt;span class="keyword"&gt;\printbibliography&lt;/span&gt;
 
-&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\end&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;document&lt;span class="name builtin"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;em.bib&lt;/tt&gt; :&lt;/p&gt;
 &lt;pre class="code latex literal-block"&gt;
-&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
-    volume = &lt;span class="nb"&gt;{{&lt;/span&gt;II&lt;span class="nb"&gt;}}&lt;/span&gt;,
-    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="nb"&gt;}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="nb"&gt;}&lt;/span&gt;,
-    year = &lt;span class="nb"&gt;{&lt;/span&gt;1965&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="nb"&gt;}&lt;/span&gt;
+&amp;#64;book&lt;span class="name builtin"&gt;{&lt;/span&gt;feynman1965,
+    title = &lt;span class="name builtin"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    volume = &lt;span class="name builtin"&gt;{{&lt;/span&gt;II&lt;span class="name builtin"&gt;}}&lt;/span&gt;,
+    publisher = &lt;span class="name builtin"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    author = &lt;span class="name builtin"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    year = &lt;span class="name builtin"&gt;{&lt;/span&gt;1965&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007,
-    edition = &lt;span class="nb"&gt;{&lt;/span&gt;8&lt;span class="nb"&gt;}&lt;/span&gt;,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="nb"&gt;}&lt;/span&gt;,
-    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Wiley&lt;span class="nb"&gt;}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="nb"&gt;}&lt;/span&gt;,
-    year = &lt;span class="nb"&gt;{&lt;/span&gt;2007&lt;span class="nb"&gt;}&lt;/span&gt;,
-&lt;span class="nb"&gt;}&lt;/span&gt;
+&amp;#64;book&lt;span class="name builtin"&gt;{&lt;/span&gt;halliday2007,
+    edition = &lt;span class="name builtin"&gt;{&lt;/span&gt;8&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    title = &lt;span class="name builtin"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    publisher = &lt;span class="name builtin"&gt;{&lt;/span&gt;Wiley&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    author = &lt;span class="name builtin"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    year = &lt;span class="name builtin"&gt;{&lt;/span&gt;2007&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;carson2008,
-  title = &lt;span class="nb"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
-  author = &lt;span class="nb"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="nb"&gt;}&lt;/span&gt;,
-  url = &lt;span class="nb"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="nb"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="nb"&gt;}&lt;/span&gt;,
-  organization = &lt;span class="nb"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="nb"&gt;}&lt;/span&gt;,
-  urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
-&lt;span class="nb"&gt;}&lt;/span&gt;
+&amp;#64;online&lt;span class="name builtin"&gt;{&lt;/span&gt;carson2008,
+  title = &lt;span class="name builtin"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  author = &lt;span class="name builtin"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  url = &lt;span class="name builtin"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="name builtin"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  organization = &lt;span class="name builtin"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  urldate = &lt;span class="name builtin"&gt;{&lt;/span&gt;2012-12-21&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+&lt;span class="name builtin"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Et voici le résultat :&lt;/p&gt;
 &lt;img alt="static/images/biblatex-simple.png" src="static/images/biblatex-simple.png" /&gt;
@@ -149,144 +149,134 @@ fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; si on lui fournit l'op
 &lt;p&gt;Ci-dessous se trouve un exemple complet.&lt;/p&gt;
 &lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;simple.tex&lt;/tt&gt; :&lt;/p&gt;
 &lt;pre class="code latex literal-block"&gt;
-&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[canadien]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;babel&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[utf8]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;inputenc&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[T1]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;fontenc&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[sorting=none]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\documentclass&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;article&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\usepackage&lt;/span&gt;&lt;span class="name attribute"&gt;[canadien]&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;babel&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\usepackage&lt;/span&gt;&lt;span class="name attribute"&gt;[utf8]&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;inputenc&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\usepackage&lt;/span&gt;&lt;span class="name attribute"&gt;[T1]&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;fontenc&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\usepackage&lt;/span&gt;&lt;span class="name attribute"&gt;[sorting=none]&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;biblatex&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="c"&gt;% Emplacement du fichier de références.
-&lt;/span&gt;&lt;span class="k"&gt;\addbibresource&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;em.bib&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="comment"&gt;% Emplacement du fichier de références.
+&lt;/span&gt;&lt;span class="keyword"&gt;\addbibresource&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;em.bib&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="c"&gt;% Notes pour différents types de références.
-&lt;/span&gt;&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;obl&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Obligatoire&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;livres&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Livres&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;web&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Sites internet&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="comment"&gt;% Notes pour différents types de références.
+&lt;/span&gt;&lt;span class="keyword"&gt;\defbibnote&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;obl&lt;span class="name builtin"&gt;}{&lt;/span&gt;&lt;span class="keyword"&gt;\textbf&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Obligatoire&lt;span class="name builtin"&gt;}}&lt;/span&gt;
+&lt;span class="keyword"&gt;\defbibnote&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;livres&lt;span class="name builtin"&gt;}{&lt;/span&gt;&lt;span class="keyword"&gt;\textbf&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Livres&lt;span class="name builtin"&gt;}}&lt;/span&gt;
+&lt;span class="keyword"&gt;\defbibnote&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;web&lt;span class="name builtin"&gt;}{&lt;/span&gt;&lt;span class="keyword"&gt;\textbf&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Sites internet&lt;span class="name builtin"&gt;}}&lt;/span&gt;
 
-&lt;span class="k"&gt;\title&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="k"&gt;\texttt&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;span class="k"&gt;\author&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\title&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="keyword"&gt;\texttt&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;biblatex&lt;span class="name builtin"&gt;}}&lt;/span&gt;
+&lt;span class="keyword"&gt;\author&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\begin&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;document&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;\maketitle&lt;/span&gt;
+&lt;span class="keyword"&gt;\maketitle&lt;/span&gt;
 
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Introduction&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\section&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Introduction&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
 L'électricité et le magnétisme sont deux facettes d'une seule et même force
 qu'on appelle la force électromagnétique.  Ce cours présente les principes de
 base de la théorie de l'électromagnétisme.
 
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Évaluation&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\section&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Évaluation&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
 Les étudiants seront évalués à l'aide d'examens très difficiles.
 
-&lt;span class="k"&gt;\nocite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;*&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=obl, heading=bibnumbered, keyword=mandatory]&lt;/span&gt;
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=livres, type=book, notkeyword=mandatory, heading=none]&lt;/span&gt;
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=web, type=online, notkeyword=mandatory, heading=none]&lt;/span&gt;
+&lt;span class="keyword"&gt;\nocite&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;*&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\printbibliography&lt;/span&gt;&lt;span class="name attribute"&gt;[prenote=obl, heading=bibnumbered, keyword=mandatory]&lt;/span&gt;
+&lt;span class="keyword"&gt;\printbibliography&lt;/span&gt;&lt;span class="name attribute"&gt;[prenote=livres, type=book, notkeyword=mandatory, heading=none]&lt;/span&gt;
+&lt;span class="keyword"&gt;\printbibliography&lt;/span&gt;&lt;span class="name attribute"&gt;[prenote=web, type=online, notkeyword=mandatory, heading=none]&lt;/span&gt;
 
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Horaire&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\section&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;Horaire&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
 Le cours se donne du lundi au vendredi, de 8h à 9h. Les laboratoires auront
 lieu le jeudi après-midi de 13h à 17h.
 
-&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="keyword"&gt;\end&lt;/span&gt;&lt;span class="name builtin"&gt;{&lt;/span&gt;document&lt;span class="name builtin"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;em.bib&lt;/tt&gt; :&lt;/p&gt;
 &lt;pre class="code latex literal-block"&gt;
-&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007,
-    edition = &lt;span class="nb"&gt;{&lt;/span&gt;8&lt;span class="nb"&gt;}&lt;/span&gt;,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="nb"&gt;}&lt;/span&gt;,
-    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Wiley&lt;span class="nb"&gt;}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="nb"&gt;}&lt;/span&gt;,
-    year = &lt;span class="nb"&gt;{&lt;/span&gt;2007&lt;span class="nb"&gt;}&lt;/span&gt;,
-  keywords = &lt;span class="nb"&gt;{&lt;/span&gt;mandatory&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="nb"&gt;}&lt;/span&gt;
+&amp;#64;book&lt;span class="name builtin"&gt;{&lt;/span&gt;halliday2007,
+    edition = &lt;span class="name builtin"&gt;{&lt;/span&gt;8&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    title = &lt;span class="name builtin"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    publisher = &lt;span class="name builtin"&gt;{&lt;/span&gt;Wiley&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    author = &lt;span class="name builtin"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    year = &lt;span class="name builtin"&gt;{&lt;/span&gt;2007&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  keywords = &lt;span class="name builtin"&gt;{&lt;/span&gt;mandatory&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
-    volume = &lt;span class="nb"&gt;{{&lt;/span&gt;II&lt;span class="nb"&gt;}}&lt;/span&gt;,
-    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="nb"&gt;}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="nb"&gt;}&lt;/span&gt;,
-    year = &lt;span class="nb"&gt;{&lt;/span&gt;1965&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="nb"&gt;}&lt;/span&gt;
+&amp;#64;book&lt;span class="name builtin"&gt;{&lt;/span&gt;feynman1965,
+    title = &lt;span class="name builtin"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    volume = &lt;span class="name builtin"&gt;{{&lt;/span&gt;II&lt;span class="name builtin"&gt;}}&lt;/span&gt;,
+    publisher = &lt;span class="name builtin"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    author = &lt;span class="name builtin"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    year = &lt;span class="name builtin"&gt;{&lt;/span&gt;1965&lt;span class="name builtin"&gt;}&lt;/span&gt;
+&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;carson2008,
-  title = &lt;span class="nb"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
-  author = &lt;span class="nb"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="nb"&gt;}&lt;/span&gt;,
-  url = &lt;span class="nb"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="nb"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="nb"&gt;}&lt;/span&gt;,
-  organization = &lt;span class="nb"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="nb"&gt;}&lt;/span&gt;,
-  urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
-&lt;span class="nb"&gt;}&lt;/span&gt;
+&amp;#64;online&lt;span class="name builtin"&gt;{&lt;/span&gt;carson2008,
+  title = &lt;span class="name builtin"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  author = &lt;span class="name builtin"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  url = &lt;span class="name builtin"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="name builtin"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  organization = &lt;span class="name builtin"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+  urldate = &lt;span class="name builtin"&gt;{&lt;/span&gt;2012-12-21&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+&lt;span class="name builtin"&gt;}&lt;/span&gt;
 
-&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;lewin2002,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;8.02 Electricity and Magnetism&lt;span class="nb"&gt;}&lt;/span&gt;,
-    url = &lt;span class="nb"&gt;{&lt;/span&gt;http://ocw.mit.edu/courses/physics/8-02-electricity-and-magnetism-spring-2002/&lt;span class="nb"&gt;}&lt;/span&gt;,
-    urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
-    organization = &lt;span class="nb"&gt;{{&lt;/span&gt;MIT OpenCourseWare&lt;span class="nb"&gt;}}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Lewin, Walter&lt;span class="nb"&gt;}&lt;/span&gt;,
-&lt;span class="nb"&gt;}&lt;/span&gt;
+&amp;#64;online&lt;span class="name builtin"&gt;{&lt;/span&gt;lewin2002,
+    title = &lt;span class="name builtin"&gt;{&lt;/span&gt;8.02 Electricity and Magnetism&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    url = &lt;span class="name builtin"&gt;{&lt;/span&gt;http://ocw.mit.edu/courses/physics/8-02-electricity-and-magnetism-spring-2002/&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    urldate = &lt;span class="name builtin"&gt;{&lt;/span&gt;2012-12-21&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+    organization = &lt;span class="name builtin"&gt;{{&lt;/span&gt;MIT OpenCourseWare&lt;span class="name builtin"&gt;}}&lt;/span&gt;,
+    author = &lt;span class="name builtin"&gt;{&lt;/span&gt;Lewin, Walter&lt;span class="name builtin"&gt;}&lt;/span&gt;,
+&lt;span class="name builtin"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Le résultat est le suivant :&lt;/p&gt;
 &lt;img alt="static/images/biblatex-pdc.png" src="static/images/biblatex-pdc.png" /&gt;
 &lt;/div&gt;
-</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.github.com/bessel-functions-in-scipy.html" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2012-12-03:bessel-functions-in-scipy.html</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;
-\(J_l\)&lt;/span&gt;
- where &lt;span class="math"&gt;
-\(l\)&lt;/span&gt;
+</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/bessel-functions-in-scipy.html" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:bessel-functions-in-scipy.html</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt;
+ where &lt;span class="math"&gt;\(l\)&lt;/span&gt;
  is an integer,
 are found in &lt;tt class="docutils literal"&gt;scipy.special.jn&lt;/tt&gt;. This is a function that takes two arguments:
-the first one is the value of &lt;span class="math"&gt;
-\(l\)&lt;/span&gt;
+the first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
  and the second one is the value of the
-point at which to evaluate the functions. If one is interested in &lt;span class="math"&gt;
-\(J_0\)&lt;/span&gt;
+point at which to evaluate the functions. If one is interested in &lt;span class="math"&gt;\(J_0\)&lt;/span&gt;
 
-or &lt;span class="math"&gt;
-\(J_1\)&lt;/span&gt;
+or &lt;span class="math"&gt;\(J_1\)&lt;/span&gt;
  only, then there are faster implementations of these functions
 as &lt;tt class="docutils literal"&gt;j0&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;j1&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;If the goal is to find the zeros of the Bessel function, then rather than using
 a root finding routine (such as &lt;tt class="docutils literal"&gt;scipy.optimize.newton&lt;/tt&gt;) it is more efficient
 to call &lt;tt class="docutils literal"&gt;scipy.special.jn_zeros&lt;/tt&gt;. This function also takes two arguments, the
-first one is the value of &lt;span class="math"&gt;
-\(l\)&lt;/span&gt;
+first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
  and the second one is the number of zeros
 to display (it starts at the first positive zero).&lt;/p&gt;
 &lt;p&gt;For Bessel functions of half-integer order, so called &lt;em&gt;spherical Bessel
 function&lt;/em&gt;, the situation is a little bit more complicated. The appropriate
-function is &lt;tt class="docutils literal"&gt;scipy.special.sph_jn&lt;/tt&gt;. To compute &lt;span class="math"&gt;
-\(J_{l + 1/2}\)&lt;/span&gt;
+function is &lt;tt class="docutils literal"&gt;scipy.special.sph_jn&lt;/tt&gt;. To compute &lt;span class="math"&gt;\(J_{l + 1/2}\)&lt;/span&gt;
 , the first
-argument to &lt;tt class="docutils literal"&gt;sph_jn&lt;/tt&gt; is the value of &lt;span class="math"&gt;
-\(l\)&lt;/span&gt;
+argument to &lt;tt class="docutils literal"&gt;sph_jn&lt;/tt&gt; is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
 . The second argument is the
 value of the point at which to evaluate the function. Where it gets complicated
 is in the return value of the function. &lt;tt class="docutils literal"&gt;sph_jn&lt;/tt&gt; returns a pair of arrays.
 The first array contains the values of the function, and the second array
-contains the values of the derivative.  Each array has length &lt;span class="math"&gt;
-\(l + 1\)&lt;/span&gt;
+contains the values of the derivative.  Each array has length &lt;span class="math"&gt;\(l + 1\)&lt;/span&gt;
  and
-contains a value for all spherical Bessel functions with &lt;span class="math"&gt;
-\(l\)&lt;/span&gt;
+contains a value for all spherical Bessel functions with &lt;span class="math"&gt;\(l\)&lt;/span&gt;
  smaller than
 or equal to the supplied value.&lt;/p&gt;
 &lt;p&gt;It is useful to wrap this function into something friendlier:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j3o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{3/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sph_jn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="name function"&gt;j3o2&lt;/span&gt;&lt;span class="punctuation"&gt;(&lt;/span&gt;&lt;span class="name"&gt;x&lt;/span&gt;&lt;span class="punctuation"&gt;):&lt;/span&gt;
+    &lt;span class="literal string doc"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{3/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="keyword"&gt;return&lt;/span&gt; &lt;span class="name"&gt;sph_jn&lt;/span&gt;&lt;span class="punctuation"&gt;(&lt;/span&gt;&lt;span class="literal number integer"&gt;1&lt;/span&gt;&lt;span class="punctuation"&gt;,&lt;/span&gt; &lt;span class="name"&gt;x&lt;/span&gt;&lt;span class="punctuation"&gt;)[&lt;/span&gt;&lt;span class="literal number integer"&gt;0&lt;/span&gt;&lt;span class="punctuation"&gt;][&lt;/span&gt;&lt;span class="literal number integer"&gt;1&lt;/span&gt;&lt;span class="punctuation"&gt;]&lt;/span&gt;
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j5o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{5/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sph_jn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="keyword"&gt;def&lt;/span&gt; &lt;span class="name function"&gt;j5o2&lt;/span&gt;&lt;span class="punctuation"&gt;(&lt;/span&gt;&lt;span class="name"&gt;x&lt;/span&gt;&lt;span class="punctuation"&gt;):&lt;/span&gt;
+    &lt;span class="literal string doc"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{5/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="keyword"&gt;return&lt;/span&gt; &lt;span class="name"&gt;sph_jn&lt;/span&gt;&lt;span class="punctuation"&gt;(&lt;/span&gt;&lt;span class="literal number integer"&gt;2&lt;/span&gt;&lt;span class="punctuation"&gt;,&lt;/span&gt; &lt;span class="name"&gt;x&lt;/span&gt;&lt;span class="punctuation"&gt;)[&lt;/span&gt;&lt;span class="literal number integer"&gt;0&lt;/span&gt;&lt;span class="punctuation"&gt;][&lt;/span&gt;&lt;span class="literal number integer"&gt;2&lt;/span&gt;&lt;span class="punctuation"&gt;]&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;To obtain the zeros of the spherical Bessel function, one has to call a root
 finding procedure. For instance, &lt;tt class="docutils literal"&gt;scipy.optimize.newton&lt;/tt&gt; does the job quite
 well.&lt;/p&gt;
 &lt;p&gt;John D. Cook has a &lt;a class="reference external" href="http://www.johndcook.com/Bessel_functions.html"&gt;great page&lt;/a&gt; about Bessel functions and &lt;a class="reference external" href="http://www.johndcook.com/Bessel_python.html"&gt;another one&lt;/a&gt;
 about how to work with the implementation in Scipy.&lt;/p&gt;
-</summary><category term="programmation"></category><category term="maths"></category></entry><entry><title>L'Univers est en expansion, les atomes le sont-ils ?</title><link href="http://loicseguin.github.com/lunivers-est-en-expansion-les-atomes-le-sont-ils.html" rel="alternate"></link><updated>2012-11-05T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2012-11-05:lunivers-est-en-expansion-les-atomes-le-sont-ils.html</id><summary type="html">&lt;p&gt;Imaginons l'Univers en expansion comme un pain aux raisins qui gonfle au four.
+</summary><category term="programmation"></category><category term="maths"></category></entry><entry><title>L'Univers est en expansion, les atomes le sont-ils ?</title><link href="http://loicseguin.com/lunivers-est-en-expansion-les-atomes-le-sont-ils.html" rel="alternate"></link><updated>2012-11-05T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-11-05:lunivers-est-en-expansion-les-atomes-le-sont-ils.html</id><summary type="html">&lt;p&gt;Imaginons l'Univers en expansion comme un pain aux raisins qui gonfle au four.
 Si un atome se comporte comme deux raisins (un qui représente le noyau, l'autre
 les électrons), alors son volume augmentera avec celui de l'Univers. Par
 contre, si un atome se comporte comme un seul raisin (après tout, un atome,
@@ -303,7 +293,7 @@ doesn’t expand? American Journal of Physics, 80(5), p.376.
 Available at: &lt;a class="reference external" href="http://link.aip.org/link/AJPIAS/v80/i5/p376/s1&amp;amp;Agg=doi"&gt;http://link.aip.org/link/AJPIAS/v80/i5/p376/s1&amp;amp;Agg=doi&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</summary><category term="physique"></category></entry><entry><title>Moins de Google</title><link href="http://loicseguin.github.com/moins-de-google.html" rel="alternate"></link><updated>2012-05-13T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2012-05-13:moins-de-google.html</id><summary type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
+</summary><category term="physique"></category></entry><entry><title>Moins de Google</title><link href="http://loicseguin.com/moins-de-google.html" rel="alternate"></link><updated>2012-05-13T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-05-13:moins-de-google.html</id><summary type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
 d'utilisation et les politiques de confidentialité des divers services en ligne
 que j'utilise. Cet exercice est motivé par deux raisons : premièrement, je veux
 déterminer quels services utilisent mes données de façon responsable et
@@ -478,7 +468,7 @@ MathSciNet, Web of Science, etc.).&lt;/p&gt;
 me concerne, j'utilise surtout &lt;a class="reference external" href="http://arxiv.org/"&gt;arXiv.org&lt;/a&gt; et &lt;a class="reference external" href="http://www.adsabs.harvard.edu/"&gt;SOA/NASA ADS&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</summary><category term="informatique"></category></entry><entry><title>How quantum mechanics explains the size of stars</title><link href="http://loicseguin.github.com/how-quantum-mechanics-explains-the-size-of-stars.html" rel="alternate"></link><updated>2012-01-18T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2012-01-18:how-quantum-mechanics-explains-the-size-of-stars.html</id><summary type="html">&lt;p&gt;Une étoile naine blanche est un cadavre stellaire : c'est ce qui reste après
+</summary><category term="informatique"></category></entry><entry><title>How quantum mechanics explains the size of stars</title><link href="http://loicseguin.com/how-quantum-mechanics-explains-the-size-of-stars.html" rel="alternate"></link><updated>2012-01-18T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-01-18:how-quantum-mechanics-explains-the-size-of-stars.html</id><summary type="html">&lt;p&gt;Une étoile naine blanche est un cadavre stellaire : c'est ce qui reste après
 qu'une étoile de la séquence principale (par exemple, notre Soleil) ait épuisé
 tout son carburant nucléaire. Dans ce type d'étoile, c'est un phénomène
 purement quantique, la dégénérescence électronique, qui crée une force qui
@@ -488,7 +478,7 @@ sur elle-même.&lt;/p&gt;
 2012, montre les éléments de base de la mécanique quantique et de la physique
 statistique nécessaire au développement d'une théorie qui prédit (avec une
 justesse étonnante) la taille des étoiles naines blanches.&lt;/p&gt;
-</summary><category term="physique"></category></entry><entry><title>Dictionnaire français pour Vim</title><link href="http://loicseguin.github.com/dictionnaire-francais-pour-vim.html" rel="alternate"></link><updated>2011-12-22T23:45:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-12-22:dictionnaire-francais-pour-vim.html</id><summary type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
+</summary><category term="physique"></category></entry><entry><title>Dictionnaire français pour Vim</title><link href="http://loicseguin.com/dictionnaire-francais-pour-vim.html" rel="alternate"></link><updated>2011-12-22T23:45:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-12-22:dictionnaire-francais-pour-vim.html</id><summary type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;puis on passe à l'erreur suivante avec ]s.&lt;/p&gt;
@@ -505,7 +495,7 @@ Information trouvée dans les archives de comp.editors sur usenet
 &lt;div class="figure align-center"&gt;
 &lt;img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5497419488076993914?l=mathfou.blogspot.com" /&gt;
 &lt;/div&gt;
-</summary><category term="informatique"></category></entry><entry><title>Maximum Edge-Disjoint Paths in Planar Graphs with Congestion 2</title><link href="http://loicseguin.github.com/maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html" rel="alternate"></link><updated>2011-10-15T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-10-15:maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html</id><summary type="html">&lt;p&gt;We study the maximum edge-disjoint path problem (MEDP) in planar graphs. We are
+</summary><category term="informatique"></category></entry><entry><title>Maximum Edge-Disjoint Paths in Planar Graphs with Congestion 2</title><link href="http://loicseguin.com/maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html" rel="alternate"></link><updated>2011-10-15T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-10-15:maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html</id><summary type="html">&lt;p&gt;We study the maximum edge-disjoint path problem (MEDP) in planar graphs. We are
 given a set of terminal pairs and wish to find a maximum routable subset of
 demands. That is, a subset of demands that can be connected by edge-disjoint
 paths. It is well-known that there is an integrality gap of order square root
@@ -524,7 +514,7 @@ that selects an Okamura-Seymour instance. Each of their phases incurs a factor
 In order to achieve an overall congestion 2, however, the two phases must share
 capacity more carefully. For the Phase 1 problem, we extract a problem called
 rooted clustering that appears to be an interesting problem class in itself.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Présentation : MEDP in Planar Graphs with Congestion 2</title><link href="http://loicseguin.github.com/presentation-medp-in-planar-graphs-with-congestion-2.html" rel="alternate"></link><updated>2011-10-15T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-10-15:presentation-medp-in-planar-graphs-with-congestion-2.html</id><summary type="html">&lt;p&gt;Présentation donnée dans le cadre du 52nd IEEE Symposium on Foundations of
+</summary><category term="maths"></category></entry><entry><title>Présentation : MEDP in Planar Graphs with Congestion 2</title><link href="http://loicseguin.com/presentation-medp-in-planar-graphs-with-congestion-2.html" rel="alternate"></link><updated>2011-10-15T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-10-15:presentation-medp-in-planar-graphs-with-congestion-2.html</id><summary type="html">&lt;p&gt;Présentation donnée dans le cadre du 52nd IEEE Symposium on Foundations of
 Computer Science à Palm Springs en 2011. La présentation décrit sommairement un
 article publié dans les proceedings de la conférence. Le résultat présenté est
 un algorithme d'approximation pour trouver une solution au problème de
@@ -532,8 +522,8 @@ maximisation des chemins disjoints dans un graphe plan. L'algorithme trouve, en
 un temps polynomial, une solution au problème qui est de l'ordre de la solution
 optimale en permettant une congestion de 2 sur les arêtes du graphe. Travail
 conjoint avec Bruce Shepherd.&lt;/p&gt;
-&lt;p&gt;L'article peut être téléchargé à partir de &lt;a class="reference external" href="http://loicseguin.github.com/maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html"&gt;cette page&lt;/a&gt;.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Notes de cours pour Mathématiques avancées</title><link href="http://loicseguin.github.com/notes-de-cours-pour-mathematiques-avancees.html" rel="alternate"></link><updated>2011-04-19T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2011-04-19:notes-de-cours-pour-mathematiques-avancees.html</id><summary type="html">&lt;p&gt;Le cours de Mathématiques avancées, donné au Collège militaire royal de
+&lt;p&gt;L'article peut être téléchargé à partir de &lt;a class="reference external" href="http://loicseguin.com/maximum-edge-disjoint-paths-in-planar-graphs-with-congestion-2.html"&gt;cette page&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Notes de cours pour Mathématiques avancées</title><link href="http://loicseguin.com/notes-de-cours-pour-mathematiques-avancees.html" rel="alternate"></link><updated>2011-04-19T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-04-19:notes-de-cours-pour-mathematiques-avancees.html</id><summary type="html">&lt;p&gt;Le cours de Mathématiques avancées, donné au Collège militaire royal de
 Saint-Jean, est le quatrième cours de mathématiques offert aux étudiants en
 sciences de la nature. Parmi les sujets présentés, on retrouve l'études des
 séries de puissance, la résolution d'équations différentielles et le calcul à
@@ -541,7 +531,7 @@ plusieurs variables.&lt;/p&gt;
 &lt;p&gt;Ces notes de cours contiennent toute la matière vue au cours d'un trimestre. La
 théorie est accompagnée de nombreux exemples provenant de la physique, de la
 biologie et des statistiques.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>64 bits Python installation on MacOS X Snow Leopard</title><link href="http://loicseguin.github.com/64-bits-python-installation-on-macos-x-snow-leopard.html" rel="alternate"></link><updated>2010-06-13T03:42:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2010-06-13:64-bits-python-installation-on-macos-x-snow-leopard.html</id><summary type="html">&lt;p&gt;&lt;em&gt;N.B. : Pour une raison mystérieuse, j'ai rédigé cet article en anglais.
+</summary><category term="maths"></category></entry><entry><title>64 bits Python installation on MacOS X Snow Leopard</title><link href="http://loicseguin.com/64-bits-python-installation-on-macos-x-snow-leopard.html" rel="alternate"></link><updated>2010-06-13T03:42:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-13:64-bits-python-installation-on-macos-x-snow-leopard.html</id><summary type="html">&lt;p&gt;&lt;em&gt;N.B. : Pour une raison mystérieuse, j'ai rédigé cet article en anglais.
 Désolé pour ceux qui ne lisent pas l'anglais. J'essaierai de ne pas
 recommencer.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Here is how I installed Python 2.6.5 on my machine. Here is what I get
@@ -757,7 +747,7 @@ $ pip install sympy
 &lt;p&gt;&lt;a class="reference external" href="http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html"&gt;http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/"&gt;http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="informatique"></category><category term="python"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.github.com/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada.html" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2010-06-08:consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada.html</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
+</summary><category term="informatique"></category><category term="python"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada.html" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada.html</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
 données relatives à la consommation d'énergie et à l'émission de GES par
 les foyers canadiens pour la période de 1990 à 2007. Ces données sont
 rendues publiques par l'&lt;a class="reference external" href="http://oee.nrcan.gc.ca/"&gt;Office de l'efficacité énergétique&lt;/a&gt; de
@@ -778,7 +768,7 @@ navrant qu'on parle d'augmentation alors que les objectifs du protocole
 de Kyoto étaient de réduire les émissions de GES par rapport à celles de
 1990. Néanmoins, si l'on en croit ces données, la situation n'est pas si
 terrible au Canada.&lt;/p&gt;
-</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Spinify 2.2</title><link href="http://loicseguin.github.com/spinify-22.html" rel="alternate"></link><updated>2010-03-02T03:30:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2010-03-02:spinify-22.html</id><summary type="html">&lt;p&gt;Je viens tout juste de lancer la nouvelle version du logiciel de
+</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Spinify 2.2</title><link href="http://loicseguin.com/spinify-22.html" rel="alternate"></link><updated>2010-03-02T03:30:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-03-02:spinify-22.html</id><summary type="html">&lt;p&gt;Je viens tout juste de lancer la nouvelle version du logiciel de
 simulation numérique du modèle d'Ising Spinify. La version 2.2 comporte
 plusieurs corrections de bogues de même qu'une réécriture complète de
 l'interface en ligne de commande (CLI). Vous pouvez télécharger le
@@ -801,13 +791,13 @@ Si vous utilisez ce logiciel et que vous avez des commentaires ou que
 vous avez des questions à son propos, n'hésitez pas à me contacter par
 l'entremise de la liste d'envoi &lt;a class="reference external" href="mailto:spinify-discuss&amp;#64;googlegroups.com"&gt;spinify-discuss&amp;#64;googlegroups.com&lt;/a&gt;.
 &lt;img alt="image0" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5493108597676032679?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Spinify 2.1</title><link href="http://loicseguin.github.com/spinify-21.html" rel="alternate"></link><updated>2010-02-16T02:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2010-02-16:spinify-21.html</id><summary type="html">&lt;p&gt;La première version vraiment fonctionnelle du logiciel de simulation du
+</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Spinify 2.1</title><link href="http://loicseguin.com/spinify-21.html" rel="alternate"></link><updated>2010-02-16T02:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-02-16:spinify-21.html</id><summary type="html">&lt;p&gt;La première version vraiment fonctionnelle du logiciel de simulation du
 modèle d'Ising en deux dimensions sur la sphère est maintenant
 disponible ici : &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/downloads/spinify-2.1.tar.bz2"&gt;spinify-2.1.tar.bz2&lt;/a&gt;. Le programme s'installe sur Mac
 OS X et Ubuntu 9.10 (et probablement tous les autres Unix et Linux).
 Pour plus de détails concernant l'installation, voir le &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/wiki/Home"&gt;wiki&lt;/a&gt;.
 &lt;img alt="image0" src="https://blogger.googleusercontent.com/tracker/697344570467959391-966365997574776046?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Spinify</title><link href="http://loicseguin.github.com/spinify.html" rel="alternate"></link><updated>2010-01-25T16:41:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2010-01-25:spinify.html</id><summary type="html">&lt;p&gt;Il y a quelques années, j'ai travaillé sur un projet qui consistait à
+</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Spinify</title><link href="http://loicseguin.com/spinify.html" rel="alternate"></link><updated>2010-01-25T16:41:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-01-25:spinify.html</id><summary type="html">&lt;p&gt;Il y a quelques années, j'ai travaillé sur un projet qui consistait à
 développer un programme de simulation du modèle d'Ising sur des surfaces
 ayant un tenseur métrique non trivial. Ce projet n'a jamais été
 complété. Or, je m'y suis récemment remis, et j'avance à bon train.
@@ -823,10 +813,10 @@ longtemps, j'écrirai un message détaillant ce qu'est le modèle d'Ising,
 ce que j'entends par métrique non triviale et comment le programme
 Spinify essaie de gérer tout cela.
 &lt;img alt="image0" src="https://blogger.googleusercontent.com/tracker/697344570467959391-7860750195897093739?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Ellipses</title><link href="http://loicseguin.github.com/ellipses.html" rel="alternate"></link><updated>2009-11-18T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-11-18:ellipses.html</id><summary type="html">&lt;p&gt;Présentation donnée dans le cadre du Club mathématiques au Collège militaire
+</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Ellipses</title><link href="http://loicseguin.com/ellipses.html" rel="alternate"></link><updated>2009-11-18T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-11-18:ellipses.html</id><summary type="html">&lt;p&gt;Présentation donnée dans le cadre du Club mathématiques au Collège militaire
 royal de Saint-Jean en 2009. Définitions de base concernant les ellipses et
 quelques résultats amusants lorsqu'on change la métrique.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Confluent, bifurcated and unsplittable flows</title><link href="http://loicseguin.github.com/confluent-bifurcated-and-unsplittable-flows.html" rel="alternate"></link><updated>2009-07-24T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-07-24:confluent-bifurcated-and-unsplittable-flows.html</id><summary type="html">&lt;p&gt;Cette thèse étudie les problèmes de flots sur réseau. Plus particulièrement,
+</summary><category term="maths"></category></entry><entry><title>Confluent, bifurcated and unsplittable flows</title><link href="http://loicseguin.com/confluent-bifurcated-and-unsplittable-flows.html" rel="alternate"></link><updated>2009-07-24T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-07-24:confluent-bifurcated-and-unsplittable-flows.html</id><summary type="html">&lt;p&gt;Cette thèse étudie les problèmes de flots sur réseau. Plus particulièrement,
 nous portons notre attention sur les flots à puits unique et à multiples
 sources avec des contraintes de degré. Dans le problème de flot indivisible, la
 demande envoyée par une source doit suivre un chemin unique. Dans le problème
@@ -840,26 +830,26 @@ le problème de maximisation des chemins disjoints (en terme d'arêtes). Cet
 algorithme satisfait une fraction constante de la demande totale avec une
 congestion d'arête d'au plus 3. Il s'agit donc d'une amélioration de la
 meilleure borne précédente de 4.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.github.com/protegeons-nous-avec-les-maths.html" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-04-07:protegeons-nous-avec-les-maths.html</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/protegeons-nous-avec-les-maths.html" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:protegeons-nous-avec-les-maths.html</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
 &lt;blockquote&gt;
 It is insufficient to protect ourselves with laws; we need to
 protect ourselves with mathematics.&lt;/blockquote&gt;
 &lt;p&gt;Tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9780471117094"&gt;Applied Cryptography&lt;/a&gt; par Bruce Schneier.&lt;/p&gt;
-</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Power laws in the Internet topology</title><link href="http://loicseguin.github.com/power-laws-in-the-internet-topology.html" rel="alternate"></link><updated>2009-03-25T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-03-25:power-laws-in-the-internet-topology.html</id><summary type="html">&lt;p&gt;La croissance de l'Internet s'est fait de manière désorganisée, sans contrôle
+</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Power laws in the Internet topology</title><link href="http://loicseguin.com/power-laws-in-the-internet-topology.html" rel="alternate"></link><updated>2009-03-25T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-25:power-laws-in-the-internet-topology.html</id><summary type="html">&lt;p&gt;La croissance de l'Internet s'est fait de manière désorganisée, sans contrôle
 central. Pourtant, plusieurs études ont montré une régularité dans sa topologie
 : la plupart des métriques obéissent à une loi de puissance. Dans cet article,
 nous présentons un survol des différentes études empiriques et des modèles qui
 expliquent une telle croissance. (En anglais seulement.)&lt;/p&gt;
 &lt;p&gt;Travail de session pour le cours Algorithmic Game Theory donné à McGill par
 Adrian Vetta.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Optimization course notes</title><link href="http://loicseguin.github.com/optimization-course-notes.html" rel="alternate"></link><updated>2009-03-24T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-03-24:optimization-course-notes.html</id><summary type="html">&lt;p&gt;Quelques notes pour les cours MATH 560 du 24 et 26 mars 2009 donné à McGill.
+</summary><category term="maths"></category></entry><entry><title>Optimization course notes</title><link href="http://loicseguin.com/optimization-course-notes.html" rel="alternate"></link><updated>2009-03-24T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-24:optimization-course-notes.html</id><summary type="html">&lt;p&gt;Quelques notes pour les cours MATH 560 du 24 et 26 mars 2009 donné à McGill.
 Les notes portent sur les algorithmes d'optimisation nonlinéaire avec
 contraintes.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>HiR Information Report</title><link href="http://loicseguin.github.com/hir-information-report.html" rel="alternate"></link><updated>2009-03-15T15:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-03-15:hir-information-report.html</id><summary type="html">&lt;p&gt;Pour les amateurs de Unix qui veulent en apprendre un peu plus sur la
+</summary><category term="maths"></category></entry><entry><title>HiR Information Report</title><link href="http://loicseguin.com/hir-information-report.html" rel="alternate"></link><updated>2009-03-15T15:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-15:hir-information-report.html</id><summary type="html">&lt;p&gt;Pour les amateurs de Unix qui veulent en apprendre un peu plus sur la
 sécurité de leur système ou sur l'administration de systèmes, le blogue
 &lt;a class="reference external" href="http://www.h-i-r.net/"&gt;HiR Information Report&lt;/a&gt; est une source d'informations vraiment
 intéressante.&lt;/p&gt;
-</summary><category term="informatique"></category><category term="ineptie"></category></entry><entry><title>Copies de sauvegarde</title><link href="http://loicseguin.github.com/copies-de-sauvegarde.html" rel="alternate"></link><updated>2009-03-11T03:06:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-03-11:copies-de-sauvegarde.html</id><summary type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
+</summary><category term="informatique"></category><category term="ineptie"></category></entry><entry><title>Copies de sauvegarde</title><link href="http://loicseguin.com/copies-de-sauvegarde.html" rel="alternate"></link><updated>2009-03-11T03:06:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-11:copies-de-sauvegarde.html</id><summary type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
 sauvegarde de mes documents importants : un shell script maison assez
 simple qui utilise le logiciel rsync (&lt;a class="reference external" href="http://samba.anu.edu.au/rsync/"&gt;informations sur ce site&lt;/a&gt;).
 rsync est un logiciel libre distribué sous licence GPL et disponible sur
@@ -879,43 +869,43 @@ dossiers et quelques fichiers de configuration (les dotfiles) que je
 veux copier. Le script ressemble à ceci.
 Mis à jour le 12 mars 2009:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
-&lt;span class="c"&gt;#!/bin/sh
+&lt;span class="comment"&gt;#!/bin/sh
 # This script makes a backup of important files in
 # my home directory to two external hard drives,
 # Hercule and Astro, using rsync.
-&lt;/span&gt;&lt;span class="nv"&gt;OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;FOLDERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Desktop Documents Music Movies Programmes Sites \
+&lt;/span&gt;&lt;span class="name variable"&gt;OPTS&lt;/span&gt;&lt;span class="operator"&gt;=&lt;/span&gt;&lt;span class="literal string double"&gt;&amp;quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&amp;quot;&lt;/span&gt;
+&lt;span class="name variable"&gt;FOLDERS&lt;/span&gt;&lt;span class="operator"&gt;=&lt;/span&gt;&lt;span class="literal string double"&gt;&amp;quot;Desktop Documents Music Movies Programmes Sites \
          Applescripts Pictures Jeux Library/Colorsync \
          Library/Thunderbird .rsync&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;FOLDER1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Library/Application Support&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;BACKUPDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Macbook backup&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;DOTFILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$BACKUPDIR/dotfiles&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;FILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;.emacs .vimrc .profile&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;VOLUMES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/Volumes/Astro /Volumes/Hercule&amp;quot;&lt;/span&gt;
+&lt;span class="name variable"&gt;FOLDER1&lt;/span&gt;&lt;span class="operator"&gt;=&lt;/span&gt;&lt;span class="literal string double"&gt;&amp;quot;Library/Application Support&amp;quot;&lt;/span&gt;
+&lt;span class="name variable"&gt;BACKUPDIR&lt;/span&gt;&lt;span class="operator"&gt;=&lt;/span&gt;&lt;span class="literal string double"&gt;&amp;quot;Macbook backup&amp;quot;&lt;/span&gt;
+&lt;span class="name variable"&gt;DOTFILES&lt;/span&gt;&lt;span class="operator"&gt;=&lt;/span&gt;&lt;span class="literal string double"&gt;&amp;quot;$BACKUPDIR/dotfiles&amp;quot;&lt;/span&gt;
+&lt;span class="name variable"&gt;FILES&lt;/span&gt;&lt;span class="operator"&gt;=&lt;/span&gt;&lt;span class="literal string double"&gt;&amp;quot;.emacs .vimrc .profile&amp;quot;&lt;/span&gt;
+&lt;span class="name variable"&gt;VOLUMES&lt;/span&gt;&lt;span class="operator"&gt;=&lt;/span&gt;&lt;span class="literal string double"&gt;&amp;quot;/Volumes/Astro /Volumes/Hercule&amp;quot;&lt;/span&gt;
 
-&lt;span class="k"&gt;for &lt;/span&gt;v in &lt;span class="nv"&gt;$VOLUMES&lt;/span&gt;; &lt;span class="k"&gt;do
-  if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
-    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
-      &lt;/span&gt;mkdir -p &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
-      &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;fi
+&lt;span class="keyword"&gt;for &lt;/span&gt;v in &lt;span class="name variable"&gt;$VOLUMES&lt;/span&gt;; &lt;span class="keyword"&gt;do
+  if&lt;/span&gt; &lt;span class="operator"&gt;[&lt;/span&gt; -d &lt;span class="literal string double"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="operator"&gt;]&lt;/span&gt;; &lt;span class="keyword"&gt;then
+    if&lt;/span&gt; &lt;span class="operator"&gt;[&lt;/span&gt; ! -d &lt;span class="literal string double"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt; &lt;span class="operator"&gt;]&lt;/span&gt;; &lt;span class="keyword"&gt;then
+      &lt;/span&gt;mkdir -p &lt;span class="literal string double"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
+      &lt;span class="name builtin"&gt;echo&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
+    &lt;span class="keyword"&gt;fi
 
-    for &lt;/span&gt;d in &lt;span class="nv"&gt;$FOLDERS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FOLDER1&amp;quot;&lt;/span&gt;; &lt;span class="k"&gt;do
-      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$d/&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/$d/&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;done
+    for &lt;/span&gt;d in &lt;span class="name variable"&gt;$FOLDERS&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;$FOLDER1&amp;quot;&lt;/span&gt;; &lt;span class="keyword"&gt;do
+      &lt;/span&gt;rsync &lt;span class="name variable"&gt;$OPTS&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;$HOME/$d/&amp;quot;&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;$v/$BACKUPDIR/$d/&amp;quot;&lt;/span&gt;
+    &lt;span class="keyword"&gt;done
 
-    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
-      &lt;/span&gt;mkdir &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
-      &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;fi
+    if&lt;/span&gt; &lt;span class="operator"&gt;[&lt;/span&gt; ! -d &lt;span class="literal string double"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt; &lt;span class="operator"&gt;]&lt;/span&gt;; &lt;span class="keyword"&gt;then
+      &lt;/span&gt;mkdir &lt;span class="literal string double"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
+      &lt;span class="name builtin"&gt;echo&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
+    &lt;span class="keyword"&gt;fi
 
-    for &lt;/span&gt;f in &lt;span class="nv"&gt;$FILES&lt;/span&gt;; &lt;span class="k"&gt;do
-      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$f&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES/$f&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;done
+    for &lt;/span&gt;f in &lt;span class="name variable"&gt;$FILES&lt;/span&gt;; &lt;span class="keyword"&gt;do
+      &lt;/span&gt;rsync &lt;span class="name variable"&gt;$OPTS&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;$HOME/$f&amp;quot;&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;$v/$DOTFILES/$f&amp;quot;&lt;/span&gt;
+    &lt;span class="keyword"&gt;done
 
   else
-     &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ERROR:&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;not mounted&amp;quot;&lt;/span&gt;
-  &lt;span class="k"&gt;fi
+     &lt;/span&gt;&lt;span class="name builtin"&gt;echo&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;ERROR:&amp;quot;&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="literal string double"&gt;&amp;quot;not mounted&amp;quot;&lt;/span&gt;
+  &lt;span class="keyword"&gt;fi
 done&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Et le fichier .rsync/excludes contient&lt;/p&gt;
@@ -964,7 +954,7 @@ roulant sous OpenBSD avec &lt;a class="reference external" href="http://www.cis.
 &lt;div class="figure align-center"&gt;
 &lt;img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-3877704818423686673?l=mathfou.blogspot.com" /&gt;
 &lt;/div&gt;
-</summary><category term="informatique"></category></entry><entry><title>Bonne fête Darwin !</title><link href="http://loicseguin.github.com/bonne-fete-darwin.html" rel="alternate"></link><updated>2009-02-12T15:02:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-02-12:bonne-fete-darwin.html</id><summary type="html">&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
+</summary><category term="informatique"></category></entry><entry><title>Bonne fête Darwin !</title><link href="http://loicseguin.com/bonne-fete-darwin.html" rel="alternate"></link><updated>2009-02-12T15:02:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-12:bonne-fete-darwin.html</id><summary type="html">&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
 notre compréhension de la nature : Charles Darwin. Darwin fût un
 naturaliste de grand renom qui a étudié, entre autre, la botanique et
 l'entomologie. Mais sa plus grande contribution à la science moderne est
@@ -995,7 +985,7 @@ Quelques liens intéressants :
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Charles_Darwin"&gt;Charles Darwin sur Wikipedia (en)&lt;/a&gt;
 &lt;a class="reference external" href="http://darwin-online.org.uk/"&gt;The Complete Work of Charles Darwin Online&lt;/a&gt;
 &lt;img alt="image0" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5611916287854529107?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.github.com/des-axiomes-mathematiques.html" rel="alternate"></link><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2009-02-06:des-axiomes-mathematiques.html</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
+</summary><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.com/des-axiomes-mathematiques.html" rel="alternate"></link><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-06:des-axiomes-mathematiques.html</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
 de Alan B. Wallace (tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782702128206"&gt;Science et Bouddhisme, à chacun sa
 réalité&lt;/a&gt;) :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1032,7 +1022,7 @@ théorèmes les plus complexes. Quiconque prétend que ces théorèmes
 s'appliquent au réel fait un acte de foi qui n'est pas plus valable et
 qui l'est tout autant que l'acte de foi que fait celui qui choisit de
 suivre une religion.&lt;/p&gt;
-</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Integer programming, number theory and the geometry of numbers</title><link href="http://loicseguin.github.com/integer-programming-number-theory-and-the-geometry-of-numbers.html" rel="alternate"></link><updated>2008-11-28T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-11-28:integer-programming-number-theory-and-the-geometry-of-numbers.html</id><summary type="html">&lt;p&gt;Il existe des relations étroites entre la géométrie des nombres et la
+</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Integer programming, number theory and the geometry of numbers</title><link href="http://loicseguin.com/integer-programming-number-theory-and-the-geometry-of-numbers.html" rel="alternate"></link><updated>2008-11-28T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-28:integer-programming-number-theory-and-the-geometry-of-numbers.html</id><summary type="html">&lt;p&gt;Il existe des relations étroites entre la géométrie des nombres et la
 programmation en nombres entiers. Par exemple, un théorème de Minkowski sur
 l'existence de points de maillage dans un corps convexe permet d'établir une
 borne inférieure sur la longueur du plus court vecteur sur ce maillage. Et une
@@ -1042,7 +1032,7 @@ temps polynomial si la dimension est fixe. (En anglais seulement.)&lt;/p&gt;
 &lt;p&gt;Ces notes on été rédigées pour un séminaire de trois heures faisant partie d'un
 cours sur la programmation en nombres entiers donné à McGill par Bruce
 Shepherd.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Optique 101 (partie 1)</title><link href="http://loicseguin.github.com/optique-101-partie-1.html" rel="alternate"></link><updated>2008-11-14T17:54:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-11-14:optique-101-partie-1.html</id><summary type="html">&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
+</summary><category term="maths"></category></entry><entry><title>Optique 101 (partie 1)</title><link href="http://loicseguin.com/optique-101-partie-1.html" rel="alternate"></link><updated>2008-11-14T17:54:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-14:optique-101-partie-1.html</id><summary type="html">&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
 appareil photographique, on doit d'abord connaître quelques principes
 fondamentaux d'optique géométrique. Nous verrons la propagation de la
 lumière en ligne droite, la loi de Snell-Descartes et les propriétés des
@@ -1065,17 +1055,13 @@ Deux lois fondamentales de l'optique ont d'abord été trouvées
 empiriquement, puis expliquées théoriquement par les équations de
 Maxwell. D'abord, la loi de la réflexion, découverte environ 1000 ans
 après Jésus Christ par un arabe du nom d'Alhazen, stipule que lorsqu'un
-rayon de lumière atteint une surface, l'angle d'incidence &lt;span class="math"&gt;
-\(\theta_i\)&lt;/span&gt;
+rayon de lumière atteint une surface, l'angle d'incidence &lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
 
-et l'angle de réflexion &lt;span class="math"&gt;
-\(\theta_r\)&lt;/span&gt;
+et l'angle de réflexion &lt;span class="math"&gt;\(\theta_r\)&lt;/span&gt;
  (mesurés par rapport à une droite
 perpendiculaire à la surface, la normale) sont égaux:
-&lt;span class="math"&gt;
-\(\theta_i\)&lt;/span&gt;
- = &lt;span class="math"&gt;
-\(\theta_r\)&lt;/span&gt;
+&lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
+ = &lt;span class="math"&gt;\(\theta_r\)&lt;/span&gt;
 .&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_HyYHulp_e30/SR4adIhjfXI/AAAAAAAABmw/_CTRYJxATfQ/s400/reflexion.png" /&gt;&lt;/p&gt;
 &lt;p&gt;De plus, le rayon incident, le rayon réfléchi et la normale
@@ -1107,16 +1093,12 @@ n_{\mathrm{eau}} &amp;amp;= 1,33
 &lt;/div&gt;
 &lt;p&gt;La loi de Snell-Descartes fait le lien entre les indices de réfraction
 et les angles d'incidence et de réfraction. Si un rayon de lumière passe
-du milieu 1 au milieu 2, d'indices de réfraction &lt;span class="math"&gt;
-\(n_1\)&lt;/span&gt;
+du milieu 1 au milieu 2, d'indices de réfraction &lt;span class="math"&gt;\(n_1\)&lt;/span&gt;
  et
-&lt;span class="math"&gt;
-\(n_2\)&lt;/span&gt;
- respectivement, a un angle d'incidence &lt;span class="math"&gt;
-\(\theta_i\)&lt;/span&gt;
+&lt;span class="math"&gt;\(n_2\)&lt;/span&gt;
+ respectivement, a un angle d'incidence &lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
 ,
-alors l'angle du rayon transmis &lt;span class="math"&gt;
-\(\theta_t\)&lt;/span&gt;
+alors l'angle du rayon transmis &lt;span class="math"&gt;\(\theta_t\)&lt;/span&gt;
  respectera la relation :&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
@@ -1135,7 +1117,7 @@ La loi de Snell-Descartes est fondamentale pour comprendre le
 fonctionnement d'une partie cruciale d'un appareil photo : la lentille.
 Nous verrons dans le prochain article comment fonctionne une lentille.
 &lt;img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-8629460951480994628?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>La physique et les maths de la photo</title><link href="http://loicseguin.github.com/la-physique-et-les-maths-de-la-photo.html" rel="alternate"></link><updated>2008-11-13T22:42:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-11-13:la-physique-et-les-maths-de-la-photo.html</id><summary type="html">&lt;p&gt;Ceci est le premier d'une série d'article sur la physique et les
+</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>La physique et les maths de la photo</title><link href="http://loicseguin.com/la-physique-et-les-maths-de-la-photo.html" rel="alternate"></link><updated>2008-11-13T22:42:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-13:la-physique-et-les-maths-de-la-photo.html</id><summary type="html">&lt;p&gt;Ceci est le premier d'une série d'article sur la physique et les
 mathématiques de la photographie. La photographie est une activité que
 beaucoup de gens pratiquent sans savoir à quel point l'appareil qu'ils
 ont entre les mains est une petite merveille de science et d'ingénierie.
@@ -1152,13 +1134,13 @@ que je peux faire.&lt;/p&gt;
 concepts de base d'optique géométrique et au fonctionnement d'un
 appareil photographique. J'ai choisi les titres inspirés &lt;em&gt;Optique 101&lt;/em&gt;
 et &lt;em&gt;Appareil Photographique 101&lt;/em&gt;.&lt;/p&gt;
-</summary><category term="maths"></category><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.github.com/lantre-de-la-bete.html" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-09-30:lantre-de-la-bete.html</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
+</summary><category term="maths"></category><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/lantre-de-la-bete.html" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:lantre-de-la-bete.html</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
 travail. On constate la grande organisation qui règne sur mon bureau...&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqSchJBI/AAAAAAAABf0/4IUUibpNjvY/s400/IMG_1143.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Et voici les instruments essentiels à la tâche du mathématicien :&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqTgxthI/AAAAAAAABf8/jO9PyF3ESG8/s400/IMG_1146.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-4984607396283200774?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="ineptie"></category></entry><entry><title>Manipuler des symboles</title><link href="http://loicseguin.github.com/manipuler-des-symboles.html" rel="alternate"></link><updated>2008-09-23T23:15:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-09-23:manipuler-des-symboles.html</id><summary type="html">&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
+</summary><category term="ineptie"></category></entry><entry><title>Manipuler des symboles</title><link href="http://loicseguin.com/manipuler-des-symboles.html" rel="alternate"></link><updated>2008-09-23T23:15:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-23:manipuler-des-symboles.html</id><summary type="html">&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
 mathématiciens, comme étant un ensemble de règles qui dictent comment
 manipuler des symboles. En manipulant ces symboles, on arrive à formuler
 les &amp;quot;phrases&amp;quot; mathématiques que sont les théorèmes. Bien sûr, la plupart
@@ -1184,7 +1166,7 @@ de la preuve.&lt;/p&gt;
 &lt;p&gt;Les idées sont plus importantes que les calculs. Et, étrangement, il est
 beaucoup plus difficile de formuler des idées que d'effectuer des
 calculs.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Triangulations créatives</title><link href="http://loicseguin.github.com/triangulations-creatives.html" rel="alternate"></link><updated>2008-09-12T16:30:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-09-12:triangulations-creatives.html</id><summary type="html">&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
+</summary><category term="maths"></category></entry><entry><title>Triangulations créatives</title><link href="http://loicseguin.com/triangulations-creatives.html" rel="alternate"></link><updated>2008-09-12T16:30:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-12:triangulations-creatives.html</id><summary type="html">&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
 les uns aux autres de telle sorte qu'ils épousent les formes de l'objet.
 On appelle une telle construction une triangulation. Une fois qu'on a
 obtenu une triangulation, on peut la raffiner en divisant les triangles
@@ -1337,7 +1319,7 @@ raffinements de triangulations lors de CCCG 2008.&lt;/p&gt;
 &lt;img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5005068235951720029?l=mathfou.blogspot.com" /&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</summary><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.github.com/le-lhc-demarre.html" rel="alternate"></link><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-09-10:le-lhc-demarre.html</id><summary type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
+</summary><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.com/le-lhc-demarre.html" rel="alternate"></link><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-10:le-lhc-demarre.html</id><summary type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
 sur la nature de l'univers. Le Large Hadron Collider (LHC, grand
 collisioneur de proton en français), le plus grand accélérateur de
 particule construit par l'homme, a été mis en route aujourd'hui. Sa mise
@@ -1371,7 +1353,7 @@ les plus puissants du monde.&lt;/p&gt;
 &lt;li&gt;la nouvelle : &lt;a class="reference external" href="http://www.radio-canada.ca/nouvelles/Science-Sante/2008/09/09/002-collisionneur-reeves-Hawking.shtml"&gt;Radio-Canada.ca&lt;/a&gt;, &lt;a class="reference external" href="http://www.cyberpresse.ca/article/20080910/CPSCIENCES/80910007/1020/CPSCIENCES"&gt;Cyberpresse&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;le LHC : &lt;a class="reference external" href="http://public.web.cern.ch/Public/fr/LHC/LHC-fr.html"&gt;CERN&lt;/a&gt;, &lt;a class="reference external" href="http://www.youtube.com/watch?v=j50ZssEojtM"&gt;the LHC rap&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</summary><category term="physique"></category></entry><entry><title>Le dilemme du prisonnier</title><link href="http://loicseguin.github.com/le-dilemme-du-prisonnier.html" rel="alternate"></link><updated>2008-09-07T06:22:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-09-07:le-dilemme-du-prisonnier.html</id><summary type="html">&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
+</summary><category term="physique"></category></entry><entry><title>Le dilemme du prisonnier</title><link href="http://loicseguin.com/le-dilemme-du-prisonnier.html" rel="alternate"></link><updated>2008-09-07T06:22:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-07:le-dilemme-du-prisonnier.html</id><summary type="html">&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
 conteste le dilemme du prisonnier. Deux suspects sont arrêtés
 relativement à un crime donné. Ils sont interrogés séparément et ne
 peuvent communiquer d'aucune façon que ce soit. Ils connaissent tous
@@ -1408,7 +1390,7 @@ prison. Il existe pourtant une solution à ce jeu qui est beaucoup plus
 avantageuse &amp;quot;socialement&amp;quot;. Si les deux innocentent leur collègue, ils ne
 purgeront qu'un an chacun. La collaboration, dans ce contexte, est une
 bien meilleure option que l'avarice.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>La complexité de l'enseignement</title><link href="http://loicseguin.github.com/la-complexite-de-lenseignement.html" rel="alternate"></link><updated>2008-05-14T17:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-05-14:la-complexite-de-lenseignement.html</id><summary type="html">&lt;p&gt;Concernant le problème TEACH défini ci-dessous, j'ai obtenu un résultat
+</summary><category term="maths"></category></entry><entry><title>La complexité de l'enseignement</title><link href="http://loicseguin.com/la-complexite-de-lenseignement.html" rel="alternate"></link><updated>2008-05-14T17:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-14:la-complexite-de-lenseignement.html</id><summary type="html">&lt;p&gt;Concernant le problème TEACH défini ci-dessous, j'ai obtenu un résultat
 intéressant de complexité.&lt;/p&gt;
 &lt;p&gt;Problème : TEACH&lt;/p&gt;
 &lt;p&gt;Exemple : Un groupe d'étudiants E = {e_1, ..., e_n}, un sujet S et un
@@ -1422,7 +1404,7 @@ Des inspirations transcendantales me font croire que le problème est
 aussi NP-complet, quoique je n'ai aucune idée de preuve pour appuyer ma
 conjecture. Toute contribution est la bienvenue.&lt;/p&gt;
 &lt;p&gt;Conjecture : Le problème TEACH est NP-complet.&lt;/p&gt;
-</summary><category term="maths"></category><category term="ineptie"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.github.com/pourquoi-les-nombres-entiers-sont-parfois-essentiels.html" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-05-11:pourquoi-les-nombres-entiers-sont-parfois-essentiels.html</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
+</summary><category term="maths"></category><category term="ineptie"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/pourquoi-les-nombres-entiers-sont-parfois-essentiels.html" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:pourquoi-les-nombres-entiers-sont-parfois-essentiels.html</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
 entiers. Dans cet &lt;a class="reference external" href="http://www.theglobeandmail.com/servlet/story/RTGAM.20080510.wobama0510/BNStory/International/?page=rss&amp;amp;id=RTGAM.20080510.wobama0510"&gt;article&lt;/a&gt; du Globe and Mail du 10 mai, on peut lire
 cette charmante phrase :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1438,7 +1420,7 @@ fractionnaires n'a aucun sens.&lt;/p&gt;
 proportion. Or, ici, il est question d'un nombre de personnes, pas d'une
 proportion. Il est donc tout à fait déraisonnable de dire que madame
 Clinton a l'appui d'un demi-délégué.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>La programmation en nombres entiers.</title><link href="http://loicseguin.github.com/la-programmation-en-nombres-entiers.html" rel="alternate"></link><updated>2008-03-21T06:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2008-03-21:la-programmation-en-nombres-entiers.html</id><summary type="html">&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
+</summary><category term="maths"></category></entry><entry><title>La programmation en nombres entiers.</title><link href="http://loicseguin.com/la-programmation-en-nombres-entiers.html" rel="alternate"></link><updated>2008-03-21T06:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-03-21:la-programmation-en-nombres-entiers.html</id><summary type="html">&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
 intéressant ? Pourquoi une poignée de mathématiciens dépensent-ils
 quelques milliers de dollars pour se réunir et en discuter ? Sans doute
 en saurais-je un peu plus à mon retour de la session de travail sur la
@@ -1464,7 +1446,7 @@ où on ne peut pas accepter des solutions fractionnaires. Par exemple, si
 on achemine un produit en petites quantités sur une courte période de
 temps.&lt;/p&gt;
 &lt;p&gt;Plus de détails à venir éventuellement !&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category><category term="maths"></category></entry><entry><title>Une citation mémorable du film Proof</title><link href="http://loicseguin.github.com/une-citation-memorable-du-film-proof.html" rel="alternate"></link><updated>2007-10-28T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2007-10-28:une-citation-memorable-du-film-proof.html</id><summary type="html">&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
+</summary><category term="recherche opérationnelle"></category><category term="maths"></category></entry><entry><title>Une citation mémorable du film Proof</title><link href="http://loicseguin.com/une-citation-memorable-du-film-proof.html" rel="alternate"></link><updated>2007-10-28T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-28:une-citation-memorable-du-film-proof.html</id><summary type="html">&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
 que je n'ai pas aimé ce film. La performances des acteurs est mauvaise,
 l'histoire, peu enivrante. Certaines personnes ont comparé ce film à &lt;em&gt;A
 Beautiful Mind&lt;/em&gt;, ce que je n'arrive pas à comprendre. Outre le fait que
@@ -1487,7 +1469,7 @@ approaches four. I will never be as cold now as I will in the future.
 The future of cold is infinite. The future of heat is the future of
 cold. The bookstores are infinite and so are never full except in
 September...&lt;/blockquote&gt;
-</summary><category term="maths"></category></entry><entry><title>Le problème du contrôle de groupes d'ascenseurs</title><link href="http://loicseguin.github.com/le-probleme-du-controle-de-groupes-dascenseurs.html" rel="alternate"></link><updated>2007-10-22T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2007-10-22:le-probleme-du-controle-de-groupes-dascenseurs.html</id><summary type="html">&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
+</summary><category term="maths"></category></entry><entry><title>Le problème du contrôle de groupes d'ascenseurs</title><link href="http://loicseguin.com/le-probleme-du-controle-de-groupes-dascenseurs.html" rel="alternate"></link><updated>2007-10-22T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-22:le-probleme-du-controle-de-groupes-dascenseurs.html</id><summary type="html">&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
 de travail quotidiennement savent à quel point il peut y avoir de
 l'achalandage pour monter dans ces machines. Aux heures de pointe, il
 peut y avoir des gens qui veulent monter du rez-de-chaussée à presque
@@ -1515,13 +1497,11 @@ Plusieurs approches algorithmiques différentes ont été prises pour
 aborder le problème. Une simple recherche sur Google donne de nombreux
 liens vers des articles qui proposent des approches évolutives,
 neuronales, et autres. Je vous tiendrez au courant de mes lectures...&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.github.com/resolution-du-probleme-des-ponts-de-konigsberg.html" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2007-08-24:resolution-du-probleme-des-ponts-de-konigsberg.html</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
+</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/resolution-du-probleme-des-ponts-de-konigsberg.html" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:resolution-du-probleme-des-ponts-de-konigsberg.html</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
 est appelé par certains un multigraphe). Un graphe G est simplement un ensemble
-de n points qu'on appelle des sommets &lt;span class="math"&gt;
-\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt;
+de n points qu'on appelle des sommets &lt;span class="math"&gt;\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt;
  reliés
-par des arrêtes &lt;span class="math"&gt;
-\(A = \{(x_i x_j, 1), (x_i x_j, 2), (x_k x_l, 1), ..., (x_n
+par des arrêtes &lt;span class="math"&gt;\(A = \{(x_i x_j, 1), (x_i x_j, 2), (x_k x_l, 1), ..., (x_n
 x_m, 3)\}\)&lt;/span&gt;
 . On remarque que chaque arrête est spécifiée par deux points (les
 points qui forment les extrémités de l'arrête) et un entier qui identifie
@@ -1530,15 +1510,12 @@ points. En somme, pour produire un graphe, il suffit de tracer des points sur
 une feuille et de les relier par autant de ligne qu'on veut.&lt;/p&gt;
 &lt;p&gt;Maintenant, on peut facilement s'imaginer que le graphe constitue un ensemble
 de routes entre différents villages. Alors, on peut marcher le long de ces
-routes pour aller d'un village &lt;span class="math"&gt;
-\(x_1\)&lt;/span&gt;
- à un village &lt;span class="math"&gt;
-\(x_{11}\)&lt;/span&gt;
+routes pour aller d'un village &lt;span class="math"&gt;\(x_1\)&lt;/span&gt;
+ à un village &lt;span class="math"&gt;\(x_{11}\)&lt;/span&gt;
 . On peut
 spécifier le chemin qu'on a pris en donnant la liste des routes qu'on a suivit.
 Par exemple on peut décrire le chemin comme étant la suite d'arrêtes
-&lt;span class="math"&gt;
-\((x_1 x_4, 2), (x_4 x_8, 1), (x_8 x_5, 1), (x_5 x_11, 3)\)&lt;/span&gt;
+&lt;span class="math"&gt;\((x_1 x_4, 2), (x_4 x_8, 1), (x_8 x_5, 1), (x_5 x_11, 3)\)&lt;/span&gt;
 . Si on fait un
 trajet qui nous ramène au village d'où nous étions partis, on dit que ce chemin
 est un tour. Un tour est eulérien (oui, vous avez deviné, en l'honneur de
@@ -1564,7 +1541,7 @@ coup d'oeil à l'image de Königsberg et on trouve tout de suite des
 sommets de degré impair. Donc il est impossible de trouver un tour
 eulérien et la solution au problème des ponts de Königsberg est que
 c'est impossible.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.github.com/les-ponts-de-konigsberg.html" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2007-08-22:les-ponts-de-konigsberg.html</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/les-ponts-de-konigsberg.html" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:les-ponts-de-konigsberg.html</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
 &lt;p&gt;Maintenant que j'ai un blogue, voyons ce que je peux en faire.&lt;/p&gt;
 &lt;p&gt;Un des problèmes qui est à l'origine de la théorie des graphes est celui
 des ponts de Königsberg. Cette ville de Prusse (au temps où la Prusse
@@ -1581,7 +1558,7 @@ notions élémentaires de théorie des graphes. Maintenant que je vous ai
 mis l'eau à la bouche et que vous mourrez tous d'envie de connaître la
 preuve, je vais aller me coucher. La preuve viendra dans un futur
 rapproché.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Cobordisme et variétés singulières</title><link href="http://loicseguin.github.com/cobordisme-et-varietes-singulieres.html" rel="alternate"></link><updated>2007-08-20T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2007-08-20:cobordisme-et-varietes-singulieres.html</id><summary type="html">&lt;p&gt;Pontryagin a démontré un résultat fort intéressant concernant les applications
+</summary><category term="maths"></category></entry><entry><title>Cobordisme et variétés singulières</title><link href="http://loicseguin.com/cobordisme-et-varietes-singulieres.html" rel="alternate"></link><updated>2007-08-20T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-20:cobordisme-et-varietes-singulieres.html</id><summary type="html">&lt;p&gt;Pontryagin a démontré un résultat fort intéressant concernant les applications
 f d'une m-variété M vers la sphère Sp : il existe une bijection entre les
 classes de cobordisme des sous-variétés f-1(y) de M (y étant une valeur
 régulière de f) et les classes d'homotopies des applications f. J'ai généralisé
@@ -1589,7 +1566,7 @@ ce résultat à des variétés singulières (i.e. : qui ont des voisinages
 ressemblant à plusieurs copies des réels).&lt;/p&gt;
 &lt;p&gt;Rapport de stage pour un projet réalisé à l'Université de Montréal sous la
 supervision d'Octav Cornea.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Simulations numériques du modèle d'Ising</title><link href="http://loicseguin.github.com/simulations-numeriques-du-modele-dising.html" rel="alternate"></link><updated>2006-08-29T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2006-08-29:simulations-numeriques-du-modele-dising.html</id><summary type="html">&lt;p&gt;Le modèle d'Ising tente de décrire le comportement des matériaux magnétiques
+</summary><category term="maths"></category></entry><entry><title>Simulations numériques du modèle d'Ising</title><link href="http://loicseguin.com/simulations-numeriques-du-modele-dising.html" rel="alternate"></link><updated>2006-08-29T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2006-08-29:simulations-numeriques-du-modele-dising.html</id><summary type="html">&lt;p&gt;Le modèle d'Ising tente de décrire le comportement des matériaux magnétiques
 (ferro- ou anti-ferro-). C'est un modèle sur réseau assez simple qui est
 beaucoup utilisé en physique statistique. Il semble que la limite du modèle sur
 réseau quand la maille (i.e. : la distance entre deux sites voisins) tend vers
@@ -1608,7 +1585,7 @@ sphère.&lt;/p&gt;
 &lt;p&gt;Le code de simulation a été retravaillé et développé davantage. Une version
 récente est disponible sur &lt;a class="reference external" href="https://bitbucket.org/loicseguin/spinify/wiki/Home"&gt;bitbucket&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="physique"></category></entry><entry><title>Relativité restreinte</title><link href="http://loicseguin.github.com/relativite-restreinte.html" rel="alternate"></link><updated>2004-06-14T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.github.com,2004-06-14:relativite-restreinte.html</id><summary type="html">&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
+</summary><category term="physique"></category></entry><entry><title>Relativité restreinte</title><link href="http://loicseguin.com/relativite-restreinte.html" rel="alternate"></link><updated>2004-06-14T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2004-06-14:relativite-restreinte.html</id><summary type="html">&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
 &lt;p&gt;Puis, un beau jour d'il y a un ou deux siècles, un dénommé Maxwell (oui oui,
 comme le café) trouva les équations de l'électromagnétisme. Ce sont des
 équations qui décrivent tous les phénomènes électromagnétiques (comme la
