@@ -2,7 +2,6 @@ Protégeons-nous avec les maths
 ##############################
 :date: 2009-04-07 16:33
 :tags: maths, philosophie
-:summary: 
 
 Une citation toute à l'honneur des mathématiques :
 

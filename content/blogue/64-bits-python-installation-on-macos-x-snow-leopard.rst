@@ -4,10 +4,6 @@
 :tags: informatique, python
 :summary: Installing a Scipy, Numpy, Matplotlib stack.
 
-*N.B. : Pour une raison mystérieuse, j'ai rédigé cet article en anglais.
-Désolé pour ceux qui ne lisent pas l'anglais. J'essaierai de ne pas
-recommencer.*
-
 Here is how I installed Python 2.6.5 on my machine. Here is what I get
 at the end:
 
@@ -27,7 +23,7 @@ Python
 
 Download the latest Python source code and unpack it
 
-::
+.. code:: bash
 
     $ curl -O http://www.python.org/ftp/python/2.6.5/Python-2.6.5.tar.bz2
     $ tar jxvf Python-2.6.5.tar.bz2
@@ -35,7 +31,7 @@ Download the latest Python source code and unpack it
 To build an installer for Snow Leopard, we need to tweak one line of the
 script.
 
-::
+.. code:: bash
 
     $ cd Python-2.6.5/Mac/BuildScript/
     $ mvim build-installer.py
@@ -43,38 +39,38 @@ script.
 Here, I used MacVIM to edit the file. Use whatever editor you like. At
 line 78, replace
 
-::
+.. code:: python
 
     SDKPATH = "/Developer/SDKs/MacOSX10.4u.sdk"
 
 by
 
-::
+.. code:: python
 
     SDKPATH = "/Developer/SDKs/MacOSX10.6.sdk"
 
 And around line 139 replace
 
-::
+.. code:: python
 
     if DEPTARGET < '10.5':
 
 by
 
-::
+.. code:: python
 
     if DEPTARGET < '10.7':
 
 Before running the script, I had to create the directory where
 third-party sources would be downloaded.
 
-::
+.. code:: bash
 
     $ mkdir ~/Universal/other-sources
 
 All you have to do, is to run the script:
 
-::
+.. code:: bash
 
     $ ./build-installer.py --dep-target=10.6 --universal-archs=intel
 
@@ -87,7 +83,7 @@ By default, python is a symlink to the 32-bit version, and so is
 pythonw.  To change that, simply modify the symlinks in
 ``/Library/Frameworks/Python.framework/Versions/2.6/bin/`` as follow:
 
-::
+.. code:: bash
 
     $ cd /Library/Frameworks/Python.framework/Versions/2.6/bin/
     $ sudo rm python python2.6 pythonw pythonw2.6
@@ -107,7 +103,7 @@ a new virtualenv. You are free to switch from one virtualenv to another.
 
 Start by installing easy_install and pip.
 
-::
+.. code:: bash
 
     $ curl -O http://peak.telecommunity.com/dist/ez_setup.py
     $ sudo python ez_setup.py
@@ -118,20 +114,20 @@ Start by installing easy_install and pip.
 
 Then, move on to install virtualenv and a wrapper script.
 
-::
+.. code:: bash
 
     $ sudo pip install virtualenv
     $ sudo pip install virtualenvwrapper
 
 Create a directory for you virtual environments.
 
-::
+.. code:: bash
 
     $ mkdir -p ~/local/virtualenvs
 
 Add the following to your ``~/.bash_profile``.
 
-::
+.. code:: bash
 
     export WORKON_HOME=$HOME/local/virtualenvs
     source /Library/Frameworks/Python.framework/Versions/2.6/bin/virtualenvwrapper.sh
@@ -139,13 +135,13 @@ Add the following to your ``~/.bash_profile``.
 
 Source the ``.bash_profile`` file.
 
-::
+.. code:: bash
 
     $ . ~/.bash_profile
 
 Finally, just create the default virtual environment.
 
-::
+.. code:: bash
 
     $ mkvirtualenv default
 
@@ -159,13 +155,13 @@ efficiency a lot.
 
 Download and install gfortran.
 
-::
+.. code:: bash
 
     $ curl -O http://r.research.att.com/gfortran-4.2.3.dmg
 
 Download and install FFTW.
 
-::
+.. code:: bash
 
     $ curl -O http://www.fftw.org/fftw-3.2.2.tar.gz
     $ tar zxvf fftw-3.2.2.tar.gz
@@ -176,7 +172,7 @@ Download and install FFTW.
 
 Download and install UMFPACK.
 
-::
+.. code:: bash
 
     $ curl -O http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz
     $ tar zxvf http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz
@@ -205,7 +201,7 @@ should read
 
 Then, build and install the various parts.
 
-::
+.. code:: bash
 
     $ cd UMFPACK
     $ make library
@@ -223,7 +219,7 @@ Download NumPy from the SourceForge `download page
 <http://sourceforge.net/projects/numpy/files/NumPy/1.4.1/numpy-1.4.1.tar.gz/download>`_
 and then install it.
 
-::
+.. code:: bash
 
     $ tar zxvf numpy-1.4.1.tar.gz
     $ cd numpy-1.4.1
@@ -233,7 +229,7 @@ and then install it.
 Download SciPy from the `scipy download page
 <http://sourceforge.net/projects/scipy/files/scipy/0.8.0b1/scipy-0.8.0b1.tar.gz/download>`_ and then install it.
 
-::
+.. code:: bash
 
     $ tar zxvf scipy-0.8.0b1.tar.gz
     $ cd scipy-0.8.0b1
@@ -248,7 +244,7 @@ Download from
 http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download
 and untar.
 
-::
+.. code:: bash
 
     $ tar zxvf matplotlib-0.99.3.tar.gz
     $ cd matplotlib-0.99.3
@@ -258,7 +254,7 @@ using this file as is does not work. First, apply `this patch
 <http://sourceforge.net/tracker/download.php?group_id=80706&atid=560722&file_id=369204&aid=2981126>`_
 and then change the zlib version in ``make.osx`` to 1.2.5. Then, run
 
-::
+.. code:: bash
 
     $ PREFIX=~/local/virtualenvs/default make -f make.osx fetch deps mpl_build mpl_install
 
@@ -266,7 +262,7 @@ and then change the zlib version in ``make.osx`` to 1.2.5. Then, run
 Other useful packages
 ---------------------
 
-::
+.. code:: bash
 
     $ pip install mercurial
     $ pip install ipython

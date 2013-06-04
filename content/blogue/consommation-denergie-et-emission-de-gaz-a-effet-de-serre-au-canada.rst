@@ -2,14 +2,14 @@ Consommation d'énergie et émission de gaz à effet de serre au Canada
 ####################################################################
 :date: 2010-06-08 03:09
 :tags: environnement, python
-:summary: 
 
 En faisant quelques recherches sur Internet, je suis tombé sur des
 données relatives à la consommation d'énergie et à l'émission de GES par
 les foyers canadiens pour la période de 1990 à 2007. Ces données sont
-rendues publiques par l'\ `Office de l'efficacité énergétique`_ de
+rendues publiques par l'`Office de l'efficacité énergétique`_ de
 `Ressources naturelles Canada`_. Elles proviennent principalement de
 `Statistique Canada`_.
+
 Les données sont disponible sous la forme d'un document Excel
 (`res\_ca\_1\_e.xls`_). J'ai utilisé Python, Matplotlib et un module
 nommé xlrd pour visualiser les données. Python et Matplotlib n'ont

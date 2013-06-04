@@ -4,7 +4,9 @@ Utilisation de ``biblatex``
 :date: 2012/12/21
 :author: Loïc Séguin-Charbonneau
 :tags: latex
-:summary: Gestion moderne des références bibliographiques.
+:summary: ``biblatex`` est le logiciel de gestion bibliographique moderne pour
+          accompagner LaTeX. Combiné avec ``biber``, il remplace complètement
+          le système ``bibtex``.
 
 ``biblatex`` est le logiciel de gestion bibliographique moderne pour accompagner
 LaTeX. Combiné avec ``biber``, il remplace complètement le système ``bibtex``.
@@ -143,11 +145,15 @@ bibliographique.
 L'option ``prenote`` de la commande ``\printbibliography`` permet d'ajouter du
 texte entre le titre et la première référence. Ce texte doit être associé à un
 une ``bibnote`` qui est définie à l'aide de la commande ``\defbibnote``. Par
-exemple, on peut définir une note pour le manuel obligatoire ::
+exemple, on peut définir une note pour le manuel obligatoire
+
+.. code:: latex
 
     \defbibnote{obl}{\textbf{Obligatoire}}
 
-puis la bibliographie est imprimée avec ::
+puis la bibliographie est imprimée avec
+
+.. code:: latex
 
     \printbibliography[heading=bibnumbered, prenote=obl]
 
@@ -155,11 +161,15 @@ Le problème est que toutes les références seront imprimées alors que
 normalement seuls un ou deux ouvrages sont obligatoires. Il est possible
 d'ajouter dans le fichier ``bib`` un champ ``keywords`` et d'utiliser ce champ
 pour imprimer seulement certains documents. Si la référence ``halliday2007``
-est obligatoire, alors on ajoute ::
+est obligatoire, alors on ajoute
+
+.. code:: latex
 
     keywords = {mandatory}
 
-à cet élément et on imprime la bibliographie avec ::
+à cet élément et on imprime la bibliographie avec
+
+.. code:: latex
 
     \printbibliography[heading=bibnumbered, prenote=obl, keyword=mandatory]
 

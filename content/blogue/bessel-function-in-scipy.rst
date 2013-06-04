@@ -3,7 +3,6 @@ Bessel functions in Scipy
 
 :date: 2012-12-03
 :tags: programmation, maths
-:summary: Untangling the special functions
 
 Bessel functions of the first kind, :math:`J_l` where :math:`l` is an integer,
 are found in ``scipy.special.jn``. This is a function that takes two arguments:

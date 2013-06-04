@@ -2,7 +2,6 @@ Copies de sauvegarde
 ####################
 :date: 2009-03-11 03:06
 :tags: informatique
-:summary: Script utilisant ``rsync``.
 
 J'ai finalement trouvé une solution convenable pour faire des copies de
 sauvegarde de mes documents importants : un shell script maison assez
@@ -14,9 +13,9 @@ défaut. Il en est probablement de même pour les distributions de Linux
 les plus populaires. Sur OpenBSD, vous pouvez l'installer avec la
 commande :
 
-::
+.. code:: bash
 
-    sudo pkg\_add rsync
+    sudo pkg_add rsync
 
 en supposant que vous avez déjà configuré sudo et que la variable
 d'environnement PKG\_PATH est définie.
@@ -71,9 +70,9 @@ Et le fichier .rsync/excludes contient
 
 ::
 
-    .DS\_Store
+    .DS_Store
     .depend
-    \*.aplibrary
+    *.aplibrary
     .localized
 
 Tout d'abord, on définit les options pour rsync :
@@ -112,10 +111,6 @@ première fois que le script fonctionne puisqu'il doit alors copier
 l'ensemble des fichiers).
 Prochaine étape : synchroniser mon Macbook et mon ordinateur de bureau
 roulant sous OpenBSD avec `Unison`_...
-
-.. figure:: https://blogger.googleusercontent.com/tracker/697344570467959391-3877704818423686673?l=mathfou.blogspot.com
-   :align: center
-   :alt: 
 
 .. _informations sur ce site: http://samba.anu.edu.au/rsync/
 .. _Unison: http://www.cis.upenn.edu/%7Ebcpierce/unison/

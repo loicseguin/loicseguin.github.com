@@ -1,7 +1,7 @@
 Gestion encryptée des notes d'étudiants
 =======================================
 
-:date: 2013/01/23
+:date: 2013-01-23
 :author: Loïc Séguin-Charbonneau
 :tags: enseignement, programmation
 :status: draft

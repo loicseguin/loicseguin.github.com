@@ -2,7 +2,6 @@ Spinify 2.2
 ###########
 :date: 2010-03-02 03:30
 :tags: informatique, maths, physique
-:summary:
 
 Je viens tout juste de lancer la nouvelle version du logiciel de
 simulation numérique du modèle d'Ising Spinify. La version 2.2 comporte
@@ -26,9 +25,7 @@ système Unix ou Linux.
 Si vous utilisez ce logiciel et que vous avez des commentaires ou que
 vous avez des questions à son propos, n'hésitez pas à me contacter par
 l'entremise de la liste d'envoi `spinify-discuss@googlegroups.com`_.
-|image0|
 
 .. _spinify-2.2.tar.gz: http://bitbucket.org/loicseguin/spinify/downloads/spinify-2.2.tar.gz
 .. _spinify-discuss@googlegroups.com: mailto:spinify-discuss@googlegroups.com
 
-.. |image0| image:: https://blogger.googleusercontent.com/tracker/697344570467959391-5493108597676032679?l=mathfou.blogspot.com

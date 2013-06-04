@@ -1,43 +1,36 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
 
 AUTHOR = u"Loïc Séguin-C."
 SITENAME = u"Loïc Séguin-C."
-SITEURL = 'http://loicseguin.com'
-FEED_DOMAIN = SITEURL
+SITEURL = ''
 
 TIMEZONE = 'America/Montreal'
 
-DEFAULT_LANG = 'fr'
+DEFAULT_LANG = u'fr'
 DEFAULT_CATEGORY = 'blogue'
 
-DATE_FORMATS = {'fr': '%d %B %Y'}
 OUTPUT_PATH = "."
-PATH = "content/"
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
 
 DISPLAY_CATEGORIES_ON_MENU = True
 DISPLAY_PAGES_ON_MENU = True
-AUTHOR_SAVE_AS = False
-#MENUITEMS = [("Blogue", SITEURL)]
-THEME = "klaatu"
+THEME = "cadabra"
 
-# global metadata to all the contents
-DEFAULT_METADATA = (('summary', ''),)
-#PLUGINS = ['pelican.plugins.github_activity',]
-#GITHUB_URL = "http://github.com/loicseguin/"
-#GITHUB_ACTIVITY_FEED = 'https://github.com/loicseguin.atom'
-
-# Blogroll
-#LINKS =  (
-    #('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
-    #('Python.org', 'http://python.org'),
-    #('Jinja2', 'http://jinja.pocoo.org')
-         #)
 
 # Social widget
 SOCIAL = (
+          ('email', 'mailto:loic@loicseguin.com'),
           ('twitter', 'http://twitter.com/lseguinc'),
-          ('github', 'http://github.com/loicseguin')
+          ('github', 'http://github.com/loicseguin'),
+          ('bitbucket', 'http://bitbucket.org/loicseguin'),
+          ('linkedin','http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/'),
+          ('flickr', 'http://www.flickr.com/photos/loicseguin')
          )
 
 DEFAULT_PAGINATION = 12

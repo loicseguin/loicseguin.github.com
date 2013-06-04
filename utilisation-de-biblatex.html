@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Utilisation de biblatex</title>
-    <meta charset="utf-8" />
-        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
-                        <link href="http://loicseguin.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
-                    <link rel=stylesheet href=./theme/css/trac.css type="text/css" />
-    <link href=./theme/css/normalize.css rel="stylesheet" type="text/css" />
-    <link href=./theme/css/klaatu.css rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700|Alegreya+SC:400,700|PT+Mono" rel="stylesheet">
-
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/theme/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+                
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
     </head>
 
-<body id="index" class="home">
-    <div id="container">
+    <body>
+                <div class="container-narrow">
+            <header class="navbar">
+            <nav class="navbar-inner">
+            <div class="container-fluid">
+            <a class="brand" href="/">Loïc Séguin-C. </a>
+            <ul class="nav pull-right">
+                                                <li><a href="/pages/projets.html">Projets</a></li>
+                                <li><a href="/pages/vita.html">Vita</a></li>
+                                                                <li><a href="/category/blogue.html">blogue</a></li>
+                                <li><a href="/category/publications.html">publications</a></li>
+                                            </ul>
+            </div>
+            </nav>
+            </header><!-- /#banner -->
+            <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/utilisation-de-biblatex.html" rel="bookmark"
+           title="Permalink to Utilisation de biblatex">Utilisation de <tt class="docutils literal">biblatex</tt></a></h1>
+          </header>
 
-    <div id="banner">
-    <header class="body">
-        <a href="./index.html">Loïc Séguin-C. <strong></strong></a>
-    </header><!-- /#banner -->
-    <nav id="menu">
-                                      <a href="./category/blogue.html">Blogue</a>
-                      <a href="./category/publications.html">Publications</a>
-                                                <a href="./pages/projets.html">Projets</a>
-                      <a href="./pages/vita.html">Vita</a>
-                      </nav><!-- /#menu -->
-    </div>
-
-    <section id="content" class="body">
-  <header>
-    <h1 class="entry-title">
-      <a href="utilisation-de-biblatex.html" rel="bookmark"
-         title="Permalien vers Utilisation de biblatex">Utilisation de <tt class="docutils literal">biblatex</tt></a></h1>
-  
-  </header>
-  <footer class="post-info">
-    <div class="published" title="2012-12-21T00:00:00">
-      21 décembre 2012
-    </div>
-      </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <p><tt class="docutils literal">biblatex</tt> est le logiciel de gestion bibliographique moderne pour accompagner
+    <div class="entry-content">
+      <footer class="post-info">
+        <span class="published">
+                Ven 21 décembre 2012
+        </span>
+<a href="/tag/latex.html">latex</a>
+</footer><!-- /.post-info -->      <p><tt class="docutils literal">biblatex</tt> est le logiciel de gestion bibliographique moderne pour accompagner
 LaTeX. Combiné avec <tt class="docutils literal">biber</tt>, il remplace complètement le système <tt class="docutils literal">bibtex</tt>.
 Il est aussi possible de conserver <tt class="docutils literal">bibtex</tt> comme engin d'arrière-plan, mais
 <tt class="docutils literal">biber</tt> présente de nombreux avantages :</p>
@@ -73,69 +71,69 @@ le fichier <tt class="docutils literal">bib</tt>.</p>
 <tt class="docutils literal">\printbibliography</tt>. Voici un exemple simple d'utilisation de <tt class="docutils literal">biblatex</tt>.</p>
 <p>Fichier <tt class="docutils literal">simple.tex</tt> :</p>
 <pre class="code latex literal-block">
-<span class="keyword">\documentclass</span><span class="name builtin">{</span>article<span class="name builtin">}</span>
-<span class="keyword">\usepackage</span><span class="name attribute">[canadien]</span><span class="name builtin">{</span>babel<span class="name builtin">}</span>
-<span class="keyword">\usepackage</span><span class="name attribute">[utf8]</span><span class="name builtin">{</span>inputenc<span class="name builtin">}</span>
-<span class="keyword">\usepackage</span><span class="name attribute">[T1]</span><span class="name builtin">{</span>fontenc<span class="name builtin">}</span>
-<span class="keyword">\usepackage</span><span class="name builtin">{</span>biblatex<span class="name builtin">}</span>
+<span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[canadien]</span><span class="nb">{</span>babel<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>biblatex<span class="nb">}</span>
 
-<span class="comment">% Emplacement du fichier de références.
-</span><span class="keyword">\addbibresource</span><span class="name builtin">{</span>em.bib<span class="name builtin">}</span>
+<span class="c">% Emplacement du fichier de références.
+</span><span class="k">\addbibresource</span><span class="nb">{</span>em.bib<span class="nb">}</span>
 
-<span class="keyword">\title</span><span class="name builtin">{</span>Exemple simple d'utilisation de <span class="keyword">\texttt</span><span class="name builtin">{</span>biblatex<span class="name builtin">}}</span>
-<span class="keyword">\author</span><span class="name builtin">{</span>Loïc Séguin-Charbonneau<span class="name builtin">}</span>
+<span class="k">\title</span><span class="nb">{</span>Exemple simple d'utilisation de <span class="k">\texttt</span><span class="nb">{</span>biblatex<span class="nb">}}</span>
+<span class="k">\author</span><span class="nb">{</span>Loïc Séguin-Charbonneau<span class="nb">}</span>
 
-<span class="keyword">\begin</span><span class="name builtin">{</span>document<span class="name builtin">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 
-<span class="keyword">\maketitle</span>
+<span class="k">\maketitle</span>
 
-<span class="keyword">\section</span><span class="name builtin">{</span>Introduction<span class="name builtin">}</span>
+<span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
 
 L'électricité et le magnétisme sont deux facettes d'une seule et même force
-qu'on appelle la force électromagnétique <span class="keyword">\cite</span><span class="name builtin">{</span>feynman1965<span class="name builtin">}</span>. Pour découvrir une
+qu'on appelle la force électromagnétique <span class="k">\cite</span><span class="nb">{</span>feynman1965<span class="nb">}</span>. Pour découvrir une
 partie de l'histoire passionnante de la découverte et de l'unification des
 lois de l'électricité et du magnétisme, on peut écouter le cours de Cathryn
-Carson <span class="keyword">\cite</span><span class="name builtin">{</span>carson2008<span class="name builtin">}</span>.
+Carson <span class="k">\cite</span><span class="nb">{</span>carson2008<span class="nb">}</span>.
 
-<span class="keyword">\section</span><span class="name builtin">{</span>La loi de Coulomb<span class="name builtin">}</span>
+<span class="k">\section</span><span class="nb">{</span>La loi de Coulomb<span class="nb">}</span>
 
 La loi de Coulomb décrit la force d'interaction entre deux particules chargées.
 En utilisant le Système international d'unités, la loi de Coulomb s'écrit
-<span class="keyword">\cite</span><span class="name builtin">{</span>halliday2007<span class="name builtin">}</span> :
+<span class="k">\cite</span><span class="nb">{</span>halliday2007<span class="nb">}</span> :
 
-<span class="keyword">\begin</span><span class="name builtin">{</span>equation<span class="name builtin">}</span>
-  <span class="keyword">\vec</span><span class="name builtin">{</span>F<span class="name builtin">}</span> = <span class="keyword">\frac</span><span class="name builtin">{</span>1<span class="name builtin">}{</span>4 <span class="keyword">\pi</span> <span class="keyword">\epsilon</span><span class="name builtin">_</span>0<span class="name builtin">}</span> <span class="keyword">\frac</span><span class="name builtin">{</span>Q<span class="name builtin">_</span>1 Q<span class="name builtin">_</span>2<span class="name builtin">}{</span>r<span class="name builtin">^</span>2<span class="name builtin">}</span>.
-<span class="keyword">\end</span><span class="name builtin">{</span>equation<span class="name builtin">}</span>
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+  <span class="k">\vec</span><span class="nb">{</span>F<span class="nb">}</span> = <span class="k">\frac</span><span class="nb">{</span>1<span class="nb">}{</span>4 <span class="k">\pi</span> <span class="k">\epsilon</span><span class="nb">_</span>0<span class="nb">}</span> <span class="k">\frac</span><span class="nb">{</span>Q<span class="nb">_</span>1 Q<span class="nb">_</span>2<span class="nb">}{</span>r<span class="nb">^</span>2<span class="nb">}</span>.
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
 
-<span class="keyword">\printbibliography</span>
+<span class="k">\printbibliography</span>
 
-<span class="keyword">\end</span><span class="name builtin">{</span>document<span class="name builtin">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </pre>
 <p>Fichier <tt class="docutils literal">em.bib</tt> :</p>
 <pre class="code latex literal-block">
-&#64;book<span class="name builtin">{</span>feynman1965,
-    title = <span class="name builtin">{</span>The Feynman Lectures on Physics<span class="name builtin">}</span>,
-    volume = <span class="name builtin">{{</span>II<span class="name builtin">}}</span>,
-    publisher = <span class="name builtin">{</span>Addison-Wesley<span class="name builtin">}</span>,
-    author = <span class="name builtin">{</span>Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew<span class="name builtin">}</span>,
-    year = <span class="name builtin">{</span>1965<span class="name builtin">}</span>
-<span class="name builtin">}</span>
+&#64;book<span class="nb">{</span>feynman1965,
+    title = <span class="nb">{</span>The Feynman Lectures on Physics<span class="nb">}</span>,
+    volume = <span class="nb">{{</span>II<span class="nb">}}</span>,
+    publisher = <span class="nb">{</span>Addison-Wesley<span class="nb">}</span>,
+    author = <span class="nb">{</span>Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew<span class="nb">}</span>,
+    year = <span class="nb">{</span>1965<span class="nb">}</span>
+<span class="nb">}</span>
 
-&#64;book<span class="name builtin">{</span>halliday2007,
-    edition = <span class="name builtin">{</span>8<span class="name builtin">}</span>,
-    title = <span class="name builtin">{</span>Fundamentals of Physics Extended<span class="name builtin">}</span>,
-    publisher = <span class="name builtin">{</span>Wiley<span class="name builtin">}</span>,
-    author = <span class="name builtin">{</span>Halliday, David and Resnick, Robert and Walker, Jearl<span class="name builtin">}</span>,
-    year = <span class="name builtin">{</span>2007<span class="name builtin">}</span>,
-<span class="name builtin">}</span>
+&#64;book<span class="nb">{</span>halliday2007,
+    edition = <span class="nb">{</span>8<span class="nb">}</span>,
+    title = <span class="nb">{</span>Fundamentals of Physics Extended<span class="nb">}</span>,
+    publisher = <span class="nb">{</span>Wiley<span class="nb">}</span>,
+    author = <span class="nb">{</span>Halliday, David and Resnick, Robert and Walker, Jearl<span class="nb">}</span>,
+    year = <span class="nb">{</span>2007<span class="nb">}</span>,
+<span class="nb">}</span>
 
-&#64;online<span class="name builtin">{</span>carson2008,
-  title = <span class="name builtin">{</span>History 181B:  Modern Physics<span class="name builtin">}</span>,
-  author = <span class="name builtin">{</span>Carson, Cathryn<span class="name builtin">}</span>,
-  url = <span class="name builtin">{</span>https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr<span class="name builtin">&amp;</span>mt=10<span class="name builtin">}</span>,
-  organization = <span class="name builtin">{</span>UC Berkeley<span class="name builtin">}</span>,
-  urldate = <span class="name builtin">{</span>2012-12-21<span class="name builtin">}</span>,
-<span class="name builtin">}</span>
+&#64;online<span class="nb">{</span>carson2008,
+  title = <span class="nb">{</span>History 181B:  Modern Physics<span class="nb">}</span>,
+  author = <span class="nb">{</span>Carson, Cathryn<span class="nb">}</span>,
+  url = <span class="nb">{</span>https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr<span class="nb">&amp;</span>mt=10<span class="nb">}</span>,
+  organization = <span class="nb">{</span>UC Berkeley<span class="nb">}</span>,
+  urldate = <span class="nb">{</span>2012-12-21<span class="nb">}</span>,
+<span class="nb">}</span>
 </pre>
 <p>Et voici le résultat :</p>
 <img alt="static/images/biblatex-simple.png" src="static/images/biblatex-simple.png" />
@@ -163,24 +161,24 @@ bibliographique.</p>
 texte entre le titre et la première référence. Ce texte doit être associé à un
 une <tt class="docutils literal">bibnote</tt> qui est définie à l'aide de la commande <tt class="docutils literal">\defbibnote</tt>. Par
 exemple, on peut définir une note pour le manuel obligatoire</p>
-<pre class="literal-block">
-\defbibnote{obl}{\textbf{Obligatoire}}
+<pre class="code latex literal-block">
+<span class="k">\defbibnote</span><span class="nb">{</span>obl<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>Obligatoire<span class="nb">}}</span>
 </pre>
 <p>puis la bibliographie est imprimée avec</p>
-<pre class="literal-block">
-\printbibliography[heading=bibnumbered, prenote=obl]
+<pre class="code latex literal-block">
+<span class="k">\printbibliography</span><span class="na">[heading=bibnumbered, prenote=obl]</span>
 </pre>
 <p>Le problème est que toutes les références seront imprimées alors que
 normalement seuls un ou deux ouvrages sont obligatoires. Il est possible
 d'ajouter dans le fichier <tt class="docutils literal">bib</tt> un champ <tt class="docutils literal">keywords</tt> et d'utiliser ce champ
 pour imprimer seulement certains documents. Si la référence <tt class="docutils literal">halliday2007</tt>
 est obligatoire, alors on ajoute</p>
-<pre class="literal-block">
-keywords = {mandatory}
+<pre class="code latex literal-block">
+keywords = <span class="nb">{</span>mandatory<span class="nb">}</span>
 </pre>
 <p>à cet élément et on imprime la bibliographie avec</p>
-<pre class="literal-block">
-\printbibliography[heading=bibnumbered, prenote=obl, keyword=mandatory]
+<pre class="code latex literal-block">
+<span class="k">\printbibliography</span><span class="na">[heading=bibnumbered, prenote=obl, keyword=mandatory]</span>
 </pre>
 <p>Les références non-obligatoires peuvent être ajoutées avec d'autres
 appels à la commande <tt class="docutils literal">\printbibliography</tt> en utilisant l'option
@@ -194,105 +192,116 @@ fichier <tt class="docutils literal">bib</tt> si on lui fournit l'option <tt cla
 <p>Ci-dessous se trouve un exemple complet.</p>
 <p>Fichier <tt class="docutils literal">simple.tex</tt> :</p>
 <pre class="code latex literal-block">
-<span class="keyword">\documentclass</span><span class="name builtin">{</span>article<span class="name builtin">}</span>
-<span class="keyword">\usepackage</span><span class="name attribute">[canadien]</span><span class="name builtin">{</span>babel<span class="name builtin">}</span>
-<span class="keyword">\usepackage</span><span class="name attribute">[utf8]</span><span class="name builtin">{</span>inputenc<span class="name builtin">}</span>
-<span class="keyword">\usepackage</span><span class="name attribute">[T1]</span><span class="name builtin">{</span>fontenc<span class="name builtin">}</span>
-<span class="keyword">\usepackage</span><span class="name attribute">[sorting=none]</span><span class="name builtin">{</span>biblatex<span class="name builtin">}</span>
+<span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[canadien]</span><span class="nb">{</span>babel<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[sorting=none]</span><span class="nb">{</span>biblatex<span class="nb">}</span>
 
-<span class="comment">% Emplacement du fichier de références.
-</span><span class="keyword">\addbibresource</span><span class="name builtin">{</span>em.bib<span class="name builtin">}</span>
+<span class="c">% Emplacement du fichier de références.
+</span><span class="k">\addbibresource</span><span class="nb">{</span>em.bib<span class="nb">}</span>
 
-<span class="comment">% Notes pour différents types de références.
-</span><span class="keyword">\defbibnote</span><span class="name builtin">{</span>obl<span class="name builtin">}{</span><span class="keyword">\textbf</span><span class="name builtin">{</span>Obligatoire<span class="name builtin">}}</span>
-<span class="keyword">\defbibnote</span><span class="name builtin">{</span>livres<span class="name builtin">}{</span><span class="keyword">\textbf</span><span class="name builtin">{</span>Livres<span class="name builtin">}}</span>
-<span class="keyword">\defbibnote</span><span class="name builtin">{</span>web<span class="name builtin">}{</span><span class="keyword">\textbf</span><span class="name builtin">{</span>Sites internet<span class="name builtin">}}</span>
+<span class="c">% Notes pour différents types de références.
+</span><span class="k">\defbibnote</span><span class="nb">{</span>obl<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>Obligatoire<span class="nb">}}</span>
+<span class="k">\defbibnote</span><span class="nb">{</span>livres<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>Livres<span class="nb">}}</span>
+<span class="k">\defbibnote</span><span class="nb">{</span>web<span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>Sites internet<span class="nb">}}</span>
 
-<span class="keyword">\title</span><span class="name builtin">{</span>Exemple simple d'utilisation de <span class="keyword">\texttt</span><span class="name builtin">{</span>biblatex<span class="name builtin">}}</span>
-<span class="keyword">\author</span><span class="name builtin">{</span>Loïc Séguin-Charbonneau<span class="name builtin">}</span>
+<span class="k">\title</span><span class="nb">{</span>Exemple simple d'utilisation de <span class="k">\texttt</span><span class="nb">{</span>biblatex<span class="nb">}}</span>
+<span class="k">\author</span><span class="nb">{</span>Loïc Séguin-Charbonneau<span class="nb">}</span>
 
-<span class="keyword">\begin</span><span class="name builtin">{</span>document<span class="name builtin">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 
-<span class="keyword">\maketitle</span>
+<span class="k">\maketitle</span>
 
-<span class="keyword">\section</span><span class="name builtin">{</span>Introduction<span class="name builtin">}</span>
+<span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
 
 L'électricité et le magnétisme sont deux facettes d'une seule et même force
 qu'on appelle la force électromagnétique.  Ce cours présente les principes de
 base de la théorie de l'électromagnétisme.
 
-<span class="keyword">\section</span><span class="name builtin">{</span>Évaluation<span class="name builtin">}</span>
+<span class="k">\section</span><span class="nb">{</span>Évaluation<span class="nb">}</span>
 
 Les étudiants seront évalués à l'aide d'examens très difficiles.
 
-<span class="keyword">\nocite</span><span class="name builtin">{</span>*<span class="name builtin">}</span>
-<span class="keyword">\printbibliography</span><span class="name attribute">[prenote=obl, heading=bibnumbered, keyword=mandatory]</span>
-<span class="keyword">\printbibliography</span><span class="name attribute">[prenote=livres, type=book, notkeyword=mandatory, heading=none]</span>
-<span class="keyword">\printbibliography</span><span class="name attribute">[prenote=web, type=online, notkeyword=mandatory, heading=none]</span>
+<span class="k">\nocite</span><span class="nb">{</span>*<span class="nb">}</span>
+<span class="k">\printbibliography</span><span class="na">[prenote=obl, heading=bibnumbered, keyword=mandatory]</span>
+<span class="k">\printbibliography</span><span class="na">[prenote=livres, type=book, notkeyword=mandatory, heading=none]</span>
+<span class="k">\printbibliography</span><span class="na">[prenote=web, type=online, notkeyword=mandatory, heading=none]</span>
 
-<span class="keyword">\section</span><span class="name builtin">{</span>Horaire<span class="name builtin">}</span>
+<span class="k">\section</span><span class="nb">{</span>Horaire<span class="nb">}</span>
 
 Le cours se donne du lundi au vendredi, de 8h à 9h. Les laboratoires auront
 lieu le jeudi après-midi de 13h à 17h.
 
-<span class="keyword">\end</span><span class="name builtin">{</span>document<span class="name builtin">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </pre>
 <p>Fichier <tt class="docutils literal">em.bib</tt> :</p>
 <pre class="code latex literal-block">
-&#64;book<span class="name builtin">{</span>halliday2007,
-    edition = <span class="name builtin">{</span>8<span class="name builtin">}</span>,
-    title = <span class="name builtin">{</span>Fundamentals of Physics Extended<span class="name builtin">}</span>,
-    publisher = <span class="name builtin">{</span>Wiley<span class="name builtin">}</span>,
-    author = <span class="name builtin">{</span>Halliday, David and Resnick, Robert and Walker, Jearl<span class="name builtin">}</span>,
-    year = <span class="name builtin">{</span>2007<span class="name builtin">}</span>,
-  keywords = <span class="name builtin">{</span>mandatory<span class="name builtin">}</span>
-<span class="name builtin">}</span>
+&#64;book<span class="nb">{</span>halliday2007,
+    edition = <span class="nb">{</span>8<span class="nb">}</span>,
+    title = <span class="nb">{</span>Fundamentals of Physics Extended<span class="nb">}</span>,
+    publisher = <span class="nb">{</span>Wiley<span class="nb">}</span>,
+    author = <span class="nb">{</span>Halliday, David and Resnick, Robert and Walker, Jearl<span class="nb">}</span>,
+    year = <span class="nb">{</span>2007<span class="nb">}</span>,
+  keywords = <span class="nb">{</span>mandatory<span class="nb">}</span>
+<span class="nb">}</span>
 
-&#64;book<span class="name builtin">{</span>feynman1965,
-    title = <span class="name builtin">{</span>The Feynman Lectures on Physics<span class="name builtin">}</span>,
-    volume = <span class="name builtin">{{</span>II<span class="name builtin">}}</span>,
-    publisher = <span class="name builtin">{</span>Addison-Wesley<span class="name builtin">}</span>,
-    author = <span class="name builtin">{</span>Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew<span class="name builtin">}</span>,
-    year = <span class="name builtin">{</span>1965<span class="name builtin">}</span>
-<span class="name builtin">}</span>
+&#64;book<span class="nb">{</span>feynman1965,
+    title = <span class="nb">{</span>The Feynman Lectures on Physics<span class="nb">}</span>,
+    volume = <span class="nb">{{</span>II<span class="nb">}}</span>,
+    publisher = <span class="nb">{</span>Addison-Wesley<span class="nb">}</span>,
+    author = <span class="nb">{</span>Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew<span class="nb">}</span>,
+    year = <span class="nb">{</span>1965<span class="nb">}</span>
+<span class="nb">}</span>
 
-&#64;online<span class="name builtin">{</span>carson2008,
-  title = <span class="name builtin">{</span>History 181B:  Modern Physics<span class="name builtin">}</span>,
-  author = <span class="name builtin">{</span>Carson, Cathryn<span class="name builtin">}</span>,
-  url = <span class="name builtin">{</span>https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr<span class="name builtin">&amp;</span>mt=10<span class="name builtin">}</span>,
-  organization = <span class="name builtin">{</span>UC Berkeley<span class="name builtin">}</span>,
-  urldate = <span class="name builtin">{</span>2012-12-21<span class="name builtin">}</span>,
-<span class="name builtin">}</span>
+&#64;online<span class="nb">{</span>carson2008,
+  title = <span class="nb">{</span>History 181B:  Modern Physics<span class="nb">}</span>,
+  author = <span class="nb">{</span>Carson, Cathryn<span class="nb">}</span>,
+  url = <span class="nb">{</span>https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr<span class="nb">&amp;</span>mt=10<span class="nb">}</span>,
+  organization = <span class="nb">{</span>UC Berkeley<span class="nb">}</span>,
+  urldate = <span class="nb">{</span>2012-12-21<span class="nb">}</span>,
+<span class="nb">}</span>
 
-&#64;online<span class="name builtin">{</span>lewin2002,
-    title = <span class="name builtin">{</span>8.02 Electricity and Magnetism<span class="name builtin">}</span>,
-    url = <span class="name builtin">{</span>http://ocw.mit.edu/courses/physics/8-02-electricity-and-magnetism-spring-2002/<span class="name builtin">}</span>,
-    urldate = <span class="name builtin">{</span>2012-12-21<span class="name builtin">}</span>,
-    organization = <span class="name builtin">{{</span>MIT OpenCourseWare<span class="name builtin">}}</span>,
-    author = <span class="name builtin">{</span>Lewin, Walter<span class="name builtin">}</span>,
-<span class="name builtin">}</span>
+&#64;online<span class="nb">{</span>lewin2002,
+    title = <span class="nb">{</span>8.02 Electricity and Magnetism<span class="nb">}</span>,
+    url = <span class="nb">{</span>http://ocw.mit.edu/courses/physics/8-02-electricity-and-magnetism-spring-2002/<span class="nb">}</span>,
+    urldate = <span class="nb">{</span>2012-12-21<span class="nb">}</span>,
+    organization = <span class="nb">{{</span>MIT OpenCourseWare<span class="nb">}}</span>,
+    author = <span class="nb">{</span>Lewin, Walter<span class="nb">}</span>,
+<span class="nb">}</span>
 </pre>
 <p>Le résultat est le suivant :</p>
 <img alt="static/images/biblatex-pdc.png" src="static/images/biblatex-pdc.png" />
 </div>
 
-  </div><!-- /.entry-content -->
+    </div><!-- /.entry-content -->
+    
+  </article>
 </section>
 
-    <footer id="contentinfo" class="body">
-        <address id="about" class="vcard body">
-            Klaatu verata nicto
-        </address><!-- /#about -->
+            <section id="extras" class="body">
+                        </section><!-- /#extras -->
 
-                    <div class="social">
-                <a id='email' href="mailto:loicseguin@gmail.com" rel="alternate"></a>
-                <a id='twitter' href="http://twitter.com/lseguinc/" rel="alternate"></a>
-                <a id='atom' href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a>
-                <a id='flickr' href="http://www.flickr.com/photos/loicseguin" rel="alternate"></a>
-                <a id='github' href="http://github.com/loicseguin/" rel="alternate"></a>
-                <a id='bitbucket' href="http://bitbucket.org/loicseguin/" rel="alternate"></a>
+            <footer id="contentinfo" class="body">
+            Klaatu verata nicto
+
+                        <div class="social">
+                <ul>
+                    <li><a href="/None" type="application/atom+xml" rel="alternate"></a></li>
+                    
+                                        <li><a href="mailto:loic@loicseguin.com"></a></li>
+                                        <li><a href="http://twitter.com/lseguinc"></a></li>
+                                        <li><a href="http://github.com/loicseguin"></a></li>
+                                        <li><a href="http://bitbucket.org/loicseguin"></a></li>
+                                        <li><a href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
+                                        <li><a href="http://www.flickr.com/photos/loicseguin"></a></li>
+                                    </ul>
             </div><!-- /.social -->
-            </footer><!-- /#contentinfo -->
-</div>
-</body>
+                        </footer><!-- /#contentinfo -->
+
+                                            </div>
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="/theme/js/bootstrap.min.js"></script>
+    </body>
 </html>
