@@ -1,9 +1,10 @@
 Polices de caractères personnalisées dans matplotlib
 ====================================================
 
-:date: 2012/12/24
+:date: 2012-12-24
 :author: Loïc Séguin-Charbonneau
 :tags: programmation
+:status: draft
 
 Il est possible d'utiliser n'importe quelle police dans Matplotlib. Ce qui est
 un peu pénible, c'est de spécifier le type de police pour chaque élément du
@@ -27,5 +28,5 @@ graphique.  Le code ci-dessous illustre comment s'y prendre.
 
 Le résultat est l'image suivante.
 
-.. image:: static/images/custom_font_matplotlib.png
+.. image:: |filename|/images/custom_font_matplotlib.png
 

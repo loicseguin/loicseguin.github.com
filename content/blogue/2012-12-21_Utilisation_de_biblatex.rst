@@ -116,7 +116,7 @@ Fichier ``em.bib`` :
 
 Et voici le résultat :
 
-.. image:: static/images/biblatex-simple.png
+.. image:: |filename|/images/biblatex-simple.png
 
 
 Personnalisation : inclusion de références dans un plan de cours
@@ -271,5 +271,5 @@ Fichier ``em.bib`` :
 
 Le résultat est le suivant :
 
-.. image:: static/images/biblatex-pdc.png
+.. image:: |filename|/images/biblatex-pdc.png
 

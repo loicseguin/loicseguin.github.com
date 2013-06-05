@@ -1,7 +1,7 @@
 title: Variations saisonnières des naissances au Canada
 author: Loïc Séguin-C.
 date: 2013-04-01
-summary: Quand y a-t-il plus de naissances?
+status: draft
 
 On commence par lire les données dans le fichier CSV obtenu à partir de la
 [table 102-4502][table102-4502] du site de [Statistique Canada][statcan].

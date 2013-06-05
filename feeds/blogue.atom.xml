@@ -1,0 +1,1690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/blogue.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2013-06-05T00:00:00-04:00</updated><entry><title>Conservation de la masse en hydrodynamique</title><link href="http://loicseguin.com/blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/" rel="alternate"></link><updated>2013-06-05T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-05:blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/</id><summary type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
+système fermé est un invariant, c'est-à-dire qu'elle est constante dans le
+temps.  Si le système étudié est un fluide, ce principe mène à l'équation de
+conservation de la masse aussi connue sous le nom d'&lt;em&gt;équation de continuité&lt;/em&gt; :&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\frac{\partial \rho}{\partial t} + \mathbf{\nabla} \cdot (\rho \mathbf{u}) = 0.
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;Dans ce contexte, la conservation de la masse signifie que pour n'importe
+quelle région de l'espace, la masse de fluide contenue à l'intérieur de cette
+région ne peut changer que si du fluide est passé à travers l'interface entre
+cette région et le reste de l'espace.  Autrement dit, il faut que &lt;em&gt;quelque
+chose&lt;/em&gt; (une masse de fluide) soit entré ou sorti.&lt;/p&gt;
+&lt;p&gt;Le but de ce billet est de présenter les détails de la dérivation de cette
+équation.&lt;/p&gt;
+&lt;div class="section" id="definition-des-quantites-physiques"&gt;
+&lt;h2&gt;Définition des quantités physiques&lt;/h2&gt;
+&lt;p&gt;Il existe deux approches pour décrire un fluide. Dans la première,
+&lt;em&gt;eulérienne&lt;/em&gt;, le fluide se déplace par rapport à un système de référence fixe.
+Les quantité physiques qui caractérisent le fluide sont des champs scalaires
+(comme pour la température) ou vectoriels (pour la vitesse) qui dépendent du
+temps et de la position dans l'espace &lt;span class="math"&gt;\(\mathbf{r}\)&lt;/span&gt;
+.  La seconde approche,
+&lt;em&gt;lagrangienne&lt;/em&gt;, consiste à suivre le mouvement d'un élément de fluide. Cet
+élément est caractérisé par une position &lt;span class="math"&gt;\(\mathbf{\xi}\)&lt;/span&gt;
+ qui dépend du
+temps. Dans ce billet, l'approche eulérienne est utilisée.&lt;/p&gt;
+&lt;p&gt;La densité de masse du fluide varie dans le temps et dans l'espace :
+&lt;span class="math"&gt;\(\rho = \rho(t, \mathbf{r})\)&lt;/span&gt;
+.  Le champ de vitesse &lt;span class="math"&gt;\(\mathbf{u}(t,
+\mathbf{r})\)&lt;/span&gt;
+ décrit la vitesse de l'élément de fluide qui se trouve à la
+position &lt;span class="math"&gt;\(\mathbf{r}\)&lt;/span&gt;
+ au temps &lt;span class="math"&gt;\(t\)&lt;/span&gt;
+.&lt;/p&gt;
+&lt;p&gt;L'espace est divisé en deux par une surface fermée &lt;span class="math"&gt;\(S\)&lt;/span&gt;
+ qui englobe une
+région de volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
+.  À chaque élément de surface correspond un vecteur
+&lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt;
+ dont la longueur est l'aire de l'élément de surface, et la
+direction est perpendiculaire au plan tangent à la surface et vers l'extérieur.
+La figure ci-contre illustre ces différentes quantités.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Élément de surface" class="img-polaroid" src="http://loicseguin.com/static/images/surf-elem.png" /&gt;
+&lt;p class="caption"&gt;Un élément de surface &lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt;
+ d'une surface fermée &lt;span class="math"&gt;\(S\)&lt;/span&gt;
+
+qui définit un volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
+.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Si &lt;span class="math"&gt;\(\mathbf{\hat{n}}\)&lt;/span&gt;
+ est un vecteur unitaire perpendiculaire à la
+surface et pointant vers l'extérieur, alors  &lt;span class="math"&gt;\(d\mathbf{a} =
+\mathbf{\hat{n}} da\)&lt;/span&gt;
+ où &lt;span class="math"&gt;\(da\)&lt;/span&gt;
+ est l'aire de l'élément de surface.
+Cette représentation sera utile pour la suite.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="changement-de-masse-dans-le-volume"&gt;
+&lt;h2&gt;Changement de masse dans le volume&lt;/h2&gt;
+&lt;p&gt;La masse totale dans le volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
+ est une quantité qui peut varier dans
+le temps : &lt;span class="math"&gt;\(M = M(t)\)&lt;/span&gt;
+.  Cette masse est obtenue en intégrant la densité
+sur la totalité du volume :&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+M(t) = \int_V \rho(t, \mathbf{r}) dV.
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;Pour déterminer le taux de variation (instantané) de la masse en fonction du
+temps, il suffit de dériver cette équation par rapport au temps :&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\frac{d}{dt} M(t) = \frac{d}{dt} \int_V \rho(t, \mathbf{r}) dV.
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;En supposant que toutes les fonctions et les surfaces sont lisses et que
+l'intégrale converge (ce qui est toujours le cas, sauf peut-être dans les trous
+noirs), il est possible d'inverser l'ordre de la dérivée et de l'intégrale du
+côté droit de l'égalité.  La masse de fluide contenue dans le volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
+
+varie donc selon&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\frac{d}{dt} M(t) = \int_V \frac{\partial}{\partial t} \rho(t, \mathbf{r}) dV.
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;La dérivée temporelle a été remplacée par une dérivée partielle parce que la
+densité, par opposition à la masse totale de fluide dans le volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
+,
+dépend non seulement du temps, mais aussi de la position.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="masse-de-fluide-qui-traverse-la-surface"&gt;
+&lt;h2&gt;Masse de fluide qui traverse la surface&lt;/h2&gt;
+&lt;p&gt;La masse qui traverse la surface par unité de temps, appelée le flux de masse,
+dépend à la fois de la densité et de la vitesse du fluide.  Il faut étudier
+l'effet de chacune de ces deux quantités sur le flux.&lt;/p&gt;
+&lt;p&gt;Si le fluide se déplace très rapidement, une plus grande quantité de matière
+devrait traverser la surface que s'il se déplace lentement.  Cependant, il est
+possible que le fluide se déplace parallèlement à la surface, auquel cas la
+magnitude de la vitesse n'a aucune incidence sur le flux de matière qui
+traverse la surface.  L'angle entre le vecteur vitesse et la surface joue donc
+un rôle important : seule la composante de cette vitesse qui est
+perpendiculaire à l'élément de surface contribue au flux.  Par conséquent, la
+composante de la vitesse à considérer est &lt;span class="math"&gt;\(\mathbf{u} \cdot
+\mathbf{\hat{n}}\)&lt;/span&gt;
+.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Vitesse perpendiculaire" src="http://loicseguin.com/static/images/vitesse-perpendiculaire.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Au premier ordre, la vitesse du fluide est constante partout sur un élément de
+surface infinitésimal &lt;span class="math"&gt;\(\mathbf{\hat{n}}da\)&lt;/span&gt;
+. De plus, à une distance
+suffisamment petite de l'élément, la vitesse est approximativement constante.
+Dans un temps très court &lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;
+, seul le fluide situé dans un
+cylindre de section &lt;span class="math"&gt;\(da\)&lt;/span&gt;
+ et de longueur &lt;span class="math"&gt;\(\Delta t \mathbf{u} \cdot
+\mathbf{\hat{n}}\)&lt;/span&gt;
+ traverse l'élément de surface. Puisque &lt;span class="math"&gt;\(da\)&lt;/span&gt;
+ et
+&lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;
+ sont infinitésimaux, la densité de masse est constante dans ce
+cylindre et la masse qui y est contenue est donc &lt;span class="math"&gt;\(\rho \Delta t
+\mathbf{u} \cdot \mathbf{\hat{n}} da\)&lt;/span&gt;
+. Cette masse traverse la surface en un
+temps &lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;
+, d'où un flux de masse de &lt;span class="math"&gt;\(\rho \mathbf{u} \cdot
+\mathbf{\hat{n}} da\)&lt;/span&gt;
+ qui peut s'écrire de façon légèrement plus compacte comme
+&lt;span class="math"&gt;\(\rho \mathbf{u} \cdot d\mathbf{a}\)&lt;/span&gt;
+.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Cylindre de matière" src="http://loicseguin.com/static/images/cylindre-de-matiere.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Le flux total à travers la surface s'obtient simplement en intégrant le flux à
+travers chaque élément de surface :&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\int_S \rho \mathbf{u} \cdot d\mathbf{a}
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;Il est important de noter que l'orientation de l'élément de surface
+&lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt;
+ vers l'extérieur fait en sorte que le flux ci-dessus est
+interprété comme sortant de la surface s'il est positif et entrant dans la
+surface s'il est négatif.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="equation-de-continuite"&gt;
+&lt;h2&gt;Équation de continuité&lt;/h2&gt;
+&lt;p&gt;Par conservation de la masse, toute matière qui traverse la surface doit
+contribuer à faire augmenter ou diminuer la masse contenue dans le volume
+&lt;span class="math"&gt;\(V\)&lt;/span&gt;
+. Il faut donc que le changement de masse dans le temps soit
+strictement égal au flux de masse à travers la surface. Avec la convention de
+signe adoptée plus haut, un flux sortant est positif et correspond à une
+diminution de la masse à l'intérieur de la surface et donc à une dérivée
+négative. Par conséquent, on obtient la relation suivante :&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\int_V \frac{\partial}{\partial t} \rho(t, \mathbf{r}) dV = -\int_S \rho \mathbf{u} \cdot d\mathbf{a}.
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;Le côté droit de l'égalité peut se récrire comme une intégrale de volume en
+utilisant le théorème de Gauss (ou de la divergence).&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\int_V \frac{\partial}{\partial t} \rho(t, \mathbf{r}) dV = -\int_V \mathbf{\nabla} (\rho \mathbf{u}) dV.
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;Puisque cette égalité doit être valide pour n'importe quel volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
+, il
+faut que les intégrands soient identiquement égaux, i.e. :&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\frac{\partial}{\partial t} \rho(t, \mathbf{r}) = - \mathbf{\nabla} (\rho \mathbf{u}).
+\end{equation*}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;L'équation de continuité s'obtient relativement simplement à partir de
+considérations physiques simples.  Même si la dérivation présentée ici a été
+faite dans le contexte de l'hydrodynamique, il est intéressant de noter que le
+raisonnement est aussi valable dans un grand nombre d'autres contextes.  Par
+exemple, si la densité de masse est remplacé par une densité de charge, alors
+le produit &lt;span class="math"&gt;\(\rho\mathbf{u}\)&lt;/span&gt;
+ devient une densité de courant et l'équation
+est l'équation de conservation de la charge en électrodynamique.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="physique"></category></entry><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.com/blogue/2012/12/utilisation-de-biblatex/" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2012-12-21:blogue/2012/12/utilisation-de-biblatex/</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
+LaTeX. Combiné avec &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt;, il remplace complètement le système &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;.
+Il est aussi possible de conserver &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; comme engin d'arrière-plan, mais
+&lt;tt class="docutils literal"&gt;biber&lt;/tt&gt; présente de nombreux avantages :&lt;/p&gt;
+&lt;blockquote&gt;
+Biber, the default backend of biblatex, supports Ascii, 8-bit encodings,
+UTF-8, on-the-fly reencoding, locale-specific sorting, and many other
+features. Locale-specific sorting, case-sensitive sorting, and
+upper/lowercase precedence are controlled by the options sortlocale,
+sortcase, and sortupper, respectively.&lt;/blockquote&gt;
+&lt;p&gt;(tiré du &lt;a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf"&gt;manuel d'utilisation&lt;/a&gt;).&lt;/p&gt;
+&lt;div class="section" id="exemple-simple"&gt;
+&lt;h2&gt;Exemple simple&lt;/h2&gt;
+&lt;p&gt;Pour incorporer &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; dans un document, il suffit d'utiliser la commande
+&lt;tt class="docutils literal"&gt;\usepackage{biblatex}&lt;/tt&gt; dans le préambule du fichier source. Puis, il faut
+spécifier le fichier qui contient les références bibliographiques avec
+&lt;tt class="docutils literal"&gt;\addbibresource{refs.bib}&lt;/tt&gt;. Il est possible d'inclure plusieurs fichiers de
+références en ajoutant autant de &lt;tt class="docutils literal"&gt;\addbibresource&lt;/tt&gt; que nécessaire. La
+commande &lt;tt class="docutils literal"&gt;\bibliography&lt;/tt&gt; utilisée avec &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; est aussi reconnue par
+&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; pour maintenir la compatibilité, mais la nouvelle commande devrait
+être utilisée autant que possible. Il est important de noter que le nom
+complet, incluant l'extension, du fichier de référence doit être donné.&lt;/p&gt;
+&lt;p&gt;Citer une référence se fait de la même manière qu'avec &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;, c'est-à-dire
+avec la commande &lt;tt class="docutils literal"&gt;\cite{key}&lt;/tt&gt; où &lt;tt class="docutils literal"&gt;key&lt;/tt&gt; est le nom d'une des références dans
+le fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;La bibliographie est incluse dans le document à l'aide de la commande
+&lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt;. Voici un exemple simple d'utilisation de &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;simple.tex&lt;/tt&gt; :&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[canadien]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;babel&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[utf8]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;inputenc&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[T1]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;fontenc&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;% Emplacement du fichier de références.
+&lt;/span&gt;&lt;span class="k"&gt;\addbibresource&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;em.bib&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\title&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="k"&gt;\texttt&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\author&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\maketitle&lt;/span&gt;
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Introduction&lt;span class="nb"&gt;}&lt;/span&gt;
+
+L'électricité et le magnétisme sont deux facettes d'une seule et même force
+qu'on appelle la force électromagnétique &lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965&lt;span class="nb"&gt;}&lt;/span&gt;. Pour découvrir une
+partie de l'histoire passionnante de la découverte et de l'unification des
+lois de l'électricité et du magnétisme, on peut écouter le cours de Cathryn
+Carson &lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;carson2008&lt;span class="nb"&gt;}&lt;/span&gt;.
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;La loi de Coulomb&lt;span class="nb"&gt;}&lt;/span&gt;
+
+La loi de Coulomb décrit la force d'interaction entre deux particules chargées.
+En utilisant le Système international d'unités, la loi de Coulomb s'écrit
+&lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007&lt;span class="nb"&gt;}&lt;/span&gt; :
+
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;\vec&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;F&lt;span class="nb"&gt;}&lt;/span&gt; = &lt;span class="k"&gt;\frac&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;1&lt;span class="nb"&gt;}{&lt;/span&gt;4 &lt;span class="k"&gt;\pi&lt;/span&gt; &lt;span class="k"&gt;\epsilon&lt;/span&gt;&lt;span class="nb"&gt;_&lt;/span&gt;0&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\frac&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Q&lt;span class="nb"&gt;_&lt;/span&gt;1 Q&lt;span class="nb"&gt;_&lt;/span&gt;2&lt;span class="nb"&gt;}{&lt;/span&gt;r&lt;span class="nb"&gt;^&lt;/span&gt;2&lt;span class="nb"&gt;}&lt;/span&gt;.
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;
+
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;em.bib&lt;/tt&gt; :&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
+    volume = &lt;span class="nb"&gt;{{&lt;/span&gt;II&lt;span class="nb"&gt;}}&lt;/span&gt;,
+    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="nb"&gt;}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="nb"&gt;}&lt;/span&gt;,
+    year = &lt;span class="nb"&gt;{&lt;/span&gt;1965&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007,
+    edition = &lt;span class="nb"&gt;{&lt;/span&gt;8&lt;span class="nb"&gt;}&lt;/span&gt;,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="nb"&gt;}&lt;/span&gt;,
+    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Wiley&lt;span class="nb"&gt;}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="nb"&gt;}&lt;/span&gt;,
+    year = &lt;span class="nb"&gt;{&lt;/span&gt;2007&lt;span class="nb"&gt;}&lt;/span&gt;,
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;carson2008,
+  title = &lt;span class="nb"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
+  author = &lt;span class="nb"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="nb"&gt;}&lt;/span&gt;,
+  url = &lt;span class="nb"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="nb"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="nb"&gt;}&lt;/span&gt;,
+  organization = &lt;span class="nb"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="nb"&gt;}&lt;/span&gt;,
+  urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
+&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Et voici le résultat :&lt;/p&gt;
+&lt;img alt="|filename|/images/biblatex-simple.png" src="http://loicseguin.com/static/images/biblatex-simple.png" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="personnalisation-inclusion-de-references-dans-un-plan-de-cours"&gt;
+&lt;h2&gt;Personnalisation : inclusion de références dans un plan de cours&lt;/h2&gt;
+&lt;p&gt;Lorsque je rédige des plans de cours, les références bibliographiques doivent
+constituer une section à part entière (avec numérotation du titre).  De plus,
+les références ne sont en général pas citées dans le texte, elles ne sont là
+que pour indiquer aux étudiants les sources qu'ils peuvent consulter.  Enfin,
+les références obligatoires doivent être clairement indiquées et j'aime
+bien séparer les sites internet du reste des références. Avec &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;, il
+est assez simple d'ajuster la bibliographie en conséquence.&lt;/p&gt;
+&lt;p&gt;La commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; possède de nombreuses options
+dont celle de spécifier le format de l'en-tête. On peut simplement donner
+l'option &lt;tt class="docutils literal"&gt;heading=bibnumbered&lt;/tt&gt; pour que l'en-tête soit numéroté comme une
+section (ou un chapitre si la classe de document est un livre).&lt;/p&gt;
+&lt;p&gt;Pour inclure des références qui ne sont pas citées dans le texte il suffit
+d'utiliser &lt;tt class="docutils literal"&gt;\nocite{key}&lt;/tt&gt;. Par exemple, si les &lt;em&gt;Feynman Lectures on Physics&lt;/em&gt;
+doivent être affichées dans la bibliographie, il suffit d'ajouter
+&lt;tt class="docutils literal"&gt;\nocite{feynman1965}&lt;/tt&gt;. Il est également possible d'inclure tous les
+documents du fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; avec l'argument &lt;tt class="docutils literal"&gt;*&lt;/tt&gt; à la place d'une clé
+bibliographique.&lt;/p&gt;
+&lt;p&gt;L'option &lt;tt class="docutils literal"&gt;prenote&lt;/tt&gt; de la commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; permet d'ajouter du
+texte entre le titre et la première référence. Ce texte doit être associé à un
+une &lt;tt class="docutils literal"&gt;bibnote&lt;/tt&gt; qui est définie à l'aide de la commande &lt;tt class="docutils literal"&gt;\defbibnote&lt;/tt&gt;. Par
+exemple, on peut définir une note pour le manuel obligatoire&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;obl&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Obligatoire&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;puis la bibliographie est imprimée avec&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[heading=bibnumbered, prenote=obl]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Le problème est que toutes les références seront imprimées alors que
+normalement seuls un ou deux ouvrages sont obligatoires. Il est possible
+d'ajouter dans le fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; un champ &lt;tt class="docutils literal"&gt;keywords&lt;/tt&gt; et d'utiliser ce champ
+pour imprimer seulement certains documents. Si la référence &lt;tt class="docutils literal"&gt;halliday2007&lt;/tt&gt;
+est obligatoire, alors on ajoute&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+keywords = &lt;span class="nb"&gt;{&lt;/span&gt;mandatory&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;à cet élément et on imprime la bibliographie avec&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[heading=bibnumbered, prenote=obl, keyword=mandatory]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Les références non-obligatoires peuvent être ajoutées avec d'autres
+appels à la commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; en utilisant l'option
+&lt;tt class="docutils literal"&gt;notkeyword=mandatory&lt;/tt&gt;.  Les références d'un certain type sont imprimées avec
+l'option &lt;tt class="docutils literal"&gt;type&lt;/tt&gt; dont la valeur est un des types de documents &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;
+(par exemple, &lt;tt class="docutils literal"&gt;book&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;article&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;online&lt;/tt&gt;, etc.).  Pour éviter d'avoir
+un nouvel en-tête de section à chaque appel de &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt;, il
+suffit de fournir l'option &lt;tt class="docutils literal"&gt;heading=none&lt;/tt&gt;. Finalement, pour éviter que la
+numérotation soit dans le désordre, &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; peut conserver l'ordre du
+fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; si on lui fournit l'option &lt;tt class="docutils literal"&gt;sorting=none&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Ci-dessous se trouve un exemple complet.&lt;/p&gt;
+&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;simple.tex&lt;/tt&gt; :&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[canadien]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;babel&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[utf8]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;inputenc&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[T1]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;fontenc&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[sorting=none]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;% Emplacement du fichier de références.
+&lt;/span&gt;&lt;span class="k"&gt;\addbibresource&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;em.bib&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;% Notes pour différents types de références.
+&lt;/span&gt;&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;obl&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Obligatoire&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;livres&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Livres&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;web&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Sites internet&lt;span class="nb"&gt;}}&lt;/span&gt;
+
+&lt;span class="k"&gt;\title&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="k"&gt;\texttt&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\author&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\maketitle&lt;/span&gt;
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Introduction&lt;span class="nb"&gt;}&lt;/span&gt;
+
+L'électricité et le magnétisme sont deux facettes d'une seule et même force
+qu'on appelle la force électromagnétique.  Ce cours présente les principes de
+base de la théorie de l'électromagnétisme.
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Évaluation&lt;span class="nb"&gt;}&lt;/span&gt;
+
+Les étudiants seront évalués à l'aide d'examens très difficiles.
+
+&lt;span class="k"&gt;\nocite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;*&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=obl, heading=bibnumbered, keyword=mandatory]&lt;/span&gt;
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=livres, type=book, notkeyword=mandatory, heading=none]&lt;/span&gt;
+&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=web, type=online, notkeyword=mandatory, heading=none]&lt;/span&gt;
+
+&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Horaire&lt;span class="nb"&gt;}&lt;/span&gt;
+
+Le cours se donne du lundi au vendredi, de 8h à 9h. Les laboratoires auront
+lieu le jeudi après-midi de 13h à 17h.
+
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;em.bib&lt;/tt&gt; :&lt;/p&gt;
+&lt;pre class="code latex literal-block"&gt;
+&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007,
+    edition = &lt;span class="nb"&gt;{&lt;/span&gt;8&lt;span class="nb"&gt;}&lt;/span&gt;,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="nb"&gt;}&lt;/span&gt;,
+    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Wiley&lt;span class="nb"&gt;}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="nb"&gt;}&lt;/span&gt;,
+    year = &lt;span class="nb"&gt;{&lt;/span&gt;2007&lt;span class="nb"&gt;}&lt;/span&gt;,
+  keywords = &lt;span class="nb"&gt;{&lt;/span&gt;mandatory&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
+    volume = &lt;span class="nb"&gt;{{&lt;/span&gt;II&lt;span class="nb"&gt;}}&lt;/span&gt;,
+    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="nb"&gt;}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="nb"&gt;}&lt;/span&gt;,
+    year = &lt;span class="nb"&gt;{&lt;/span&gt;1965&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;carson2008,
+  title = &lt;span class="nb"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
+  author = &lt;span class="nb"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="nb"&gt;}&lt;/span&gt;,
+  url = &lt;span class="nb"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="nb"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="nb"&gt;}&lt;/span&gt;,
+  organization = &lt;span class="nb"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="nb"&gt;}&lt;/span&gt;,
+  urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
+&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;lewin2002,
+    title = &lt;span class="nb"&gt;{&lt;/span&gt;8.02 Electricity and Magnetism&lt;span class="nb"&gt;}&lt;/span&gt;,
+    url = &lt;span class="nb"&gt;{&lt;/span&gt;http://ocw.mit.edu/courses/physics/8-02-electricity-and-magnetism-spring-2002/&lt;span class="nb"&gt;}&lt;/span&gt;,
+    urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
+    organization = &lt;span class="nb"&gt;{{&lt;/span&gt;MIT OpenCourseWare&lt;span class="nb"&gt;}}&lt;/span&gt;,
+    author = &lt;span class="nb"&gt;{&lt;/span&gt;Lewin, Walter&lt;span class="nb"&gt;}&lt;/span&gt;,
+&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Le résultat est le suivant :&lt;/p&gt;
+&lt;img alt="|filename|/images/biblatex-pdc.png" src="http://loicseguin.com/static/images/biblatex-pdc.png" /&gt;
+&lt;/div&gt;
+</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/12/bessel-functions-in-scipy/" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:blogue/2012/12/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt;
+ where &lt;span class="math"&gt;\(l\)&lt;/span&gt;
+ is an integer,
+are found in &lt;tt class="docutils literal"&gt;scipy.special.jn&lt;/tt&gt;. This is a function that takes two arguments:
+the first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
+ and the second one is the value of the
+point at which to evaluate the functions. If one is interested in &lt;span class="math"&gt;\(J_0\)&lt;/span&gt;
+
+or &lt;span class="math"&gt;\(J_1\)&lt;/span&gt;
+ only, then there are faster implementations of these functions
+as &lt;tt class="docutils literal"&gt;j0&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;j1&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;If the goal is to find the zeros of the Bessel function, then rather than using
+a root finding routine (such as &lt;tt class="docutils literal"&gt;scipy.optimize.newton&lt;/tt&gt;) it is more efficient
+to call &lt;tt class="docutils literal"&gt;scipy.special.jn_zeros&lt;/tt&gt;. This function also takes two arguments, the
+first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
+ and the second one is the number of zeros
+to display (it starts at the first positive zero).&lt;/p&gt;
+&lt;p&gt;For Bessel functions of half-integer order, so called &lt;em&gt;spherical Bessel
+function&lt;/em&gt;, the situation is a little bit more complicated. The appropriate
+function is &lt;tt class="docutils literal"&gt;scipy.special.sph_jn&lt;/tt&gt;. To compute &lt;span class="math"&gt;\(J_{l + 1/2}\)&lt;/span&gt;
+, the first
+argument to &lt;tt class="docutils literal"&gt;sph_jn&lt;/tt&gt; is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
+. The second argument is the
+value of the point at which to evaluate the function. Where it gets complicated
+is in the return value of the function. &lt;tt class="docutils literal"&gt;sph_jn&lt;/tt&gt; returns a pair of arrays.
+The first array contains the values of the function, and the second array
+contains the values of the derivative.  Each array has length &lt;span class="math"&gt;\(l + 1\)&lt;/span&gt;
+ and
+contains a value for all spherical Bessel functions with &lt;span class="math"&gt;\(l\)&lt;/span&gt;
+ smaller than
+or equal to the supplied value.&lt;/p&gt;
+&lt;p&gt;It is useful to wrap this function into something friendlier:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j3o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{3/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sph_jn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;j5o2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Compute the spherical Bessel function J_{5/2}.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sph_jn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;To obtain the zeros of the spherical Bessel function, one has to call a root
+finding procedure. For instance, &lt;tt class="docutils literal"&gt;scipy.optimize.newton&lt;/tt&gt; does the job quite
+well.&lt;/p&gt;
+&lt;p&gt;John D. Cook has a &lt;a class="reference external" href="http://www.johndcook.com/Bessel_functions.html"&gt;great page&lt;/a&gt; about Bessel functions and &lt;a class="reference external" href="http://www.johndcook.com/Bessel_python.html"&gt;another one&lt;/a&gt;
+about how to work with the implementation in Scipy.&lt;/p&gt;
+</summary><category term="programmation"></category><category term="maths"></category></entry><entry><title>Moins de Google</title><link href="http://loicseguin.com/blogue/2012/05/moins-de-google/" rel="alternate"></link><updated>2012-05-13T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-05-13:blogue/2012/05/moins-de-google/</id><summary type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
+d'utilisation et les politiques de confidentialité des divers services en ligne
+que j'utilise. Cet exercice est motivé par deux raisons : premièrement, je veux
+déterminer quels services utilisent mes données de façon responsable et
+transparente; deuxièmement, je veux minimiser la quantité d'informations
+personnelles que je mets entre les mains d'une seule compagnie.&lt;/p&gt;
+&lt;p&gt;Ma première cible a été facile à choisir : Google.&lt;/p&gt;
+&lt;p&gt;La compagnie a récemment changé sa politique de confidentialité ce qui a causé
+certains remous dans les médias (&lt;a class="reference external" href="http://www.bbc.co.uk/news/technology-17205754"&gt;BBC&lt;/a&gt;, &lt;a class="reference external" href="http://www.guardian.co.uk/technology/2012/mar/01/google-privacy-policy-analysis"&gt;The Guardian&lt;/a&gt;, &lt;a class="reference external" href="http://www.washingtonpost.com/business/economy/google-unified-privacy-unsettle-users/2012/02/27/gIQA7wgseR_story.html"&gt;The Washington Post&lt;/a&gt;,
+&lt;a class="reference external" href="http://blogues.radio-canada.ca/surleweb/2012/01/24/google-annonce-une-refonte-de-sa-politique-de-confidentialite/"&gt;Radio-Canada&lt;/a&gt;). En lâche citoyen du web, j'ai ignoré les messages que Google
+m'affichait pour annoncer ce changement et les avertissements des alarmistes du
+web, mais l'heure est maintenant venue pour moi de faire mes devoirs.&lt;/p&gt;
+&lt;div class="section" id="la-situation-actuelle"&gt;
+&lt;h2&gt;La situation actuelle&lt;/h2&gt;
+&lt;p&gt;Voici la liste des services de Google que j'utilise actuellement, classés en
+ordre décroissant de leur fréquence d'utilisation.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Gmail (courriels)&lt;/li&gt;
+&lt;li&gt;Google Search (recherche)&lt;/li&gt;
+&lt;li&gt;Google Reader (fils RSS)&lt;/li&gt;
+&lt;li&gt;Google Scholar (recherche dans la littérature scientifique)&lt;/li&gt;
+&lt;li&gt;Google Maps (cartes géographiques et itinéraires)&lt;/li&gt;
+&lt;li&gt;Google Bookmarks (signets)&lt;/li&gt;
+&lt;li&gt;Blogger (blogue)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Il est clair que Google détient une quantité importante d'information sur moi.
+Comment cette compagnie gère-t-elle mes informations? Puis-je trouver des
+alternatives aux services qu'elle offre?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="confidentialite-et-conditions-d-utilisation"&gt;
+&lt;h2&gt;Confidentialité et conditions d'utilisation&lt;/h2&gt;
+&lt;p&gt;Google collectionne beaucoup d'information sur ses utilisateurs et les
+appareils qu'ils utilisent. Voici une liste non exhaustive des informations que
+Google peut collecter (pour une liste complète, voir les &lt;a class="reference external" href="http://www.google.com/intl/fr/policies/privacy/"&gt;Règles de
+confidentialité&lt;/a&gt;):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;modèle de l'appareil utilisé&lt;/li&gt;
+&lt;li&gt;version du système d'exploitation&lt;/li&gt;
+&lt;li&gt;numéro de téléphone&lt;/li&gt;
+&lt;li&gt;requêtes de recherche&lt;/li&gt;
+&lt;li&gt;adresse IP&lt;/li&gt;
+&lt;li&gt;données de plantage de l'appareil utilisé&lt;/li&gt;
+&lt;li&gt;données de localisation GPS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Google peut ensuite corréler ces données avec celles que les utilisateurs lui
+fournissent de plein gré, c'est à dire tout ce qu'ils mettent sur Gmail,
+Google+, Picasa, Blogger, etc.  Le but de cette collecte est, selon Google, de
+&amp;quot;vous proposer des contenus adaptés, tels que des &lt;strong&gt;annonces&lt;/strong&gt; et des résultats
+de recherche plus pertinents&amp;quot; (les caractères gras sont de moi) et d'&amp;quot;améliorer
+les services proposés aux utilisateurs&amp;quot;.&lt;/p&gt;
+&lt;p&gt;La compagnie se réserve aussi certains droits sur le contenu téléversé sur
+ses serveurs:&lt;/p&gt;
+&lt;blockquote&gt;
+En soumettant des contenus à nos Services, par importation, ou par tout
+autre moyen, vous accordez à Google (et à toute personne travaillant avec
+Google) une licence, dans le monde entier, d'utilisation, d'hébergement, de
+stockage, de reproduction, de modification, de création d'oeuvres dérivées
+(des traductions, des adaptations ou d'autres modifications destinées à
+améliorer le fonctionnement de vos contenus par le biais de nos Services),
+de communication, de publication, de représentation publique, d'affichage
+ou de distribution publique desdits contenus.&lt;/blockquote&gt;
+&lt;p&gt;(Tiré des &lt;a class="reference external" href="http://www.google.com/intl/fr/policies/terms/"&gt;Conditions d'utilisation&lt;/a&gt;.) Autrement dit, Google peut utiliser les
+contenus des utilisateurs dans ses publicités.&lt;/p&gt;
+&lt;p&gt;Heureusement, le &lt;a class="reference external" href="https://www.google.com/dashboard/"&gt;Google Dashboard&lt;/a&gt; donne un certain contrôle sur les données
+stockées sur les serveurs de Google. Les utilisateurs peuvent y spécifier quels
+types de données sont conservées et effacer certaines de ces données. Grâce au
+&lt;a class="reference external" href="http://www.dataliberation.org/"&gt;Data Liberation Front&lt;/a&gt;, une autre initiative de Google, il est facile pour
+les utilisateurs qui le désire d'extraire leurs données des serveurs de Google
+et de les sauvegarder sur leur ordinateur personnel.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="est-ce-que-ca-en-vaut-la-chandelle"&gt;
+&lt;h2&gt;Est-ce que ça en vaut la chandelle?&lt;/h2&gt;
+&lt;p&gt;Le modèle d'affaire de Google est basé sur la publicité et je
+trouve donc légitime que la compagnie essaie de maximiser la pertinence des
+annonces qu'elle affiche. Google fournit des services de grande qualité et en
+retour les utilisateurs acceptent de visionner de la publicité. Rien n'est
+gratuit.&lt;/p&gt;
+&lt;p&gt;Par contre, il est également légitime pour un citoyen de s'interroger sur les
+dangers qu'il peut y avoir à accorder à une compagnie privée une trop grande
+place dans sa vie privée. Personnellement, je ne suis pas à l'aise avec le fait
+que Google, une firme dont le but premier est de faire de l'argent, pas de me
+faire plaisir, puisse établir mon profil détaillé. J'aime bénéficier d'un
+certain anonymat.&lt;/p&gt;
+&lt;p&gt;Il ne faut pas oublier que Google fonctionne grâce à des êtres humains
+et que les êtres humains font des erreurs. Le géant de l'Internet a eu son lot
+de problèmes dus à des erreurs humaines (&lt;a class="reference external" href="http://www.wired.com/threatlevel/2010/06/google-wifi-sniffing/"&gt;humage de wifi&lt;/a&gt;, &lt;a class="reference external" href="http://www.businessinsider.com/outraged-blogger-is-automatically-being-followed-by-her-abusive-ex-husband-on-google-buzz-2010-2"&gt;activation de
+Google Buzz&lt;/a&gt;, &lt;a class="reference external" href="http://www.reuters.com/article/2011/06/02/us-google-hacking-idUSTRE7506U320110602"&gt;comptes Gmail piratés&lt;/a&gt;). On ne peut pas en vouloir à la
+compagnie pour des erreurs, tout le monde en fait, mais les conséquences de
+telles erreurs peuvent être désastreuses pour un utilisateur qui met toutes ses
+données dans les mains de Google.&lt;/p&gt;
+&lt;p&gt;Je ne suis pas prêt à renoncer à tous les services que Google offre, mais je
+crois qu'il est sage de ne pas mettre tous mes oeufs dans le même panier. Je
+vais donc tenter de trouver des alternatives à certains des services de Google
+tout en continuant à en utiliser certains autres.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="alternatives"&gt;
+&lt;h2&gt;Alternatives&lt;/h2&gt;
+&lt;p&gt;La bonne nouvelle, c'est qu'il existe une grande variété d'autres services
+parmi lesquels choisir. Voici mes coups de coeur.&lt;/p&gt;
+&lt;div class="section" id="recherche"&gt;
+&lt;h3&gt;Recherche&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://duckduckgo.com/"&gt;DuckDuckGo&lt;/a&gt; est un moteur de recherche qui se targue de prendre la
+protection de la vie privée très au sérieux. Les deux premières phrases de
+sa &lt;a class="reference external" href="https://duckduckgo.com/privacy.html"&gt;politique de confidentialité&lt;/a&gt; sont éloquentes:&lt;/p&gt;
+&lt;blockquote&gt;
+DuckDuckGo does not collect or share personal information. That is our
+privacy policy in a nutshell. The rest of this page tries to explain
+why you should care.&lt;/blockquote&gt;
+&lt;p&gt;Il ne collecte aucune information personnelle, ne transmet pas les données
+relatives à la recherche aux sites visités et ne contient aucune publicité. Les
+deux guides illustrés &lt;a class="reference external" href="http://donttrack.us/"&gt;donttrack.us&lt;/a&gt; et &lt;a class="reference external" href="http://dontbubble.us/"&gt;dontbubble.us&lt;/a&gt; sont excellents et
+expliquent bien les enjeux.&lt;/p&gt;
+&lt;p&gt;Les résultats sont également très biens. Une excellente alternative à Google
+Search.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="blogue"&gt;
+&lt;h3&gt;Blogue&lt;/h3&gt;
+&lt;p&gt;J'ai remplacé mon site Blogger par un site statique généré avec &lt;a class="reference external" href="http://pelican.notmyidea.org/en/2.8/index.html"&gt;Pelican&lt;/a&gt; et
+hébergé sur &lt;a class="reference external" href="https://github.com/"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pelican est un générateur de site web statique écrit en Python. Je peux écrire
+mes articles avec mon éditeur de texte préféré (Vim) en format reStructuredText
+ou Markdown, puis Pelican se charge de prendre les fichiers sources et de créer
+les fichiers HTML appropriés. Comme les articles sont écrits en format texte,
+ils peuvent facilement être gérés par un logiciel de contrôle de versions (Git
+ou Mercurial, par exemple).&lt;/p&gt;
+&lt;p&gt;Pour l'hébergement, j'ai choisi GitHub. Évidemment, GitHub est surtout connu
+comme site pour héberger des dépôts Git, ce qu'il fait merveilleusement bien,
+mais il offre aussi l'hébergement d'un site personnel. Les &lt;a class="reference external" href="http://help.github.com/terms-of-service/"&gt;conditions&lt;/a&gt;
+d'utilisation et la &lt;a class="reference external" href="http://help.github.com/privacy-policy/"&gt;politique&lt;/a&gt; de confidentialité de GitHub sont courtes et
+facile à lire. Contrairement à Google, GitHub ne s'arroge pas le droit
+d'utiliser les contenus de ses utilisateurs pour faire de la promotion:&lt;/p&gt;
+&lt;blockquote&gt;
+We claim no intellectual property rights over the material you provide to
+the Service. Your profile and materials uploaded remain yours.&lt;/blockquote&gt;
+&lt;p&gt;Publier les articles se fait d'un simple&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ pelican -s pelican.conf.py
+$ git add . &amp;amp;&amp;amp; git commit -m &amp;quot;Nouvel article&amp;quot; &amp;amp;&amp;amp; git push
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cartes-geographiques"&gt;
+&lt;h3&gt;Cartes géographiques&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; n'est pas encore une alternative complète à Google Maps, mais ce
+site est néanmoins très intéressant. On y retrouve une carte du monde de bonne
+qualité (avec un visuel légèrement &lt;em&gt;vintage&lt;/em&gt;) développée à la façon du logiciel
+libre avec des contributions de cartographes de partout dans le monde.&lt;/p&gt;
+&lt;p&gt;Il manque malheureusement une fonctionnalité essentielle : le calcul
+d'itinéraires.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="entreposage-de-donnees"&gt;
+&lt;h3&gt;Entreposage de données&lt;/h3&gt;
+&lt;p&gt;Google offre le &lt;a class="reference external" href="https://drive.google.com/"&gt;Google Drive&lt;/a&gt; depuis peu pour l'entreposage de données en
+ligne. Une alternative bien connue est &lt;a class="reference external" href="http://db.tt/RIC27un"&gt;Dropbox&lt;/a&gt;. Encore une fois, la politique
+de confidentialité de Dropbox est tout à fait raisonnable et le service est
+excellent.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fils-rss"&gt;
+&lt;h3&gt;Fils RSS&lt;/h3&gt;
+&lt;p&gt;Je n'ai pas trouvé d'équivalent en ligne pour Google Reader. Cependant, les
+utilisateurs de Mac OS X peuvent utiliser &lt;a class="reference external" href="http://www.vienna-rss.org/"&gt;Vienna&lt;/a&gt;, un aggrégateur de nouvelles.
+Vienna ne peut être utilisée que sur l'ordinateur ou elle est installée et je
+ne crois pas qu'il existe de moyen pour synchroniser les fils suivis entre deux
+ordinateurs. Néanmoins, cette application est très bien conçue et c'est un
+logiciel libre (licence Apache).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="articles-scientifiques"&gt;
+&lt;h3&gt;Articles scientifiques&lt;/h3&gt;
+&lt;p&gt;Par l'intermédiaire de n'importe quelle institution d'enseignement
+universitaire qui se respecte, il est possible d'accéder à différentes bases de
+données pour faire des recherches dans la littérature scientifique (par exemple,
+MathSciNet, Web of Science, etc.).&lt;/p&gt;
+&lt;p&gt;Il existe également quelques moteurs de recherche accessible à tous. En ce qui
+me concerne, j'utilise surtout &lt;a class="reference external" href="http://arxiv.org/"&gt;arXiv.org&lt;/a&gt; et &lt;a class="reference external" href="http://www.adsabs.harvard.edu/"&gt;SOA/NASA ADS&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="informatique"></category></entry><entry><title>Dictionnaire français pour Vim</title><link href="http://loicseguin.com/blogue/2011/12/dictionnaire-francais-pour-vim/" rel="alternate"></link><updated>2011-12-22T23:45:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-12-22:blogue/2011/12/dictionnaire-francais-pour-vim/</id><summary type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;puis on passe à l'erreur suivante avec &lt;tt class="docutils literal"&gt;]s&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Par défaut, seuls des dictionnaires anglais sont fournis avec MacVim.
+Installer un dictionnaire français se fait automatiquement si on définit
+la variable spelllang pour le français :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;spelllang&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;fr
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ensuite, il ne reste plus qu'à activer la correction automatique et à
+regarder MacVim se connecter à un serveur ftp pour y télécharger les
+fichiers nécessaires.
+Information trouvée dans les archives de comp.editors sur usenet
+(&lt;a class="reference external" href="http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html"&gt;http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html&lt;/a&gt;).&lt;/p&gt;
+</summary><category term="informatique"></category></entry><entry><title>64 bits Python installation on MacOS X Snow Leopard</title><link href="http://loicseguin.com/blogue/2010/06/64-bits-python-installation-on-macos-x-snow-leopard/" rel="alternate"></link><updated>2010-06-13T03:42:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-13:blogue/2010/06/64-bits-python-installation-on-macos-x-snow-leopard/</id><summary type="html">&lt;p&gt;Here is how I installed Python 2.6.5 on my machine. Here is what I get
+at the end:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Python 2.6.5 with both 32 bits and 64 bits executables&lt;/li&gt;
+&lt;li&gt;Virtual environments with virtualenv&lt;/li&gt;
+&lt;li&gt;64 bits NumPy, SciPy and Matplotlib&lt;/li&gt;
+&lt;li&gt;A bunch of other useful packages&lt;/li&gt;
+&lt;li&gt;The power of Python&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I based myself mostly on &lt;a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/"&gt;this post&lt;/a&gt; by Jesse Noller and &lt;a class="reference external" href="http://blog.hyperjeff.net/?p=160"&gt;this one&lt;/a&gt; by
+HyperJeff. Unfortunately, the instructions in these posts were not
+completely sufficient for me and I had to fiddle around a lot to get the
+complete setup I was looking for.&lt;/p&gt;
+&lt;div class="section" id="python"&gt;
+&lt;h2&gt;Python&lt;/h2&gt;
+&lt;p&gt;Download the latest Python source code and unpack it&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://www.python.org/ftp/python/2.6.5/Python-2.6.5.tar.bz2
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar jxvf Python-2.6.5.tar.bz2
+&lt;/pre&gt;
+&lt;p&gt;To build an installer for Snow Leopard, we need to tweak one line of the
+script.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;Python-2.6.5/Mac/BuildScript/
+&lt;span class="nv"&gt;$ &lt;/span&gt;mvim build-installer.py
+&lt;/pre&gt;
+&lt;p&gt;Here, I used MacVIM to edit the file. Use whatever editor you like. At
+line 78, replace&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;SDKPATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/Developer/SDKs/MacOSX10.4u.sdk&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;by&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;SDKPATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/Developer/SDKs/MacOSX10.6.sdk&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;And around line 139 replace&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;DEPTARGET&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;'10.5'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;by&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;DEPTARGET&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;'10.7'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Before running the script, I had to create the directory where
+third-party sources would be downloaded.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/Universal/other-sources
+&lt;/pre&gt;
+&lt;p&gt;All you have to do, is to run the script:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;./build-installer.py --dep-target&lt;span class="o"&gt;=&lt;/span&gt;10.6 --universal-archs&lt;span class="o"&gt;=&lt;/span&gt;intel
+&lt;/pre&gt;
+&lt;p&gt;This will build an installer for 64 bits Python 2.6.5 with support for
+readline. The disk image containing the installer is located in
+&lt;tt class="docutils literal"&gt;/tmp/_py/diskimage/&lt;/tt&gt;. Just mount the dmg file and install Python by
+double clicking on the pkg file.&lt;/p&gt;
+&lt;p&gt;By default, python is a symlink to the 32-bit version, and so is
+pythonw.  To change that, simply modify the symlinks in
+&lt;tt class="docutils literal"&gt;/Library/Frameworks/Python.framework/Versions/2.6/bin/&lt;/tt&gt; as follow:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /Library/Frameworks/Python.framework/Versions/2.6/bin/
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo rm python python2.6 pythonw pythonw2.6
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ln -s python2.6-64 python
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ln -s python2.6-64 python2.6
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ln -s pythonw2.6-64 pythonw
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ln -s pythonw2.6-64 pythonw2.6
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="virtualenv"&gt;
+&lt;h2&gt;Virtualenv&lt;/h2&gt;
+&lt;p&gt;This nice utility allows one to have many different python environment
+each of which is independent. You can then install a bunch of packages
+in an environment. If you need a fresh environment, you then just create
+a new virtualenv. You are free to switch from one virtualenv to another.&lt;/p&gt;
+&lt;p&gt;Start by installing easy_install and pip.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://peak.telecommunity.com/dist/ez_setup.py
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo python ez_setup.py
+&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://pypi.python.org/packages/source/p/pip/pip-0.7.2.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf pip-0.7.2.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;pip-0.7.2
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo python setup.py install
+&lt;/pre&gt;
+&lt;p&gt;Then, move on to install virtualenv and a wrapper script.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo pip install virtualenv
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo pip install virtualenvwrapper
+&lt;/pre&gt;
+&lt;p&gt;Create a directory for you virtual environments.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir -p ~/local/virtualenvs
+&lt;/pre&gt;
+&lt;p&gt;Add the following to your &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bash_profile&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local/virtualenvs
+&lt;span class="nb"&gt;source&lt;/span&gt; /Library/Frameworks/Python.framework/Versions/2.6/bin/virtualenvwrapper.sh
+workon default
+&lt;/pre&gt;
+&lt;p&gt;Source the &lt;tt class="docutils literal"&gt;.bash_profile&lt;/tt&gt; file.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;. ~/.bash_profile
+&lt;/pre&gt;
+&lt;p&gt;Finally, just create the default virtual environment.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv default
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="numpy-and-scipy"&gt;
+&lt;h2&gt;Numpy and SciPy&lt;/h2&gt;
+&lt;p&gt;These two are by far the most annoying (but also the most useful). They
+depend on a few libraries which are either required or enhance
+efficiency a lot.&lt;/p&gt;
+&lt;p&gt;Download and install gfortran.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://r.research.att.com/gfortran-4.2.3.dmg
+&lt;/pre&gt;
+&lt;p&gt;Download and install FFTW.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://www.fftw.org/fftw-3.2.2.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf fftw-3.2.2.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;fftw-3.2.2
+&lt;span class="nv"&gt;$ &lt;/span&gt;./configure &lt;span class="nv"&gt;CC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gcc -arch i386 -arch x86_64&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;CXX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;g++ -arch i386 -arch x86_64&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;CPP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gcc -E&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;CXXCPP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;g++ -E&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;make
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make install
+&lt;/pre&gt;
+&lt;p&gt;Download and install UMFPACK.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf http://www.cise.ufl.edu/research/sparse/amd/AMD-2.2.1.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;In the file &lt;tt class="docutils literal"&gt;UFconfig/UFconfig.mk&lt;/tt&gt;, uncommment lines 284 through 287 and
+add&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+-DNCHOLMOD to the UMFPACK_CONFIG variable on line 154.
+F77 = gfortran
+CFLAGS = -O3 -fno-common -no-cpp-precomp -fexceptions
+BLAS = -framework Accelerate
+LAPACK = -framework Accelerate
+&lt;/pre&gt;
+&lt;p&gt;The Makefile for UFconfig needs to be changed at line 28 in the install
+target. There is a mistake on the location of the library. The line
+should read&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$(CP) libufconfig.a $(INSTALL_LIB)/libufconfig.$(VERSION).a
+&lt;/pre&gt;
+&lt;p&gt;Then, build and install the various parts.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;UMFPACK
+&lt;span class="nv"&gt;$ &lt;/span&gt;make library
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make install
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ../AMD
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make install
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ../UFconfig
+&lt;span class="nv"&gt;$ &lt;/span&gt;make
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make install
+&lt;/pre&gt;
+&lt;p&gt;This will build UFMPACK, AMD and UFconfig and install the headers and
+libraries in &lt;tt class="docutils literal"&gt;/usr/local&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Download NumPy from the SourceForge &lt;a class="reference external" href="http://sourceforge.net/projects/numpy/files/NumPy/1.4.1/numpy-1.4.1.tar.gz/download"&gt;download page&lt;/a&gt;
+and then install it.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf numpy-1.4.1.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;numpy-1.4.1
+&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py build
+&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py install
+&lt;/pre&gt;
+&lt;p&gt;Download SciPy from the &lt;a class="reference external" href="http://sourceforge.net/projects/scipy/files/scipy/0.8.0b1/scipy-0.8.0b1.tar.gz/download"&gt;scipy download page&lt;/a&gt; and then install it.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf scipy-0.8.0b1.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;scipy-0.8.0b1
+&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py build
+&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py install
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="matplotlib"&gt;
+&lt;h2&gt;Matplotlib&lt;/h2&gt;
+&lt;p&gt;Download from
+&lt;a class="reference external" href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download"&gt;http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download&lt;/a&gt;
+and untar.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf matplotlib-0.99.3.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;matplotlib-0.99.3
+&lt;/pre&gt;
+&lt;p&gt;The file &lt;tt class="docutils literal"&gt;make.osx&lt;/tt&gt; is what is used now. However, as of this writing,
+using this file as is does not work. First, apply &lt;a class="reference external" href="http://sourceforge.net/tracker/download.php?group_id=80706&amp;amp;atid=560722&amp;amp;file_id=369204&amp;amp;aid=2981126"&gt;this patch&lt;/a&gt;
+and then change the zlib version in &lt;tt class="docutils literal"&gt;make.osx&lt;/tt&gt; to 1.2.5. Then, run&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ PREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/local/virtualenvs/default make -f make.osx fetch deps mpl_build mpl_install
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="other-useful-packages"&gt;
+&lt;h2&gt;Other useful packages&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install mercurial
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install ipython
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install networkx
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install nose
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install sphinx
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install sympy
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="references"&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://matplotlib.sourceforge.net/users/installing.html"&gt;http://matplotlib.sourceforge.net/users/installing.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.hyperjeff.net/?p=160"&gt;http://blog.hyperjeff.net/?p=160&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://docs.python.org/install/index.html"&gt;http://docs.python.org/install/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://cran.r-project.org/bin/macosx/tools/"&gt;http://cran.r-project.org/bin/macosx/tools/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html"&gt;http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/"&gt;http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="informatique"></category><category term="python"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
+données relatives à la consommation d'énergie et à l'émission de GES par
+les foyers canadiens pour la période de 1990 à 2007. Ces données sont
+rendues publiques par l'&lt;a class="reference external" href="http://oee.nrcan.gc.ca/"&gt;Office de l'efficacité énergétique&lt;/a&gt; de
+&lt;a class="reference external" href="http://www.nrcan-rncan.gc.ca/com/"&gt;Ressources naturelles Canada&lt;/a&gt;. Elles proviennent principalement de
+&lt;a class="reference external" href="http://www.statcan.gc.ca/"&gt;Statistique Canada&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Les données sont disponible sous la forme d'un document Excel
+(&lt;a class="reference external" href="http://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/tablestrends2/res_ca_1_e.xls"&gt;res_ca_1_e.xls&lt;/a&gt;). J'ai utilisé Python, Matplotlib et un module
+nommé xlrd pour visualiser les données. Python et Matplotlib n'ont
+probablement pas besoin de présentation. &lt;a class="reference external" href="http://www.lexicon.net/sjmachin/xlrd.htm"&gt;xlrd&lt;/a&gt; est un module qui
+permet d'extraire les information d'un fichier Excel à partir de Python.
+Une introduction à l'utilisation de xlrd est disponible sur
+&lt;a class="reference external" href="http://scienceoss.com/read-excel-files-from-python/"&gt;scienceoss.com&lt;/a&gt;. Mon script Python est disponible &lt;a class="reference external" href="http://devio.us/~loicseguin/econcan.py"&gt;ici&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_HyYHulp_e30/TA2x4fN5FJI/AAAAAAAACAI/959Bj3crY-Y/s400/Secondary+Energy+Use+by+Energy+Source.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_HyYHulp_e30/TA2yKDyXtlI/AAAAAAAACAQ/DLja2Y6F03I/s400/Green+House+Gas+Emissions+by+Energy+Source.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Je dois avouer avoir été assez surpris du faible taux d'augmentation de
+la consommation d'électricité et des émissions de GES. Bien sûr, il est
+navrant qu'on parle d'augmentation alors que les objectifs du protocole
+de Kyoto étaient de réduire les émissions de GES par rapport à celles de
+1990. Néanmoins, si l'on en croit ces données, la situation n'est pas si
+terrible au Canada.&lt;/p&gt;
+</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Spinify 2.2</title><link href="http://loicseguin.com/blogue/2010/03/spinify-22/" rel="alternate"></link><updated>2010-03-02T03:30:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-03-02:blogue/2010/03/spinify-22/</id><summary type="html">&lt;p&gt;Je viens tout juste de lancer la nouvelle version du logiciel de
+simulation numérique du modèle d'Ising Spinify. La version 2.2 comporte
+plusieurs corrections de bogues de même qu'une réécriture complète de
+l'interface en ligne de commande (CLI). Vous pouvez télécharger le
+programme sur bitbucket: &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/downloads/spinify-2.2.tar.gz"&gt;spinify-2.2.tar.gz&lt;/a&gt;.
+L'usager peut maintenant configurer tous les paramètres utilisés dans la
+simulation de même que dans la génération des graphes. Ces paramètres
+peuvent être spécifiés à la ligne de commande ou dans un fichier de
+configuration qui sera lu par le programme. Tous les détails sont
+disponibles dans la page de manuel de spinify(1).
+De plus, cette version introduit de nouvelles quantités mesurables lors
+de la simulation. L'usager peut maintenant choisir parmi l'énergie
+interne par site, la magnétisation et la susceptibilité magnétique.
+Autant d'outils pour analyser le comportement du modèle aux abords de la
+température critique (de même que pour trouver cette température
+critique).
+Enfin, j'utilise maintenant GNU Autotools pour compiler le logiciel. En
+théorie, Spinify devrait compiler sans problème sur n'importe quel
+système Unix ou Linux.
+Si vous utilisez ce logiciel et que vous avez des commentaires ou que
+vous avez des questions à son propos, n'hésitez pas à me contacter par
+l'entremise de la liste d'envoi &lt;a class="reference external" href="mailto:spinify-discuss&amp;#64;googlegroups.com"&gt;spinify-discuss&amp;#64;googlegroups.com&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Spinify 2.1</title><link href="http://loicseguin.com/blogue/2010/02/spinify-21/" rel="alternate"></link><updated>2010-02-16T02:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-02-16:blogue/2010/02/spinify-21/</id><summary type="html">&lt;p&gt;La première version vraiment fonctionnelle du logiciel de simulation du
+modèle d'Ising en deux dimensions sur la sphère est maintenant
+disponible ici&amp;nbsp;: &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/downloads/spinify-2.1.tar.bz2"&gt;spinify-2.1.tar.bz2&lt;/a&gt;. Le programme s'installe sur Mac
+OS X et Ubuntu 9.10 (et probablement tous les autres Unix et Linux).
+Pour plus de détails concernant l'installation, voir le &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/wiki/Home"&gt;wiki&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Spinify</title><link href="http://loicseguin.com/blogue/2010/01/spinify/" rel="alternate"></link><updated>2010-01-25T16:41:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-01-25:blogue/2010/01/spinify/</id><summary type="html">&lt;p&gt;Il y a quelques années, j'ai travaillé sur un projet qui consistait à
+développer un programme de simulation du modèle d'Ising sur des surfaces
+ayant un tenseur métrique non trivial. Ce projet n'a jamais été
+complété. Or, je m'y suis récemment remis, et j'avance à bon train.
+J'ai réécrit le code en C++ et j'ai implémenté un algorithme pour
+générer un réseau aléatoire sur la sphère. Actuellement, j'utilise
+&lt;a class="reference external" href="http://www.qhull.org/"&gt;Qhull&lt;/a&gt; pour essayer de trianguler le réseau ainsi obtenu, mais le code
+est mal écrit et le programme plante souvent. Je travaille régulièrement
+sur le projet, et si le coeur vous en dit, j'apprécierais avoir un peu
+d'aide. Le code source pour le programme est disponible sur bitbucket à
+l'adresse &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/"&gt;http://bitbucket.org/loicseguin/spinify/&lt;/a&gt;.
+Si ce qui précède est du pur charabia, ne vous en faites pas : avant
+longtemps, j'écrirai un message détaillant ce qu'est le modèle d'Ising,
+ce que j'entends par métrique non triviale et comment le programme
+Spinify essaie de gérer tout cela.&lt;/p&gt;
+</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/blogue/2009/04/protegeons-nous-avec-les-maths/" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:blogue/2009/04/protegeons-nous-avec-les-maths/</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
+&lt;blockquote&gt;
+It is insufficient to protect ourselves with laws; we need to
+protect ourselves with mathematics.&lt;/blockquote&gt;
+&lt;p&gt;Tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9780471117094"&gt;Applied Cryptography&lt;/a&gt; par Bruce Schneier.&lt;/p&gt;
+</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Copies de sauvegarde</title><link href="http://loicseguin.com/blogue/2009/03/copies-de-sauvegarde/" rel="alternate"></link><updated>2009-03-11T03:06:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-11:blogue/2009/03/copies-de-sauvegarde/</id><summary type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
+sauvegarde de mes documents importants : un shell script maison assez
+simple qui utilise le logiciel rsync (&lt;a class="reference external" href="http://samba.anu.edu.au/rsync/"&gt;informations sur ce site&lt;/a&gt;).
+rsync est un logiciel libre distribué sous licence GPL et disponible sur
+la plupart des plateformes Unix de même que sur MS Windows.
+Si vous utilisez Mac OS X, rsync fait déjà partie de l'installation par
+défaut. Il en est probablement de même pour les distributions de Linux
+les plus populaires. Sur OpenBSD, vous pouvez l'installer avec la
+commande :&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+sudo pkg_add rsync
+&lt;/pre&gt;
+&lt;p&gt;en supposant que vous avez déjà configuré sudo et que la variable
+d'environnement PKG_PATH est définie.
+Alors voici, j'ai un Macbook qui fonctionnne sous Mac OS X et il est
+relié à deux disques durs externes : Hercule et Astro. Il y a plusieurs
+dossiers et quelques fichiers de configuration (les dotfiles) que je
+veux copier. Le script ressemble à ceci.
+Mis à jour le 12 mars 2009:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="c"&gt;#!/bin/sh
+# This script makes a backup of important files in
+# my home directory to two external hard drives,
+# Hercule and Astro, using rsync.
+&lt;/span&gt;&lt;span class="nv"&gt;OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;FOLDERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Desktop Documents Music Movies Programmes Sites \
+         Applescripts Pictures Jeux Library/Colorsync \
+         Library/Thunderbird .rsync&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;FOLDER1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Library/Application Support&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;BACKUPDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Macbook backup&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;DOTFILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$BACKUPDIR/dotfiles&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;FILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;.emacs .vimrc .profile&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;VOLUMES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/Volumes/Astro /Volumes/Hercule&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;for &lt;/span&gt;v in &lt;span class="nv"&gt;$VOLUMES&lt;/span&gt;; &lt;span class="k"&gt;do
+  if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+      &lt;/span&gt;mkdir -p &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
+      &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;fi
+
+    for &lt;/span&gt;d in &lt;span class="nv"&gt;$FOLDERS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FOLDER1&amp;quot;&lt;/span&gt;; &lt;span class="k"&gt;do
+      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$d/&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/$d/&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;done
+
+    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+      &lt;/span&gt;mkdir &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
+      &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;fi
+
+    for &lt;/span&gt;f in &lt;span class="nv"&gt;$FILES&lt;/span&gt;; &lt;span class="k"&gt;do
+      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$f&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES/$f&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;done
+
+  else
+     &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ERROR:&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;not mounted&amp;quot;&lt;/span&gt;
+  &lt;span class="k"&gt;fi
+done&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Et le fichier .rsync/excludes contient&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+.DS_Store
+.depend
+*.aplibrary
+.localized
+&lt;/pre&gt;
+&lt;p&gt;Tout d'abord, on définit les options pour rsync :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;a : le mode archivage (c'est ce qui convient le mieux pour les copies
+de sauvegarde)&lt;/li&gt;
+&lt;li&gt;v : afficher les opérations effectuées à l'écran&lt;/li&gt;
+&lt;li&gt;u : update, i.e. : si un fichier sur dans la copie de sauvegarde est
+plus récent que celui sur le Macbook, on ne le recopie pas&lt;/li&gt;
+&lt;li&gt;z : compresser les données&lt;/li&gt;
+&lt;li&gt;C : exclure tous les fichiers normalement exclus par CVS (e.g. :
+*.o, *~, *.a)&lt;/li&gt;
+&lt;li&gt;--delete : si un fichier a été effacé du Macbook, l'effacer du
+dossier de sauvegarde&lt;/li&gt;
+&lt;li&gt;--exclude-from : précise le nom du fichier contenant la liste des
+exclusions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ensuite on définit les variables qui précise les fichiers et dossiers à
+copier. On a une boucle pour effectuer les opérations sur les deux
+disques durs externes puis une autre pour effectuer les copies de tous
+les dossiers voulus.
+Le dossier Library/Application Support a sa propre variable car
+j'obtiens des erreurs si je l'inclus dans la liste FOLDERS. J'ai essayé
+de l'inclure avec des guillemets, en échappant l'espace
+(Library/Application\ Support) mais rien ne fonctionnait. Si quelqu'un
+sait comment faire en sorte que je puisse include ce dossier dans la
+liste avec les autres, faites-moi le savoir.
+Je mets les fichiers de configuration dans un dossier nommé dotfiles que
+je crée s'il n'existe pas déjà.
+J'ai copié le script dans un dossier qui fait partie de mon $PATH. Voilà
+! C'est fait ! Des copies de sauvegarde facile en tapant backup dans un
+terminal. La magie de rsync, c'est que le logiciel ne recopie que les
+fragments de fichiers qui ont été modifiés depuis la dernière
+sauvegarde. Donc le processus est très rapide en général (sauf la
+première fois que le script fonctionne puisqu'il doit alors copier
+l'ensemble des fichiers).
+Prochaine étape : synchroniser mon Macbook et mon ordinateur de bureau
+roulant sous OpenBSD avec &lt;a class="reference external" href="http://www.cis.upenn.edu/%7Ebcpierce/unison/"&gt;Unison&lt;/a&gt;...&lt;/p&gt;
+</summary><category term="informatique"></category></entry><entry><title>Bonne fête Darwin !</title><link href="http://loicseguin.com/blogue/2009/02/bonne-fete-darwin/" rel="alternate"></link><updated>2009-02-12T15:02:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-12:blogue/2009/02/bonne-fete-darwin/</id><summary type="html">&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
+notre compréhension de la nature : Charles Darwin. Darwin fût un
+naturaliste de grand renom qui a étudié, entre autre, la botanique et
+l'entomologie. Mais sa plus grande contribution à la science moderne est
+sans conteste la théorie de l'évolution par la sélection naturelle.
+Deux cents ans plus tard, l'Union Internationale des Sciences
+Biologiques commémore la mémoire de ce grand homme en désignant l'année
+2009, année Darwin.&lt;/p&gt;
+&lt;p&gt;Malheureusement, deux siècles de science et de découvertes qui
+confirment cette théorie scientifique n'ont pas suffit à établir la
+théorie de l'évolution comme un des fondements de l'éducation
+scientifique. Encore aujourd'hui, des personnes de mauvaise foi qui
+n'ont pas compris la différence entre la science et la religion essaient
+de discréditer cette théorie. Le créationnisme et le dessin intelligent
+ne sont pas des sciences et n'ont, par conséquent, aucune aptitude pour
+s'opposer au Darwinisme.&lt;/p&gt;
+&lt;p&gt;Profitons donc de cette année Darwin pour rappeler au monde que la
+science et la religion ne jouent pas sur le même terrain, et que la
+théorie de l'évolution par sélection naturelle est une théorie
+scientifique fondée sur un très grand nombre d'observations qui ont
+toutes été faites dans le cadre de la démarche scientifique.
+La théorie dont Darwin est le père a apporté une compréhension profonde
+de la biologie et de l'émergence et l'évolution des espèces. Pour cette
+contribution extraordinaire au savoir, je salue Darwin et lui souhaite
+un très bon anniversaire !
+Quelques liens intéressants :
+&lt;a class="reference external" href="http://darwin-year-2009.org/index.html"&gt;Darwin Year 2009&lt;/a&gt;
+&lt;a class="reference external" href="http://www.darwinday.org/index.html"&gt;Darwin Day Celebration&lt;/a&gt;
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Charles_Darwin"&gt;Charles Darwin sur Wikipedia (en)&lt;/a&gt;
+&lt;a class="reference external" href="http://darwin-online.org.uk/"&gt;The Complete Work of Charles Darwin Online&lt;/a&gt;
+&lt;img alt="image0" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5611916287854529107?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
+</summary><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.com/blogue/2009/02/des-axiomes-mathematiques/" rel="alternate"></link><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-06:blogue/2009/02/des-axiomes-mathematiques/</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
+de Alan B. Wallace (tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782702128206"&gt;Science et Bouddhisme, à chacun sa
+réalité&lt;/a&gt;) :&lt;/p&gt;
+&lt;blockquote&gt;
+Les axiomes mathématiques étaient considérés jusqu'à récemment comme
+des évidences qu'il n'était pas nécessaire de prouver. Or au siècle
+dernier des mathématiciens ont suggéré que les postulats d'Euclide,
+par exemple, ne sont ni vrais ni faux, ce sont simplement les
+&amp;quot;règles du jeu.&amp;quot; [...] Il est maintenant devenu clair que les
+axiomes mathématiques sont directement ou indirectement dérivés de
+notre expérience, et qu'on ne peut donc dire que les mathématiques
+embrassent des lois d'une réalité totalement indépendante de
+l'expérience.&lt;/blockquote&gt;
+&lt;p&gt;Cette citation exprime très bien l'approche mathématique moderne. Il est
+courant de rencontrer des gens qui pensent que les mathématiciens sont à
+la recherche de vérités ultimes et que leurs travaux sont totalement
+objectifs. Or, seul le processus mathématique est objectif, les bases
+sur lesquelles on construit les théorèmes, les axiomes, sont purement
+subjectives.&lt;/p&gt;
+&lt;p&gt;On se donne des règles de façon arbitraire, puis, en procédant selon les
+seules lois de la logique, on développe une théorie complexe et
+cohérente. Cependant, cette théorie n'est jamais plus &amp;quot;réelle&amp;quot; ou
+&amp;quot;vraie&amp;quot; que les axiomes qui la supportent et comme ces derniers ne sont
+pas plus objectifs que des dogmes religieux, on peut développer une
+théorie mathématique qui n'est pas plus &amp;quot;vraie&amp;quot; que ceux-ci.&lt;/p&gt;
+&lt;p&gt;Nombre de mathématiciens étudient des objets abstraits qui n'ont aucune
+ressemblance avec les objets que l'expérience quotidienne nous amène à
+rencontrer. Toutefois, la majorité des mathématiciens (dont moi-même)
+étudions des théories mathématiques qui reposent sur des axiomes qui ont
+été formulé de telle sorte qu'ils représentent le plus fidèlement
+possible le monde qui nous entoure.&lt;/p&gt;
+&lt;p&gt;Lorsqu'on fait des mathématiques, ce qui nous intéresse c'est le
+processus mental, le cheminement logique qui nous mène des axiomes aux
+théorèmes les plus complexes. Quiconque prétend que ces théorèmes
+s'appliquent au réel fait un acte de foi qui n'est pas plus valable et
+qui l'est tout autant que l'acte de foi que fait celui qui choisit de
+suivre une religion.&lt;/p&gt;
+</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Optique 101 (partie 1)</title><link href="http://loicseguin.com/blogue/2008/11/optique-101-partie-1/" rel="alternate"></link><updated>2008-11-14T17:54:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-14:blogue/2008/11/optique-101-partie-1/</id><summary type="html">&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
+appareil photographique, on doit d'abord connaître quelques principes
+fondamentaux d'optique géométrique. Nous verrons la propagation de la
+lumière en ligne droite, la loi de Snell-Descartes et les propriétés des
+lentilles minces.&lt;/p&gt;
+&lt;p&gt;La lumière visible est une onde électromagnétique, c'est-à-dire un champ
+magnétique et un champ magnétique qui se propagent dans l'espace en
+oscillant. Pour bien comprendre les phénomènes impliquant la lumière, on
+doit utiliser les équations de l'électromagnétisme découvertes par James
+Clerk Maxwell au XIXe siècle et la mécanique quantique du XXe siècle.
+Heureusement, on peut comprendre le fonctionnement des lentilles et
+miroirs en faisant plusieurs simplifications qui nous permettent
+d'ignorer ces théories physiques complexes.&lt;/p&gt;
+&lt;p&gt;D'abord, on suppose que la lumière se déplace en ligne droite. Cette
+ligne droite correspond à la direction de propagation du champ
+électromagnétique. Pour notre analyse, il est souvent utile de
+considérer des rayons de lumière. Un rayon de lumière peut, par exemple,
+correspondre à la trajectoire d'un faisceau laser, ou à la lumière qui
+provient du sommet de la tour Eiffel et qui parvient à votre oeil.
+Deux lois fondamentales de l'optique ont d'abord été trouvées
+empiriquement, puis expliquées théoriquement par les équations de
+Maxwell. D'abord, la loi de la réflexion, découverte environ 1000 ans
+après Jésus Christ par un arabe du nom d'Alhazen, stipule que lorsqu'un
+rayon de lumière atteint une surface, l'angle d'incidence &lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
+
+et l'angle de réflexion &lt;span class="math"&gt;\(\theta_r\)&lt;/span&gt;
+ (mesurés par rapport à une droite
+perpendiculaire à la surface, la normale) sont égaux:
+&lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
+ = &lt;span class="math"&gt;\(\theta_r\)&lt;/span&gt;
+.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_HyYHulp_e30/SR4adIhjfXI/AAAAAAAABmw/_CTRYJxATfQ/s400/reflexion.png" /&gt;&lt;/p&gt;
+&lt;p&gt;De plus, le rayon incident, le rayon réfléchi et la normale
+à la surface sont dans le même plan, qu'on appelle plan d'incidence. La
+lumière se comporte donc comme une boule de billard qui frappe la bande
+: les angles d'incidence et de réflexion sont égaux, et la boule demeure
+sur la table.&lt;/p&gt;
+&lt;p&gt;Beaucoup plus tard, en 1621, Willebrord Snell découvre la loi de la
+réfraction. Cette loi, connu sous le nom de loi de Snell, a été publiée
+pour la première fois dans une notation mathématique moderne par René
+Descartes quelques années plus tard. Pour cette raison, on l'appelle
+parfois la loi de Snell-Descartes. Lorsque la lumière passe d'un milieu
+transparent à un autre (par exemple, de l'air au verre) sa vitesse
+change et ce changement de vitesse, jumelé avec le principe de moindre
+action (qui veut dire, grosso modo, que la lumière emprunte le chemin le
+plus court possible entre deux points), entraîne un changement de
+direction du rayon lumineux.&lt;/p&gt;
+&lt;p&gt;Chaque milieu transparent est caractérisé par un indice de réfraction,
+noté &lt;em&gt;n&lt;/em&gt;. Cet indice est le rapport entre la vitesse de la lumière dans
+le vide et la vitesse de la lumière dans le milieu considéré. Par
+exemple, la lumière se propage un quart de fois moins vite dans l'eau
+que dans le vide ce qui donne pour l'eau :&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+n_{\mathrm{eau}} &amp;amp;= v_{\mathrm{vide}} / v_{\mathrm{eau}} \\
+n_{\mathrm{eau}} &amp;amp;= v_{\mathrm{vide}} / ((1 - 1/4)v_{\mathrm{vide}}) \\
+n_{\mathrm{eau}} &amp;amp;= 1,33
+\end{align*}
+&lt;/div&gt;
+&lt;p&gt;La loi de Snell-Descartes fait le lien entre les indices de réfraction
+et les angles d'incidence et de réfraction. Si un rayon de lumière passe
+du milieu 1 au milieu 2, d'indices de réfraction &lt;span class="math"&gt;\(n_1\)&lt;/span&gt;
+ et
+&lt;span class="math"&gt;\(n_2\)&lt;/span&gt;
+ respectivement, a un angle d'incidence &lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
+,
+alors l'angle du rayon transmis &lt;span class="math"&gt;\(\theta_t\)&lt;/span&gt;
+ respectera la relation :&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+n_1 \sin \theta_i = n_2 \sin \theta_t
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_HyYHulp_e30/SR4adZz-6II/AAAAAAAABm4/dQsj1m_xJcM/s400/refraction.png" /&gt;&lt;/p&gt;
+&lt;p&gt;De plus, le rayon incident, le rayon transmis et la normale sont dans le
+même plan, comme pour la réflection.
+Le milieu le plus réfringent est celui avec l'indice de réfraction le
+plus élevé. Si le rayon lumineux passe du milieu le moins réfringent au
+milieu le plus réfringent, il se
+rapprochera de la normale. S'il passe du milieu le plus réfringent au
+milieu le moins réfringent, il s'éloignera de la normale.
+La loi de Snell-Descartes est fondamentale pour comprendre le
+fonctionnement d'une partie cruciale d'un appareil photo : la lentille.
+Nous verrons dans le prochain article comment fonctionne une lentille.
+&lt;img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-8629460951480994628?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
+</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>La physique et les maths de la photo</title><link href="http://loicseguin.com/blogue/2008/11/la-physique-et-les-maths-de-la-photo/" rel="alternate"></link><updated>2008-11-13T22:42:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-13:blogue/2008/11/la-physique-et-les-maths-de-la-photo/</id><summary type="html">&lt;p&gt;Ceci est le premier d'une série d'article sur la physique et les
+mathématiques de la photographie. La photographie est une activité que
+beaucoup de gens pratiquent sans savoir à quel point l'appareil qu'ils
+ont entre les mains est une petite merveille de science et d'ingénierie.
+Étant moi-même un scientifique, ces articles couvriront davantage la
+science que le génie.&lt;/p&gt;
+&lt;p&gt;J'ai en tête des articles sur les aberrations optiques (chromatique,
+sphérique, etc.), le nombre-f, le lien entre l'ouverture du diaphragme
+et la profondeur de champ, la polarisation, et la compression JPEG.
+Probablement qu'en cours de route j'ajouterai d'autres sujets qui me
+passeront par la tête. S'il y a un aspect de la photographie qui vous
+intéresse particulièrement, laissez-moi un commentaire et je verrai ce
+que je peux faire.&lt;/p&gt;
+&lt;p&gt;Les deux premiers articles seront des introductions en douceur aux
+concepts de base d'optique géométrique et au fonctionnement d'un
+appareil photographique. J'ai choisi les titres inspirés &lt;em&gt;Optique 101&lt;/em&gt;
+et &lt;em&gt;Appareil Photographique 101&lt;/em&gt;.&lt;/p&gt;
+</summary><category term="maths"></category><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/blogue/2008/09/lantre-de-la-bete/" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:blogue/2008/09/lantre-de-la-bete/</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
+travail. On constate la grande organisation qui règne sur mon bureau...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqSchJBI/AAAAAAAABf0/4IUUibpNjvY/s400/IMG_1143.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Et voici les instruments essentiels à la tâche du mathématicien :&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqTgxthI/AAAAAAAABf8/jO9PyF3ESG8/s400/IMG_1146.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-4984607396283200774?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
+</summary><category term="ineptie"></category></entry><entry><title>Manipuler des symboles</title><link href="http://loicseguin.com/blogue/2008/09/manipuler-des-symboles/" rel="alternate"></link><updated>2008-09-23T23:15:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-23:blogue/2008/09/manipuler-des-symboles/</id><summary type="html">&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
+mathématiciens, comme étant un ensemble de règles qui dictent comment
+manipuler des symboles. En manipulant ces symboles, on arrive à formuler
+les &amp;quot;phrases&amp;quot; mathématiques que sont les théorèmes. Bien sûr, la plupart
+du temps, des significations sont données à ces symboles et les
+théorèmes peuvent être exprimés en langage courant.&lt;/p&gt;
+&lt;p&gt;Par exemple, &amp;quot;+&amp;quot; est universellement reconnu comme le symbole de
+l'addition. Cette opération, qui consiste à mettre ensemble deux
+&amp;quot;paquets&amp;quot; d'objets similaire, signifie quelque chose de très concret.
+Or, il arrive que dans une preuve la manipulation de symboles prenne le
+dessus sur la signification des calculs effectués. Pour moi, la preuve
+perd alors toute élégance et le théorème qu'elle démontre perd de son
+intérêt. Un résultat qu'on ne peut expliquer en mots n'est pas un
+résultat qui est devenu suffisamment mature pour mériter une grande
+attention.&lt;/p&gt;
+&lt;p&gt;Ce qui fait la beauté de certains résultats (le théorème de Pythagore,
+pour citer un exemple connu), c'est le fait que leur formulation en
+langage courant est &amp;quot;facile&amp;quot;, et que la preuve s'appuie sur des idées
+que l'on peut décrire avec des mots, sans avoir recours à des formules.
+Les symboles et les calculs ont évidemment une utilité. Ils servent à
+simplifier certaines étapes du raisonnement et à obtenir des résultats
+précis. Néanmoins, ils ne doivent jamais prendre le dessus sur le sens
+de la preuve.&lt;/p&gt;
+&lt;p&gt;Les idées sont plus importantes que les calculs. Et, étrangement, il est
+beaucoup plus difficile de formuler des idées que d'effectuer des
+calculs.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Triangulations créatives</title><link href="http://loicseguin.com/blogue/2008/09/triangulations-creatives/" rel="alternate"></link><updated>2008-09-12T16:30:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-12:blogue/2008/09/triangulations-creatives/</id><summary type="html">&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
+les uns aux autres de telle sorte qu'ils épousent les formes de l'objet.
+On appelle une telle construction une triangulation. Une fois qu'on a
+obtenu une triangulation, on peut la raffiner en divisant les triangles
+en triangles plus petits. Cet article présentera des méthodes de
+raffinement qui, lorsqu'on représente graphiquement les triangles
+qu'elles produisent, génèrent des dessins dont la beauté surprend.&lt;/p&gt;
+&lt;div class="section" id="raffiner-une-triangulation"&gt;
+&lt;h2&gt;Raffiner une triangulation&lt;/h2&gt;
+&lt;p&gt;De l'animation par ordinateur au design d'aéronefs en passant par
+l'imagerie médicale, les applications de l'imagerie tridimensionnelle
+sont multiples. Les logiciels utilisés dans ces applications nécessitent
+une représentation d'objets tridimensionnels dans un langage
+compréhensible pour un ordinateur. On se heurte alors au problème de
+trouver un compromis entre une représentation fidèle de l'objet initial
+et une utilisation raisonnable des ressources matérielles de
+l'ordinateur : processeur, mémoire vive, espace de stockage sur disque
+dur, etc. Une méthode fréquemment utilisée consiste à trianguler la
+surface de l'objet, c'est-à-dire à recouvrir le mieux possible la
+surface de l'objet par des triangles, puis à raffiner cette
+triangulation initiale pour obtenir une meilleure représentation
+&lt;img alt="image0" src="http://gts.sourceforge.net/gallery/heads.png" /&gt;
+des courbes de cette surface. On arrête de raffiner lorsque
+les calculs impliqués deviennent trop exigeant pour l'ordinateur.
+L'image ci-contre montre un exemple d'un objet tridimensionnel, une
+tête, et de trois triangulations de celle-ci. Les deux triangulations de
+droite sont des raffinements de celle de gauche. Les raffinements
+comptent beaucoup plus de triangles et semblent épouser les contours du
+visage beaucoup mieux.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="raffinement-par-division-de-triangles"&gt;
+&lt;h2&gt;Raffinement par division de triangles&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_HyYHulp_e30/SMqSR_7xQxI/AAAAAAAABes/C4nix5PDPes/s320/divisetriangle.png" /&gt; Une idée qu'on peut exploiter pour raffiner une
+triangulation consiste à diviser chacun des triangles existants en
+plusieurs triangles. En choisissant un point à l'intérieur d'un triangle
+et en faisant passer des droites par ce point et par chacun des sommets,
+le triangle initial est divisé en six triangles plus petits. En
+appliquant cet algorithme simple, qui est illustré ci-dessous, à une
+triangu lation, on obtient un raffinement. Chaque fois qu'on répète
+cette division, le nombre de triangle est multiplié par six. Donc après
+&lt;em&gt;k&lt;/em&gt; itérations (i.e. : répétitions), le nombre de triangles initial est
+multiplié par 6&lt;sup&gt;k&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Il existe une infinité de choix pour le point à l'intérieur du triangle.
+Chacun de ces choix engendrera des triangles différents. En général, les
+triangles longs et étroits sont moins utiles pour représenter des
+courbes. On leur préfère des triangles plus semblables à un triangle
+équilatéral. Il faut donc à trouver un point spécifique à l'intérieur du
+triangle qui servira à le diviser et qui engendrera le plus possible des
+triangles &amp;quot;presque&amp;quot; équilatéraux.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="une-representation-abstraite-de-tous-les-triangles-par-un-triangle"&gt;
+&lt;h2&gt;Une représentation abstraite de tous les triangles par un triangle&lt;/h2&gt;
+&lt;p&gt;Un résultat élémentaire de géométrie euclidienne dit que tous les
+triangles qui ont les mêmes angles sont semblables ; c'est-à-dire que si
+deux triangles ont les mêmes trois angles, un de ces triangles est un
+agrandissement de l'autre. On appelle une homothétie l'agrandissement ou
+le rapetissement qui permet de passer d'un triangle à l'autre. Puisque
+l'objectif de nos raffinement est de trouver des triangles qui sont
+proches d'un triangle équilatéral, on n'a pas à se soucier de la taille
+de ces triangles, tout ce qui compte, ce sont les trois angles.
+En somme, à une homothétie près, tous les triangles sont spécifiés
+uniquement par leurs trois angles. La somme des angles d'un triangle est
+180° et chaque angle est compris entre 0° et 180° exclusivement. Si on
+nomme les angles &lt;em&gt;x&lt;/em&gt;, &lt;em&gt;y&lt;/em&gt; et &lt;em&gt;z&lt;/em&gt;, on aura donc :
+&lt;img alt="image2" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqTX2kOHAI/AAAAAAAABe0/HxV1VTHq9J4/s320/plantriangle.jpg" /&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;0 &amp;lt; &lt;em&gt;x&lt;/em&gt; &amp;lt; 180&lt;/li&gt;
+&lt;li&gt;0 &amp;lt; &lt;em&gt;y&lt;/em&gt; &amp;lt; 180&lt;/li&gt;
+&lt;li&gt;0 &amp;lt; &lt;em&gt;z&lt;/em&gt; &amp;lt; 180&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;x&lt;/em&gt; + &lt;em&gt;y&lt;/em&gt; + &lt;em&gt;z&lt;/em&gt; = 180&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On peut interpréter les angles comme trois coordonnées dans l'espace
+cartésien en trois dimensions. Les points de l'espace cartésien qui
+correspondent aux quatre contraintes ci-haut forment une section de plan
+de forme triangulaire que nous appellerons &lt;em&gt;T&lt;/em&gt; (voir figure ci-contre).
+Ce sous ensemble de l'espace cartésien est donc une représentation
+abstraite de tous les triangles imaginables. Le point central de &lt;em&gt;T&lt;/em&gt; est
+le triangle équilatéral. Les points proches des côtés de &lt;em&gt;T&lt;/em&gt; sont des
+triangles dont au moins un angle est très petit et qui sont donc très
+allongés.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="histogrammes-de-raffinement"&gt;
+&lt;h2&gt;Histogrammes de raffinement&lt;/h2&gt;
+&lt;p&gt;On peut choisir un triangle et un point donné à l'intérieur des
+triangles pour faire un raffinement. On raffine notre triangle initial
+un grand nombre de fois pour obtenir plusieurs petits triangles. Chacun
+de ces petits triangles peut être représenté par un point noir dans &lt;em&gt;T&lt;/em&gt;.
+Selon le nombre de triangles présents dans chaque région de &lt;em&gt;T&lt;/em&gt;, il y
+aura plus ou moins de points noirs et on obtiendra une région plus ou
+moins sombre. L'image qu'on obtient est un histogramme de densité de
+points.&lt;/p&gt;
+&lt;p&gt;Ci-dessous se trouvent des histogrammes obtenus à partir de différents
+points à l'intérieur des triangles. On retrouve, dans l'ordre, la
+méthode de la bissectrice, la méthode du point de Gergonne et la méthode
+du point de Lemoine. (Ces images ont été obtenue grâce à la courtoisie
+de Steve Butler.)
+&lt;img alt="image3" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqUjftUt_I/AAAAAAAABe8/nP0mYxG1li8/s400/Bisector_Histogram.jpg" /&gt;
+&lt;img alt="image4" src="http://4.bp.blogspot.com/_HyYHulp_e30/SMqUjmEtpoI/AAAAAAAABfE/IUiNwlbNr3M/s400/Gergonne_Histogram.jpg" /&gt;
+&lt;img alt="image5" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqUjgnQodI/AAAAAAAABfM/dQhH3Lb6le8/s400/Lemoine_Histogram.jpg" /&gt;
+En plus d'avoir une certaine qualité esthétique, ces images donnent de
+l'information sur l'utilité des points intérieurs utilisés. On constate
+que pour la méthode de la bissectrice, le centre de &lt;em&gt;T&lt;/em&gt; est assez sombre
+donc beaucoup de triangles presque équilatéraux sont produits ce qui est
+excellent.&lt;/p&gt;
+&lt;p&gt;Le point de Gergonne donne un histogramme qui ressemble à un neurone.
+Les points sont concentrés dans une toute petite région ce qui signifie
+que les triangles obtenus ont tous une forme bien particulière.
+Même si le point de Lemoine est le moins utile pour faire des
+raffinements en raison du grand nombre de triangles étroits qu'il
+produit (en effet, on constate que les côtés de &lt;em&gt;T&lt;/em&gt; sont sombres), c'est
+celui qui génère, à mon avis, le plus bel histogramme.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="la-transformation-de-t"&gt;
+&lt;h2&gt;La transformation de &lt;em&gt;T&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;À la section précédente on s'est intéressé à l'effet d'un choix de point
+intérieur sur un triangle donné après un grand nombre d'itération. On
+peut aussi examiner l'effet de ce choix sur l'ensemble de &lt;em&gt;T&lt;/em&gt; après une
+itération. L'algorithme prend des triangles de &lt;em&gt;T&lt;/em&gt; et les envoie vers
+d'autres triangles de &lt;em&gt;T&lt;/em&gt; : il modifie donc complètement l'ensemble des
+triangles.
+On peut visualiser ce qui se passe en divisant &lt;em&gt;T&lt;/em&gt; en plusieurs régions
+(qu'on prend triangulaire parce qu'il est plus facile de diviser un
+triangle en triangles plutôt qu'en dodécagones) qu'on colore en noir et
+blanc. Puis, on applique l'algorithme à tous les triangles et on observe
+où les triangles fils obtenus se retrouvent dans &lt;em&gt;T&lt;/em&gt;. En gardant les
+mêmes divisions et les mêmes colorations, on obtient une carte de la
+disposition des triangles fils.
+Ci-dessous, dans l'ordre, T divisé en régions, la méthode du point de
+Gergonne, la méthode du point de Lemoine et la méthode de la médiane.
+(Images courtoisie de Steve Butler.)
+&lt;img alt="image6" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqVYhFMJhI/AAAAAAAABfU/17EEA3nKt2w/s400/unmapped.jpg" /&gt;
+&lt;img alt="image7" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqVYy73NMI/AAAAAAAABfc/CX8YHsSOxt4/s400/Gergonne_map.jpg" /&gt;
+&lt;img alt="image8" src="http://1.bp.blogspot.com/_HyYHulp_e30/SMqVY5sxIjI/AAAAAAAABfk/d-bXSuNzzNc/s400/Lemoine_map.jpg" /&gt;
+&lt;img alt="image9" src="http://4.bp.blogspot.com/_HyYHulp_e30/SMqVZN8LmVI/AAAAAAAABfs/TxG37nzgN7o/s400/median_map.jpg" /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Les histogrammes obtenus par le raffinement de triangulations
+ressemblent à des dessins au fusain. On y retrouve une symétrie
+évidente, des dégradés surprenant et des formes étrangement organiques.
+Les diagrammes des transformations de &lt;em&gt;T&lt;/em&gt; font penser à certaines
+gravures d'Escher.&lt;/p&gt;
+&lt;p&gt;L'étude des raffinements avait pour but de faciliter la modélisation
+tridimensionnelle, et, comme sous-produit de cette étude, des images
+très belles sont apparues. Place à la créativité triangulaire !
+&lt;em&gt;Remerciements&lt;/em&gt; : je tiens à remercier Steve Butler pour m'avoir fourni
+ses images et m'avoir permis de les utiliser sur ce site. Je remercie
+également &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Efan/ron/"&gt;Ron Graham&lt;/a&gt; et &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Esbutler/"&gt;Steve Butler&lt;/a&gt; pour m'avoir initié aux
+raffinements de triangulations lors de CCCG 2008.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5005068235951720029?l=mathfou.blogspot.com" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.com/blogue/2008/09/le-lhc-demarre/" rel="alternate"></link><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-10:blogue/2008/09/le-lhc-demarre/</id><summary type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
+sur la nature de l'univers. Le Large Hadron Collider (LHC, grand
+collisioneur de proton en français), le plus grand accélérateur de
+particule construit par l'homme, a été mis en route aujourd'hui. Sa mise
+en marche a été retardée à quelques reprises, mais finalement, nous y
+sommes.&lt;/p&gt;
+&lt;p&gt;Le LHC est un immense complexe dont la composante principale est un tube
+de 27km de circonférence dans lequel voyageront deux faisceaux de
+protons. Pour l'instant, un seul faisceau a été injecté dans
+l'accélérateur, le deuxième le sera dans quelques semaines. Ces
+faisceaux entreront en collision à quatre endroits prédéterminés autour
+du tube où des détecteurs gigantesques recueilleront des données sur les
+résultats des collisions. Par exemple, ATLAS, un des détecteurs, pèse
+7000 tonnes, mesure 25 mètres de haut et 45 mètres de long.&lt;/p&gt;
+&lt;p&gt;L'étude de ces collisions à haute énergie (14 TeV) permettra de
+rechercher des preuves expérimentales de l'existence du boson de Higgs
+(la particule qui est sensé donner une masse à toutes les autres), de
+dimensions supplémentaires (qui sont requises par la théorie des
+supercordes, par exemple) et de la supersymétrie. De plus, LHC permettra
+de mieux comprendre les différences entre la matière et l'antimatière
+(entre autre, pourquoi y a-t-il plus de matière que d'antimatière) et
+peut-être même d'élucider le mystère de la matière sombre.&lt;/p&gt;
+&lt;p&gt;Le LHC est une des plus grandes réalisations technique de l'être humain.
+Les protons voyageront à une vitesse proche de celle de la lumière grâce
+à un système complexe d'aimants refroidi à des températures proche du
+zéro absolu (1,9K). La quantité de données générées par les quatre
+détecteurs atteindra 15 millions de gigaoctets qui devront être
+analysés, filtrés et stockés, ce qui nécessitera des ordinateurs parmi
+les plus puissants du monde.&lt;/p&gt;
+&lt;p&gt;Plus de détails sur&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;la nouvelle : &lt;a class="reference external" href="http://www.radio-canada.ca/nouvelles/Science-Sante/2008/09/09/002-collisionneur-reeves-Hawking.shtml"&gt;Radio-Canada.ca&lt;/a&gt;, &lt;a class="reference external" href="http://www.cyberpresse.ca/article/20080910/CPSCIENCES/80910007/1020/CPSCIENCES"&gt;Cyberpresse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;le LHC : &lt;a class="reference external" href="http://public.web.cern.ch/Public/fr/LHC/LHC-fr.html"&gt;CERN&lt;/a&gt;, &lt;a class="reference external" href="http://www.youtube.com/watch?v=j50ZssEojtM"&gt;the LHC rap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</summary><category term="physique"></category></entry><entry><title>Le dilemme du prisonnier</title><link href="http://loicseguin.com/blogue/2008/09/le-dilemme-du-prisonnier/" rel="alternate"></link><updated>2008-09-07T06:22:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-07:blogue/2008/09/le-dilemme-du-prisonnier/</id><summary type="html">&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
+conteste le dilemme du prisonnier. Deux suspects sont arrêtés
+relativement à un crime donné. Ils sont interrogés séparément et ne
+peuvent communiquer d'aucune façon que ce soit. Ils connaissent tous
+deux les règles : lors de son interrogatoire, le suspect peut accuser
+l'autre suspect et bénéficier d'une peine moindre pour avoir collaboré
+avec la police, ou prétendre qu'ils sont tous les deux innocents. Si les
+deux suspects s'accusent mutuellement, ils purgeront tous les deux une
+peine de 9 ans. Si un des suspects accuse son collègue et l'autre
+affirme son innocence, le premier n'ira pas en prison et le second
+purgera 10 ans. Enfin, si les deux affirment leur innocence, ils
+purgeront tous deux 1 ans pour infraction mineure.&lt;/p&gt;
+&lt;p&gt;Quelle est la stratégie gagnante pour chaque prisonnier ? Le prisonnier
+1 doit choisir entre accuser (A) et innocenter (I). Supposons que le
+prisonnier 2 choisisse I, alors, 1 a le choix entre purger 1 an s'il
+choisi I, ou rien du tout s'il choisi A. Donc sa stratégie gagnante dans
+ce cas est A. Si le prisonnier 2 a choisi A, 1 a le choix entre purger
+10 ans s'il choisi I ou 9 ans s'il choisi A. Encore une fois, la
+stratégie gagnante est A.&lt;/p&gt;
+&lt;p&gt;Puisque 1 n'a aucune façon de savoir la réponse de 2, et que dans tous
+les cas il s'en sort avec une peine moindre s'il choisi A, c'est
+définitivement sa meilleure option. Le raisonnement est identique pour
+le prisonnier 2. Alors, il semble que le seul résultat sensé pour ce jeu
+soit que les deux prisonniers s'accusent mutuellement et purgent chacun
+9 ans. Cette solution est appelée un point d'équilibre de Nash pour ce
+jeu.&lt;/p&gt;
+&lt;p&gt;Un point d'équilibre de Nash est un choix de stratégie pour chaque
+joueur tel que si un joueur décide de changer sa stratégie, il aura une
+peine plus grande. Le nom viens du mathématicien John Forbes Nash, prix
+Nobel d'économie 1994, dont l'histoire romancée est décrite dans le film
+&amp;quot;A beautiful mind&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Revenons au dilemme des prisonniers. L'équilibre de Nash pour ce jeu
+fait en sorte que chaque prisonnier purge un grand nombre d'années en
+prison. Il existe pourtant une solution à ce jeu qui est beaucoup plus
+avantageuse &amp;quot;socialement&amp;quot;. Si les deux innocentent leur collègue, ils ne
+purgeront qu'un an chacun. La collaboration, dans ce contexte, est une
+bien meilleure option que l'avarice.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>La complexité de l'enseignement</title><link href="http://loicseguin.com/blogue/2008/05/la-complexite-de-lenseignement/" rel="alternate"></link><updated>2008-05-14T17:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-14:blogue/2008/05/la-complexite-de-lenseignement/</id><summary type="html">&lt;p&gt;Concernant le problème TEACH défini ci-dessous, j'ai obtenu un résultat
+intéressant de complexité.&lt;/p&gt;
+&lt;p&gt;Problème : TEACH&lt;/p&gt;
+&lt;p&gt;Exemple : Un groupe d'étudiants E = {e_1, ..., e_n}, un sujet S et un
+cours C.&lt;/p&gt;
+&lt;p&gt;Question : Est-ce qu'au moins k étudiants vont passer le cours ?&lt;/p&gt;
+&lt;p&gt;Le problème est difficile.&lt;/p&gt;
+&lt;p&gt;Proposition : Le problème TEACH est NP-difficile.&lt;/p&gt;
+&lt;p&gt;Preuve : La preuve repose sur une réduction à partir du problème de
+couplage en 3 dimensions (3D-MATCHING). Détails à venir.
+Des inspirations transcendantales me font croire que le problème est
+aussi NP-complet, quoique je n'ai aucune idée de preuve pour appuyer ma
+conjecture. Toute contribution est la bienvenue.&lt;/p&gt;
+&lt;p&gt;Conjecture : Le problème TEACH est NP-complet.&lt;/p&gt;
+</summary><category term="maths"></category><category term="ineptie"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
+entiers. Dans cet &lt;a class="reference external" href="http://www.theglobeandmail.com/servlet/story/RTGAM.20080510.wobama0510/BNStory/International/?page=rss&amp;amp;id=RTGAM.20080510.wobama0510"&gt;article&lt;/a&gt; du Globe and Mail du 10 mai, on peut lire
+cette charmante phrase :&lt;/p&gt;
+&lt;blockquote&gt;
+Nearly 800 superdelegates will attend the convention. Mr. Obama has
+endorsements from 275, according to the latest tally by The Associated
+Press. Ms. Clinton has 271.5.&lt;/blockquote&gt;
+&lt;p&gt;Hum, j'ignore ce qu'est un demi-superdélégué. Pourquoi madame Clinton
+a-t-elle l'appui de 271.5 superdélégués ? D'où vient ce demi frauduleux
+? On s'imagine qu'il s'agit d'une approximation statistique basée sur un
+modèle quelconque. Mais, dans ce contexte, l'utilisation de résultats
+fractionnaires n'a aucun sens.&lt;/p&gt;
+&lt;p&gt;Parfois, on peut interpréter un résultat fractionnaire comme une
+proportion. Or, ici, il est question d'un nombre de personnes, pas d'une
+proportion. Il est donc tout à fait déraisonnable de dire que madame
+Clinton a l'appui d'un demi-délégué.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>La programmation en nombres entiers.</title><link href="http://loicseguin.com/blogue/2008/03/la-programmation-en-nombres-entiers/" rel="alternate"></link><updated>2008-03-21T06:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-03-21:blogue/2008/03/la-programmation-en-nombres-entiers/</id><summary type="html">&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
+intéressant ? Pourquoi une poignée de mathématiciens dépensent-ils
+quelques milliers de dollars pour se réunir et en discuter ? Sans doute
+en saurais-je un peu plus à mon retour de la session de travail sur la
+programmation en nombres entiers qui se tient dans une semaine à la
+Barbade.&lt;/p&gt;
+&lt;p&gt;D'ici là, voici ce que j'en sais pour vous mettre l'eau à la bouche.
+Tout d'abord, la programmation en nombres entiers (PNE) est une
+sous-catégorie de problèmes de la programmation linéaire (PL). En PL, on
+veut résoudre des problèmes d'optimisation du genre :
+minimiser f(x)
+sous les contraintes c_i (x) = 0 pour i dans E
+c_i (x) &amp;lt;= 0 pour i dans I où E et I sont des ensembles d'indices, les
+c_i et f sont des fonctions linéaires. En PNE, on rajoute la contrainte
+que la solution doit être entière. Parfois, on parle de programmation
+mixte (PM) où certaines variables seulement doivent être entières. Une
+des applications les plus importantes de la PNE est l'utilisation
+d'énoncés de type &amp;quot;si ... alors&amp;quot; en PL. Par exemple, si on a un problème
+qui dit &amp;quot;si x_1 &amp;gt; 10, alors x_2 + x_3 &amp;lt; 5&amp;quot;, on peut utiliser une
+nouvelle variable entière pour écrire cette implication sous forme d'une
+contrainte linéaire.&lt;/p&gt;
+&lt;p&gt;La PNE peut aussi servir à résoudre des types de problèmes de transport
+où on ne peut pas accepter des solutions fractionnaires. Par exemple, si
+on achemine un produit en petites quantités sur une courte période de
+temps.&lt;/p&gt;
+&lt;p&gt;Plus de détails à venir éventuellement !&lt;/p&gt;
+</summary><category term="recherche opérationnelle"></category><category term="maths"></category></entry><entry><title>Une citation mémorable du film Proof</title><link href="http://loicseguin.com/blogue/2007/10/une-citation-memorable-du-film-proof/" rel="alternate"></link><updated>2007-10-28T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-28:blogue/2007/10/une-citation-memorable-du-film-proof/</id><summary type="html">&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
+que je n'ai pas aimé ce film. La performances des acteurs est mauvaise,
+l'histoire, peu enivrante. Certaines personnes ont comparé ce film à &lt;em&gt;A
+Beautiful Mind&lt;/em&gt;, ce que je n'arrive pas à comprendre. Outre le fait que
+les deux films parlent de mathématiciens un peu cinglés, il n'y a rien
+en commun entre eux : un est un chef-d'oeuvre, l'autre est un film dont
+on aurait pu se passer.&lt;/p&gt;
+&lt;p&gt;Les seuls points positifs de &lt;em&gt;Proof&lt;/em&gt; sont la présence, toujours
+réjouissante, de Anthony Hopkins (ou devrais-je dire Sir Anthony
+Hopkins) dont la performance est merveilleuse, et cette citation du
+mathématicien fou :&lt;/p&gt;
+&lt;blockquote&gt;
+Let X equal the quantity of all quantities of X. Let X equal the cold.
+It is cold in December. The months of cold equal November through
+February. There are four months of cold, and four of heat, leaving four
+months of indeterminate temperature. In February it snows. In March the
+Lake is a lake of ice. In September the students come back and the
+bookstores are full. Let X equal the month of full bookstores. The
+number of books approaches infinity as the number of months of cold
+approaches four. I will never be as cold now as I will in the future.
+The future of cold is infinite. The future of heat is the future of
+cold. The bookstores are infinite and so are never full except in
+September...&lt;/blockquote&gt;
+</summary><category term="maths"></category></entry><entry><title>Le problème du contrôle de groupes d'ascenseurs</title><link href="http://loicseguin.com/blogue/2007/10/le-probleme-du-controle-de-groupes-dascenseurs/" rel="alternate"></link><updated>2007-10-22T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-22:blogue/2007/10/le-probleme-du-controle-de-groupes-dascenseurs/</id><summary type="html">&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
+de travail quotidiennement savent à quel point il peut y avoir de
+l'achalandage pour monter dans ces machines. Aux heures de pointe, il
+peut y avoir des gens qui veulent monter du rez-de-chaussée à presque
+tous les étages et des gens déjà à des étages supérieurs qui veulent
+changer d'étage.&lt;/p&gt;
+&lt;p&gt;Lorsqu'il n'y a qu'un ascenseur, il est assez facile de gérer ses
+déplacements. Une façon de faire assez répandue est de donner la
+priorité au demandes faites dans la cabine (c'est-à-dire par les
+personnes qui sont déjà dans l'ascenseur) et de s'arrêter aux étages où
+une demande de service dans la même direction (monter ou descendre) a
+été faite. Si personne n'est dans l'ascenseur, on répond en priorité à
+la première demande faite.&lt;/p&gt;
+&lt;p&gt;S'il y a plusieurs ascenseurs, comme c'est le cas dans les grandes tours
+à bureaux, la situation est différente. On peut gérer chaque ascenseur
+indépendamment, mais cela est loin d'être optimal. Une personne qui veut
+monter fera une demande de service à chaque ascenseur et monopolisera
+ainsi tous les ascenseurs. Pour éviter cela, on doit contrôler le groupe
+d'ascenseur comme un seul et unique système. Cependant, ce système est
+très complexe et il est difficile à optimiser.&lt;/p&gt;
+&lt;p&gt;Entre autres difficultés, l'arrivée des demandes est aléatoire de même
+que les destinations. Il faut minimiser le temps de transit de chaque
+passager de même que le temps d'attente. On peut aussi demander à
+minimiser certains paramètres reliés à l'usure ou aux coûts d'opération.
+Plusieurs approches algorithmiques différentes ont été prises pour
+aborder le problème. Une simple recherche sur Google donne de nombreux
+liens vers des articles qui proposent des approches évolutives,
+neuronales, et autres. Je vous tiendrez au courant de mes lectures...&lt;/p&gt;
+</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/resolution-du-probleme-des-ponts-de-koenigsberg/" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:blogue/2007/08/resolution-du-probleme-des-ponts-de-koenigsberg/</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
+est appelé par certains un multigraphe). Un graphe G est simplement un ensemble
+de n points qu'on appelle des sommets &lt;span class="math"&gt;\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt;
+ reliés
+par des arrêtes &lt;span class="math"&gt;\(A = \{(x_i x_j, 1), (x_i x_j, 2), (x_k x_l, 1), ..., (x_n
+x_m, 3)\}\)&lt;/span&gt;
+. On remarque que chaque arrête est spécifiée par deux points (les
+points qui forment les extrémités de l'arrête) et un entier qui identifie
+uniquement l'arrête dans les cas où il y a plus d'une arrête entre deux même
+points. En somme, pour produire un graphe, il suffit de tracer des points sur
+une feuille et de les relier par autant de ligne qu'on veut.&lt;/p&gt;
+&lt;p&gt;Maintenant, on peut facilement s'imaginer que le graphe constitue un ensemble
+de routes entre différents villages. Alors, on peut marcher le long de ces
+routes pour aller d'un village &lt;span class="math"&gt;\(x_1\)&lt;/span&gt;
+ à un village &lt;span class="math"&gt;\(x_{11}\)&lt;/span&gt;
+. On peut
+spécifier le chemin qu'on a pris en donnant la liste des routes qu'on a suivit.
+Par exemple on peut décrire le chemin comme étant la suite d'arrêtes
+&lt;span class="math"&gt;\((x_1 x_4, 2), (x_4 x_8, 1), (x_8 x_5, 1), (x_5 x_11, 3)\)&lt;/span&gt;
+. Si on fait un
+trajet qui nous ramène au village d'où nous étions partis, on dit que ce chemin
+est un tour. Un tour est eulérien (oui, vous avez deviné, en l'honneur de
+Euler) s'il passe par toutes les arrêtes une et une seule fois.&lt;/p&gt;
+&lt;p&gt;Le problème des ponts de Königsberg peut donc être reformulé en terme
+d'un graphe et de la possibilité de trouver un tour eulérien sur ce
+graphe. Chaque lopin de terre devient un sommet de notre graphe et
+chaque pont devient une arrête. Des sommets sont adjacents (i.e. : ont
+un lien entre eux) si les lopins de terre sont reliés par un pont. On a
+donc un graphe constitué de quatre sommets et de sept arrêtes. Alors,
+est-il possible de trouver un tour eulérien sur un tel graphe ?&lt;/p&gt;
+&lt;p&gt;Le degré d'un sommet est simplement le nombre d'arrêtes qui sont
+attachées à ce sommet. Si un graphe admet un tour eulérien, que peut-on
+dire du degré de ses sommets ? Le tour eulérien passe par toutes les
+arrêtes donc aussi par tous les sommets. Puisque chaque arrête est
+utilisée une seule fois, quand le tour &amp;quot;arrive&amp;quot; à un sommet, il doit en
+&amp;quot;repartir&amp;quot; par une autre arrête. Donc chaque sommet a un nombre pair
+d'arrêtes (une pour l'arrivée et une pour le départ) et donc un degré
+pair.&lt;/p&gt;
+&lt;p&gt;Par conséquent, si un graphe a des sommets qui n'ont pas un degré pair,
+il est impossible de trouver un tour eulérien sur ce graphe. Un petit
+coup d'oeil à l'image de Königsberg et on trouve tout de suite des
+sommets de degré impair. Donc il est impossible de trouver un tour
+eulérien et la solution au problème des ponts de Königsberg est que
+c'est impossible.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/les-ponts-de-koenigsberg/" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:blogue/2007/08/les-ponts-de-koenigsberg/</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant que j'ai un blogue, voyons ce que je peux en faire.&lt;/p&gt;
+&lt;p&gt;Un des problèmes qui est à l'origine de la théorie des graphes est celui
+des ponts de Königsberg. Cette ville de Prusse (au temps où la Prusse
+existait) est aujourd'hui Kaliningrad en Russie. Elle est composée de
+quatre lopins de terre reliés par sept ponts. La question qui intriguait
+les gens à l'époque (on est en 1736) était de savoir s'il était possible
+de partir d'un des lopins de terre et de traverser chaque pont une seule
+fois pour revenir au même lopin. En essayant un peu, on peut se
+convaincre assez facilement que c'est impossible. Néanmoins, il est un
+peu plus compliqué de le démontrer (rigoureusement, on s'entend).
+C'est ce qu'à réussi Leonhard Euler, un des plus grands mathématiciens
+de tous les temps. La preuve est assez simple mais nécessite quelques
+notions élémentaires de théorie des graphes. Maintenant que je vous ai
+mis l'eau à la bouche et que vous mourrez tous d'envie de connaître la
+preuve, je vais aller me coucher. La preuve viendra dans un futur
+rapproché.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Relativité restreinte</title><link href="http://loicseguin.com/blogue/2004/06/relativite-restreinte/" rel="alternate"></link><updated>2004-06-14T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2004-06-14:blogue/2004/06/relativite-restreinte/</id><summary type="html">&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
+&lt;p&gt;Puis, un beau jour d'il y a un ou deux siècles, un dénommé Maxwell (oui oui,
+comme le café) trouva les équations de l'électromagnétisme. Ce sont des
+équations qui décrivent tous les phénomènes électromagnétiques (comme la
+lumière et les rayons X). Et un autre jour merveilleux, un autre dénommé, dont
+je ne connais pas le nom, a trouvé (grâce à une expérience compliquée) que la
+vitesse de la lumière était de 3x10^8 m/s. Et cette valeur correspondait à 1
+divisé par deux constantes fondamentales qui apparaissaient dans les équations
+de  Maxwell : la constante magnétique et la constante électrique. Donc, Maxwell
+se demanda: &amp;quot;Mais pourquoi donc mes paramètres correspondent-ils à la vitesse
+de la lumière ?&amp;quot; Et il fit des calculs palpitants pendant longtemps. Après des
+heures de plaisir, il trouva que ses équations prédisaient une vitesse c pour
+les ondes électromagnétiques (la lumière par exemple) et que cette vitesse c
+était une constante, peut importe le référentiel. Donc, peut importe qui mesure
+la vitesse de la lumière, ça sera toujours c. Et cette conclusion était
+étrange. En effet, normalement, une personne qui se tient sur le bord de la
+voie ferrée mesure la vitesse d'un train et obtient, disons, 80 km/h. Et une
+personne sur le train obtiendrait une vitesse de 0 km/h, parce que le train ne
+se déplace pas par rapport au passager. Donc la vitesse mesurée dépend du
+référentiel de l'observateur, en temps normal.&lt;/p&gt;
+&lt;p&gt;Bon, donc on a une vitesse c constante pour la lumière. Là il y a un problème:
+en physique classique, le principe de la relativité dit qu'une vitesse dépend
+du référentiel par rapport à laquelle elle est mesurée (c'est l'histoire des
+petits bonshommes et du train, chaque personnage, celui sur le train et celui à
+côté, est dans un référentiel différent et mesure une vitesse différente).
+L'existence d'une vitesse constante est très contre-intuitive.&lt;/p&gt;
+&lt;p&gt;Entre en scène un célèbre personnage qui vient éclaircir la question: Albert
+Einstein. Pour lui, le principe de la relativité doit être valide en tout temps
+pour toutes les lois de la physique et la vitesse de la lumière est une
+constante. Donc, dans tous les référentiels, elle sera la même. À priori, ces
+deux postulats peuvent sembler contradictoires. Mais Einstein, réussit à
+développer une théorie complète à partir de ce derniers. Et cette théorie non
+seulement correspondait à la mécanique Newtonienne (la mécanique classique)
+pour les vitesses petites par rapport à la vitesse de la lumière, mais en plus
+elle permettait d'expliquer avec justesse des anomalies dans les observations
+astronomiques. Jusqu'à aujourd'hui, tout porte à croire que la théorie de la
+relativité restreinte d'Einstein est une bonne description de la façon dont la
+nature fonctionne.&lt;/p&gt;
+&lt;p&gt;Maintenant, qu'en est-il de la &amp;quot;vitesse limite&amp;quot;? En quoi la théorie de la
+relativité restreinte prédit-elle une vitesse limite? D'abord, les observations
+expérimentales faites avant le développement de la théorie indiquaient que rien
+ne pouvait se déplacer plus vite que la vitesse de la lumière. Des observations
+plus récentes en physique des particules confirment ce résultat. Selon les
+équations d'Einstein, plus une particule s'approche de la vitesse de la
+lumière, plus sa masse apparente augmente et plus il faut d'énergie pour
+l'accélérer. Donc, pour augmenter la vitesse d'une particule de 99% à 100% de
+la vitesse de la lumière, il faudrait une quantité d'énergie infinie. Cela
+explique pourquoi la vitesse c est une limite. Cependant, rien n'indique que
+des objets allant plus vite que la vitesse de la lumière ne puisse pas exister.
+De tels objets, nommés tachyons, seraient confinés à des vitesses supérieures à c
+et ne pourraient pas ralentir ou s'arrêter. Les tachyons n'ont jamais été
+observés expérimentalement à ce jour.&lt;/p&gt;
+</summary><category term="physique"></category></entry></feed>

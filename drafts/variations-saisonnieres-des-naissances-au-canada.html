@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Variations saisonnières des naissances au Canada</title>
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/main.css">
+                <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Atom Feed" />
+                
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+                <div class="container-narrow">
+            <header class="navbar">
+            <nav class="navbar-inner">
+            <div class="container-fluid">
+            <a class="brand" href="http://loicseguin.com/">Loïc Séguin-C. </a>
+            <ul class="nav pull-right">
+                                                <li><a href="http://loicseguin.com/pages/projets.html">Projets</a></li>
+                                <li><a href="http://loicseguin.com/pages/publications.html">Publications</a></li>
+                                <li><a href="http://loicseguin.com/pages/vita.html">Vita</a></li>
+                                                            </ul>
+            </div>
+            </nav>
+            </header><!-- /#banner -->
+
+            <section id="content" class="body">
+  <article>
+    <header>
+    <div class="page-header">
+        <h1>
+            Variations saisonnières des naissances au Canada
+        </h1>
+    </div>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+<small>
+    <em>
+        <p>
+    <span class="muted">
+        Publié le 01 avril 2013
+    </span>
+
+</p>
+    </em>
+</small>
+</footer><!-- /.post-info -->      <p>On commence par lire les données dans le fichier CSV obtenu à partir de la
+<a href="http://www5.statcan.gc.ca/cansim/a05?id=1024502&amp;retrLang=eng" title="Table 102-4502 Live births, by month, Canada, province and territories, annual">table 102-4502</a> du site de <a href="http://www.statcan.gc.ca" title="Statistique Canada">Statistique Canada</a>.</p>
+<div class="codehilite"><pre>rawdata <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&quot;01024502-eng.csv&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Le fichier contient le nombre de naissances dans chaque province pour chacun
+des mois de l'année, de 1991 à 2011.  Il contient également des données
+combinées pour l'ensemble du Canada et pour chaque année.  Pour le moment,
+seules les données pour l'ensemble du Canada sont analysées.  Dans la colonne
+<code>GEO</code>, ces données contiennent la chaîne de caractère <code>Canada, place of
+residence of mother</code>.  Le tableau contient également les pourcentages des
+naissances pour chaque mois.  Ces pourcentages sont identifiés par la chaîne de
+caractère <code>Percentage of live births</code> dans la colonne <code>UNIT</code>, alors que le
+nombre de naissance est identifié par <code>Number of live births</code>.</p>
+<p>La fonction <code>grepl</code> peut être utilisée pour éliminer toutes les lignes du
+tableau de données qui ne décrivent pas l'ensemble du Canada avec des nombres
+absolus pour chaque mois.  <code>grepl</code> prend une expression régulière comme premier
+argument et une liste (ou un élément unique) comme second argument.  La
+fonction retourne une liste de valeurs booléennes qui indique si l'expression
+régulière a été trouvée à chacune des positions de la liste d'entrée.  Par
+exemple,</p>
+<div class="codehilite"><pre>grepl<span class="p">(</span><span class="s">&quot;bon&quot;</span><span class="p">,</span> c<span class="p">(</span><span class="s">&quot;bonjour&quot;</span><span class="p">,</span> <span class="s">&quot;allo&quot;</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="c">## [1]  TRUE FALSE</span>
+</pre></div>
+
+
+<p>La commande suivante sélectionne toutes les lignes pour lesquelles la colonne
+<code>GEO</code> commence par <code>Canada</code>, la colonne <code>UNIT</code> commence par <code>Number</code> et la
+colonne <code>MONTHBIRTH</code> commence par <code>Month</code>.  De plus, seules les colonnes
+d'intérêt sont retenues.  Ensuite, on renomme chaque colonne avec un nom plus
+descriptif.</p>
+<div class="codehilite"><pre>canada.births <span class="o">&lt;-</span> rawdata<span class="p">[</span>grepl<span class="p">(</span><span class="s">&quot;^Canada&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>GEO<span class="p">)</span> <span class="o">&amp;</span> grepl<span class="p">(</span><span class="s">&quot;^Number&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>UNIT<span class="p">)</span> <span class="o">&amp;</span> 
+    grepl<span class="p">(</span><span class="s">&quot;^Month&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>MONTHBIRTH<span class="p">),</span> c<span class="p">(</span><span class="s">&quot;Ref_Date&quot;</span><span class="p">,</span> <span class="s">&quot;MONTHBIRTH&quot;</span><span class="p">,</span> <span class="s">&quot;Value&quot;</span><span class="p">)]</span>
+names<span class="p">(</span>canada.births<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;Year&quot;</span><span class="p">,</span> <span class="s">&quot;Month&quot;</span><span class="p">,</span> <span class="s">&quot;Births&quot;</span><span class="p">)</span>
+head<span class="p">(</span>canada.births<span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="c">##    Year                   Month Births</span>
+<span class="c">## 43 1991 Month of birth, January  32150</span>
+<span class="c">## 44 1992 Month of birth, January  31974</span>
+<span class="c">## 45 1993 Month of birth, January  30989</span>
+<span class="c">## 46 1994 Month of birth, January  30265</span>
+<span class="c">## 47 1995 Month of birth, January  29975</span>
+<span class="c">## 48 1996 Month of birth, January  29410</span>
+</pre></div>
+
+
+<p>Le même résultat peut aussi être obtenu avec la commande <code>subset</code> :</p>
+<div class="codehilite"><pre>canada.births <span class="o">&lt;-</span> subset<span class="p">(</span>rawdata<span class="p">,</span> grepl<span class="p">(</span><span class="s">&quot;^Canada&quot;</span><span class="p">,</span> GEO<span class="p">)</span> <span class="o">&amp;</span> grepl<span class="p">(</span><span class="s">&quot;^Number&quot;</span><span class="p">,</span> UNIT<span class="p">)</span> <span class="o">&amp;</span> 
+    grepl<span class="p">(</span><span class="s">&quot;^Month&quot;</span><span class="p">,</span> MONTHBIRTH<span class="p">),</span> select <span class="o">=</span> c<span class="p">(</span>Ref_Date<span class="p">,</span> MONTHBIRTH<span class="p">,</span> Value<span class="p">))</span>
+names<span class="p">(</span>canada.births<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;Year&quot;</span><span class="p">,</span> <span class="s">&quot;Month&quot;</span><span class="p">,</span> <span class="s">&quot;Births&quot;</span><span class="p">)</span>
+head<span class="p">(</span>canada.births<span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="c">##    Year                   Month Births</span>
+<span class="c">## 43 1991 Month of birth, January  32150</span>
+<span class="c">## 44 1992 Month of birth, January  31974</span>
+<span class="c">## 45 1993 Month of birth, January  30989</span>
+<span class="c">## 46 1994 Month of birth, January  30265</span>
+<span class="c">## 47 1995 Month of birth, January  29975</span>
+<span class="c">## 48 1996 Month of birth, January  29410</span>
+</pre></div>
+
+
+<p>On peut simplifier le tableau en éliminant <code>Month of birth,</code> pour n'utiliser
+que le nom du mois.  Encore une fois, les expressions régulières sont parfaites
+pour cette tâche.  La fonction <code>gsub</code> remplace toutes les occurences d'une
+expression régulière dans une liste.  Si l'expression à trouver contient des groupes
+(dénotés par des parenthèses), ces groupes peuvent être utilisés dans
+l'expression de remplacement avec <code>\1</code> à <code>\9</code>.</p>
+<div class="codehilite"><pre>levels<span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">)</span> <span class="o">&lt;-</span> gsub<span class="p">(</span><span class="s">&quot;Month of birth, ([a-zA-Z].)&quot;</span><span class="p">,</span> <span class="s">&quot;\\1&quot;</span><span class="p">,</span> 
+    levels<span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">))</span>
+head<span class="p">(</span>canada.births<span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="c">##    Year   Month Births</span>
+<span class="c">## 43 1991 January  32150</span>
+<span class="c">## 44 1992 January  31974</span>
+<span class="c">## 45 1993 January  30989</span>
+<span class="c">## 46 1994 January  30265</span>
+<span class="c">## 47 1995 January  29975</span>
+<span class="c">## 48 1996 January  29410</span>
+</pre></div>
+
+
+<p>Dans le tableau de données, les mois sont des niveaux, mais R ne sait pas
+comment ordonner ces niveaux.  Par défaut, les niveaux décrits par des chaînes
+de caractères sont ordonnés alphabétiquement.  La commande suivante place les
+mois en ordre chronologique.</p>
+<div class="codehilite"><pre>canada.births<span class="o">$</span>Month <span class="o">&lt;-</span> factor<span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">,</span> levels <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;January&quot;</span><span class="p">,</span> <span class="s">&quot;February&quot;</span><span class="p">,</span> 
+    <span class="s">&quot;March&quot;</span><span class="p">,</span> <span class="s">&quot;April&quot;</span><span class="p">,</span> <span class="s">&quot;May&quot;</span><span class="p">,</span> <span class="s">&quot;June&quot;</span><span class="p">,</span> <span class="s">&quot;July&quot;</span><span class="p">,</span> <span class="s">&quot;August&quot;</span><span class="p">,</span> <span class="s">&quot;September&quot;</span><span class="p">,</span> <span class="s">&quot;October&quot;</span><span class="p">,</span> 
+    <span class="s">&quot;November&quot;</span><span class="p">,</span> <span class="s">&quot;December&quot;</span><span class="p">))</span>
+</pre></div>
+
+
+<p>Si on demande à R de tracer un graphique des naissances en fonction du mois de
+l'année, il combine automatique les données de chaque année et produit les
+boîtes à moustache suivantes (mieux connu en anglais sous le nom de <em>box
+plot</em>).</p>
+<div class="codehilite"><pre>plot<span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">,</span> canada.births<span class="o">$</span>Births<span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="plot of chunk unnamed-chunk-7" src="static/images/unnamed-chunk-7.png" /> </p>
+<p>Pour analyser les variations saisonnières, le nombre de naissance chaque mois
+n'est pas aussi important que le pourcentage des naissances de l'année qui ont
+lieu chaque mois.  Dans la figure précédente, on peut voir une certaine
+variation, mais rien de très convaincant.  Le problème est qu'une grande part
+des variations pour chaque mois est en fait liée à une variation annuelle du
+nombre de naissances.  Il faut donc normaliser les naissances par le nombre
+total de naissances dans une année (oui, cette information était déjà contenue
+dans le fichier de départ, mais on peut voir comment R permet de calculer
+simplement ce genre de quantité).</p>
+<p>Le paquetage <code>data.table</code> facilite cette tâche.</p>
+<div class="codehilite"><pre>library<span class="p">(</span>data.table<span class="p">)</span>
+birthstable <span class="o">&lt;-</span> data.table<span class="p">(</span>canada.births<span class="p">)</span>
+withfrac <span class="o">&lt;-</span> birthstable<span class="p">[,</span> <span class="sb">`:=`</span><span class="p">(</span>Birth_frac<span class="p">,</span> Births<span class="o">/</span>sum<span class="p">(</span>Births<span class="p">)),</span> by <span class="o">=</span> Year<span class="p">]</span>
+plot<span class="p">(</span>withfrac<span class="o">$</span>Month<span class="p">,</span> withfrac<span class="o">$</span>Birth_frac<span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="plot of chunk unnamed-chunk-8" src="static/images/unnamed-chunk-8.png" /> </p>
+<p>On peut aussi regarder les données pour la période de 1991 à 2011 en entier et
+tenter de déterminer s'il y a bien une variation saisonnière en effectuant une
+transformée de Fourier du signal.</p>
+<div class="codehilite"><pre>withfrac <span class="o">&lt;-</span> withfrac<span class="p">[</span>with<span class="p">(</span>withfrac<span class="p">,</span> order<span class="p">(</span>Year<span class="p">,</span> Month<span class="p">)),</span> <span class="p">]</span>
+print<span class="p">(</span>withfrac<span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="c">##      Year     Month Births Birth_frac</span>
+<span class="c">##   1: 1991   January  32150    0.07987</span>
+<span class="c">##   2: 1991  February  30259    0.07517</span>
+<span class="c">##   3: 1991     March  34782    0.08641</span>
+<span class="c">##   4: 1991     April  35314    0.08773</span>
+<span class="c">##   5: 1991       May  36272    0.09011</span>
+<span class="c">##  ---                                 </span>
+<span class="c">## 248: 2011    August  33564    0.08888</span>
+<span class="c">## 249: 2011 September  33429    0.08852</span>
+<span class="c">## 250: 2011   October  31884    0.08443</span>
+<span class="c">## 251: 2011  November  30350    0.08037</span>
+<span class="c">## 252: 2011  December  29497    0.07811</span>
+</pre></div>
+
+
+<div class="codehilite"><pre>ft <span class="o">&lt;-</span> fft<span class="p">(</span>withfrac<span class="o">$</span>Birth_frac<span class="p">)</span>
+nft <span class="o">&lt;-</span> length<span class="p">(</span>ft<span class="p">)</span>
+ft <span class="o">&lt;-</span> Mod<span class="p">(</span>c<span class="p">(</span>ft<span class="p">[(</span>nft<span class="o">/</span><span class="m">2</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span><span class="o">:</span>nft<span class="p">],</span> ft<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)]))</span>
+freqs <span class="o">&lt;-</span> c<span class="p">(</span>seq<span class="p">(</span><span class="m">-0.5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> length.out <span class="o">=</span> <span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)),</span> seq<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> length.out <span class="o">=</span> <span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)))</span>
+fftdata <span class="o">&lt;-</span> data.frame<span class="p">(</span>freqs<span class="p">,</span> ft<span class="p">)</span>
+
+plot<span class="p">(</span>fftdata<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">,</span> <span class="p">],</span> t <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> pch <span class="o">=</span> <span class="m">20</span><span class="p">,</span> cex <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;Frequency (1/month)&quot;</span><span class="p">,</span> 
+    ylab <span class="o">=</span> <span class="s">&quot;Power&quot;</span><span class="p">)</span>
+freqmax <span class="o">&lt;-</span> freqs<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">][</span>which.max<span class="p">(</span>ft<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">])]</span>
+abline<span class="p">(</span>v <span class="o">=</span> freqmax<span class="p">,</span> lty <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+text<span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.63</span><span class="p">,</span> freqmax<span class="p">,</span> adj <span class="o">=</span> c<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+text<span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="m">1</span><span class="o">/</span>freqmax<span class="p">,</span> adj <span class="o">=</span> c<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<span class="c1"># Period axis on top</span>
+a <span class="o">&lt;-</span> axis<span class="p">(</span><span class="m">3</span><span class="p">,</span> lty <span class="o">=</span> <span class="m">0</span><span class="p">,</span> labels <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+axis<span class="p">(</span><span class="m">3</span><span class="p">,</span> cex.axis <span class="o">=</span> <span class="m">0.6</span><span class="p">,</span> labels <span class="o">=</span> format<span class="p">(</span><span class="m">1</span><span class="o">/</span>a<span class="p">,</span> digits <span class="o">=</span> <span class="m">2</span><span class="p">),</span> at <span class="o">=</span> a<span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="plot of chunk unnamed-chunk-9" src="static/images/unnamed-chunk-9.png" /> </p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+
+            <section id="extras" class="body">
+                        </section><!-- /#extras -->
+
+            <footer id="contentinfo" class="text-center">
+                        <div id="footer-quote" class="muted">
+                <em>Klaatu verata nicto</em>
+            </div>
+            
+                        <div class="social">
+                <ul class=inline>
+                    <li><a href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+                    
+                                        <li><a href="mailto:loic@loicseguin.com"></a></li>
+                                        <li><a href="http://twitter.com/lseguinc"></a></li>
+                                        <li><a href="http://github.com/loicseguin"></a></li>
+                                        <li><a href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
+                                        <li><a href="http://www.flickr.com/photos/loicseguin"></a></li>
+                                    </ul>
+            </div><!-- /.social -->
+                        </footer><!-- /#contentinfo -->
+
+                                            </div>
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <!--<script src="http://code.jquery.com/jquery.js"></script>-->
+        <!--<script src="http://loicseguin.com/theme/js/bootstrap.min.js"></script>-->
+    </body>
+</html>

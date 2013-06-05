@@ -56,6 +56,9 @@ clean:
 	@rm -rf $(OUTPUTDIR)/theme
 	@rm -rf $(OUTPUTDIR)/drafts
 	@rm -rf $(OUTPUTDIR)/static
+	@rm -rf $(OUTPUTDIR)/blogue
+	@rm -rf $(OUTPUTDIR)/publications
+	@rm -rf *.pid
 
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

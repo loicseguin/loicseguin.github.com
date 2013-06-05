@@ -1,10 +1,8 @@
 Conservation de la masse en hydrodynamique
 ==========================================
 
-:date: 2012-12-09
+:date: 2013-06-05
 :tags: physique
-:summary: Dérivation d'une équation fondamentale de l'hydrodynamique.
-:status: draft
 
 Le principe de conservation de la masse stipule que la masse totale d'un
 système fermé est un invariant, c'est-à-dire qu'elle est constante dans le
@@ -48,9 +46,10 @@ région de volume :math:`V`.  À chaque élément de surface correspond un vecte
 direction est perpendiculaire au plan tangent à la surface et vers l'extérieur.
 La figure ci-contre illustre ces différentes quantités.
 
-.. figure:: static/images/surf-elem.png
+.. figure:: |filename|/images/surf-elem.png
     :alt: Élément de surface
     :scale: 40%
+    :class: img-polaroid
 
     Un élément de surface :math:`d\mathbf{a}` d'une surface fermée :math:`S`
     qui définit un volume :math:`V`.
@@ -111,7 +110,7 @@ perpendiculaire à l'élément de surface contribue au flux.  Par conséquent, l
 composante de la vitesse à considérer est :math:`\mathbf{u} \cdot
 \mathbf{\hat{n}}`.
 
-.. figure:: static/images/vitesse-perpendiculaire.png
+.. figure:: |filename|/images/vitesse-perpendiculaire.png
     :alt: Vitesse perpendiculaire
     :scale: 50%
 
@@ -128,7 +127,7 @@ temps :math:`\Delta t`, d'où un flux de masse de :math:`\rho \mathbf{u} \cdot
 \mathbf{\hat{n}} da` qui peut s'écrire de façon légèrement plus compacte comme
 :math:`\rho \mathbf{u} \cdot d\mathbf{a}`.
 
-.. figure:: static/images/cylindre-de-matiere.png
+.. figure:: |filename|/images/cylindre-de-matiere.png
     :alt: Cylindre de matière
     :scale: 50%
 
@@ -174,3 +173,14 @@ faut que les intégrands soient identiquement égaux, i.e. :
 
     \frac{\partial}{\partial t} \rho(t, \mathbf{r}) = - \mathbf{\nabla} (\rho \mathbf{u}).
 
+
+Conclusion
+----------
+
+L'équation de continuité s'obtient relativement simplement à partir de
+considérations physiques simples.  Même si la dérivation présentée ici a été
+faite dans le contexte de l'hydrodynamique, il est intéressant de noter que le
+raisonnement est aussi valable dans un grand nombre d'autres contextes.  Par
+exemple, si la densité de masse est remplacé par une densité de charge, alors
+le produit :math:`\rho\mathbf{u}` devient une densité de courant et l'équation
+est l'équation de conservation de la charge en électrodynamique.
