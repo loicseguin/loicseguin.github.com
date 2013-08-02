@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Queues M/M/1</title>
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/main.css">
+                <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Atom Feed" />
+                
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+                <div class="container-narrow">
+            <header class="navbar">
+            <nav class="navbar-inner">
+            <div class="container-fluid">
+            <a class="brand" href="http://loicseguin.com/">Loïc Séguin-C. </a>
+            <ul class="nav pull-right">
+                                                <li><a href="http://loicseguin.com/pages/projets.html">Projets</a></li>
+                                <li><a href="http://loicseguin.com/pages/publications.html">Publications</a></li>
+                                <li><a href="http://loicseguin.com/pages/vita.html">Vita</a></li>
+                                                            </ul>
+            </div>
+            </nav>
+            </header><!-- /#banner -->
+
+            <section id="content" class="body">
+  <article>
+    <header>
+    <div class="page-header">
+        <h1>
+            Queues M/M/1
+        </h1>
+    </div>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+<small>
+    <em>
+        <p>
+    <span class="muted">
+        Publié le 01 août 2013
+    </span>
+<a href="http://loicseguin.com/tag/maths.html">maths</a>
+</p>
+    </em>
+</small>
+</footer><!-- /.post-info -->      <div class="contents topic" id="sommaire">
+<p class="topic-title first">Sommaire</p>
+<ul class="simple">
+<li><a class="reference internal" href="#la-queue-m-m-1-definitions" id="id1">La queue M/M/1 : définitions</a></li>
+<li><a class="reference internal" href="#generateur-ou-matrice-q" id="id2">Générateur ou matrice <span class="math">\(Q\)</span>
+</a><ul>
+<li><a class="reference internal" href="#transition-de-plus-d-une-unite-dans-la-longueur-de-la-queue" id="id3">Transition de plus d'une unité dans la longueur de la queue</a></li>
+<li><a class="reference internal" href="#transition-d-une-unite-dans-la-longueur-de-la-queue" id="id4">Transition d'une unité dans la longueur de la queue</a></li>
+<li><a class="reference internal" href="#aucune-transition" id="id5">Aucune transition</a></li>
+<li><a class="reference internal" href="#apercu-du-generateur" id="id6">Aperçu du générateur</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#distribution-stationnaire" id="id7">Distribution stationnaire</a></li>
+<li><a class="reference internal" href="#longueur-moyenne-de-la-queue" id="id8">Longueur moyenne de la queue</a></li>
+<li><a class="reference internal" href="#temps-d-attente-moyen" id="id9">Temps d'attente moyen</a></li>
+<li><a class="reference internal" href="#conclusion" id="id10">Conclusion</a></li>
+</ul>
+</div>
+<p>Une <strong>queue</strong> est une abstraction mathématique pour représenter une panoplie de
+situations dans lesquelles des choses arrivent et sont traitées.  De quel genre
+de choses parle-t-on ?  Et que veulent dire <em>arriver</em> et <em>être traité</em> ?  Il
+peut s'agir de clients qui arrivent à la caisse dans une épicerie et qui sont
+servis par la caissière, de passagers qui se mettent en file pour monter dans
+un autobus, de documents qui sont empilés dans un classeur en attente d'être
+signés par un notaire, de paquets qui transitent dans un réseau IP et qui
+attendent dans un routeur de pouvoir être envoyés à la bonne destination.</p>
+<p>Une queue peut être servie par un ou plusieurs <strong>serveurs</strong>.  Par exemple, dans
+une petite épicerie, il peut n'y avoir qu'une seule caisse.  Dans une banque,
+il y a souvent une queue unique avec plusieurs caissiers : dès qu'un caissier
+se libère, le prochain client dans la queue se dirige vers cette caisse.  Il
+existe plusieurs types de <strong>disciplines</strong> dans la queue.  Par exemple, la
+discipline <strong>premier arrivé, premier servi</strong> est commune à l'épicerie et à
+l'arrêt d'autobus. La discipline <strong>dernier arrivé, premier servi</strong> correspond à
+une boîte de Pringles : le dernier Pringle placé dans la boîte est le premier à
+être mangé.  Dans la discipline <strong>continentale</strong>, les clients sont pêle-mêle et
+le prochain client servi est choisi au hasard.</p>
+<p>La très grande majorité des queues sont difficiles à étudier théoriquement et
+il faut souvent utiliser des simulations pour comprendre leur comportement.
+Par contre, il y a un modèle de queue assez simple, la queue M/M/1, à partir
+duquel on peut déterminer plusieurs quantités intéressantes comme le temps de
+service moyen et la longueur moyenne de la queue.</p>
+<div class="section" id="la-queue-m-m-1-definitions">
+<h2><a class="toc-backref" href="#id1">La queue M/M/1 : définitions</a></h2>
+<p>Dans une queue M/M/1, les clients arrivent selon un processus de Poisson
+d'intensité <span class="math">\(\lambda\)</span>
+, c'est-à-dire que le nombre de clients qui arrivent
+dans un intervalle de temps <span class="math">\(t\)</span>
+, <span class="math">\(N(t)\)</span>
+, est une variable aléatoire
+de type Poisson et de paramètre <span class="math">\(\lambda t\)</span>
+ :</p>
+<div class="math">
+\begin{equation*}
+P\{N(t) = k\} = \frac{(\lambda t)^k e^{-\lambda t}}{k!}.
+\end{equation*}
+</div>
+<p>Pour un processus de Poisson, il est bien connu que le temps entre les arrivées
+suit une distribution exponentielle de paramètre <span class="math">\(\lambda\)</span>
+.  Il n'y a
+qu'un serveur et le temps pour qu'un client soit servi est distribué selon une
+loi exponentielle de paramètre <span class="math">\(\mu\)</span>
+.</p>
+<p>L'<strong>intensité du trafic</strong> est défini comme étant le rapport entre le temps de
+service moyen et le temps moyen entre deux arrivées.  Puisque l'espérance d'une
+variable aléatoire exponentielle est l'inverse de son paramètre, on a que le
+temps de service, <span class="math">\(T_s \sim \mathrm{Exp}(\mu)\)</span>
+, a</p>
+<div class="math">
+\begin{equation*}
+E[T_s] = \frac{1}{\mu}
+\end{equation*}
+</div>
+<p>et l'espérance du temps entre deux arrivées,
+<span class="math">\(T_a \sim \mathrm{Exp}(\lambda)\)</span>
+, est</p>
+<div class="math">
+\begin{equation*}
+E[T_a] = \frac{1}{\lambda}.
+\end{equation*}
+</div>
+<p>L'intensité du trafic est donc</p>
+<div class="math">
+\begin{equation*}
+\rho = \frac{1/\mu}{1/\lambda} = \frac{\lambda}{\mu}.
+\end{equation*}
+</div>
+<p>L'interprétation intuitive de l'intensité du trafic est simple.  Si elle est
+proche de zéro, le temps entre les arrivées est beaucoup plus grand que le
+temps de service, par conséquent, la queue sera presque toujours vide et le
+serveur presque toujours disponible.  Si l'intensité du trafic est proche de 1,
+le temps qu'il faut pour servir un client est à peu près le même que le temps
+entre les arrivées.  En raison des fluctuations aléatoires, la queue peut
+devenir très longue.  Si l'intensité du trafic est supérieure à 1, la queue va
+croître indéfiniment.  Cette intuition sera confirmée par l'analyse plus
+rigoureuse un peu plus tard.</p>
+<p>Dans le modèle que nous allons étudier, tous les clients qui arrivent se
+placent dans la queue et y demeurent jusqu'à ce qu'ils soient servis.  Ce type
+de modèle ne tient donc pas compte des clients qui quittent la queue si le
+temps d'attente est trop long ou de ceux qui décident de ne pas s'y joindre
+parce qu'elle est trop longue.</p>
+<p>Les trois éléments de la notation M/M/1 (dite <a class="reference external" href="http://en.wikipedia.org/wiki/Kendall's_notation">notation de Kendall</a>) décrivent
+les arrivées, le temps de service et le nombre de serveurs.  Le premier <em>M</em>
+signifie que les arrivées sont <strong>Markoviennes</strong>, c'est-à-dire que le temps
+entre les arrivées et exponentiel.  Le second <em>M</em> signifie que le temps de
+service est markovien.  Le <em>1</em> correspond au fait qu'il n'y a qu'un serveur.
+Il existe de nombreuses autres queues : M/M/c, M/D/c, G/G/1, etc.</p>
+</div>
+<div class="section" id="generateur-ou-matrice-q">
+<h2><a class="toc-backref" href="#id2">Générateur ou matrice <span class="math">\(Q\)</span>
+</a></h2>
+<p>La longueur de la queue M/M/1 est une chaîne de Markov à temps continu sur les
+états <span class="math">\(0, 1, 2, \ldots\)</span>
+  Le générateur de cette chaîne est une matrice
+infinie <span class="math">\(\boldsymbol{\mathrm{G}}\)</span>
+ dont les éléments <span class="math">\(g_{ij}\)</span>
+ sont
+définis par</p>
+<div class="math">
+\begin{align*}
+g_{ij}h &amp;= P\{X(t + h) = j \, | \, X(t) = i \} &amp; \text{si } j \ne i \\
+1 + g_{ii}h &amp;= P\{X(t + h) = i \, | \, X(t) = i \}
+\end{align*}
+</div>
+<p>dans la limite où <span class="math">\(h\)</span>
+ est très proche de 0.
+Il est important de noter que le générateur est indépendant du temps parce que
+la chaîne est <strong>homogène</strong>, une propriété qui découle de la propriété <strong>sans
+mémoire</strong> du processus de Poisson.</p>
+<div class="section" id="transition-de-plus-d-une-unite-dans-la-longueur-de-la-queue">
+<h3><a class="toc-backref" href="#id3">Transition de plus d'une unité dans la longueur de la queue</a></h3>
+<p>Premier constat important : <span class="math">\(g_{ij} = 0\)</span>
+ si <span class="math">\(i\)</span>
+ et <span class="math">\(j\)</span>
+
+diffèrent de plus d'une unité.  Pourquoi ?  C'est une conséquence de la
+définition du processus de Poisson : la probabilité qu'il y ait plus d'une
+arrivée (ou départ) dans un temps <span class="math">\(h\)</span>
+ doit être <span class="math">\(o(h)\)</span>
+,
+c'est-à-dire que</p>
+<div class="math">
+\begin{equation*}
+\lim_{h \rightarrow 0} \frac{P\{X(t + h) = j \,|\, X(t) = i\}}{h} = 0
+\end{equation*}
+</div>
+<p>or, d'après la définition donnée plus haut, la probabilité au numérateur est
+exactement égale à <span class="math">\(g_{ij}h\)</span>
+. Par conséquent,</p>
+<div class="math">
+\begin{align*}
+\lim_{h \rightarrow 0} \frac{g_{ij}h}{h} &amp;= 0 \\
+\lim_{h \rightarrow 0} g_{ij} &amp;= 0
+\end{align*}
+</div>
+<p>ce qui implique que <span class="math">\(g_{ij}\)</span>
+ doit être égal à 0.  Le générateur est donc
+une matrice tridiagonale.</p>
+</div>
+<div class="section" id="transition-d-une-unite-dans-la-longueur-de-la-queue">
+<h3><a class="toc-backref" href="#id4">Transition d'une unité dans la longueur de la queue</a></h3>
+<p>La chaîne passe de l'état <span class="math">\(i\)</span>
+ à l'état <span class="math">\(i + 1\)</span>
+ s'il y a une arrivée
+et aucun départ dans l'intervalle <span class="math">\(h\)</span>
+.  Comme le temps entre les arrivées
+et le temps de service sont indépendants, on a</p>
+<div class="math">
+\begin{align*}
+P\{X(t + h) = i + 1 \, | \, X(t) = i \} &amp;= P\{T_a &lt; h \cap T_s &gt; h\} \\
+&amp;= P\{T_a &lt; h\} P\{T_s &gt; h\}.
+\end{align*}
+</div>
+<p>Pour une variable exponentielle <span class="math">\(Y\)</span>
+ de paramètre <span class="math">\(\nu\)</span>
+</p>
+<div class="math">
+\begin{align*}
+P\{Y &lt; h\} &amp;= \int_0^h \nu e^{-\nu y} dy \\
+           &amp;= 1 - e^{-\nu h}
+\end{align*}
+</div>
+<p>donc,</p>
+<div class="math">
+\begin{equation*}
+P\{X(t + h) = i + 1 \, | \, X(t) = i \} = (1 - e^{-\lambda h}) e^{-\mu h}.
+\end{equation*}
+</div>
+<p>Puisque <span class="math">\(h\)</span>
+ est petit, on peut développer les exponentielles en série de
+Maclaurin et ne garder que les deux premiers termes :</p>
+<div class="math">
+\begin{align*}
+P\{X(t + h) = i + 1 \, | \, X(t) = i \} &amp;= (\lambda h + o(h)) (1 - \mu h + o(h)) \\
+&amp;= \lambda h - \lambda \mu h^2 + o(h) \\
+&amp;= \lambda h + o(h).
+\end{align*}
+</div>
+<p>L'élément du générateur <span class="math">\(g_{i, i+1}\)</span>
+ est donc simplement <span class="math">\(\lambda\)</span>
+.
+En inversant le rôle du temps de service et du temps entre les arrivées, on
+obtient la probabilité de passer de l'état <span class="math">\(i\)</span>
+ à l'état <span class="math">\(i - 1\)</span>
+ et
+l'élément de matrice <span class="math">\(g_{i, i - 1}\)</span>
+ qui est égal à <span class="math">\(\mu\)</span>
+.</p>
+</div>
+<div class="section" id="aucune-transition">
+<h3><a class="toc-backref" href="#id5">Aucune transition</a></h3>
+<p>Dans un intervalle de temps donné, trois choses peuvent se produire : une
+arrivée, un départ, ou rien du tout.  S'il ne se produit rien, la chaîne de
+Markov demeure à l'état <span class="math">\(i\)</span>
+.  La somme des probabilités doit être 1 donc</p>
+<div class="math">
+\begin{equation*}
+P\{X(t + h) = i \, | \, X(t) = i \} = 1 - (\lambda + \mu) h + o(h)
+\end{equation*}
+</div>
+<p>et l'élément de matrice est <span class="math">\(g_{ii} = -(\lambda + \mu)\)</span>
+.</p>
+</div>
+<div class="section" id="apercu-du-generateur">
+<h3><a class="toc-backref" href="#id6">Aperçu du générateur</a></h3>
+<p>On connaît maintenant tous les éléments du générateur :</p>
+<div class="math">
+\begin{equation*}
+\boldsymbol{\mathrm{G}} = \begin{pmatrix}
+        -\lambda &amp;  \lambda          &amp; 0                &amp; 0       &amp; 0  &amp; \ldots \\
+        \mu      &amp; -(\lambda + \mu)  &amp; \lambda          &amp; 0       &amp; 0  &amp; \ldots \\
+        0        &amp; \mu               &amp; -(\lambda + \mu) &amp; \lambda &amp; 0  &amp; \ldots \\
+        \vdots   &amp; \vdots            &amp; \vdots           &amp;\vdots   &amp;\vdots &amp; \ddots
+                 \end{pmatrix}
+\end{equation*}
+</div>
+<p>Pour la première ligne, il suffit de reconnaître que s'il n'y a aucun client
+dans la queue, les deux seuls événements qui peuvent survenir sont une arrivée
+ou rien du tout.</p>
+</div>
+</div>
+<div class="section" id="distribution-stationnaire">
+<h2><a class="toc-backref" href="#id7">Distribution stationnaire</a></h2>
+<p>Le générateur contient toute l'information sur les transitions dans la chaîne.
+À partir de n'importe quelle longueur de queue initiale, il est possible de
+déterminer la distribution de probabilité de la longueur de queue à n'importe
+quel instant.  Il existe un résultat intéressant (et un peu étonnant) qui
+garantit que la chaîne va converger vers une distribution unique peu importe
+l'état initial.  Pour l'instant, supposons qu'une telle distribution existe, et
+nous verrons un peu plus tard sous quelles conditions cela est vrai.</p>
+<p>Si la chaîne est dans une distribution stationnaire <span class="math">\(\pi\)</span>
+ (<span class="math">\(\pi\)</span>
+
+est un vecteur infini dont l'élément à la position <span class="math">\(i\)</span>
+ indique la
+probabilité que la queue ait une longueur <span class="math">\(i\)</span>
+, <span class="math">\(i \geq 0\)</span>
+), à
+n'importe quel instant ultérieur, elle est toujours dans la même distribution.
+Autrement dit, la probabilité de changer la distribution est nulle.  En langage
+matriciel, on peut traduire ce fait par</p>
+<div class="math">
+\begin{equation*}
+\pi \boldsymbol{\mathrm{G}} = 0.
+\end{equation*}
+</div>
+<p>En écrivant les premières équations de ce système, il est facile de déduire la
+distribution stationnaire :</p>
+<div class="math">
+\begin{equation*}
+-\lambda \pi_0 + \mu \pi_1 = 0
+\end{equation*}
+</div>
+<p>donc</p>
+<div class="math">
+\begin{equation*}
+\pi_1 = \frac{\lambda}{\mu} \pi_0
+\end{equation*}
+</div>
+<p>et en se rappelant de la définition de l'intensité du trafic, on a simplement</p>
+<div class="math">
+\begin{equation*}
+\pi_1 = \rho \pi_0.
+\end{equation*}
+</div>
+<p>La seconde équation donne</p>
+<div class="math">
+\begin{align*}
+\lambda \pi_0 - (\lambda + \mu) \pi_1 + \mu \pi_2 &amp;= 0 \\
+\pi_2 &amp;= \rho^2 \pi_0
+\end{align*}
+</div>
+<p>On peut montrer par induction que</p>
+<div class="math">
+\begin{equation*}
+\pi_i = \rho^i \pi_0.
+\end{equation*}
+</div>
+<p>Nous sommes maintenant en mesure de déterminer sous quelle condition la
+distribution stationnaire existe.  Pour que <span class="math">\(\pi\)</span>
+ soit une distribution
+de probabilité, il faut que la somme de tous ses éléments soit égale à 1 :</p>
+<div class="math">
+\begin{equation*}
+\sum_{i = 0}^\infty \rho^i \pi_0 = 1.
+\end{equation*}
+</div>
+<p>Or, cette série est une série géométrique et une telle série ne converge que si
+son argument, ici <span class="math">\(\rho\)</span>
+, est inférieur (en valeur absolue) à 1.
+Autrement dit, <strong>une distribution stationnaire n'existe que si l'intensité du
+traffic est inférieure à 1</strong>, ce qui confirme notre intuition du départ.</p>
+<p>Pour la suite, on suppose que l'intensité du trafic est inférieure à 1, et
+donc que la distribution stationnaire existe.  Pour la déterminer, on commence
+par obtenir <span class="math">\(\pi_0\)</span>
+, puis on obtient l'ensemble de la distribution grâce
+à la relation obtenue plus haut.  D'abord</p>
+<div class="math">
+\begin{equation*}
+\sum_{i = 0}^\infty \rho^i = \frac{1}{1 - \rho}
+\end{equation*}
+</div>
+<p>donc</p>
+<div class="math">
+\begin{equation*}
+\pi_0 = 1 - \rho.
+\end{equation*}
+</div>
+<p>Par substitution,</p>
+<div class="math">
+\begin{equation*}
+\boxed{\pi_i = \rho^i (1 - \rho)}.
+\end{equation*}
+</div>
+</div>
+<div class="section" id="longueur-moyenne-de-la-queue">
+<h2><a class="toc-backref" href="#id8">Longueur moyenne de la queue</a></h2>
+<p>Si la chaîne de Markov a atteint la distribution stationnaire, on peut
+facilement calculer la longueur moyenne de la file d'attente et le temps
+d'attente moyen pour chaque client.  La longueur moyenne de la file d'attente
+est donnée par</p>
+<div class="math">
+\begin{align*}
+E[L] &amp;= \sum_{i = 0}^\infty i \rho^i (1 - \rho) \\
+  &amp;= \rho (1 - \rho) \sum_{i = 1}^\infty i \rho^{i - 1}.
+\end{align*}
+</div>
+<p>La somme n'est autre que la dérivée par rapport à l'argument d'une série
+géométrique, donc</p>
+<div class="math">
+\begin{align*}
+E[L] &amp;= \rho (1 - \rho) \frac{1}{(1 - \rho)^2} \\
+  &amp;= \frac{\rho}{1 - \rho} \\
+  &amp;= \frac{\lambda}{\mu - \lambda}
+\end{align*}
+</div>
+<p>Par exemple, si l'intensité du trafic est de 0.5 et que la file d'attente a
+atteint la distribution stationnaire, la longueur moyenne de la file d'attente
+est d'un client.  La figure ci-dessous montre la longueur de la queue en
+fonction de l'intensité du trafic.</p>
+<img alt="|filename|/images/queue_length_vs_rho.png" src="http://loicseguin.com/static/images/queue_length_vs_rho.png" />
+<p>Quiconque conçoit un système dans lequel il y aura une queue a donc tout
+intérêt à s'assurer que l'intensité du trafic soit suffisamment loin de 1 pour
+ne pas que la file d'attente croisse indéfiniment.</p>
+</div>
+<div class="section" id="temps-d-attente-moyen">
+<h2><a class="toc-backref" href="#id9">Temps d'attente moyen</a></h2>
+<p>Lorsqu'un nouveau client arrive, chaque client déjà présent dans la file doit être
+servi avant que le nouveau client ne puisse l'être.  En utilisant la linéarité
+de l'espérance, le fait que le temps de service soit une exponentielle et la
+distribution stationnaire, on trouve que le nouveau client devra attendre en
+moyenne</p>
+<div class="math">
+\begin{align*}
+E[W] &amp;= E\left[ \sum_{i = 0}^\infty (i + 1) T_s \pi_i \right] \\
+     &amp;= \sum_{i = 0}^\infty (i + 1) E\left[ T_s \right] \pi_i \\
+     &amp;= \sum_{i = 0}^\infty (i + 1) \frac{1}{\mu} \pi_i \\
+     &amp;= \sum_{i = 0}^\infty (i + 1) \frac{1}{\mu} \pi_i \\
+     &amp;= \frac{1}{\mu} \left( \sum_{i = 0}^\infty i \pi_i + \sum_{i = 0}^\infty \pi_i \right) \\
+     &amp;= \frac{1}{\mu} \left( \frac{\rho}{1 - \rho} + 1 \right) \\
+     &amp;= \frac{1}{\mu - \lambda}
+\end{align*}
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2><a class="toc-backref" href="#id10">Conclusion</a></h2>
+<p>L'étude du comportement des files d'attentes est très complexe.  Le modèle que
+nous avons exploré dans cet article est très simple, et même dans ce cas, il
+est difficile d'obtenir des informations utiles si le système n'a pas atteint
+sa distribution stationnaire.  L'utilisation même de la distribution
+stationnaire n'est pas toujours appropriée en pratique (un gérant de magasin
+Apple doit prévoir que la longueur de la file d'attente à l'ouverture le jour
+du lancement du iPad 12 peut être très longue, et que la journée entière ne
+sera peut-être pas suffisante pour atteindre la distribution stationnaire).</p>
+<p>Néanmoins, les résultats théoriques obtenus ici permettent une première
+approximation qui peut être utile.  Cette approximation peut par la suite être
+raffinée en utilisant des simulations.</p>
+</div>
+
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+
+            <section id="extras" class="body">
+                        </section><!-- /#extras -->
+
+            <footer id="contentinfo" class="text-center">
+                        <div id="footer-quote" class="muted">
+                <em>Klaatu verata nicto</em>
+            </div>
+            
+                        <div class="social">
+                <ul class=inline>
+                    <li><a href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+                    
+                                        <li><a href="mailto:loic@loicseguin.com"></a></li>
+                                        <li><a href="http://twitter.com/lseguinc"></a></li>
+                                        <li><a href="http://github.com/loicseguin"></a></li>
+                                        <li><a href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
+                                        <li><a href="http://www.flickr.com/photos/loicseguin"></a></li>
+                                    </ul>
+            </div><!-- /.social -->
+                        </footer><!-- /#contentinfo -->
+
+                <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41506771-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+                                </div>
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <!--<script src="http://code.jquery.com/jquery.js"></script>-->
+        <!--<script src="http://loicseguin.com/theme/js/bootstrap.min.js"></script>-->
+    </body>
+</html>
