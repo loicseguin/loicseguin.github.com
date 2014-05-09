@@ -117,6 +117,7 @@ Fichier ``em.bib`` :
 Et voici le résultat :
 
 .. image:: |filename|/images/biblatex-simple.png
+   :alt: Exemple de sortie BibLaTeX
 
 
 Personnalisation : inclusion de références dans un plan de cours
@@ -272,4 +273,5 @@ Fichier ``em.bib`` :
 Le résultat est le suivant :
 
 .. image:: |filename|/images/biblatex-pdc.png
+   :alt: Exemple de plan de cours avec bibliographie
 

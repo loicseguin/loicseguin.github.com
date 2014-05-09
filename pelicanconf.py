@@ -31,9 +31,12 @@ THEME = "cadabra"
 FOOTER_QUOTE = "Klaatu verata nicto"
 MD_EXTENSIONS = ['fenced_code', 'codehilite', 'toc', 'tables', 'footnotes']
 
+# Fix docutils
+DOCUTILS_SETTINGS = [('math_output', 'MathJax')]
+
 # Social widget
 SOCIAL = (
-          ('email', 'mailto:loic@loicseguin.com'),
+          ('email', 'mailto:lsc@loicseguin.com'),
           ('twitter', 'http://twitter.com/lseguinc'),
           ('github', 'http://github.com/loicseguin'),
           #('bitbucket', 'http://bitbucket.org/loicseguin'),

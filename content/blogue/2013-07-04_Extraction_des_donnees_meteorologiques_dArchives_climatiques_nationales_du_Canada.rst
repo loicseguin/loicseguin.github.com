@@ -93,6 +93,7 @@ moyenne en fonction du temps obtenu à partir du code suivant.
 
 
 .. image:: |filename|/images/meteo_1942-2013.png
+   :alt: Température annuelle moyenne depuis 1942
 
 
 

@@ -358,7 +358,7 @@ E[L] &amp;amp;= \rho (1 - \rho) \frac{1}{(1 - \rho)^2} \\
 atteint la distribution stationnaire, la longueur moyenne de la file d'attente
 est d'un client.  La figure ci-dessous montre la longueur de la queue en
 fonction de l'intensité du trafic.&lt;/p&gt;
-&lt;img alt="|filename|/images/queue_length_vs_rho.png" src="http://loicseguin.com/static/images/queue_length_vs_rho.png" /&gt;
+&lt;img alt="" src="http://loicseguin.com/images/queue_length_vs_rho.png" /&gt;
 &lt;p&gt;Quiconque conçoit un système dans lequel il y aura une queue a donc tout
 intérêt à s'assurer que l'intensité du trafic soit suffisamment loin de 1 pour
 ne pas que la file d'attente croisse indéfiniment.&lt;/p&gt;
@@ -466,441 +466,8 @@ moyenne en fonction du temps obtenu à partir du code suivant.&lt;/p&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u'Température (${}^\circ$C)'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
-&lt;img alt="|filename|/images/meteo_1942-2013.png" src="http://loicseguin.com/static/images/meteo_1942-2013.png" /&gt;
-</summary><category term="programmation"></category><category term="données ouvertes"></category></entry><entry><title>Variations saisonnières des naissances au Canada</title><link href="http://loicseguin.com/blogue/2013/06/variations-saisonnieres-des-naissances-au-canada/" rel="alternate"></link><updated>2013-06-07T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-07:blogue/2013/06/variations-saisonnieres-des-naissances-au-canada/</id><summary type="html">&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#collecte-et-nettoyage"&gt;Collecte et nettoyage&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#extraction-des-donnees-pertinentes"&gt;Extraction des données pertinentes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#reorganisation-des-facteurs"&gt;Réorganisation des facteurs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#calcul-des-frequences-relatives"&gt;Calcul des fréquences relatives&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#creation-de-series-temporelles"&gt;Création de séries temporelles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#visualisation-des-donnees"&gt;Visualisation des données&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#analyse-et-modelisation"&gt;Analyse et modélisation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;En discutant avec ma douce moitié à propos du fait que beaucoup de nos
-connaissances ont une date d'anniversaire au printemps, j'en suis venu à
-m'interroger sur la distribution des naissances au cours d'une année.  Si une
-personne est choisie au hasard, est-ce que la probabilité que cette personne
-soit née en janvier est 1/12 ? Et en février ?&lt;/p&gt;
-&lt;p&gt;En fouillant un peu, je me suis aperçu que ce n'est pas le cas.  La variation
-saisonnière des naissances est un phénomène bien connu des démographes depuis
-longtemps (voir, par exemple, &lt;a href="http://link.springer.com/article/10.2307/2060307"&gt;Udry et Morris (1967)&lt;/a&gt;,
-&lt;a href="http://link.springer.com/article/10.2307/2061082"&gt;Menken (1979)&lt;/a&gt;, &lt;a href="http://humrep.oxfordjournals.org/content/16/7/1512.long"&gt;Bobak et Gjonca (2001)&lt;/a&gt;).  Sans se
-lancer dans les théories sociologiques qui tentent d'expliquer le phénomène,
-nous pouvons l'observer facilement à partir de données disponibles sur le site
-de Statistique Canada.  L'exercice est en même temps un petit tutoriel sur
-l'utilisation de &lt;a href="http://www.r-project.org"&gt;R&lt;/a&gt; pour l'analyse et la visualisation de données.&lt;/p&gt;
-&lt;p&gt;Si vous lisez jusqu'à la toute fin, vous aurez droit à un truc infaillible pour
-devenir riche.&lt;/p&gt;
-&lt;h2 id="collecte-et-nettoyage"&gt;Collecte et nettoyage&lt;/h2&gt;
-&lt;p&gt;La première chose à faire est de télécharger les données à partir de la
-&lt;a href="http://www5.statcan.gc.ca/cansim/a05?id=1024502&amp;amp;retrLang=eng" title="Table 102-4502 Live births, by month, Canada, province and territories, annual"&gt;table 102-4502&lt;/a&gt; du site de &lt;a href="http://www.statcan.gc.ca" title="Statistique Canada"&gt;Statistique Canada&lt;/a&gt;.
-Pour télécharger le fichier, le décompresser et le charger dans un
-&lt;code&gt;data.frame&lt;/code&gt;, il suffit de deux commandes dans R.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;download.file&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s"&gt;&amp;quot;http://www20.statcan.gc.ca/tables-tableaux/cansim/csv/01024502-eng.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    dest &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;01024502-eng.csv.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-rawdata &lt;span class="o"&gt;=&lt;/span&gt; read.csv&lt;span class="p"&gt;(&lt;/span&gt;unzip&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;01024502-eng.csv.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; strip.white &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Il est important de noter que j'ai utilisé le fichier anglais.  Je ne l'ai pas
-vérifié, mais je suppose que la version française des mêmes données contient du
-texte français qui ne pourra pas être traité par les commandes suivantes.&lt;/p&gt;
-&lt;h3 id="extraction-des-donnees-pertinentes"&gt;Extraction des données pertinentes&lt;/h3&gt;
-&lt;p&gt;Le fichier contient le nombre de naissances dans chaque province pour chacun
-des mois de l'année, de 1991 à 2011.  Il contient également des données
-combinées pour l'ensemble du Canada et pour chaque année.  Les données sont
-&lt;em&gt;brutes&lt;/em&gt; : il n'est pas simple d'extraire les lignes appropriées parce que la
-sélection doit se faire selon les chaînes de caractères contenues dans ces
-lignes.  Avant de se lancer dans le nettoyage, il est plus sage de d'abord
-observer ce que nous avons entre les mains.  Les colonnes sont obtenues par
-la commande &lt;code&gt;names&lt;/code&gt; :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;names&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;## [1] &amp;quot;Ref_Date&amp;quot;   &amp;quot;GEO&amp;quot;        &amp;quot;MONTHBIRTH&amp;quot; &amp;quot;UNIT&amp;quot;       &amp;quot;Value&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Pour avoir un aperçu des données elles-mêmes, il suffit d'extraire quelques
-lignes :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;rawdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##   Ref_Date                                  GEO            MONTHBIRTH&lt;/span&gt;
-&lt;span class="c"&gt;## 1     1991 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;## 2     1992 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;## 3     1993 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;## 4     1994 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;## 5     1995 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;##                    UNIT  Value&lt;/span&gt;
-&lt;span class="c"&gt;## 1 Number of live births 402533&lt;/span&gt;
-&lt;span class="c"&gt;## 2 Number of live births 398643&lt;/span&gt;
-&lt;span class="c"&gt;## 3 Number of live births 388394&lt;/span&gt;
-&lt;span class="c"&gt;## 4 Number of live births 385114&lt;/span&gt;
-&lt;span class="c"&gt;## 5 Number of live births 378016&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;La présence de longues descriptions comme &lt;code&gt;Canada, place of residence of
-mother&lt;/code&gt; et &lt;code&gt;Total, month of birth&lt;/code&gt; complique un peu les choses.  La fonction
-&lt;code&gt;read.csv&lt;/code&gt; définit automatiquement des facteurs pour toutes les colonnes qui
-contiennent des chaînes de caractères, nous pouvons donc obtenir facilement la
-liste des niveaux de chaque colonne.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;levels&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##  [1] &amp;quot;Alberta, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [2] &amp;quot;British Columbia, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [3] &amp;quot;Canada, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [4] &amp;quot;Manitoba, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [5] &amp;quot;New Brunswick, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [6] &amp;quot;Newfoundland and Labrador, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [7] &amp;quot;Northwest Territories including Nunavut, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [8] &amp;quot;Northwest Territories, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [9] &amp;quot;Nova Scotia, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [10] &amp;quot;Nunavut, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [11] &amp;quot;Ontario, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [12] &amp;quot;Prince Edward Island, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [13] &amp;quot;Quebec, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [14] &amp;quot;Saskatchewan, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [15] &amp;quot;Unknown province or territory, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [16] &amp;quot;Yukon, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;levels&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##  [1] &amp;quot;Month of birth, April&amp;quot;     &amp;quot;Month of birth, August&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [3] &amp;quot;Month of birth, December&amp;quot;  &amp;quot;Month of birth, February&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [5] &amp;quot;Month of birth, January&amp;quot;   &amp;quot;Month of birth, July&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [7] &amp;quot;Month of birth, June&amp;quot;      &amp;quot;Month of birth, March&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [9] &amp;quot;Month of birth, May&amp;quot;       &amp;quot;Month of birth, November&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [11] &amp;quot;Month of birth, October&amp;quot;   &amp;quot;Month of birth, September&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [13] &amp;quot;Total, month of birth&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;levels&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;## [1] &amp;quot;Number of live births&amp;quot;     &amp;quot;Percentage of live births&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Pour garder les choses simples, contentons-nous d'analyser les données pour
-l'ensemble du Canada.  Nous utiliserons les fréquences de naissances mensuelles
-pour calculer les fréquence relatives.  Par conséquent, seules les lignes
-contenant la chaîne de caractère &lt;code&gt;Canada, place of residence of mother&lt;/code&gt; dans la
-colonne &lt;code&gt;GEO&lt;/code&gt; et &lt;code&gt;Number of live births&lt;/code&gt; dans la colonne &lt;code&gt;MONTHBIRTH&lt;/code&gt; seront
-conservées.&lt;/p&gt;
-&lt;p&gt;La fonction &lt;code&gt;grepl&lt;/code&gt; peut être utilisée pour éliminer toutes les lignes du
-tableau de données qui ne décrivent pas l'ensemble du Canada avec des nombres
-absolus pour chaque mois.  &lt;code&gt;grepl&lt;/code&gt; prend une expression régulière comme premier
-argument et une liste (ou un élément unique) comme second argument.  La
-fonction retourne une liste de valeurs booléennes qui indique si l'expression
-régulière a été trouvée à chacune des positions de la liste d'entrée.  Par
-exemple,&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bonjour&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;allo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;## [1]  TRUE FALSE&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;La commande suivante sélectionne toutes les lignes pour lesquelles la colonne
-&lt;code&gt;GEO&lt;/code&gt; commence par &lt;code&gt;Canada&lt;/code&gt;, la colonne &lt;code&gt;UNIT&lt;/code&gt; commence par &lt;code&gt;Number&lt;/code&gt; et la
-colonne &lt;code&gt;MONTHBIRTH&lt;/code&gt; commence par &lt;code&gt;Month&lt;/code&gt;.  De plus, seules les colonnes
-d'intérêt sont retenues.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; rawdata&lt;span class="p"&gt;[&lt;/span&gt;grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
-                        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
-                        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
-                        c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Ref_Date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;MONTHBIRTH&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Value&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Le même résultat peut aussi être obtenu avec la commande &lt;code&gt;subset&lt;/code&gt; :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; subset&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;,&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; GEO&lt;span class="p"&gt;)&lt;/span&gt;
-                                &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; UNIT&lt;span class="p"&gt;)&lt;/span&gt;
-                                &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
-                       select &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;Ref_Date&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;,&lt;/span&gt; Value&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Ensuite, nous renommons chaque colonne avec un nom plus descriptif.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;names&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Births&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="reorganisation-des-facteurs"&gt;Réorganisation des facteurs&lt;/h3&gt;
-&lt;p&gt;On peut simplifier le tableau en éliminant &lt;code&gt;Month of birth,&lt;/code&gt; pour n'utiliser
-que le nom du mois.  Encore une fois, les expressions régulières sont parfaites
-pour cette tâche.  La fonction &lt;code&gt;gsub&lt;/code&gt; remplace toutes les occurrences d'une
-expression régulière dans une liste.  Si l'expression à trouver contient des
-groupes (dénotés par des parenthèses), ces groupes peuvent être utilisés dans
-l'expression de remplacement avec &lt;code&gt;\\1&lt;/code&gt; à &lt;code&gt;\\9&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;levels&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; gsub&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Month of birth, ([a-zA-Z].)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\\1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                   levels&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;))&lt;/span&gt;
-head&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##    Year   Month Births&lt;/span&gt;
-&lt;span class="c"&gt;## 43 1991 January  32150&lt;/span&gt;
-&lt;span class="c"&gt;## 44 1992 January  31974&lt;/span&gt;
-&lt;span class="c"&gt;## 45 1993 January  30989&lt;/span&gt;
-&lt;span class="c"&gt;## 46 1994 January  30265&lt;/span&gt;
-&lt;span class="c"&gt;## 47 1995 January  29975&lt;/span&gt;
-&lt;span class="c"&gt;## 48 1996 January  29410&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Dans le tableau de données, les mois sont des niveaux, mais R ne sait pas
-comment ordonner ces niveaux.  Par défaut, les niveaux décrits par des chaînes
-de caractères sont ordonnés alphabétiquement.  La commande suivante place les
-mois en ordre chronologique.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month &lt;span class="o"&gt;=&lt;/span&gt; factor&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;,&lt;/span&gt;
-    levels &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;January&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;February&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;March&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;April&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;May&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;June&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s"&gt;&amp;quot;July&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;August&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;September&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;October&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;November&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;December&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Ces données forment une série temporelle et R possède justement une classe pour
-ce type de données.  Pour l'utiliser, il faut d'abord réorganiser les lignes de
-&lt;code&gt;canada.births&lt;/code&gt; en ordre chronologique.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;[&lt;/span&gt;with&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;,&lt;/span&gt; order&lt;span class="p"&gt;(&lt;/span&gt;Year&lt;span class="p"&gt;,&lt;/span&gt; Month&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
-head&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##     Year    Month Births&lt;/span&gt;
-&lt;span class="c"&gt;## 43  1991  January  32150&lt;/span&gt;
-&lt;span class="c"&gt;## 85  1991 February  30259&lt;/span&gt;
-&lt;span class="c"&gt;## 127 1991    March  34782&lt;/span&gt;
-&lt;span class="c"&gt;## 169 1991    April  35314&lt;/span&gt;
-&lt;span class="c"&gt;## 211 1991      May  36272&lt;/span&gt;
-&lt;span class="c"&gt;## 253 1991     June  34275&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="calcul-des-frequences-relatives"&gt;Calcul des fréquences relatives&lt;/h3&gt;
-&lt;p&gt;Avant de créer des séries temporelles, un petit calcul risque d'être fort
-utile.  Le nombre total de naissances varie probablement d'année en année et
-même si c'est un phénomène intéressant, ce n'est pas celui que nous étudions en
-ce moment.  Pour éliminer l'effet des variations annuelles, il suffit de
-calculer le pourcentage des naissances de l'année qui ont
-lieu chaque mois.  Voici deux façons de faire ce calcul.&lt;/p&gt;
-&lt;p&gt;La fonction &lt;code&gt;aggregate&lt;/code&gt; permet de combiner les données d'une colonne selon la
-valeur d'une autre colonne en utilisant une fonction spécifique.  Pour obtenir
-le nombre total de naissances chaque année nous regroupons les éléments de la
-colonne &lt;code&gt;Births&lt;/code&gt; par &lt;code&gt;Year&lt;/code&gt; avec la fonction somme.  Chaque élément est ensuite
-répété 12 fois pour obtenir une liste de la même longueur que l'originale.  Il
-ne reste qu'à ajouter la colonne désirée.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;births_per_year &lt;span class="o"&gt;=&lt;/span&gt; aggregate&lt;span class="p"&gt;(&lt;/span&gt;Births &lt;span class="o"&gt;~&lt;/span&gt; Year&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;,&lt;/span&gt; FUN &lt;span class="o"&gt;=&lt;/span&gt; sum&lt;span class="p"&gt;)&lt;/span&gt;
-relbirths &lt;span class="o"&gt;=&lt;/span&gt; canada.births
-relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="o"&gt;/&lt;/span&gt;rep&lt;span class="p"&gt;(&lt;/span&gt;births_per_year&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt;
-                                           each &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-head&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##     Year    Month Births RelBirths&lt;/span&gt;
-&lt;span class="c"&gt;## 43  1991  January  32150   0.07987&lt;/span&gt;
-&lt;span class="c"&gt;## 85  1991 February  30259   0.07517&lt;/span&gt;
-&lt;span class="c"&gt;## 127 1991    March  34782   0.08641&lt;/span&gt;
-&lt;span class="c"&gt;## 169 1991    April  35314   0.08773&lt;/span&gt;
-&lt;span class="c"&gt;## 211 1991      May  36272   0.09011&lt;/span&gt;
-&lt;span class="c"&gt;## 253 1991     June  34275   0.08515&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;La deuxième façon de procéder est plus directe mais nécessite un paquetage
-additionnel, &lt;code&gt;data.table&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;library&lt;span class="p"&gt;(&lt;/span&gt;data.table&lt;span class="p"&gt;)&lt;/span&gt;
-birthstable &lt;span class="o"&gt;=&lt;/span&gt; data.table&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
-birthstable &lt;span class="o"&gt;=&lt;/span&gt; birthstable&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="sb"&gt;`:=`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; Births&lt;span class="o"&gt;/&lt;/span&gt;sum&lt;span class="p"&gt;(&lt;/span&gt;Births&lt;span class="p"&gt;)),&lt;/span&gt; by &lt;span class="o"&gt;=&lt;/span&gt; Year&lt;span class="p"&gt;]&lt;/span&gt;
-head&lt;span class="p"&gt;(&lt;/span&gt;birthstable&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##    Year    Month Births RelBirths&lt;/span&gt;
-&lt;span class="c"&gt;## 1: 1991  January  32150   0.07987&lt;/span&gt;
-&lt;span class="c"&gt;## 2: 1991 February  30259   0.07517&lt;/span&gt;
-&lt;span class="c"&gt;## 3: 1991    March  34782   0.08641&lt;/span&gt;
-&lt;span class="c"&gt;## 4: 1991    April  35314   0.08773&lt;/span&gt;
-&lt;span class="c"&gt;## 5: 1991      May  36272   0.09011&lt;/span&gt;
-&lt;span class="c"&gt;## 6: 1991     June  34275   0.08515&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="creation-de-series-temporelles"&gt;Création de séries temporelles&lt;/h3&gt;
-&lt;p&gt;Nous créons deux séries temporelles : une avec le nombre de naissances et
-l'autre avec les fréquences relatives.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;births.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-relbirths.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-                  frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Pour le reste de l'analyse, nous utiliserons les trois objets &lt;code&gt;relbirths&lt;/code&gt;,
-&lt;code&gt;relbirths.ts&lt;/code&gt; et &lt;code&gt;births.ts&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id="visualisation-des-donnees"&gt;Visualisation des données&lt;/h2&gt;
-&lt;p&gt;R peut tracer un graphique du pourcentage des naissances en fonction du mois de
-l'année, il combine automatiquement les données de chaque année et produit un
-graphique en boîtes à moustache (mieux connu en anglais sous le nom de
-&lt;em&gt;box plot&lt;/em&gt;).  Le trait pointillé horizontal correspond à 1/12.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;RelBirths &lt;span class="o"&gt;~&lt;/span&gt; Month&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-     ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Pourcentage des naissances annuelles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-abline&lt;span class="p"&gt;(&lt;/span&gt;h &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="Pourcentage des naissances en fonction du mois de l'année" src="http://loicseguin.com/static/images/births_vs_month.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Cette figure montre une variation claire du nombre de naissances au cours de
-l'année.  Les mois de mars à octobre sont les plus achalandés alors que les
-mois de novembre à février le sont moins.  Par exemple, environ 7.6% des
-naissances ont lieu en février alors que près de 8.8% ont lieu en mai (notons
-que 1/12 correspond à environ 8.3%).&lt;/p&gt;
-&lt;p&gt;Les graphiques des séries temporelles sont encore plus intéressants.  Le nombre
-de naissances en fonction du temps montre immédiatement qu'il y a à la fois des
-variations saisonnières mais aussi des variations d'année en année.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot.ts&lt;span class="p"&gt;(&lt;/span&gt;births.ts&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Temps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Nombre de naissances&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk births_vs_time" src="http://loicseguin.com/static/images/births_vs_time.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Si nous traçons plutôt les fréquences relatives, l'effet des variations
-annuelles disparaît et il ne reste que les variations saisonnières.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot.ts&lt;span class="p"&gt;(&lt;/span&gt;relbirths.ts&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Temps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Pourcentage des naissances annuelles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk relbirths_vs_time" src="http://loicseguin.com/static/images/relbirths_vs_time.png" /&gt;&lt;/p&gt;
-&lt;h2 id="analyse-et-modelisation"&gt;Analyse et modélisation&lt;/h2&gt;
-&lt;p&gt;C'est probablement une déformation professionnelle, mais quand je vois un
-graphique de série temporelle qui a l'air de celui ci-haut, je pense tout de
-suite à une faire une analyse de Fourier.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirth&lt;span class="p"&gt;)&lt;/span&gt;
-nft &lt;span class="o"&gt;=&lt;/span&gt; length&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
-ft &lt;span class="o"&gt;=&lt;/span&gt; Mod&lt;span class="p"&gt;(&lt;/span&gt;c&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
-freqs &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;seq&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
-          seq&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-fftdata &lt;span class="o"&gt;=&lt;/span&gt; data.frame&lt;span class="p"&gt;(&lt;/span&gt;freqs&lt;span class="p"&gt;,&lt;/span&gt; ft&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Voyons à quoi ressemble ce signal dans l'espace des fréquences.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;fftdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt; t &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; pch &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; cex &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-     xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Frequence (1/mois)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Amplitude&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;which.max&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
-abline&lt;span class="p"&gt;(&lt;/span&gt;v &lt;span class="o"&gt;=&lt;/span&gt; freqmax&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.63&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; paste&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Frequence:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; signif&lt;span class="p"&gt;(&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/ mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; paste&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Periode&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; signif&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk fourier" src="http://loicseguin.com/static/images/fourier.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Il y a bel et bien une composante de fréquence 12 mois dans le signal, autrement
-dit, le pourcentage des naissances peut être modélisé par une fonction
-sinusoïdale de fréquence \(1 / 12\).  R nous permet de trouver cette
-composante en faisant une régression non linéaire.  Pour diminuer le nombre de
-paramètres (3 au lieu de 4), il est approprié de soustraire la moyenne à la
-fréquence relative de sorte que le signal soit centré en 0.  Comme unité de
-temps, nous utiliserons le mois.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;y &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;
-x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;length&lt;span class="p"&gt;(&lt;/span&gt;y&lt;span class="p"&gt;)&lt;/span&gt;
-sine_fit &lt;span class="o"&gt;=&lt;/span&gt; nls&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; A &lt;span class="o"&gt;*&lt;/span&gt; sin&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; pi &lt;span class="o"&gt;*&lt;/span&gt; f &lt;span class="o"&gt;*&lt;/span&gt; x &lt;span class="o"&gt;+&lt;/span&gt; k&lt;span class="p"&gt;),&lt;/span&gt;
-               start &lt;span class="o"&gt;=&lt;/span&gt; list&lt;span class="p"&gt;(&lt;/span&gt;A &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.05&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; f &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; k &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-summary&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##&lt;/span&gt;
-&lt;span class="c"&gt;## Formula: y ~ A * sin(2 * pi * f * x + k)&lt;/span&gt;
-&lt;span class="c"&gt;##&lt;/span&gt;
-&lt;span class="c"&gt;## Parameters:&lt;/span&gt;
-&lt;span class="c"&gt;##    Estimate Std. Error t value Pr(&amp;gt;|t|)&lt;/span&gt;
-&lt;span class="c"&gt;## A -5.51e-03   2.19e-04   -25.1   &amp;lt;2e-16 ***&lt;/span&gt;
-&lt;span class="c"&gt;## f  8.26e-02   8.57e-05   963.3   &amp;lt;2e-16 ***&lt;/span&gt;
-&lt;span class="c"&gt;## k  1.93e+00   7.87e-02    24.6   &amp;lt;2e-16 ***&lt;/span&gt;
-&lt;span class="c"&gt;## ---&lt;/span&gt;
-&lt;span class="c"&gt;## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1&lt;/span&gt;
-&lt;span class="c"&gt;##&lt;/span&gt;
-&lt;span class="c"&gt;## Residual standard error: 0.00245 on 249 degrees of freedom&lt;/span&gt;
-&lt;span class="c"&gt;##&lt;/span&gt;
-&lt;span class="c"&gt;## Number of iterations to convergence: 9&lt;/span&gt;
-&lt;span class="c"&gt;## Achieved convergence tolerance: 8.41e-07&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; x&lt;span class="p"&gt;)&lt;/span&gt;
-lines&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;,&lt;/span&gt; fitted&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk sine_fit" src="http://loicseguin.com/static/images/sine_fit.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Tous les paramètres du modèle sont statistiquement significatifs.  Ainsi donc,
-on peut utiliser la relation
-\[ y = -0.00551 \sin(0.519x + 1.93) + 1/12\]
-pour déterminer le pourcentage des naissances, \(y\), en fonction du mois de
-l'année, \(x\).  Le modèle pourrait être raffiné en y incluant des
-composantes d'autres fréquences.  Comme le montre l'analyse de Fourier des
-résidus, il reste encore des composantes de périodes bien spécifiques (3 mois
-étant la suivante).  Le reste de la procédure est laissée en exercice... Pour
-les intéressés, cette procédure est exactement la même que la méthode de
-&lt;em&gt;blanchissage&lt;/em&gt; utilisée en astérosismologie pour déterminer les périodes de
-pulsation des étoiles (voir, par exemple,
-&lt;a href="http://iopscience.iop.org/0004-637X/530/1/441"&gt;Billéres &lt;em&gt;et al.&lt;/em&gt; (2000)&lt;/a&gt;).&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;residuals&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;))&lt;/span&gt;
-nft &lt;span class="o"&gt;=&lt;/span&gt; length&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
-ft &lt;span class="o"&gt;=&lt;/span&gt; Mod&lt;span class="p"&gt;(&lt;/span&gt;c&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
-freqs &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;seq&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
-          seq&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-fftdata &lt;span class="o"&gt;=&lt;/span&gt; data.frame&lt;span class="p"&gt;(&lt;/span&gt;freqs&lt;span class="p"&gt;,&lt;/span&gt; ft&lt;span class="p"&gt;)&lt;/span&gt;
-plot&lt;span class="p"&gt;(&lt;/span&gt;fftdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt; t &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; pch &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; cex &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-     xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Frequence (1/mois)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Amplitude&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;which.max&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
-abline&lt;span class="p"&gt;(&lt;/span&gt;v &lt;span class="o"&gt;=&lt;/span&gt; freqmax&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; paste&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Frequence:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; signif&lt;span class="p"&gt;(&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/ mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; paste&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Periode&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; signif&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk fourier_residuals" src="http://loicseguin.com/static/images/fourier_residuals.png" /&gt;&lt;/p&gt;
-&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;La distribution de probabilité du mois de naissance n'est pas uniforme.  Elle
-suit plutôt une distribution sinusoïdale de période égale à un an.  Les mois
-d'été sont ceux durant lesquels il y a le plus de naissances alors que les mois
-d'hiver sont ceux durant lesquels il y en a le moins.&lt;/p&gt;
-&lt;p&gt;Voici donc une idée pour faire de l'argent.  Proposez à quelqu'un le jeu
-suivant.  Vous essayer de devinez leur mois d'anniversaire, si vous y arrivez
-la personne vous donne 10.50$, sinon vous lui donnez 1$.  Votre victime,
-croyant que vous allez choisir un mois au hasard selon une distribution
-uniforme estimera que l'espérance de son gain est \(-10.50\$ \times 1/12 + 1\$
-\times 11/12 = 0.04\$\) et elle sera d'accord pour jouer.  De votre côté, vous
-prédisez le mois de mai à chaque fois que vous jouez.  Grâce à l'analyse que
-nous venons de faire, nous savons que l'espérance de votre gain est \(10.50\$
-\times 0.088 - 1\$ \times 0.912 = 0.01\$\).  Si vous réussissez à convaincre
-suffisamment de personnes de jouer, vous deviendrez riche (ou presque).&lt;/p&gt;</summary><category term="programmation"></category><category term="statistique"></category></entry><entry><title>Conservation de la masse en hydrodynamique</title><link href="http://loicseguin.com/blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/" rel="alternate"></link><updated>2013-06-05T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-05:blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/</id><summary type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
+&lt;img alt="Température annuelle moyenne depuis 1942" src="http://loicseguin.com/images/meteo_1942-2013.png" /&gt;
+</summary><category term="programmation"></category><category term="données ouvertes"></category></entry><entry><title>Conservation de la masse en hydrodynamique</title><link href="http://loicseguin.com/blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/" rel="alternate"></link><updated>2013-06-05T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-05:blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/</id><summary type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
 système fermé est un invariant, c'est-à-dire qu'elle est constante dans le
 temps.  Si le système étudié est un fluide, ce principe mène à l'équation de
 conservation de la masse aussi connue sous le nom d'&lt;em&gt;équation de continuité&lt;/em&gt; :&lt;/p&gt;
@@ -945,7 +512,7 @@ région de volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
 direction est perpendiculaire au plan tangent à la surface et vers l'extérieur.
 La figure ci-contre illustre ces différentes quantités.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="Élément de surface" class="img-polaroid" src="http://loicseguin.com/static/images/surf-elem.png" /&gt;
+&lt;img alt="Élément de surface" class="img-polaroid" src="http://loicseguin.com/images/surf-elem.png" /&gt;
 &lt;p class="caption"&gt;Un élément de surface &lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt;
  d'une surface fermée &lt;span class="math"&gt;\(S\)&lt;/span&gt;
 
@@ -1011,7 +578,7 @@ composante de la vitesse à considérer est &lt;span class="math"&gt;\(\mathbf{u
 \mathbf{\hat{n}}\)&lt;/span&gt;
 .&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="Vitesse perpendiculaire" src="http://loicseguin.com/static/images/vitesse-perpendiculaire.png" /&gt;
+&lt;img alt="Vitesse perpendiculaire" src="http://loicseguin.com/images/vitesse-perpendiculaire.png" /&gt;
 &lt;/div&gt;
 &lt;p&gt;Au premier ordre, la vitesse du fluide est constante partout sur un élément de
 surface infinitésimal &lt;span class="math"&gt;\(\mathbf{\hat{n}}da\)&lt;/span&gt;
@@ -1036,7 +603,7 @@ temps &lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;
 &lt;span class="math"&gt;\(\rho \mathbf{u} \cdot d\mathbf{a}\)&lt;/span&gt;
 .&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="Cylindre de matière" src="http://loicseguin.com/static/images/cylindre-de-matiere.png" /&gt;
+&lt;img alt="Cylindre de matière" src="http://loicseguin.com/images/cylindre-de-matiere.png" /&gt;
 &lt;/div&gt;
 &lt;p&gt;Le flux total à travers la surface s'obtient simplement en intégrant le flux à
 travers chaque élément de surface :&lt;/p&gt;
@@ -1187,7 +754,7 @@ En utilisant le Système international d'unités, la loi de Coulomb s'écrit
 &lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Et voici le résultat :&lt;/p&gt;
-&lt;img alt="|filename|/images/biblatex-simple.png" src="http://loicseguin.com/static/images/biblatex-simple.png" /&gt;
+&lt;img alt="Exemple de sortie BibLaTeX" src="http://loicseguin.com/images/biblatex-simple.png" /&gt;
 &lt;/div&gt;
 &lt;div class="section" id="personnalisation-inclusion-de-references-dans-un-plan-de-cours"&gt;
 &lt;h2&gt;Personnalisation : inclusion de références dans un plan de cours&lt;/h2&gt;
@@ -1322,7 +889,7 @@ lieu le jeudi après-midi de 13h à 17h.
 &lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Le résultat est le suivant :&lt;/p&gt;
-&lt;img alt="|filename|/images/biblatex-pdc.png" src="http://loicseguin.com/static/images/biblatex-pdc.png" /&gt;
+&lt;img alt="Exemple de plan de cours avec bibliographie" src="http://loicseguin.com/images/biblatex-pdc.png" /&gt;
 &lt;/div&gt;
 </summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/12/bessel-functions-in-scipy/" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:blogue/2012/12/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt;
  where &lt;span class="math"&gt;\(l\)&lt;/span&gt;
@@ -2475,7 +2042,7 @@ Plusieurs approches algorithmiques différentes ont été prises pour
 aborder le problème. Une simple recherche sur Google donne de nombreux
 liens vers des articles qui proposent des approches évolutives,
 neuronales, et autres. Je vous tiendrez au courant de mes lectures...&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/resolution-du-probleme-des-ponts-de-koenigsberg/" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:blogue/2007/08/resolution-du-probleme-des-ponts-de-koenigsberg/</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
+</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
 est appelé par certains un multigraphe). Un graphe G est simplement un ensemble
 de n points qu'on appelle des sommets &lt;span class="math"&gt;\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt;
  reliés
@@ -2519,7 +2086,7 @@ coup d'oeil à l'image de Königsberg et on trouve tout de suite des
 sommets de degré impair. Donc il est impossible de trouver un tour
 eulérien et la solution au problème des ponts de Königsberg est que
 c'est impossible.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/les-ponts-de-koenigsberg/" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:blogue/2007/08/les-ponts-de-koenigsberg/</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/les-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:blogue/2007/08/les-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
 &lt;p&gt;Maintenant que j'ai un blogue, voyons ce que je peux en faire.&lt;/p&gt;
 &lt;p&gt;Un des problèmes qui est à l'origine de la théorie des graphes est celui
 des ponts de Königsberg. Cette ville de Prusse (au temps où la Prusse
