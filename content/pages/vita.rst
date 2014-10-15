@@ -11,11 +11,11 @@ chez `Vidéotron`_.
 Je suis titulaire d'un baccalauréat en mathématiques et physique de
 l'`Université de Montréal`_ et d'une maîtrise en mathématiques appliquées de
 l'`Université McGill`_.  Mon mémoire, intitulé `Confluent, bifurcated and
-unsplittable flows`_ et rédigé sous la supervision de `Bruce Shepherd`_, traite
-des problèmes de flots sur réseaux.  J'ai également entrepris (puis mis de
-côté) des études doctorales en astrophysique stellaire sous la supervision de
-`Pierre Bergeron`_ à l'`Université de Montréal`_.  Ma recherche portait sur
-l'évolution spectrale des étoiles naines blanches.
+unsplittable flows`_ et rédigé sous la supervision de `Bruce Shepherd`_,
+traitait des problèmes de flots sur réseaux.  J'ai entrepris (puis, mis de
+côté) des études doctorales en astrophysique sous la supervision de `Pierre
+Bergeron`_ à l'`Université de Montréal`_.  Ma recherche portait sur l'évolution
+spectrale des étoiles naines blanches.
 
 Lorsque je ne suis pas en train de gribouiller dans mes carnets de notes ou de
 feuilleter un livre, on peut me retrouver à vélo ou l'œil vissé à un `Nikon`_.
