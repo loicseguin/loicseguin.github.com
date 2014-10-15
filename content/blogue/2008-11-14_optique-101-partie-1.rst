@@ -2,7 +2,11 @@ Optique 101 (partie 1)
 ######################
 :date: 2008-11-14 17:54
 :tags: photographie, physique
-:summary: 
+:summary: Pour comprendre comment fonctionne la vue et comment fonctionne un
+          appareil photographique, on doit d'abord connaître quelques principes
+          fondamentaux d'optique géométrique. Nous verrons la propagation de la
+          lumière en ligne droite, la loi de Snell-Descartes et les propriétés
+          des lentilles minces.
 
 Pour comprendre comment fonctionne la vue et comment fonctionne un
 appareil photographique, on doit d'abord connaître quelques principes
@@ -87,9 +91,7 @@ milieu le moins réfringent, il s'éloignera de la normale.
 La loi de Snell-Descartes est fondamentale pour comprendre le
 fonctionnement d'une partie cruciale d'un appareil photo : la lentille.
 Nous verrons dans le prochain article comment fonctionne une lentille.
-|image2|
 
 
 .. |image0| image:: http://4.bp.blogspot.com/_HyYHulp_e30/SR4adIhjfXI/AAAAAAAABmw/_CTRYJxATfQ/s400/reflexion.png
 .. |image1| image:: http://4.bp.blogspot.com/_HyYHulp_e30/SR4adZz-6II/AAAAAAAABm4/dQsj1m_xJcM/s400/refraction.png
-.. |image2| image:: https://blogger.googleusercontent.com/tracker/697344570467959391-8629460951480994628?l=mathfou.blogspot.com

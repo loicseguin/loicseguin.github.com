@@ -36,11 +36,8 @@ Quelques liens intéressants :
 `Darwin Day Celebration`_
 `Charles Darwin sur Wikipedia (en)`_
 `The Complete Work of Charles Darwin Online`_
-|image0|
 
 .. _Darwin Year 2009: http://darwin-year-2009.org/index.html
 .. _Darwin Day Celebration: http://www.darwinday.org/index.html
 .. _Charles Darwin sur Wikipedia (en): http://en.wikipedia.org/wiki/Charles_Darwin
 .. _The Complete Work of Charles Darwin Online: http://darwin-online.org.uk/
-
-.. |image0| image:: https://blogger.googleusercontent.com/tracker/697344570467959391-5611916287854529107?l=mathfou.blogspot.com

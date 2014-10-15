@@ -27,7 +27,9 @@ dur, etc. Une méthode fréquemment utilisée consiste à trianguler la
 surface de l'objet, c'est-à-dire à recouvrir le mieux possible la
 surface de l'objet par des triangles, puis à raffiner cette
 triangulation initiale pour obtenir une meilleure représentation
+
 |image0|
+
 des courbes de cette surface. On arrête de raffiner lorsque
 les calculs impliqués deviennent trop exigeant pour l'ordinateur.
 L'image ci-contre montre un exemple d'un objet tridimensionnel, une
@@ -39,7 +41,9 @@ visage beaucoup mieux.
 Raffinement par division de triangles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image1| Une idée qu'on peut exploiter pour raffiner une
+|image1|
+
+Une idée qu'on peut exploiter pour raffiner une
 triangulation consiste à diviser chacun des triangles existants en
 plusieurs triangles. En choisissant un point à l'intérieur d'un triangle
 et en faisant passer des droites par ce point et par chacun des sommets,
@@ -73,6 +77,7 @@ En somme, à une homothétie près, tous les triangles sont spécifiés
 uniquement par leurs trois angles. La somme des angles d'un triangle est
 180° et chaque angle est compris entre 0° et 180° exclusivement. Si on
 nomme les angles *x*, *y* et *z*, on aura donc :
+
 |image2|
 
 -  0 < *x* < 180
@@ -107,9 +112,11 @@ points à l'intérieur des triangles. On retrouve, dans l'ordre, la
 méthode de la bissectrice, la méthode du point de Gergonne et la méthode
 du point de Lemoine. (Ces images ont été obtenue grâce à la courtoisie
 de Steve Butler.)
+
 |image3|
 |image4|
 |image5|
+
 En plus d'avoir une certaine qualité esthétique, ces images donnent de
 l'information sur l'utilité des points intérieurs utilisés. On constate
 que pour la méthode de la bissectrice, le centre de *T* est assez sombre
@@ -143,6 +150,7 @@ disposition des triangles fils.
 Ci-dessous, dans l'ordre, T divisé en régions, la méthode du point de
 Gergonne, la méthode du point de Lemoine et la méthode de la médiane.
 (Images courtoisie de Steve Butler.)
+
 |image6|
 |image7|
 |image8|
@@ -164,10 +172,6 @@ très belles sont apparues. Place à la créativité triangulaire !
 ses images et m'avoir permis de les utiliser sur ce site. Je remercie
 également `Ron Graham`_ et `Steve Butler`_ pour m'avoir initié aux
 raffinements de triangulations lors de CCCG 2008.
-
-.. figure:: https://blogger.googleusercontent.com/tracker/697344570467959391-5005068235951720029?l=mathfou.blogspot.com
-   :align: center
-   :alt: 
 
 .. _|image10|: http://gts.sourceforge.net/gallery/heads.png
 .. _|image11|: http://1.bp.blogspot.com/_HyYHulp_e30/SMqSR_7xQxI/AAAAAAAABes/C4nix5PDPes/s1600-h/divisetriangle.png
