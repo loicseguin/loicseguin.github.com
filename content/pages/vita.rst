@@ -1,24 +1,28 @@
 Vita
 ====
 
-Je suis un mathématicien et un physicien de formation.  En mai 2012, j'ai
-entrepris un doctorat en astrophysique sous la supervision de `Pierre
-Bergeron`_ à l'`Université de Montréal`_.  Ma recherche porte sur l'évolution
-spectrale des étoiles naines blanches.
+Depuis janvier 2014, je suis professeur de physique au `Cégep
+Édouard-Montpetit`_.  J'ai également été professeur de mathématiques et de
+physique au `Collège militaire royal de Saint-Jean`_ pendant quatre ans.  Outre
+l'enseignement, j'ai travaillé comme consultant en recherche opérationnelle
+pour `Octa-Concepts`_ et comme analyste principal planification et performance
+chez `Vidéotron`_.
 
-J'enseigne les mathématiques et la physique au `Collège militaire royal de
-Saint-Jean`_.  J'ai obtenu une maîtrise en mathématiques appliquées à
-l'`Université McGill`_ sous la supervision de `Bruce Shepherd`_.  Mon mémoire,
-intitulé `Confluent, bifurcated and unsplittable flows`_, traite des problèmes
-de flots sur réseaux.
-
-Mes intérêts scientifiques sont variés, allant de la physique statistique à la
-`programmation`_ en passant par la cryptographie, l'optimisation et la génétique.
+Je suis titulaire d'un baccalauréat en mathématiques et physique de
+l'`Université de Montréal`_ et d'une maîtrise en mathématiques appliquées de
+l'`Université McGill`_.  Mon mémoire, intitulé `Confluent, bifurcated and
+unsplittable flows`_ et rédigé sous la supervision de `Bruce Shepherd`_, traite
+des problèmes de flots sur réseaux.  J'ai également entrepris (puis mis de
+côté) des études doctorales en astrophysique stellaire sous la supervision de
+`Pierre Bergeron`_ à l'`Université de Montréal`_.  Ma recherche portait sur
+l'évolution spectrale des étoiles naines blanches.
 
 Lorsque je ne suis pas en train de gribouiller dans mes carnets de notes ou de
-feuilleter un livre, on peut me retrouver à vélo, sur un plancher de danse ou
-l'oeil vissé à un `Nikon`_.
+feuilleter un livre, on peut me retrouver à vélo ou l'œil vissé à un `Nikon`_.
 
+.. _`Cégep Édouard-Montpetit`: http://www.college-em.qc.ca/college-cegep-edouard-montpetit-longueuil-ecole-nationale-daerotechnique
+.. _`Octa-Concepts`: http://www.octaconcepts.com/
+.. _`Vidéotron`: http://www.videotron.com
 .. _`Pierre Bergeron`: http://craq-astro.ca/un_membre.php?id=PierreBergeron
 .. _`Université de Montréal`: http://www.umontreal.ca/
 .. _`Collège militaire royal de Saint-Jean`: http://www.cmrsj-rmcsj.forces.gc.ca/
