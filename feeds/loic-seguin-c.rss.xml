@@ -1,430 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/blogue.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2013-08-01T00:00:00-04:00</updated><entry><title>Queues M/M/1</title><link href="http://loicseguin.com/blogue/2013/08/queues-mm1/" rel="alternate"></link><updated>2013-08-01T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-08-01:blogue/2013/08/queues-mm1/</id><summary type="html">&lt;div class="contents topic" id="sommaire"&gt;
-&lt;p class="topic-title first"&gt;Sommaire&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#la-queue-m-m-1-definitions" id="id1"&gt;La queue M/M/1 : définitions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#generateur-ou-matrice-q" id="id2"&gt;Générateur ou matrice &lt;span class="math"&gt;\(Q\)&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#transition-de-plus-d-une-unite-dans-la-longueur-de-la-queue" id="id3"&gt;Transition de plus d'une unité dans la longueur de la queue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#transition-d-une-unite-dans-la-longueur-de-la-queue" id="id4"&gt;Transition d'une unité dans la longueur de la queue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#aucune-transition" id="id5"&gt;Aucune transition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#apercu-du-generateur" id="id6"&gt;Aperçu du générateur&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#distribution-stationnaire" id="id7"&gt;Distribution stationnaire&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#longueur-moyenne-de-la-queue" id="id8"&gt;Longueur moyenne de la queue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#temps-d-attente-moyen" id="id9"&gt;Temps d'attente moyen&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#conclusion" id="id10"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;Une &lt;strong&gt;queue&lt;/strong&gt; est une abstraction mathématique pour représenter une panoplie de
-situations dans lesquelles des choses arrivent et sont traitées.  De quel genre
-de choses parle-t-on ?  Et que veulent dire &lt;em&gt;arriver&lt;/em&gt; et &lt;em&gt;être traité&lt;/em&gt; ?  Il
-peut s'agir de clients qui arrivent à la caisse dans une épicerie et qui sont
-servis par la caissière, de passagers qui se mettent en file pour monter dans
-un autobus, de documents qui sont empilés dans un classeur en attente d'être
-signés par un notaire, de paquets qui transitent dans un réseau IP et qui
-attendent dans un routeur de pouvoir être envoyés à la bonne destination.&lt;/p&gt;
-&lt;p&gt;Une queue peut être servie par un ou plusieurs &lt;strong&gt;serveurs&lt;/strong&gt;.  Par exemple, dans
-une petite épicerie, il peut n'y avoir qu'une seule caisse.  Dans une banque,
-il y a souvent une queue unique avec plusieurs caissiers : dès qu'un caissier
-se libère, le prochain client dans la queue se dirige vers cette caisse.  Il
-existe plusieurs types de &lt;strong&gt;disciplines&lt;/strong&gt; dans la queue.  Par exemple, la
-discipline &lt;strong&gt;premier arrivé, premier servi&lt;/strong&gt; est commune à l'épicerie et à
-l'arrêt d'autobus. La discipline &lt;strong&gt;dernier arrivé, premier servi&lt;/strong&gt; correspond à
-une boîte de Pringles : le dernier Pringle placé dans la boîte est le premier à
-être mangé.  Dans la discipline &lt;strong&gt;continentale&lt;/strong&gt;, les clients sont pêle-mêle et
-le prochain client servi est choisi au hasard.&lt;/p&gt;
-&lt;p&gt;La très grande majorité des queues sont difficiles à étudier théoriquement et
-il faut souvent utiliser des simulations pour comprendre leur comportement.
-Par contre, il y a un modèle de queue assez simple, la queue M/M/1, à partir
-duquel on peut déterminer plusieurs quantités intéressantes comme le temps de
-service moyen et la longueur moyenne de la queue.&lt;/p&gt;
-&lt;div class="section" id="la-queue-m-m-1-definitions"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;La queue M/M/1 : définitions&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Dans une queue M/M/1, les clients arrivent selon un processus de Poisson
-d'intensité &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;, c'est-à-dire que le nombre de clients qui arrivent
-dans un intervalle de temps &lt;span class="math"&gt;\(t\)&lt;/span&gt;, &lt;span class="math"&gt;\(N(t)\)&lt;/span&gt;, est une variable aléatoire
-de type Poisson et de paramètre &lt;span class="math"&gt;\(\lambda t\)&lt;/span&gt; :&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-P\{N(t) = k\} = \frac{(\lambda t)^k e^{-\lambda t}}{k!}.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;Pour un processus de Poisson, il est bien connu que le temps entre les arrivées
-suit une distribution exponentielle de paramètre &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;.  Il n'y a
-qu'un serveur et le temps pour qu'un client soit servi est distribué selon une
-loi exponentielle de paramètre &lt;span class="math"&gt;\(\mu\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;L'&lt;strong&gt;intensité du trafic&lt;/strong&gt; est défini comme étant le rapport entre le temps de
-service moyen et le temps moyen entre deux arrivées.  Puisque l'espérance d'une
-variable aléatoire exponentielle est l'inverse de son paramètre, on a que le
-temps de service, &lt;span class="math"&gt;\(T_s \sim \mathrm{Exp}(\mu)\)&lt;/span&gt;, a&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-E[T_s] = \frac{1}{\mu}
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;et l'espérance du temps entre deux arrivées,
-&lt;span class="math"&gt;\(T_a \sim \mathrm{Exp}(\lambda)\)&lt;/span&gt;, est&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-E[T_a] = \frac{1}{\lambda}.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;L'intensité du trafic est donc&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\rho = \frac{1/\mu}{1/\lambda} = \frac{\lambda}{\mu}.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;L'interprétation intuitive de l'intensité du trafic est simple.  Si elle est
-proche de zéro, le temps entre les arrivées est beaucoup plus grand que le
-temps de service, par conséquent, la queue sera presque toujours vide et le
-serveur presque toujours disponible.  Si l'intensité du trafic est proche de 1,
-le temps qu'il faut pour servir un client est à peu près le même que le temps
-entre les arrivées.  En raison des fluctuations aléatoires, la queue peut
-devenir très longue.  Si l'intensité du trafic est supérieure à 1, la queue va
-croître indéfiniment.  Cette intuition sera confirmée par l'analyse plus
-rigoureuse un peu plus tard.&lt;/p&gt;
-&lt;p&gt;Dans le modèle que nous allons étudier, tous les clients qui arrivent se
-placent dans la queue et y demeurent jusqu'à ce qu'ils soient servis.  Ce type
-de modèle ne tient donc pas compte des clients qui quittent la queue si le
-temps d'attente est trop long ou de ceux qui décident de ne pas s'y joindre
-parce qu'elle est trop longue.&lt;/p&gt;
-&lt;p&gt;Les trois éléments de la notation M/M/1 (dite &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Kendall's_notation"&gt;notation de Kendall&lt;/a&gt;) décrivent
-les arrivées, le temps de service et le nombre de serveurs.  Le premier &lt;em&gt;M&lt;/em&gt;
-signifie que les arrivées sont &lt;strong&gt;Markoviennes&lt;/strong&gt;, c'est-à-dire que le temps
-entre les arrivées et exponentiel.  Le second &lt;em&gt;M&lt;/em&gt; signifie que le temps de
-service est markovien.  Le &lt;em&gt;1&lt;/em&gt; correspond au fait qu'il n'y a qu'un serveur.
-Il existe de nombreuses autres queues : M/M/c, M/D/c, G/G/1, etc.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="generateur-ou-matrice-q"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Générateur ou matrice &lt;span class="math"&gt;\(Q\)&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;La longueur de la queue M/M/1 est une chaîne de Markov à temps continu sur les
-états &lt;span class="math"&gt;\(0, 1, 2, \ldots\)&lt;/span&gt;  Le générateur de cette chaîne est une matrice
-infinie &lt;span class="math"&gt;\(\boldsymbol{\mathrm{G}}\)&lt;/span&gt; dont les éléments &lt;span class="math"&gt;\(g_{ij}\)&lt;/span&gt; sont
-définis par&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-g_{ij}h &amp;amp;= P\{X(t + h) = j \, | \, X(t) = i \} &amp;amp; \text{si } j \ne i \\
-1 + g_{ii}h &amp;amp;= P\{X(t + h) = i \, | \, X(t) = i \}
-\end{align*}
-&lt;/div&gt;
-&lt;p&gt;dans la limite où &lt;span class="math"&gt;\(h\)&lt;/span&gt; est très proche de 0.
-Il est important de noter que le générateur est indépendant du temps parce que
-la chaîne est &lt;strong&gt;homogène&lt;/strong&gt;, une propriété qui découle de la propriété &lt;strong&gt;sans
-mémoire&lt;/strong&gt; du processus de Poisson.&lt;/p&gt;
-&lt;div class="section" id="transition-de-plus-d-une-unite-dans-la-longueur-de-la-queue"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id3"&gt;Transition de plus d'une unité dans la longueur de la queue&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Premier constat important : &lt;span class="math"&gt;\(g_{ij} = 0\)&lt;/span&gt; si &lt;span class="math"&gt;\(i\)&lt;/span&gt; et &lt;span class="math"&gt;\(j\)&lt;/span&gt;
-diffèrent de plus d'une unité.  Pourquoi ?  C'est une conséquence de la
-définition du processus de Poisson : la probabilité qu'il y ait plus d'une
-arrivée (ou départ) dans un temps &lt;span class="math"&gt;\(h\)&lt;/span&gt; doit être &lt;span class="math"&gt;\(o(h)\)&lt;/span&gt;,
-c'est-à-dire que&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\lim_{h \rightarrow 0} \frac{P\{X(t + h) = j \,|\, X(t) = i\}}{h} = 0
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;or, d'après la définition donnée plus haut, la probabilité au numérateur est
-exactement égale à &lt;span class="math"&gt;\(g_{ij}h\)&lt;/span&gt;. Par conséquent,&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-\lim_{h \rightarrow 0} \frac{g_{ij}h}{h} &amp;amp;= 0 \\
-\lim_{h \rightarrow 0} g_{ij} &amp;amp;= 0
-\end{align*}
-&lt;/div&gt;
-&lt;p&gt;ce qui implique que &lt;span class="math"&gt;\(g_{ij}\)&lt;/span&gt; doit être égal à 0.  Le générateur est donc
-une matrice tridiagonale.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="transition-d-une-unite-dans-la-longueur-de-la-queue"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id4"&gt;Transition d'une unité dans la longueur de la queue&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;La chaîne passe de l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt; à l'état &lt;span class="math"&gt;\(i + 1\)&lt;/span&gt; s'il y a une arrivée
-et aucun départ dans l'intervalle &lt;span class="math"&gt;\(h\)&lt;/span&gt;.  Comme le temps entre les arrivées
-et le temps de service sont indépendants, on a&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-P\{X(t + h) = i + 1 \, | \, X(t) = i \} &amp;amp;= P\{T_a &amp;lt; h \cap T_s &amp;gt; h\} \\
-&amp;amp;= P\{T_a &amp;lt; h\} P\{T_s &amp;gt; h\}.
-\end{align*}
-&lt;/div&gt;
-&lt;p&gt;Pour une variable exponentielle &lt;span class="math"&gt;\(Y\)&lt;/span&gt; de paramètre &lt;span class="math"&gt;\(\nu\)&lt;/span&gt;&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-P\{Y &amp;lt; h\} &amp;amp;= \int_0^h \nu e^{-\nu y} dy \\
-           &amp;amp;= 1 - e^{-\nu h}
-\end{align*}
-&lt;/div&gt;
-&lt;p&gt;donc,&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-P\{X(t + h) = i + 1 \, | \, X(t) = i \} = (1 - e^{-\lambda h}) e^{-\mu h}.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;Puisque &lt;span class="math"&gt;\(h\)&lt;/span&gt; est petit, on peut développer les exponentielles en série de
-Maclaurin et ne garder que les deux premiers termes :&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-P\{X(t + h) = i + 1 \, | \, X(t) = i \} &amp;amp;= (\lambda h + o(h)) (1 - \mu h + o(h)) \\
-&amp;amp;= \lambda h - \lambda \mu h^2 + o(h) \\
-&amp;amp;= \lambda h + o(h).
-\end{align*}
-&lt;/div&gt;
-&lt;p&gt;L'élément du générateur &lt;span class="math"&gt;\(g_{i, i+1}\)&lt;/span&gt; est donc simplement &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;.
-En inversant le rôle du temps de service et du temps entre les arrivées, on
-obtient la probabilité de passer de l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt; à l'état &lt;span class="math"&gt;\(i - 1\)&lt;/span&gt; et
-l'élément de matrice &lt;span class="math"&gt;\(g_{i, i - 1}\)&lt;/span&gt; qui est égal à &lt;span class="math"&gt;\(\mu\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="aucune-transition"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id5"&gt;Aucune transition&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Dans un intervalle de temps donné, trois choses peuvent se produire : une
-arrivée, un départ, ou rien du tout.  S'il ne se produit rien, la chaîne de
-Markov demeure à l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt;.  La somme des probabilités doit être 1 donc&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-P\{X(t + h) = i \, | \, X(t) = i \} = 1 - (\lambda + \mu) h + o(h)
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;et l'élément de matrice est &lt;span class="math"&gt;\(g_{ii} = -(\lambda + \mu)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="apercu-du-generateur"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id6"&gt;Aperçu du générateur&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;On connaît maintenant tous les éléments du générateur :&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\boldsymbol{\mathrm{G}} = \begin{pmatrix}
-        -\lambda &amp;amp;  \lambda          &amp;amp; 0                &amp;amp; 0       &amp;amp; 0  &amp;amp; \ldots \\
-        \mu      &amp;amp; -(\lambda + \mu)  &amp;amp; \lambda          &amp;amp; 0       &amp;amp; 0  &amp;amp; \ldots \\
-        0        &amp;amp; \mu               &amp;amp; -(\lambda + \mu) &amp;amp; \lambda &amp;amp; 0  &amp;amp; \ldots \\
-        \vdots   &amp;amp; \vdots            &amp;amp; \vdots           &amp;amp;\vdots   &amp;amp;\vdots &amp;amp; \ddots
-                 \end{pmatrix}
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;Pour la première ligne, il suffit de reconnaître que s'il n'y a aucun client
-dans la queue, les deux seuls événements qui peuvent survenir sont une arrivée
-ou rien du tout.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="distribution-stationnaire"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Distribution stationnaire&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Le générateur contient toute l'information sur les transitions dans la chaîne.
-À partir de n'importe quelle longueur de queue initiale, il est possible de
-déterminer la distribution de probabilité de la longueur de queue à n'importe
-quel instant.  Il existe un résultat intéressant (et un peu étonnant) qui
-garantit que la chaîne va converger vers une distribution unique peu importe
-l'état initial.  Pour l'instant, supposons qu'une telle distribution existe, et
-nous verrons un peu plus tard sous quelles conditions cela est vrai.&lt;/p&gt;
-&lt;p&gt;Si la chaîne est dans une distribution stationnaire &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; (&lt;span class="math"&gt;\(\pi\)&lt;/span&gt;
-est un vecteur infini dont l'élément à la position &lt;span class="math"&gt;\(i\)&lt;/span&gt; indique la
-probabilité que la queue ait une longueur &lt;span class="math"&gt;\(i\)&lt;/span&gt;, &lt;span class="math"&gt;\(i \geq 0\)&lt;/span&gt;), à
-n'importe quel instant ultérieur, elle est toujours dans la même distribution.
-Autrement dit, la probabilité de changer la distribution est nulle.  En langage
-matriciel, on peut traduire ce fait par&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\pi \boldsymbol{\mathrm{G}} = 0.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;En écrivant les premières équations de ce système, il est facile de déduire la
-distribution stationnaire :&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
--\lambda \pi_0 + \mu \pi_1 = 0
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;donc&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\pi_1 = \frac{\lambda}{\mu} \pi_0
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;et en se rappelant de la définition de l'intensité du trafic, on a simplement&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\pi_1 = \rho \pi_0.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;La seconde équation donne&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-\lambda \pi_0 - (\lambda + \mu) \pi_1 + \mu \pi_2 &amp;amp;= 0 \\
-\pi_2 &amp;amp;= \rho^2 \pi_0
-\end{align*}
-&lt;/div&gt;
-&lt;p&gt;On peut montrer par induction que&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\pi_i = \rho^i \pi_0.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;Nous sommes maintenant en mesure de déterminer sous quelle condition la
-distribution stationnaire existe.  Pour que &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; soit une distribution
-de probabilité, il faut que la somme de tous ses éléments soit égale à 1 :&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\sum_{i = 0}^\infty \rho^i \pi_0 = 1.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;Or, cette série est une série géométrique et une telle série ne converge que si
-son argument, ici &lt;span class="math"&gt;\(\rho\)&lt;/span&gt;, est inférieur (en valeur absolue) à 1.
-Autrement dit, &lt;strong&gt;une distribution stationnaire n'existe que si l'intensité du
-traffic est inférieure à 1&lt;/strong&gt;, ce qui confirme notre intuition du départ.&lt;/p&gt;
-&lt;p&gt;Pour la suite, on suppose que l'intensité du trafic est inférieure à 1, et
-donc que la distribution stationnaire existe.  Pour la déterminer, on commence
-par obtenir &lt;span class="math"&gt;\(\pi_0\)&lt;/span&gt;, puis on obtient l'ensemble de la distribution grâce
-à la relation obtenue plus haut.  D'abord&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\sum_{i = 0}^\infty \rho^i = \frac{1}{1 - \rho}
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;donc&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\pi_0 = 1 - \rho.
-\end{equation*}
-&lt;/div&gt;
-&lt;p&gt;Par substitution,&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{equation*}
-\boxed{\pi_i = \rho^i (1 - \rho)}.
-\end{equation*}
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="longueur-moyenne-de-la-queue"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Longueur moyenne de la queue&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Si la chaîne de Markov a atteint la distribution stationnaire, on peut
-facilement calculer la longueur moyenne de la file d'attente et le temps
-d'attente moyen pour chaque client.  La longueur moyenne de la file d'attente
-est donnée par&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-E[L] &amp;amp;= \sum_{i = 0}^\infty i \rho^i (1 - \rho) \\
-  &amp;amp;= \rho (1 - \rho) \sum_{i = 1}^\infty i \rho^{i - 1}.
-\end{align*}
-&lt;/div&gt;
-&lt;p&gt;La somme n'est autre que la dérivée par rapport à l'argument d'une série
-géométrique, donc&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-E[L] &amp;amp;= \rho (1 - \rho) \frac{1}{(1 - \rho)^2} \\
-  &amp;amp;= \frac{\rho}{1 - \rho} \\
-  &amp;amp;= \frac{\lambda}{\mu - \lambda}
-\end{align*}
-&lt;/div&gt;
-&lt;p&gt;Par exemple, si l'intensité du trafic est de 0.5 et que la file d'attente a
-atteint la distribution stationnaire, la longueur moyenne de la file d'attente
-est d'un client.  La figure ci-dessous montre la longueur de la queue en
-fonction de l'intensité du trafic.&lt;/p&gt;
-&lt;img alt="" src="http://loicseguin.com/images/queue_length_vs_rho.png" /&gt;
-&lt;p&gt;Quiconque conçoit un système dans lequel il y aura une queue a donc tout
-intérêt à s'assurer que l'intensité du trafic soit suffisamment loin de 1 pour
-ne pas que la file d'attente croisse indéfiniment.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="temps-d-attente-moyen"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Temps d'attente moyen&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Lorsqu'un nouveau client arrive, chaque client déjà présent dans la file doit être
-servi avant que le nouveau client ne puisse l'être.  En utilisant la linéarité
-de l'espérance, le fait que le temps de service soit une exponentielle et la
-distribution stationnaire, on trouve que le nouveau client devra attendre en
-moyenne&lt;/p&gt;
-&lt;div class="math"&gt;
-\begin{align*}
-E[W] &amp;amp;= E\left[ \sum_{i = 0}^\infty (i + 1) T_s \pi_i \right] \\
-     &amp;amp;= \sum_{i = 0}^\infty (i + 1) E\left[ T_s \right] \pi_i \\
-     &amp;amp;= \sum_{i = 0}^\infty (i + 1) \frac{1}{\mu} \pi_i \\
-     &amp;amp;= \sum_{i = 0}^\infty (i + 1) \frac{1}{\mu} \pi_i \\
-     &amp;amp;= \frac{1}{\mu} \left( \sum_{i = 0}^\infty i \pi_i + \sum_{i = 0}^\infty \pi_i \right) \\
-     &amp;amp;= \frac{1}{\mu} \left( \frac{\rho}{1 - \rho} + 1 \right) \\
-     &amp;amp;= \frac{1}{\mu - \lambda}
-\end{align*}
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="conclusion"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Conclusion&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;L'étude du comportement des files d'attentes est très complexe.  Le modèle que
-nous avons exploré dans cet article est très simple, et même dans ce cas, il
-est difficile d'obtenir des informations utiles si le système n'a pas atteint
-sa distribution stationnaire.  L'utilisation même de la distribution
-stationnaire n'est pas toujours appropriée en pratique (un gérant de magasin
-Apple doit prévoir que la longueur de la file d'attente à l'ouverture le jour
-du lancement du iPad 12 peut être très longue, et que la journée entière ne
-sera peut-être pas suffisante pour atteindre la distribution stationnaire).&lt;/p&gt;
-&lt;p&gt;Néanmoins, les résultats théoriques obtenus ici permettent une première
-approximation qui peut être utile.  Cette approximation peut par la suite être
-raffinée en utilisant des simulations.&lt;/p&gt;
-&lt;/div&gt;
-</summary><category term="maths"></category></entry><entry><title>Extraction des données météorologiques d'Archives climatiques nationales du Canada</title><link href="http://loicseguin.com/blogue/2013/07/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/" rel="alternate"></link><updated>2013-07-04T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-07-04:blogue/2013/07/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/</id><summary type="html">&lt;p&gt;Il est assez facile de récupérer des données météorologiques historiques à
-partir du site web d'&lt;a class="reference external" href="http://climat.meteo.gc.ca/Welcome_f.html"&gt;Archives climatiques nationales du Canada&lt;/a&gt;.  Voici un
-petit guide pour y arriver en utilisant un script Python très simple.&lt;/p&gt;
-&lt;p&gt;Tout d'abord, il faut identifier la station qui vous intéresse.  Vous pouvez
-chercher les stations disponibles à proximité d'une ville canadienne donnée en
-faisant une &lt;em&gt;Recherche spécifique&lt;/em&gt; à partir de l'onglet &lt;em&gt;Données climatiques en
-ligne&lt;/em&gt;.  Dans mon cas, je m'intéresse aux données de la région de Montréal et
-je veux des données qui remontent le plus loin possible dans le temps.  La
-station la plus appropriée est donc &lt;strong&gt;Montreal/Pierre Elliott Trudeau Intl A&lt;/strong&gt;.
-En cliquant sur le bouton &lt;em&gt;Allez&lt;/em&gt;, vous arriverez sur une page montrant
-quelques données pour la période actuelle.  Ce qui vous intéresse, c'est la
-barre d'adresse de votre navigateur.  Dans l'adresse se trouve l'identifiant de
-la station &lt;tt class="docutils literal"&gt;StationID&lt;/tt&gt;.  Pour la station que j'ai sélectionnée, l'adresse
-contient le texte suivant:&lt;/p&gt;
-&lt;blockquote&gt;
-...&amp;amp;Prov=QUE&amp;amp;StationID=5415&amp;amp;hlyRange=...&lt;/blockquote&gt;
-&lt;p&gt;Le numéro de ma station est donc 5415.  Enfin, à partir de cette page, vous
-pouvez aussi déterminer la date à partir de laquelle les données sont
-disponibles.  Pour Montréal, les données quotidiennes sont disponibles à partir
-du premier septembre 1941.&lt;/p&gt;
-&lt;p&gt;Armé du numéro de station et de la période pour laquelle les données sont
-disponibles, il ne reste qu'à les télécharger.  Je me suis créé un
-répertoire pour y conserver les données.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-mkdir -p data/meteo_ca
-&lt;span class="nb"&gt;cd &lt;/span&gt;data/meteo_ca
-&lt;/pre&gt;
-&lt;p&gt;Un fichier &lt;tt class="docutils literal"&gt;csv&lt;/tt&gt; contenant toutes les données quotidiennes d'une année se trouve
-à l'adresse&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-http://climat.meteo.gc.ca/climateData/bulkdata_f.html?timeframe=2&amp;amp;Prov=QUE&amp;amp;StationID={station_id}&amp;amp;Month=1&amp;amp;Year={year}&amp;amp;Day=1&amp;amp;format=csv
-&lt;/pre&gt;
-&lt;p&gt;Il est aussi possible de télécharger un fichier au format XML et d'obtenir des
-données horaires plutôt que quotidienne.  À vous de décider ce dont vous avez
-besoin.&lt;/p&gt;
-&lt;p&gt;Le script suivant récupère tous les fichiers &lt;tt class="docutils literal"&gt;csv&lt;/tt&gt; et leur donne un nom
-gentil.  Puisque les données pour l'année 1941 ne commencent qu'à partir du
-mois de septembre, j'ai décidé d'ignorer cette année et de commencer la
-collecte en 1942.&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib&lt;/span&gt;
-
-&lt;span class="n"&gt;URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'http://climat.meteo.gc.ca/climateData/bulkdata_f.html?timeframe=2&amp;amp;Prov=QUE&amp;amp;StationID={station_id}&amp;amp;Month=1&amp;amp;Year={year}&amp;amp;Day=1&amp;amp;format=csv'&lt;/span&gt;
-
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;year&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1942&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlretrieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-                        &lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;station_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5415&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-                        &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'meteo_{}.csv'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'Fetched'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fname&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Et voilà!  Évidemment, le plaisir ne fait que commencer puisqu'on peut maintenant analyser
-ces données.&lt;/p&gt;
-&lt;p&gt;Pour le moment, je me contente de montrer un graphique de la température
-moyenne en fonction du temps obtenu à partir du code suivant.&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-
-&lt;span class="n"&gt;frames&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;year&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1942&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;frames&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'meteo_{}.csv'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-                              &lt;span class="n"&gt;skiprows&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index_col&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;parse_dates&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="n"&gt;decimal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;','&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'iso-8859-1'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="n"&gt;all_years&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;frames&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;all_years&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u'Année'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u'Température (${}^\circ$C)'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;
-&lt;img alt="Température annuelle moyenne depuis 1942" src="http://loicseguin.com/images/meteo_1942-2013.png" /&gt;
-</summary><category term="programmation"></category><category term="données ouvertes"></category></entry><entry><title>Variations saisonnières des naissances au Canada</title><link href="http://loicseguin.com/blogue/2013/06/variations-saisonnieres-des-naissances-au-canada/" rel="alternate"></link><updated>2013-06-07T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-07:blogue/2013/06/variations-saisonnieres-des-naissances-au-canada/</id><summary type="html">&lt;div class="toc"&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Loïc Séguin-C.</title><link>http://loicseguin.com/</link><description></description><atom:link href="http://loicseguin.com/feeds/loic-seguin-c.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 07 Jun 2013 00:00:00 -0400</lastBuildDate><item><title>Variations saisonnières des naissances au Canada</title><link>http://loicseguin.com/blogue/2013/06/variations-saisonnieres-des-naissances-au-canada/</link><description>&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#collecte-et-nettoyage"&gt;Collecte et nettoyage&lt;/a&gt;&lt;ul&gt;
@@ -857,7 +432,7 @@ uniforme estimera que l'espérance de son gain est \(-10.50\$ \times 1/12 + 1\$
 prédisez le mois de mai à chaque fois que vous jouez.  Grâce à l'analyse que
 nous venons de faire, nous savons que l'espérance de votre gain est \(10.50\$
 \times 0.088 - 1\$ \times 0.912 = 0.01\$\).  Si vous réussissez à convaincre
-suffisamment de personnes de jouer, vous deviendrez riche (ou presque).&lt;/p&gt;</summary><category term="programmation"></category><category term="statistique"></category></entry><entry><title>Conservation de la masse en hydrodynamique</title><link href="http://loicseguin.com/blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/" rel="alternate"></link><updated>2013-06-05T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-05:blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/</id><summary type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
+suffisamment de personnes de jouer, vous deviendrez riche (ou presque).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Fri, 07 Jun 2013 00:00:00 -0400</pubDate><guid>tag:loicseguin.com,2013-06-07:blogue/2013/06/variations-saisonnieres-des-naissances-au-canada/</guid><category>programmation</category><category>statistique</category></item><item><title>Conservation de la masse en hydrodynamique</title><link>http://loicseguin.com/blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/</link><description>&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
 système fermé est un invariant, c'est-à-dire qu'elle est constante dans le
 temps.  Si le système étudié est un fluide, ce principe mène à l'équation de
 conservation de la masse aussi connue sous le nom d'&lt;em&gt;équation de continuité&lt;/em&gt; :&lt;/p&gt;
@@ -1016,238 +591,7 @@ exemple, si la densité de masse est remplacé par une densité de charge, alors
 le produit &lt;span class="math"&gt;\(\rho\mathbf{u}\)&lt;/span&gt; devient une densité de courant et l'équation
 est l'équation de conservation de la charge en électrodynamique.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="physique"></category></entry><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.com/blogue/2012/12/utilisation-de-biblatex/" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2012-12-21:blogue/2012/12/utilisation-de-biblatex/</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
-LaTeX. Combiné avec &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt;, il remplace complètement le système &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;.
-Il est aussi possible de conserver &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; comme engin d'arrière-plan, mais
-&lt;tt class="docutils literal"&gt;biber&lt;/tt&gt; présente de nombreux avantages :&lt;/p&gt;
-&lt;blockquote&gt;
-Biber, the default backend of biblatex, supports Ascii, 8-bit encodings,
-UTF-8, on-the-fly reencoding, locale-specific sorting, and many other
-features. Locale-specific sorting, case-sensitive sorting, and
-upper/lowercase precedence are controlled by the options sortlocale,
-sortcase, and sortupper, respectively.&lt;/blockquote&gt;
-&lt;p&gt;(tiré du &lt;a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf"&gt;manuel d'utilisation&lt;/a&gt;).&lt;/p&gt;
-&lt;div class="section" id="exemple-simple"&gt;
-&lt;h2&gt;Exemple simple&lt;/h2&gt;
-&lt;p&gt;Pour incorporer &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; dans un document, il suffit d'utiliser la commande
-&lt;tt class="docutils literal"&gt;\usepackage{biblatex}&lt;/tt&gt; dans le préambule du fichier source. Puis, il faut
-spécifier le fichier qui contient les références bibliographiques avec
-&lt;tt class="docutils literal"&gt;\addbibresource{refs.bib}&lt;/tt&gt;. Il est possible d'inclure plusieurs fichiers de
-références en ajoutant autant de &lt;tt class="docutils literal"&gt;\addbibresource&lt;/tt&gt; que nécessaire. La
-commande &lt;tt class="docutils literal"&gt;\bibliography&lt;/tt&gt; utilisée avec &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; est aussi reconnue par
-&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; pour maintenir la compatibilité, mais la nouvelle commande devrait
-être utilisée autant que possible. Il est important de noter que le nom
-complet, incluant l'extension, du fichier de référence doit être donné.&lt;/p&gt;
-&lt;p&gt;Citer une référence se fait de la même manière qu'avec &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;, c'est-à-dire
-avec la commande &lt;tt class="docutils literal"&gt;\cite{key}&lt;/tt&gt; où &lt;tt class="docutils literal"&gt;key&lt;/tt&gt; est le nom d'une des références dans
-le fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;La bibliographie est incluse dans le document à l'aide de la commande
-&lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt;. Voici un exemple simple d'utilisation de &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;simple.tex&lt;/tt&gt; :&lt;/p&gt;
-&lt;pre class="code latex literal-block"&gt;
-&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[canadien]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;babel&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[utf8]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;inputenc&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[T1]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;fontenc&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="c"&gt;% Emplacement du fichier de références.
-&lt;/span&gt;&lt;span class="k"&gt;\addbibresource&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;em.bib&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;\title&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="k"&gt;\texttt&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;span class="k"&gt;\author&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;\maketitle&lt;/span&gt;
-
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Introduction&lt;span class="nb"&gt;}&lt;/span&gt;
-
-L'électricité et le magnétisme sont deux facettes d'une seule et même force
-qu'on appelle la force électromagnétique &lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965&lt;span class="nb"&gt;}&lt;/span&gt;. Pour découvrir une
-partie de l'histoire passionnante de la découverte et de l'unification des
-lois de l'électricité et du magnétisme, on peut écouter le cours de Cathryn
-Carson &lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;carson2008&lt;span class="nb"&gt;}&lt;/span&gt;.
-
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;La loi de Coulomb&lt;span class="nb"&gt;}&lt;/span&gt;
-
-La loi de Coulomb décrit la force d'interaction entre deux particules chargées.
-En utilisant le Système international d'unités, la loi de Coulomb s'écrit
-&lt;span class="k"&gt;\cite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007&lt;span class="nb"&gt;}&lt;/span&gt; :
-
-&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
-  &lt;span class="k"&gt;\vec&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;F&lt;span class="nb"&gt;}&lt;/span&gt; = &lt;span class="k"&gt;\frac&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;1&lt;span class="nb"&gt;}{&lt;/span&gt;4 &lt;span class="k"&gt;\pi&lt;/span&gt; &lt;span class="k"&gt;\epsilon&lt;/span&gt;&lt;span class="nb"&gt;_&lt;/span&gt;0&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\frac&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Q&lt;span class="nb"&gt;_&lt;/span&gt;1 Q&lt;span class="nb"&gt;_&lt;/span&gt;2&lt;span class="nb"&gt;}{&lt;/span&gt;r&lt;span class="nb"&gt;^&lt;/span&gt;2&lt;span class="nb"&gt;}&lt;/span&gt;.
-&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;
-
-&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;em.bib&lt;/tt&gt; :&lt;/p&gt;
-&lt;pre class="code latex literal-block"&gt;
-&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
-    volume = &lt;span class="nb"&gt;{{&lt;/span&gt;II&lt;span class="nb"&gt;}}&lt;/span&gt;,
-    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="nb"&gt;}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="nb"&gt;}&lt;/span&gt;,
-    year = &lt;span class="nb"&gt;{&lt;/span&gt;1965&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007,
-    edition = &lt;span class="nb"&gt;{&lt;/span&gt;8&lt;span class="nb"&gt;}&lt;/span&gt;,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="nb"&gt;}&lt;/span&gt;,
-    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Wiley&lt;span class="nb"&gt;}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="nb"&gt;}&lt;/span&gt;,
-    year = &lt;span class="nb"&gt;{&lt;/span&gt;2007&lt;span class="nb"&gt;}&lt;/span&gt;,
-&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;carson2008,
-  title = &lt;span class="nb"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
-  author = &lt;span class="nb"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="nb"&gt;}&lt;/span&gt;,
-  url = &lt;span class="nb"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="nb"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="nb"&gt;}&lt;/span&gt;,
-  organization = &lt;span class="nb"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="nb"&gt;}&lt;/span&gt;,
-  urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
-&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Et voici le résultat :&lt;/p&gt;
-&lt;img alt="Exemple de sortie BibLaTeX" src="http://loicseguin.com/images/biblatex-simple.png" /&gt;
-&lt;/div&gt;
-&lt;div class="section" id="personnalisation-inclusion-de-references-dans-un-plan-de-cours"&gt;
-&lt;h2&gt;Personnalisation : inclusion de références dans un plan de cours&lt;/h2&gt;
-&lt;p&gt;Lorsque je rédige des plans de cours, les références bibliographiques doivent
-constituer une section à part entière (avec numérotation du titre).  De plus,
-les références ne sont en général pas citées dans le texte, elles ne sont là
-que pour indiquer aux étudiants les sources qu'ils peuvent consulter.  Enfin,
-les références obligatoires doivent être clairement indiquées et j'aime
-bien séparer les sites internet du reste des références. Avec &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;, il
-est assez simple d'ajuster la bibliographie en conséquence.&lt;/p&gt;
-&lt;p&gt;La commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; possède de nombreuses options
-dont celle de spécifier le format de l'en-tête. On peut simplement donner
-l'option &lt;tt class="docutils literal"&gt;heading=bibnumbered&lt;/tt&gt; pour que l'en-tête soit numéroté comme une
-section (ou un chapitre si la classe de document est un livre).&lt;/p&gt;
-&lt;p&gt;Pour inclure des références qui ne sont pas citées dans le texte il suffit
-d'utiliser &lt;tt class="docutils literal"&gt;\nocite{key}&lt;/tt&gt;. Par exemple, si les &lt;em&gt;Feynman Lectures on Physics&lt;/em&gt;
-doivent être affichées dans la bibliographie, il suffit d'ajouter
-&lt;tt class="docutils literal"&gt;\nocite{feynman1965}&lt;/tt&gt;. Il est également possible d'inclure tous les
-documents du fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; avec l'argument &lt;tt class="docutils literal"&gt;*&lt;/tt&gt; à la place d'une clé
-bibliographique.&lt;/p&gt;
-&lt;p&gt;L'option &lt;tt class="docutils literal"&gt;prenote&lt;/tt&gt; de la commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; permet d'ajouter du
-texte entre le titre et la première référence. Ce texte doit être associé à un
-une &lt;tt class="docutils literal"&gt;bibnote&lt;/tt&gt; qui est définie à l'aide de la commande &lt;tt class="docutils literal"&gt;\defbibnote&lt;/tt&gt;. Par
-exemple, on peut définir une note pour le manuel obligatoire&lt;/p&gt;
-&lt;pre class="code latex literal-block"&gt;
-&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;obl&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Obligatoire&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;puis la bibliographie est imprimée avec&lt;/p&gt;
-&lt;pre class="code latex literal-block"&gt;
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[heading=bibnumbered, prenote=obl]&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Le problème est que toutes les références seront imprimées alors que
-normalement seuls un ou deux ouvrages sont obligatoires. Il est possible
-d'ajouter dans le fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; un champ &lt;tt class="docutils literal"&gt;keywords&lt;/tt&gt; et d'utiliser ce champ
-pour imprimer seulement certains documents. Si la référence &lt;tt class="docutils literal"&gt;halliday2007&lt;/tt&gt;
-est obligatoire, alors on ajoute&lt;/p&gt;
-&lt;pre class="code latex literal-block"&gt;
-keywords = &lt;span class="nb"&gt;{&lt;/span&gt;mandatory&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;à cet élément et on imprime la bibliographie avec&lt;/p&gt;
-&lt;pre class="code latex literal-block"&gt;
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[heading=bibnumbered, prenote=obl, keyword=mandatory]&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Les références non-obligatoires peuvent être ajoutées avec d'autres
-appels à la commande &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt; en utilisant l'option
-&lt;tt class="docutils literal"&gt;notkeyword=mandatory&lt;/tt&gt;.  Les références d'un certain type sont imprimées avec
-l'option &lt;tt class="docutils literal"&gt;type&lt;/tt&gt; dont la valeur est un des types de documents &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt;
-(par exemple, &lt;tt class="docutils literal"&gt;book&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;article&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;online&lt;/tt&gt;, etc.).  Pour éviter d'avoir
-un nouvel en-tête de section à chaque appel de &lt;tt class="docutils literal"&gt;\printbibliography&lt;/tt&gt;, il
-suffit de fournir l'option &lt;tt class="docutils literal"&gt;heading=none&lt;/tt&gt;. Finalement, pour éviter que la
-numérotation soit dans le désordre, &lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; peut conserver l'ordre du
-fichier &lt;tt class="docutils literal"&gt;bib&lt;/tt&gt; si on lui fournit l'option &lt;tt class="docutils literal"&gt;sorting=none&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;Ci-dessous se trouve un exemple complet.&lt;/p&gt;
-&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;simple.tex&lt;/tt&gt; :&lt;/p&gt;
-&lt;pre class="code latex literal-block"&gt;
-&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[canadien]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;babel&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[utf8]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;inputenc&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[T1]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;fontenc&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="na"&gt;[sorting=none]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="c"&gt;% Emplacement du fichier de références.
-&lt;/span&gt;&lt;span class="k"&gt;\addbibresource&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;em.bib&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="c"&gt;% Notes pour différents types de références.
-&lt;/span&gt;&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;obl&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Obligatoire&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;livres&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Livres&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;span class="k"&gt;\defbibnote&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;web&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="k"&gt;\textbf&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Sites internet&lt;span class="nb"&gt;}}&lt;/span&gt;
-
-&lt;span class="k"&gt;\title&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Exemple simple d'utilisation de &lt;span class="k"&gt;\texttt&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;biblatex&lt;span class="nb"&gt;}}&lt;/span&gt;
-&lt;span class="k"&gt;\author&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Loïc Séguin-Charbonneau&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;\maketitle&lt;/span&gt;
-
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Introduction&lt;span class="nb"&gt;}&lt;/span&gt;
-
-L'électricité et le magnétisme sont deux facettes d'une seule et même force
-qu'on appelle la force électromagnétique.  Ce cours présente les principes de
-base de la théorie de l'électromagnétisme.
-
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Évaluation&lt;span class="nb"&gt;}&lt;/span&gt;
-
-Les étudiants seront évalués à l'aide d'examens très difficiles.
-
-&lt;span class="k"&gt;\nocite&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;*&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=obl, heading=bibnumbered, keyword=mandatory]&lt;/span&gt;
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=livres, type=book, notkeyword=mandatory, heading=none]&lt;/span&gt;
-&lt;span class="k"&gt;\printbibliography&lt;/span&gt;&lt;span class="na"&gt;[prenote=web, type=online, notkeyword=mandatory, heading=none]&lt;/span&gt;
-
-&lt;span class="k"&gt;\section&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;Horaire&lt;span class="nb"&gt;}&lt;/span&gt;
-
-Le cours se donne du lundi au vendredi, de 8h à 9h. Les laboratoires auront
-lieu le jeudi après-midi de 13h à 17h.
-
-&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Fichier &lt;tt class="docutils literal"&gt;em.bib&lt;/tt&gt; :&lt;/p&gt;
-&lt;pre class="code latex literal-block"&gt;
-&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;halliday2007,
-    edition = &lt;span class="nb"&gt;{&lt;/span&gt;8&lt;span class="nb"&gt;}&lt;/span&gt;,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;Fundamentals of Physics Extended&lt;span class="nb"&gt;}&lt;/span&gt;,
-    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Wiley&lt;span class="nb"&gt;}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Halliday, David and Resnick, Robert and Walker, Jearl&lt;span class="nb"&gt;}&lt;/span&gt;,
-    year = &lt;span class="nb"&gt;{&lt;/span&gt;2007&lt;span class="nb"&gt;}&lt;/span&gt;,
-  keywords = &lt;span class="nb"&gt;{&lt;/span&gt;mandatory&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&amp;#64;book&lt;span class="nb"&gt;{&lt;/span&gt;feynman1965,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;The Feynman Lectures on Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
-    volume = &lt;span class="nb"&gt;{{&lt;/span&gt;II&lt;span class="nb"&gt;}}&lt;/span&gt;,
-    publisher = &lt;span class="nb"&gt;{&lt;/span&gt;Addison-Wesley&lt;span class="nb"&gt;}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Feynman, Richard P. and Leighton, Robert B. and Sands, Matthew&lt;span class="nb"&gt;}&lt;/span&gt;,
-    year = &lt;span class="nb"&gt;{&lt;/span&gt;1965&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;carson2008,
-  title = &lt;span class="nb"&gt;{&lt;/span&gt;History 181B:  Modern Physics&lt;span class="nb"&gt;}&lt;/span&gt;,
-  author = &lt;span class="nb"&gt;{&lt;/span&gt;Carson, Cathryn&lt;span class="nb"&gt;}&lt;/span&gt;,
-  url = &lt;span class="nb"&gt;{&lt;/span&gt;https://itunes.apple.com/ca/itunes-u/history-181b-spring-2008-modern/id461116019?l=fr&lt;span class="nb"&gt;&amp;amp;&lt;/span&gt;mt=10&lt;span class="nb"&gt;}&lt;/span&gt;,
-  organization = &lt;span class="nb"&gt;{&lt;/span&gt;UC Berkeley&lt;span class="nb"&gt;}&lt;/span&gt;,
-  urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
-&lt;span class="nb"&gt;}&lt;/span&gt;
-
-&amp;#64;online&lt;span class="nb"&gt;{&lt;/span&gt;lewin2002,
-    title = &lt;span class="nb"&gt;{&lt;/span&gt;8.02 Electricity and Magnetism&lt;span class="nb"&gt;}&lt;/span&gt;,
-    url = &lt;span class="nb"&gt;{&lt;/span&gt;http://ocw.mit.edu/courses/physics/8-02-electricity-and-magnetism-spring-2002/&lt;span class="nb"&gt;}&lt;/span&gt;,
-    urldate = &lt;span class="nb"&gt;{&lt;/span&gt;2012-12-21&lt;span class="nb"&gt;}&lt;/span&gt;,
-    organization = &lt;span class="nb"&gt;{{&lt;/span&gt;MIT OpenCourseWare&lt;span class="nb"&gt;}}&lt;/span&gt;,
-    author = &lt;span class="nb"&gt;{&lt;/span&gt;Lewin, Walter&lt;span class="nb"&gt;}&lt;/span&gt;,
-&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Le résultat est le suivant :&lt;/p&gt;
-&lt;img alt="Exemple de plan de cours avec bibliographie" src="http://loicseguin.com/images/biblatex-pdc.png" /&gt;
-&lt;/div&gt;
-</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/12/bessel-functions-in-scipy/" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:blogue/2012/12/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt; where &lt;span class="math"&gt;\(l\)&lt;/span&gt; is an integer,
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Wed, 05 Jun 2013 00:00:00 -0400</pubDate><guid>tag:loicseguin.com,2013-06-05:blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/</guid><category>physique</category></item><item><title>Bessel functions in Scipy</title><link>http://loicseguin.com/blogue/2012/12/bessel-functions-in-scipy/</link><description>&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt; where &lt;span class="math"&gt;\(l\)&lt;/span&gt; is an integer,
 are found in &lt;tt class="docutils literal"&gt;scipy.special.jn&lt;/tt&gt;. This is a function that takes two arguments:
 the first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt; and the second one is the value of the
 point at which to evaluate the functions. If one is interested in &lt;span class="math"&gt;\(J_0\)&lt;/span&gt;
@@ -1283,7 +627,7 @@ finding procedure. For instance, &lt;tt class="docutils literal"&gt;scipy.optimi
 well.&lt;/p&gt;
 &lt;p&gt;John D. Cook has a &lt;a class="reference external" href="http://www.johndcook.com/Bessel_functions.html"&gt;great page&lt;/a&gt; about Bessel functions and &lt;a class="reference external" href="http://www.johndcook.com/Bessel_python.html"&gt;another one&lt;/a&gt;
 about how to work with the implementation in Scipy.&lt;/p&gt;
-</summary><category term="programmation"></category><category term="maths"></category></entry><entry><title>Moins de Google</title><link href="http://loicseguin.com/blogue/2012/05/moins-de-google/" rel="alternate"></link><updated>2012-05-13T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-05-13:blogue/2012/05/moins-de-google/</id><summary type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Mon, 03 Dec 2012 00:00:00 -0500</pubDate><guid>tag:loicseguin.com,2012-12-03:blogue/2012/12/bessel-functions-in-scipy/</guid><category>programmation</category><category>maths</category></item><item><title>Moins de Google</title><link>http://loicseguin.com/blogue/2012/05/moins-de-google/</link><description>&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
 d'utilisation et les politiques de confidentialité des divers services en ligne
 que j'utilise. Cet exercice est motivé par deux raisons : premièrement, je veux
 déterminer quels services utilisent mes données de façon responsable et
@@ -1458,7 +802,7 @@ MathSciNet, Web of Science, etc.).&lt;/p&gt;
 me concerne, j'utilise surtout &lt;a class="reference external" href="http://arxiv.org/"&gt;arXiv.org&lt;/a&gt; et &lt;a class="reference external" href="http://www.adsabs.harvard.edu/"&gt;SOA/NASA ADS&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</summary><category term="informatique"></category></entry><entry><title>Dictionnaire français pour Vim</title><link href="http://loicseguin.com/blogue/2011/12/dictionnaire-francais-pour-vim/" rel="alternate"></link><updated>2011-12-22T23:45:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-12-22:blogue/2011/12/dictionnaire-francais-pour-vim/</id><summary type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Sun, 13 May 2012 00:00:00 -0400</pubDate><guid>tag:loicseguin.com,2012-05-13:blogue/2012/05/moins-de-google/</guid><category>informatique</category></item><item><title>Dictionnaire français pour Vim</title><link>http://loicseguin.com/blogue/2011/12/dictionnaire-francais-pour-vim/</link><description>&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;puis on passe à l'erreur suivante avec &lt;tt class="docutils literal"&gt;]s&lt;/tt&gt;.&lt;/p&gt;
@@ -1472,7 +816,7 @@ regarder MacVim se connecter à un serveur ftp pour y télécharger les
 fichiers nécessaires.
 Information trouvée dans les archives de comp.editors sur usenet
 (&lt;a class="reference external" href="http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html"&gt;http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html&lt;/a&gt;).&lt;/p&gt;
-</summary><category term="informatique"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Thu, 22 Dec 2011 23:45:00 -0500</pubDate><guid>tag:loicseguin.com,2011-12-22:blogue/2011/12/dictionnaire-francais-pour-vim/</guid><category>informatique</category></item><item><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link>http://loicseguin.com/blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</link><description>&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
 données relatives à la consommation d'énergie et à l'émission de GES par
 les foyers canadiens pour la période de 1990 à 2007. Ces données sont
 rendues publiques par l'&lt;a class="reference external" href="http://oee.nrcan.gc.ca/"&gt;Office de l'efficacité énergétique&lt;/a&gt; de
@@ -1493,12 +837,12 @@ navrant qu'on parle d'augmentation alors que les objectifs du protocole
 de Kyoto étaient de réduire les émissions de GES par rapport à celles de
 1990. Néanmoins, si l'on en croit ces données, la situation n'est pas si
 terrible au Canada.&lt;/p&gt;
-</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/blogue/2009/04/protegeons-nous-avec-les-maths/" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:blogue/2009/04/protegeons-nous-avec-les-maths/</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Tue, 08 Jun 2010 03:09:00 -0400</pubDate><guid>tag:loicseguin.com,2010-06-08:blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</guid><category>environnement</category><category>python</category></item><item><title>Protégeons-nous avec les maths</title><link>http://loicseguin.com/blogue/2009/04/protegeons-nous-avec-les-maths/</link><description>&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
 &lt;blockquote&gt;
 It is insufficient to protect ourselves with laws; we need to
 protect ourselves with mathematics.&lt;/blockquote&gt;
 &lt;p&gt;Tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9780471117094"&gt;Applied Cryptography&lt;/a&gt; par Bruce Schneier.&lt;/p&gt;
-</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Copies de sauvegarde</title><link href="http://loicseguin.com/blogue/2009/03/copies-de-sauvegarde/" rel="alternate"></link><updated>2009-03-11T03:06:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-11:blogue/2009/03/copies-de-sauvegarde/</id><summary type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Tue, 07 Apr 2009 16:33:00 -0400</pubDate><guid>tag:loicseguin.com,2009-04-07:blogue/2009/04/protegeons-nous-avec-les-maths/</guid><category>maths</category><category>philosophie</category></item><item><title>Copies de sauvegarde</title><link>http://loicseguin.com/blogue/2009/03/copies-de-sauvegarde/</link><description>&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
 sauvegarde de mes documents importants : un shell script maison assez
 simple qui utilise le logiciel rsync (&lt;a class="reference external" href="http://samba.anu.edu.au/rsync/"&gt;informations sur ce site&lt;/a&gt;).
 rsync est un logiciel libre distribué sous licence GPL et disponible sur
@@ -1600,7 +944,7 @@ première fois que le script fonctionne puisqu'il doit alors copier
 l'ensemble des fichiers).
 Prochaine étape : synchroniser mon Macbook et mon ordinateur de bureau
 roulant sous OpenBSD avec &lt;a class="reference external" href="http://www.cis.upenn.edu/%7Ebcpierce/unison/"&gt;Unison&lt;/a&gt;...&lt;/p&gt;
-</summary><category term="informatique"></category></entry><entry><title>Bonne fête Darwin !</title><link href="http://loicseguin.com/blogue/2009/02/bonne-fete-darwin/" rel="alternate"></link><updated>2009-02-12T15:02:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-12:blogue/2009/02/bonne-fete-darwin/</id><summary type="html">&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Wed, 11 Mar 2009 03:06:00 -0400</pubDate><guid>tag:loicseguin.com,2009-03-11:blogue/2009/03/copies-de-sauvegarde/</guid><category>informatique</category></item><item><title>Bonne fête Darwin !</title><link>http://loicseguin.com/blogue/2009/02/bonne-fete-darwin/</link><description>&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
 notre compréhension de la nature : Charles Darwin. Darwin fût un
 naturaliste de grand renom qui a étudié, entre autre, la botanique et
 l'entomologie. Mais sa plus grande contribution à la science moderne est
@@ -1630,7 +974,7 @@ Quelques liens intéressants :
 &lt;a class="reference external" href="http://www.darwinday.org/index.html"&gt;Darwin Day Celebration&lt;/a&gt;
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Charles_Darwin"&gt;Charles Darwin sur Wikipedia (en)&lt;/a&gt;
 &lt;a class="reference external" href="http://darwin-online.org.uk/"&gt;The Complete Work of Charles Darwin Online&lt;/a&gt;&lt;/p&gt;
-</summary><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.com/blogue/2009/02/des-axiomes-mathematiques/" rel="alternate"></link><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-06:blogue/2009/02/des-axiomes-mathematiques/</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Thu, 12 Feb 2009 15:02:00 -0500</pubDate><guid>tag:loicseguin.com,2009-02-12:blogue/2009/02/bonne-fete-darwin/</guid><category>philosophie</category><category>biologie</category></item><item><title>Des axiomes mathématiques</title><link>http://loicseguin.com/blogue/2009/02/des-axiomes-mathematiques/</link><description>&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
 de Alan B. Wallace (tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782702128206"&gt;Science et Bouddhisme, à chacun sa
 réalité&lt;/a&gt;) :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1667,7 +1011,7 @@ théorèmes les plus complexes. Quiconque prétend que ces théorèmes
 s'appliquent au réel fait un acte de foi qui n'est pas plus valable et
 qui l'est tout autant que l'acte de foi que fait celui qui choisit de
 suivre une religion.&lt;/p&gt;
-</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Optique 101 (partie 1)</title><link href="http://loicseguin.com/blogue/2008/11/optique-101-partie-1/" rel="alternate"></link><updated>2008-11-14T17:54:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-14:blogue/2008/11/optique-101-partie-1/</id><summary type="html">&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Fri, 06 Feb 2009 01:52:00 -0500</pubDate><guid>tag:loicseguin.com,2009-02-06:blogue/2009/02/des-axiomes-mathematiques/</guid><category>maths</category><category>philosophie</category></item><item><title>Optique 101 (partie 1)</title><link>http://loicseguin.com/blogue/2008/11/optique-101-partie-1/</link><description>&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
 appareil photographique, on doit d'abord connaître quelques principes
 fondamentaux d'optique géométrique. Nous verrons la propagation de la
 lumière en ligne droite, la loi de Snell-Descartes et les propriétés des
@@ -1743,13 +1087,13 @@ milieu le moins réfringent, il s'éloignera de la normale.
 La loi de Snell-Descartes est fondamentale pour comprendre le
 fonctionnement d'une partie cruciale d'un appareil photo : la lentille.
 Nous verrons dans le prochain article comment fonctionne une lentille.&lt;/p&gt;
-</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/blogue/2008/09/lantre-de-la-bete/" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:blogue/2008/09/lantre-de-la-bete/</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Fri, 14 Nov 2008 17:54:00 -0500</pubDate><guid>tag:loicseguin.com,2008-11-14:blogue/2008/11/optique-101-partie-1/</guid><category>photographie</category><category>physique</category></item><item><title>L'antre de la bête</title><link>http://loicseguin.com/blogue/2008/09/lantre-de-la-bete/</link><description>&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
 travail. On constate la grande organisation qui règne sur mon bureau...&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqSchJBI/AAAAAAAABf0/4IUUibpNjvY/s400/IMG_1143.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Et voici les instruments essentiels à la tâche du mathématicien :&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqTgxthI/AAAAAAAABf8/jO9PyF3ESG8/s400/IMG_1146.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-4984607396283200774?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="ineptie"></category></entry><entry><title>Manipuler des symboles</title><link href="http://loicseguin.com/blogue/2008/09/manipuler-des-symboles/" rel="alternate"></link><updated>2008-09-23T23:15:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-23:blogue/2008/09/manipuler-des-symboles/</id><summary type="html">&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Tue, 30 Sep 2008 23:37:00 -0400</pubDate><guid>tag:loicseguin.com,2008-09-30:blogue/2008/09/lantre-de-la-bete/</guid><category>ineptie</category></item><item><title>Manipuler des symboles</title><link>http://loicseguin.com/blogue/2008/09/manipuler-des-symboles/</link><description>&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
 mathématiciens, comme étant un ensemble de règles qui dictent comment
 manipuler des symboles. En manipulant ces symboles, on arrive à formuler
 les &amp;quot;phrases&amp;quot; mathématiques que sont les théorèmes. Bien sûr, la plupart
@@ -1775,7 +1119,7 @@ de la preuve.&lt;/p&gt;
 &lt;p&gt;Les idées sont plus importantes que les calculs. Et, étrangement, il est
 beaucoup plus difficile de formuler des idées que d'effectuer des
 calculs.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Triangulations créatives</title><link href="http://loicseguin.com/blogue/2008/09/triangulations-creatives/" rel="alternate"></link><updated>2008-09-12T16:30:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-12:blogue/2008/09/triangulations-creatives/</id><summary type="html">&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Tue, 23 Sep 2008 23:15:00 -0400</pubDate><guid>tag:loicseguin.com,2008-09-23:blogue/2008/09/manipuler-des-symboles/</guid><category>maths</category></item><item><title>Triangulations créatives</title><link>http://loicseguin.com/blogue/2008/09/triangulations-creatives/</link><description>&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
 les uns aux autres de telle sorte qu'ils épousent les formes de l'objet.
 On appelle une telle construction une triangulation. Une fois qu'on a
 obtenu une triangulation, on peut la raffiner en divisant les triangles
@@ -1926,7 +1270,7 @@ ses images et m'avoir permis de les utiliser sur ce site. Je remercie
 également &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Efan/ron/"&gt;Ron Graham&lt;/a&gt; et &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Esbutler/"&gt;Steve Butler&lt;/a&gt; pour m'avoir initié aux
 raffinements de triangulations lors de CCCG 2008.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.com/blogue/2008/09/le-lhc-demarre/" rel="alternate"></link><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-10:blogue/2008/09/le-lhc-demarre/</id><summary type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Fri, 12 Sep 2008 16:30:00 -0400</pubDate><guid>tag:loicseguin.com,2008-09-12:blogue/2008/09/triangulations-creatives/</guid><category>maths</category></item><item><title>Le LHC démarre !</title><link>http://loicseguin.com/blogue/2008/09/le-lhc-demarre/</link><description>&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
 sur la nature de l'univers. Le Large Hadron Collider (LHC, grand
 collisioneur de proton en français), le plus grand accélérateur de
 particule construit par l'homme, a été mis en route aujourd'hui. Sa mise
@@ -1960,7 +1304,7 @@ les plus puissants du monde.&lt;/p&gt;
 &lt;li&gt;la nouvelle : &lt;a class="reference external" href="http://www.radio-canada.ca/nouvelles/Science-Sante/2008/09/09/002-collisionneur-reeves-Hawking.shtml"&gt;Radio-Canada.ca&lt;/a&gt;, &lt;a class="reference external" href="http://www.cyberpresse.ca/article/20080910/CPSCIENCES/80910007/1020/CPSCIENCES"&gt;Cyberpresse&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;le LHC : &lt;a class="reference external" href="http://public.web.cern.ch/Public/fr/LHC/LHC-fr.html"&gt;CERN&lt;/a&gt;, &lt;a class="reference external" href="http://www.youtube.com/watch?v=j50ZssEojtM"&gt;the LHC rap&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</summary><category term="physique"></category></entry><entry><title>Le dilemme du prisonnier</title><link href="http://loicseguin.com/blogue/2008/09/le-dilemme-du-prisonnier/" rel="alternate"></link><updated>2008-09-07T06:22:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-07:blogue/2008/09/le-dilemme-du-prisonnier/</id><summary type="html">&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Wed, 10 Sep 2008 17:21:00 -0400</pubDate><guid>tag:loicseguin.com,2008-09-10:blogue/2008/09/le-lhc-demarre/</guid><category>physique</category></item><item><title>Le dilemme du prisonnier</title><link>http://loicseguin.com/blogue/2008/09/le-dilemme-du-prisonnier/</link><description>&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
 conteste le dilemme du prisonnier. Deux suspects sont arrêtés
 relativement à un crime donné. Ils sont interrogés séparément et ne
 peuvent communiquer d'aucune façon que ce soit. Ils connaissent tous
@@ -1997,7 +1341,7 @@ prison. Il existe pourtant une solution à ce jeu qui est beaucoup plus
 avantageuse &amp;quot;socialement&amp;quot;. Si les deux innocentent leur collègue, ils ne
 purgeront qu'un an chacun. La collaboration, dans ce contexte, est une
 bien meilleure option que l'avarice.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Sun, 07 Sep 2008 06:22:00 -0400</pubDate><guid>tag:loicseguin.com,2008-09-07:blogue/2008/09/le-dilemme-du-prisonnier/</guid><category>maths</category></item><item><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link>http://loicseguin.com/blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</link><description>&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
 entiers. Dans cet &lt;a class="reference external" href="http://www.theglobeandmail.com/servlet/story/RTGAM.20080510.wobama0510/BNStory/International/?page=rss&amp;amp;id=RTGAM.20080510.wobama0510"&gt;article&lt;/a&gt; du Globe and Mail du 10 mai, on peut lire
 cette charmante phrase :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2013,7 +1357,7 @@ fractionnaires n'a aucun sens.&lt;/p&gt;
 proportion. Or, ici, il est question d'un nombre de personnes, pas d'une
 proportion. Il est donc tout à fait déraisonnable de dire que madame
 Clinton a l'appui d'un demi-délégué.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>La programmation en nombres entiers.</title><link href="http://loicseguin.com/blogue/2008/03/la-programmation-en-nombres-entiers/" rel="alternate"></link><updated>2008-03-21T06:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-03-21:blogue/2008/03/la-programmation-en-nombres-entiers/</id><summary type="html">&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Sun, 11 May 2008 17:24:00 -0400</pubDate><guid>tag:loicseguin.com,2008-05-11:blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</guid><category>maths</category></item><item><title>La programmation en nombres entiers.</title><link>http://loicseguin.com/blogue/2008/03/la-programmation-en-nombres-entiers/</link><description>&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
 intéressant ? Pourquoi une poignée de mathématiciens dépensent-ils
 quelques milliers de dollars pour se réunir et en discuter ? Sans doute
 en saurais-je un peu plus à mon retour de la session de travail sur la
@@ -2039,7 +1383,7 @@ où on ne peut pas accepter des solutions fractionnaires. Par exemple, si
 on achemine un produit en petites quantités sur une courte période de
 temps.&lt;/p&gt;
 &lt;p&gt;Plus de détails à venir éventuellement !&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category><category term="maths"></category></entry><entry><title>Une citation mémorable du film Proof</title><link href="http://loicseguin.com/blogue/2007/10/une-citation-memorable-du-film-proof/" rel="alternate"></link><updated>2007-10-28T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-28:blogue/2007/10/une-citation-memorable-du-film-proof/</id><summary type="html">&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Fri, 21 Mar 2008 06:23:00 -0400</pubDate><guid>tag:loicseguin.com,2008-03-21:blogue/2008/03/la-programmation-en-nombres-entiers/</guid><category>recherche opérationnelle</category><category>maths</category></item><item><title>Une citation mémorable du film Proof</title><link>http://loicseguin.com/blogue/2007/10/une-citation-memorable-du-film-proof/</link><description>&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
 que je n'ai pas aimé ce film. La performances des acteurs est mauvaise,
 l'histoire, peu enivrante. Certaines personnes ont comparé ce film à &lt;em&gt;A
 Beautiful Mind&lt;/em&gt;, ce que je n'arrive pas à comprendre. Outre le fait que
@@ -2062,7 +1406,7 @@ approaches four. I will never be as cold now as I will in the future.
 The future of cold is infinite. The future of heat is the future of
 cold. The bookstores are infinite and so are never full except in
 September...&lt;/blockquote&gt;
-</summary><category term="maths"></category></entry><entry><title>Le problème du contrôle de groupes d'ascenseurs</title><link href="http://loicseguin.com/blogue/2007/10/le-probleme-du-controle-de-groupes-dascenseurs/" rel="alternate"></link><updated>2007-10-22T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-22:blogue/2007/10/le-probleme-du-controle-de-groupes-dascenseurs/</id><summary type="html">&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Sun, 28 Oct 2007 17:21:00 -0400</pubDate><guid>tag:loicseguin.com,2007-10-28:blogue/2007/10/une-citation-memorable-du-film-proof/</guid><category>maths</category></item><item><title>Le problème du contrôle de groupes d'ascenseurs</title><link>http://loicseguin.com/blogue/2007/10/le-probleme-du-controle-de-groupes-dascenseurs/</link><description>&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
 de travail quotidiennement savent à quel point il peut y avoir de
 l'achalandage pour monter dans ces machines. Aux heures de pointe, il
 peut y avoir des gens qui veulent monter du rez-de-chaussée à presque
@@ -2090,7 +1434,7 @@ Plusieurs approches algorithmiques différentes ont été prises pour
 aborder le problème. Une simple recherche sur Google donne de nombreux
 liens vers des articles qui proposent des approches évolutives,
 neuronales, et autres. Je vous tiendrez au courant de mes lectures...&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Mon, 22 Oct 2007 17:21:00 -0400</pubDate><guid>tag:loicseguin.com,2007-10-22:blogue/2007/10/le-probleme-du-controle-de-groupes-dascenseurs/</guid><category>recherche opérationnelle</category></item><item><title>Résolution du problème des ponts de Königsberg</title><link>http://loicseguin.com/blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/</link><description>&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
 est appelé par certains un multigraphe). Un graphe G est simplement un ensemble
 de n points qu'on appelle des sommets &lt;span class="math"&gt;\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt; reliés
 par des arrêtes &lt;span class="math"&gt;\(A = \{(x_i x_j, 1), (x_i x_j, 2), (x_k x_l, 1), ..., (x_n
@@ -2129,7 +1473,7 @@ coup d'oeil à l'image de Königsberg et on trouve tout de suite des
 sommets de degré impair. Donc il est impossible de trouver un tour
 eulérien et la solution au problème des ponts de Königsberg est que
 c'est impossible.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/les-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:blogue/2007/08/les-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Fri, 24 Aug 2007 06:24:00 -0400</pubDate><guid>tag:loicseguin.com,2007-08-24:blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/</guid><category>maths</category></item><item><title>Les ponts de Königsberg</title><link>http://loicseguin.com/blogue/2007/08/les-ponts-de-konigsberg/</link><description>&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
 &lt;p&gt;Maintenant que j'ai un blogue, voyons ce que je peux en faire.&lt;/p&gt;
 &lt;p&gt;Un des problèmes qui est à l'origine de la théorie des graphes est celui
 des ponts de Königsberg. Cette ville de Prusse (au temps où la Prusse
@@ -2146,7 +1490,7 @@ notions élémentaires de théorie des graphes. Maintenant que je vous ai
 mis l'eau à la bouche et que vous mourrez tous d'envie de connaître la
 preuve, je vais aller me coucher. La preuve viendra dans un futur
 rapproché.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Relativité restreinte</title><link href="http://loicseguin.com/blogue/2004/06/relativite-restreinte/" rel="alternate"></link><updated>2004-06-14T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2004-06-14:blogue/2004/06/relativite-restreinte/</id><summary type="html">&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Wed, 22 Aug 2007 06:24:00 -0400</pubDate><guid>tag:loicseguin.com,2007-08-22:blogue/2007/08/les-ponts-de-konigsberg/</guid><category>maths</category></item><item><title>Relativité restreinte</title><link>http://loicseguin.com/blogue/2004/06/relativite-restreinte/</link><description>&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
 &lt;p&gt;Puis, un beau jour d'il y a un ou deux siècles, un dénommé Maxwell (oui oui,
 comme le café) trouva les équations de l'électromagnétisme. Ce sont des
 équations qui décrivent tous les phénomènes électromagnétiques (comme la
@@ -2198,4 +1542,4 @@ des objets allant plus vite que la vitesse de la lumière ne puisse pas exister.
 De tels objets, nommés tachyons, seraient confinés à des vitesses supérieures à c
 et ne pourraient pas ralentir ou s'arrêter. Les tachyons n'ont jamais été
 observés expérimentalement à ce jour.&lt;/p&gt;
-</summary><category term="physique"></category></entry></feed>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Mon, 14 Jun 2004 00:00:00 -0400</pubDate><guid>tag:loicseguin.com,2004-06-14:blogue/2004/06/relativite-restreinte/</guid><category>physique</category></item></channel></rss>

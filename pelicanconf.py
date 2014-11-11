@@ -27,9 +27,17 @@ TRANSLATION_FEED_ATOM = None
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
-THEME = "cadabra"
-FOOTER_QUOTE = "Klaatu verata nicto"
+THEME = "/Users/loic/Projects/pelican-themes/beseth"
 MD_EXTENSIONS = ['fenced_code', 'codehilite', 'toc', 'tables', 'footnotes']
+
+# Minimize stuff that gets generated
+DIRECT_TEMPLATES = ('index', 'archives')
+MONTH_ARCHIVE_SAVE_AS = ''
+DAY_ARCHIVE_SAVE_AS = ''
+AUTHOR_SAVE_AS = ''
+PAGE_LANG_SAVE_AS = ''
+DRAFT_SAVE_AS = ''
+DRAFT_LANG_SAVE_AS = ''
 
 # Fix docutils
 DOCUTILS_SETTINGS = [('math_output', 'MathJax')]
@@ -39,7 +47,6 @@ SOCIAL = (
           ('email', 'mailto:lsc@loicseguin.com'),
           ('twitter', 'http://twitter.com/lseguinc'),
           ('github', 'http://github.com/loicseguin'),
-          #('bitbucket', 'http://bitbucket.org/loicseguin'),
           ('linkedin','http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/'),
           ('flickr', 'http://www.flickr.com/photos/loicseguin')
          )

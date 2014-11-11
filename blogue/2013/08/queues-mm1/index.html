@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Queues M/M/1</title>
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/main.css">
-        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Atom Feed" />
+          <title>Loïc Séguin-C.</title>
+        <meta charset="utf-8" />
+        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
+        <link href="http://loicseguin.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
 
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+
+
+    <meta name="tags" contents="maths" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya|Alegreya+SC' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/beseth-min-201411110054.css" type="text/css" />
     </head>
 
     <body>
-        <div class="container-narrow">
-            <header class="navbar">
-            <nav class="navbar-inner">
-            <div class="container-fluid">
-            <a class="brand" href="http://loicseguin.com/">Loïc Séguin-C. </a>
-            <ul class="nav pull-right">
-                <li><a href="http://loicseguin.com/pages/projets.html">Projets</a></li>
-                <li><a href="http://loicseguin.com/pages/publications.html">Publications</a></li>
-                <li><a href="http://loicseguin.com/pages/vita.html">Vita</a></li>
-            </ul>
+        <header id="banner">
+            <div class="container">
+                <h1 class="site-title"><a class="site-title" href="http://loicseguin.com/">Loïc Séguin-C. <strong></strong></a></h1>
+
+                <nav><ul class="nav-list plain">
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/projets.html">Projets</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/publications.html">Publications</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/vita.html">Vita</a>
+                    </li>
+                </ul></nav>
+                <hr class="headersep" />
             </div>
-            </nav>
-            </header><!-- /#banner -->
+        </header>
 
-<section id="content" class="body">
-  <article>
-    <header>
-    <div class="page-header">
-        <h1>
-            Queues M/M/1
-        </h1>
+        <section class="container maincontent">
+<article>
+    <h2 class="post-title">Queues M/M/1</h2>
+    
+
+    <div class="post-pubdate">
+        01 août 2013
     </div>
-    </header>
 
-    <div class="entry-content">
-<footer class="post-info">
-<small>
-    <em>
-        <p>
-    <span class="muted">
-        Publié le 01 août 2013
-    </span>
-<a href="http://loicseguin.com/tag/maths.html">maths</a>
-</p>
-    </em>
-</small>
-</footer><!-- /.post-info -->      <div class="contents topic" id="sommaire">
+    <div class="post-content">
+        <div class="contents topic" id="sommaire">
 <p class="topic-title first">Sommaire</p>
 <ul class="simple">
 <li><a class="reference internal" href="#la-queue-m-m-1-definitions" id="id1">La queue M/M/1 : définitions</a></li>
-<li><a class="reference internal" href="#generateur-ou-matrice-q" id="id2">Générateur ou matrice <span class="math">\(Q\)</span>
-</a><ul>
+<li><a class="reference internal" href="#generateur-ou-matrice-q" id="id2">Générateur ou matrice <span class="math">\(Q\)</span></a><ul>
 <li><a class="reference internal" href="#transition-de-plus-d-une-unite-dans-la-longueur-de-la-queue" id="id3">Transition de plus d'une unité dans la longueur de la queue</a></li>
 <li><a class="reference internal" href="#transition-d-une-unite-dans-la-longueur-de-la-queue" id="id4">Transition d'une unité dans la longueur de la queue</a></li>
 <li><a class="reference internal" href="#aucune-transition" id="id5">Aucune transition</a></li>
@@ -95,37 +87,29 @@ service moyen et la longueur moyenne de la queue.</p>
 <div class="section" id="la-queue-m-m-1-definitions">
 <h2><a class="toc-backref" href="#id1">La queue M/M/1 : définitions</a></h2>
 <p>Dans une queue M/M/1, les clients arrivent selon un processus de Poisson
-d'intensité <span class="math">\(\lambda\)</span>
-, c'est-à-dire que le nombre de clients qui arrivent
-dans un intervalle de temps <span class="math">\(t\)</span>
-, <span class="math">\(N(t)\)</span>
-, est une variable aléatoire
-de type Poisson et de paramètre <span class="math">\(\lambda t\)</span>
- :</p>
+d'intensité <span class="math">\(\lambda\)</span>, c'est-à-dire que le nombre de clients qui arrivent
+dans un intervalle de temps <span class="math">\(t\)</span>, <span class="math">\(N(t)\)</span>, est une variable aléatoire
+de type Poisson et de paramètre <span class="math">\(\lambda t\)</span> :</p>
 <div class="math">
 \begin{equation*}
 P\{N(t) = k\} = \frac{(\lambda t)^k e^{-\lambda t}}{k!}.
 \end{equation*}
 </div>
 <p>Pour un processus de Poisson, il est bien connu que le temps entre les arrivées
-suit une distribution exponentielle de paramètre <span class="math">\(\lambda\)</span>
-.  Il n'y a
+suit une distribution exponentielle de paramètre <span class="math">\(\lambda\)</span>.  Il n'y a
 qu'un serveur et le temps pour qu'un client soit servi est distribué selon une
-loi exponentielle de paramètre <span class="math">\(\mu\)</span>
-.</p>
+loi exponentielle de paramètre <span class="math">\(\mu\)</span>.</p>
 <p>L'<strong>intensité du trafic</strong> est défini comme étant le rapport entre le temps de
 service moyen et le temps moyen entre deux arrivées.  Puisque l'espérance d'une
 variable aléatoire exponentielle est l'inverse de son paramètre, on a que le
-temps de service, <span class="math">\(T_s \sim \mathrm{Exp}(\mu)\)</span>
-, a</p>
+temps de service, <span class="math">\(T_s \sim \mathrm{Exp}(\mu)\)</span>, a</p>
 <div class="math">
 \begin{equation*}
 E[T_s] = \frac{1}{\mu}
 \end{equation*}
 </div>
 <p>et l'espérance du temps entre deux arrivées,
-<span class="math">\(T_a \sim \mathrm{Exp}(\lambda)\)</span>
-, est</p>
+<span class="math">\(T_a \sim \mathrm{Exp}(\lambda)\)</span>, est</p>
 <div class="math">
 \begin{equation*}
 E[T_a] = \frac{1}{\lambda}.
@@ -159,14 +143,10 @@ service est markovien.  Le <em>1</em> correspond au fait qu'il n'y a qu'un serve
 Il existe de nombreuses autres queues : M/M/c, M/D/c, G/G/1, etc.</p>
 </div>
 <div class="section" id="generateur-ou-matrice-q">
-<h2><a class="toc-backref" href="#id2">Générateur ou matrice <span class="math">\(Q\)</span>
-</a></h2>
+<h2><a class="toc-backref" href="#id2">Générateur ou matrice <span class="math">\(Q\)</span></a></h2>
 <p>La longueur de la queue M/M/1 est une chaîne de Markov à temps continu sur les
-états <span class="math">\(0, 1, 2, \ldots\)</span>
-  Le générateur de cette chaîne est une matrice
-infinie <span class="math">\(\boldsymbol{\mathrm{G}}\)</span>
- dont les éléments <span class="math">\(g_{ij}\)</span>
- sont
+états <span class="math">\(0, 1, 2, \ldots\)</span>  Le générateur de cette chaîne est une matrice
+infinie <span class="math">\(\boldsymbol{\mathrm{G}}\)</span> dont les éléments <span class="math">\(g_{ij}\)</span> sont
 définis par</p>
 <div class="math">
 \begin{align*}
@@ -174,22 +154,16 @@ g_{ij}h &amp;= P\{X(t + h) = j \, | \, X(t) = i \} &amp; \text{si } j \ne i \\
 1 + g_{ii}h &amp;= P\{X(t + h) = i \, | \, X(t) = i \}
 \end{align*}
 </div>
-<p>dans la limite où <span class="math">\(h\)</span>
- est très proche de 0.
+<p>dans la limite où <span class="math">\(h\)</span> est très proche de 0.
 Il est important de noter que le générateur est indépendant du temps parce que
 la chaîne est <strong>homogène</strong>, une propriété qui découle de la propriété <strong>sans
 mémoire</strong> du processus de Poisson.</p>
 <div class="section" id="transition-de-plus-d-une-unite-dans-la-longueur-de-la-queue">
 <h3><a class="toc-backref" href="#id3">Transition de plus d'une unité dans la longueur de la queue</a></h3>
-<p>Premier constat important : <span class="math">\(g_{ij} = 0\)</span>
- si <span class="math">\(i\)</span>
- et <span class="math">\(j\)</span>
-
+<p>Premier constat important : <span class="math">\(g_{ij} = 0\)</span> si <span class="math">\(i\)</span> et <span class="math">\(j\)</span>
 diffèrent de plus d'une unité.  Pourquoi ?  C'est une conséquence de la
 définition du processus de Poisson : la probabilité qu'il y ait plus d'une
-arrivée (ou départ) dans un temps <span class="math">\(h\)</span>
- doit être <span class="math">\(o(h)\)</span>
-,
+arrivée (ou départ) dans un temps <span class="math">\(h\)</span> doit être <span class="math">\(o(h)\)</span>,
 c'est-à-dire que</p>
 <div class="math">
 \begin{equation*}
@@ -197,25 +171,20 @@ c'est-à-dire que</p>
 \end{equation*}
 </div>
 <p>or, d'après la définition donnée plus haut, la probabilité au numérateur est
-exactement égale à <span class="math">\(g_{ij}h\)</span>
-. Par conséquent,</p>
+exactement égale à <span class="math">\(g_{ij}h\)</span>. Par conséquent,</p>
 <div class="math">
 \begin{align*}
 \lim_{h \rightarrow 0} \frac{g_{ij}h}{h} &amp;= 0 \\
 \lim_{h \rightarrow 0} g_{ij} &amp;= 0
 \end{align*}
 </div>
-<p>ce qui implique que <span class="math">\(g_{ij}\)</span>
- doit être égal à 0.  Le générateur est donc
+<p>ce qui implique que <span class="math">\(g_{ij}\)</span> doit être égal à 0.  Le générateur est donc
 une matrice tridiagonale.</p>
 </div>
 <div class="section" id="transition-d-une-unite-dans-la-longueur-de-la-queue">
 <h3><a class="toc-backref" href="#id4">Transition d'une unité dans la longueur de la queue</a></h3>
-<p>La chaîne passe de l'état <span class="math">\(i\)</span>
- à l'état <span class="math">\(i + 1\)</span>
- s'il y a une arrivée
-et aucun départ dans l'intervalle <span class="math">\(h\)</span>
-.  Comme le temps entre les arrivées
+<p>La chaîne passe de l'état <span class="math">\(i\)</span> à l'état <span class="math">\(i + 1\)</span> s'il y a une arrivée
+et aucun départ dans l'intervalle <span class="math">\(h\)</span>.  Comme le temps entre les arrivées
 et le temps de service sont indépendants, on a</p>
 <div class="math">
 \begin{align*}
@@ -223,9 +192,7 @@ P\{X(t + h) = i + 1 \, | \, X(t) = i \} &amp;= P\{T_a &lt; h \cap T_s &gt; h\} \
 &amp;= P\{T_a &lt; h\} P\{T_s &gt; h\}.
 \end{align*}
 </div>
-<p>Pour une variable exponentielle <span class="math">\(Y\)</span>
- de paramètre <span class="math">\(\nu\)</span>
-</p>
+<p>Pour une variable exponentielle <span class="math">\(Y\)</span> de paramètre <span class="math">\(\nu\)</span></p>
 <div class="math">
 \begin{align*}
 P\{Y &lt; h\} &amp;= \int_0^h \nu e^{-\nu y} dy \\
@@ -238,8 +205,7 @@ P\{Y &lt; h\} &amp;= \int_0^h \nu e^{-\nu y} dy \\
 P\{X(t + h) = i + 1 \, | \, X(t) = i \} = (1 - e^{-\lambda h}) e^{-\mu h}.
 \end{equation*}
 </div>
-<p>Puisque <span class="math">\(h\)</span>
- est petit, on peut développer les exponentielles en série de
+<p>Puisque <span class="math">\(h\)</span> est petit, on peut développer les exponentielles en série de
 Maclaurin et ne garder que les deux premiers termes :</p>
 <div class="math">
 \begin{align*}
@@ -248,30 +214,22 @@ P\{X(t + h) = i + 1 \, | \, X(t) = i \} &amp;= (\lambda h + o(h)) (1 - \mu h + o
 &amp;= \lambda h + o(h).
 \end{align*}
 </div>
-<p>L'élément du générateur <span class="math">\(g_{i, i+1}\)</span>
- est donc simplement <span class="math">\(\lambda\)</span>
-.
+<p>L'élément du générateur <span class="math">\(g_{i, i+1}\)</span> est donc simplement <span class="math">\(\lambda\)</span>.
 En inversant le rôle du temps de service et du temps entre les arrivées, on
-obtient la probabilité de passer de l'état <span class="math">\(i\)</span>
- à l'état <span class="math">\(i - 1\)</span>
- et
-l'élément de matrice <span class="math">\(g_{i, i - 1}\)</span>
- qui est égal à <span class="math">\(\mu\)</span>
-.</p>
+obtient la probabilité de passer de l'état <span class="math">\(i\)</span> à l'état <span class="math">\(i - 1\)</span> et
+l'élément de matrice <span class="math">\(g_{i, i - 1}\)</span> qui est égal à <span class="math">\(\mu\)</span>.</p>
 </div>
 <div class="section" id="aucune-transition">
 <h3><a class="toc-backref" href="#id5">Aucune transition</a></h3>
 <p>Dans un intervalle de temps donné, trois choses peuvent se produire : une
 arrivée, un départ, ou rien du tout.  S'il ne se produit rien, la chaîne de
-Markov demeure à l'état <span class="math">\(i\)</span>
-.  La somme des probabilités doit être 1 donc</p>
+Markov demeure à l'état <span class="math">\(i\)</span>.  La somme des probabilités doit être 1 donc</p>
 <div class="math">
 \begin{equation*}
 P\{X(t + h) = i \, | \, X(t) = i \} = 1 - (\lambda + \mu) h + o(h)
 \end{equation*}
 </div>
-<p>et l'élément de matrice est <span class="math">\(g_{ii} = -(\lambda + \mu)\)</span>
-.</p>
+<p>et l'élément de matrice est <span class="math">\(g_{ii} = -(\lambda + \mu)\)</span>.</p>
 </div>
 <div class="section" id="apercu-du-generateur">
 <h3><a class="toc-backref" href="#id6">Aperçu du générateur</a></h3>
@@ -300,14 +258,9 @@ quel instant.  Il existe un résultat intéressant (et un peu étonnant) qui
 garantit que la chaîne va converger vers une distribution unique peu importe
 l'état initial.  Pour l'instant, supposons qu'une telle distribution existe, et
 nous verrons un peu plus tard sous quelles conditions cela est vrai.</p>
-<p>Si la chaîne est dans une distribution stationnaire <span class="math">\(\pi\)</span>
- (<span class="math">\(\pi\)</span>
-
-est un vecteur infini dont l'élément à la position <span class="math">\(i\)</span>
- indique la
-probabilité que la queue ait une longueur <span class="math">\(i\)</span>
-, <span class="math">\(i \geq 0\)</span>
-), à
+<p>Si la chaîne est dans une distribution stationnaire <span class="math">\(\pi\)</span> (<span class="math">\(\pi\)</span>
+est un vecteur infini dont l'élément à la position <span class="math">\(i\)</span> indique la
+probabilité que la queue ait une longueur <span class="math">\(i\)</span>, <span class="math">\(i \geq 0\)</span>), à
 n'importe quel instant ultérieur, elle est toujours dans la même distribution.
 Autrement dit, la probabilité de changer la distribution est nulle.  En langage
 matriciel, on peut traduire ce fait par</p>
@@ -349,8 +302,7 @@ distribution stationnaire :</p>
 \end{equation*}
 </div>
 <p>Nous sommes maintenant en mesure de déterminer sous quelle condition la
-distribution stationnaire existe.  Pour que <span class="math">\(\pi\)</span>
- soit une distribution
+distribution stationnaire existe.  Pour que <span class="math">\(\pi\)</span> soit une distribution
 de probabilité, il faut que la somme de tous ses éléments soit égale à 1 :</p>
 <div class="math">
 \begin{equation*}
@@ -358,14 +310,12 @@ de probabilité, il faut que la somme de tous ses éléments soit égale à 1 :<
 \end{equation*}
 </div>
 <p>Or, cette série est une série géométrique et une telle série ne converge que si
-son argument, ici <span class="math">\(\rho\)</span>
-, est inférieur (en valeur absolue) à 1.
+son argument, ici <span class="math">\(\rho\)</span>, est inférieur (en valeur absolue) à 1.
 Autrement dit, <strong>une distribution stationnaire n'existe que si l'intensité du
 traffic est inférieure à 1</strong>, ce qui confirme notre intuition du départ.</p>
 <p>Pour la suite, on suppose que l'intensité du trafic est inférieure à 1, et
 donc que la distribution stationnaire existe.  Pour la déterminer, on commence
-par obtenir <span class="math">\(\pi_0\)</span>
-, puis on obtient l'ensemble de la distribution grâce
+par obtenir <span class="math">\(\pi_0\)</span>, puis on obtient l'ensemble de la distribution grâce
 à la relation obtenue plus haut.  D'abord</p>
 <div class="math">
 \begin{equation*}
@@ -449,45 +399,34 @@ approximation qui peut être utile.  Cette approximation peut par la suite être
 raffinée en utilisant des simulations.</p>
 </div>
 
-    </div><!-- /.entry-content -->
+    </div>
+</article>
+        </section>
 
-  </article>
-</section>
-
-            <section id="extras" class="body">
-            </section><!-- /#extras -->
-
-            <footer id="contentinfo" class="text-center">
-            <div id="footer-quote" class="muted">
-                <em>Klaatu verata nicto</em>
-            </div>
-
-            <div class="social">
-                <ul class=inline>
-                    <li><a href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
-
-                    <li><a href="mailto:lsc@loicseguin.com"></a></li>
-                    <li><a href="http://twitter.com/lseguinc"></a></li>
-                    <li><a href="http://github.com/loicseguin"></a></li>
-                    <li><a href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
-                    <li><a href="http://www.flickr.com/photos/loicseguin"></a></li>
+        <footer id="mainfooter">
+            <div class="container">
+                <ul class="social-list plain">
+                    <li class="social-item"><a class="social-link" href="mailto:lsc@loicseguin.com"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://twitter.com/lseguinc"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://github.com/loicseguin"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://www.flickr.com/photos/loicseguin"></a></li>
                 </ul>
-            </div><!-- /.social -->
-            </footer><!-- /#contentinfo -->
+            </div>
+        </footer>
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-41506771-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-        </div>
-        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-        <!--<script src="http://loicseguin.com/theme/js/bootstrap.min.js"></script>-->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-41506771-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
     </body>
 </html>

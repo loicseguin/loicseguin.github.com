@@ -1,57 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Triangulations créatives</title>
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/main.css">
-        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Atom Feed" />
+          <title>Loïc Séguin-C.</title>
+        <meta charset="utf-8" />
+        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
+        <link href="http://loicseguin.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
 
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+
+
+    <meta name="tags" contents="maths" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya|Alegreya+SC' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/beseth-min-201411110054.css" type="text/css" />
     </head>
 
     <body>
-        <div class="container-narrow">
-            <header class="navbar">
-            <nav class="navbar-inner">
-            <div class="container-fluid">
-            <a class="brand" href="http://loicseguin.com/">Loïc Séguin-C. </a>
-            <ul class="nav pull-right">
-                <li><a href="http://loicseguin.com/pages/projets.html">Projets</a></li>
-                <li><a href="http://loicseguin.com/pages/publications.html">Publications</a></li>
-                <li><a href="http://loicseguin.com/pages/vita.html">Vita</a></li>
-            </ul>
+        <header id="banner">
+            <div class="container">
+                <h1 class="site-title"><a class="site-title" href="http://loicseguin.com/">Loïc Séguin-C. <strong></strong></a></h1>
+
+                <nav><ul class="nav-list plain">
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/projets.html">Projets</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/publications.html">Publications</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/vita.html">Vita</a>
+                    </li>
+                </ul></nav>
+                <hr class="headersep" />
             </div>
-            </nav>
-            </header><!-- /#banner -->
+        </header>
 
-<section id="content" class="body">
-  <article>
-    <header>
-    <div class="page-header">
-        <h1>
-            Triangulations créatives
-        </h1>
+        <section class="container maincontent">
+<article>
+    <h2 class="post-title">Triangulations créatives</h2>
+    
+
+    <div class="post-pubdate">
+        12 septembre 2008
     </div>
-    </header>
 
-    <div class="entry-content">
-<footer class="post-info">
-<small>
-    <em>
-        <p>
-    <span class="muted">
-        Publié le 12 septembre 2008
-    </span>
-<a href="http://loicseguin.com/tag/maths.html">maths</a>
-</p>
-    </em>
-</small>
-</footer><!-- /.post-info -->      <p>On peut représenter les objets tridimensionnels par des triangles collés
+    <div class="post-content">
+        <p>On peut représenter les objets tridimensionnels par des triangles collés
 les uns aux autres de telle sorte qu'ils épousent les formes de l'objet.
 On appelle une telle construction une triangulation. Une fois qu'on a
 obtenu une triangulation, on peut la raffiner en divisant les triangles
@@ -71,9 +64,9 @@ l'ordinateur : processeur, mémoire vive, espace de stockage sur disque
 dur, etc. Une méthode fréquemment utilisée consiste à trianguler la
 surface de l'objet, c'est-à-dire à recouvrir le mieux possible la
 surface de l'objet par des triangles, puis à raffiner cette
-triangulation initiale pour obtenir une meilleure représentation
-<img alt="image0" src="http://gts.sourceforge.net/gallery/heads.png" />
-des courbes de cette surface. On arrête de raffiner lorsque
+triangulation initiale pour obtenir une meilleure représentation</p>
+<p><img alt="image0" src="http://gts.sourceforge.net/gallery/heads.png" /></p>
+<p>des courbes de cette surface. On arrête de raffiner lorsque
 les calculs impliqués deviennent trop exigeant pour l'ordinateur.
 L'image ci-contre montre un exemple d'un objet tridimensionnel, une
 tête, et de trois triangulations de celle-ci. Les deux triangulations de
@@ -83,7 +76,8 @@ visage beaucoup mieux.</p>
 </div>
 <div class="section" id="raffinement-par-division-de-triangles">
 <h2>Raffinement par division de triangles</h2>
-<p><img alt="image1" src="http://1.bp.blogspot.com/_HyYHulp_e30/SMqSR_7xQxI/AAAAAAAABes/C4nix5PDPes/s320/divisetriangle.png" /> Une idée qu'on peut exploiter pour raffiner une
+<p><img alt="image1" src="http://1.bp.blogspot.com/_HyYHulp_e30/SMqSR_7xQxI/AAAAAAAABes/C4nix5PDPes/s320/divisetriangle.png" /></p>
+<p>Une idée qu'on peut exploiter pour raffiner une
 triangulation consiste à diviser chacun des triangles existants en
 plusieurs triangles. En choisissant un point à l'intérieur d'un triangle
 et en faisant passer des droites par ce point et par chacun des sommets,
@@ -114,8 +108,8 @@ de ces triangles, tout ce qui compte, ce sont les trois angles.
 En somme, à une homothétie près, tous les triangles sont spécifiés
 uniquement par leurs trois angles. La somme des angles d'un triangle est
 180° et chaque angle est compris entre 0° et 180° exclusivement. Si on
-nomme les angles <em>x</em>, <em>y</em> et <em>z</em>, on aura donc :
-<img alt="image2" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqTX2kOHAI/AAAAAAAABe0/HxV1VTHq9J4/s320/plantriangle.jpg" /></p>
+nomme les angles <em>x</em>, <em>y</em> et <em>z</em>, on aura donc :</p>
+<p><img alt="image2" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqTX2kOHAI/AAAAAAAABe0/HxV1VTHq9J4/s320/plantriangle.jpg" /></p>
 <ul class="simple">
 <li>0 &lt; <em>x</em> &lt; 180</li>
 <li>0 &lt; <em>y</em> &lt; 180</li>
@@ -146,11 +140,11 @@ points.</p>
 points à l'intérieur des triangles. On retrouve, dans l'ordre, la
 méthode de la bissectrice, la méthode du point de Gergonne et la méthode
 du point de Lemoine. (Ces images ont été obtenue grâce à la courtoisie
-de Steve Butler.)
-<img alt="image3" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqUjftUt_I/AAAAAAAABe8/nP0mYxG1li8/s400/Bisector_Histogram.jpg" />
+de Steve Butler.)</p>
+<p><img alt="image3" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqUjftUt_I/AAAAAAAABe8/nP0mYxG1li8/s400/Bisector_Histogram.jpg" />
 <img alt="image4" src="http://4.bp.blogspot.com/_HyYHulp_e30/SMqUjmEtpoI/AAAAAAAABfE/IUiNwlbNr3M/s400/Gergonne_Histogram.jpg" />
-<img alt="image5" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqUjgnQodI/AAAAAAAABfM/dQhH3Lb6le8/s400/Lemoine_Histogram.jpg" />
-En plus d'avoir une certaine qualité esthétique, ces images donnent de
+<img alt="image5" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqUjgnQodI/AAAAAAAABfM/dQhH3Lb6le8/s400/Lemoine_Histogram.jpg" /></p>
+<p>En plus d'avoir une certaine qualité esthétique, ces images donnent de
 l'information sur l'utilité des points intérieurs utilisés. On constate
 que pour la méthode de la bissectrice, le centre de <em>T</em> est assez sombre
 donc beaucoup de triangles presque équilatéraux sont produits ce qui est
@@ -180,8 +174,8 @@ mêmes divisions et les mêmes colorations, on obtient une carte de la
 disposition des triangles fils.
 Ci-dessous, dans l'ordre, T divisé en régions, la méthode du point de
 Gergonne, la méthode du point de Lemoine et la méthode de la médiane.
-(Images courtoisie de Steve Butler.)
-<img alt="image6" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqVYhFMJhI/AAAAAAAABfU/17EEA3nKt2w/s400/unmapped.jpg" />
+(Images courtoisie de Steve Butler.)</p>
+<p><img alt="image6" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqVYhFMJhI/AAAAAAAABfU/17EEA3nKt2w/s400/unmapped.jpg" />
 <img alt="image7" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqVYy73NMI/AAAAAAAABfc/CX8YHsSOxt4/s400/Gergonne_map.jpg" />
 <img alt="image8" src="http://1.bp.blogspot.com/_HyYHulp_e30/SMqVY5sxIjI/AAAAAAAABfk/d-bXSuNzzNc/s400/Lemoine_map.jpg" />
 <img alt="image9" src="http://4.bp.blogspot.com/_HyYHulp_e30/SMqVZN8LmVI/AAAAAAAABfs/TxG37nzgN7o/s400/median_map.jpg" /></p>
@@ -200,50 +194,36 @@ très belles sont apparues. Place à la créativité triangulaire !
 ses images et m'avoir permis de les utiliser sur ce site. Je remercie
 également <a class="reference external" href="http://www.math.ucsd.edu/%7Efan/ron/">Ron Graham</a> et <a class="reference external" href="http://www.math.ucsd.edu/%7Esbutler/">Steve Butler</a> pour m'avoir initié aux
 raffinements de triangulations lors de CCCG 2008.</p>
-<div class="figure align-center">
-<img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5005068235951720029?l=mathfou.blogspot.com" />
-</div>
 </div>
 
-    </div><!-- /.entry-content -->
+    </div>
+</article>
+        </section>
 
-  </article>
-</section>
-
-            <section id="extras" class="body">
-            </section><!-- /#extras -->
-
-            <footer id="contentinfo" class="text-center">
-            <div id="footer-quote" class="muted">
-                <em>Klaatu verata nicto</em>
-            </div>
-
-            <div class="social">
-                <ul class=inline>
-                    <li><a href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
-
-                    <li><a href="mailto:lsc@loicseguin.com"></a></li>
-                    <li><a href="http://twitter.com/lseguinc"></a></li>
-                    <li><a href="http://github.com/loicseguin"></a></li>
-                    <li><a href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
-                    <li><a href="http://www.flickr.com/photos/loicseguin"></a></li>
+        <footer id="mainfooter">
+            <div class="container">
+                <ul class="social-list plain">
+                    <li class="social-item"><a class="social-link" href="mailto:lsc@loicseguin.com"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://twitter.com/lseguinc"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://github.com/loicseguin"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://www.flickr.com/photos/loicseguin"></a></li>
                 </ul>
-            </div><!-- /.social -->
-            </footer><!-- /#contentinfo -->
+            </div>
+        </footer>
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-41506771-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-        </div>
-        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-        <!--<script src="http://loicseguin.com/theme/js/bootstrap.min.js"></script>-->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-41506771-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
     </body>
 </html>

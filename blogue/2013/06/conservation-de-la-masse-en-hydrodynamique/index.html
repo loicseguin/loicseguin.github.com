@@ -1,57 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Conservation de la masse en hydrodynamique</title>
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/main.css">
-        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Atom Feed" />
+          <title>Loïc Séguin-C.</title>
+        <meta charset="utf-8" />
+        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
+        <link href="http://loicseguin.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
 
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+
+
+    <meta name="tags" contents="physique" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya|Alegreya+SC' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/beseth-min-201411110054.css" type="text/css" />
     </head>
 
     <body>
-        <div class="container-narrow">
-            <header class="navbar">
-            <nav class="navbar-inner">
-            <div class="container-fluid">
-            <a class="brand" href="http://loicseguin.com/">Loïc Séguin-C. </a>
-            <ul class="nav pull-right">
-                <li><a href="http://loicseguin.com/pages/projets.html">Projets</a></li>
-                <li><a href="http://loicseguin.com/pages/publications.html">Publications</a></li>
-                <li><a href="http://loicseguin.com/pages/vita.html">Vita</a></li>
-            </ul>
+        <header id="banner">
+            <div class="container">
+                <h1 class="site-title"><a class="site-title" href="http://loicseguin.com/">Loïc Séguin-C. <strong></strong></a></h1>
+
+                <nav><ul class="nav-list plain">
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/projets.html">Projets</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/publications.html">Publications</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="http://loicseguin.com/pages/vita.html">Vita</a>
+                    </li>
+                </ul></nav>
+                <hr class="headersep" />
             </div>
-            </nav>
-            </header><!-- /#banner -->
+        </header>
 
-<section id="content" class="body">
-  <article>
-    <header>
-    <div class="page-header">
-        <h1>
-            Conservation de la masse en hydrodynamique
-        </h1>
+        <section class="container maincontent">
+<article>
+    <h2 class="post-title">Conservation de la masse en hydrodynamique</h2>
+    
+
+    <div class="post-pubdate">
+        05 juin 2013
     </div>
-    </header>
 
-    <div class="entry-content">
-<footer class="post-info">
-<small>
-    <em>
-        <p>
-    <span class="muted">
-        Publié le 05 juin 2013
-    </span>
-<a href="http://loicseguin.com/tag/physique.html">physique</a>
-</p>
-    </em>
-</small>
-</footer><!-- /.post-info -->      <p>Le principe de conservation de la masse stipule que la masse totale d'un
+    <div class="post-content">
+        <p>Le principe de conservation de la masse stipule que la masse totale d'un
 système fermé est un invariant, c'est-à-dire qu'elle est constante dans le
 temps.  Si le système étudié est un fluide, ce principe mène à l'équation de
 conservation de la masse aussi connue sous le nom d'<em>équation de continuité</em> :</p>
@@ -73,50 +66,33 @@ chose</em> (une masse de fluide) soit entré ou sorti.</p>
 <em>eulérienne</em>, le fluide se déplace par rapport à un système de référence fixe.
 Les quantité physiques qui caractérisent le fluide sont des champs scalaires
 (comme pour la température) ou vectoriels (pour la vitesse) qui dépendent du
-temps et de la position dans l'espace <span class="math">\(\mathbf{r}\)</span>
-.  La seconde approche,
+temps et de la position dans l'espace <span class="math">\(\mathbf{r}\)</span>.  La seconde approche,
 <em>lagrangienne</em>, consiste à suivre le mouvement d'un élément de fluide. Cet
-élément est caractérisé par une position <span class="math">\(\mathbf{\xi}\)</span>
- qui dépend du
+élément est caractérisé par une position <span class="math">\(\mathbf{\xi}\)</span> qui dépend du
 temps. Dans ce billet, l'approche eulérienne est utilisée.</p>
 <p>La densité de masse du fluide varie dans le temps et dans l'espace :
-<span class="math">\(\rho = \rho(t, \mathbf{r})\)</span>
-.  Le champ de vitesse <span class="math">\(\mathbf{u}(t,
-\mathbf{r})\)</span>
- décrit la vitesse de l'élément de fluide qui se trouve à la
-position <span class="math">\(\mathbf{r}\)</span>
- au temps <span class="math">\(t\)</span>
-.</p>
-<p>L'espace est divisé en deux par une surface fermée <span class="math">\(S\)</span>
- qui englobe une
-région de volume <span class="math">\(V\)</span>
-.  À chaque élément de surface correspond un vecteur
-<span class="math">\(d\mathbf{a}\)</span>
- dont la longueur est l'aire de l'élément de surface, et la
+<span class="math">\(\rho = \rho(t, \mathbf{r})\)</span>.  Le champ de vitesse <span class="math">\(\mathbf{u}(t,
+\mathbf{r})\)</span> décrit la vitesse de l'élément de fluide qui se trouve à la
+position <span class="math">\(\mathbf{r}\)</span> au temps <span class="math">\(t\)</span>.</p>
+<p>L'espace est divisé en deux par une surface fermée <span class="math">\(S\)</span> qui englobe une
+région de volume <span class="math">\(V\)</span>.  À chaque élément de surface correspond un vecteur
+<span class="math">\(d\mathbf{a}\)</span> dont la longueur est l'aire de l'élément de surface, et la
 direction est perpendiculaire au plan tangent à la surface et vers l'extérieur.
 La figure ci-contre illustre ces différentes quantités.</p>
 <div class="figure">
 <img alt="Élément de surface" class="img-polaroid" src="http://loicseguin.com/images/surf-elem.png" />
-<p class="caption">Un élément de surface <span class="math">\(d\mathbf{a}\)</span>
- d'une surface fermée <span class="math">\(S\)</span>
-
-qui définit un volume <span class="math">\(V\)</span>
-.</p>
+<p class="caption">Un élément de surface <span class="math">\(d\mathbf{a}\)</span> d'une surface fermée <span class="math">\(S\)</span>
+qui définit un volume <span class="math">\(V\)</span>.</p>
 </div>
-<p>Si <span class="math">\(\mathbf{\hat{n}}\)</span>
- est un vecteur unitaire perpendiculaire à la
+<p>Si <span class="math">\(\mathbf{\hat{n}}\)</span> est un vecteur unitaire perpendiculaire à la
 surface et pointant vers l'extérieur, alors  <span class="math">\(d\mathbf{a} =
-\mathbf{\hat{n}} da\)</span>
- où <span class="math">\(da\)</span>
- est l'aire de l'élément de surface.
+\mathbf{\hat{n}} da\)</span> où <span class="math">\(da\)</span> est l'aire de l'élément de surface.
 Cette représentation sera utile pour la suite.</p>
 </div>
 <div class="section" id="changement-de-masse-dans-le-volume">
 <h2>Changement de masse dans le volume</h2>
-<p>La masse totale dans le volume <span class="math">\(V\)</span>
- est une quantité qui peut varier dans
-le temps : <span class="math">\(M = M(t)\)</span>
-.  Cette masse est obtenue en intégrant la densité
+<p>La masse totale dans le volume <span class="math">\(V\)</span> est une quantité qui peut varier dans
+le temps : <span class="math">\(M = M(t)\)</span>.  Cette masse est obtenue en intégrant la densité
 sur la totalité du volume :</p>
 <div class="math">
 \begin{equation*}
@@ -134,7 +110,6 @@ temps, il suffit de dériver cette équation par rapport au temps :</p>
 l'intégrale converge (ce qui est toujours le cas, sauf peut-être dans les trous
 noirs), il est possible d'inverser l'ordre de la dérivée et de l'intégrale du
 côté droit de l'égalité.  La masse de fluide contenue dans le volume <span class="math">\(V\)</span>
-
 varie donc selon</p>
 <div class="math">
 \begin{equation*}
@@ -142,8 +117,7 @@ varie donc selon</p>
 \end{equation*}
 </div>
 <p>La dérivée temporelle a été remplacée par une dérivée partielle parce que la
-densité, par opposition à la masse totale de fluide dans le volume <span class="math">\(V\)</span>
-,
+densité, par opposition à la masse totale de fluide dans le volume <span class="math">\(V\)</span>,
 dépend non seulement du temps, mais aussi de la position.</p>
 </div>
 <div class="section" id="masse-de-fluide-qui-traverse-la-surface">
@@ -159,33 +133,22 @@ traverse la surface.  L'angle entre le vecteur vitesse et la surface joue donc
 un rôle important : seule la composante de cette vitesse qui est
 perpendiculaire à l'élément de surface contribue au flux.  Par conséquent, la
 composante de la vitesse à considérer est <span class="math">\(\mathbf{u} \cdot
-\mathbf{\hat{n}}\)</span>
-.</p>
+\mathbf{\hat{n}}\)</span>.</p>
 <div class="figure">
 <img alt="Vitesse perpendiculaire" src="http://loicseguin.com/images/vitesse-perpendiculaire.png" />
 </div>
 <p>Au premier ordre, la vitesse du fluide est constante partout sur un élément de
-surface infinitésimal <span class="math">\(\mathbf{\hat{n}}da\)</span>
-. De plus, à une distance
+surface infinitésimal <span class="math">\(\mathbf{\hat{n}}da\)</span>. De plus, à une distance
 suffisamment petite de l'élément, la vitesse est approximativement constante.
-Dans un temps très court <span class="math">\(\Delta t\)</span>
-, seul le fluide situé dans un
-cylindre de section <span class="math">\(da\)</span>
- et de longueur <span class="math">\(\Delta t \mathbf{u} \cdot
-\mathbf{\hat{n}}\)</span>
- traverse l'élément de surface. Puisque <span class="math">\(da\)</span>
- et
-<span class="math">\(\Delta t\)</span>
- sont infinitésimaux, la densité de masse est constante dans ce
+Dans un temps très court <span class="math">\(\Delta t\)</span>, seul le fluide situé dans un
+cylindre de section <span class="math">\(da\)</span> et de longueur <span class="math">\(\Delta t \mathbf{u} \cdot
+\mathbf{\hat{n}}\)</span> traverse l'élément de surface. Puisque <span class="math">\(da\)</span> et
+<span class="math">\(\Delta t\)</span> sont infinitésimaux, la densité de masse est constante dans ce
 cylindre et la masse qui y est contenue est donc <span class="math">\(\rho \Delta t
-\mathbf{u} \cdot \mathbf{\hat{n}} da\)</span>
-. Cette masse traverse la surface en un
-temps <span class="math">\(\Delta t\)</span>
-, d'où un flux de masse de <span class="math">\(\rho \mathbf{u} \cdot
-\mathbf{\hat{n}} da\)</span>
- qui peut s'écrire de façon légèrement plus compacte comme
-<span class="math">\(\rho \mathbf{u} \cdot d\mathbf{a}\)</span>
-.</p>
+\mathbf{u} \cdot \mathbf{\hat{n}} da\)</span>. Cette masse traverse la surface en un
+temps <span class="math">\(\Delta t\)</span>, d'où un flux de masse de <span class="math">\(\rho \mathbf{u} \cdot
+\mathbf{\hat{n}} da\)</span> qui peut s'écrire de façon légèrement plus compacte comme
+<span class="math">\(\rho \mathbf{u} \cdot d\mathbf{a}\)</span>.</p>
 <div class="figure">
 <img alt="Cylindre de matière" src="http://loicseguin.com/images/cylindre-de-matiere.png" />
 </div>
@@ -197,8 +160,7 @@ travers chaque élément de surface :</p>
 \end{equation*}
 </div>
 <p>Il est important de noter que l'orientation de l'élément de surface
-<span class="math">\(d\mathbf{a}\)</span>
- vers l'extérieur fait en sorte que le flux ci-dessus est
+<span class="math">\(d\mathbf{a}\)</span> vers l'extérieur fait en sorte que le flux ci-dessus est
 interprété comme sortant de la surface s'il est positif et entrant dans la
 surface s'il est négatif.</p>
 </div>
@@ -206,8 +168,7 @@ surface s'il est négatif.</p>
 <h2>Équation de continuité</h2>
 <p>Par conservation de la masse, toute matière qui traverse la surface doit
 contribuer à faire augmenter ou diminuer la masse contenue dans le volume
-<span class="math">\(V\)</span>
-. Il faut donc que le changement de masse dans le temps soit
+<span class="math">\(V\)</span>. Il faut donc que le changement de masse dans le temps soit
 strictement égal au flux de masse à travers la surface. Avec la convention de
 signe adoptée plus haut, un flux sortant est positif et correspond à une
 diminution de la masse à l'intérieur de la surface et donc à une dérivée
@@ -224,8 +185,7 @@ utilisant le théorème de Gauss (ou de la divergence).</p>
 \int_V \frac{\partial}{\partial t} \rho(t, \mathbf{r}) dV = -\int_V \mathbf{\nabla} (\rho \mathbf{u}) dV.
 \end{equation*}
 </div>
-<p>Puisque cette égalité doit être valide pour n'importe quel volume <span class="math">\(V\)</span>
-, il
+<p>Puisque cette égalité doit être valide pour n'importe quel volume <span class="math">\(V\)</span>, il
 faut que les intégrands soient identiquement égaux, i.e. :</p>
 <div class="math">
 \begin{equation*}
@@ -240,50 +200,38 @@ considérations physiques simples.  Même si la dérivation présentée ici a é
 faite dans le contexte de l'hydrodynamique, il est intéressant de noter que le
 raisonnement est aussi valable dans un grand nombre d'autres contextes.  Par
 exemple, si la densité de masse est remplacé par une densité de charge, alors
-le produit <span class="math">\(\rho\mathbf{u}\)</span>
- devient une densité de courant et l'équation
+le produit <span class="math">\(\rho\mathbf{u}\)</span> devient une densité de courant et l'équation
 est l'équation de conservation de la charge en électrodynamique.</p>
 </div>
 
-    </div><!-- /.entry-content -->
+    </div>
+</article>
+        </section>
 
-  </article>
-</section>
-
-            <section id="extras" class="body">
-            </section><!-- /#extras -->
-
-            <footer id="contentinfo" class="text-center">
-            <div id="footer-quote" class="muted">
-                <em>Klaatu verata nicto</em>
-            </div>
-
-            <div class="social">
-                <ul class=inline>
-                    <li><a href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
-
-                    <li><a href="mailto:lsc@loicseguin.com"></a></li>
-                    <li><a href="http://twitter.com/lseguinc"></a></li>
-                    <li><a href="http://github.com/loicseguin"></a></li>
-                    <li><a href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
-                    <li><a href="http://www.flickr.com/photos/loicseguin"></a></li>
+        <footer id="mainfooter">
+            <div class="container">
+                <ul class="social-list plain">
+                    <li class="social-item"><a class="social-link" href="mailto:lsc@loicseguin.com"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://twitter.com/lseguinc"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://github.com/loicseguin"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://ca.linkedin.com/pub/loïc-séguin-charbonneau/42/a92/397/"></a></li>
+                    <li class="social-item"><a class="social-link" href="http://www.flickr.com/photos/loicseguin"></a></li>
                 </ul>
-            </div><!-- /.social -->
-            </footer><!-- /#contentinfo -->
+            </div>
+        </footer>
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-41506771-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-        </div>
-        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-        <!--<script src="http://loicseguin.com/theme/js/bootstrap.min.js"></script>-->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-41506771-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
     </body>
 </html>

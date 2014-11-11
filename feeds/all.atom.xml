@@ -3,8 +3,7 @@
 &lt;p class="topic-title first"&gt;Sommaire&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#la-queue-m-m-1-definitions" id="id1"&gt;La queue M/M/1 : définitions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#generateur-ou-matrice-q" id="id2"&gt;Générateur ou matrice &lt;span class="math"&gt;\(Q\)&lt;/span&gt;
-&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#generateur-ou-matrice-q" id="id2"&gt;Générateur ou matrice &lt;span class="math"&gt;\(Q\)&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#transition-de-plus-d-une-unite-dans-la-longueur-de-la-queue" id="id3"&gt;Transition de plus d'une unité dans la longueur de la queue&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#transition-d-une-unite-dans-la-longueur-de-la-queue" id="id4"&gt;Transition d'une unité dans la longueur de la queue&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#aucune-transition" id="id5"&gt;Aucune transition&lt;/a&gt;&lt;/li&gt;
@@ -43,37 +42,29 @@ service moyen et la longueur moyenne de la queue.&lt;/p&gt;
 &lt;div class="section" id="la-queue-m-m-1-definitions"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;La queue M/M/1 : définitions&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Dans une queue M/M/1, les clients arrivent selon un processus de Poisson
-d'intensité &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;
-, c'est-à-dire que le nombre de clients qui arrivent
-dans un intervalle de temps &lt;span class="math"&gt;\(t\)&lt;/span&gt;
-, &lt;span class="math"&gt;\(N(t)\)&lt;/span&gt;
-, est une variable aléatoire
-de type Poisson et de paramètre &lt;span class="math"&gt;\(\lambda t\)&lt;/span&gt;
- :&lt;/p&gt;
+d'intensité &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;, c'est-à-dire que le nombre de clients qui arrivent
+dans un intervalle de temps &lt;span class="math"&gt;\(t\)&lt;/span&gt;, &lt;span class="math"&gt;\(N(t)\)&lt;/span&gt;, est une variable aléatoire
+de type Poisson et de paramètre &lt;span class="math"&gt;\(\lambda t\)&lt;/span&gt; :&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
 P\{N(t) = k\} = \frac{(\lambda t)^k e^{-\lambda t}}{k!}.
 \end{equation*}
 &lt;/div&gt;
 &lt;p&gt;Pour un processus de Poisson, il est bien connu que le temps entre les arrivées
-suit une distribution exponentielle de paramètre &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;
-.  Il n'y a
+suit une distribution exponentielle de paramètre &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;.  Il n'y a
 qu'un serveur et le temps pour qu'un client soit servi est distribué selon une
-loi exponentielle de paramètre &lt;span class="math"&gt;\(\mu\)&lt;/span&gt;
-.&lt;/p&gt;
+loi exponentielle de paramètre &lt;span class="math"&gt;\(\mu\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;L'&lt;strong&gt;intensité du trafic&lt;/strong&gt; est défini comme étant le rapport entre le temps de
 service moyen et le temps moyen entre deux arrivées.  Puisque l'espérance d'une
 variable aléatoire exponentielle est l'inverse de son paramètre, on a que le
-temps de service, &lt;span class="math"&gt;\(T_s \sim \mathrm{Exp}(\mu)\)&lt;/span&gt;
-, a&lt;/p&gt;
+temps de service, &lt;span class="math"&gt;\(T_s \sim \mathrm{Exp}(\mu)\)&lt;/span&gt;, a&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
 E[T_s] = \frac{1}{\mu}
 \end{equation*}
 &lt;/div&gt;
 &lt;p&gt;et l'espérance du temps entre deux arrivées,
-&lt;span class="math"&gt;\(T_a \sim \mathrm{Exp}(\lambda)\)&lt;/span&gt;
-, est&lt;/p&gt;
+&lt;span class="math"&gt;\(T_a \sim \mathrm{Exp}(\lambda)\)&lt;/span&gt;, est&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
 E[T_a] = \frac{1}{\lambda}.
@@ -107,14 +98,10 @@ service est markovien.  Le &lt;em&gt;1&lt;/em&gt; correspond au fait qu'il n'y a
 Il existe de nombreuses autres queues : M/M/c, M/D/c, G/G/1, etc.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="generateur-ou-matrice-q"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Générateur ou matrice &lt;span class="math"&gt;\(Q\)&lt;/span&gt;
-&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Générateur ou matrice &lt;span class="math"&gt;\(Q\)&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;La longueur de la queue M/M/1 est une chaîne de Markov à temps continu sur les
-états &lt;span class="math"&gt;\(0, 1, 2, \ldots\)&lt;/span&gt;
-  Le générateur de cette chaîne est une matrice
-infinie &lt;span class="math"&gt;\(\boldsymbol{\mathrm{G}}\)&lt;/span&gt;
- dont les éléments &lt;span class="math"&gt;\(g_{ij}\)&lt;/span&gt;
- sont
+états &lt;span class="math"&gt;\(0, 1, 2, \ldots\)&lt;/span&gt;  Le générateur de cette chaîne est une matrice
+infinie &lt;span class="math"&gt;\(\boldsymbol{\mathrm{G}}\)&lt;/span&gt; dont les éléments &lt;span class="math"&gt;\(g_{ij}\)&lt;/span&gt; sont
 définis par&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
@@ -122,22 +109,16 @@ g_{ij}h &amp;amp;= P\{X(t + h) = j \, | \, X(t) = i \} &amp;amp; \text{si } j \n
 1 + g_{ii}h &amp;amp;= P\{X(t + h) = i \, | \, X(t) = i \}
 \end{align*}
 &lt;/div&gt;
-&lt;p&gt;dans la limite où &lt;span class="math"&gt;\(h\)&lt;/span&gt;
- est très proche de 0.
+&lt;p&gt;dans la limite où &lt;span class="math"&gt;\(h\)&lt;/span&gt; est très proche de 0.
 Il est important de noter que le générateur est indépendant du temps parce que
 la chaîne est &lt;strong&gt;homogène&lt;/strong&gt;, une propriété qui découle de la propriété &lt;strong&gt;sans
 mémoire&lt;/strong&gt; du processus de Poisson.&lt;/p&gt;
 &lt;div class="section" id="transition-de-plus-d-une-unite-dans-la-longueur-de-la-queue"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id3"&gt;Transition de plus d'une unité dans la longueur de la queue&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Premier constat important : &lt;span class="math"&gt;\(g_{ij} = 0\)&lt;/span&gt;
- si &lt;span class="math"&gt;\(i\)&lt;/span&gt;
- et &lt;span class="math"&gt;\(j\)&lt;/span&gt;
-
+&lt;p&gt;Premier constat important : &lt;span class="math"&gt;\(g_{ij} = 0\)&lt;/span&gt; si &lt;span class="math"&gt;\(i\)&lt;/span&gt; et &lt;span class="math"&gt;\(j\)&lt;/span&gt;
 diffèrent de plus d'une unité.  Pourquoi ?  C'est une conséquence de la
 définition du processus de Poisson : la probabilité qu'il y ait plus d'une
-arrivée (ou départ) dans un temps &lt;span class="math"&gt;\(h\)&lt;/span&gt;
- doit être &lt;span class="math"&gt;\(o(h)\)&lt;/span&gt;
-,
+arrivée (ou départ) dans un temps &lt;span class="math"&gt;\(h\)&lt;/span&gt; doit être &lt;span class="math"&gt;\(o(h)\)&lt;/span&gt;,
 c'est-à-dire que&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
@@ -145,25 +126,20 @@ c'est-à-dire que&lt;/p&gt;
 \end{equation*}
 &lt;/div&gt;
 &lt;p&gt;or, d'après la définition donnée plus haut, la probabilité au numérateur est
-exactement égale à &lt;span class="math"&gt;\(g_{ij}h\)&lt;/span&gt;
-. Par conséquent,&lt;/p&gt;
+exactement égale à &lt;span class="math"&gt;\(g_{ij}h\)&lt;/span&gt;. Par conséquent,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
 \lim_{h \rightarrow 0} \frac{g_{ij}h}{h} &amp;amp;= 0 \\
 \lim_{h \rightarrow 0} g_{ij} &amp;amp;= 0
 \end{align*}
 &lt;/div&gt;
-&lt;p&gt;ce qui implique que &lt;span class="math"&gt;\(g_{ij}\)&lt;/span&gt;
- doit être égal à 0.  Le générateur est donc
+&lt;p&gt;ce qui implique que &lt;span class="math"&gt;\(g_{ij}\)&lt;/span&gt; doit être égal à 0.  Le générateur est donc
 une matrice tridiagonale.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="transition-d-une-unite-dans-la-longueur-de-la-queue"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id4"&gt;Transition d'une unité dans la longueur de la queue&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;La chaîne passe de l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt;
- à l'état &lt;span class="math"&gt;\(i + 1\)&lt;/span&gt;
- s'il y a une arrivée
-et aucun départ dans l'intervalle &lt;span class="math"&gt;\(h\)&lt;/span&gt;
-.  Comme le temps entre les arrivées
+&lt;p&gt;La chaîne passe de l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt; à l'état &lt;span class="math"&gt;\(i + 1\)&lt;/span&gt; s'il y a une arrivée
+et aucun départ dans l'intervalle &lt;span class="math"&gt;\(h\)&lt;/span&gt;.  Comme le temps entre les arrivées
 et le temps de service sont indépendants, on a&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
@@ -171,9 +147,7 @@ P\{X(t + h) = i + 1 \, | \, X(t) = i \} &amp;amp;= P\{T_a &amp;lt; h \cap T_s &a
 &amp;amp;= P\{T_a &amp;lt; h\} P\{T_s &amp;gt; h\}.
 \end{align*}
 &lt;/div&gt;
-&lt;p&gt;Pour une variable exponentielle &lt;span class="math"&gt;\(Y\)&lt;/span&gt;
- de paramètre &lt;span class="math"&gt;\(\nu\)&lt;/span&gt;
-&lt;/p&gt;
+&lt;p&gt;Pour une variable exponentielle &lt;span class="math"&gt;\(Y\)&lt;/span&gt; de paramètre &lt;span class="math"&gt;\(\nu\)&lt;/span&gt;&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
 P\{Y &amp;lt; h\} &amp;amp;= \int_0^h \nu e^{-\nu y} dy \\
@@ -186,8 +160,7 @@ P\{Y &amp;lt; h\} &amp;amp;= \int_0^h \nu e^{-\nu y} dy \\
 P\{X(t + h) = i + 1 \, | \, X(t) = i \} = (1 - e^{-\lambda h}) e^{-\mu h}.
 \end{equation*}
 &lt;/div&gt;
-&lt;p&gt;Puisque &lt;span class="math"&gt;\(h\)&lt;/span&gt;
- est petit, on peut développer les exponentielles en série de
+&lt;p&gt;Puisque &lt;span class="math"&gt;\(h\)&lt;/span&gt; est petit, on peut développer les exponentielles en série de
 Maclaurin et ne garder que les deux premiers termes :&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
@@ -196,30 +169,22 @@ P\{X(t + h) = i + 1 \, | \, X(t) = i \} &amp;amp;= (\lambda h + o(h)) (1 - \mu h
 &amp;amp;= \lambda h + o(h).
 \end{align*}
 &lt;/div&gt;
-&lt;p&gt;L'élément du générateur &lt;span class="math"&gt;\(g_{i, i+1}\)&lt;/span&gt;
- est donc simplement &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;
-.
+&lt;p&gt;L'élément du générateur &lt;span class="math"&gt;\(g_{i, i+1}\)&lt;/span&gt; est donc simplement &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;.
 En inversant le rôle du temps de service et du temps entre les arrivées, on
-obtient la probabilité de passer de l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt;
- à l'état &lt;span class="math"&gt;\(i - 1\)&lt;/span&gt;
- et
-l'élément de matrice &lt;span class="math"&gt;\(g_{i, i - 1}\)&lt;/span&gt;
- qui est égal à &lt;span class="math"&gt;\(\mu\)&lt;/span&gt;
-.&lt;/p&gt;
+obtient la probabilité de passer de l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt; à l'état &lt;span class="math"&gt;\(i - 1\)&lt;/span&gt; et
+l'élément de matrice &lt;span class="math"&gt;\(g_{i, i - 1}\)&lt;/span&gt; qui est égal à &lt;span class="math"&gt;\(\mu\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="aucune-transition"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id5"&gt;Aucune transition&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Dans un intervalle de temps donné, trois choses peuvent se produire : une
 arrivée, un départ, ou rien du tout.  S'il ne se produit rien, la chaîne de
-Markov demeure à l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt;
-.  La somme des probabilités doit être 1 donc&lt;/p&gt;
+Markov demeure à l'état &lt;span class="math"&gt;\(i\)&lt;/span&gt;.  La somme des probabilités doit être 1 donc&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
 P\{X(t + h) = i \, | \, X(t) = i \} = 1 - (\lambda + \mu) h + o(h)
 \end{equation*}
 &lt;/div&gt;
-&lt;p&gt;et l'élément de matrice est &lt;span class="math"&gt;\(g_{ii} = -(\lambda + \mu)\)&lt;/span&gt;
-.&lt;/p&gt;
+&lt;p&gt;et l'élément de matrice est &lt;span class="math"&gt;\(g_{ii} = -(\lambda + \mu)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="apercu-du-generateur"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id6"&gt;Aperçu du générateur&lt;/a&gt;&lt;/h3&gt;
@@ -248,14 +213,9 @@ quel instant.  Il existe un résultat intéressant (et un peu étonnant) qui
 garantit que la chaîne va converger vers une distribution unique peu importe
 l'état initial.  Pour l'instant, supposons qu'une telle distribution existe, et
 nous verrons un peu plus tard sous quelles conditions cela est vrai.&lt;/p&gt;
-&lt;p&gt;Si la chaîne est dans une distribution stationnaire &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;
- (&lt;span class="math"&gt;\(\pi\)&lt;/span&gt;
-
-est un vecteur infini dont l'élément à la position &lt;span class="math"&gt;\(i\)&lt;/span&gt;
- indique la
-probabilité que la queue ait une longueur &lt;span class="math"&gt;\(i\)&lt;/span&gt;
-, &lt;span class="math"&gt;\(i \geq 0\)&lt;/span&gt;
-), à
+&lt;p&gt;Si la chaîne est dans une distribution stationnaire &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; (&lt;span class="math"&gt;\(\pi\)&lt;/span&gt;
+est un vecteur infini dont l'élément à la position &lt;span class="math"&gt;\(i\)&lt;/span&gt; indique la
+probabilité que la queue ait une longueur &lt;span class="math"&gt;\(i\)&lt;/span&gt;, &lt;span class="math"&gt;\(i \geq 0\)&lt;/span&gt;), à
 n'importe quel instant ultérieur, elle est toujours dans la même distribution.
 Autrement dit, la probabilité de changer la distribution est nulle.  En langage
 matriciel, on peut traduire ce fait par&lt;/p&gt;
@@ -297,8 +257,7 @@ distribution stationnaire :&lt;/p&gt;
 \end{equation*}
 &lt;/div&gt;
 &lt;p&gt;Nous sommes maintenant en mesure de déterminer sous quelle condition la
-distribution stationnaire existe.  Pour que &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;
- soit une distribution
+distribution stationnaire existe.  Pour que &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; soit une distribution
 de probabilité, il faut que la somme de tous ses éléments soit égale à 1 :&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
@@ -306,14 +265,12 @@ de probabilité, il faut que la somme de tous ses éléments soit égale à 1 :&
 \end{equation*}
 &lt;/div&gt;
 &lt;p&gt;Or, cette série est une série géométrique et une telle série ne converge que si
-son argument, ici &lt;span class="math"&gt;\(\rho\)&lt;/span&gt;
-, est inférieur (en valeur absolue) à 1.
+son argument, ici &lt;span class="math"&gt;\(\rho\)&lt;/span&gt;, est inférieur (en valeur absolue) à 1.
 Autrement dit, &lt;strong&gt;une distribution stationnaire n'existe que si l'intensité du
 traffic est inférieure à 1&lt;/strong&gt;, ce qui confirme notre intuition du départ.&lt;/p&gt;
 &lt;p&gt;Pour la suite, on suppose que l'intensité du trafic est inférieure à 1, et
 donc que la distribution stationnaire existe.  Pour la déterminer, on commence
-par obtenir &lt;span class="math"&gt;\(\pi_0\)&lt;/span&gt;
-, puis on obtient l'ensemble de la distribution grâce
+par obtenir &lt;span class="math"&gt;\(\pi_0\)&lt;/span&gt;, puis on obtient l'ensemble de la distribution grâce
 à la relation obtenue plus haut.  D'abord&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
@@ -522,11 +479,11 @@ sélection doit se faire selon les chaînes de caractères contenues dans ces
 lignes.  Avant de se lancer dans le nettoyage, il est plus sage de d'abord
 observer ce que nous avons entre les mains.  Les colonnes sont obtenues par
 la commande &lt;code&gt;names&lt;/code&gt; :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;names&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;## [1] &amp;quot;Ref_Date&amp;quot;   &amp;quot;GEO&amp;quot;        &amp;quot;MONTHBIRTH&amp;quot; &amp;quot;UNIT&amp;quot;       &amp;quot;Value&amp;quot;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;## [1] &amp;quot;Ref_Date&amp;quot;   &amp;quot;GEO&amp;quot;        &amp;quot;MONTHBIRTH&amp;quot; &amp;quot;UNIT&amp;quot;       &amp;quot;Value&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -536,18 +493,18 @@ lignes :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##   Ref_Date                                  GEO            MONTHBIRTH&lt;/span&gt;
-&lt;span class="c"&gt;## 1     1991 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;## 2     1992 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;## 3     1993 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;## 4     1994 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;## 5     1995 Canada, place of residence of mother Total, month of birth&lt;/span&gt;
-&lt;span class="c"&gt;##                    UNIT  Value&lt;/span&gt;
-&lt;span class="c"&gt;## 1 Number of live births 402533&lt;/span&gt;
-&lt;span class="c"&gt;## 2 Number of live births 398643&lt;/span&gt;
-&lt;span class="c"&gt;## 3 Number of live births 388394&lt;/span&gt;
-&lt;span class="c"&gt;## 4 Number of live births 385114&lt;/span&gt;
-&lt;span class="c"&gt;## 5 Number of live births 378016&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;##   Ref_Date                                  GEO            MONTHBIRTH
+## 1     1991 Canada, place of residence of mother Total, month of birth
+## 2     1992 Canada, place of residence of mother Total, month of birth
+## 3     1993 Canada, place of residence of mother Total, month of birth
+## 4     1994 Canada, place of residence of mother Total, month of birth
+## 5     1995 Canada, place of residence of mother Total, month of birth
+##                    UNIT  Value
+## 1 Number of live births 402533
+## 2 Number of live births 398643
+## 3 Number of live births 388394
+## 4 Number of live births 385114
+## 5 Number of live births 378016
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -556,48 +513,48 @@ mother&lt;/code&gt; et &lt;code&gt;Total, month of birth&lt;/code&gt; complique 
 &lt;code&gt;read.csv&lt;/code&gt; définit automatiquement des facteurs pour toutes les colonnes qui
 contiennent des chaînes de caractères, nous pouvons donc obtenir facilement la
 liste des niveaux de chaque colonne.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;levels&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##  [1] &amp;quot;Alberta, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [2] &amp;quot;British Columbia, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [3] &amp;quot;Canada, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [4] &amp;quot;Manitoba, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [5] &amp;quot;New Brunswick, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [6] &amp;quot;Newfoundland and Labrador, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [7] &amp;quot;Northwest Territories including Nunavut, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [8] &amp;quot;Northwest Territories, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [9] &amp;quot;Nova Scotia, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [10] &amp;quot;Nunavut, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [11] &amp;quot;Ontario, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [12] &amp;quot;Prince Edward Island, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [13] &amp;quot;Quebec, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [14] &amp;quot;Saskatchewan, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [15] &amp;quot;Unknown province or territory, place of residence of mother&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [16] &amp;quot;Yukon, place of residence of mother&amp;quot;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;##  [1] &amp;quot;Alberta, place of residence of mother&amp;quot;
+##  [2] &amp;quot;British Columbia, place of residence of mother&amp;quot;
+##  [3] &amp;quot;Canada, place of residence of mother&amp;quot;
+##  [4] &amp;quot;Manitoba, place of residence of mother&amp;quot;
+##  [5] &amp;quot;New Brunswick, place of residence of mother&amp;quot;
+##  [6] &amp;quot;Newfoundland and Labrador, place of residence of mother&amp;quot;
+##  [7] &amp;quot;Northwest Territories including Nunavut, place of residence of mother&amp;quot;
+##  [8] &amp;quot;Northwest Territories, place of residence of mother&amp;quot;
+##  [9] &amp;quot;Nova Scotia, place of residence of mother&amp;quot;
+## [10] &amp;quot;Nunavut, place of residence of mother&amp;quot;
+## [11] &amp;quot;Ontario, place of residence of mother&amp;quot;
+## [12] &amp;quot;Prince Edward Island, place of residence of mother&amp;quot;
+## [13] &amp;quot;Quebec, place of residence of mother&amp;quot;
+## [14] &amp;quot;Saskatchewan, place of residence of mother&amp;quot;
+## [15] &amp;quot;Unknown province or territory, place of residence of mother&amp;quot;
+## [16] &amp;quot;Yukon, place of residence of mother&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;levels&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##  [1] &amp;quot;Month of birth, April&amp;quot;     &amp;quot;Month of birth, August&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [3] &amp;quot;Month of birth, December&amp;quot;  &amp;quot;Month of birth, February&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [5] &amp;quot;Month of birth, January&amp;quot;   &amp;quot;Month of birth, July&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [7] &amp;quot;Month of birth, June&amp;quot;      &amp;quot;Month of birth, March&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;##  [9] &amp;quot;Month of birth, May&amp;quot;       &amp;quot;Month of birth, November&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [11] &amp;quot;Month of birth, October&amp;quot;   &amp;quot;Month of birth, September&amp;quot;&lt;/span&gt;
-&lt;span class="c"&gt;## [13] &amp;quot;Total, month of birth&amp;quot;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;##  [1] &amp;quot;Month of birth, April&amp;quot;     &amp;quot;Month of birth, August&amp;quot;
+##  [3] &amp;quot;Month of birth, December&amp;quot;  &amp;quot;Month of birth, February&amp;quot;
+##  [5] &amp;quot;Month of birth, January&amp;quot;   &amp;quot;Month of birth, July&amp;quot;
+##  [7] &amp;quot;Month of birth, June&amp;quot;      &amp;quot;Month of birth, March&amp;quot;
+##  [9] &amp;quot;Month of birth, May&amp;quot;       &amp;quot;Month of birth, November&amp;quot;
+## [11] &amp;quot;Month of birth, October&amp;quot;   &amp;quot;Month of birth, September&amp;quot;
+## [13] &amp;quot;Total, month of birth&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;levels&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;## [1] &amp;quot;Number of live births&amp;quot;     &amp;quot;Percentage of live births&amp;quot;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;## [1] &amp;quot;Number of live births&amp;quot;     &amp;quot;Percentage of live births&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -614,11 +571,11 @@ argument et une liste (ou un élément unique) comme second argument.  La
 fonction retourne une liste de valeurs booléennes qui indique si l'expression
 régulière a été trouvée à chacune des positions de la liste d'entrée.  Par
 exemple,&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bonjour&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;allo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bonjour&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;allo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;## [1]  TRUE FALSE&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;## [1]  TRUE FALSE
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -626,23 +583,23 @@ exemple,&lt;/p&gt;
 &lt;code&gt;GEO&lt;/code&gt; commence par &lt;code&gt;Canada&lt;/code&gt;, la colonne &lt;code&gt;UNIT&lt;/code&gt; commence par &lt;code&gt;Number&lt;/code&gt; et la
 colonne &lt;code&gt;MONTHBIRTH&lt;/code&gt; commence par &lt;code&gt;Month&lt;/code&gt;.  De plus, seules les colonnes
 d'intérêt sont retenues.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; rawdata&lt;span class="p"&gt;[&lt;/span&gt;grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
-                        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
-                        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
-                        c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Ref_Date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;MONTHBIRTH&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Value&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; rawdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
+                        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
+                        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
+                        &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Ref_Date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;MONTHBIRTH&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Value&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Le même résultat peut aussi être obtenu avec la commande &lt;code&gt;subset&lt;/code&gt; :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; subset&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;,&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; GEO&lt;span class="p"&gt;)&lt;/span&gt;
-                                &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; UNIT&lt;span class="p"&gt;)&lt;/span&gt;
-                                &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; grepl&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
-                       select &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;Ref_Date&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;,&lt;/span&gt; Value&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; GEO&lt;span class="p"&gt;)&lt;/span&gt;
+                                &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; UNIT&lt;span class="p"&gt;)&lt;/span&gt;
+                                &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
+                       select &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Ref_Date&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;,&lt;/span&gt; Value&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Ensuite, nous renommons chaque colonne avec un nom plus descriptif.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;names&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Births&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Births&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -653,19 +610,19 @@ pour cette tâche.  La fonction &lt;code&gt;gsub&lt;/code&gt; remplace toutes le
 expression régulière dans une liste.  Si l'expression à trouver contient des
 groupes (dénotés par des parenthèses), ces groupes peuvent être utilisés dans
 l'expression de remplacement avec &lt;code&gt;\\1&lt;/code&gt; à &lt;code&gt;\\9&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;levels&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; gsub&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Month of birth, ([a-zA-Z].)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\\1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                   levels&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;))&lt;/span&gt;
-head&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;gsub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Month of birth, ([a-zA-Z].)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\\1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                   &lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##    Year   Month Births&lt;/span&gt;
-&lt;span class="c"&gt;## 43 1991 January  32150&lt;/span&gt;
-&lt;span class="c"&gt;## 44 1992 January  31974&lt;/span&gt;
-&lt;span class="c"&gt;## 45 1993 January  30989&lt;/span&gt;
-&lt;span class="c"&gt;## 46 1994 January  30265&lt;/span&gt;
-&lt;span class="c"&gt;## 47 1995 January  29975&lt;/span&gt;
-&lt;span class="c"&gt;## 48 1996 January  29410&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;##    Year   Month Births
+## 43 1991 January  32150
+## 44 1992 January  31974
+## 45 1993 January  30989
+## 46 1994 January  30265
+## 47 1995 January  29975
+## 48 1996 January  29410
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -673,8 +630,8 @@ head&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;
 comment ordonner ces niveaux.  Par défaut, les niveaux décrits par des chaînes
 de caractères sont ordonnés alphabétiquement.  La commande suivante place les
 mois en ordre chronologique.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month &lt;span class="o"&gt;=&lt;/span&gt; factor&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;,&lt;/span&gt;
-    levels &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;January&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;February&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;March&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;April&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;May&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;June&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;factor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;,&lt;/span&gt;
+    levels &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;January&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;February&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;March&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;April&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;May&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;June&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s"&gt;&amp;quot;July&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;August&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;September&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;October&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;November&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;December&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -682,18 +639,18 @@ mois en ordre chronologique.&lt;/p&gt;
 &lt;p&gt;Ces données forment une série temporelle et R possède justement une classe pour
 ce type de données.  Pour l'utiliser, il faut d'abord réorganiser les lignes de
 &lt;code&gt;canada.births&lt;/code&gt; en ordre chronologique.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;[&lt;/span&gt;with&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;,&lt;/span&gt; order&lt;span class="p"&gt;(&lt;/span&gt;Year&lt;span class="p"&gt;,&lt;/span&gt; Month&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
-head&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;with&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Year&lt;span class="p"&gt;,&lt;/span&gt; Month&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##     Year    Month Births&lt;/span&gt;
-&lt;span class="c"&gt;## 43  1991  January  32150&lt;/span&gt;
-&lt;span class="c"&gt;## 85  1991 February  30259&lt;/span&gt;
-&lt;span class="c"&gt;## 127 1991    March  34782&lt;/span&gt;
-&lt;span class="c"&gt;## 169 1991    April  35314&lt;/span&gt;
-&lt;span class="c"&gt;## 211 1991      May  36272&lt;/span&gt;
-&lt;span class="c"&gt;## 253 1991     June  34275&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;##     Year    Month Births
+## 43  1991  January  32150
+## 85  1991 February  30259
+## 127 1991    March  34782
+## 169 1991    April  35314
+## 211 1991      May  36272
+## 253 1991     June  34275
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -710,48 +667,48 @@ le nombre total de naissances chaque année nous regroupons les éléments de la
 colonne &lt;code&gt;Births&lt;/code&gt; par &lt;code&gt;Year&lt;/code&gt; avec la fonction somme.  Chaque élément est ensuite
 répété 12 fois pour obtenir une liste de la même longueur que l'originale.  Il
 ne reste qu'à ajouter la colonne désirée.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;births_per_year &lt;span class="o"&gt;=&lt;/span&gt; aggregate&lt;span class="p"&gt;(&lt;/span&gt;Births &lt;span class="o"&gt;~&lt;/span&gt; Year&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;,&lt;/span&gt; FUN &lt;span class="o"&gt;=&lt;/span&gt; sum&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;births_per_year &lt;span class="o"&gt;=&lt;/span&gt; aggregate&lt;span class="p"&gt;(&lt;/span&gt;Births &lt;span class="o"&gt;~&lt;/span&gt; Year&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;,&lt;/span&gt; FUN &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 relbirths &lt;span class="o"&gt;=&lt;/span&gt; canada.births
-relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="o"&gt;/&lt;/span&gt;rep&lt;span class="p"&gt;(&lt;/span&gt;births_per_year&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt;
+relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kp"&gt;rep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;births_per_year&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt;
                                            each &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-head&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##     Year    Month Births RelBirths&lt;/span&gt;
-&lt;span class="c"&gt;## 43  1991  January  32150   0.07987&lt;/span&gt;
-&lt;span class="c"&gt;## 85  1991 February  30259   0.07517&lt;/span&gt;
-&lt;span class="c"&gt;## 127 1991    March  34782   0.08641&lt;/span&gt;
-&lt;span class="c"&gt;## 169 1991    April  35314   0.08773&lt;/span&gt;
-&lt;span class="c"&gt;## 211 1991      May  36272   0.09011&lt;/span&gt;
-&lt;span class="c"&gt;## 253 1991     June  34275   0.08515&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;##     Year    Month Births RelBirths
+## 43  1991  January  32150   0.07987
+## 85  1991 February  30259   0.07517
+## 127 1991    March  34782   0.08641
+## 169 1991    April  35314   0.08773
+## 211 1991      May  36272   0.09011
+## 253 1991     June  34275   0.08515
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;La deuxième façon de procéder est plus directe mais nécessite un paquetage
 additionnel, &lt;code&gt;data.table&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;library&lt;span class="p"&gt;(&lt;/span&gt;data.table&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;data.table&lt;span class="p"&gt;)&lt;/span&gt;
 birthstable &lt;span class="o"&gt;=&lt;/span&gt; data.table&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
-birthstable &lt;span class="o"&gt;=&lt;/span&gt; birthstable&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="sb"&gt;`:=`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; Births&lt;span class="o"&gt;/&lt;/span&gt;sum&lt;span class="p"&gt;(&lt;/span&gt;Births&lt;span class="p"&gt;)),&lt;/span&gt; by &lt;span class="o"&gt;=&lt;/span&gt; Year&lt;span class="p"&gt;]&lt;/span&gt;
-head&lt;span class="p"&gt;(&lt;/span&gt;birthstable&lt;span class="p"&gt;)&lt;/span&gt;
+birthstable &lt;span class="o"&gt;=&lt;/span&gt; birthstable&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="sb"&gt;`:=`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; Births&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kp"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Births&lt;span class="p"&gt;)),&lt;/span&gt; by &lt;span class="o"&gt;=&lt;/span&gt; Year&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;birthstable&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##    Year    Month Births RelBirths&lt;/span&gt;
-&lt;span class="c"&gt;## 1: 1991  January  32150   0.07987&lt;/span&gt;
-&lt;span class="c"&gt;## 2: 1991 February  30259   0.07517&lt;/span&gt;
-&lt;span class="c"&gt;## 3: 1991    March  34782   0.08641&lt;/span&gt;
-&lt;span class="c"&gt;## 4: 1991    April  35314   0.08773&lt;/span&gt;
-&lt;span class="c"&gt;## 5: 1991      May  36272   0.09011&lt;/span&gt;
-&lt;span class="c"&gt;## 6: 1991     June  34275   0.08515&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;##    Year    Month Births RelBirths
+## 1: 1991  January  32150   0.07987
+## 2: 1991 February  30259   0.07517
+## 3: 1991    March  34782   0.08641
+## 4: 1991    April  35314   0.08773
+## 5: 1991      May  36272   0.09011
+## 6: 1991     June  34275   0.08515
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3 id="creation-de-series-temporelles"&gt;Création de séries temporelles&lt;/h3&gt;
 &lt;p&gt;Nous créons deux séries temporelles : une avec le nombre de naissances et
 l'autre avec les fréquences relatives.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;births.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-relbirths.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;births.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+relbirths.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
                   frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -796,23 +753,23 @@ annuelles disparaît et il ne reste que les variations saisonnières.&lt;/p&gt;
 graphique de série temporelle qui a l'air de celui ci-haut, je pense tout de
 suite à une faire une analyse de Fourier.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirth&lt;span class="p"&gt;)&lt;/span&gt;
-nft &lt;span class="o"&gt;=&lt;/span&gt; length&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
-ft &lt;span class="o"&gt;=&lt;/span&gt; Mod&lt;span class="p"&gt;(&lt;/span&gt;c&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
-freqs &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;seq&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
-          seq&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-fftdata &lt;span class="o"&gt;=&lt;/span&gt; data.frame&lt;span class="p"&gt;(&lt;/span&gt;freqs&lt;span class="p"&gt;,&lt;/span&gt; ft&lt;span class="p"&gt;)&lt;/span&gt;
+nft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
+ft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;Mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
+freqs &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+          &lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+fftdata &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;data.frame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;freqs&lt;span class="p"&gt;,&lt;/span&gt; ft&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Voyons à quoi ressemble ce signal dans l'espace des fréquences.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;fftdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt; t &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; pch &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; cex &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
      xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Frequence (1/mois)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Amplitude&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;which.max&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
+freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="kp"&gt;which.max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
 abline&lt;span class="p"&gt;(&lt;/span&gt;v &lt;span class="o"&gt;=&lt;/span&gt; freqmax&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.63&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; paste&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Frequence:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; signif&lt;span class="p"&gt;(&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/ mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; paste&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Periode&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; signif&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.63&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Frequence:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;signif&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/ mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+     adj &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Periode&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;signif&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+     adj &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -825,28 +782,28 @@ paramètres (3 au lieu de 4), il est approprié de soustraire la moyenne à la
 fréquence relative de sorte que le signal soit centré en 0.  Comme unité de
 temps, nous utiliserons le mois.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;y &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;
-x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;length&lt;span class="p"&gt;(&lt;/span&gt;y&lt;span class="p"&gt;)&lt;/span&gt;
-sine_fit &lt;span class="o"&gt;=&lt;/span&gt; nls&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; A &lt;span class="o"&gt;*&lt;/span&gt; sin&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; pi &lt;span class="o"&gt;*&lt;/span&gt; f &lt;span class="o"&gt;*&lt;/span&gt; x &lt;span class="o"&gt;+&lt;/span&gt; k&lt;span class="p"&gt;),&lt;/span&gt;
-               start &lt;span class="o"&gt;=&lt;/span&gt; list&lt;span class="p"&gt;(&lt;/span&gt;A &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.05&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; f &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; k &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-summary&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;)&lt;/span&gt;
+x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;y&lt;span class="p"&gt;)&lt;/span&gt;
+sine_fit &lt;span class="o"&gt;=&lt;/span&gt; nls&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; A &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="kp"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="kc"&gt;pi&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; f &lt;span class="o"&gt;*&lt;/span&gt; x &lt;span class="o"&gt;+&lt;/span&gt; k&lt;span class="p"&gt;),&lt;/span&gt;
+               start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;A &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.05&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; f &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; k &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="kp"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;##&lt;/span&gt;
-&lt;span class="c"&gt;## Formula: y ~ A * sin(2 * pi * f * x + k)&lt;/span&gt;
-&lt;span class="c"&gt;##&lt;/span&gt;
-&lt;span class="c"&gt;## Parameters:&lt;/span&gt;
-&lt;span class="c"&gt;##    Estimate Std. Error t value Pr(&amp;gt;|t|)&lt;/span&gt;
-&lt;span class="c"&gt;## A -5.51e-03   2.19e-04   -25.1   &amp;lt;2e-16 ***&lt;/span&gt;
-&lt;span class="c"&gt;## f  8.26e-02   8.57e-05   963.3   &amp;lt;2e-16 ***&lt;/span&gt;
-&lt;span class="c"&gt;## k  1.93e+00   7.87e-02    24.6   &amp;lt;2e-16 ***&lt;/span&gt;
-&lt;span class="c"&gt;## ---&lt;/span&gt;
-&lt;span class="c"&gt;## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1&lt;/span&gt;
-&lt;span class="c"&gt;##&lt;/span&gt;
-&lt;span class="c"&gt;## Residual standard error: 0.00245 on 249 degrees of freedom&lt;/span&gt;
-&lt;span class="c"&gt;##&lt;/span&gt;
-&lt;span class="c"&gt;## Number of iterations to convergence: 9&lt;/span&gt;
-&lt;span class="c"&gt;## Achieved convergence tolerance: 8.41e-07&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;##
+## Formula: y ~ A * sin(2 * pi * f * x + k)
+##
+## Parameters:
+##    Estimate Std. Error t value Pr(&amp;gt;|t|)
+## A -5.51e-03   2.19e-04   -25.1   &amp;lt;2e-16 ***
+## f  8.26e-02   8.57e-05   963.3   &amp;lt;2e-16 ***
+## k  1.93e+00   7.87e-02    24.6   &amp;lt;2e-16 ***
+## ---
+## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
+##
+## Residual standard error: 0.00245 on 249 degrees of freedom
+##
+## Number of iterations to convergence: 9
+## Achieved convergence tolerance: 8.41e-07
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -869,19 +826,19 @@ les intéressés, cette procédure est exactement la même que la méthode de
 pulsation des étoiles (voir, par exemple,
 &lt;a href="http://iopscience.iop.org/0004-637X/530/1/441"&gt;Billéres &lt;em&gt;et al.&lt;/em&gt; (2000)&lt;/a&gt;).&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;residuals&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;))&lt;/span&gt;
-nft &lt;span class="o"&gt;=&lt;/span&gt; length&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
-ft &lt;span class="o"&gt;=&lt;/span&gt; Mod&lt;span class="p"&gt;(&lt;/span&gt;c&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
-freqs &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;seq&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
-          seq&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-fftdata &lt;span class="o"&gt;=&lt;/span&gt; data.frame&lt;span class="p"&gt;(&lt;/span&gt;freqs&lt;span class="p"&gt;,&lt;/span&gt; ft&lt;span class="p"&gt;)&lt;/span&gt;
+nft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
+ft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;Mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
+freqs &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+          &lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+fftdata &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;data.frame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;freqs&lt;span class="p"&gt;,&lt;/span&gt; ft&lt;span class="p"&gt;)&lt;/span&gt;
 plot&lt;span class="p"&gt;(&lt;/span&gt;fftdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt; t &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; pch &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; cex &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
      xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Frequence (1/mois)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Amplitude&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;which.max&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
+freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="kp"&gt;which.max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
 abline&lt;span class="p"&gt;(&lt;/span&gt;v &lt;span class="o"&gt;=&lt;/span&gt; freqmax&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; paste&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Frequence:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; signif&lt;span class="p"&gt;(&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/ mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; paste&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Periode&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; signif&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Frequence:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;signif&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/ mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+     adj &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Periode&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;signif&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+     adj &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -922,50 +879,33 @@ chose&lt;/em&gt; (une masse de fluide) soit entré ou sorti.&lt;/p&gt;
 &lt;em&gt;eulérienne&lt;/em&gt;, le fluide se déplace par rapport à un système de référence fixe.
 Les quantité physiques qui caractérisent le fluide sont des champs scalaires
 (comme pour la température) ou vectoriels (pour la vitesse) qui dépendent du
-temps et de la position dans l'espace &lt;span class="math"&gt;\(\mathbf{r}\)&lt;/span&gt;
-.  La seconde approche,
+temps et de la position dans l'espace &lt;span class="math"&gt;\(\mathbf{r}\)&lt;/span&gt;.  La seconde approche,
 &lt;em&gt;lagrangienne&lt;/em&gt;, consiste à suivre le mouvement d'un élément de fluide. Cet
-élément est caractérisé par une position &lt;span class="math"&gt;\(\mathbf{\xi}\)&lt;/span&gt;
- qui dépend du
+élément est caractérisé par une position &lt;span class="math"&gt;\(\mathbf{\xi}\)&lt;/span&gt; qui dépend du
 temps. Dans ce billet, l'approche eulérienne est utilisée.&lt;/p&gt;
 &lt;p&gt;La densité de masse du fluide varie dans le temps et dans l'espace :
-&lt;span class="math"&gt;\(\rho = \rho(t, \mathbf{r})\)&lt;/span&gt;
-.  Le champ de vitesse &lt;span class="math"&gt;\(\mathbf{u}(t,
-\mathbf{r})\)&lt;/span&gt;
- décrit la vitesse de l'élément de fluide qui se trouve à la
-position &lt;span class="math"&gt;\(\mathbf{r}\)&lt;/span&gt;
- au temps &lt;span class="math"&gt;\(t\)&lt;/span&gt;
-.&lt;/p&gt;
-&lt;p&gt;L'espace est divisé en deux par une surface fermée &lt;span class="math"&gt;\(S\)&lt;/span&gt;
- qui englobe une
-région de volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
-.  À chaque élément de surface correspond un vecteur
-&lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt;
- dont la longueur est l'aire de l'élément de surface, et la
+&lt;span class="math"&gt;\(\rho = \rho(t, \mathbf{r})\)&lt;/span&gt;.  Le champ de vitesse &lt;span class="math"&gt;\(\mathbf{u}(t,
+\mathbf{r})\)&lt;/span&gt; décrit la vitesse de l'élément de fluide qui se trouve à la
+position &lt;span class="math"&gt;\(\mathbf{r}\)&lt;/span&gt; au temps &lt;span class="math"&gt;\(t\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;L'espace est divisé en deux par une surface fermée &lt;span class="math"&gt;\(S\)&lt;/span&gt; qui englobe une
+région de volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;.  À chaque élément de surface correspond un vecteur
+&lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt; dont la longueur est l'aire de l'élément de surface, et la
 direction est perpendiculaire au plan tangent à la surface et vers l'extérieur.
 La figure ci-contre illustre ces différentes quantités.&lt;/p&gt;
 &lt;div class="figure"&gt;
 &lt;img alt="Élément de surface" class="img-polaroid" src="http://loicseguin.com/images/surf-elem.png" /&gt;
-&lt;p class="caption"&gt;Un élément de surface &lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt;
- d'une surface fermée &lt;span class="math"&gt;\(S\)&lt;/span&gt;
-
-qui définit un volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
-.&lt;/p&gt;
+&lt;p class="caption"&gt;Un élément de surface &lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt; d'une surface fermée &lt;span class="math"&gt;\(S\)&lt;/span&gt;
+qui définit un volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;Si &lt;span class="math"&gt;\(\mathbf{\hat{n}}\)&lt;/span&gt;
- est un vecteur unitaire perpendiculaire à la
+&lt;p&gt;Si &lt;span class="math"&gt;\(\mathbf{\hat{n}}\)&lt;/span&gt; est un vecteur unitaire perpendiculaire à la
 surface et pointant vers l'extérieur, alors  &lt;span class="math"&gt;\(d\mathbf{a} =
-\mathbf{\hat{n}} da\)&lt;/span&gt;
- où &lt;span class="math"&gt;\(da\)&lt;/span&gt;
- est l'aire de l'élément de surface.
+\mathbf{\hat{n}} da\)&lt;/span&gt; où &lt;span class="math"&gt;\(da\)&lt;/span&gt; est l'aire de l'élément de surface.
 Cette représentation sera utile pour la suite.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="changement-de-masse-dans-le-volume"&gt;
 &lt;h2&gt;Changement de masse dans le volume&lt;/h2&gt;
-&lt;p&gt;La masse totale dans le volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
- est une quantité qui peut varier dans
-le temps : &lt;span class="math"&gt;\(M = M(t)\)&lt;/span&gt;
-.  Cette masse est obtenue en intégrant la densité
+&lt;p&gt;La masse totale dans le volume &lt;span class="math"&gt;\(V\)&lt;/span&gt; est une quantité qui peut varier dans
+le temps : &lt;span class="math"&gt;\(M = M(t)\)&lt;/span&gt;.  Cette masse est obtenue en intégrant la densité
 sur la totalité du volume :&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
@@ -983,7 +923,6 @@ temps, il suffit de dériver cette équation par rapport au temps :&lt;/p&gt;
 l'intégrale converge (ce qui est toujours le cas, sauf peut-être dans les trous
 noirs), il est possible d'inverser l'ordre de la dérivée et de l'intégrale du
 côté droit de l'égalité.  La masse de fluide contenue dans le volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
-
 varie donc selon&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
@@ -991,8 +930,7 @@ varie donc selon&lt;/p&gt;
 \end{equation*}
 &lt;/div&gt;
 &lt;p&gt;La dérivée temporelle a été remplacée par une dérivée partielle parce que la
-densité, par opposition à la masse totale de fluide dans le volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
-,
+densité, par opposition à la masse totale de fluide dans le volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;,
 dépend non seulement du temps, mais aussi de la position.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="masse-de-fluide-qui-traverse-la-surface"&gt;
@@ -1008,33 +946,22 @@ traverse la surface.  L'angle entre le vecteur vitesse et la surface joue donc
 un rôle important : seule la composante de cette vitesse qui est
 perpendiculaire à l'élément de surface contribue au flux.  Par conséquent, la
 composante de la vitesse à considérer est &lt;span class="math"&gt;\(\mathbf{u} \cdot
-\mathbf{\hat{n}}\)&lt;/span&gt;
-.&lt;/p&gt;
+\mathbf{\hat{n}}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;div class="figure"&gt;
 &lt;img alt="Vitesse perpendiculaire" src="http://loicseguin.com/images/vitesse-perpendiculaire.png" /&gt;
 &lt;/div&gt;
 &lt;p&gt;Au premier ordre, la vitesse du fluide est constante partout sur un élément de
-surface infinitésimal &lt;span class="math"&gt;\(\mathbf{\hat{n}}da\)&lt;/span&gt;
-. De plus, à une distance
+surface infinitésimal &lt;span class="math"&gt;\(\mathbf{\hat{n}}da\)&lt;/span&gt;. De plus, à une distance
 suffisamment petite de l'élément, la vitesse est approximativement constante.
-Dans un temps très court &lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;
-, seul le fluide situé dans un
-cylindre de section &lt;span class="math"&gt;\(da\)&lt;/span&gt;
- et de longueur &lt;span class="math"&gt;\(\Delta t \mathbf{u} \cdot
-\mathbf{\hat{n}}\)&lt;/span&gt;
- traverse l'élément de surface. Puisque &lt;span class="math"&gt;\(da\)&lt;/span&gt;
- et
-&lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;
- sont infinitésimaux, la densité de masse est constante dans ce
+Dans un temps très court &lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;, seul le fluide situé dans un
+cylindre de section &lt;span class="math"&gt;\(da\)&lt;/span&gt; et de longueur &lt;span class="math"&gt;\(\Delta t \mathbf{u} \cdot
+\mathbf{\hat{n}}\)&lt;/span&gt; traverse l'élément de surface. Puisque &lt;span class="math"&gt;\(da\)&lt;/span&gt; et
+&lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt; sont infinitésimaux, la densité de masse est constante dans ce
 cylindre et la masse qui y est contenue est donc &lt;span class="math"&gt;\(\rho \Delta t
-\mathbf{u} \cdot \mathbf{\hat{n}} da\)&lt;/span&gt;
-. Cette masse traverse la surface en un
-temps &lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;
-, d'où un flux de masse de &lt;span class="math"&gt;\(\rho \mathbf{u} \cdot
-\mathbf{\hat{n}} da\)&lt;/span&gt;
- qui peut s'écrire de façon légèrement plus compacte comme
-&lt;span class="math"&gt;\(\rho \mathbf{u} \cdot d\mathbf{a}\)&lt;/span&gt;
-.&lt;/p&gt;
+\mathbf{u} \cdot \mathbf{\hat{n}} da\)&lt;/span&gt;. Cette masse traverse la surface en un
+temps &lt;span class="math"&gt;\(\Delta t\)&lt;/span&gt;, d'où un flux de masse de &lt;span class="math"&gt;\(\rho \mathbf{u} \cdot
+\mathbf{\hat{n}} da\)&lt;/span&gt; qui peut s'écrire de façon légèrement plus compacte comme
+&lt;span class="math"&gt;\(\rho \mathbf{u} \cdot d\mathbf{a}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;div class="figure"&gt;
 &lt;img alt="Cylindre de matière" src="http://loicseguin.com/images/cylindre-de-matiere.png" /&gt;
 &lt;/div&gt;
@@ -1046,8 +973,7 @@ travers chaque élément de surface :&lt;/p&gt;
 \end{equation*}
 &lt;/div&gt;
 &lt;p&gt;Il est important de noter que l'orientation de l'élément de surface
-&lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt;
- vers l'extérieur fait en sorte que le flux ci-dessus est
+&lt;span class="math"&gt;\(d\mathbf{a}\)&lt;/span&gt; vers l'extérieur fait en sorte que le flux ci-dessus est
 interprété comme sortant de la surface s'il est positif et entrant dans la
 surface s'il est négatif.&lt;/p&gt;
 &lt;/div&gt;
@@ -1055,8 +981,7 @@ surface s'il est négatif.&lt;/p&gt;
 &lt;h2&gt;Équation de continuité&lt;/h2&gt;
 &lt;p&gt;Par conservation de la masse, toute matière qui traverse la surface doit
 contribuer à faire augmenter ou diminuer la masse contenue dans le volume
-&lt;span class="math"&gt;\(V\)&lt;/span&gt;
-. Il faut donc que le changement de masse dans le temps soit
+&lt;span class="math"&gt;\(V\)&lt;/span&gt;. Il faut donc que le changement de masse dans le temps soit
 strictement égal au flux de masse à travers la surface. Avec la convention de
 signe adoptée plus haut, un flux sortant est positif et correspond à une
 diminution de la masse à l'intérieur de la surface et donc à une dérivée
@@ -1073,8 +998,7 @@ utilisant le théorème de Gauss (ou de la divergence).&lt;/p&gt;
 \int_V \frac{\partial}{\partial t} \rho(t, \mathbf{r}) dV = -\int_V \mathbf{\nabla} (\rho \mathbf{u}) dV.
 \end{equation*}
 &lt;/div&gt;
-&lt;p&gt;Puisque cette égalité doit être valide pour n'importe quel volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;
-, il
+&lt;p&gt;Puisque cette égalité doit être valide pour n'importe quel volume &lt;span class="math"&gt;\(V\)&lt;/span&gt;, il
 faut que les intégrands soient identiquement égaux, i.e. :&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
@@ -1089,8 +1013,7 @@ considérations physiques simples.  Même si la dérivation présentée ici a é
 faite dans le contexte de l'hydrodynamique, il est intéressant de noter que le
 raisonnement est aussi valable dans un grand nombre d'autres contextes.  Par
 exemple, si la densité de masse est remplacé par une densité de charge, alors
-le produit &lt;span class="math"&gt;\(\rho\mathbf{u}\)&lt;/span&gt;
- devient une densité de courant et l'équation
+le produit &lt;span class="math"&gt;\(\rho\mathbf{u}\)&lt;/span&gt; devient une densité de courant et l'équation
 est l'équation de conservation de la charge en électrodynamique.&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="physique"></category></entry><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.com/blogue/2012/12/utilisation-de-biblatex/" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2012-12-21:blogue/2012/12/utilisation-de-biblatex/</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
@@ -1324,36 +1247,26 @@ lieu le jeudi après-midi de 13h à 17h.
 &lt;p&gt;Le résultat est le suivant :&lt;/p&gt;
 &lt;img alt="Exemple de plan de cours avec bibliographie" src="http://loicseguin.com/images/biblatex-pdc.png" /&gt;
 &lt;/div&gt;
-</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/12/bessel-functions-in-scipy/" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:blogue/2012/12/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt;
- where &lt;span class="math"&gt;\(l\)&lt;/span&gt;
- is an integer,
+</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/12/bessel-functions-in-scipy/" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:blogue/2012/12/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt; where &lt;span class="math"&gt;\(l\)&lt;/span&gt; is an integer,
 are found in &lt;tt class="docutils literal"&gt;scipy.special.jn&lt;/tt&gt;. This is a function that takes two arguments:
-the first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
- and the second one is the value of the
+the first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt; and the second one is the value of the
 point at which to evaluate the functions. If one is interested in &lt;span class="math"&gt;\(J_0\)&lt;/span&gt;
-
-or &lt;span class="math"&gt;\(J_1\)&lt;/span&gt;
- only, then there are faster implementations of these functions
+or &lt;span class="math"&gt;\(J_1\)&lt;/span&gt; only, then there are faster implementations of these functions
 as &lt;tt class="docutils literal"&gt;j0&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;j1&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;If the goal is to find the zeros of the Bessel function, then rather than using
 a root finding routine (such as &lt;tt class="docutils literal"&gt;scipy.optimize.newton&lt;/tt&gt;) it is more efficient
 to call &lt;tt class="docutils literal"&gt;scipy.special.jn_zeros&lt;/tt&gt;. This function also takes two arguments, the
-first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
- and the second one is the number of zeros
+first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt; and the second one is the number of zeros
 to display (it starts at the first positive zero).&lt;/p&gt;
 &lt;p&gt;For Bessel functions of half-integer order, so called &lt;em&gt;spherical Bessel
 function&lt;/em&gt;, the situation is a little bit more complicated. The appropriate
-function is &lt;tt class="docutils literal"&gt;scipy.special.sph_jn&lt;/tt&gt;. To compute &lt;span class="math"&gt;\(J_{l + 1/2}\)&lt;/span&gt;
-, the first
-argument to &lt;tt class="docutils literal"&gt;sph_jn&lt;/tt&gt; is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;
-. The second argument is the
+function is &lt;tt class="docutils literal"&gt;scipy.special.sph_jn&lt;/tt&gt;. To compute &lt;span class="math"&gt;\(J_{l + 1/2}\)&lt;/span&gt;, the first
+argument to &lt;tt class="docutils literal"&gt;sph_jn&lt;/tt&gt; is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt;. The second argument is the
 value of the point at which to evaluate the function. Where it gets complicated
 is in the return value of the function. &lt;tt class="docutils literal"&gt;sph_jn&lt;/tt&gt; returns a pair of arrays.
 The first array contains the values of the function, and the second array
-contains the values of the derivative.  Each array has length &lt;span class="math"&gt;\(l + 1\)&lt;/span&gt;
- and
-contains a value for all spherical Bessel functions with &lt;span class="math"&gt;\(l\)&lt;/span&gt;
- smaller than
+contains the values of the derivative.  Each array has length &lt;span class="math"&gt;\(l + 1\)&lt;/span&gt; and
+contains a value for all spherical Bessel functions with &lt;span class="math"&gt;\(l\)&lt;/span&gt; smaller than
 or equal to the supplied value.&lt;/p&gt;
 &lt;p&gt;It is useful to wrap this function into something friendlier:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -1559,220 +1472,7 @@ regarder MacVim se connecter à un serveur ftp pour y télécharger les
 fichiers nécessaires.
 Information trouvée dans les archives de comp.editors sur usenet
 (&lt;a class="reference external" href="http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html"&gt;http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html&lt;/a&gt;).&lt;/p&gt;
-</summary><category term="informatique"></category></entry><entry><title>64 bits Python installation on MacOS X Snow Leopard</title><link href="http://loicseguin.com/blogue/2010/06/64-bits-python-installation-on-macos-x-snow-leopard/" rel="alternate"></link><updated>2010-06-13T03:42:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-13:blogue/2010/06/64-bits-python-installation-on-macos-x-snow-leopard/</id><summary type="html">&lt;p&gt;Here is how I installed Python 2.6.5 on my machine. Here is what I get
-at the end:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Python 2.6.5 with both 32 bits and 64 bits executables&lt;/li&gt;
-&lt;li&gt;Virtual environments with virtualenv&lt;/li&gt;
-&lt;li&gt;64 bits NumPy, SciPy and Matplotlib&lt;/li&gt;
-&lt;li&gt;A bunch of other useful packages&lt;/li&gt;
-&lt;li&gt;The power of Python&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I based myself mostly on &lt;a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/"&gt;this post&lt;/a&gt; by Jesse Noller and &lt;a class="reference external" href="http://blog.hyperjeff.net/?p=160"&gt;this one&lt;/a&gt; by
-HyperJeff. Unfortunately, the instructions in these posts were not
-completely sufficient for me and I had to fiddle around a lot to get the
-complete setup I was looking for.&lt;/p&gt;
-&lt;div class="section" id="python"&gt;
-&lt;h2&gt;Python&lt;/h2&gt;
-&lt;p&gt;Download the latest Python source code and unpack it&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://www.python.org/ftp/python/2.6.5/Python-2.6.5.tar.bz2
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar jxvf Python-2.6.5.tar.bz2
-&lt;/pre&gt;
-&lt;p&gt;To build an installer for Snow Leopard, we need to tweak one line of the
-script.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;Python-2.6.5/Mac/BuildScript/
-&lt;span class="nv"&gt;$ &lt;/span&gt;mvim build-installer.py
-&lt;/pre&gt;
-&lt;p&gt;Here, I used MacVIM to edit the file. Use whatever editor you like. At
-line 78, replace&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="n"&gt;SDKPATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/Developer/SDKs/MacOSX10.4u.sdk&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;by&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="n"&gt;SDKPATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/Developer/SDKs/MacOSX10.6.sdk&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;And around line 139 replace&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;DEPTARGET&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;'10.5'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;by&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;DEPTARGET&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;'10.7'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Before running the script, I had to create the directory where
-third-party sources would be downloaded.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/Universal/other-sources
-&lt;/pre&gt;
-&lt;p&gt;All you have to do, is to run the script:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;./build-installer.py --dep-target&lt;span class="o"&gt;=&lt;/span&gt;10.6 --universal-archs&lt;span class="o"&gt;=&lt;/span&gt;intel
-&lt;/pre&gt;
-&lt;p&gt;This will build an installer for 64 bits Python 2.6.5 with support for
-readline. The disk image containing the installer is located in
-&lt;tt class="docutils literal"&gt;/tmp/_py/diskimage/&lt;/tt&gt;. Just mount the dmg file and install Python by
-double clicking on the pkg file.&lt;/p&gt;
-&lt;p&gt;By default, python is a symlink to the 32-bit version, and so is
-pythonw.  To change that, simply modify the symlinks in
-&lt;tt class="docutils literal"&gt;/Library/Frameworks/Python.framework/Versions/2.6/bin/&lt;/tt&gt; as follow:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /Library/Frameworks/Python.framework/Versions/2.6/bin/
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo rm python python2.6 pythonw pythonw2.6
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ln -s python2.6-64 python
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ln -s python2.6-64 python2.6
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ln -s pythonw2.6-64 pythonw
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ln -s pythonw2.6-64 pythonw2.6
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="virtualenv"&gt;
-&lt;h2&gt;Virtualenv&lt;/h2&gt;
-&lt;p&gt;This nice utility allows one to have many different python environment
-each of which is independent. You can then install a bunch of packages
-in an environment. If you need a fresh environment, you then just create
-a new virtualenv. You are free to switch from one virtualenv to another.&lt;/p&gt;
-&lt;p&gt;Start by installing easy_install and pip.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://peak.telecommunity.com/dist/ez_setup.py
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo python ez_setup.py
-&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://pypi.python.org/packages/source/p/pip/pip-0.7.2.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf pip-0.7.2.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;pip-0.7.2
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo python setup.py install
-&lt;/pre&gt;
-&lt;p&gt;Then, move on to install virtualenv and a wrapper script.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo pip install virtualenv
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo pip install virtualenvwrapper
-&lt;/pre&gt;
-&lt;p&gt;Create a directory for you virtual environments.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir -p ~/local/virtualenvs
-&lt;/pre&gt;
-&lt;p&gt;Add the following to your &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bash_profile&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local/virtualenvs
-&lt;span class="nb"&gt;source&lt;/span&gt; /Library/Frameworks/Python.framework/Versions/2.6/bin/virtualenvwrapper.sh
-workon default
-&lt;/pre&gt;
-&lt;p&gt;Source the &lt;tt class="docutils literal"&gt;.bash_profile&lt;/tt&gt; file.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;. ~/.bash_profile
-&lt;/pre&gt;
-&lt;p&gt;Finally, just create the default virtual environment.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv default
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="numpy-and-scipy"&gt;
-&lt;h2&gt;Numpy and SciPy&lt;/h2&gt;
-&lt;p&gt;These two are by far the most annoying (but also the most useful). They
-depend on a few libraries which are either required or enhance
-efficiency a lot.&lt;/p&gt;
-&lt;p&gt;Download and install gfortran.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://r.research.att.com/gfortran-4.2.3.dmg
-&lt;/pre&gt;
-&lt;p&gt;Download and install FFTW.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://www.fftw.org/fftw-3.2.2.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf fftw-3.2.2.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;fftw-3.2.2
-&lt;span class="nv"&gt;$ &lt;/span&gt;./configure &lt;span class="nv"&gt;CC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gcc -arch i386 -arch x86_64&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;CXX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;g++ -arch i386 -arch x86_64&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;CPP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gcc -E&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;CXXCPP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;g++ -E&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;make
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make install
-&lt;/pre&gt;
-&lt;p&gt;Download and install UMFPACK.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf http://www.cise.ufl.edu/research/sparse/umfpack/UMFPACK-5.5.0.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;curl -O http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf http://www.cise.ufl.edu/research/sparse/UFconfig/UFconfig-3.5.0.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf http://www.cise.ufl.edu/research/sparse/amd/AMD-2.2.1.tar.gz
-&lt;/pre&gt;
-&lt;p&gt;In the file &lt;tt class="docutils literal"&gt;UFconfig/UFconfig.mk&lt;/tt&gt;, uncommment lines 284 through 287 and
-add&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
--DNCHOLMOD to the UMFPACK_CONFIG variable on line 154.
-F77 = gfortran
-CFLAGS = -O3 -fno-common -no-cpp-precomp -fexceptions
-BLAS = -framework Accelerate
-LAPACK = -framework Accelerate
-&lt;/pre&gt;
-&lt;p&gt;The Makefile for UFconfig needs to be changed at line 28 in the install
-target. There is a mistake on the location of the library. The line
-should read&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$(CP) libufconfig.a $(INSTALL_LIB)/libufconfig.$(VERSION).a
-&lt;/pre&gt;
-&lt;p&gt;Then, build and install the various parts.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;UMFPACK
-&lt;span class="nv"&gt;$ &lt;/span&gt;make library
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make install
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ../AMD
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make install
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ../UFconfig
-&lt;span class="nv"&gt;$ &lt;/span&gt;make
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make install
-&lt;/pre&gt;
-&lt;p&gt;This will build UFMPACK, AMD and UFconfig and install the headers and
-libraries in &lt;tt class="docutils literal"&gt;/usr/local&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;Download NumPy from the SourceForge &lt;a class="reference external" href="http://sourceforge.net/projects/numpy/files/NumPy/1.4.1/numpy-1.4.1.tar.gz/download"&gt;download page&lt;/a&gt;
-and then install it.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf numpy-1.4.1.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;numpy-1.4.1
-&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py build
-&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py install
-&lt;/pre&gt;
-&lt;p&gt;Download SciPy from the &lt;a class="reference external" href="http://sourceforge.net/projects/scipy/files/scipy/0.8.0b1/scipy-0.8.0b1.tar.gz/download"&gt;scipy download page&lt;/a&gt; and then install it.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf scipy-0.8.0b1.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;scipy-0.8.0b1
-&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py build
-&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py install
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="matplotlib"&gt;
-&lt;h2&gt;Matplotlib&lt;/h2&gt;
-&lt;p&gt;Download from
-&lt;a class="reference external" href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download"&gt;http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-0.99.3/matplotlib-0.99.3.tar.gz/download&lt;/a&gt;
-and untar.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;tar zxvf matplotlib-0.99.3.tar.gz
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;matplotlib-0.99.3
-&lt;/pre&gt;
-&lt;p&gt;The file &lt;tt class="docutils literal"&gt;make.osx&lt;/tt&gt; is what is used now. However, as of this writing,
-using this file as is does not work. First, apply &lt;a class="reference external" href="http://sourceforge.net/tracker/download.php?group_id=80706&amp;amp;atid=560722&amp;amp;file_id=369204&amp;amp;aid=2981126"&gt;this patch&lt;/a&gt;
-and then change the zlib version in &lt;tt class="docutils literal"&gt;make.osx&lt;/tt&gt; to 1.2.5. Then, run&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ PREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/local/virtualenvs/default make -f make.osx fetch deps mpl_build mpl_install
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="other-useful-packages"&gt;
-&lt;h2&gt;Other useful packages&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;pip install mercurial
-&lt;span class="nv"&gt;$ &lt;/span&gt;pip install ipython
-&lt;span class="nv"&gt;$ &lt;/span&gt;pip install networkx
-&lt;span class="nv"&gt;$ &lt;/span&gt;pip install nose
-&lt;span class="nv"&gt;$ &lt;/span&gt;pip install sphinx
-&lt;span class="nv"&gt;$ &lt;/span&gt;pip install sympy
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="references"&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://matplotlib.sourceforge.net/users/installing.html"&gt;http://matplotlib.sourceforge.net/users/installing.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://blog.hyperjeff.net/?p=160"&gt;http://blog.hyperjeff.net/?p=160&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://docs.python.org/install/index.html"&gt;http://docs.python.org/install/index.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://cran.r-project.org/bin/macosx/tools/"&gt;http://cran.r-project.org/bin/macosx/tools/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html"&gt;http://mail.python.org/pipermail/pythonmac-sig/2009-May/021289.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/"&gt;http://jessenoller.com/2009/03/16/so-you-want-to-use-python-on-the-mac/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-</summary><category term="informatique"></category><category term="python"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
+</summary><category term="informatique"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
 données relatives à la consommation d'énergie et à l'émission de GES par
 les foyers canadiens pour la période de 1990 à 2007. Ces données sont
 rendues publiques par l'&lt;a class="reference external" href="http://oee.nrcan.gc.ca/"&gt;Office de l'efficacité énergétique&lt;/a&gt; de
@@ -1793,49 +1493,7 @@ navrant qu'on parle d'augmentation alors que les objectifs du protocole
 de Kyoto étaient de réduire les émissions de GES par rapport à celles de
 1990. Néanmoins, si l'on en croit ces données, la situation n'est pas si
 terrible au Canada.&lt;/p&gt;
-</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Spinify 2.2</title><link href="http://loicseguin.com/blogue/2010/03/spinify-22/" rel="alternate"></link><updated>2010-03-02T03:30:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-03-02:blogue/2010/03/spinify-22/</id><summary type="html">&lt;p&gt;Je viens tout juste de lancer la nouvelle version du logiciel de
-simulation numérique du modèle d'Ising Spinify. La version 2.2 comporte
-plusieurs corrections de bogues de même qu'une réécriture complète de
-l'interface en ligne de commande (CLI). Vous pouvez télécharger le
-programme sur bitbucket: &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/downloads/spinify-2.2.tar.gz"&gt;spinify-2.2.tar.gz&lt;/a&gt;.
-L'usager peut maintenant configurer tous les paramètres utilisés dans la
-simulation de même que dans la génération des graphes. Ces paramètres
-peuvent être spécifiés à la ligne de commande ou dans un fichier de
-configuration qui sera lu par le programme. Tous les détails sont
-disponibles dans la page de manuel de spinify(1).
-De plus, cette version introduit de nouvelles quantités mesurables lors
-de la simulation. L'usager peut maintenant choisir parmi l'énergie
-interne par site, la magnétisation et la susceptibilité magnétique.
-Autant d'outils pour analyser le comportement du modèle aux abords de la
-température critique (de même que pour trouver cette température
-critique).
-Enfin, j'utilise maintenant GNU Autotools pour compiler le logiciel. En
-théorie, Spinify devrait compiler sans problème sur n'importe quel
-système Unix ou Linux.
-Si vous utilisez ce logiciel et que vous avez des commentaires ou que
-vous avez des questions à son propos, n'hésitez pas à me contacter par
-l'entremise de la liste d'envoi &lt;a class="reference external" href="mailto:spinify-discuss&amp;#64;googlegroups.com"&gt;spinify-discuss&amp;#64;googlegroups.com&lt;/a&gt;.&lt;/p&gt;
-</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Spinify 2.1</title><link href="http://loicseguin.com/blogue/2010/02/spinify-21/" rel="alternate"></link><updated>2010-02-16T02:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-02-16:blogue/2010/02/spinify-21/</id><summary type="html">&lt;p&gt;La première version vraiment fonctionnelle du logiciel de simulation du
-modèle d'Ising en deux dimensions sur la sphère est maintenant
-disponible ici&amp;nbsp;: &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/downloads/spinify-2.1.tar.bz2"&gt;spinify-2.1.tar.bz2&lt;/a&gt;. Le programme s'installe sur Mac
-OS X et Ubuntu 9.10 (et probablement tous les autres Unix et Linux).
-Pour plus de détails concernant l'installation, voir le &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/wiki/Home"&gt;wiki&lt;/a&gt;.&lt;/p&gt;
-</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Spinify</title><link href="http://loicseguin.com/blogue/2010/01/spinify/" rel="alternate"></link><updated>2010-01-25T16:41:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-01-25:blogue/2010/01/spinify/</id><summary type="html">&lt;p&gt;Il y a quelques années, j'ai travaillé sur un projet qui consistait à
-développer un programme de simulation du modèle d'Ising sur des surfaces
-ayant un tenseur métrique non trivial. Ce projet n'a jamais été
-complété. Or, je m'y suis récemment remis, et j'avance à bon train.
-J'ai réécrit le code en C++ et j'ai implémenté un algorithme pour
-générer un réseau aléatoire sur la sphère. Actuellement, j'utilise
-&lt;a class="reference external" href="http://www.qhull.org/"&gt;Qhull&lt;/a&gt; pour essayer de trianguler le réseau ainsi obtenu, mais le code
-est mal écrit et le programme plante souvent. Je travaille régulièrement
-sur le projet, et si le coeur vous en dit, j'apprécierais avoir un peu
-d'aide. Le code source pour le programme est disponible sur bitbucket à
-l'adresse &lt;a class="reference external" href="http://bitbucket.org/loicseguin/spinify/"&gt;http://bitbucket.org/loicseguin/spinify/&lt;/a&gt;.
-Si ce qui précède est du pur charabia, ne vous en faites pas : avant
-longtemps, j'écrirai un message détaillant ce qu'est le modèle d'Ising,
-ce que j'entends par métrique non triviale et comment le programme
-Spinify essaie de gérer tout cela.&lt;/p&gt;
-</summary><category term="informatique"></category><category term="maths"></category><category term="physique"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/blogue/2009/04/protegeons-nous-avec-les-maths/" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:blogue/2009/04/protegeons-nous-avec-les-maths/</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
+</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/blogue/2009/04/protegeons-nous-avec-les-maths/" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:blogue/2009/04/protegeons-nous-avec-les-maths/</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
 &lt;blockquote&gt;
 It is insufficient to protect ourselves with laws; we need to
 protect ourselves with mathematics.&lt;/blockquote&gt;
@@ -1864,40 +1522,40 @@ Mis à jour le 12 mars 2009:&lt;/p&gt;
 # This script makes a backup of important files in
 # my home directory to two external hard drives,
 # Hercule and Astro, using rsync.
-&lt;/span&gt;&lt;span class="nv"&gt;OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-avuzC --delete --exclude-from=$HOME/.rsync/excludes&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class="nv"&gt;OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-avuzC --delete --exclude-from=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.rsync/excludes&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;FOLDERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Desktop Documents Music Movies Programmes Sites \
          Applescripts Pictures Jeux Library/Colorsync \
          Library/Thunderbird .rsync&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;FOLDER1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Library/Application Support&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;BACKUPDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Macbook backup&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;DOTFILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$BACKUPDIR/dotfiles&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;DOTFILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$BACKUPDIR&lt;/span&gt;&lt;span class="s2"&gt;/dotfiles&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;FILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;.emacs .vimrc .profile&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;VOLUMES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/Volumes/Astro /Volumes/Hercule&amp;quot;&lt;/span&gt;
 
-&lt;span class="k"&gt;for &lt;/span&gt;v in &lt;span class="nv"&gt;$VOLUMES&lt;/span&gt;; &lt;span class="k"&gt;do
-  if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
-    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
-      &lt;/span&gt;mkdir -p &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
-      &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/Library&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;fi
+&lt;span class="k"&gt;for&lt;/span&gt; v in &lt;span class="nv"&gt;$VOLUMES&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$BACKUPDIR&lt;/span&gt;&lt;span class="s2"&gt;/Library&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+      mkdir -p &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$BACKUPDIR&lt;/span&gt;&lt;span class="s2"&gt;/Library&amp;quot;&lt;/span&gt;
+      &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$BACKUPDIR&lt;/span&gt;&lt;span class="s2"&gt;/Library&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;fi&lt;/span&gt;
 
-    for &lt;/span&gt;d in &lt;span class="nv"&gt;$FOLDERS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FOLDER1&amp;quot;&lt;/span&gt;; &lt;span class="k"&gt;do
-      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$d/&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$BACKUPDIR/$d/&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;done
+    &lt;span class="k"&gt;for&lt;/span&gt; d in &lt;span class="nv"&gt;$FOLDERS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$FOLDER1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$d&lt;/span&gt;&lt;span class="s2"&gt;/&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$BACKUPDIR&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$d&lt;/span&gt;&lt;span class="s2"&gt;/&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;done&lt;/span&gt;
 
-    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
-      &lt;/span&gt;mkdir &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
-      &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;fi
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$DOTFILES&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+      mkdir &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$DOTFILES&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+      &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;created directory&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$DOTFILES&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;fi&lt;/span&gt;
 
-    for &lt;/span&gt;f in &lt;span class="nv"&gt;$FILES&lt;/span&gt;; &lt;span class="k"&gt;do
-      &lt;/span&gt;rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$HOME/$f&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v/$DOTFILES/$f&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;done
+    &lt;span class="k"&gt;for&lt;/span&gt; f in &lt;span class="nv"&gt;$FILES&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      rsync &lt;span class="nv"&gt;$OPTS&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$DOTFILES&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;done&lt;/span&gt;
 
-  else
-     &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ERROR:&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$v&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;not mounted&amp;quot;&lt;/span&gt;
-  &lt;span class="k"&gt;fi
-done&lt;/span&gt;
+  &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ERROR:&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;not mounted&amp;quot;&lt;/span&gt;
+  &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Et le fichier .rsync/excludes contient&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -1971,8 +1629,7 @@ Quelques liens intéressants :
 &lt;a class="reference external" href="http://darwin-year-2009.org/index.html"&gt;Darwin Year 2009&lt;/a&gt;
 &lt;a class="reference external" href="http://www.darwinday.org/index.html"&gt;Darwin Day Celebration&lt;/a&gt;
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Charles_Darwin"&gt;Charles Darwin sur Wikipedia (en)&lt;/a&gt;
-&lt;a class="reference external" href="http://darwin-online.org.uk/"&gt;The Complete Work of Charles Darwin Online&lt;/a&gt;
-&lt;img alt="image0" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5611916287854529107?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
+&lt;a class="reference external" href="http://darwin-online.org.uk/"&gt;The Complete Work of Charles Darwin Online&lt;/a&gt;&lt;/p&gt;
 </summary><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.com/blogue/2009/02/des-axiomes-mathematiques/" rel="alternate"></link><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-06:blogue/2009/02/des-axiomes-mathematiques/</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
 de Alan B. Wallace (tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782702128206"&gt;Science et Bouddhisme, à chacun sa
 réalité&lt;/a&gt;) :&lt;/p&gt;
@@ -2034,13 +1691,9 @@ empiriquement, puis expliquées théoriquement par les équations de
 Maxwell. D'abord, la loi de la réflexion, découverte environ 1000 ans
 après Jésus Christ par un arabe du nom d'Alhazen, stipule que lorsqu'un
 rayon de lumière atteint une surface, l'angle d'incidence &lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
-
-et l'angle de réflexion &lt;span class="math"&gt;\(\theta_r\)&lt;/span&gt;
- (mesurés par rapport à une droite
+et l'angle de réflexion &lt;span class="math"&gt;\(\theta_r\)&lt;/span&gt; (mesurés par rapport à une droite
 perpendiculaire à la surface, la normale) sont égaux:
-&lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
- = &lt;span class="math"&gt;\(\theta_r\)&lt;/span&gt;
-.&lt;/p&gt;
+&lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt; = &lt;span class="math"&gt;\(\theta_r\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_HyYHulp_e30/SR4adIhjfXI/AAAAAAAABmw/_CTRYJxATfQ/s400/reflexion.png" /&gt;&lt;/p&gt;
 &lt;p&gt;De plus, le rayon incident, le rayon réfléchi et la normale
 à la surface sont dans le même plan, qu'on appelle plan d'incidence. La
@@ -2071,13 +1724,9 @@ n_{\mathrm{eau}} &amp;amp;= 1,33
 &lt;/div&gt;
 &lt;p&gt;La loi de Snell-Descartes fait le lien entre les indices de réfraction
 et les angles d'incidence et de réfraction. Si un rayon de lumière passe
-du milieu 1 au milieu 2, d'indices de réfraction &lt;span class="math"&gt;\(n_1\)&lt;/span&gt;
- et
-&lt;span class="math"&gt;\(n_2\)&lt;/span&gt;
- respectivement, a un angle d'incidence &lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;
-,
-alors l'angle du rayon transmis &lt;span class="math"&gt;\(\theta_t\)&lt;/span&gt;
- respectera la relation :&lt;/p&gt;
+du milieu 1 au milieu 2, d'indices de réfraction &lt;span class="math"&gt;\(n_1\)&lt;/span&gt; et
+&lt;span class="math"&gt;\(n_2\)&lt;/span&gt; respectivement, a un angle d'incidence &lt;span class="math"&gt;\(\theta_i\)&lt;/span&gt;,
+alors l'angle du rayon transmis &lt;span class="math"&gt;\(\theta_t\)&lt;/span&gt; respectera la relation :&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
 n_1 \sin \theta_i = n_2 \sin \theta_t
@@ -2093,26 +1742,8 @@ rapprochera de la normale. S'il passe du milieu le plus réfringent au
 milieu le moins réfringent, il s'éloignera de la normale.
 La loi de Snell-Descartes est fondamentale pour comprendre le
 fonctionnement d'une partie cruciale d'un appareil photo : la lentille.
-Nous verrons dans le prochain article comment fonctionne une lentille.
-&lt;img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-8629460951480994628?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>La physique et les maths de la photo</title><link href="http://loicseguin.com/blogue/2008/11/la-physique-et-les-maths-de-la-photo/" rel="alternate"></link><updated>2008-11-13T22:42:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-13:blogue/2008/11/la-physique-et-les-maths-de-la-photo/</id><summary type="html">&lt;p&gt;Ceci est le premier d'une série d'article sur la physique et les
-mathématiques de la photographie. La photographie est une activité que
-beaucoup de gens pratiquent sans savoir à quel point l'appareil qu'ils
-ont entre les mains est une petite merveille de science et d'ingénierie.
-Étant moi-même un scientifique, ces articles couvriront davantage la
-science que le génie.&lt;/p&gt;
-&lt;p&gt;J'ai en tête des articles sur les aberrations optiques (chromatique,
-sphérique, etc.), le nombre-f, le lien entre l'ouverture du diaphragme
-et la profondeur de champ, la polarisation, et la compression JPEG.
-Probablement qu'en cours de route j'ajouterai d'autres sujets qui me
-passeront par la tête. S'il y a un aspect de la photographie qui vous
-intéresse particulièrement, laissez-moi un commentaire et je verrai ce
-que je peux faire.&lt;/p&gt;
-&lt;p&gt;Les deux premiers articles seront des introductions en douceur aux
-concepts de base d'optique géométrique et au fonctionnement d'un
-appareil photographique. J'ai choisi les titres inspirés &lt;em&gt;Optique 101&lt;/em&gt;
-et &lt;em&gt;Appareil Photographique 101&lt;/em&gt;.&lt;/p&gt;
-</summary><category term="maths"></category><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/blogue/2008/09/lantre-de-la-bete/" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:blogue/2008/09/lantre-de-la-bete/</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
+Nous verrons dans le prochain article comment fonctionne une lentille.&lt;/p&gt;
+</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/blogue/2008/09/lantre-de-la-bete/" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:blogue/2008/09/lantre-de-la-bete/</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
 travail. On constate la grande organisation qui règne sur mon bureau...&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqSchJBI/AAAAAAAABf0/4IUUibpNjvY/s400/IMG_1143.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Et voici les instruments essentiels à la tâche du mathématicien :&lt;/p&gt;
@@ -2164,9 +1795,9 @@ l'ordinateur : processeur, mémoire vive, espace de stockage sur disque
 dur, etc. Une méthode fréquemment utilisée consiste à trianguler la
 surface de l'objet, c'est-à-dire à recouvrir le mieux possible la
 surface de l'objet par des triangles, puis à raffiner cette
-triangulation initiale pour obtenir une meilleure représentation
-&lt;img alt="image0" src="http://gts.sourceforge.net/gallery/heads.png" /&gt;
-des courbes de cette surface. On arrête de raffiner lorsque
+triangulation initiale pour obtenir une meilleure représentation&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://gts.sourceforge.net/gallery/heads.png" /&gt;&lt;/p&gt;
+&lt;p&gt;des courbes de cette surface. On arrête de raffiner lorsque
 les calculs impliqués deviennent trop exigeant pour l'ordinateur.
 L'image ci-contre montre un exemple d'un objet tridimensionnel, une
 tête, et de trois triangulations de celle-ci. Les deux triangulations de
@@ -2176,7 +1807,8 @@ visage beaucoup mieux.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="raffinement-par-division-de-triangles"&gt;
 &lt;h2&gt;Raffinement par division de triangles&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_HyYHulp_e30/SMqSR_7xQxI/AAAAAAAABes/C4nix5PDPes/s320/divisetriangle.png" /&gt; Une idée qu'on peut exploiter pour raffiner une
+&lt;p&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_HyYHulp_e30/SMqSR_7xQxI/AAAAAAAABes/C4nix5PDPes/s320/divisetriangle.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Une idée qu'on peut exploiter pour raffiner une
 triangulation consiste à diviser chacun des triangles existants en
 plusieurs triangles. En choisissant un point à l'intérieur d'un triangle
 et en faisant passer des droites par ce point et par chacun des sommets,
@@ -2207,8 +1839,8 @@ de ces triangles, tout ce qui compte, ce sont les trois angles.
 En somme, à une homothétie près, tous les triangles sont spécifiés
 uniquement par leurs trois angles. La somme des angles d'un triangle est
 180° et chaque angle est compris entre 0° et 180° exclusivement. Si on
-nomme les angles &lt;em&gt;x&lt;/em&gt;, &lt;em&gt;y&lt;/em&gt; et &lt;em&gt;z&lt;/em&gt;, on aura donc :
-&lt;img alt="image2" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqTX2kOHAI/AAAAAAAABe0/HxV1VTHq9J4/s320/plantriangle.jpg" /&gt;&lt;/p&gt;
+nomme les angles &lt;em&gt;x&lt;/em&gt;, &lt;em&gt;y&lt;/em&gt; et &lt;em&gt;z&lt;/em&gt;, on aura donc :&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image2" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqTX2kOHAI/AAAAAAAABe0/HxV1VTHq9J4/s320/plantriangle.jpg" /&gt;&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;0 &amp;lt; &lt;em&gt;x&lt;/em&gt; &amp;lt; 180&lt;/li&gt;
 &lt;li&gt;0 &amp;lt; &lt;em&gt;y&lt;/em&gt; &amp;lt; 180&lt;/li&gt;
@@ -2239,11 +1871,11 @@ points.&lt;/p&gt;
 points à l'intérieur des triangles. On retrouve, dans l'ordre, la
 méthode de la bissectrice, la méthode du point de Gergonne et la méthode
 du point de Lemoine. (Ces images ont été obtenue grâce à la courtoisie
-de Steve Butler.)
-&lt;img alt="image3" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqUjftUt_I/AAAAAAAABe8/nP0mYxG1li8/s400/Bisector_Histogram.jpg" /&gt;
+de Steve Butler.)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image3" src="http://2.bp.blogspot.com/_HyYHulp_e30/SMqUjftUt_I/AAAAAAAABe8/nP0mYxG1li8/s400/Bisector_Histogram.jpg" /&gt;
 &lt;img alt="image4" src="http://4.bp.blogspot.com/_HyYHulp_e30/SMqUjmEtpoI/AAAAAAAABfE/IUiNwlbNr3M/s400/Gergonne_Histogram.jpg" /&gt;
-&lt;img alt="image5" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqUjgnQodI/AAAAAAAABfM/dQhH3Lb6le8/s400/Lemoine_Histogram.jpg" /&gt;
-En plus d'avoir une certaine qualité esthétique, ces images donnent de
+&lt;img alt="image5" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqUjgnQodI/AAAAAAAABfM/dQhH3Lb6le8/s400/Lemoine_Histogram.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;En plus d'avoir une certaine qualité esthétique, ces images donnent de
 l'information sur l'utilité des points intérieurs utilisés. On constate
 que pour la méthode de la bissectrice, le centre de &lt;em&gt;T&lt;/em&gt; est assez sombre
 donc beaucoup de triangles presque équilatéraux sont produits ce qui est
@@ -2273,8 +1905,8 @@ mêmes divisions et les mêmes colorations, on obtient une carte de la
 disposition des triangles fils.
 Ci-dessous, dans l'ordre, T divisé en régions, la méthode du point de
 Gergonne, la méthode du point de Lemoine et la méthode de la médiane.
-(Images courtoisie de Steve Butler.)
-&lt;img alt="image6" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqVYhFMJhI/AAAAAAAABfU/17EEA3nKt2w/s400/unmapped.jpg" /&gt;
+(Images courtoisie de Steve Butler.)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image6" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqVYhFMJhI/AAAAAAAABfU/17EEA3nKt2w/s400/unmapped.jpg" /&gt;
 &lt;img alt="image7" src="http://3.bp.blogspot.com/_HyYHulp_e30/SMqVYy73NMI/AAAAAAAABfc/CX8YHsSOxt4/s400/Gergonne_map.jpg" /&gt;
 &lt;img alt="image8" src="http://1.bp.blogspot.com/_HyYHulp_e30/SMqVY5sxIjI/AAAAAAAABfk/d-bXSuNzzNc/s400/Lemoine_map.jpg" /&gt;
 &lt;img alt="image9" src="http://4.bp.blogspot.com/_HyYHulp_e30/SMqVZN8LmVI/AAAAAAAABfs/TxG37nzgN7o/s400/median_map.jpg" /&gt;&lt;/p&gt;
@@ -2293,9 +1925,6 @@ très belles sont apparues. Place à la créativité triangulaire !
 ses images et m'avoir permis de les utiliser sur ce site. Je remercie
 également &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Efan/ron/"&gt;Ron Graham&lt;/a&gt; et &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Esbutler/"&gt;Steve Butler&lt;/a&gt; pour m'avoir initié aux
 raffinements de triangulations lors de CCCG 2008.&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
-&lt;img alt="" src="https://blogger.googleusercontent.com/tracker/697344570467959391-5005068235951720029?l=mathfou.blogspot.com" /&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </summary><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.com/blogue/2008/09/le-lhc-demarre/" rel="alternate"></link><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-10:blogue/2008/09/le-lhc-demarre/</id><summary type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
 sur la nature de l'univers. Le Large Hadron Collider (LHC, grand
@@ -2368,21 +1997,7 @@ prison. Il existe pourtant une solution à ce jeu qui est beaucoup plus
 avantageuse &amp;quot;socialement&amp;quot;. Si les deux innocentent leur collègue, ils ne
 purgeront qu'un an chacun. La collaboration, dans ce contexte, est une
 bien meilleure option que l'avarice.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>La complexité de l'enseignement</title><link href="http://loicseguin.com/blogue/2008/05/la-complexite-de-lenseignement/" rel="alternate"></link><updated>2008-05-14T17:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-14:blogue/2008/05/la-complexite-de-lenseignement/</id><summary type="html">&lt;p&gt;Concernant le problème TEACH défini ci-dessous, j'ai obtenu un résultat
-intéressant de complexité.&lt;/p&gt;
-&lt;p&gt;Problème : TEACH&lt;/p&gt;
-&lt;p&gt;Exemple : Un groupe d'étudiants E = {e_1, ..., e_n}, un sujet S et un
-cours C.&lt;/p&gt;
-&lt;p&gt;Question : Est-ce qu'au moins k étudiants vont passer le cours ?&lt;/p&gt;
-&lt;p&gt;Le problème est difficile.&lt;/p&gt;
-&lt;p&gt;Proposition : Le problème TEACH est NP-difficile.&lt;/p&gt;
-&lt;p&gt;Preuve : La preuve repose sur une réduction à partir du problème de
-couplage en 3 dimensions (3D-MATCHING). Détails à venir.
-Des inspirations transcendantales me font croire que le problème est
-aussi NP-complet, quoique je n'ai aucune idée de preuve pour appuyer ma
-conjecture. Toute contribution est la bienvenue.&lt;/p&gt;
-&lt;p&gt;Conjecture : Le problème TEACH est NP-complet.&lt;/p&gt;
-</summary><category term="maths"></category><category term="ineptie"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
+</summary><category term="maths"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
 entiers. Dans cet &lt;a class="reference external" href="http://www.theglobeandmail.com/servlet/story/RTGAM.20080510.wobama0510/BNStory/International/?page=rss&amp;amp;id=RTGAM.20080510.wobama0510"&gt;article&lt;/a&gt; du Globe and Mail du 10 mai, on peut lire
 cette charmante phrase :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2477,24 +2092,19 @@ liens vers des articles qui proposent des approches évolutives,
 neuronales, et autres. Je vous tiendrez au courant de mes lectures...&lt;/p&gt;
 </summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
 est appelé par certains un multigraphe). Un graphe G est simplement un ensemble
-de n points qu'on appelle des sommets &lt;span class="math"&gt;\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt;
- reliés
+de n points qu'on appelle des sommets &lt;span class="math"&gt;\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt; reliés
 par des arrêtes &lt;span class="math"&gt;\(A = \{(x_i x_j, 1), (x_i x_j, 2), (x_k x_l, 1), ..., (x_n
-x_m, 3)\}\)&lt;/span&gt;
-. On remarque que chaque arrête est spécifiée par deux points (les
+x_m, 3)\}\)&lt;/span&gt;. On remarque que chaque arrête est spécifiée par deux points (les
 points qui forment les extrémités de l'arrête) et un entier qui identifie
 uniquement l'arrête dans les cas où il y a plus d'une arrête entre deux même
 points. En somme, pour produire un graphe, il suffit de tracer des points sur
 une feuille et de les relier par autant de ligne qu'on veut.&lt;/p&gt;
 &lt;p&gt;Maintenant, on peut facilement s'imaginer que le graphe constitue un ensemble
 de routes entre différents villages. Alors, on peut marcher le long de ces
-routes pour aller d'un village &lt;span class="math"&gt;\(x_1\)&lt;/span&gt;
- à un village &lt;span class="math"&gt;\(x_{11}\)&lt;/span&gt;
-. On peut
+routes pour aller d'un village &lt;span class="math"&gt;\(x_1\)&lt;/span&gt; à un village &lt;span class="math"&gt;\(x_{11}\)&lt;/span&gt;. On peut
 spécifier le chemin qu'on a pris en donnant la liste des routes qu'on a suivit.
 Par exemple on peut décrire le chemin comme étant la suite d'arrêtes
-&lt;span class="math"&gt;\((x_1 x_4, 2), (x_4 x_8, 1), (x_8 x_5, 1), (x_5 x_11, 3)\)&lt;/span&gt;
-. Si on fait un
+&lt;span class="math"&gt;\((x_1 x_4, 2), (x_4 x_8, 1), (x_8 x_5, 1), (x_5 x_11, 3)\)&lt;/span&gt;. Si on fait un
 trajet qui nous ramène au village d'où nous étions partis, on dit que ce chemin
 est un tour. Un tour est eulérien (oui, vous avez deviné, en l'honneur de
 Euler) s'il passe par toutes les arrêtes une et une seule fois.&lt;/p&gt;
