@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/blogue.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2013-08-01T00:00:00-04:00</updated><entry><title>Queues M/M/1</title><link href="http://loicseguin.com/blogue/2013/08/queues-mm1/" rel="alternate"></link><updated>2013-08-01T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-08-01:blogue/2013/08/queues-mm1/</id><summary type="html">&lt;div class="contents topic" id="sommaire"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/blogue.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2013-08-01T00:00:00-04:00</updated><entry><title>Queues M/M/1</title><link href="http://loicseguin.com/blogue/2013/queues-mm1/" rel="alternate"></link><updated>2013-08-01T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-08-01:blogue/2013/queues-mm1/</id><summary type="html">&lt;div class="contents topic" id="sommaire"&gt;
 &lt;p class="topic-title first"&gt;Sommaire&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#la-queue-m-m-1-definitions" id="id1"&gt;La queue M/M/1 : définitions&lt;/a&gt;&lt;/li&gt;
@@ -353,7 +353,7 @@ sera peut-être pas suffisante pour atteindre la distribution stationnaire).&lt;
 approximation qui peut être utile.  Cette approximation peut par la suite être
 raffinée en utilisant des simulations.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="maths"></category></entry><entry><title>Extraction des données météorologiques d'Archives climatiques nationales du Canada</title><link href="http://loicseguin.com/blogue/2013/07/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/" rel="alternate"></link><updated>2013-07-04T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-07-04:blogue/2013/07/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/</id><summary type="html">&lt;p&gt;Il est assez facile de récupérer des données météorologiques historiques à
+</summary><category term="maths"></category></entry><entry><title>Extraction des données météorologiques d'Archives climatiques nationales du Canada</title><link href="http://loicseguin.com/blogue/2013/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/" rel="alternate"></link><updated>2013-07-04T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-07-04:blogue/2013/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/</id><summary type="html">&lt;p&gt;Il est assez facile de récupérer des données météorologiques historiques à
 partir du site web d'&lt;a class="reference external" href="http://climat.meteo.gc.ca/Welcome_f.html"&gt;Archives climatiques nationales du Canada&lt;/a&gt;.  Voici un
 petit guide pour y arriver en utilisant un script Python très simple.&lt;/p&gt;
 &lt;p&gt;Tout d'abord, il faut identifier la station qui vous intéresse.  Vous pouvez
@@ -424,7 +424,7 @@ moyenne en fonction du temps obtenu à partir du code suivant.&lt;/p&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 &lt;img alt="Température annuelle moyenne depuis 1942" src="http://loicseguin.com/images/meteo_1942-2013.png" /&gt;
-</summary><category term="programmation"></category><category term="données ouvertes"></category></entry><entry><title>Variations saisonnières des naissances au Canada</title><link href="http://loicseguin.com/blogue/2013/06/variations-saisonnieres-des-naissances-au-canada/" rel="alternate"></link><updated>2013-06-07T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-07:blogue/2013/06/variations-saisonnieres-des-naissances-au-canada/</id><summary type="html">&lt;div class="toc"&gt;
+</summary><category term="programmation"></category><category term="données ouvertes"></category></entry><entry><title>Variations saisonnières des naissances au Canada</title><link href="http://loicseguin.com/blogue/2013/variations-saisonnieres-des-naissances-au-canada/" rel="alternate"></link><updated>2013-06-07T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-07:blogue/2013/variations-saisonnieres-des-naissances-au-canada/</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#collecte-et-nettoyage"&gt;Collecte et nettoyage&lt;/a&gt;&lt;ul&gt;
@@ -857,7 +857,7 @@ uniforme estimera que l'espérance de son gain est \(-10.50\$ \times 1/12 + 1\$
 prédisez le mois de mai à chaque fois que vous jouez.  Grâce à l'analyse que
 nous venons de faire, nous savons que l'espérance de votre gain est \(10.50\$
 \times 0.088 - 1\$ \times 0.912 = 0.01\$\).  Si vous réussissez à convaincre
-suffisamment de personnes de jouer, vous deviendrez riche (ou presque).&lt;/p&gt;</summary><category term="programmation"></category><category term="statistique"></category></entry><entry><title>Conservation de la masse en hydrodynamique</title><link href="http://loicseguin.com/blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/" rel="alternate"></link><updated>2013-06-05T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-05:blogue/2013/06/conservation-de-la-masse-en-hydrodynamique/</id><summary type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
+suffisamment de personnes de jouer, vous deviendrez riche (ou presque).&lt;/p&gt;</summary><category term="programmation"></category><category term="statistique"></category></entry><entry><title>Conservation de la masse en hydrodynamique</title><link href="http://loicseguin.com/blogue/2013/conservation-de-la-masse-en-hydrodynamique/" rel="alternate"></link><updated>2013-06-05T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-05:blogue/2013/conservation-de-la-masse-en-hydrodynamique/</id><summary type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
 système fermé est un invariant, c'est-à-dire qu'elle est constante dans le
 temps.  Si le système étudié est un fluide, ce principe mène à l'équation de
 conservation de la masse aussi connue sous le nom d'&lt;em&gt;équation de continuité&lt;/em&gt; :&lt;/p&gt;
@@ -1016,7 +1016,7 @@ exemple, si la densité de masse est remplacé par une densité de charge, alors
 le produit &lt;span class="math"&gt;\(\rho\mathbf{u}\)&lt;/span&gt; devient une densité de courant et l'équation
 est l'équation de conservation de la charge en électrodynamique.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="physique"></category></entry><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.com/blogue/2012/12/utilisation-de-biblatex/" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2012-12-21:blogue/2012/12/utilisation-de-biblatex/</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
+</summary><category term="physique"></category></entry><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.com/blogue/2012/utilisation-de-biblatex/" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2012-12-21:blogue/2012/utilisation-de-biblatex/</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
 LaTeX. Combiné avec &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt;, il remplace complètement le système &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;.
 Il est aussi possible de conserver &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; comme engin d'arrière-plan, mais
 &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt; présente de nombreux avantages :&lt;/p&gt;
@@ -1247,7 +1247,7 @@ lieu le jeudi après-midi de 13h à 17h.
 &lt;p&gt;Le résultat est le suivant :&lt;/p&gt;
 &lt;img alt="Exemple de plan de cours avec bibliographie" src="http://loicseguin.com/images/biblatex-pdc.png" /&gt;
 &lt;/div&gt;
-</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/12/bessel-functions-in-scipy/" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:blogue/2012/12/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt; where &lt;span class="math"&gt;\(l\)&lt;/span&gt; is an integer,
+</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/bessel-functions-in-scipy/" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:blogue/2012/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt; where &lt;span class="math"&gt;\(l\)&lt;/span&gt; is an integer,
 are found in &lt;tt class="docutils literal"&gt;scipy.special.jn&lt;/tt&gt;. This is a function that takes two arguments:
 the first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt; and the second one is the value of the
 point at which to evaluate the functions. If one is interested in &lt;span class="math"&gt;\(J_0\)&lt;/span&gt;
@@ -1283,7 +1283,7 @@ finding procedure. For instance, &lt;tt class="docutils literal"&gt;scipy.optimi
 well.&lt;/p&gt;
 &lt;p&gt;John D. Cook has a &lt;a class="reference external" href="http://www.johndcook.com/Bessel_functions.html"&gt;great page&lt;/a&gt; about Bessel functions and &lt;a class="reference external" href="http://www.johndcook.com/Bessel_python.html"&gt;another one&lt;/a&gt;
 about how to work with the implementation in Scipy.&lt;/p&gt;
-</summary><category term="programmation"></category><category term="maths"></category></entry><entry><title>Moins de Google</title><link href="http://loicseguin.com/blogue/2012/05/moins-de-google/" rel="alternate"></link><updated>2012-05-13T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-05-13:blogue/2012/05/moins-de-google/</id><summary type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
+</summary><category term="programmation"></category><category term="maths"></category></entry><entry><title>Moins de Google</title><link href="http://loicseguin.com/blogue/2012/moins-de-google/" rel="alternate"></link><updated>2012-05-13T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-05-13:blogue/2012/moins-de-google/</id><summary type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
 d'utilisation et les politiques de confidentialité des divers services en ligne
 que j'utilise. Cet exercice est motivé par deux raisons : premièrement, je veux
 déterminer quels services utilisent mes données de façon responsable et
@@ -1458,7 +1458,7 @@ MathSciNet, Web of Science, etc.).&lt;/p&gt;
 me concerne, j'utilise surtout &lt;a class="reference external" href="http://arxiv.org/"&gt;arXiv.org&lt;/a&gt; et &lt;a class="reference external" href="http://www.adsabs.harvard.edu/"&gt;SOA/NASA ADS&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</summary><category term="informatique"></category></entry><entry><title>Dictionnaire français pour Vim</title><link href="http://loicseguin.com/blogue/2011/12/dictionnaire-francais-pour-vim/" rel="alternate"></link><updated>2011-12-22T23:45:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-12-22:blogue/2011/12/dictionnaire-francais-pour-vim/</id><summary type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
+</summary><category term="informatique"></category></entry><entry><title>Dictionnaire français pour Vim</title><link href="http://loicseguin.com/blogue/2011/dictionnaire-francais-pour-vim/" rel="alternate"></link><updated>2011-12-22T23:45:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-12-22:blogue/2011/dictionnaire-francais-pour-vim/</id><summary type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;puis on passe à l'erreur suivante avec &lt;tt class="docutils literal"&gt;]s&lt;/tt&gt;.&lt;/p&gt;
@@ -1472,7 +1472,7 @@ regarder MacVim se connecter à un serveur ftp pour y télécharger les
 fichiers nécessaires.
 Information trouvée dans les archives de comp.editors sur usenet
 (&lt;a class="reference external" href="http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html"&gt;http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html&lt;/a&gt;).&lt;/p&gt;
-</summary><category term="informatique"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:blogue/2010/06/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
+</summary><category term="informatique"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/blogue/2010/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:blogue/2010/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
 données relatives à la consommation d'énergie et à l'émission de GES par
 les foyers canadiens pour la période de 1990 à 2007. Ces données sont
 rendues publiques par l'&lt;a class="reference external" href="http://oee.nrcan.gc.ca/"&gt;Office de l'efficacité énergétique&lt;/a&gt; de
@@ -1493,12 +1493,12 @@ navrant qu'on parle d'augmentation alors que les objectifs du protocole
 de Kyoto étaient de réduire les émissions de GES par rapport à celles de
 1990. Néanmoins, si l'on en croit ces données, la situation n'est pas si
 terrible au Canada.&lt;/p&gt;
-</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/blogue/2009/04/protegeons-nous-avec-les-maths/" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:blogue/2009/04/protegeons-nous-avec-les-maths/</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
+</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/blogue/2009/protegeons-nous-avec-les-maths/" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:blogue/2009/protegeons-nous-avec-les-maths/</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
 &lt;blockquote&gt;
 It is insufficient to protect ourselves with laws; we need to
 protect ourselves with mathematics.&lt;/blockquote&gt;
 &lt;p&gt;Tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9780471117094"&gt;Applied Cryptography&lt;/a&gt; par Bruce Schneier.&lt;/p&gt;
-</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Copies de sauvegarde</title><link href="http://loicseguin.com/blogue/2009/03/copies-de-sauvegarde/" rel="alternate"></link><updated>2009-03-11T03:06:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-11:blogue/2009/03/copies-de-sauvegarde/</id><summary type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
+</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Copies de sauvegarde</title><link href="http://loicseguin.com/blogue/2009/copies-de-sauvegarde/" rel="alternate"></link><updated>2009-03-11T03:06:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-11:blogue/2009/copies-de-sauvegarde/</id><summary type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
 sauvegarde de mes documents importants : un shell script maison assez
 simple qui utilise le logiciel rsync (&lt;a class="reference external" href="http://samba.anu.edu.au/rsync/"&gt;informations sur ce site&lt;/a&gt;).
 rsync est un logiciel libre distribué sous licence GPL et disponible sur
@@ -1600,7 +1600,7 @@ première fois que le script fonctionne puisqu'il doit alors copier
 l'ensemble des fichiers).
 Prochaine étape : synchroniser mon Macbook et mon ordinateur de bureau
 roulant sous OpenBSD avec &lt;a class="reference external" href="http://www.cis.upenn.edu/%7Ebcpierce/unison/"&gt;Unison&lt;/a&gt;...&lt;/p&gt;
-</summary><category term="informatique"></category></entry><entry><title>Bonne fête Darwin !</title><link href="http://loicseguin.com/blogue/2009/02/bonne-fete-darwin/" rel="alternate"></link><updated>2009-02-12T15:02:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-12:blogue/2009/02/bonne-fete-darwin/</id><summary type="html">&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
+</summary><category term="informatique"></category></entry><entry><title>Bonne fête Darwin !</title><link href="http://loicseguin.com/blogue/2009/bonne-fete-darwin/" rel="alternate"></link><updated>2009-02-12T15:02:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-12:blogue/2009/bonne-fete-darwin/</id><summary type="html">&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
 notre compréhension de la nature : Charles Darwin. Darwin fût un
 naturaliste de grand renom qui a étudié, entre autre, la botanique et
 l'entomologie. Mais sa plus grande contribution à la science moderne est
@@ -1630,7 +1630,7 @@ Quelques liens intéressants :
 &lt;a class="reference external" href="http://www.darwinday.org/index.html"&gt;Darwin Day Celebration&lt;/a&gt;
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Charles_Darwin"&gt;Charles Darwin sur Wikipedia (en)&lt;/a&gt;
 &lt;a class="reference external" href="http://darwin-online.org.uk/"&gt;The Complete Work of Charles Darwin Online&lt;/a&gt;&lt;/p&gt;
-</summary><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.com/blogue/2009/02/des-axiomes-mathematiques/" rel="alternate"></link><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-06:blogue/2009/02/des-axiomes-mathematiques/</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
+</summary><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.com/blogue/2009/des-axiomes-mathematiques/" rel="alternate"></link><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-06:blogue/2009/des-axiomes-mathematiques/</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
 de Alan B. Wallace (tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782702128206"&gt;Science et Bouddhisme, à chacun sa
 réalité&lt;/a&gt;) :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1667,7 +1667,7 @@ théorèmes les plus complexes. Quiconque prétend que ces théorèmes
 s'appliquent au réel fait un acte de foi qui n'est pas plus valable et
 qui l'est tout autant que l'acte de foi que fait celui qui choisit de
 suivre une religion.&lt;/p&gt;
-</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Optique 101 (partie 1)</title><link href="http://loicseguin.com/blogue/2008/11/optique-101-partie-1/" rel="alternate"></link><updated>2008-11-14T17:54:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-14:blogue/2008/11/optique-101-partie-1/</id><summary type="html">&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
+</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Optique 101 (partie 1)</title><link href="http://loicseguin.com/blogue/2008/optique-101-partie-1/" rel="alternate"></link><updated>2008-11-14T17:54:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-14:blogue/2008/optique-101-partie-1/</id><summary type="html">&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
 appareil photographique, on doit d'abord connaître quelques principes
 fondamentaux d'optique géométrique. Nous verrons la propagation de la
 lumière en ligne droite, la loi de Snell-Descartes et les propriétés des
@@ -1743,13 +1743,13 @@ milieu le moins réfringent, il s'éloignera de la normale.
 La loi de Snell-Descartes est fondamentale pour comprendre le
 fonctionnement d'une partie cruciale d'un appareil photo : la lentille.
 Nous verrons dans le prochain article comment fonctionne une lentille.&lt;/p&gt;
-</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/blogue/2008/09/lantre-de-la-bete/" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:blogue/2008/09/lantre-de-la-bete/</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
+</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/blogue/2008/lantre-de-la-bete/" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:blogue/2008/lantre-de-la-bete/</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
 travail. On constate la grande organisation qui règne sur mon bureau...&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqSchJBI/AAAAAAAABf0/4IUUibpNjvY/s400/IMG_1143.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Et voici les instruments essentiels à la tâche du mathématicien :&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqTgxthI/AAAAAAAABf8/jO9PyF3ESG8/s400/IMG_1146.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-4984607396283200774?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="ineptie"></category></entry><entry><title>Manipuler des symboles</title><link href="http://loicseguin.com/blogue/2008/09/manipuler-des-symboles/" rel="alternate"></link><updated>2008-09-23T23:15:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-23:blogue/2008/09/manipuler-des-symboles/</id><summary type="html">&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
+</summary><category term="ineptie"></category></entry><entry><title>Manipuler des symboles</title><link href="http://loicseguin.com/blogue/2008/manipuler-des-symboles/" rel="alternate"></link><updated>2008-09-23T23:15:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-23:blogue/2008/manipuler-des-symboles/</id><summary type="html">&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
 mathématiciens, comme étant un ensemble de règles qui dictent comment
 manipuler des symboles. En manipulant ces symboles, on arrive à formuler
 les &amp;quot;phrases&amp;quot; mathématiques que sont les théorèmes. Bien sûr, la plupart
@@ -1775,7 +1775,7 @@ de la preuve.&lt;/p&gt;
 &lt;p&gt;Les idées sont plus importantes que les calculs. Et, étrangement, il est
 beaucoup plus difficile de formuler des idées que d'effectuer des
 calculs.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Triangulations créatives</title><link href="http://loicseguin.com/blogue/2008/09/triangulations-creatives/" rel="alternate"></link><updated>2008-09-12T16:30:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-12:blogue/2008/09/triangulations-creatives/</id><summary type="html">&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
+</summary><category term="maths"></category></entry><entry><title>Triangulations créatives</title><link href="http://loicseguin.com/blogue/2008/triangulations-creatives/" rel="alternate"></link><updated>2008-09-12T16:30:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-12:blogue/2008/triangulations-creatives/</id><summary type="html">&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
 les uns aux autres de telle sorte qu'ils épousent les formes de l'objet.
 On appelle une telle construction une triangulation. Une fois qu'on a
 obtenu une triangulation, on peut la raffiner en divisant les triangles
@@ -1926,7 +1926,7 @@ ses images et m'avoir permis de les utiliser sur ce site. Je remercie
 également &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Efan/ron/"&gt;Ron Graham&lt;/a&gt; et &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Esbutler/"&gt;Steve Butler&lt;/a&gt; pour m'avoir initié aux
 raffinements de triangulations lors de CCCG 2008.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.com/blogue/2008/09/le-lhc-demarre/" rel="alternate"></link><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-10:blogue/2008/09/le-lhc-demarre/</id><summary type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
+</summary><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.com/blogue/2008/le-lhc-demarre/" rel="alternate"></link><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-10:blogue/2008/le-lhc-demarre/</id><summary type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
 sur la nature de l'univers. Le Large Hadron Collider (LHC, grand
 collisioneur de proton en français), le plus grand accélérateur de
 particule construit par l'homme, a été mis en route aujourd'hui. Sa mise
@@ -1960,7 +1960,7 @@ les plus puissants du monde.&lt;/p&gt;
 &lt;li&gt;la nouvelle : &lt;a class="reference external" href="http://www.radio-canada.ca/nouvelles/Science-Sante/2008/09/09/002-collisionneur-reeves-Hawking.shtml"&gt;Radio-Canada.ca&lt;/a&gt;, &lt;a class="reference external" href="http://www.cyberpresse.ca/article/20080910/CPSCIENCES/80910007/1020/CPSCIENCES"&gt;Cyberpresse&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;le LHC : &lt;a class="reference external" href="http://public.web.cern.ch/Public/fr/LHC/LHC-fr.html"&gt;CERN&lt;/a&gt;, &lt;a class="reference external" href="http://www.youtube.com/watch?v=j50ZssEojtM"&gt;the LHC rap&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</summary><category term="physique"></category></entry><entry><title>Le dilemme du prisonnier</title><link href="http://loicseguin.com/blogue/2008/09/le-dilemme-du-prisonnier/" rel="alternate"></link><updated>2008-09-07T06:22:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-07:blogue/2008/09/le-dilemme-du-prisonnier/</id><summary type="html">&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
+</summary><category term="physique"></category></entry><entry><title>Le dilemme du prisonnier</title><link href="http://loicseguin.com/blogue/2008/le-dilemme-du-prisonnier/" rel="alternate"></link><updated>2008-09-07T06:22:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-07:blogue/2008/le-dilemme-du-prisonnier/</id><summary type="html">&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
 conteste le dilemme du prisonnier. Deux suspects sont arrêtés
 relativement à un crime donné. Ils sont interrogés séparément et ne
 peuvent communiquer d'aucune façon que ce soit. Ils connaissent tous
@@ -1997,7 +1997,7 @@ prison. Il existe pourtant une solution à ce jeu qui est beaucoup plus
 avantageuse &amp;quot;socialement&amp;quot;. Si les deux innocentent leur collègue, ils ne
 purgeront qu'un an chacun. La collaboration, dans ce contexte, est une
 bien meilleure option que l'avarice.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:blogue/2008/05/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
+</summary><category term="maths"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/blogue/2008/pourquoi-les-nombres-entiers-sont-parfois-essentiels/" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:blogue/2008/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
 entiers. Dans cet &lt;a class="reference external" href="http://www.theglobeandmail.com/servlet/story/RTGAM.20080510.wobama0510/BNStory/International/?page=rss&amp;amp;id=RTGAM.20080510.wobama0510"&gt;article&lt;/a&gt; du Globe and Mail du 10 mai, on peut lire
 cette charmante phrase :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2013,7 +2013,7 @@ fractionnaires n'a aucun sens.&lt;/p&gt;
 proportion. Or, ici, il est question d'un nombre de personnes, pas d'une
 proportion. Il est donc tout à fait déraisonnable de dire que madame
 Clinton a l'appui d'un demi-délégué.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>La programmation en nombres entiers.</title><link href="http://loicseguin.com/blogue/2008/03/la-programmation-en-nombres-entiers/" rel="alternate"></link><updated>2008-03-21T06:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-03-21:blogue/2008/03/la-programmation-en-nombres-entiers/</id><summary type="html">&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
+</summary><category term="maths"></category></entry><entry><title>La programmation en nombres entiers.</title><link href="http://loicseguin.com/blogue/2008/la-programmation-en-nombres-entiers/" rel="alternate"></link><updated>2008-03-21T06:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-03-21:blogue/2008/la-programmation-en-nombres-entiers/</id><summary type="html">&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
 intéressant ? Pourquoi une poignée de mathématiciens dépensent-ils
 quelques milliers de dollars pour se réunir et en discuter ? Sans doute
 en saurais-je un peu plus à mon retour de la session de travail sur la
@@ -2039,7 +2039,7 @@ où on ne peut pas accepter des solutions fractionnaires. Par exemple, si
 on achemine un produit en petites quantités sur une courte période de
 temps.&lt;/p&gt;
 &lt;p&gt;Plus de détails à venir éventuellement !&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category><category term="maths"></category></entry><entry><title>Une citation mémorable du film Proof</title><link href="http://loicseguin.com/blogue/2007/10/une-citation-memorable-du-film-proof/" rel="alternate"></link><updated>2007-10-28T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-28:blogue/2007/10/une-citation-memorable-du-film-proof/</id><summary type="html">&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
+</summary><category term="recherche opérationnelle"></category><category term="maths"></category></entry><entry><title>Une citation mémorable du film Proof</title><link href="http://loicseguin.com/blogue/2007/une-citation-memorable-du-film-proof/" rel="alternate"></link><updated>2007-10-28T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-28:blogue/2007/une-citation-memorable-du-film-proof/</id><summary type="html">&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
 que je n'ai pas aimé ce film. La performances des acteurs est mauvaise,
 l'histoire, peu enivrante. Certaines personnes ont comparé ce film à &lt;em&gt;A
 Beautiful Mind&lt;/em&gt;, ce que je n'arrive pas à comprendre. Outre le fait que
@@ -2062,7 +2062,7 @@ approaches four. I will never be as cold now as I will in the future.
 The future of cold is infinite. The future of heat is the future of
 cold. The bookstores are infinite and so are never full except in
 September...&lt;/blockquote&gt;
-</summary><category term="maths"></category></entry><entry><title>Le problème du contrôle de groupes d'ascenseurs</title><link href="http://loicseguin.com/blogue/2007/10/le-probleme-du-controle-de-groupes-dascenseurs/" rel="alternate"></link><updated>2007-10-22T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-22:blogue/2007/10/le-probleme-du-controle-de-groupes-dascenseurs/</id><summary type="html">&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
+</summary><category term="maths"></category></entry><entry><title>Le problème du contrôle de groupes d'ascenseurs</title><link href="http://loicseguin.com/blogue/2007/le-probleme-du-controle-de-groupes-dascenseurs/" rel="alternate"></link><updated>2007-10-22T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-22:blogue/2007/le-probleme-du-controle-de-groupes-dascenseurs/</id><summary type="html">&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
 de travail quotidiennement savent à quel point il peut y avoir de
 l'achalandage pour monter dans ces machines. Aux heures de pointe, il
 peut y avoir des gens qui veulent monter du rez-de-chaussée à presque
@@ -2090,7 +2090,7 @@ Plusieurs approches algorithmiques différentes ont été prises pour
 aborder le problème. Une simple recherche sur Google donne de nombreux
 liens vers des articles qui proposent des approches évolutives,
 neuronales, et autres. Je vous tiendrez au courant de mes lectures...&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:blogue/2007/08/resolution-du-probleme-des-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
+</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/resolution-du-probleme-des-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:blogue/2007/resolution-du-probleme-des-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
 est appelé par certains un multigraphe). Un graphe G est simplement un ensemble
 de n points qu'on appelle des sommets &lt;span class="math"&gt;\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt; reliés
 par des arrêtes &lt;span class="math"&gt;\(A = \{(x_i x_j, 1), (x_i x_j, 2), (x_k x_l, 1), ..., (x_n
@@ -2129,7 +2129,7 @@ coup d'oeil à l'image de Königsberg et on trouve tout de suite des
 sommets de degré impair. Donc il est impossible de trouver un tour
 eulérien et la solution au problème des ponts de Königsberg est que
 c'est impossible.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/08/les-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:blogue/2007/08/les-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/les-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:blogue/2007/les-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
 &lt;p&gt;Maintenant que j'ai un blogue, voyons ce que je peux en faire.&lt;/p&gt;
 &lt;p&gt;Un des problèmes qui est à l'origine de la théorie des graphes est celui
 des ponts de Königsberg. Cette ville de Prusse (au temps où la Prusse
@@ -2146,7 +2146,7 @@ notions élémentaires de théorie des graphes. Maintenant que je vous ai
 mis l'eau à la bouche et que vous mourrez tous d'envie de connaître la
 preuve, je vais aller me coucher. La preuve viendra dans un futur
 rapproché.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Relativité restreinte</title><link href="http://loicseguin.com/blogue/2004/06/relativite-restreinte/" rel="alternate"></link><updated>2004-06-14T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2004-06-14:blogue/2004/06/relativite-restreinte/</id><summary type="html">&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
+</summary><category term="maths"></category></entry><entry><title>Relativité restreinte</title><link href="http://loicseguin.com/blogue/2004/relativite-restreinte/" rel="alternate"></link><updated>2004-06-14T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2004-06-14:blogue/2004/relativite-restreinte/</id><summary type="html">&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
 &lt;p&gt;Puis, un beau jour d'il y a un ou deux siècles, un dénommé Maxwell (oui oui,
 comme le café) trouva les équations de l'électromagnétisme. Ce sont des
 équations qui décrivent tous les phénomènes électromagnétiques (comme la
