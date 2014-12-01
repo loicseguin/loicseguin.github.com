@@ -45,14 +45,16 @@
 
     <div class="post-content">
         <p>Vim possède un correcteur d'orthographe. On peut l'activer avec</p>
-<div class="highlight"><pre><span class="p">:</span><span class="k">set</span> <span class="k">spell</span>
-</pre></div>
+<pre class="code vim literal-block">
+<span class="p">:</span><span class="k">set</span> <span class="k">spell</span>
+</pre>
 <p>puis on passe à l'erreur suivante avec <tt class="docutils literal">]s</tt>.</p>
 <p>Par défaut, seuls des dictionnaires anglais sont fournis avec MacVim.
 Installer un dictionnaire français se fait automatiquement si on définit
 la variable spelllang pour le français :</p>
-<div class="highlight"><pre><span class="p">:</span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span>fr
-</pre></div>
+<pre class="code vim literal-block">
+<span class="p">:</span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span>fr
+</pre>
 <p>Ensuite, il ne reste plus qu'à activer la correction automatique et à
 regarder MacVim se connecter à un serveur ftp pour y télécharger les
 fichiers nécessaires.

@@ -5,7 +5,7 @@ Dictionnaire français pour Vim
 
 Vim possède un correcteur d'orthographe. On peut l'activer avec
 
-.. code-block:: vim
+.. code:: vim
 
     :set spell
 
@@ -15,7 +15,7 @@ Par défaut, seuls des dictionnaires anglais sont fournis avec MacVim.
 Installer un dictionnaire français se fait automatiquement si on définit
 la variable spelllang pour le français :
 
-.. code-block:: vim
+.. code:: vim
 
     :set spelllang=fr
 

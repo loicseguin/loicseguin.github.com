@@ -803,14 +803,16 @@ me concerne, j'utilise surtout &lt;a class="reference external" href="http://arx
 &lt;/div&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Sun, 13 May 2012 00:00:00 -0400</pubDate><guid>tag:loicseguin.com,2012-05-13:blogue/2012/moins-de-google/</guid><category>informatique</category></item><item><title>Dictionnaire français pour Vim</title><link>http://loicseguin.com/blogue/2011/dictionnaire-francais-pour-vim/</link><description>&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="code vim literal-block"&gt;
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
+&lt;/pre&gt;
 &lt;p&gt;puis on passe à l'erreur suivante avec &lt;tt class="docutils literal"&gt;]s&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;Par défaut, seuls des dictionnaires anglais sont fournis avec MacVim.
 Installer un dictionnaire français se fait automatiquement si on définit
 la variable spelllang pour le français :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;spelllang&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;fr
-&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="code vim literal-block"&gt;
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;spelllang&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;fr
+&lt;/pre&gt;
 &lt;p&gt;Ensuite, il ne reste plus qu'à activer la correction automatique et à
 regarder MacVim se connecter à un serveur ftp pour y télécharger les
 fichiers nécessaires.
