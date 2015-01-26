@@ -18,7 +18,7 @@
 &lt;/div&gt;
 &lt;p&gt;Une &lt;strong&gt;queue&lt;/strong&gt; est une abstraction mathématique pour représenter une panoplie de
 situations dans lesquelles des choses arrivent et sont traitées.  De quel genre
-de choses parle-t-on ?  Et que veulent dire &lt;em&gt;arriver&lt;/em&gt; et &lt;em&gt;être traité&lt;/em&gt; ?  Il
+de choses parle-t-on?  Et que veulent dire &lt;em&gt;arriver&lt;/em&gt; et &lt;em&gt;être traité&lt;/em&gt;?  Il
 peut s'agir de clients qui arrivent à la caisse dans une épicerie et qui sont
 servis par la caissière, de passagers qui se mettent en file pour monter dans
 un autobus, de documents qui sont empilés dans un classeur en attente d'être
