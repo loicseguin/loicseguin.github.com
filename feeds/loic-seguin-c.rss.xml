@@ -1,5 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Loïc Séguin-C.</title><link>http://loicseguin.com/</link><description></description><atom:link href="http://loicseguin.com/feeds/loic-seguin-c.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 25 Jan 2015 00:00:00 -0500</lastBuildDate><item><title>Erreur-type et variance d'un échantillon</title><link>http://loicseguin.com/blogue/2015/erreur-type-et-variance-dun-echantillon/</link><description>&lt;div class="toc"&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Loïc Séguin-C.</title><link>http://loicseguin.com/</link><description></description><atom:link href="http://loicseguin.com/feeds/loic-seguin-c.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 17 Mar 2015 00:00:00 -0400</lastBuildDate><item><title>Coefficient de détermination et qualité d'un modèle</title><link>http://loicseguin.com/blogue/2015/coefficient-de-determination-et-qualite-dun-modele/</link><description>&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#determiner-la-force-exercee-par-un-arc"&gt;Déterminer la force exercée par un arc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#comparaison-de-differents-modeles"&gt;Comparaison de différents modèles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#construire-un-polynome-qui-passe-par-un-ensemble-de-points"&gt;Construire un polynôme qui passe par un ensemble de points&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#interpolation-de-lagrange-pour-larc"&gt;Interpolation de Lagrange pour l&amp;rsquo;arc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;Aux étudiants qui apprennent les méthodes d&amp;rsquo;analyse communes en science
+expérimentale, on mentionne souvent que la qualité d&amp;rsquo;un modèle linéaire
+correspond à la valeur du coefficient de détermination \(R^2\). Plus le
+coefficient est proche de un, meilleur est le modèle pour représenter
+fidèlement les données. Ces étudiants n&amp;rsquo;ont, en général, pas de formation en
+statistiques et le contexte d&amp;rsquo;un cours de science expérimentale (physique,
+chimie ou biologie) ne donne pas l&amp;rsquo;occasion de décrire en détail le calcul qui
+permet d&amp;rsquo;obtenir \(R^2\). Ils ne retiennent donc qu&amp;rsquo;un concept assez vague
+qui se résume à « \(R^2\) proche de un \(\Rightarrow\) bon modèle ». Or,
+cette conclusion est très souvent incorrecte et le coefficient de détermination
+n&amp;rsquo;est qu&amp;rsquo;un indice parmi de nombreux autres qui permettent de valider un
+modèle.&lt;/p&gt;
+&lt;p&gt;Le problème devient encore plus évident lorsque les étudiants découvrent les
+différents types de courbes de tendance que les logiciels d&amp;rsquo;analyse tel
+qu&amp;rsquo;&lt;em&gt;Excel&lt;/em&gt; permettent de calculer. Si un étudiant calcule une courbe de
+tendance polynomiale de degré suffisamment élevé, il obtient un coefficient de
+détermination égal à un et s&amp;rsquo;exclame alors « Eurêka! » alors qu&amp;rsquo;en réalité il
+ne vient que de trouver un modèle extrêmement complexe qui n&amp;rsquo;a aucune base
+scientifique pour expliquer le phénomène observé.&lt;/p&gt;
+&lt;p&gt;Dans ce qui suit, nous explorerons un exemple typique de modèle inapproprié et
+nous verrons pourquoi il est toujours possible de trouver un polynôme qui passe
+par tous les points expérimentaux.&lt;/p&gt;
+&lt;h2 id="determiner-la-force-exercee-par-un-arc"&gt;Déterminer la force exercée par un arc&lt;/h2&gt;
+&lt;p&gt;Imaginez qu&amp;rsquo;on vous donne comme mission de déterminer le module de la force
+exercée par la corde d&amp;rsquo;un arc sur une flèche pour différentes élongations. Vous
+allez au laboratoire et, à l&amp;rsquo;aide d&amp;rsquo;un dynamomètre, vous tirez sur la corde de
+l&amp;rsquo;arc pour atteindre l&amp;rsquo;élongation désirée. Vous mesurez le module de la force
+indiqué sur le dynamomètre et vous répétez la procédure pour différentes
+élongations. Si vous avez les ressources pour faire l&amp;rsquo;expérience, allez-y
+maintenant et revenez avec vos données. Sinon, considérez les données
+ci-dessous que j&amp;rsquo;ai recueillies moi-même.&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="right"&gt;Élongation (m)&lt;/th&gt;
+&lt;th align="right"&gt;Module de la force (N)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,040(2)&lt;/td&gt;
+&lt;td align="right"&gt;17(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,120(3)&lt;/td&gt;
+&lt;td align="right"&gt;32(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,200(4)&lt;/td&gt;
+&lt;td align="right"&gt;55(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,280(4)&lt;/td&gt;
+&lt;td align="right"&gt;73(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;(Le chiffre entre parenthèse indique l&amp;rsquo;incertitude sur la dernière décimale
+affichée.)&lt;/p&gt;
+&lt;p&gt;Le graphique ci-dessous montre la relation entre l&amp;rsquo;élongation et la force.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Force exercée par un arc pour différentes élongation de la corde de l'arc." src="http://loicseguin.com/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_3_0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;La relation semble à peu près linéaire, ce qui concorde avec l&amp;rsquo;hypothèse que
+l&amp;rsquo;arc se comporte comme un ressort idéal régi par la &lt;a href="https://fr.wikipedia.org/wiki/Loi_de_Hooke"&gt;loi de
+Hooke&lt;/a&gt; :&lt;/p&gt;
+&lt;p&gt;$$ F = kS $$&lt;/p&gt;
+&lt;p&gt;où \(F\) est le module de la force exercée par l&amp;rsquo;arc, \(k\) est la
+constante de rappel et \(S\) est l&amp;rsquo;élongation. Reste à déterminer si ce
+modèle est le plus approprié.&lt;/p&gt;
+&lt;h2 id="comparaison-de-differents-modeles"&gt;Comparaison de différents modèles&lt;/h2&gt;
+&lt;p&gt;Vous utilisez ensuite votre logiciel d&amp;rsquo;analyse de données favori pour tester
+différents modèles. Par exemple, vous pouvez essayer un modèle linéaire,
+quadratique ou cubique. &lt;em&gt;Excel&lt;/em&gt; rend ce genre de tests extrêmement facile. Vous
+pouvez simplement ajouter des courbes de tendance à partir d&amp;rsquo;un menu et faire
+afficher le coefficient de détermination sur le graphique. Le graphique
+ci-dessous montre les données et les trois modèles.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Trois modèles polynomiaux pour expliquer les données ainsi que leur coefficient de détermination." src="http://loicseguin.com/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_6_0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Si on ne se fie qu&amp;rsquo;au coefficient de détermination, le modèle cubique est le
+meilleur alors que le modèle linéaire est le moins approprié. Le modèle cubique
+passe en effet par chacun des points et semble donc décrire très exactement ce
+qui se passe.&lt;/p&gt;
+&lt;p&gt;Par contre, il n&amp;rsquo;y a aucune raison physique qui justifie un modèle cubique
+alors que le modèle linéaire correspond à une loi empirique bien connue.
+Peut-être que l&amp;rsquo;arc ne se comporte par comme un ressort idéal et que différents
+phénomènes expliquent la pertinence d&amp;rsquo;une loi cubique. Pour le savoir, rien de
+mieux que d&amp;rsquo;amasser plus de données!&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="right"&gt;Élongation (m)&lt;/th&gt;
+&lt;th align="right"&gt;Module de la force (N)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,040(2)&lt;/td&gt;
+&lt;td align="right"&gt;17(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,060(3)&lt;/td&gt;
+&lt;td align="right"&gt;23(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,080(3)&lt;/td&gt;
+&lt;td align="right"&gt;27(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,120(3)&lt;/td&gt;
+&lt;td align="right"&gt;32(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,160(3)&lt;/td&gt;
+&lt;td align="right"&gt;46(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,200(4)&lt;/td&gt;
+&lt;td align="right"&gt;55(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,240(4)&lt;/td&gt;
+&lt;td align="right"&gt;63(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,280(4)&lt;/td&gt;
+&lt;td align="right"&gt;73(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;0,320(4)&lt;/td&gt;
+&lt;td align="right"&gt;80(2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;Un graphique de ces données avec les trois modèles élaborés jusqu&amp;rsquo;ici montre
+clairement lequel est le plus approprié.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Le modèle linéaire est celui qui tient le mieux compte des nouvelles données." src="http://loicseguin.com/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_8_0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;On voit clairement que ni le modèle cubique ni le modèle quadratique n&amp;rsquo;arrivent
+à expliquer les nouvelles données et ce, même si leur coefficient de
+détermination lorsque nous avons construit le modèle était supérieur à celui du
+modèle linéaire.  Dans le domaine de l&amp;rsquo;apprentissage-machine, ce phénomène est
+appelé du &lt;strong&gt;sur-apprentissage&lt;/strong&gt; (&lt;em&gt;overfitting&lt;/em&gt; en anglais).  En réalité, l&amp;rsquo;arc
+se comporte presque comme un ressort idéal et le modèle linéaire est le
+meilleur modèle pour expliquer son comportement.&lt;/p&gt;
+&lt;p&gt;Le modèle linéaire a aussi l&amp;rsquo;avantage d&amp;rsquo;être plus simple que les deux autres.
+Plus un modèle est complexe, plus il suivra de près les données, mais moins il
+sera facile à expliquer physiquement.&lt;/p&gt;
+&lt;h2 id="construire-un-polynome-qui-passe-par-un-ensemble-de-points"&gt;Construire un polynôme qui passe par un ensemble de points&lt;/h2&gt;
+&lt;p&gt;Nous allons maintenant voir comment, pour tout ensemble de données, nous
+pouvons construire un modèle polynomial qui passera par tous les points et qui
+aura donc un coefficient de détermination de 1.&lt;/p&gt;
+&lt;p&gt;Si nous avons \(N\) points \((x_i, y_i)\), il est toujours possible de
+trouver un polynôme \(p\) de degré au plus \(N - 1\) qui passe par chacun
+des points. Ce polynôme est assez simple à construire. Il doit satisfaire&lt;/p&gt;
+&lt;p&gt;$$p(x_1) = y_1 \\
+p(x_2) = y_2 \\
+\vdots \\
+p(x_N) = y_N$$&lt;/p&gt;
+&lt;p&gt;Nous pouvons satisfaire la première égalité facilement avec \(p(x) = y_1\).
+Évidemment, ce polynôme ne satisfait aucune des autres égalités. Si nous
+voulons satisfaire la deuxième égalité, nous pouvons ajouter un terme \(y_2\)
+et multiplier le premier terme par \(x_2 - x\) de telle sorte que lorsqu&amp;rsquo;on
+évalue le polynôme à \(x = x_2\), le premier terme disparaît et il ne reste
+que le second.&lt;/p&gt;
+&lt;p&gt;$$p(x) = y_1 (x_2 - x) + y_2$$&lt;/p&gt;
+&lt;p&gt;Malheureusement, cette version ne satisfait plus la première égalité car
+\(p(x_1) = y_1 (x_2 - x_1) + y_2\). Nous rétablissons assez facilement la
+situation en multipliant le second terme par \(x_1 - x\) et en divisant le
+premier terme par \(x_2 - x_1\). Nous obtenons alors le polynôme&lt;/p&gt;
+&lt;p&gt;$$p(x) = y_1 \frac{x_2 - x}{x_2 - x_1} + y_2 (x_1 - x).$$&lt;/p&gt;
+&lt;p&gt;Ce polynôme vaut \(y_1\) à \(x_1\) mais il vaut maintenant \(y_2 (x_1 -
+x_2)\) à \(x_2\). Si nous divisons le deuxième terme par \(x_1 - x_2\),
+nous obtenons un polynôme qui satisfait les deux premières égalités :&lt;/p&gt;
+&lt;p&gt;$$p(x) = y_1 \frac{x_2 - x}{x_2 - x_1} + y_2 \frac{x_1 - x}{x_1 - x_2}.$$&lt;/p&gt;
+&lt;p&gt;Ce polynôme est linéaire (degré 1) et passe par deux points de données.&lt;/p&gt;
+&lt;p&gt;En continuant le raisonnement de la sorte, nous arrivons à construire le
+polynôme suivant qui satisfait les \(N\) égalités :&lt;/p&gt;
+&lt;p&gt;$$p(x) = \sum_{i = 1}^N y_i \frac{\Pi_{j = 1\\j \neq i}^N (x_j - x)}{\Pi_{j = 1\\j \neq i}^N (x_j - x_i)}.$$&lt;/p&gt;
+&lt;p&gt;(&lt;em&gt;Exercice&lt;/em&gt; : Vérifiez que \(p(x_i) = y_i\) pour \(i = 1, \ldots, N\).)&lt;/p&gt;
+&lt;p&gt;Le degré de ce polynôme est déterminé par le numérateur de ses termes. Puisque
+le numérateur de chaque terme contient \(N - 1\) facteurs (\(j\) va de
+\(1\) jusqu&amp;rsquo;à \(N\), mais saute par-dessus la valeur \(i\)), le polynôme
+est donc de degré au plus \(N - 1\). Ce polynôme s&amp;rsquo;appelle un polynôme
+d&amp;rsquo;&lt;a href="https://fr.wikipedia.org/wiki/Interpolation_lagrangienne"&gt;interpolation de
+Lagrange&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La construction du polynôme d&amp;rsquo;interpolation de Lagrange montre que pour
+n&amp;rsquo;importe quel ensemble de \(N\) points, il est possible de trouver un
+polynôme qui passe par tous ces points et que ce polynôme a un degré au plus
+\(N - 1\).&lt;/p&gt;
+&lt;h2 id="interpolation-de-lagrange-pour-larc"&gt;Interpolation de Lagrange pour l&amp;rsquo;arc&lt;/h2&gt;
+&lt;p&gt;Le calcul du polynôme d&amp;rsquo;interpolation de Lagrange pour les données que nous
+avons recueillies sur la force exercée par l&amp;rsquo;arc est directe, mais un peu
+fastidieuse. Heureusement, scipy contient une fonction &lt;code&gt;lagrange&lt;/code&gt; qui peut
+faire le travail pour nous.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.interpolate&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;lagrange&lt;/span&gt;
+
+&lt;span class="n"&gt;elongation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mf"&gt;4.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;12.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;20.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;24.0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mf"&gt;100.0&lt;/span&gt;
+&lt;span class="n"&gt;force&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mf"&gt;17.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mf"&gt;32.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mf"&gt;55.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mf"&gt;63.0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;lagpoly&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lagrange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elongation&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lagpoly&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;$$-6771 x^3 + 3062 x^2 - 161.7 x + 19$$&lt;/p&gt;
+&lt;p&gt;Nous pouvons calculer la courbe de tendance polynomiale de degré 3 par la
+méthode des moindres carrés en utilisant la fonction &lt;code&gt;polyfit&lt;/code&gt; dans numpy
+(c&amp;rsquo;est la courbe de tendance qui se trouve dans les graphiques ci-dessus).&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;poly1d&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;polyfit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elongation&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;$$-6771 x^3 + 3062 x^2 - 161.7 x + 19$$&lt;/p&gt;
+&lt;p&gt;Le polynôme de degré 3 obtenu par la méthode des moindres carrés est donc le
+polynôme d&amp;rsquo;interpolation de Lagrange. Sachant que ce polynôme passe
+ &lt;em&gt;exactement&lt;/em&gt; par tous les points, il n&amp;rsquo;est pas surprenant que le coefficient de
+détermination obtenu soit égal à 1.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Comme tout ensemble de données admet un polynôme d&amp;rsquo;interpolation de Lagrange,
+il est certain qu&amp;rsquo;il est possible d&amp;rsquo;obtenir un modèle avec un coefficient de
+détermination de 1. Cela ne veut pas dire que le modèle est une description
+adéquate des données : il est possible que nous soyons victime de
+sur-apprentissage.&lt;/p&gt;
+&lt;p&gt;Un coefficient de détermination très près de 1 ne correspond donc pas
+nécessairement à un bon modèle. Le coefficient de détermination est une valeur
+utile pour juger de la qualité d&amp;rsquo;un modèle, mais elle doit être utilisée en
+conjonction avec d&amp;rsquo;autres critères pour arriver à une conclusion raisonnable.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Loïc Séguin-C.</dc:creator><pubDate>Tue, 17 Mar 2015 00:00:00 -0400</pubDate><guid>tag:loicseguin.com,2015-03-17:blogue/2015/coefficient-de-determination-et-qualite-dun-modele/</guid><category>statistique</category></item><item><title>Erreur-type et variance d'un échantillon</title><link>http://loicseguin.com/blogue/2015/erreur-type-et-variance-dun-echantillon/</link><description>&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#echantillonnage"&gt;Échantillonnage&lt;/a&gt;&lt;/li&gt;
