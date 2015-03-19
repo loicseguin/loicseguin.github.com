@@ -32,4 +32,3 @@ feuilleter un livre, on peut me retrouver à vélo ou l'œil vissé à un `Nikon
 .. _`programmation`: |filename|projets.rst
 .. _`Nikon`: http://www.flickr.com/photos/loicseguin/
 
-

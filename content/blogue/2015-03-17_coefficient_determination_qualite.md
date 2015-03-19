@@ -3,7 +3,7 @@ author: Loïc Séguin-C.
 date: 2015-03-17
 tags: statistique
 summary: Est-ce qu'un coefficient de détermination égal à 1 signifie
-    nécessairement que le modèle est bon? La réponse est non, et voici
+    nécessairement que le modèle est bon? La réponse est non et voici
     pourquoi.
 
 [TOC]

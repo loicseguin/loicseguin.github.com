@@ -12,12 +12,13 @@
     <meta name="tags" contents="statistique" />
 
         <link href='http://fonts.googleapis.com/css?family=Alegreya|Alegreya+SC' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/beseth-min-201503181122.css" type="text/css" />
+        <link rel="stylesheet" href="http://loicseguin.com/theme/css/beseth-min-201503182048.css" type="text/css" />
     </head>
 
     <body>
         <header id="banner">
             <div class="container">
+                <div>
                 <h1 class="site-title"><a class="site-title" href="http://loicseguin.com/">Loïc Séguin-C. <strong></strong></a></h1>
 
                 <nav><ul class="nav-list plain">
@@ -31,6 +32,7 @@
                         <a class="nav-list-link" href="http://loicseguin.com/pages/vita.html">Vita</a>
                     </li>
                 </ul></nav>
+                </div>
                 <hr class="headersep" />
             </div>
         </header>
@@ -62,19 +64,19 @@
 </div>
 <h2 id="introduction">Introduction</h2>
 <p>En discutant avec ma douce moitié à propos du fait que beaucoup de nos
-connaissances ont une date d'anniversaire au printemps, j'en suis venu à
-m'interroger sur la distribution des naissances au cours d'une année.  Si une
+connaissances ont une date d&rsquo;anniversaire au printemps, j&rsquo;en suis venu à
+m&rsquo;interroger sur la distribution des naissances au cours d&rsquo;une année.  Si une
 personne est choisie au hasard, est-ce que la probabilité que cette personne
 soit née en janvier est 1/12 ? Et en février ?</p>
-<p>En fouillant un peu, je me suis aperçu que ce n'est pas le cas.  La variation
+<p>En fouillant un peu, je me suis aperçu que ce n&rsquo;est pas le cas.  La variation
 saisonnière des naissances est un phénomène bien connu des démographes depuis
 longtemps (voir, par exemple, <a href="http://link.springer.com/article/10.2307/2060307">Udry et Morris (1967)</a>,
 <a href="http://link.springer.com/article/10.2307/2061082">Menken (1979)</a>, <a href="http://humrep.oxfordjournals.org/content/16/7/1512.long">Bobak et Gjonca (2001)</a>).  Sans se
-lancer dans les théories sociologiques qui tentent d'expliquer le phénomène,
-nous pouvons l'observer facilement à partir de données disponibles sur le site
-de Statistique Canada.  L'exercice est en même temps un petit tutoriel sur
-l'utilisation de <a href="http://www.r-project.org">R</a> pour l'analyse et la visualisation de données.</p>
-<p>Si vous lisez jusqu'à la toute fin, vous aurez droit à un truc infaillible pour
+lancer dans les théories sociologiques qui tentent d&rsquo;expliquer le phénomène,
+nous pouvons l&rsquo;observer facilement à partir de données disponibles sur le site
+de Statistique Canada.  L&rsquo;exercice est en même temps un petit tutoriel sur
+l&rsquo;utilisation de <a href="http://www.r-project.org">R</a> pour l&rsquo;analyse et la visualisation de données.</p>
+<p>Si vous lisez jusqu&rsquo;à la toute fin, vous aurez droit à un truc infaillible pour
 devenir riche.</p>
 <h2 id="collecte-et-nettoyage">Collecte et nettoyage</h2>
 <p>La première chose à faire est de télécharger les données à partir de la
@@ -88,16 +90,15 @@ rawdata <span class="o">=</span> read.csv<span class="p">(</span>unzip<span clas
 </pre></div>
 
 
-<p>Il est important de noter que j'ai utilisé le fichier anglais.  Je ne l'ai pas
+<p>Il est important de noter que j&rsquo;ai utilisé le fichier anglais.  Je ne l&rsquo;ai pas
 vérifié, mais je suppose que la version française des mêmes données contient du
 texte français qui ne pourra pas être traité par les commandes suivantes.</p>
 <h3 id="extraction-des-donnees-pertinentes">Extraction des données pertinentes</h3>
 <p>Le fichier contient le nombre de naissances dans chaque province pour chacun
-des mois de l'année, de 1991 à 2011.  Il contient également des données
-combinées pour l'ensemble du Canada et pour chaque année.  Les données sont
-<em>brutes</em> : il n'est pas simple d'extraire les lignes appropriées parce que la
+des mois de l&rsquo;année, de 1991 à 2011.  Il contient également des données
+combinées pour l&rsquo;ensemble du Canada et pour chaque année.  Les données sont<em>brutes</em> : il n&rsquo;est pas simple d&rsquo;extraire les lignes appropriées parce que la
 sélection doit se faire selon les chaînes de caractères contenues dans ces
-lignes.  Avant de se lancer dans le nettoyage, il est plus sage de d'abord
+lignes.  Avant de se lancer dans le nettoyage, il est plus sage de d&rsquo;abord
 observer ce que nous avons entre les mains.  Les colonnes sont obtenues par
 la commande <code>names</code> :</p>
 <div class="codehilite"><pre><span class="kp">names</span><span class="p">(</span>rawdata<span class="p">)</span>
@@ -108,7 +109,7 @@ la commande <code>names</code> :</p>
 </pre></div>
 
 
-<p>Pour avoir un aperçu des données elles-mêmes, il suffit d'extraire quelques
+<p>Pour avoir un aperçu des données elles-mêmes, il suffit d&rsquo;extraire quelques
 lignes :</p>
 <div class="codehilite"><pre>rawdata<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="p">]</span>
 </pre></div>
@@ -179,18 +180,18 @@ liste des niveaux de chaque colonne.</p>
 </pre></div>
 
 
-<p>Pour garder les choses simples, contentons-nous d'analyser les données pour
-l'ensemble du Canada.  Nous utiliserons les fréquences de naissances mensuelles
+<p>Pour garder les choses simples, contentons-nous d&rsquo;analyser les données pour
+l&rsquo;ensemble du Canada.  Nous utiliserons les fréquences de naissances mensuelles
 pour calculer les fréquence relatives.  Par conséquent, seules les lignes
 contenant la chaîne de caractère <code>Canada, place of residence of mother</code> dans la
 colonne <code>GEO</code> et <code>Number of live births</code> dans la colonne <code>MONTHBIRTH</code> seront
 conservées.</p>
 <p>La fonction <code>grepl</code> peut être utilisée pour éliminer toutes les lignes du
-tableau de données qui ne décrivent pas l'ensemble du Canada avec des nombres
+tableau de données qui ne décrivent pas l&rsquo;ensemble du Canada avec des nombres
 absolus pour chaque mois.  <code>grepl</code> prend une expression régulière comme premier
 argument et une liste (ou un élément unique) comme second argument.  La
-fonction retourne une liste de valeurs booléennes qui indique si l'expression
-régulière a été trouvée à chacune des positions de la liste d'entrée.  Par
+fonction retourne une liste de valeurs booléennes qui indique si l&rsquo;expression
+régulière a été trouvée à chacune des positions de la liste d&rsquo;entrée.  Par
 exemple,</p>
 <div class="codehilite"><pre><span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;bon&quot;</span><span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;bonjour&quot;</span><span class="p">,</span> <span class="s">&quot;allo&quot;</span><span class="p">))</span>
 </pre></div>
@@ -203,7 +204,7 @@ exemple,</p>
 <p>La commande suivante sélectionne toutes les lignes pour lesquelles la colonne
 <code>GEO</code> commence par <code>Canada</code>, la colonne <code>UNIT</code> commence par <code>Number</code> et la
 colonne <code>MONTHBIRTH</code> commence par <code>Month</code>.  De plus, seules les colonnes
-d'intérêt sont retenues.</p>
+d&rsquo;intérêt sont retenues.</p>
 <div class="codehilite"><pre>canada.births <span class="o">=</span> rawdata<span class="p">[</span><span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Canada&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>GEO<span class="p">)</span>
                         <span class="o">&amp;</span> <span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Number&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>UNIT<span class="p">)</span>
                         <span class="o">&amp;</span> <span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Month&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>MONTHBIRTH<span class="p">),</span>
@@ -225,12 +226,12 @@ d'intérêt sont retenues.</p>
 
 
 <h3 id="reorganisation-des-facteurs">Réorganisation des facteurs</h3>
-<p>On peut simplifier le tableau en éliminant <code>Month of birth,</code> pour n'utiliser
+<p>On peut simplifier le tableau en éliminant <code>Month of birth,</code> pour n&rsquo;utiliser
 que le nom du mois.  Encore une fois, les expressions régulières sont parfaites
-pour cette tâche.  La fonction <code>gsub</code> remplace toutes les occurrences d'une
-expression régulière dans une liste.  Si l'expression à trouver contient des
+pour cette tâche.  La fonction <code>gsub</code> remplace toutes les occurrences d&rsquo;une
+expression régulière dans une liste.  Si l&rsquo;expression à trouver contient des
 groupes (dénotés par des parenthèses), ces groupes peuvent être utilisés dans
-l'expression de remplacement avec <code>\\1</code> à <code>\\9</code>.</p>
+l&rsquo;expression de remplacement avec <code>\\1</code> à <code>\\9</code>.</p>
 <div class="codehilite"><pre><span class="kp">levels</span><span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">)</span> <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;Month of birth, ([a-zA-Z].)&quot;</span><span class="p">,</span> <span class="s">&quot;\\1&quot;</span><span class="p">,</span>
                                    <span class="kp">levels</span><span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">))</span>
 <span class="kp">head</span><span class="p">(</span>canada.births<span class="p">)</span>
@@ -258,8 +259,7 @@ mois en ordre chronologique.</p>
 
 
 <p>Ces données forment une série temporelle et R possède justement une classe pour
-ce type de données.  Pour l'utiliser, il faut d'abord réorganiser les lignes de
-<code>canada.births</code> en ordre chronologique.</p>
+ce type de données.  Pour l&rsquo;utiliser, il faut d&rsquo;abord réorganiser les lignes de<code>canada.births</code> en ordre chronologique.</p>
 <div class="codehilite"><pre>canada.births <span class="o">=</span> canada.births<span class="p">[</span><span class="kp">with</span><span class="p">(</span>canada.births<span class="p">,</span> <span class="kp">order</span><span class="p">(</span>Year<span class="p">,</span> Month<span class="p">)),</span> <span class="p">]</span>
 <span class="kp">head</span><span class="p">(</span>canada.births<span class="p">)</span>
 </pre></div>
@@ -276,18 +276,18 @@ ce type de données.  Pour l'utiliser, il faut d'abord réorganiser les lignes d
 
 
 <h3 id="calcul-des-frequences-relatives">Calcul des fréquences relatives</h3>
-<p>Avant de créer des séries temporelles, un petit calcul risque d'être fort
-utile.  Le nombre total de naissances varie probablement d'année en année et
-même si c'est un phénomène intéressant, ce n'est pas celui que nous étudions en
-ce moment.  Pour éliminer l'effet des variations annuelles, il suffit de
-calculer le pourcentage des naissances de l'année qui ont
+<p>Avant de créer des séries temporelles, un petit calcul risque d&rsquo;être fort
+utile.  Le nombre total de naissances varie probablement d&rsquo;année en année et
+même si c&rsquo;est un phénomène intéressant, ce n&rsquo;est pas celui que nous étudions en
+ce moment.  Pour éliminer l&rsquo;effet des variations annuelles, il suffit de
+calculer le pourcentage des naissances de l&rsquo;année qui ont
 lieu chaque mois.  Voici deux façons de faire ce calcul.</p>
-<p>La fonction <code>aggregate</code> permet de combiner les données d'une colonne selon la
-valeur d'une autre colonne en utilisant une fonction spécifique.  Pour obtenir
+<p>La fonction <code>aggregate</code> permet de combiner les données d&rsquo;une colonne selon la
+valeur d&rsquo;une autre colonne en utilisant une fonction spécifique.  Pour obtenir
 le nombre total de naissances chaque année nous regroupons les éléments de la
 colonne <code>Births</code> par <code>Year</code> avec la fonction somme.  Chaque élément est ensuite
-répété 12 fois pour obtenir une liste de la même longueur que l'originale.  Il
-ne reste qu'à ajouter la colonne désirée.</p>
+répété 12 fois pour obtenir une liste de la même longueur que l&rsquo;originale.  Il
+ne reste qu&rsquo;à ajouter la colonne désirée.</p>
 <div class="codehilite"><pre>births_per_year <span class="o">=</span> aggregate<span class="p">(</span>Births <span class="o">~</span> Year<span class="p">,</span> data <span class="o">=</span> canada.births<span class="p">,</span> FUN <span class="o">=</span> <span class="kp">sum</span><span class="p">)</span>
 relbirths <span class="o">=</span> canada.births
 relbirths<span class="o">$</span>RelBirths <span class="o">=</span> relbirths<span class="o">$</span>Births<span class="o">/</span><span class="kp">rep</span><span class="p">(</span>births_per_year<span class="o">$</span>Births<span class="p">,</span>
@@ -327,20 +327,19 @@ birthstable <span class="o">=</span> birthstable<span class="p">[,</span> <span 
 
 <h3 id="creation-de-series-temporelles">Création de séries temporelles</h3>
 <p>Nous créons deux séries temporelles : une avec le nombre de naissances et
-l'autre avec les fréquences relatives.</p>
+l&rsquo;autre avec les fréquences relatives.</p>
 <div class="codehilite"><pre>births.ts <span class="o">=</span> ts<span class="p">(</span>data <span class="o">=</span> relbirths<span class="o">$</span>Births<span class="p">,</span> start <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1991</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> frequency <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
 relbirths.ts <span class="o">=</span> ts<span class="p">(</span>data <span class="o">=</span> relbirths<span class="o">$</span>RelBirths<span class="p">,</span> start <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1991</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
                   frequency <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Pour le reste de l'analyse, nous utiliserons les trois objets <code>relbirths</code>,
+<p>Pour le reste de l&rsquo;analyse, nous utiliserons les trois objets <code>relbirths</code>,
 <code>relbirths.ts</code> et <code>births.ts</code>.</p>
 <h2 id="visualisation-des-donnees">Visualisation des données</h2>
 <p>R peut tracer un graphique du pourcentage des naissances en fonction du mois de
-l'année, il combine automatiquement les données de chaque année et produit un
-graphique en boîtes à moustache (mieux connu en anglais sous le nom de
-<em>box plot</em>).  Le trait pointillé horizontal correspond à 1/12.</p>
+l&rsquo;année, il combine automatiquement les données de chaque année et produit un
+graphique en boîtes à moustache (mieux connu en anglais sous le nom de<em>box plot</em>).  Le trait pointillé horizontal correspond à 1/12.</p>
 <div class="codehilite"><pre>plot<span class="p">(</span>RelBirths <span class="o">~</span> Month<span class="p">,</span> data <span class="o">=</span> relbirths<span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;Mois&quot;</span><span class="p">,</span>
      ylab <span class="o">=</span> <span class="s">&quot;Pourcentage des naissances annuelles&quot;</span><span class="p">)</span>
 abline<span class="p">(</span>h <span class="o">=</span> <span class="m">1</span><span class="o">/</span><span class="m">12</span><span class="p">,</span> lty <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
@@ -349,19 +348,19 @@ abline<span class="p">(</span>h <span class="o">=</span> <span class="m">1</span
 
 <p><img alt="Pourcentage des naissances en fonction du mois de l'année" src="http://loicseguin.com/images/births_vs_month.png" /></p>
 <p>Cette figure montre une variation claire du nombre de naissances au cours de
-l'année.  Les mois de mars à octobre sont les plus achalandés alors que les
+l&rsquo;année.  Les mois de mars à octobre sont les plus achalandés alors que les
 mois de novembre à février le sont moins.  Par exemple, environ 7.6% des
 naissances ont lieu en février alors que près de 8.8% ont lieu en mai (notons
 que 1/12 correspond à environ 8.3%).</p>
 <p>Les graphiques des séries temporelles sont encore plus intéressants.  Le nombre
-de naissances en fonction du temps montre immédiatement qu'il y a à la fois des
-variations saisonnières mais aussi des variations d'année en année.</p>
+de naissances en fonction du temps montre immédiatement qu&rsquo;il y a à la fois des
+variations saisonnières mais aussi des variations d&rsquo;année en année.</p>
 <div class="codehilite"><pre>plot.ts<span class="p">(</span>births.ts<span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;Temps&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;Nombre de naissances&quot;</span><span class="p">)</span>
 </pre></div>
 
 
 <p><img alt="plot of chunk births_vs_time" src="http://loicseguin.com/images/births_vs_time.png" /></p>
-<p>Si nous traçons plutôt les fréquences relatives, l'effet des variations
+<p>Si nous traçons plutôt les fréquences relatives, l&rsquo;effet des variations
 annuelles disparaît et il ne reste que les variations saisonnières.</p>
 <div class="codehilite"><pre>plot.ts<span class="p">(</span>relbirths.ts<span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;Temps&quot;</span><span class="p">,</span>
         ylab <span class="o">=</span> <span class="s">&quot;Pourcentage des naissances annuelles&quot;</span><span class="p">)</span>
@@ -370,8 +369,8 @@ annuelles disparaît et il ne reste que les variations saisonnières.</p>
 
 <p><img alt="plot of chunk relbirths_vs_time" src="http://loicseguin.com/images/relbirths_vs_time.png" /></p>
 <h2 id="analyse-et-modelisation">Analyse et modélisation</h2>
-<p>C'est probablement une déformation professionnelle, mais quand je vois un
-graphique de série temporelle qui a l'air de celui ci-haut, je pense tout de
+<p>C&rsquo;est probablement une déformation professionnelle, mais quand je vois un
+graphique de série temporelle qui a l&rsquo;air de celui ci-haut, je pense tout de
 suite à une faire une analyse de Fourier.</p>
 <div class="codehilite"><pre>ft <span class="o">=</span> fft<span class="p">(</span>relbirths<span class="o">$</span>RelBirth<span class="p">)</span>
 nft <span class="o">=</span> <span class="kp">length</span><span class="p">(</span>ft<span class="p">)</span>
@@ -382,7 +381,7 @@ fftdata <span class="o">=</span> <span class="kt">data.frame</span><span class="
 </pre></div>
 
 
-<p>Voyons à quoi ressemble ce signal dans l'espace des fréquences.</p>
+<p>Voyons à quoi ressemble ce signal dans l&rsquo;espace des fréquences.</p>
 <div class="codehilite"><pre>plot<span class="p">(</span>fftdata<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">,</span> <span class="p">],</span> t <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> pch <span class="o">=</span> <span class="m">20</span><span class="p">,</span> cex <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span>
      xlab <span class="o">=</span> <span class="s">&quot;Frequence (1/mois)&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;Amplitude&quot;</span><span class="p">)</span>
 freqmax <span class="o">=</span> freqs<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">][</span><span class="kp">which.max</span><span class="p">(</span>ft<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">])]</span>
@@ -438,12 +437,11 @@ lines<span class="p">(</span>x<span class="p">,</span> fitted<span class="p">(</
 on peut utiliser la relation
 \[ y = -0.00551 \sin(0.519x + 1.93) + 1/12\]
 pour déterminer le pourcentage des naissances, \(y\), en fonction du mois de
-l'année, \(x\).  Le modèle pourrait être raffiné en y incluant des
-composantes d'autres fréquences.  Comme le montre l'analyse de Fourier des
+l&rsquo;année, \(x\).  Le modèle pourrait être raffiné en y incluant des
+composantes d&rsquo;autres fréquences.  Comme le montre l&rsquo;analyse de Fourier des
 résidus, il reste encore des composantes de périodes bien spécifiques (3 mois
-étant la suivante).  Le reste de la procédure est laissée en exercice... Pour
-les intéressés, cette procédure est exactement la même que la méthode de
-<em>blanchissage</em> utilisée en astérosismologie pour déterminer les périodes de
+étant la suivante).  Le reste de la procédure est laissée en exercice&hellip; Pour
+les intéressés, cette procédure est exactement la même que la méthode de<em>blanchissage</em> utilisée en astérosismologie pour déterminer les périodes de
 pulsation des étoiles (voir, par exemple,
 <a href="http://iopscience.iop.org/0004-637X/530/1/441">Billéres <em>et al.</em> (2000)</a>).</p>
 <div class="codehilite"><pre>ft <span class="o">=</span> fft<span class="p">(</span>residuals<span class="p">(</span>sine_fit<span class="p">))</span>
@@ -465,18 +463,18 @@ text<span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <
 
 <p><img alt="plot of chunk fourier_residuals" src="http://loicseguin.com/images/fourier_residuals.png" /></p>
 <h2 id="conclusion">Conclusion</h2>
-<p>La distribution de probabilité du mois de naissance n'est pas uniforme.  Elle
+<p>La distribution de probabilité du mois de naissance n&rsquo;est pas uniforme.  Elle
 suit plutôt une distribution sinusoïdale de période égale à un an.  Les mois
-d'été sont ceux durant lesquels il y a le plus de naissances alors que les mois
-d'hiver sont ceux durant lesquels il y en a le moins.</p>
-<p>Voici donc une idée pour faire de l'argent.  Proposez à quelqu'un le jeu
-suivant.  Vous essayer de devinez leur mois d'anniversaire, si vous y arrivez
+d&rsquo;été sont ceux durant lesquels il y a le plus de naissances alors que les mois
+d&rsquo;hiver sont ceux durant lesquels il y en a le moins.</p>
+<p>Voici donc une idée pour faire de l&rsquo;argent.  Proposez à quelqu&rsquo;un le jeu
+suivant.  Vous essayer de devinez leur mois d&rsquo;anniversaire, si vous y arrivez
 la personne vous donne 10.50$, sinon vous lui donnez 1$.  Votre victime,
 croyant que vous allez choisir un mois au hasard selon une distribution
-uniforme estimera que l'espérance de son gain est \(-10.50\$ \times 1/12 + 1\$
-\times 11/12 = 0.04\$\) et elle sera d'accord pour jouer.  De votre côté, vous
-prédisez le mois de mai à chaque fois que vous jouez.  Grâce à l'analyse que
-nous venons de faire, nous savons que l'espérance de votre gain est \(10.50\$
+uniforme estimera que l&rsquo;espérance de son gain est \(-10.50\$ \times 1/12 + 1\$
+\times 11/12 = 0.04\$\) et elle sera d&rsquo;accord pour jouer.  De votre côté, vous
+prédisez le mois de mai à chaque fois que vous jouez.  Grâce à l&rsquo;analyse que
+nous venons de faire, nous savons que l&rsquo;espérance de votre gain est \(10.50\$
 \times 0.088 - 1\$ \times 0.912 = 0.01\$\).  Si vous réussissez à convaincre
 suffisamment de personnes de jouer, vous deviendrez riche (ou presque).</p>
     </div>
