@@ -21,7 +21,7 @@ Premier problème : l'augmentation de "près de 52 000 emplois" est mesurée à
 partir du point le plus bas sur le graphique. Pourquoi choisir ce point de
 référence plutôt que décembre 2013, ou octobre 2014? Le gouvernement Couillard
 a été élu en avril 2014, mais l'augmentation du nombre d'emplois dans les
-quelques mois suivants peut difficilement être associé à des politiques qu'il
+quelques mois suivants peut difficilement être associée à des politiques qu'il
 aurait mis en place. Rien ne va aussi vite en politique.
 
 Le deuxième problème est encore plus sournois. Le gouvernement québécois
