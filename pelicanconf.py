@@ -27,7 +27,7 @@ TRANSLATION_FEED_ATOM = None
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
-THEME = "/Users/loic/Projects/pelican-themes/beseth"
+THEME = "/Users/loic/code/pelican-themes/beseth"
 MD_EXTENSIONS = ['fenced_code', 'codehilite', 'toc', 'tables', 'footnotes',
 'smarty']
 

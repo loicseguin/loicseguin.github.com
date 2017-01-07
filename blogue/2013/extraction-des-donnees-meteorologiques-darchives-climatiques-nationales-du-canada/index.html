@@ -72,7 +72,7 @@ disponibles, il ne reste qu'à les télécharger.  Je me suis créé un
 répertoire pour y conserver les données.</p>
 <pre class="code bash literal-block">
 mkdir -p data/meteo_ca
-<span class="nb">cd </span>data/meteo_ca
+<span class="nb">cd</span> data/meteo_ca
 </pre>
 <p>Un fichier <tt class="docutils literal">csv</tt> contenant toutes les données quotidiennes d'une année se trouve
 à l'adresse</p>
@@ -89,13 +89,13 @@ collecte en 1942.</p>
 <pre class="code python literal-block">
 <span class="kn">import</span> <span class="nn">urllib</span>
 
-<span class="n">URL</span> <span class="o">=</span> <span class="s">'http://climat.meteo.gc.ca/climateData/bulkdata_f.html?timeframe=2&amp;Prov=QUE&amp;StationID={station_id}&amp;Month=1&amp;Year={year}&amp;Day=1&amp;format=csv'</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s1">'http://climat.meteo.gc.ca/climateData/bulkdata_f.html?timeframe=2&amp;Prov=QUE&amp;StationID={station_id}&amp;Month=1&amp;Year={year}&amp;Day=1&amp;format=csv'</span>
 
 <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1942</span><span class="p">,</span> <span class="mi">2014</span><span class="p">):</span>
     <span class="n">fname</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span>
                         <span class="n">URL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">station_id</span><span class="o">=</span><span class="mi">5415</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">),</span>
-                        <span class="n">filename</span><span class="o">=</span><span class="s">'meteo_{}.csv'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
-    <span class="k">print</span> <span class="s">'Fetched'</span><span class="p">,</span> <span class="n">fname</span>
+                        <span class="n">filename</span><span class="o">=</span><span class="s1">'meteo_{}.csv'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s1">'Fetched'</span><span class="p">,</span> <span class="n">fname</span>
 </pre>
 <p>Et voilà!  Évidemment, le plaisir ne fait que commencer puisqu'on peut maintenant analyser
 ces données.</p>
@@ -107,14 +107,14 @@ moyenne en fonction du temps obtenu à partir du code suivant.</p>
 
 <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1942</span><span class="p">,</span> <span class="mi">2014</span><span class="p">):</span>
-    <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'meteo_{}.csv'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">),</span>
+    <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'meteo_{}.csv'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">),</span>
                               <span class="n">skiprows</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-                              <span class="n">decimal</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'iso-8859-1'</span><span class="p">))</span>
+                              <span class="n">decimal</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'iso-8859-1'</span><span class="p">))</span>
 
 <span class="n">all_years</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
 <span class="n">all_years</span><span class="o">.</span><span class="n">ix</span><span class="p">[:,</span> <span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">u'Année'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">u'Température (${}^\circ$C)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">u'Année'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">u'Température (${}^\circ$C)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre>
 <img alt="Température annuelle moyenne depuis 1942" src="http://loicseguin.com/images/meteo_1942-2013.png" />

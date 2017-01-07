@@ -1,5 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/blogue.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2015-03-26T00:00:00-04:00</updated><entry><title>Croissance de l'emploi au Québec selon le gouvernement Couillard</title><link href="http://loicseguin.com/blogue/2015/croissance-de-lemploi-au-quebec-selon-le-gouvernement-couillard/" rel="alternate"></link><updated>2015-03-26T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2015-03-26:blogue/2015/croissance-de-lemploi-au-quebec-selon-le-gouvernement-couillard/</id><summary type="html">&lt;p&gt;Aujourd&amp;rsquo;hui, le ministre des finances du Québec, Carlos Leitao, a déposé son deuxième budget. Sur le &lt;a href="http://www.budget.finances.gouv.qc.ca/budget/2015-2016/index.asp"&gt;site internet du budget&lt;/a&gt; on nous montre le joli graphique suivant.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/blogue.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2017-01-07T00:00:00-05:00</updated><entry><title>Mon volume</title><link href="http://loicseguin.com/blogue/2017/mon-volume/" rel="alternate"></link><updated>2017-01-07T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2017-01-07:blogue/2017/mon-volume/</id><summary type="html">&lt;p&gt;Toute la psychopop moderne nous encourage à mieux nous connaître. On nous 
+rabâche les oreilles avec Socrate : «Connais-toi toi-même». Je pense me 
+connaitre assez bien. Il y a cependant une chose à mon sujet que j&amp;rsquo;ignore 
+encore : mon volume. Alors ce soir, plutôt que de regarder des séries en rafale 
+sur Netflix, j&amp;rsquo;ai décidé de remédier à cette lacune importante. Et après avoir 
+lu cet article, vous pourrez en faire de même!&lt;/p&gt;
+&lt;p&gt;Selon &lt;a href="http://www.wolframalpha.com/input/?i=volume+human+body"&gt;Wolfram Alpha&lt;/a&gt;, 
+le volume moyen d&amp;rsquo;un corps humain adulte est de 66.4 L. Ceux qui me connaissent 
+savent que je suis plutôt mince, donc il semble raisonnable de supposer que mon 
+volume doit être légèrement plus faible que la moyenne. La seule façon d&amp;rsquo;en 
+être sûr, c&amp;rsquo;est de faire la mesure.&lt;/p&gt;
+&lt;h2 id="methode-experimentale"&gt;Méthode expérimentale&lt;/h2&gt;
+&lt;p&gt;Pour mesurer le volume d&amp;rsquo;un objet irrégulier comme un corps humain, la façon la 
+plus simple est d&amp;rsquo;utiliser la méthode par &lt;a href="https://en.wikipedia.org/wiki/Displacement_%28fluid%29"&gt;déplacement 
+d&amp;rsquo;eau&lt;/a&gt;. On plonge 
+l&amp;rsquo;objet dans un contenant d&amp;rsquo;eau et on mesure le volume d&amp;rsquo;eau déplacé. Si 
+l&amp;rsquo;objet est complètement submergé, le volume déplacé est égal au volume de 
+l&amp;rsquo;objet.&lt;/p&gt;
+&lt;p&gt;Le contenant que j&amp;rsquo;utiliserai est ma baignoire. Elle est suffisamment grande 
+pour que je puisse y entrer et, avec un peu de chance, réussir à m&amp;rsquo;y submerger 
+complètement. Ma baignoire a une forme semblable à un prisme dont la base est 
+un rectangle arrondi. Les parois sont presque verticales, et pour simplifier 
+l&amp;rsquo;analyse, j&amp;rsquo;ignorerai le faible angle qu&amp;rsquo;elles font avec la verticale.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Baignoire pleine (oui, je sais, le jaune n'est plus tout à fait «au goût du 
+jour»)" src="http://loicseguin.com/images/monvolume/baignoire-pleine.jpg" title="Baignoire pleine (oui, je sais, le jaune n'est plus tout à fait «au goût du jour»)" /&gt;&lt;/p&gt;
+&lt;p&gt;La surface de l&amp;rsquo;eau dans la baignoire peut-être déterminée à partir de la 
+longueur \(L\), la largeur \(w\) et le rayon des coins arrondi \(r\). Le 
+plus simple est de calculer l&amp;rsquo;aire du grand rectangle \(Lw\) puis de 
+soustraire les coins. Si on place les quatre coins ensemble, on obtient un 
+cercle de rayon \(r\) inscrit dans un carré \( 2r \times 2r\). L&amp;rsquo;aire à 
+soustraire est donc l&amp;rsquo;aire du carré moins celle du cercle soit
+\[4r^2 - \pi r^2 = (4 - \pi) r^2\]
+(cette surface est illustrée par la zone hachurée dans la figure ci-dessous).&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Géométrie pour le calcul de la surface 
+d'eau" src="http://loicseguin.com/images/monvolume/calcul-aire.jpg" title="Géométrie pour le calcul de la surface d'eau" /&gt;&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;aire de la surface d&amp;rsquo;eau est donc
+\[S = Lw - (4 - \pi)r^2.\]&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai fixé une règle en acier inoxydable sur le côté de la baignoire avec du 
+ruban adhésif. Pour que le ruban tienne bien, il est préférable de bien 
+assécher la paroi de la baignoire avec une serviette sèche. Une des extrémités 
+de la règle se trouve sous la surface de l&amp;rsquo;eau. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Le montage très sophistiqué requis pour faire cette 
+expérience" src="http://loicseguin.com/images/monvolume/montage.jpg" title="Le montage très sophistiqué requis pour faire cette expérience" /&gt;&lt;/p&gt;
+&lt;p&gt;En faisant une lecture \(x_0\) sur la règle avant que je n&amp;rsquo;entre dans l&amp;rsquo;eau 
+et une lecture \(x_1\) lorsque je serai complètement submergé, on peut 
+obtenir le changement de hauteur de la surface d&amp;rsquo;eau
+\[\Delta h = x_1 - x_0.\]
+En multipliant ce changement de hauteur par l&amp;rsquo;aire \(S\), on trouve le volume 
+d&amp;rsquo;eau déplacé, et donc le volume de mon corps
+\[V = S\Delta h.\]&lt;/p&gt;
+&lt;p&gt;Pour garder une trace des lectures effectuées (et pour pouvoir faire une 
+lecture lorsque je serai complètement submergé dans l&amp;rsquo;eau), j&amp;rsquo;ai installé ma 
+caméra sur un trépied à côté de la baignoire. La caméra est orientée pour 
+prendre une photo du niveau de l&amp;rsquo;eau sur la règle. Il va sans dire que caméra 
+numérique et baignoire pleine d&amp;rsquo;eau ne font pas nécessairement bon ménage. Si 
+vous tentez l&amp;rsquo;expérience, prenez les précautions nécessaires pour ne pas que 
+votre caméra se retrouve dans l&amp;rsquo;eau. Je décline toute responsabilité pour le 
+bris d&amp;rsquo;équipement résultant de la réalisation de cette expérience.&lt;/p&gt;
+&lt;h2 id="resultats"&gt;Résultats&lt;/h2&gt;
+&lt;p&gt;Les dimensions de la baignoire se trouve dans le tableau ci-dessous. Les 
+mesures ont été prises avec un ruban à mesurer &lt;em&gt;Johnson Auto-Lock 3.5 m&lt;/em&gt; gradué 
+au millimètre. La largeur et la longueur de la baignoire varient selon 
+l&amp;rsquo;endroit où la mesure est effectuée. En prenant les mesures à plusieurs 
+endroits, j&amp;rsquo;ai déterminé qu&amp;rsquo;il y avait une variation de l&amp;rsquo;ordre de 5 mm. Les 
+incertitudes sur \(L\) et \(w\) sont obtenues en ajoutant ce 5mm à 
+l&amp;rsquo;incertitude de l&amp;rsquo;instrument qui est de 1 mm.&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai mesuré le rayon en plaçant le ruban à mesurer à l&amp;rsquo;endroit approximatif où 
+se trouve le centre du cercle. S&amp;rsquo;il est possible de pivoter le ruban autour de 
+ce point de telle sorte que l&amp;rsquo;extrémité du ruban demeure en contact avec la 
+paroi de la baignoire, le bon rayon a été trouvé. J&amp;rsquo;ai effectué cette mesure à 
+main levée et il était à peu près impossible de maintenir une extrémité du 
+ruban complètement fixe lors de la rotation ce qui explique l&amp;rsquo;incertitude 
+élevée pour cette mesure. Cette incertitude permet aussi de tenir compte du 
+fait que les coins de la baignoire ne sont pas parfaitement circulaires.&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;em&gt;L&lt;/em&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;w&lt;/em&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;r&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;cm&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;136.5 ± 0.6&lt;/td&gt;&lt;td&gt;59.0 ± 0.6&lt;/td&gt;&lt;td&gt;21 ± 1&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;À partir de ces mesures, on obtient une surface de \(S = (76.4 ± 1.6)\; 
+\mathrm{dm}^2\).&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai mesuré le niveau de l&amp;rsquo;eau sans que je ne sois dans la baignoire avant d&amp;rsquo;y 
+entrer pour la première fois et après en être sorti à la fin de l&amp;rsquo;expérience. 
+Cela me permet de tenir compte d&amp;rsquo;éventuelles fuites d&amp;rsquo;eau par le bouchon ou par 
+le trop-plein, et de l&amp;rsquo;évaporation. L&amp;rsquo;image ci-dessous montre que les deux 
+mesures sont pratiquement identiques. Il n&amp;rsquo;y a donc pas eu de changement 
+significatif du volume d&amp;rsquo;eau au cours de l&amp;rsquo;expérience.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Mesures avant et après que je ne sois entré dans la 
+baignoire" src="http://loicseguin.com/images/monvolume/avant-apres.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Lorsque je suis entré dans la baignoire, je me suis rapidement aperçu que je 
+n&amp;rsquo;arriverais jamais à me submerger complètement. La baignoire est trop petite 
+pour moi. J&amp;rsquo;ai donc opté pour une méthode légèrement plus complexe et 
+incertaine. J&amp;rsquo;ai mesuré le niveau d&amp;rsquo;eau lorsque tout mon corps sauf une jambe 
+était submergé, \(x_{11}\), et j&amp;rsquo;ai repris une mesure lorsque tout mon corps 
+sauf mes deux jambes était submergé, \(x_{12}\). L&amp;rsquo;idée c&amp;rsquo;est que je pourrai 
+mesurer le volume de «Loïc moins une jambe» \(V_1\) et le volume de «Loïc 
+moins deux jambes» \(V_2\). En calculant \(2V_1 - V_2\) j&amp;rsquo;obtiens «Deux 
+Loïc moins deux jambes» moins «Loïc moins deux jambes» ce qui donne évidemment, 
+«Loïc». En prime, je peux aussi calculer \(V_1 - V_2\) pour obtenir le volume 
+d&amp;rsquo;une de mes jambes. Bon, je sais, tout ça est un peu morbide, mais ça marche!&lt;/p&gt;
+&lt;p&gt;Il y a beaucoup de choses qui peuvent mal tourner lorsque je suis dans l&amp;rsquo;eau. 
+D&amp;rsquo;une part, il est assez difficile de rester complètement submergé avec une 
+jambe en l&amp;rsquo;air. D&amp;rsquo;autre part, en essayant de me submerger, je fais bouger la 
+surface de l&amp;rsquo;eau et le niveau indiqué sur la règle au moment où la photo est 
+prise n&amp;rsquo;est probablement par le bon. Enfin, j&amp;rsquo;essayais de vider mes poumons le 
+plus possible pour m&amp;rsquo;aider à rester sous l&amp;rsquo;eau, mais des variations dans la 
+quantité d&amp;rsquo;air qu&amp;rsquo;il restait dans mes poumons peuvent affecter le volume total 
+de mon corps.
+Pour pallier à ces problèmes, j&amp;rsquo;ai répété chaque mesure deux fois. Je l&amp;rsquo;aurais 
+fait plus souvent si ce n&amp;rsquo;était du fait que la position recroquevillée pour 
+entrer dans la baignoire était vraiment inconfortable.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Mesures du niveau de l'eau" src="http://loicseguin.com/images/monvolume/mesures.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Les images ci-dessus montrent les quatre mesures effectuées. Étonnamment, les 
+deux essais donnent pratiquement les mêmes résultats. Par contre, la réflexion 
+et la réfraction de la lumière de même que la présence d&amp;rsquo;un ménisque rendent 
+difficile la détermination de la position du niveau de l&amp;rsquo;eau sur la règle. Par 
+conséquent, j&amp;rsquo;ai décidé d&amp;rsquo;ajouter une incertitude de 0.5 mm à l&amp;rsquo;incertitude de 
+0.5 mm due à l&amp;rsquo;instrument.&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;0&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;11&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;12&lt;/sub&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;cm&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4.7 ± 0.1&lt;/td&gt;&lt;td&gt;12.0 ± 0.1&lt;/td&gt;&lt;td&gt;10.9 ± 0.1&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id="analyse-et-conclusion"&gt;Analyse et conclusion&lt;/h2&gt;
+&lt;p&gt;Enfin, voici le moment de vérité. À partir des données brutes décrites dans la 
+section précédente, il ne reste qu&amp;rsquo;à calculer \(V_1\), \(V_2\) et 
+finalement mon volume. Je calcule chacun de ces volumes à partir du changement 
+de hauteur avec une jambe hors de l&amp;rsquo;eau \(\Delta h_1\) et avec deux jambes 
+hors de l&amp;rsquo;eau \(\Delta h_2\).&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;em&gt;S&lt;/em&gt;&lt;/td&gt;&lt;td&gt;&amp;Delta;&lt;em&gt;h&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&amp;Delta;&lt;em&gt;h&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;V&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;V&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;dm&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;dm&lt;/td&gt;&lt;td&gt;dm&lt;/td&gt;&lt;td&gt;L&lt;/td&gt;&lt;td&gt;L&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;76.4 ± 1.6&lt;/td&gt;&lt;td&gt;0.73 ± 0.02&lt;/td&gt;&lt;td&gt;0.62 ± 0.02&lt;/td&gt;&lt;td&gt;56 ± 
+3&lt;/td&gt;&lt;td&gt;47 ± 2&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Le volume d&amp;rsquo;une de mes jambes est donc de
+\[V_\mathrm{jambe} = V_1 - V_2 = (8 ± 5)\; \mathrm{L},\]
+et mon volume est
+\[V = 2V_1 - V_2 = (64 ± 8)\; \mathrm{L}.\]
+Il semble donc que mon volume soit tout à fait dans la moyenne. Je reste 
+persuadé que mon volume est plus petit que la moyenne, mais pour le prouver je 
+devrais refaire l&amp;rsquo;expérience en prenant soin de diminuer l&amp;rsquo;incertitude sur les 
+mesures.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;incertitude sur le résultat final serait environ deux fois plus petite si 
+j&amp;rsquo;avais été capable d&amp;rsquo;entrer complètement sous l&amp;rsquo;eau sans avoir à mettre les 
+jambes en l&amp;rsquo;air. Une baignoire légèrement plus grande m&amp;rsquo;aurait donc permis de 
+diminuer l&amp;rsquo;incertitude de moitié. Une autre façon d&amp;rsquo;obtenir un résultat plus 
+précis serait de mieux calibrer mon «instrument». Plutôt que d&amp;rsquo;essayer de 
+mesurer l&amp;rsquo;aire de la surface d&amp;rsquo;eau, je pourrais ajouter un volume d&amp;rsquo;eau connu 
+(et mesuré assez précisément) et voir quelle est l&amp;rsquo;augmentation de la hauteur 
+de l&amp;rsquo;eau. Pour améliorer les lectures du niveau de l&amp;rsquo;eau, il faudrait placer 
+l&amp;rsquo;appareil photo un peu plus proche de la règle ou utiliser un objectif avec 
+une plus grande longueur focale. Un flash indirect pourrait aussi aider à 
+diminuer les reflets sur l&amp;rsquo;eau et donc rendre la mesure plus claire.&lt;/p&gt;
+&lt;p&gt;Je vous souhaite la meilleure des chances pour essayer de mesurer votre propre 
+volume! Si une idée brillante vous vient à l&amp;rsquo;esprit pour améliorer 
+l&amp;rsquo;expérience, vous pouvez m&amp;rsquo;en informer sur Twitter.&lt;/p&gt;</summary><category term="physique"></category></entry><entry><title>Croissance de l'emploi au Québec selon le gouvernement Couillard</title><link href="http://loicseguin.com/blogue/2015/croissance-de-lemploi-au-quebec-selon-le-gouvernement-couillard/" rel="alternate"></link><updated>2015-03-26T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2015-03-26:blogue/2015/croissance-de-lemploi-au-quebec-selon-le-gouvernement-couillard/</id><summary type="html">&lt;p&gt;Aujourd&amp;rsquo;hui, le ministre des finances du Québec, Carlos Leitao, a déposé son deuxième budget. Sur le &lt;a href="http://www.budget.finances.gouv.qc.ca/budget/2015-2016/index.asp"&gt;site internet du budget&lt;/a&gt; on nous montre le joli graphique suivant.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Emploi au Québec selon le gouvernement Couillard" src="http://loicseguin.com/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_1_0.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Je suis sidéré par la malhonnêteté de cette figure.&lt;/p&gt;
 &lt;p&gt;Premier problème : l&amp;rsquo;augmentation de &amp;ldquo;près de 52 000 emplois&amp;rdquo; est mesurée à
@@ -19,12 +178,12 @@ contenue dans le tableau CANSIM 282-0087 que nous pouvons facilement
 télécharger à partir du site de Statistique Canada. Dans un souci de
 transparence, je montre ci-dessous le code Python utilisé pour télécharger les
 données et les analyser.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib.request&lt;/span&gt;
 
-&lt;span class="n"&gt;cansim_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;http://www20.statcan.gc.ca/tables-tableaux/cansim/csv/02820087-fra.zip&amp;#39;&lt;/span&gt;
-&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlopen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cansim_url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;02820087-fra.zip&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;cansim_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://www20.statcan.gc.ca/tables-tableaux/cansim/csv/02820087-fra.zip&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlopen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cansim_url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;02820087-fra.zip&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="n"&gt;unzip&lt;/span&gt; &lt;span class="mo"&gt;02&lt;/span&gt;&lt;span class="mi"&gt;820087&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fra&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;zip&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -34,27 +193,27 @@ données et les analyser.&lt;/p&gt;
 suivant lit le fichier et extrait l&amp;rsquo;information concernant le Québec. Le
 tableau de données étant bizarrement structuré, il faut faire un peu de
 nettoyage pour obtenir les données qui nous intéressent.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;date_parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;%Y/%m&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;raw_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;02820087-fra.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;iso-8859-1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;geography&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;characteristics&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;sex&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-               &lt;span class="s"&gt;&amp;#39;agegroup&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;datatype&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;vector&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;coord&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="n"&gt;skiprows&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;parse_dates&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;decimal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;na_values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="n"&gt;date_parser&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;date_parser&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;quebec_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;geography&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Québec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sex&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Les deux sexes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;agegroup&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;15 ans et plus&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datatype&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Désaisonnalisées&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;span class="n"&gt;popn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Population (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;span class="n"&gt;emploi_tplein&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Emploi à temps plein (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Emploi à temps partiel (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;date_parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%Y/%m&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;raw_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;02820087-fra.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;iso-8859-1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;geography&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;characteristics&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sex&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+               &lt;span class="s1"&gt;&amp;#39;agegroup&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;datatype&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;vector&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;coord&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="n"&gt;skiprows&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;parse_dates&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;decimal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;na_values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="n"&gt;date_parser&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;date_parser&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;quebec_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;geography&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Québec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sex&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Les deux sexes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;agegroup&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;15 ans et plus&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datatype&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Désaisonnalisées&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="n"&gt;popn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Population (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s1"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="n"&gt;emploi_tplein&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Emploi à temps plein (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s1"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Emploi à temps partiel (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s1"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
 &lt;span class="n"&gt;clean_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;popn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;emploi_tplein&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-        &lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;popn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;emploi_tplein&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                      &lt;span class="s"&gt;&amp;#39;emploi_tpartiel&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;emploi_total&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_tplein&lt;/span&gt;
+        &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;popn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;emploi_tplein&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;popn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;emploi_tplein&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                      &lt;span class="s1"&gt;&amp;#39;emploi_tpartiel&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;emploi_total&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_tplein&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -62,13 +221,13 @@ nettoyage pour obtenir les données qui nous intéressent.&lt;/p&gt;
 le nombre d&amp;rsquo;emplois total en fonction du temps pour la période allant de
 décembre 2013 à février 2015 en prenant soin de restreindre l&amp;rsquo;axe vertical à
 l&amp;rsquo;intervalle entre 4 030 et 4 100 (en milliers).&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
 
-&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_style&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;ticks&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_context&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;talk&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;2013-12&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lw&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_style&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ticks&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_context&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;talk&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2013-12&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lw&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;despine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;offset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -77,7 +236,7 @@ l&amp;rsquo;intervalle entre 4 030 et 4 100 (en milliers).&lt;/p&gt;
 &lt;p&gt;C&amp;rsquo;est bel et bien le graphique que nous montre le gouvernement. Maintenant,
 voyons la réalité. Tout d&amp;rsquo;abord, si nous ne trichons pas en tronquant l&amp;rsquo;axe
 vertical, voici à quoi ressemble l&amp;rsquo;évolution du nombre d&amp;rsquo;emplois.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;2013-12&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2013-12&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4500&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;despine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;offset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -93,19 +252,19 @@ augmente elle aussi).&lt;/p&gt;
 &lt;p&gt;Ensuite, nous pouvons regarder sur une échelle temporelle un peu plus grande.
 Le graphique ci-dessous montre l&amp;rsquo;évolution du nombre d&amp;rsquo;emplois depuis la crise
 de 2008. J&amp;rsquo;y ai également indiqué les dates des deux dernières élections.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;2008-01&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;marois&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;2012-09-04&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;couillard&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;2014-04-07&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Élection du gouvernement Marois&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-         &lt;span class="n"&gt;xy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;marois&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;2012-09-01&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
-         &lt;span class="n"&gt;arrowprops&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arrowstyle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;-|&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;linewidth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2008-01&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;marois&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2012-09-04&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;couillard&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2014-04-07&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Élection du gouvernement Marois&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+         &lt;span class="n"&gt;xy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;marois&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2012-09-01&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+         &lt;span class="n"&gt;arrowprops&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arrowstyle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-|&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;linewidth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
          &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xytext&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-         &lt;span class="n"&gt;textcoords&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;offset points&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Élection du gouvernement Couillard&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-         &lt;span class="n"&gt;xy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;couillard&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;2014-04-01&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
-         &lt;span class="n"&gt;arrowprops&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arrowstyle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;-|&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;linewidth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+         &lt;span class="n"&gt;textcoords&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;offset points&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Élection du gouvernement Couillard&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+         &lt;span class="n"&gt;xy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;couillard&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2014-04-01&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+         &lt;span class="n"&gt;arrowprops&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arrowstyle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-|&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;linewidth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
          &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xytext&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;120&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-         &lt;span class="n"&gt;textcoords&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;offset points&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+         &lt;span class="n"&gt;textcoords&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;offset points&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;despine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;offset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;trim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -321,7 +480,7 @@ polynôme qui passe par tous ces points et que ce polynôme a un degré au plus
 avons recueillies sur la force exercée par l&amp;rsquo;arc est directe, mais un peu
 fastidieuse. Heureusement, scipy contient une fonction &lt;code&gt;lagrange&lt;/code&gt; qui peut
 faire le travail pour nous.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.interpolate&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;lagrange&lt;/span&gt;
 
 &lt;span class="n"&gt;elongation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mf"&gt;4.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;12.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;20.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;24.0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mf"&gt;100.0&lt;/span&gt;
@@ -335,7 +494,7 @@ faire le travail pour nous.&lt;/p&gt;
 &lt;p&gt;Nous pouvons calculer la courbe de tendance polynomiale de degré 3 par la
 méthode des moindres carrés en utilisant la fonction &lt;code&gt;polyfit&lt;/code&gt; dans numpy
 (c&amp;rsquo;est la courbe de tendance qui se trouve dans les graphiques ci-dessus).&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;poly1d&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;polyfit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elongation&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;poly1d&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;polyfit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elongation&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1007,7 +1166,7 @@ disponibles, il ne reste qu'à les télécharger.  Je me suis créé un
 répertoire pour y conserver les données.&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 mkdir -p data/meteo_ca
-&lt;span class="nb"&gt;cd &lt;/span&gt;data/meteo_ca
+&lt;span class="nb"&gt;cd&lt;/span&gt; data/meteo_ca
 &lt;/pre&gt;
 &lt;p&gt;Un fichier &lt;tt class="docutils literal"&gt;csv&lt;/tt&gt; contenant toutes les données quotidiennes d'une année se trouve
 à l'adresse&lt;/p&gt;
@@ -1024,13 +1183,13 @@ collecte en 1942.&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib&lt;/span&gt;
 
-&lt;span class="n"&gt;URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'http://climat.meteo.gc.ca/climateData/bulkdata_f.html?timeframe=2&amp;amp;Prov=QUE&amp;amp;StationID={station_id}&amp;amp;Month=1&amp;amp;Year={year}&amp;amp;Day=1&amp;amp;format=csv'&lt;/span&gt;
+&lt;span class="n"&gt;URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'http://climat.meteo.gc.ca/climateData/bulkdata_f.html?timeframe=2&amp;amp;Prov=QUE&amp;amp;StationID={station_id}&amp;amp;Month=1&amp;amp;Year={year}&amp;amp;Day=1&amp;amp;format=csv'&lt;/span&gt;
 
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;year&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1942&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlretrieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
                         &lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;station_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5415&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-                        &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'meteo_{}.csv'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'Fetched'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fname&lt;/span&gt;
+                        &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'meteo_{}.csv'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Fetched'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fname&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Et voilà!  Évidemment, le plaisir ne fait que commencer puisqu'on peut maintenant analyser
 ces données.&lt;/p&gt;
@@ -1042,14 +1201,14 @@ moyenne en fonction du temps obtenu à partir du code suivant.&lt;/p&gt;
 
 &lt;span class="n"&gt;frames&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;year&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1942&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;frames&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'meteo_{}.csv'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="n"&gt;frames&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'meteo_{}.csv'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
                               &lt;span class="n"&gt;skiprows&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index_col&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;parse_dates&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="n"&gt;decimal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;','&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'iso-8859-1'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                              &lt;span class="n"&gt;decimal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;','&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'iso-8859-1'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
 &lt;span class="n"&gt;all_years&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;frames&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;all_years&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u'Année'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u'Température (${}^\circ$C)'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;u'Année'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;u'Température (${}^\circ$C)'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 &lt;img alt="Température annuelle moyenne depuis 1942" src="http://loicseguin.com/images/meteo_1942-2013.png" /&gt;
@@ -1089,7 +1248,7 @@ devenir riche.&lt;/p&gt;
 &lt;a href="http://www5.statcan.gc.ca/cansim/a05?id=1024502&amp;amp;retrLang=eng" title="Table 102-4502 Live births, by month, Canada, province and territories, annual"&gt;table 102-4502&lt;/a&gt; du site de &lt;a href="http://www.statcan.gc.ca" title="Statistique Canada"&gt;Statistique Canada&lt;/a&gt;.
 Pour télécharger le fichier, le décompresser et le charger dans un
 &lt;code&gt;data.frame&lt;/code&gt;, il suffit de deux commandes dans R.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;download.file&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;download.file&lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="s"&gt;&amp;quot;http://www20.statcan.gc.ca/tables-tableaux/cansim/csv/01024502-eng.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     dest &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;01024502-eng.csv.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 rawdata &lt;span class="o"&gt;=&lt;/span&gt; read.csv&lt;span class="p"&gt;(&lt;/span&gt;unzip&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;01024502-eng.csv.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; strip.white &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1107,21 +1266,21 @@ sélection doit se faire selon les chaînes de caractères contenues dans ces
 lignes.  Avant de se lancer dans le nettoyage, il est plus sage de d&amp;rsquo;abord
 observer ce que nous avons entre les mains.  Les colonnes sont obtenues par
 la commande &lt;code&gt;names&lt;/code&gt; :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;## [1] &amp;quot;Ref_Date&amp;quot;   &amp;quot;GEO&amp;quot;        &amp;quot;MONTHBIRTH&amp;quot; &amp;quot;UNIT&amp;quot;       &amp;quot;Value&amp;quot;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## [1] &amp;quot;Ref_Date&amp;quot;   &amp;quot;GEO&amp;quot;        &amp;quot;MONTHBIRTH&amp;quot; &amp;quot;UNIT&amp;quot;       &amp;quot;Value&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Pour avoir un aperçu des données elles-mêmes, il suffit d&amp;rsquo;extraire quelques
 lignes :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;rawdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rawdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;##   Ref_Date                                  GEO            MONTHBIRTH
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##   Ref_Date                                  GEO            MONTHBIRTH
 ## 1     1991 Canada, place of residence of mother Total, month of birth
 ## 2     1992 Canada, place of residence of mother Total, month of birth
 ## 3     1993 Canada, place of residence of mother Total, month of birth
@@ -1141,11 +1300,11 @@ mother&lt;/code&gt; et &lt;code&gt;Total, month of birth&lt;/code&gt; complique 
 &lt;code&gt;read.csv&lt;/code&gt; définit automatiquement des facteurs pour toutes les colonnes qui
 contiennent des chaînes de caractères, nous pouvons donc obtenir facilement la
 liste des niveaux de chaque colonne.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;##  [1] &amp;quot;Alberta, place of residence of mother&amp;quot;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##  [1] &amp;quot;Alberta, place of residence of mother&amp;quot;
 ##  [2] &amp;quot;British Columbia, place of residence of mother&amp;quot;
 ##  [3] &amp;quot;Canada, place of residence of mother&amp;quot;
 ##  [4] &amp;quot;Manitoba, place of residence of mother&amp;quot;
@@ -1164,11 +1323,11 @@ liste des niveaux de chaque colonne.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;##  [1] &amp;quot;Month of birth, April&amp;quot;     &amp;quot;Month of birth, August&amp;quot;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##  [1] &amp;quot;Month of birth, April&amp;quot;     &amp;quot;Month of birth, August&amp;quot;
 ##  [3] &amp;quot;Month of birth, December&amp;quot;  &amp;quot;Month of birth, February&amp;quot;
 ##  [5] &amp;quot;Month of birth, January&amp;quot;   &amp;quot;Month of birth, July&amp;quot;
 ##  [7] &amp;quot;Month of birth, June&amp;quot;      &amp;quot;Month of birth, March&amp;quot;
@@ -1178,11 +1337,11 @@ liste des niveaux de chaque colonne.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;## [1] &amp;quot;Number of live births&amp;quot;     &amp;quot;Percentage of live births&amp;quot;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## [1] &amp;quot;Number of live births&amp;quot;     &amp;quot;Percentage of live births&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1199,11 +1358,11 @@ argument et une liste (ou un élément unique) comme second argument.  La
 fonction retourne une liste de valeurs booléennes qui indique si l&amp;rsquo;expression
 régulière a été trouvée à chacune des positions de la liste d&amp;rsquo;entrée.  Par
 exemple,&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bonjour&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;allo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bonjour&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;allo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;## [1]  TRUE FALSE
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## [1]  TRUE FALSE
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1211,7 +1370,7 @@ exemple,&lt;/p&gt;
 &lt;code&gt;GEO&lt;/code&gt; commence par &lt;code&gt;Canada&lt;/code&gt;, la colonne &lt;code&gt;UNIT&lt;/code&gt; commence par &lt;code&gt;Number&lt;/code&gt; et la
 colonne &lt;code&gt;MONTHBIRTH&lt;/code&gt; commence par &lt;code&gt;Month&lt;/code&gt;.  De plus, seules les colonnes
 d&amp;rsquo;intérêt sont retenues.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; rawdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; rawdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
                         &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
                         &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
                         &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Ref_Date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;MONTHBIRTH&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Value&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
@@ -1219,7 +1378,7 @@ d&amp;rsquo;intérêt sont retenues.&lt;/p&gt;
 
 
 &lt;p&gt;Le même résultat peut aussi être obtenu avec la commande &lt;code&gt;subset&lt;/code&gt; :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; GEO&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; GEO&lt;span class="p"&gt;)&lt;/span&gt;
                                 &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; UNIT&lt;span class="p"&gt;)&lt;/span&gt;
                                 &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
                        select &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Ref_Date&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;,&lt;/span&gt; Value&lt;span class="p"&gt;))&lt;/span&gt;
@@ -1227,7 +1386,7 @@ d&amp;rsquo;intérêt sont retenues.&lt;/p&gt;
 
 
 &lt;p&gt;Ensuite, nous renommons chaque colonne avec un nom plus descriptif.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Births&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Births&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1238,13 +1397,13 @@ pour cette tâche.  La fonction &lt;code&gt;gsub&lt;/code&gt; remplace toutes le
 expression régulière dans une liste.  Si l&amp;rsquo;expression à trouver contient des
 groupes (dénotés par des parenthèses), ces groupes peuvent être utilisés dans
 l&amp;rsquo;expression de remplacement avec &lt;code&gt;\\1&lt;/code&gt; à &lt;code&gt;\\9&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;gsub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Month of birth, ([a-zA-Z].)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\\1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;gsub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Month of birth, ([a-zA-Z].)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\\1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                                    &lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;##    Year   Month Births
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##    Year   Month Births
 ## 43 1991 January  32150
 ## 44 1992 January  31974
 ## 45 1993 January  30989
@@ -1258,7 +1417,7 @@ l&amp;rsquo;expression de remplacement avec &lt;code&gt;\\1&lt;/code&gt; à &lt;
 comment ordonner ces niveaux.  Par défaut, les niveaux décrits par des chaînes
 de caractères sont ordonnés alphabétiquement.  La commande suivante place les
 mois en ordre chronologique.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;factor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;factor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;,&lt;/span&gt;
     levels &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;January&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;February&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;March&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;April&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;May&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;June&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="s"&gt;&amp;quot;July&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;August&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;September&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;October&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;November&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;December&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1266,12 +1425,12 @@ mois en ordre chronologique.&lt;/p&gt;
 
 &lt;p&gt;Ces données forment une série temporelle et R possède justement une classe pour
 ce type de données.  Pour l&amp;rsquo;utiliser, il faut d&amp;rsquo;abord réorganiser les lignes de&lt;code&gt;canada.births&lt;/code&gt; en ordre chronologique.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;with&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Year&lt;span class="p"&gt;,&lt;/span&gt; Month&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;with&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Year&lt;span class="p"&gt;,&lt;/span&gt; Month&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;##     Year    Month Births
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##     Year    Month Births
 ## 43  1991  January  32150
 ## 85  1991 February  30259
 ## 127 1991    March  34782
@@ -1294,7 +1453,7 @@ le nombre total de naissances chaque année nous regroupons les éléments de la
 colonne &lt;code&gt;Births&lt;/code&gt; par &lt;code&gt;Year&lt;/code&gt; avec la fonction somme.  Chaque élément est ensuite
 répété 12 fois pour obtenir une liste de la même longueur que l&amp;rsquo;originale.  Il
 ne reste qu&amp;rsquo;à ajouter la colonne désirée.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;births_per_year &lt;span class="o"&gt;=&lt;/span&gt; aggregate&lt;span class="p"&gt;(&lt;/span&gt;Births &lt;span class="o"&gt;~&lt;/span&gt; Year&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;,&lt;/span&gt; FUN &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;births_per_year &lt;span class="o"&gt;=&lt;/span&gt; aggregate&lt;span class="p"&gt;(&lt;/span&gt;Births &lt;span class="o"&gt;~&lt;/span&gt; Year&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;,&lt;/span&gt; FUN &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 relbirths &lt;span class="o"&gt;=&lt;/span&gt; canada.births
 relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kp"&gt;rep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;births_per_year&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt;
                                            each &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1302,7 +1461,7 @@ relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;=&l
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;##     Year    Month Births RelBirths
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##     Year    Month Births RelBirths
 ## 43  1991  January  32150   0.07987
 ## 85  1991 February  30259   0.07517
 ## 127 1991    March  34782   0.08641
@@ -1314,14 +1473,14 @@ relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;=&l
 
 &lt;p&gt;La deuxième façon de procéder est plus directe mais nécessite un paquetage
 additionnel, &lt;code&gt;data.table&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;data.table&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;data.table&lt;span class="p"&gt;)&lt;/span&gt;
 birthstable &lt;span class="o"&gt;=&lt;/span&gt; data.table&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
 birthstable &lt;span class="o"&gt;=&lt;/span&gt; birthstable&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="sb"&gt;`:=`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; Births&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kp"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Births&lt;span class="p"&gt;)),&lt;/span&gt; by &lt;span class="o"&gt;=&lt;/span&gt; Year&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;birthstable&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;##    Year    Month Births RelBirths
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##    Year    Month Births RelBirths
 ## 1: 1991  January  32150   0.07987
 ## 2: 1991 February  30259   0.07517
 ## 3: 1991    March  34782   0.08641
@@ -1334,7 +1493,7 @@ birthstable &lt;span class="o"&gt;=&lt;/span&gt; birthstable&lt;span class="p"&g
 &lt;h3 id="creation-de-series-temporelles"&gt;Création de séries temporelles&lt;/h3&gt;
 &lt;p&gt;Nous créons deux séries temporelles : une avec le nombre de naissances et
 l&amp;rsquo;autre avec les fréquences relatives.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;births.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;births.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 relbirths.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
                   frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1346,7 +1505,7 @@ relbirths.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/
 &lt;p&gt;R peut tracer un graphique du pourcentage des naissances en fonction du mois de
 l&amp;rsquo;année, il combine automatiquement les données de chaque année et produit un
 graphique en boîtes à moustache (mieux connu en anglais sous le nom de&lt;em&gt;box plot&lt;/em&gt;).  Le trait pointillé horizontal correspond à 1/12.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;RelBirths &lt;span class="o"&gt;~&lt;/span&gt; Month&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;RelBirths &lt;span class="o"&gt;~&lt;/span&gt; Month&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
      ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Pourcentage des naissances annuelles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 abline&lt;span class="p"&gt;(&lt;/span&gt;h &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1361,14 +1520,14 @@ que 1/12 correspond à environ 8.3%).&lt;/p&gt;
 &lt;p&gt;Les graphiques des séries temporelles sont encore plus intéressants.  Le nombre
 de naissances en fonction du temps montre immédiatement qu&amp;rsquo;il y a à la fois des
 variations saisonnières mais aussi des variations d&amp;rsquo;année en année.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot.ts&lt;span class="p"&gt;(&lt;/span&gt;births.ts&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Temps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Nombre de naissances&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot.ts&lt;span class="p"&gt;(&lt;/span&gt;births.ts&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Temps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Nombre de naissances&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;img alt="plot of chunk births_vs_time" src="http://loicseguin.com/images/births_vs_time.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Si nous traçons plutôt les fréquences relatives, l&amp;rsquo;effet des variations
 annuelles disparaît et il ne reste que les variations saisonnières.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot.ts&lt;span class="p"&gt;(&lt;/span&gt;relbirths.ts&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Temps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot.ts&lt;span class="p"&gt;(&lt;/span&gt;relbirths.ts&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Temps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Pourcentage des naissances annuelles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1378,7 +1537,7 @@ annuelles disparaît et il ne reste que les variations saisonnières.&lt;/p&gt;
 &lt;p&gt;C&amp;rsquo;est probablement une déformation professionnelle, mais quand je vois un
 graphique de série temporelle qui a l&amp;rsquo;air de celui ci-haut, je pense tout de
 suite à une faire une analyse de Fourier.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirth&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirth&lt;span class="p"&gt;)&lt;/span&gt;
 nft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
 ft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;Mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
 freqs &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
@@ -1388,7 +1547,7 @@ fftdata &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;data.frame&l
 
 
 &lt;p&gt;Voyons à quoi ressemble ce signal dans l&amp;rsquo;espace des fréquences.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;fftdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt; t &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; pch &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; cex &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;fftdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt; t &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; pch &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; cex &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
      xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Frequence (1/mois)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Amplitude&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="kp"&gt;which.max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
 abline&lt;span class="p"&gt;(&lt;/span&gt;v &lt;span class="o"&gt;=&lt;/span&gt; freqmax&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1407,7 +1566,7 @@ composante en faisant une régression non linéaire.  Pour diminuer le nombre de
 paramètres (3 au lieu de 4), il est approprié de soustraire la moyenne à la
 fréquence relative de sorte que le signal soit centré en 0.  Comme unité de
 temps, nous utiliserons le mois.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;y &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;y &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;
 x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;y&lt;span class="p"&gt;)&lt;/span&gt;
 sine_fit &lt;span class="o"&gt;=&lt;/span&gt; nls&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; A &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="kp"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="kc"&gt;pi&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; f &lt;span class="o"&gt;*&lt;/span&gt; x &lt;span class="o"&gt;+&lt;/span&gt; k&lt;span class="p"&gt;),&lt;/span&gt;
                start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;A &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.05&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; f &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; k &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -1415,7 +1574,7 @@ sine_fit &lt;span class="o"&gt;=&lt;/span&gt; nls&lt;span class="p"&gt;(&lt;/spa
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;##
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##
 ## Formula: y ~ A * sin(2 * pi * f * x + k)
 ##
 ## Parameters:
@@ -1433,7 +1592,7 @@ sine_fit &lt;span class="o"&gt;=&lt;/span&gt; nls&lt;span class="p"&gt;(&lt;/spa
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; x&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; x&lt;span class="p"&gt;)&lt;/span&gt;
 lines&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;,&lt;/span&gt; fitted&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1450,7 +1609,7 @@ résidus, il reste encore des composantes de périodes bien spécifiques (3 mois
 les intéressés, cette procédure est exactement la même que la méthode de&lt;em&gt;blanchissage&lt;/em&gt; utilisée en astérosismologie pour déterminer les périodes de
 pulsation des étoiles (voir, par exemple,
 &lt;a href="http://iopscience.iop.org/0004-637X/530/1/441"&gt;Billéres &lt;em&gt;et al.&lt;/em&gt; (2000)&lt;/a&gt;).&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;residuals&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;residuals&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;))&lt;/span&gt;
 nft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
 ft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;Mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
 freqs &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
@@ -2145,8 +2304,8 @@ dossiers et quelques fichiers de configuration (les dotfiles) que je
 veux copier. Le script ressemble à ceci.
 Mis à jour le 12 mars 2009:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
-&lt;span class="c"&gt;#!/bin/sh
-# This script makes a backup of important files in
+&lt;span class="ch"&gt;#!/bin/sh
+&lt;/span&gt;&lt;span class="c1"&gt;# This script makes a backup of important files in
 # my home directory to two external hard drives,
 # Hercule and Astro, using rsync.
 &lt;/span&gt;&lt;span class="nv"&gt;OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-avuzC --delete --exclude-from=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.rsync/excludes&amp;quot;&lt;/span&gt;

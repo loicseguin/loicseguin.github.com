@@ -250,7 +250,7 @@ polynôme qui passe par tous ces points et que ce polynôme a un degré au plus
 avons recueillies sur la force exercée par l&rsquo;arc est directe, mais un peu
 fastidieuse. Heureusement, scipy contient une fonction <code>lagrange</code> qui peut
 faire le travail pour nous.</p>
-<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">lagrange</span>
 
 <span class="n">elongation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">])</span> <span class="o">/</span> <span class="mf">100.0</span>
@@ -264,7 +264,7 @@ faire le travail pour nous.</p>
 <p>Nous pouvons calculer la courbe de tendance polynomiale de degré 3 par la
 méthode des moindres carrés en utilisant la fonction <code>polyfit</code> dans numpy
 (c&rsquo;est la courbe de tendance qui se trouve dans les graphiques ci-dessus).</p>
-<div class="codehilite"><pre><span class="n">model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">elongation</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">elongation</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
 
