@@ -1,793 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/all.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2017-01-07T00:00:00-05:00</updated><entry><title>Mon volume</title><link href="http://loicseguin.com/blogue/2017/mon-volume/" rel="alternate"></link><updated>2017-01-07T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2017-01-07:blogue/2017/mon-volume/</id><summary type="html">&lt;p&gt;Toute la psychopop moderne nous encourage à mieux nous connaître. On nous 
-rabâche les oreilles avec Socrate : «Connais-toi toi-même». Je pense me 
-connaitre assez bien. Il y a cependant une chose à mon sujet que j&amp;rsquo;ignore 
-encore : mon volume. Alors ce soir, plutôt que de regarder des séries en rafale 
-sur Netflix, j&amp;rsquo;ai décidé de remédier à cette lacune importante. Et après avoir 
-lu cet article, vous pourrez en faire de même!&lt;/p&gt;
-&lt;p&gt;Selon &lt;a href="http://www.wolframalpha.com/input/?i=volume+human+body"&gt;Wolfram Alpha&lt;/a&gt;, 
-le volume moyen d&amp;rsquo;un corps humain adulte est de 66.4 L. Ceux qui me connaissent 
-savent que je suis plutôt mince, donc il semble raisonnable de supposer que mon 
-volume doit être légèrement plus faible que la moyenne. La seule façon d&amp;rsquo;en 
-être sûr, c&amp;rsquo;est de faire la mesure.&lt;/p&gt;
-&lt;h2 id="methode-experimentale"&gt;Méthode expérimentale&lt;/h2&gt;
-&lt;p&gt;Pour mesurer le volume d&amp;rsquo;un objet irrégulier comme un corps humain, la façon la 
-plus simple est d&amp;rsquo;utiliser la méthode par &lt;a href="https://en.wikipedia.org/wiki/Displacement_%28fluid%29"&gt;déplacement 
-d&amp;rsquo;eau&lt;/a&gt;. On plonge 
-l&amp;rsquo;objet dans un contenant d&amp;rsquo;eau et on mesure le volume d&amp;rsquo;eau déplacé. Si 
-l&amp;rsquo;objet est complètement submergé, le volume déplacé est égal au volume de 
-l&amp;rsquo;objet.&lt;/p&gt;
-&lt;p&gt;Le contenant que j&amp;rsquo;utiliserai est ma baignoire. Elle est suffisamment grande 
-pour que je puisse y entrer et, avec un peu de chance, réussir à m&amp;rsquo;y submerger 
-complètement. Ma baignoire a une forme semblable à un prisme dont la base est 
-un rectangle arrondi. Les parois sont presque verticales, et pour simplifier 
-l&amp;rsquo;analyse, j&amp;rsquo;ignorerai le faible angle qu&amp;rsquo;elles font avec la verticale.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Baignoire pleine (oui, je sais, le jaune n'est plus tout à fait «au goût du 
-jour»)" src="http://loicseguin.com/images/monvolume/baignoire-pleine.jpg" title="Baignoire pleine (oui, je sais, le jaune n'est plus tout à fait «au goût du jour»)" /&gt;&lt;/p&gt;
-&lt;p&gt;La surface de l&amp;rsquo;eau dans la baignoire peut-être déterminée à partir de la 
-longueur \(L\), la largeur \(w\) et le rayon des coins arrondi \(r\). Le 
-plus simple est de calculer l&amp;rsquo;aire du grand rectangle \(Lw\) puis de 
-soustraire les coins. Si on place les quatre coins ensemble, on obtient un 
-cercle de rayon \(r\) inscrit dans un carré \( 2r \times 2r\). L&amp;rsquo;aire à 
-soustraire est donc l&amp;rsquo;aire du carré moins celle du cercle soit
-\[4r^2 - \pi r^2 = (4 - \pi) r^2\]
-(cette surface est illustrée par la zone hachurée dans la figure ci-dessous).&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Géométrie pour le calcul de la surface 
-d'eau" src="http://loicseguin.com/images/monvolume/calcul-aire.jpg" title="Géométrie pour le calcul de la surface d'eau" /&gt;&lt;/p&gt;
-&lt;p&gt;L&amp;rsquo;aire de la surface d&amp;rsquo;eau est donc
-\[S = Lw - (4 - \pi)r^2.\]&lt;/p&gt;
-&lt;p&gt;J&amp;rsquo;ai fixé une règle en acier inoxydable sur le côté de la baignoire avec du 
-ruban adhésif. Pour que le ruban tienne bien, il est préférable de bien 
-assécher la paroi de la baignoire avec une serviette sèche. Une des extrémités 
-de la règle se trouve sous la surface de l&amp;rsquo;eau. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="Le montage très sophistiqué requis pour faire cette 
-expérience" src="http://loicseguin.com/images/monvolume/montage.jpg" title="Le montage très sophistiqué requis pour faire cette expérience" /&gt;&lt;/p&gt;
-&lt;p&gt;En faisant une lecture \(x_0\) sur la règle avant que je n&amp;rsquo;entre dans l&amp;rsquo;eau 
-et une lecture \(x_1\) lorsque je serai complètement submergé, on peut 
-obtenir le changement de hauteur de la surface d&amp;rsquo;eau
-\[\Delta h = x_1 - x_0.\]
-En multipliant ce changement de hauteur par l&amp;rsquo;aire \(S\), on trouve le volume 
-d&amp;rsquo;eau déplacé, et donc le volume de mon corps
-\[V = S\Delta h.\]&lt;/p&gt;
-&lt;p&gt;Pour garder une trace des lectures effectuées (et pour pouvoir faire une 
-lecture lorsque je serai complètement submergé dans l&amp;rsquo;eau), j&amp;rsquo;ai installé ma 
-caméra sur un trépied à côté de la baignoire. La caméra est orientée pour 
-prendre une photo du niveau de l&amp;rsquo;eau sur la règle. Il va sans dire que caméra 
-numérique et baignoire pleine d&amp;rsquo;eau ne font pas nécessairement bon ménage. Si 
-vous tentez l&amp;rsquo;expérience, prenez les précautions nécessaires pour ne pas que 
-votre caméra se retrouve dans l&amp;rsquo;eau. Je décline toute responsabilité pour le 
-bris d&amp;rsquo;équipement résultant de la réalisation de cette expérience.&lt;/p&gt;
-&lt;h2 id="resultats"&gt;Résultats&lt;/h2&gt;
-&lt;p&gt;Les dimensions de la baignoire se trouve dans le tableau ci-dessous. Les 
-mesures ont été prises avec un ruban à mesurer &lt;em&gt;Johnson Auto-Lock 3.5 m&lt;/em&gt; gradué 
-au millimètre. La largeur et la longueur de la baignoire varient selon 
-l&amp;rsquo;endroit où la mesure est effectuée. En prenant les mesures à plusieurs 
-endroits, j&amp;rsquo;ai déterminé qu&amp;rsquo;il y avait une variation de l&amp;rsquo;ordre de 5 mm. Les 
-incertitudes sur \(L\) et \(w\) sont obtenues en ajoutant ce 5mm à 
-l&amp;rsquo;incertitude de l&amp;rsquo;instrument qui est de 1 mm.&lt;/p&gt;
-&lt;p&gt;J&amp;rsquo;ai mesuré le rayon en plaçant le ruban à mesurer à l&amp;rsquo;endroit approximatif où 
-se trouve le centre du cercle. S&amp;rsquo;il est possible de pivoter le ruban autour de 
-ce point de telle sorte que l&amp;rsquo;extrémité du ruban demeure en contact avec la 
-paroi de la baignoire, le bon rayon a été trouvé. J&amp;rsquo;ai effectué cette mesure à 
-main levée et il était à peu près impossible de maintenir une extrémité du 
-ruban complètement fixe lors de la rotation ce qui explique l&amp;rsquo;incertitude 
-élevée pour cette mesure. Cette incertitude permet aussi de tenir compte du 
-fait que les coins de la baignoire ne sont pas parfaitement circulaires.&lt;/p&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;td&gt;&lt;em&gt;L&lt;/em&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;w&lt;/em&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;r&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;cm&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;136.5 ± 0.6&lt;/td&gt;&lt;td&gt;59.0 ± 0.6&lt;/td&gt;&lt;td&gt;21 ± 1&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;À partir de ces mesures, on obtient une surface de \(S = (76.4 ± 1.6)\; 
-\mathrm{dm}^2\).&lt;/p&gt;
-&lt;p&gt;J&amp;rsquo;ai mesuré le niveau de l&amp;rsquo;eau sans que je ne sois dans la baignoire avant d&amp;rsquo;y 
-entrer pour la première fois et après en être sorti à la fin de l&amp;rsquo;expérience. 
-Cela me permet de tenir compte d&amp;rsquo;éventuelles fuites d&amp;rsquo;eau par le bouchon ou par 
-le trop-plein, et de l&amp;rsquo;évaporation. L&amp;rsquo;image ci-dessous montre que les deux 
-mesures sont pratiquement identiques. Il n&amp;rsquo;y a donc pas eu de changement 
-significatif du volume d&amp;rsquo;eau au cours de l&amp;rsquo;expérience.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Mesures avant et après que je ne sois entré dans la 
-baignoire" src="http://loicseguin.com/images/monvolume/avant-apres.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;Lorsque je suis entré dans la baignoire, je me suis rapidement aperçu que je 
-n&amp;rsquo;arriverais jamais à me submerger complètement. La baignoire est trop petite 
-pour moi. J&amp;rsquo;ai donc opté pour une méthode légèrement plus complexe et 
-incertaine. J&amp;rsquo;ai mesuré le niveau d&amp;rsquo;eau lorsque tout mon corps sauf une jambe 
-était submergé, \(x_{11}\), et j&amp;rsquo;ai repris une mesure lorsque tout mon corps 
-sauf mes deux jambes était submergé, \(x_{12}\). L&amp;rsquo;idée c&amp;rsquo;est que je pourrai 
-mesurer le volume de «Loïc moins une jambe» \(V_1\) et le volume de «Loïc 
-moins deux jambes» \(V_2\). En calculant \(2V_1 - V_2\) j&amp;rsquo;obtiens «Deux 
-Loïc moins deux jambes» moins «Loïc moins deux jambes» ce qui donne évidemment, 
-«Loïc». En prime, je peux aussi calculer \(V_1 - V_2\) pour obtenir le volume 
-d&amp;rsquo;une de mes jambes. Bon, je sais, tout ça est un peu morbide, mais ça marche!&lt;/p&gt;
-&lt;p&gt;Il y a beaucoup de choses qui peuvent mal tourner lorsque je suis dans l&amp;rsquo;eau. 
-D&amp;rsquo;une part, il est assez difficile de rester complètement submergé avec une 
-jambe en l&amp;rsquo;air. D&amp;rsquo;autre part, en essayant de me submerger, je fais bouger la 
-surface de l&amp;rsquo;eau et le niveau indiqué sur la règle au moment où la photo est 
-prise n&amp;rsquo;est probablement par le bon. Enfin, j&amp;rsquo;essayais de vider mes poumons le 
-plus possible pour m&amp;rsquo;aider à rester sous l&amp;rsquo;eau, mais des variations dans la 
-quantité d&amp;rsquo;air qu&amp;rsquo;il restait dans mes poumons peuvent affecter le volume total 
-de mon corps.
-Pour pallier à ces problèmes, j&amp;rsquo;ai répété chaque mesure deux fois. Je l&amp;rsquo;aurais 
-fait plus souvent si ce n&amp;rsquo;était du fait que la position recroquevillée pour 
-entrer dans la baignoire était vraiment inconfortable.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Mesures du niveau de l'eau" src="http://loicseguin.com/images/monvolume/mesures.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;Les images ci-dessus montrent les quatre mesures effectuées. Étonnamment, les 
-deux essais donnent pratiquement les mêmes résultats. Par contre, la réflexion 
-et la réfraction de la lumière de même que la présence d&amp;rsquo;un ménisque rendent 
-difficile la détermination de la position du niveau de l&amp;rsquo;eau sur la règle. Par 
-conséquent, j&amp;rsquo;ai décidé d&amp;rsquo;ajouter une incertitude de 0.5 mm à l&amp;rsquo;incertitude de 
-0.5 mm due à l&amp;rsquo;instrument.&lt;/p&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;td&gt;&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;0&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;11&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;12&lt;/sub&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;cm&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4.7 ± 0.1&lt;/td&gt;&lt;td&gt;12.0 ± 0.1&lt;/td&gt;&lt;td&gt;10.9 ± 0.1&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h2 id="analyse-et-conclusion"&gt;Analyse et conclusion&lt;/h2&gt;
-&lt;p&gt;Enfin, voici le moment de vérité. À partir des données brutes décrites dans la 
-section précédente, il ne reste qu&amp;rsquo;à calculer \(V_1\), \(V_2\) et 
-finalement mon volume. Je calcule chacun de ces volumes à partir du changement 
-de hauteur avec une jambe hors de l&amp;rsquo;eau \(\Delta h_1\) et avec deux jambes 
-hors de l&amp;rsquo;eau \(\Delta h_2\).&lt;/p&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;td&gt;&lt;em&gt;S&lt;/em&gt;&lt;/td&gt;&lt;td&gt;&amp;Delta;&lt;em&gt;h&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&amp;Delta;&lt;em&gt;h&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;V&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;V&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dm&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;dm&lt;/td&gt;&lt;td&gt;dm&lt;/td&gt;&lt;td&gt;L&lt;/td&gt;&lt;td&gt;L&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;76.4 ± 1.6&lt;/td&gt;&lt;td&gt;0.73 ± 0.02&lt;/td&gt;&lt;td&gt;0.62 ± 0.02&lt;/td&gt;&lt;td&gt;56 ± 
-3&lt;/td&gt;&lt;td&gt;47 ± 2&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Le volume d&amp;rsquo;une de mes jambes est donc de
-\[V_\mathrm{jambe} = V_1 - V_2 = (8 ± 5)\; \mathrm{L},\]
-et mon volume est
-\[V = 2V_1 - V_2 = (64 ± 8)\; \mathrm{L}.\]
-Il semble donc que mon volume soit tout à fait dans la moyenne. Je reste 
-persuadé que mon volume est plus petit que la moyenne, mais pour le prouver je 
-devrais refaire l&amp;rsquo;expérience en prenant soin de diminuer l&amp;rsquo;incertitude sur les 
-mesures.&lt;/p&gt;
-&lt;p&gt;L&amp;rsquo;incertitude sur le résultat final serait environ deux fois plus petite si 
-j&amp;rsquo;avais été capable d&amp;rsquo;entrer complètement sous l&amp;rsquo;eau sans avoir à mettre les 
-jambes en l&amp;rsquo;air. Une baignoire légèrement plus grande m&amp;rsquo;aurait donc permis de 
-diminuer l&amp;rsquo;incertitude de moitié. Une autre façon d&amp;rsquo;obtenir un résultat plus 
-précis serait de mieux calibrer mon «instrument». Plutôt que d&amp;rsquo;essayer de 
-mesurer l&amp;rsquo;aire de la surface d&amp;rsquo;eau, je pourrais ajouter un volume d&amp;rsquo;eau connu 
-(et mesuré assez précisément) et voir quelle est l&amp;rsquo;augmentation de la hauteur 
-de l&amp;rsquo;eau. Pour améliorer les lectures du niveau de l&amp;rsquo;eau, il faudrait placer 
-l&amp;rsquo;appareil photo un peu plus proche de la règle ou utiliser un objectif avec 
-une plus grande longueur focale. Un flash indirect pourrait aussi aider à 
-diminuer les reflets sur l&amp;rsquo;eau et donc rendre la mesure plus claire.&lt;/p&gt;
-&lt;p&gt;Je vous souhaite la meilleure des chances pour essayer de mesurer votre propre 
-volume! Si une idée brillante vous vient à l&amp;rsquo;esprit pour améliorer 
-l&amp;rsquo;expérience, vous pouvez m&amp;rsquo;en informer sur Twitter.&lt;/p&gt;</summary><category term="physique"></category></entry><entry><title>Croissance de l'emploi au Québec selon le gouvernement Couillard</title><link href="http://loicseguin.com/blogue/2015/croissance-de-lemploi-au-quebec-selon-le-gouvernement-couillard/" rel="alternate"></link><updated>2015-03-26T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2015-03-26:blogue/2015/croissance-de-lemploi-au-quebec-selon-le-gouvernement-couillard/</id><summary type="html">&lt;p&gt;Aujourd&amp;rsquo;hui, le ministre des finances du Québec, Carlos Leitao, a déposé son deuxième budget. Sur le &lt;a href="http://www.budget.finances.gouv.qc.ca/budget/2015-2016/index.asp"&gt;site internet du budget&lt;/a&gt; on nous montre le joli graphique suivant.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Emploi au Québec selon le gouvernement Couillard" src="http://loicseguin.com/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_1_0.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Je suis sidéré par la malhonnêteté de cette figure.&lt;/p&gt;
-&lt;p&gt;Premier problème : l&amp;rsquo;augmentation de &amp;ldquo;près de 52 000 emplois&amp;rdquo; est mesurée à
-partir du point le plus bas sur le graphique. Pourquoi choisir ce point de
-référence plutôt que décembre 2013, ou octobre 2014? Le gouvernement Couillard
-a été élu en avril 2014, mais l&amp;rsquo;augmentation du nombre d&amp;rsquo;emplois dans les
-quelques mois suivants peut difficilement être associée à des politiques qu&amp;rsquo;il
-aurait mis en place. Rien ne va aussi vite en politique.&lt;/p&gt;
-&lt;p&gt;Le deuxième problème est encore plus sournois. Le gouvernement québécois
-utilise un des plus vieux trucs pour mentir avec les statistiques : tronquer
-l&amp;rsquo;axe vertical pour faire paraître importante une augmentation qui en réalité
-n&amp;rsquo;est due qu&amp;rsquo;à des fluctuations aléatoires.&lt;/p&gt;
-&lt;p&gt;Heureusement, la source des données est citée, à savoir, Statistique Canada.
-Plutôt que de tomber dans le piège propagandiste du gouvernement Couillard,
-voyons ce que les données disent vraiment. L&amp;rsquo;information sur l&amp;rsquo;emploi est
-contenue dans le tableau CANSIM 282-0087 que nous pouvons facilement
-télécharger à partir du site de Statistique Canada. Dans un souci de
-transparence, je montre ci-dessous le code Python utilisé pour télécharger les
-données et les analyser.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib.request&lt;/span&gt;
-
-&lt;span class="n"&gt;cansim_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://www20.statcan.gc.ca/tables-tableaux/cansim/csv/02820087-fra.zip&amp;#39;&lt;/span&gt;
-&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlopen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cansim_url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;02820087-fra.zip&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="n"&gt;unzip&lt;/span&gt; &lt;span class="mo"&gt;02&lt;/span&gt;&lt;span class="mi"&gt;820087&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fra&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;zip&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Le tableau est assez volumineux une fois décompressé (environ 217 Mo). Le code
-suivant lit le fichier et extrait l&amp;rsquo;information concernant le Québec. Le
-tableau de données étant bizarrement structuré, il faut faire un peu de
-nettoyage pour obtenir les données qui nous intéressent.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;date_parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%Y/%m&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;raw_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;02820087-fra.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;iso-8859-1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;geography&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;characteristics&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sex&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-               &lt;span class="s1"&gt;&amp;#39;agegroup&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;datatype&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;vector&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;coord&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="n"&gt;skiprows&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;parse_dates&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;decimal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;na_values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="n"&gt;date_parser&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;date_parser&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;quebec_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;geography&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Québec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sex&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Les deux sexes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;agegroup&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;15 ans et plus&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datatype&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Désaisonnalisées&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;span class="n"&gt;popn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Population (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s1"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;span class="n"&gt;emploi_tplein&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Emploi à temps plein (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s1"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;quebec_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;characteristics&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Emploi à temps partiel (x 1&lt;/span&gt;&lt;span class="se"&gt;\xa0&lt;/span&gt;&lt;span class="s1"&gt;000)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;val&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;popn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;emploi_tplein&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-        &lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;popn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;emploi_tplein&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                      &lt;span class="s1"&gt;&amp;#39;emploi_tpartiel&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;emploi_total&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_tpartiel&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_tplein&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Nous pouvons maintenant reproduire le graphique du gouvernement. Nous traçons
-le nombre d&amp;rsquo;emplois total en fonction du temps pour la période allant de
-décembre 2013 à février 2015 en prenant soin de restreindre l&amp;rsquo;axe vertical à
-l&amp;rsquo;intervalle entre 4 030 et 4 100 (en milliers).&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
-
-&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_style&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ticks&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_context&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;talk&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2013-12&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lw&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;despine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;offset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="reproduction" src="http://loicseguin.com/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_7_0.png" /&gt;&lt;/p&gt;
-&lt;p&gt;C&amp;rsquo;est bel et bien le graphique que nous montre le gouvernement. Maintenant,
-voyons la réalité. Tout d&amp;rsquo;abord, si nous ne trichons pas en tronquant l&amp;rsquo;axe
-vertical, voici à quoi ressemble l&amp;rsquo;évolution du nombre d&amp;rsquo;emplois.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2013-12&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4500&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;despine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;offset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="réalisme" src="http://loicseguin.com/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_9_0.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Hum&amp;hellip; un peu moins impressionnant. Pourquoi? Parce que l&amp;rsquo;&lt;em&gt;augmentation&lt;/em&gt; que
-semble voir les yeux croches du gouvernement Couillard n&amp;rsquo;est pas réelle. Le
-nombre d&amp;rsquo;emplois est à peu près constant depuis décembre 2013. S&amp;rsquo;il y a une
-tendance à l&amp;rsquo;augmentation, elle est beaucoup plus faible que ce que ne laisse
-croire le graphique du gouvernement (et n&amp;rsquo;oublions pas que la population
-augmente elle aussi).&lt;/p&gt;
-&lt;p&gt;Ensuite, nous pouvons regarder sur une échelle temporelle un peu plus grande.
-Le graphique ci-dessous montre l&amp;rsquo;évolution du nombre d&amp;rsquo;emplois depuis la crise
-de 2008. J&amp;rsquo;y ai également indiqué les dates des deux dernières élections.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2008-01&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;marois&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2012-09-04&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;couillard&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2014-04-07&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Élection du gouvernement Marois&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-         &lt;span class="n"&gt;xy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;marois&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2012-09-01&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
-         &lt;span class="n"&gt;arrowprops&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arrowstyle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-|&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;linewidth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-         &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xytext&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-         &lt;span class="n"&gt;textcoords&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;offset points&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Élection du gouvernement Couillard&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-         &lt;span class="n"&gt;xy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;couillard&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;emploi_total&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2014-04-01&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
-         &lt;span class="n"&gt;arrowprops&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arrowstyle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-|&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;linewidth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-         &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xytext&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;120&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-         &lt;span class="n"&gt;textcoords&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;offset points&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;despine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;offset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;trim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="moyen terme" src="http://loicseguin.com/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_11_0.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Depuis 2008, la tendance est à une augmentation du nombre d&amp;rsquo;emplois. Ce qui se
-passe depuis l&amp;rsquo;élection du gouvernement Couillard ne fait que s&amp;rsquo;inscrire dans
-cette tendance générale. Nous constatons aussi que les fluctuations aléatoires
-sont importantes (de l&amp;rsquo;ordre de 20 000 emplois) ce qui confirme que le
-changement du nombre d&amp;rsquo;emplois depuis 2013 est minime.&lt;/p&gt;
-&lt;p&gt;Alors un conseil pour le gouvernement Couillard : révisez votre façon de
-présenter des données et arrêtez de prendre les québécois pour des niais.&lt;/p&gt;</summary><category term="statistique"></category><category term="politique"></category></entry><entry><title>Coefficient de détermination et qualité d'un modèle</title><link href="http://loicseguin.com/blogue/2015/coefficient-de-determination-et-qualite-dun-modele/" rel="alternate"></link><updated>2015-03-17T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2015-03-17:blogue/2015/coefficient-de-determination-et-qualite-dun-modele/</id><summary type="html">&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#determiner-la-force-exercee-par-un-arc"&gt;Déterminer la force exercée par un arc&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#comparaison-de-differents-modeles"&gt;Comparaison de différents modèles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#construire-un-polynome-qui-passe-par-un-ensemble-de-points"&gt;Construire un polynôme qui passe par un ensemble de points&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#interpolation-de-lagrange-pour-larc"&gt;Interpolation de Lagrange pour l&amp;rsquo;arc&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;Aux étudiants qui apprennent les méthodes d&amp;rsquo;analyse communes en science
-expérimentale, on mentionne souvent que la qualité d&amp;rsquo;un modèle linéaire
-correspond à la valeur du coefficient de détermination \(R^2\). Plus le
-coefficient est proche de un, meilleur est le modèle pour représenter
-fidèlement les données. Ces étudiants n&amp;rsquo;ont, en général, pas de formation en
-statistiques et le contexte d&amp;rsquo;un cours de science expérimentale (physique,
-chimie ou biologie) ne donne pas l&amp;rsquo;occasion de décrire en détail le calcul qui
-permet d&amp;rsquo;obtenir \(R^2\). Ils ne retiennent donc qu&amp;rsquo;un concept assez vague
-qui se résume à « \(R^2\) proche de un \(\Rightarrow\) bon modèle ». Or,
-cette conclusion est très souvent incorrecte et le coefficient de détermination
-n&amp;rsquo;est qu&amp;rsquo;un indice parmi de nombreux autres qui permettent de valider un
-modèle.&lt;/p&gt;
-&lt;p&gt;Le problème devient encore plus évident lorsque les étudiants découvrent les
-différents types de courbes de tendance que les logiciels d&amp;rsquo;analyse tel
-qu&amp;rsquo;&lt;em&gt;Excel&lt;/em&gt; permettent de calculer. Si un étudiant calcule une courbe de
-tendance polynomiale de degré suffisamment élevé, il obtient un coefficient de
-détermination égal à un et s&amp;rsquo;exclame alors « Eurêka! » alors qu&amp;rsquo;en réalité il
-ne vient que de trouver un modèle extrêmement complexe qui n&amp;rsquo;a aucune base
-scientifique pour expliquer le phénomène observé.&lt;/p&gt;
-&lt;p&gt;Dans ce qui suit, nous explorerons un exemple typique de modèle inapproprié et
-nous verrons pourquoi il est toujours possible de trouver un polynôme qui passe
-par tous les points expérimentaux.&lt;/p&gt;
-&lt;h2 id="determiner-la-force-exercee-par-un-arc"&gt;Déterminer la force exercée par un arc&lt;/h2&gt;
-&lt;p&gt;Imaginez qu&amp;rsquo;on vous donne comme mission de déterminer le module de la force
-exercée par la corde d&amp;rsquo;un arc sur une flèche pour différentes élongations. Vous
-allez au laboratoire et, à l&amp;rsquo;aide d&amp;rsquo;un dynamomètre, vous tirez sur la corde de
-l&amp;rsquo;arc pour atteindre l&amp;rsquo;élongation désirée. Vous mesurez le module de la force
-indiqué sur le dynamomètre et vous répétez la procédure pour différentes
-élongations. Si vous avez les ressources pour faire l&amp;rsquo;expérience, allez-y
-maintenant et revenez avec vos données. Sinon, considérez les données
-ci-dessous que j&amp;rsquo;ai recueillies moi-même.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align="right"&gt;Élongation (m)&lt;/th&gt;
-&lt;th align="right"&gt;Module de la force (N)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,040(2)&lt;/td&gt;
-&lt;td align="right"&gt;17(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,120(3)&lt;/td&gt;
-&lt;td align="right"&gt;32(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,200(4)&lt;/td&gt;
-&lt;td align="right"&gt;55(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,280(4)&lt;/td&gt;
-&lt;td align="right"&gt;73(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;(Le chiffre entre parenthèse indique l&amp;rsquo;incertitude sur la dernière décimale
-affichée.)&lt;/p&gt;
-&lt;p&gt;Le graphique ci-dessous montre la relation entre l&amp;rsquo;élongation et la force.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Force exercée par un arc pour différentes élongation de la corde de l'arc." src="http://loicseguin.com/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_3_0.png" /&gt;&lt;/p&gt;
-&lt;p&gt;La relation semble à peu près linéaire, ce qui concorde avec l&amp;rsquo;hypothèse que
-l&amp;rsquo;arc se comporte comme un ressort idéal régi par la &lt;a href="https://fr.wikipedia.org/wiki/Loi_de_Hooke"&gt;loi de
-Hooke&lt;/a&gt; :&lt;/p&gt;
-&lt;p&gt;$$ F = kS $$&lt;/p&gt;
-&lt;p&gt;où \(F\) est le module de la force exercée par l&amp;rsquo;arc, \(k\) est la
-constante de rappel et \(S\) est l&amp;rsquo;élongation. Reste à déterminer si ce
-modèle est le plus approprié.&lt;/p&gt;
-&lt;h2 id="comparaison-de-differents-modeles"&gt;Comparaison de différents modèles&lt;/h2&gt;
-&lt;p&gt;Vous utilisez ensuite votre logiciel d&amp;rsquo;analyse de données favori pour tester
-différents modèles. Par exemple, vous pouvez essayer un modèle linéaire,
-quadratique ou cubique. &lt;em&gt;Excel&lt;/em&gt; rend ce genre de tests extrêmement facile. Vous
-pouvez simplement ajouter des courbes de tendance à partir d&amp;rsquo;un menu et faire
-afficher le coefficient de détermination sur le graphique. Le graphique
-ci-dessous montre les données et les trois modèles.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Trois modèles polynomiaux pour expliquer les données ainsi que leur coefficient de détermination." src="http://loicseguin.com/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_6_0.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Si on ne se fie qu&amp;rsquo;au coefficient de détermination, le modèle cubique est le
-meilleur alors que le modèle linéaire est le moins approprié. Le modèle cubique
-passe en effet par chacun des points et semble donc décrire très exactement ce
-qui se passe.&lt;/p&gt;
-&lt;p&gt;Par contre, il n&amp;rsquo;y a aucune raison physique qui justifie un modèle cubique
-alors que le modèle linéaire correspond à une loi empirique bien connue.
-Peut-être que l&amp;rsquo;arc ne se comporte par comme un ressort idéal et que différents
-phénomènes expliquent la pertinence d&amp;rsquo;une loi cubique. Pour le savoir, rien de
-mieux que d&amp;rsquo;amasser plus de données!&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align="right"&gt;Élongation (m)&lt;/th&gt;
-&lt;th align="right"&gt;Module de la force (N)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,040(2)&lt;/td&gt;
-&lt;td align="right"&gt;17(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,060(3)&lt;/td&gt;
-&lt;td align="right"&gt;23(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,080(3)&lt;/td&gt;
-&lt;td align="right"&gt;27(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,120(3)&lt;/td&gt;
-&lt;td align="right"&gt;32(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,160(3)&lt;/td&gt;
-&lt;td align="right"&gt;46(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,200(4)&lt;/td&gt;
-&lt;td align="right"&gt;55(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,240(4)&lt;/td&gt;
-&lt;td align="right"&gt;63(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,280(4)&lt;/td&gt;
-&lt;td align="right"&gt;73(1)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align="right"&gt;0,320(4)&lt;/td&gt;
-&lt;td align="right"&gt;80(2)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;Un graphique de ces données avec les trois modèles élaborés jusqu&amp;rsquo;ici montre
-clairement lequel est le plus approprié.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Le modèle linéaire est celui qui tient le mieux compte des nouvelles données." src="http://loicseguin.com/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_8_0.png" /&gt;&lt;/p&gt;
-&lt;p&gt;On voit clairement que ni le modèle cubique ni le modèle quadratique n&amp;rsquo;arrivent
-à expliquer les nouvelles données et ce, même si leur coefficient de
-détermination lorsque nous avons construit le modèle était supérieur à celui du
-modèle linéaire.  Dans le domaine de l&amp;rsquo;apprentissage-machine, ce phénomène est
-appelé du &lt;strong&gt;sur-apprentissage&lt;/strong&gt; (&lt;em&gt;overfitting&lt;/em&gt; en anglais).  En réalité, l&amp;rsquo;arc
-se comporte presque comme un ressort idéal et le modèle linéaire est le
-meilleur modèle pour expliquer son comportement.&lt;/p&gt;
-&lt;p&gt;Le modèle linéaire a aussi l&amp;rsquo;avantage d&amp;rsquo;être plus simple que les deux autres.
-Plus un modèle est complexe, plus il suivra de près les données, mais moins il
-sera facile à expliquer physiquement.&lt;/p&gt;
-&lt;h2 id="construire-un-polynome-qui-passe-par-un-ensemble-de-points"&gt;Construire un polynôme qui passe par un ensemble de points&lt;/h2&gt;
-&lt;p&gt;Nous allons maintenant voir comment, pour tout ensemble de données, nous
-pouvons construire un modèle polynomial qui passera par tous les points et qui
-aura donc un coefficient de détermination de 1.&lt;/p&gt;
-&lt;p&gt;Si nous avons \(N\) points \((x_i, y_i)\), il est toujours possible de
-trouver un polynôme \(p\) de degré au plus \(N - 1\) qui passe par chacun
-des points. Ce polynôme est assez simple à construire. Il doit satisfaire&lt;/p&gt;
-&lt;p&gt;$$p(x_1) = y_1 \\
-p(x_2) = y_2 \\
-\vdots \\
-p(x_N) = y_N$$&lt;/p&gt;
-&lt;p&gt;Nous pouvons satisfaire la première égalité facilement avec \(p(x) = y_1\).
-Évidemment, ce polynôme ne satisfait aucune des autres égalités. Si nous
-voulons satisfaire la deuxième égalité, nous pouvons ajouter un terme \(y_2\)
-et multiplier le premier terme par \(x_2 - x\) de telle sorte que lorsqu&amp;rsquo;on
-évalue le polynôme à \(x = x_2\), le premier terme disparaît et il ne reste
-que le second.&lt;/p&gt;
-&lt;p&gt;$$p(x) = y_1 (x_2 - x) + y_2$$&lt;/p&gt;
-&lt;p&gt;Malheureusement, cette version ne satisfait plus la première égalité car
-\(p(x_1) = y_1 (x_2 - x_1) + y_2\). Nous rétablissons assez facilement la
-situation en multipliant le second terme par \(x_1 - x\) et en divisant le
-premier terme par \(x_2 - x_1\). Nous obtenons alors le polynôme&lt;/p&gt;
-&lt;p&gt;$$p(x) = y_1 \frac{x_2 - x}{x_2 - x_1} + y_2 (x_1 - x).$$&lt;/p&gt;
-&lt;p&gt;Ce polynôme vaut \(y_1\) à \(x_1\) mais il vaut maintenant \(y_2 (x_1 -
-x_2)\) à \(x_2\). Si nous divisons le deuxième terme par \(x_1 - x_2\),
-nous obtenons un polynôme qui satisfait les deux premières égalités :&lt;/p&gt;
-&lt;p&gt;$$p(x) = y_1 \frac{x_2 - x}{x_2 - x_1} + y_2 \frac{x_1 - x}{x_1 - x_2}.$$&lt;/p&gt;
-&lt;p&gt;Ce polynôme est linéaire (degré 1) et passe par deux points de données.&lt;/p&gt;
-&lt;p&gt;En continuant le raisonnement de la sorte, nous arrivons à construire le
-polynôme suivant qui satisfait les \(N\) égalités :&lt;/p&gt;
-&lt;p&gt;$$p(x) = \sum_{i = 1}^N y_i \frac{\Pi_{j = 1\\j \neq i}^N (x_j - x)}{\Pi_{j = 1\\j \neq i}^N (x_j - x_i)}.$$&lt;/p&gt;
-&lt;p&gt;(&lt;em&gt;Exercice&lt;/em&gt; : Vérifiez que \(p(x_i) = y_i\) pour \(i = 1, \ldots, N\).)&lt;/p&gt;
-&lt;p&gt;Le degré de ce polynôme est déterminé par le numérateur de ses termes. Puisque
-le numérateur de chaque terme contient \(N - 1\) facteurs (\(j\) va de
-\(1\) jusqu&amp;rsquo;à \(N\), mais saute par-dessus la valeur \(i\)), le polynôme
-est donc de degré au plus \(N - 1\). Ce polynôme s&amp;rsquo;appelle un polynôme
-d&amp;rsquo;&lt;a href="https://fr.wikipedia.org/wiki/Interpolation_lagrangienne"&gt;interpolation de
-Lagrange&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;La construction du polynôme d&amp;rsquo;interpolation de Lagrange montre que pour
-n&amp;rsquo;importe quel ensemble de \(N\) points, il est possible de trouver un
-polynôme qui passe par tous ces points et que ce polynôme a un degré au plus
-\(N - 1\).&lt;/p&gt;
-&lt;h2 id="interpolation-de-lagrange-pour-larc"&gt;Interpolation de Lagrange pour l&amp;rsquo;arc&lt;/h2&gt;
-&lt;p&gt;Le calcul du polynôme d&amp;rsquo;interpolation de Lagrange pour les données que nous
-avons recueillies sur la force exercée par l&amp;rsquo;arc est directe, mais un peu
-fastidieuse. Heureusement, scipy contient une fonction &lt;code&gt;lagrange&lt;/code&gt; qui peut
-faire le travail pour nous.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.interpolate&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;lagrange&lt;/span&gt;
-
-&lt;span class="n"&gt;elongation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mf"&gt;4.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;12.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;20.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;24.0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mf"&gt;100.0&lt;/span&gt;
-&lt;span class="n"&gt;force&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mf"&gt;17.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mf"&gt;32.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mf"&gt;55.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mf"&gt;63.0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;span class="n"&gt;lagpoly&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lagrange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elongation&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lagpoly&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;$$-6771 x^3 + 3062 x^2 - 161.7 x + 19$$&lt;/p&gt;
-&lt;p&gt;Nous pouvons calculer la courbe de tendance polynomiale de degré 3 par la
-méthode des moindres carrés en utilisant la fonction &lt;code&gt;polyfit&lt;/code&gt; dans numpy
-(c&amp;rsquo;est la courbe de tendance qui se trouve dans les graphiques ci-dessus).&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;poly1d&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;polyfit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elongation&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;$$-6771 x^3 + 3062 x^2 - 161.7 x + 19$$&lt;/p&gt;
-&lt;p&gt;Le polynôme de degré 3 obtenu par la méthode des moindres carrés est donc le
-polynôme d&amp;rsquo;interpolation de Lagrange. Sachant que ce polynôme passe
- &lt;em&gt;exactement&lt;/em&gt; par tous les points, il n&amp;rsquo;est pas surprenant que le coefficient de
-détermination obtenu soit égal à 1.&lt;/p&gt;
-&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Comme tout ensemble de données admet un polynôme d&amp;rsquo;interpolation de Lagrange,
-il est certain qu&amp;rsquo;il est possible d&amp;rsquo;obtenir un modèle avec un coefficient de
-détermination de 1. Cela ne veut pas dire que le modèle est une description
-adéquate des données : il est possible que nous soyons victime de
-sur-apprentissage.&lt;/p&gt;
-&lt;p&gt;Un coefficient de détermination très près de 1 ne correspond donc pas
-nécessairement à un bon modèle. Le coefficient de détermination est une valeur
-utile pour juger de la qualité d&amp;rsquo;un modèle, mais elle doit être utilisée en
-conjonction avec d&amp;rsquo;autres critères pour arriver à une conclusion raisonnable.&lt;/p&gt;</summary><category term="statistique"></category></entry><entry><title>Erreur-type et variance d'un échantillon</title><link href="http://loicseguin.com/blogue/2015/erreur-type-et-variance-dun-echantillon/" rel="alternate"></link><updated>2015-01-25T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2015-01-25:blogue/2015/erreur-type-et-variance-dun-echantillon/</id><summary type="html">&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#echantillonnage"&gt;Échantillonnage&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#erreur-type-de-la-moyenne"&gt;Erreur-type de la moyenne&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#variance"&gt;Variance&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;L&amp;rsquo;objectif de ce billet est de comprendre la forme de deux quantités utilisées
-très fréquemment en statistique : l&amp;rsquo;erreur-type de la moyenne d&amp;rsquo;un
-échantillon
-\[
-  S_m = \frac{S}{\sqrt{n}}
-\]
-et la variance d&amp;rsquo;un échantillon
-\[
-  S^2 = \frac{1}{n - 1} \sum_{i = 1}^n (X_i - \bar{X})^2.
-\]
-Pourquoi y a-t-il un \(n - 1\) dans la variance? Pourquoi y a-t-il une racine
-carrée de la taille de l&amp;rsquo;échantillon dans l&amp;rsquo;erreur-type? Et que veut
-dire &lt;em&gt;erreur-type&lt;/em&gt;?&lt;/p&gt;
-&lt;h2 id="echantillonnage"&gt;Échantillonnage&lt;/h2&gt;
-&lt;p&gt;La variance d&amp;rsquo;un échantillon et l&amp;rsquo;erreur-type de la moyenne d&amp;rsquo;un échantillon
-font toutes deux référence à un &lt;strong&gt;échantillon&lt;/strong&gt;. Qu&amp;rsquo;est-ce qu&amp;rsquo;un échantillon?&lt;/p&gt;
-&lt;p&gt;Commençons par définir une &lt;strong&gt;population&lt;/strong&gt;. Une population est l&amp;rsquo;ensemble de
-tous les individus à propos desquels nous cherchons à obtenir de l&amp;rsquo;information.
-Nous utiliserons \(N\) pour désigner le nombre d&amp;rsquo;individus dans la population.
-Ici, individus est employé dans un sens large : il peut s&amp;rsquo;agir de personnes,
-comme lorsqu&amp;rsquo;on parle de la population d&amp;rsquo;un pays, mais il peut aussi s&amp;rsquo;agir de
-capitaux si on s&amp;rsquo;intéresse au cours de la bourse, de durées d&amp;rsquo;appels
-téléphoniques, de mesures expérimentales de résistance électrique, etc. En
-général, il est difficile d&amp;rsquo;obtenir des données sur &lt;em&gt;tous&lt;/em&gt; les individus d&amp;rsquo;une
-population et nous devons nous contenter d&amp;rsquo;étudier un sous-ensemble de la
-population.&lt;/p&gt;
-&lt;p&gt;Un &lt;strong&gt;échantillon&lt;/strong&gt; est un sous-ensemble d&amp;rsquo;une population sélectionné au hasard.
-Nous utiliserons \(n\) pour désigner le nombre d&amp;rsquo;individus dans un
-échantillon. Puisque l&amp;rsquo;échantillon est plus petit que la population, il est
-plus facile d&amp;rsquo;obtenir des données sur tous les membres de l&amp;rsquo;échantillon. À
-partir de ces données, nous pouvons essayer de déduire de l&amp;rsquo;information sur la
-population; c&amp;rsquo;est ce qu&amp;rsquo;on appelle une &lt;strong&gt;inférence statistique&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Un exemple concret peut aider à fixer les idées. Supposons qu&amp;rsquo;on cherche à
-connaître la taille moyenne des Canadiens. La population est l&amp;rsquo;ensemble de tous
-les habitants du Canada et la variable d&amp;rsquo;intérêt est la taille. Évidemment, il
-est impossible de parcourir le Canada en entier et de mesurer la taille de tous
-ses habitants. Par conséquent, nous devons construire un échantillon en
-choisissant au hasard quelques Canadiens.&lt;/p&gt;
-&lt;p&gt;La taille d&amp;rsquo;un individu \(i\) choisi au hasard dans la population est une
-variable aléatoire \(X_i\)&lt;sup id="fnref:varalea"&gt;&lt;a class="footnote-ref" href="#fn:varalea" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;.  L&amp;rsquo;espérance de la taille de cet
-individu est la &lt;strong&gt;moyenne de la population&lt;/strong&gt; que nous notons par \(\mu\).
-En supposant que chaque Canadien a autant de chance d&amp;rsquo;être choisi, la
-probabilité de choisir un individu en particulier parmi les \(N\) habitants
-du Canada est de \(1/N\) ce qui signifie que la fonction de masse pour la
-taille d&amp;rsquo;un Canadien est \(f(x) = P(X_i = x) = 1/N\). Par conséquent,
-l&amp;rsquo;espérance de \(X_i\) est&lt;/p&gt;
-&lt;p&gt;\[
-\mu = \mathrm{E}[X_i] = \sum_{j = 1}^N f(x_j) x_j = \frac{1}{N} \sum_{j = 1}^N x_j
-\]&lt;/p&gt;
-&lt;p&gt;Pour un échantillon particulier, nous pouvons aussi calculer une valeur
-moyenne. Cette valeur est la &lt;strong&gt;moyenne de l&amp;rsquo;échantillon&lt;/strong&gt; :&lt;/p&gt;
-&lt;p&gt;\[
-\bar{X} = \frac{1}{n} \sum_{i = 1}^n X_i
-\]&lt;/p&gt;
-&lt;p&gt;Puisque les \(X_i\) sont aléatoires, la moyenne de l&amp;rsquo;échantillon est aussi
-une variable aléatoire. La moyenne de l&amp;rsquo;échantillon sera probablement
-différente de la moyenne de la population et un échantillon différent aura
-probablement une moyenne différente. La moyenne d&amp;rsquo;un échantillon est donc un&lt;strong&gt;estimateur&lt;/strong&gt; de la moyenne de la population.&lt;/p&gt;
-&lt;p&gt;Cet estimateur est &lt;strong&gt;non biaisé&lt;/strong&gt; parce que si nous calculons son espérance,
-nous obtenons la moyenne de la population. Autrement dit, si nous construisons
-plusieurs échantillons, que nous calculons la moyenne de chacun d&amp;rsquo;entre eux et
-que nous calculons la moyenne de ces moyennes, le résultat sera très
-probablement la moyenne de la population. L&amp;rsquo;écart-type des moyennes des
-échantillons est ce qu&amp;rsquo;on appelle l&amp;rsquo;&lt;strong&gt;erreur-type de la moyenne&lt;/strong&gt;&lt;sup id="fnref:erreurtype"&gt;&lt;a class="footnote-ref" href="#fn:erreurtype" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;.
-Nous calculerons l&amp;rsquo;erreur-type de la moyenne à la &lt;a href="#erreur-type-de-la-moyenne"&gt;section
-suivante&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;La variance des \(X_i\) est la &lt;strong&gt;variance de la population&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;\[
-\begin{align} \sigma^2 &amp;amp;= \mathrm{E}\left[ (X_i - \mu)^2 \right] \\
-                       &amp;amp;= \frac{1}{N} \sum_{j = 1}^N (x_j - \mu)^2
-\end{align}
-\]&lt;/p&gt;
-&lt;p&gt;Encore une fois, nous voulons utiliser l&amp;rsquo;information sur l&amp;rsquo;échantillon pour
-estimer la variance de la population. La variance de l&amp;rsquo;échantillon est une
-variable aléatoire qui sert d&amp;rsquo;estimateur pour la variance de la population. Le
-premier réflexe est de tenter de définir la variance de l&amp;rsquo;échantillon par&lt;/p&gt;
-&lt;p&gt;\[
-S^2 = \frac{1}{n} \sum_{i = 1}^n \left(X_i - \bar{X} \right)^2
-\]&lt;/p&gt;
-&lt;p&gt;Cette formule est utilisée par certains (entre autre parce qu&amp;rsquo;elle maximise la
-vraisemblance), mais elle a le désavantage d&amp;rsquo;être biaisée. Si nous calculons la
-variance de plusieurs échantillons en utilisant cette formule et que nous
-calculons ensuite la moyenne de ces variances, nous n&amp;rsquo;obtiendrons pas la
-variance de la population. Un estimateur de la variance non biaisé est donné à
-la section &lt;a href="#variance"&gt;Variance&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id="erreur-type-de-la-moyenne"&gt;Erreur-type de la moyenne&lt;/h2&gt;
-&lt;p&gt;L&amp;rsquo;erreur-type de la moyenne, \(S_m\) est l&amp;rsquo;écart-type de la moyenne d&amp;rsquo;un
-échantillon.  Commençons par calculer la variance de la moyenne d&amp;rsquo;un
-échantillon :
-\[
-\begin{align}
-S_m^2 &amp;amp;= \mathrm{Var} \left[ \bar{X} \right] \\
-    &amp;amp;= \mathrm{E} \left[ \left(\bar{X} - \mathrm{E} [\bar{X}]\right)^2 \right]
-\end{align}
-\]
-L&amp;rsquo;espérance de \(\bar{X}\) se calcule directement en utilisant la linéarité
-de l&amp;rsquo;espérance et la définition de la moyenne de la population :
-\[
-\begin{align}
-\mathrm{E}[\bar{X}] &amp;amp;= \mathrm{E} \left[ \frac{1}{n} \sum_{i=1}^n X_i \right] \\
-    &amp;amp;= \frac{1}{n} \sum_{i=1}^n \mathrm{E} [X_i] \\
-    &amp;amp;= \frac{1}{n} \sum_{i=1}^n \mu \\
-    &amp;amp;= \mu 
-\end{align}
-\]
-Ceci démontre que la moyenne d&amp;rsquo;un échantillon est un estimateur non biaisé de
-la moyenne de la population.&lt;/p&gt;
-&lt;p&gt;En substituant ce résultat dans l&amp;rsquo;expression pour le carré de l&amp;rsquo;erreur-type
-nous obtenons
-\[
-\begin{align}
-S_m^2 &amp;amp;= \mathrm{E} \left[ \left( \bar{X} - \mu \right)^2 \right] \\
-      &amp;amp;= \mathrm{E} \left[ \bar{X}^2 - 2 \mu \bar{X} + \mu^2 \right] \\
-      &amp;amp;= \mathrm{E} \left[ \bar{X}^2 \right]
-         - 2\mu \mathrm{E} \left[ \bar{X} \right] + \mu^2 \\
-      &amp;amp;= \mathrm{E} \left[ \bar{X}^2 \right] - \mu^2
-\end{align}
-\]
-Il ne reste qu&amp;rsquo;à déterminer la valeur du premier terme à droite de l&amp;rsquo;égalité.
-Les premières étapes ne sont qu&amp;rsquo;un peu d&amp;rsquo;algèbre et l&amp;rsquo;utilisation de la
-linéarité de l&amp;rsquo;espérance.
-\[
-\begin{align}
-\mathrm{E}\left[ \bar{X}^2 \right] &amp;amp;= \mathrm{E}\left[ \left(\frac{1}{n} \sum_{j=1}^n X_j \right)^2 \right] \\
-    &amp;amp;= \frac{1}{n^2} \mathrm{E}\left[ \sum_{i=1}^n\sum_{j=1}^n X_iX_j \right] \\
-    &amp;amp;= \frac{1}{n^2} \mathrm{E}\left[ \sum_{i=1}^n\sum_{\substack{j=1 \ j \ne i}}^n X_iX_j + \sum_{i=1}^n X_i^2 \right] \\
-    &amp;amp;= \frac{1}{n^2} \left( \sum_{i=1}^n\sum_{\substack{j=1 \ j \ne i}}^n \mathrm{E}\left[ X_iX_j \right] + \sum_{i=1}^n \mathrm{E}\left[ X_i^2 \right] \right) \\
-\end{align}
-\]
-Si nous supposons que les variables \(X_i\) et \(X_j\) sont indépendantes,
-l&amp;rsquo;espérance du produit \(X_iX_j\) avec \(i\ne j\) est le produit des
-espérances&lt;sup id="fnref:indep"&gt;&lt;a class="footnote-ref" href="#fn:indep" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;,
-\[\mathrm{E}[X_iX_j] = \mathrm{E} [X_i] \mathrm{E}[X_j] = \mu^2.\]
-L&amp;rsquo;espérance de \(X_i^2\) est liée à la définition de la
-variance de la population. En effet,
-\[
-\begin{align}
-\sigma^2 &amp;amp;= \mathrm{E} \left[ (X_i - \mu)^2 \right] \\
-         &amp;amp;= \mathrm{E} [X_i^2] - \mu^2 \\
-\mathrm{E} [X_i^2] &amp;amp;= \mu^2 + \sigma^2.
-\end{align}
-\]
-En substituant ces deux expressions dans le calcul de l&amp;rsquo;espérance de
-\(\bar{X}^2\), nous obtenons&lt;/p&gt;
-&lt;p&gt;\[
-\begin{align}
- \mathrm{E}\left[ \bar{X}^2 \right] 
-    &amp;amp;= \frac{1}{n^2} \left( \sum_{i=1}^n\sum_{\substack{j=1 \ j \ne i}}^n \mu^2
-       + \sum_{i=1}^n \left(\mu^2 + \sigma^2\right) \right) \\
-    &amp;amp;= \frac{1}{n^2} \left( n(n-1)\mu^2 + n\left(\mu^2 + \sigma^2\right) \right) \\
-    &amp;amp;= \mu^2 + \frac{\sigma^2}{n}
-\end{align}
-\]&lt;/p&gt;
-&lt;p&gt;Finalement, il ne reste qu&amp;rsquo;à substituer cette dernière expression dans
-l&amp;rsquo;équation décrivant \(S_m^2\) :
-\[
-\begin{align}
-S_m^2 &amp;amp;= \mu^2 + \frac{\sigma^2}{n} - \mu^2\\
-      &amp;amp;= \frac{\sigma^2}{n} 
-\end{align}
-\]
-L&amp;rsquo;erreur-type est donc
-\[
-S_m = \frac{\sigma}{\sqrt{n}}.
-\]&lt;/p&gt;
-&lt;p&gt;Cette expression est très intéressante parce qu&amp;rsquo;elle nous informe sur l&amp;rsquo;impact
-qu&amp;rsquo;a la taille de l&amp;rsquo;échantillon sur l&amp;rsquo;erreur que nous faisons en approximant la
-moyenne de la population par la moyenne de l&amp;rsquo;échantillon. Plus l&amp;rsquo;échantillon
-est grand, plus l&amp;rsquo;erreur est petite ce qui est cohérent avec le fait que
-l&amp;rsquo;échantillon le plus grand possible, soit la population en entier, aura une
-moyenne exactement égale à celle de la population. De plus, la relation n&amp;rsquo;est
-pas proportionnelle : doubler la taille de l&amp;rsquo;échantillon ne diminue pas
-l&amp;rsquo;erreur de moitié. Pour cela, il faut quadrupler la taille de l&amp;rsquo;échantillon.&lt;/p&gt;
-&lt;p&gt;En pratique, l&amp;rsquo;écart-type de la population n&amp;rsquo;est pas connu. Il est donc
-impossible de déterminer la valeur exacte de l&amp;rsquo;erreur-type de la moyenne. Par
-contre, nous pouvons estimer cette valeur en utilisant l&amp;rsquo;écart-type de
-l&amp;rsquo;échantillon plutôt que celui de la population:
-\[
-S_m = \frac{S}{\sqrt{n}}
-\]&lt;/p&gt;
-&lt;h2 id="variance"&gt;Variance&lt;/h2&gt;
-&lt;p&gt;Essayons maintenant de trouver un estimateur non biaisé pour la variance de la
-population, c&amp;rsquo;est-à-dire qui a une espérance égale à la variance de la
-population.&lt;/p&gt;
-&lt;p&gt;Supposons que l&amp;rsquo;estimateur a la même forme que le paramètre :
-\[
-S^2 = \alpha \sum_{i = 1}^n \left( X_i - \bar{X} \right)^2
-\]
-où \(\alpha\) est une constante à déterminer.
-On peut récrire \(S^2\) différemment :
-\[
-\begin{align}
-S^2 &amp;amp;= \alpha \sum_{i = 1}^n \left( X_i^2 - 2X_i\bar{X} + \bar{X}^2 \right) \\
-    &amp;amp;= \alpha \left( \sum_{i = 1}^n X_i^2 - 2 \sum_{i = 1}^n X_i\bar{X} + \sum_{i = 1}^n \bar{X}^2 \right) \\
-    &amp;amp;= \alpha \left( \sum_{i = 1}^n X_i^2 - 2 \bar{X} \sum_{i = 1}^n X_i + n \bar{X}^2 \right) \\
-    &amp;amp;= \alpha \left( \sum_{i = 1}^n X_i^2 - 2n \bar{X}^2 + n \bar{X}^2 \right) \\
-    &amp;amp;= \alpha \left( \sum_{i = 1}^n X_i^2 - n \bar{X}^2 \right) \\
-\end{align}
-\]
-Pour passer de la troisième à la quatrième ligne, nous avons utilisé la
-définition de la moyenne de l&amp;rsquo;échantillon.&lt;/p&gt;
-&lt;p&gt;L&amp;rsquo;espérance de \(S^2\) est
-\[
-\begin{align}
-\mathrm{E}\left[S^2\right] &amp;amp;= \mathrm{E}\left[ \alpha \left( \sum_{i = 1}^n X_i^2 - n \bar{X}^2 \right) \right] \\
-       &amp;amp;= \alpha \left( \sum_{i = 1}^n \mathrm{E}\left[ X_i^2 \right] - n\mathrm{E}\left[ \bar{X}^2 \right] \right) \\
-\end{align}
-\]&lt;/p&gt;
-&lt;p&gt;En utilisant les résultats obtenus à la section &lt;a href="#erreur-type-de-la-moyenne"&gt;Erreur-type de la
-moyenne&lt;/a&gt;,
-nous obtenons
-\[
-\begin{align}
-\mathrm{E}\left[S^2\right] &amp;amp;= \alpha \left( \sum_{i = 1}^n \left( \mu^2 + \sigma^2 \right) - n\left(\mu^2 + \frac{\sigma^2}{n} \right) \right) \\
-       &amp;amp;= \alpha \left(n \sigma^2 + n\mu^2 - n\mu^2 - \sigma^2 \right) \\
-       &amp;amp;= \alpha (n - 1) \sigma^2
-\end{align}
-\]&lt;/p&gt;
-&lt;p&gt;Pour que \(S^2\) soit non-biaisé, il faut que \( \mathrm{E}(S^2) = \sigma^2 \)
-et donc, \(\alpha = \frac{1}{n - 1}\) ce qui donne&lt;/p&gt;
-&lt;p&gt;\[
-S^2 = \frac{1}{n - 1} \sum_{i=1}^n (X_i - \bar{X})^2
-\]&lt;/p&gt;
-&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;L&amp;rsquo;erreur-type
-\[
-S_m = \frac{S}{\sqrt{n}}
-\]
-mesure l&amp;rsquo;écart-type de la moyenne d&amp;rsquo;un échantillon par rapport à
-la moyenne de la population. Plus l&amp;rsquo;échantillon est grand, plus l&amp;rsquo;erreur-type
-est petite, et donc meilleure est l&amp;rsquo;approximation de \(\mu\) par
-\(\bar{X}\).&lt;/p&gt;
-&lt;p&gt;La présence du \(n - 1\) au dénominateur de la variance d&amp;rsquo;un échantillon est
-nécessaire si nous voulons que la variance de l&amp;rsquo;échantillon soit un estimateur
-non biaisé de la variance de la population.&lt;/p&gt;
-&lt;div class="footnote"&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id="fn:varalea"&gt;
-&lt;p&gt;La taille d&amp;rsquo;une personne n&amp;rsquo;est pas aléatoire : je mesure 178 cm et
-  Camille mesure 165 cm. Par contre, si nous choisissons une personne au
-  hasard, la taille que nous obtiendrons est aléatoire. Si la population ne
-  consiste que de Camille et moi, la probabilité que la taille d&amp;rsquo;une personne
-  choisie au hasard dans cette population soit 178 cm est de 50% et la
-  probabilité qu&amp;rsquo;elle soit de 165 cm est aussi de 50%.&amp;#160;&lt;a class="footnote-backref" href="#fnref:varalea" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:erreurtype"&gt;
-&lt;p&gt;En général, l&amp;rsquo;erreur-type d&amp;rsquo;une statistique est l&amp;rsquo;écart-type de
-  cette statistique.&amp;#160;&lt;a class="footnote-backref" href="#fnref:erreurtype" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:indep"&gt;
-&lt;p&gt;Deux variables aléatoires sont indépendantes si la distribution de
-  probabilité d&amp;rsquo;une des variables n&amp;rsquo;est pas affectée par la connaissance de la
-  valeur de l&amp;rsquo;autre variable. Dans l&amp;rsquo;exemple de la taille des Canadiens, si les
-  individus sont choisis au hasard dans toute la population, savoir qu&amp;rsquo;un des
-  individus a une taille de 170 cm ne donne aucune information sur la taille
-  d&amp;rsquo;un autre individu. Par contre, si on sait que l&amp;rsquo;échantillon est constitué
-  exclusivement des membres du Club des Grands ou des membres du Club des
-  Petits, alors savoir que la taille d&amp;rsquo;un individu est de 145 cm nous informe
-  que l&amp;rsquo;échantillon est composé des membres du Club des Petits. Par conséquent,
-  la taille d&amp;rsquo;un autre individu dans l&amp;rsquo;échantillon est probablement petite.
-  Dans ce cas, les tailles ne sont pas indépendantes.&amp;#160;&lt;a class="footnote-backref" href="#fnref:indep" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</summary><category term="statistique"></category></entry><entry><title>Queues M/M/1</title><link href="http://loicseguin.com/blogue/2013/queues-mm1/" rel="alternate"></link><updated>2013-08-01T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-08-01:blogue/2013/queues-mm1/</id><summary type="html">&lt;div class="contents topic" id="sommaire"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Loïc Séguin-C.</title><link href="http://loicseguin.com/" rel="alternate"></link><link href="http://loicseguin.com/feeds/all.atom.xml" rel="self"></link><id>http://loicseguin.com/</id><updated>2013-08-01T00:00:00-04:00</updated><entry><title>Queues M/M/1</title><link href="http://loicseguin.com/blogue/2013/queues-mm1/" rel="alternate"></link><published>2013-08-01T00:00:00-04:00</published><updated>2013-08-01T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-08-01:/blogue/2013/queues-mm1/</id><summary type="html">&lt;p class="first last"&gt;Une &lt;strong&gt;queue&lt;/strong&gt; est une abstraction mathématique pour représenter une
+panoplie de situations dans lesquelles des choses arrivent et sont
+traitées.  De quel genre de choses parle-t-on?  Et que veulent dire
+&lt;em&gt;arriver&lt;/em&gt; et &lt;em&gt;être traité&lt;/em&gt;?  Il peut s'agir de clients qui arrivent
+à la caisse dans une épicerie et qui sont servis par la caissière, de
+passagers qui se mettent en file pour monter dans un autobus, de
+documents qui sont empilés dans un classeur en attente d'être signés
+par un notaire, de paquets qui transitent dans un réseau IP et qui
+attendent dans un routeur de pouvoir être envoyés à la bonne
+destination.&lt;/p&gt;
+</summary><content type="html">&lt;div class="contents topic" id="sommaire"&gt;
 &lt;p class="topic-title first"&gt;Sommaire&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#la-queue-m-m-1-definitions" id="id1"&gt;La queue M/M/1 : définitions&lt;/a&gt;&lt;/li&gt;
@@ -1141,7 +363,11 @@ sera peut-être pas suffisante pour atteindre la distribution stationnaire).&lt;
 approximation qui peut être utile.  Cette approximation peut par la suite être
 raffinée en utilisant des simulations.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="maths"></category></entry><entry><title>Extraction des données météorologiques d'Archives climatiques nationales du Canada</title><link href="http://loicseguin.com/blogue/2013/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/" rel="alternate"></link><updated>2013-07-04T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-07-04:blogue/2013/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/</id><summary type="html">&lt;p&gt;Il est assez facile de récupérer des données météorologiques historiques à
+</content><category term="maths"></category></entry><entry><title>Extraction des données météorologiques d'Archives climatiques nationales du Canada</title><link href="http://loicseguin.com/blogue/2013/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/" rel="alternate"></link><published>2013-07-04T00:00:00-04:00</published><updated>2013-07-04T00:00:00-04:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2013-07-04:/blogue/2013/extraction-des-donnees-meteorologiques-darchives-climatiques-nationales-du-canada/</id><summary type="html">&lt;p class="first last"&gt;Il est assez facile de récupérer des données météorologiques
+historiques à partir du site web d'&lt;a class="reference external" href="http://climat.meteo.gc.ca/Welcome_f.html"&gt;Archives climatiques nationales
+du Canada&lt;/a&gt;.  Voici un petit guide pour y arriver en utilisant un
+script Python très simple.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Il est assez facile de récupérer des données météorologiques historiques à
 partir du site web d'&lt;a class="reference external" href="http://climat.meteo.gc.ca/Welcome_f.html"&gt;Archives climatiques nationales du Canada&lt;/a&gt;.  Voici un
 petit guide pour y arriver en utilisant un script Python très simple.&lt;/p&gt;
 &lt;p&gt;Tout d'abord, il faut identifier la station qui vous intéresse.  Vous pouvez
@@ -1207,441 +433,15 @@ moyenne en fonction du temps obtenu à partir du code suivant.&lt;/p&gt;
 
 &lt;span class="n"&gt;all_years&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;frames&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;all_years&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;u'Année'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;u'Température (${}^\circ$C)'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'Année'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'Température (${}^\circ$C)'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 &lt;img alt="Température annuelle moyenne depuis 1942" src="http://loicseguin.com/images/meteo_1942-2013.png" /&gt;
-</summary><category term="programmation"></category><category term="données ouvertes"></category></entry><entry><title>Variations saisonnières des naissances au Canada</title><link href="http://loicseguin.com/blogue/2013/variations-saisonnieres-des-naissances-au-canada/" rel="alternate"></link><updated>2013-06-07T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-07:blogue/2013/variations-saisonnieres-des-naissances-au-canada/</id><summary type="html">&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#collecte-et-nettoyage"&gt;Collecte et nettoyage&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#extraction-des-donnees-pertinentes"&gt;Extraction des données pertinentes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#reorganisation-des-facteurs"&gt;Réorganisation des facteurs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#calcul-des-frequences-relatives"&gt;Calcul des fréquences relatives&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#creation-de-series-temporelles"&gt;Création de séries temporelles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#visualisation-des-donnees"&gt;Visualisation des données&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#analyse-et-modelisation"&gt;Analyse et modélisation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;En discutant avec ma douce moitié à propos du fait que beaucoup de nos
-connaissances ont une date d&amp;rsquo;anniversaire au printemps, j&amp;rsquo;en suis venu à
-m&amp;rsquo;interroger sur la distribution des naissances au cours d&amp;rsquo;une année.  Si une
-personne est choisie au hasard, est-ce que la probabilité que cette personne
-soit née en janvier est 1/12 ? Et en février ?&lt;/p&gt;
-&lt;p&gt;En fouillant un peu, je me suis aperçu que ce n&amp;rsquo;est pas le cas.  La variation
-saisonnière des naissances est un phénomène bien connu des démographes depuis
-longtemps (voir, par exemple, &lt;a href="http://link.springer.com/article/10.2307/2060307"&gt;Udry et Morris (1967)&lt;/a&gt;,
-&lt;a href="http://link.springer.com/article/10.2307/2061082"&gt;Menken (1979)&lt;/a&gt;, &lt;a href="http://humrep.oxfordjournals.org/content/16/7/1512.long"&gt;Bobak et Gjonca (2001)&lt;/a&gt;).  Sans se
-lancer dans les théories sociologiques qui tentent d&amp;rsquo;expliquer le phénomène,
-nous pouvons l&amp;rsquo;observer facilement à partir de données disponibles sur le site
-de Statistique Canada.  L&amp;rsquo;exercice est en même temps un petit tutoriel sur
-l&amp;rsquo;utilisation de &lt;a href="http://www.r-project.org"&gt;R&lt;/a&gt; pour l&amp;rsquo;analyse et la visualisation de données.&lt;/p&gt;
-&lt;p&gt;Si vous lisez jusqu&amp;rsquo;à la toute fin, vous aurez droit à un truc infaillible pour
-devenir riche.&lt;/p&gt;
-&lt;h2 id="collecte-et-nettoyage"&gt;Collecte et nettoyage&lt;/h2&gt;
-&lt;p&gt;La première chose à faire est de télécharger les données à partir de la
-&lt;a href="http://www5.statcan.gc.ca/cansim/a05?id=1024502&amp;amp;retrLang=eng" title="Table 102-4502 Live births, by month, Canada, province and territories, annual"&gt;table 102-4502&lt;/a&gt; du site de &lt;a href="http://www.statcan.gc.ca" title="Statistique Canada"&gt;Statistique Canada&lt;/a&gt;.
-Pour télécharger le fichier, le décompresser et le charger dans un
-&lt;code&gt;data.frame&lt;/code&gt;, il suffit de deux commandes dans R.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;download.file&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s"&gt;&amp;quot;http://www20.statcan.gc.ca/tables-tableaux/cansim/csv/01024502-eng.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    dest &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;01024502-eng.csv.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-rawdata &lt;span class="o"&gt;=&lt;/span&gt; read.csv&lt;span class="p"&gt;(&lt;/span&gt;unzip&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;01024502-eng.csv.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; strip.white &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Il est important de noter que j&amp;rsquo;ai utilisé le fichier anglais.  Je ne l&amp;rsquo;ai pas
-vérifié, mais je suppose que la version française des mêmes données contient du
-texte français qui ne pourra pas être traité par les commandes suivantes.&lt;/p&gt;
-&lt;h3 id="extraction-des-donnees-pertinentes"&gt;Extraction des données pertinentes&lt;/h3&gt;
-&lt;p&gt;Le fichier contient le nombre de naissances dans chaque province pour chacun
-des mois de l&amp;rsquo;année, de 1991 à 2011.  Il contient également des données
-combinées pour l&amp;rsquo;ensemble du Canada et pour chaque année.  Les données sont&lt;em&gt;brutes&lt;/em&gt; : il n&amp;rsquo;est pas simple d&amp;rsquo;extraire les lignes appropriées parce que la
-sélection doit se faire selon les chaînes de caractères contenues dans ces
-lignes.  Avant de se lancer dans le nettoyage, il est plus sage de d&amp;rsquo;abord
-observer ce que nous avons entre les mains.  Les colonnes sont obtenues par
-la commande &lt;code&gt;names&lt;/code&gt; :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## [1] &amp;quot;Ref_Date&amp;quot;   &amp;quot;GEO&amp;quot;        &amp;quot;MONTHBIRTH&amp;quot; &amp;quot;UNIT&amp;quot;       &amp;quot;Value&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Pour avoir un aperçu des données elles-mêmes, il suffit d&amp;rsquo;extraire quelques
-lignes :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rawdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##   Ref_Date                                  GEO            MONTHBIRTH
-## 1     1991 Canada, place of residence of mother Total, month of birth
-## 2     1992 Canada, place of residence of mother Total, month of birth
-## 3     1993 Canada, place of residence of mother Total, month of birth
-## 4     1994 Canada, place of residence of mother Total, month of birth
-## 5     1995 Canada, place of residence of mother Total, month of birth
-##                    UNIT  Value
-## 1 Number of live births 402533
-## 2 Number of live births 398643
-## 3 Number of live births 388394
-## 4 Number of live births 385114
-## 5 Number of live births 378016
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;La présence de longues descriptions comme &lt;code&gt;Canada, place of residence of
-mother&lt;/code&gt; et &lt;code&gt;Total, month of birth&lt;/code&gt; complique un peu les choses.  La fonction
-&lt;code&gt;read.csv&lt;/code&gt; définit automatiquement des facteurs pour toutes les colonnes qui
-contiennent des chaînes de caractères, nous pouvons donc obtenir facilement la
-liste des niveaux de chaque colonne.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##  [1] &amp;quot;Alberta, place of residence of mother&amp;quot;
-##  [2] &amp;quot;British Columbia, place of residence of mother&amp;quot;
-##  [3] &amp;quot;Canada, place of residence of mother&amp;quot;
-##  [4] &amp;quot;Manitoba, place of residence of mother&amp;quot;
-##  [5] &amp;quot;New Brunswick, place of residence of mother&amp;quot;
-##  [6] &amp;quot;Newfoundland and Labrador, place of residence of mother&amp;quot;
-##  [7] &amp;quot;Northwest Territories including Nunavut, place of residence of mother&amp;quot;
-##  [8] &amp;quot;Northwest Territories, place of residence of mother&amp;quot;
-##  [9] &amp;quot;Nova Scotia, place of residence of mother&amp;quot;
-## [10] &amp;quot;Nunavut, place of residence of mother&amp;quot;
-## [11] &amp;quot;Ontario, place of residence of mother&amp;quot;
-## [12] &amp;quot;Prince Edward Island, place of residence of mother&amp;quot;
-## [13] &amp;quot;Quebec, place of residence of mother&amp;quot;
-## [14] &amp;quot;Saskatchewan, place of residence of mother&amp;quot;
-## [15] &amp;quot;Unknown province or territory, place of residence of mother&amp;quot;
-## [16] &amp;quot;Yukon, place of residence of mother&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##  [1] &amp;quot;Month of birth, April&amp;quot;     &amp;quot;Month of birth, August&amp;quot;
-##  [3] &amp;quot;Month of birth, December&amp;quot;  &amp;quot;Month of birth, February&amp;quot;
-##  [5] &amp;quot;Month of birth, January&amp;quot;   &amp;quot;Month of birth, July&amp;quot;
-##  [7] &amp;quot;Month of birth, June&amp;quot;      &amp;quot;Month of birth, March&amp;quot;
-##  [9] &amp;quot;Month of birth, May&amp;quot;       &amp;quot;Month of birth, November&amp;quot;
-## [11] &amp;quot;Month of birth, October&amp;quot;   &amp;quot;Month of birth, September&amp;quot;
-## [13] &amp;quot;Total, month of birth&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## [1] &amp;quot;Number of live births&amp;quot;     &amp;quot;Percentage of live births&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Pour garder les choses simples, contentons-nous d&amp;rsquo;analyser les données pour
-l&amp;rsquo;ensemble du Canada.  Nous utiliserons les fréquences de naissances mensuelles
-pour calculer les fréquence relatives.  Par conséquent, seules les lignes
-contenant la chaîne de caractère &lt;code&gt;Canada, place of residence of mother&lt;/code&gt; dans la
-colonne &lt;code&gt;GEO&lt;/code&gt; et &lt;code&gt;Number of live births&lt;/code&gt; dans la colonne &lt;code&gt;MONTHBIRTH&lt;/code&gt; seront
-conservées.&lt;/p&gt;
-&lt;p&gt;La fonction &lt;code&gt;grepl&lt;/code&gt; peut être utilisée pour éliminer toutes les lignes du
-tableau de données qui ne décrivent pas l&amp;rsquo;ensemble du Canada avec des nombres
-absolus pour chaque mois.  &lt;code&gt;grepl&lt;/code&gt; prend une expression régulière comme premier
-argument et une liste (ou un élément unique) comme second argument.  La
-fonction retourne une liste de valeurs booléennes qui indique si l&amp;rsquo;expression
-régulière a été trouvée à chacune des positions de la liste d&amp;rsquo;entrée.  Par
-exemple,&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bonjour&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;allo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## [1]  TRUE FALSE
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;La commande suivante sélectionne toutes les lignes pour lesquelles la colonne
-&lt;code&gt;GEO&lt;/code&gt; commence par &lt;code&gt;Canada&lt;/code&gt;, la colonne &lt;code&gt;UNIT&lt;/code&gt; commence par &lt;code&gt;Number&lt;/code&gt; et la
-colonne &lt;code&gt;MONTHBIRTH&lt;/code&gt; commence par &lt;code&gt;Month&lt;/code&gt;.  De plus, seules les colonnes
-d&amp;rsquo;intérêt sont retenues.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; rawdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;GEO&lt;span class="p"&gt;)&lt;/span&gt;
-                        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;UNIT&lt;span class="p"&gt;)&lt;/span&gt;
-                        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; rawdata&lt;span class="o"&gt;$&lt;/span&gt;MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
-                        &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Ref_Date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;MONTHBIRTH&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Value&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Le même résultat peut aussi être obtenu avec la commande &lt;code&gt;subset&lt;/code&gt; :&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rawdata&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Canada&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; GEO&lt;span class="p"&gt;)&lt;/span&gt;
-                                &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; UNIT&lt;span class="p"&gt;)&lt;/span&gt;
-                                &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="kp"&gt;grepl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;),&lt;/span&gt;
-                       select &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Ref_Date&lt;span class="p"&gt;,&lt;/span&gt; MONTHBIRTH&lt;span class="p"&gt;,&lt;/span&gt; Value&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Ensuite, nous renommons chaque colonne avec un nom plus descriptif.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Month&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Births&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="reorganisation-des-facteurs"&gt;Réorganisation des facteurs&lt;/h3&gt;
-&lt;p&gt;On peut simplifier le tableau en éliminant &lt;code&gt;Month of birth,&lt;/code&gt; pour n&amp;rsquo;utiliser
-que le nom du mois.  Encore une fois, les expressions régulières sont parfaites
-pour cette tâche.  La fonction &lt;code&gt;gsub&lt;/code&gt; remplace toutes les occurrences d&amp;rsquo;une
-expression régulière dans une liste.  Si l&amp;rsquo;expression à trouver contient des
-groupes (dénotés par des parenthèses), ces groupes peuvent être utilisés dans
-l&amp;rsquo;expression de remplacement avec &lt;code&gt;\\1&lt;/code&gt; à &lt;code&gt;\\9&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;gsub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Month of birth, ([a-zA-Z].)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\\1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                   &lt;span class="kp"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##    Year   Month Births
-## 43 1991 January  32150
-## 44 1992 January  31974
-## 45 1993 January  30989
-## 46 1994 January  30265
-## 47 1995 January  29975
-## 48 1996 January  29410
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Dans le tableau de données, les mois sont des niveaux, mais R ne sait pas
-comment ordonner ces niveaux.  Par défaut, les niveaux décrits par des chaînes
-de caractères sont ordonnés alphabétiquement.  La commande suivante place les
-mois en ordre chronologique.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;factor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="o"&gt;$&lt;/span&gt;Month&lt;span class="p"&gt;,&lt;/span&gt;
-    levels &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;January&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;February&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;March&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;April&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;May&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;June&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s"&gt;&amp;quot;July&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;August&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;September&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;October&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;November&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;December&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Ces données forment une série temporelle et R possède justement une classe pour
-ce type de données.  Pour l&amp;rsquo;utiliser, il faut d&amp;rsquo;abord réorganiser les lignes de&lt;code&gt;canada.births&lt;/code&gt; en ordre chronologique.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;canada.births &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;with&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Year&lt;span class="p"&gt;,&lt;/span&gt; Month&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##     Year    Month Births
-## 43  1991  January  32150
-## 85  1991 February  30259
-## 127 1991    March  34782
-## 169 1991    April  35314
-## 211 1991      May  36272
-## 253 1991     June  34275
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="calcul-des-frequences-relatives"&gt;Calcul des fréquences relatives&lt;/h3&gt;
-&lt;p&gt;Avant de créer des séries temporelles, un petit calcul risque d&amp;rsquo;être fort
-utile.  Le nombre total de naissances varie probablement d&amp;rsquo;année en année et
-même si c&amp;rsquo;est un phénomène intéressant, ce n&amp;rsquo;est pas celui que nous étudions en
-ce moment.  Pour éliminer l&amp;rsquo;effet des variations annuelles, il suffit de
-calculer le pourcentage des naissances de l&amp;rsquo;année qui ont
-lieu chaque mois.  Voici deux façons de faire ce calcul.&lt;/p&gt;
-&lt;p&gt;La fonction &lt;code&gt;aggregate&lt;/code&gt; permet de combiner les données d&amp;rsquo;une colonne selon la
-valeur d&amp;rsquo;une autre colonne en utilisant une fonction spécifique.  Pour obtenir
-le nombre total de naissances chaque année nous regroupons les éléments de la
-colonne &lt;code&gt;Births&lt;/code&gt; par &lt;code&gt;Year&lt;/code&gt; avec la fonction somme.  Chaque élément est ensuite
-répété 12 fois pour obtenir une liste de la même longueur que l&amp;rsquo;originale.  Il
-ne reste qu&amp;rsquo;à ajouter la colonne désirée.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;births_per_year &lt;span class="o"&gt;=&lt;/span&gt; aggregate&lt;span class="p"&gt;(&lt;/span&gt;Births &lt;span class="o"&gt;~&lt;/span&gt; Year&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; canada.births&lt;span class="p"&gt;,&lt;/span&gt; FUN &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-relbirths &lt;span class="o"&gt;=&lt;/span&gt; canada.births
-relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kp"&gt;rep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;births_per_year&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt;
-                                           each &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##     Year    Month Births RelBirths
-## 43  1991  January  32150   0.07987
-## 85  1991 February  30259   0.07517
-## 127 1991    March  34782   0.08641
-## 169 1991    April  35314   0.08773
-## 211 1991      May  36272   0.09011
-## 253 1991     June  34275   0.08515
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;La deuxième façon de procéder est plus directe mais nécessite un paquetage
-additionnel, &lt;code&gt;data.table&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;data.table&lt;span class="p"&gt;)&lt;/span&gt;
-birthstable &lt;span class="o"&gt;=&lt;/span&gt; data.table&lt;span class="p"&gt;(&lt;/span&gt;canada.births&lt;span class="p"&gt;)&lt;/span&gt;
-birthstable &lt;span class="o"&gt;=&lt;/span&gt; birthstable&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="sb"&gt;`:=`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; Births&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kp"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;Births&lt;span class="p"&gt;)),&lt;/span&gt; by &lt;span class="o"&gt;=&lt;/span&gt; Year&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;birthstable&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##    Year    Month Births RelBirths
-## 1: 1991  January  32150   0.07987
-## 2: 1991 February  30259   0.07517
-## 3: 1991    March  34782   0.08641
-## 4: 1991    April  35314   0.08773
-## 5: 1991      May  36272   0.09011
-## 6: 1991     June  34275   0.08515
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="creation-de-series-temporelles"&gt;Création de séries temporelles&lt;/h3&gt;
-&lt;p&gt;Nous créons deux séries temporelles : une avec le nombre de naissances et
-l&amp;rsquo;autre avec les fréquences relatives.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;births.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;Births&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-relbirths.ts &lt;span class="o"&gt;=&lt;/span&gt; ts&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths&lt;span class="p"&gt;,&lt;/span&gt; start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1991&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-                  frequency &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Pour le reste de l&amp;rsquo;analyse, nous utiliserons les trois objets &lt;code&gt;relbirths&lt;/code&gt;,
-&lt;code&gt;relbirths.ts&lt;/code&gt; et &lt;code&gt;births.ts&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id="visualisation-des-donnees"&gt;Visualisation des données&lt;/h2&gt;
-&lt;p&gt;R peut tracer un graphique du pourcentage des naissances en fonction du mois de
-l&amp;rsquo;année, il combine automatiquement les données de chaque année et produit un
-graphique en boîtes à moustache (mieux connu en anglais sous le nom de&lt;em&gt;box plot&lt;/em&gt;).  Le trait pointillé horizontal correspond à 1/12.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;RelBirths &lt;span class="o"&gt;~&lt;/span&gt; Month&lt;span class="p"&gt;,&lt;/span&gt; data &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-     ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Pourcentage des naissances annuelles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-abline&lt;span class="p"&gt;(&lt;/span&gt;h &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="Pourcentage des naissances en fonction du mois de l'année" src="http://loicseguin.com/images/births_vs_month.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Cette figure montre une variation claire du nombre de naissances au cours de
-l&amp;rsquo;année.  Les mois de mars à octobre sont les plus achalandés alors que les
-mois de novembre à février le sont moins.  Par exemple, environ 7.6% des
-naissances ont lieu en février alors que près de 8.8% ont lieu en mai (notons
-que 1/12 correspond à environ 8.3%).&lt;/p&gt;
-&lt;p&gt;Les graphiques des séries temporelles sont encore plus intéressants.  Le nombre
-de naissances en fonction du temps montre immédiatement qu&amp;rsquo;il y a à la fois des
-variations saisonnières mais aussi des variations d&amp;rsquo;année en année.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot.ts&lt;span class="p"&gt;(&lt;/span&gt;births.ts&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Temps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Nombre de naissances&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk births_vs_time" src="http://loicseguin.com/images/births_vs_time.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Si nous traçons plutôt les fréquences relatives, l&amp;rsquo;effet des variations
-annuelles disparaît et il ne reste que les variations saisonnières.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot.ts&lt;span class="p"&gt;(&lt;/span&gt;relbirths.ts&lt;span class="p"&gt;,&lt;/span&gt; xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Temps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Pourcentage des naissances annuelles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk relbirths_vs_time" src="http://loicseguin.com/images/relbirths_vs_time.png" /&gt;&lt;/p&gt;
-&lt;h2 id="analyse-et-modelisation"&gt;Analyse et modélisation&lt;/h2&gt;
-&lt;p&gt;C&amp;rsquo;est probablement une déformation professionnelle, mais quand je vois un
-graphique de série temporelle qui a l&amp;rsquo;air de celui ci-haut, je pense tout de
-suite à une faire une analyse de Fourier.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirth&lt;span class="p"&gt;)&lt;/span&gt;
-nft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
-ft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;Mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
-freqs &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
-          &lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-fftdata &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;data.frame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;freqs&lt;span class="p"&gt;,&lt;/span&gt; ft&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Voyons à quoi ressemble ce signal dans l&amp;rsquo;espace des fréquences.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;fftdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt; t &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; pch &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; cex &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-     xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Frequence (1/mois)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Amplitude&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="kp"&gt;which.max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
-abline&lt;span class="p"&gt;(&lt;/span&gt;v &lt;span class="o"&gt;=&lt;/span&gt; freqmax&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.63&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Frequence:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;signif&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/ mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Periode&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;signif&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk fourier" src="http://loicseguin.com/images/fourier.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Il y a bel et bien une composante de fréquence 12 mois dans le signal, autrement
-dit, le pourcentage des naissances peut être modélisé par une fonction
-sinusoïdale de fréquence \(1 / 12\).  R nous permet de trouver cette
-composante en faisant une régression non linéaire.  Pour diminuer le nombre de
-paramètres (3 au lieu de 4), il est approprié de soustraire la moyenne à la
-fréquence relative de sorte que le signal soit centré en 0.  Comme unité de
-temps, nous utiliserons le mois.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;y &lt;span class="o"&gt;=&lt;/span&gt; relbirths&lt;span class="o"&gt;$&lt;/span&gt;RelBirths &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;
-x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;y&lt;span class="p"&gt;)&lt;/span&gt;
-sine_fit &lt;span class="o"&gt;=&lt;/span&gt; nls&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; A &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="kp"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="kc"&gt;pi&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; f &lt;span class="o"&gt;*&lt;/span&gt; x &lt;span class="o"&gt;+&lt;/span&gt; k&lt;span class="p"&gt;),&lt;/span&gt;
-               start &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;A &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.05&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; f &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; k &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="kp"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##
-## Formula: y ~ A * sin(2 * pi * f * x + k)
-##
-## Parameters:
-##    Estimate Std. Error t value Pr(&amp;gt;|t|)
-## A -5.51e-03   2.19e-04   -25.1   &amp;lt;2e-16 ***
-## f  8.26e-02   8.57e-05   963.3   &amp;lt;2e-16 ***
-## k  1.93e+00   7.87e-02    24.6   &amp;lt;2e-16 ***
-## ---
-## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
-##
-## Residual standard error: 0.00245 on 249 degrees of freedom
-##
-## Number of iterations to convergence: 9
-## Achieved convergence tolerance: 8.41e-07
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt; x&lt;span class="p"&gt;)&lt;/span&gt;
-lines&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;,&lt;/span&gt; fitted&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk sine_fit" src="http://loicseguin.com/images/sine_fit.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Tous les paramètres du modèle sont statistiquement significatifs.  Ainsi donc,
-on peut utiliser la relation
-\[ y = -0.00551 \sin(0.519x + 1.93) + 1/12\]
-pour déterminer le pourcentage des naissances, \(y\), en fonction du mois de
-l&amp;rsquo;année, \(x\).  Le modèle pourrait être raffiné en y incluant des
-composantes d&amp;rsquo;autres fréquences.  Comme le montre l&amp;rsquo;analyse de Fourier des
-résidus, il reste encore des composantes de périodes bien spécifiques (3 mois
-étant la suivante).  Le reste de la procédure est laissée en exercice&amp;hellip; Pour
-les intéressés, cette procédure est exactement la même que la méthode de&lt;em&gt;blanchissage&lt;/em&gt; utilisée en astérosismologie pour déterminer les périodes de
-pulsation des étoiles (voir, par exemple,
-&lt;a href="http://iopscience.iop.org/0004-637X/530/1/441"&gt;Billéres &lt;em&gt;et al.&lt;/em&gt; (2000)&lt;/a&gt;).&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ft &lt;span class="o"&gt;=&lt;/span&gt; fft&lt;span class="p"&gt;(&lt;/span&gt;residuals&lt;span class="p"&gt;(&lt;/span&gt;sine_fit&lt;span class="p"&gt;))&lt;/span&gt;
-nft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;)&lt;/span&gt;
-ft &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;Mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;nft&lt;span class="p"&gt;],&lt;/span&gt; ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]))&lt;/span&gt;
-freqs &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;-0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
-          &lt;span class="kp"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; length.out &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;nft&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-fftdata &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;data.frame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;freqs&lt;span class="p"&gt;,&lt;/span&gt; ft&lt;span class="p"&gt;)&lt;/span&gt;
-plot&lt;span class="p"&gt;(&lt;/span&gt;fftdata&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt; t &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; pch &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; cex &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-     xlab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Frequence (1/mois)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; ylab &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Amplitude&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-freqmax &lt;span class="o"&gt;=&lt;/span&gt; freqs&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="kp"&gt;which.max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ft&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;130&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;230&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
-abline&lt;span class="p"&gt;(&lt;/span&gt;v &lt;span class="o"&gt;=&lt;/span&gt; freqmax&lt;span class="p"&gt;,&lt;/span&gt; lty &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Frequence:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;signif&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/ mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-text&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0.15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Periode&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;signif&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;freqmax&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;mois&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-     adj &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="plot of chunk fourier_residuals" src="http://loicseguin.com/images/fourier_residuals.png" /&gt;&lt;/p&gt;
-&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;La distribution de probabilité du mois de naissance n&amp;rsquo;est pas uniforme.  Elle
-suit plutôt une distribution sinusoïdale de période égale à un an.  Les mois
-d&amp;rsquo;été sont ceux durant lesquels il y a le plus de naissances alors que les mois
-d&amp;rsquo;hiver sont ceux durant lesquels il y en a le moins.&lt;/p&gt;
-&lt;p&gt;Voici donc une idée pour faire de l&amp;rsquo;argent.  Proposez à quelqu&amp;rsquo;un le jeu
-suivant.  Vous essayer de devinez leur mois d&amp;rsquo;anniversaire, si vous y arrivez
-la personne vous donne 10.50$, sinon vous lui donnez 1$.  Votre victime,
-croyant que vous allez choisir un mois au hasard selon une distribution
-uniforme estimera que l&amp;rsquo;espérance de son gain est \(-10.50\$ \times 1/12 + 1\$
-\times 11/12 = 0.04\$\) et elle sera d&amp;rsquo;accord pour jouer.  De votre côté, vous
-prédisez le mois de mai à chaque fois que vous jouez.  Grâce à l&amp;rsquo;analyse que
-nous venons de faire, nous savons que l&amp;rsquo;espérance de votre gain est \(10.50\$
-\times 0.088 - 1\$ \times 0.912 = 0.01\$\).  Si vous réussissez à convaincre
-suffisamment de personnes de jouer, vous deviendrez riche (ou presque).&lt;/p&gt;</summary><category term="programmation"></category><category term="statistique"></category></entry><entry><title>Conservation de la masse en hydrodynamique</title><link href="http://loicseguin.com/blogue/2013/conservation-de-la-masse-en-hydrodynamique/" rel="alternate"></link><updated>2013-06-05T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-05:blogue/2013/conservation-de-la-masse-en-hydrodynamique/</id><summary type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
+</content><category term="programmation"></category><category term="données ouvertes"></category></entry><entry><title>Conservation de la masse en hydrodynamique</title><link href="http://loicseguin.com/blogue/2013/conservation-de-la-masse-en-hydrodynamique/" rel="alternate"></link><published>2013-06-05T00:00:00-04:00</published><updated>2013-06-05T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2013-06-05:/blogue/2013/conservation-de-la-masse-en-hydrodynamique/</id><summary type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
+système fermé est un invariant, c'est-à-dire qu'elle est constante dans le
+temps.  Si le système étudié est un fluide, ce principe mène à l'équation de
+conservation de la masse aussi connue sous le nom d'&lt;em&gt;équation de …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Le principe de conservation de la masse stipule que la masse totale d'un
 système fermé est un invariant, c'est-à-dire qu'elle est constante dans le
 temps.  Si le système étudié est un fluide, ce principe mène à l'équation de
 conservation de la masse aussi connue sous le nom d'&lt;em&gt;équation de continuité&lt;/em&gt; :&lt;/p&gt;
@@ -1800,7 +600,10 @@ exemple, si la densité de masse est remplacé par une densité de charge, alors
 le produit &lt;span class="math"&gt;\(\rho\mathbf{u}\)&lt;/span&gt; devient une densité de courant et l'équation
 est l'équation de conservation de la charge en électrodynamique.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="physique"></category></entry><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.com/blogue/2012/utilisation-de-biblatex/" rel="alternate"></link><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2012-12-21:blogue/2012/utilisation-de-biblatex/</id><summary type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
+</content><category term="physique"></category></entry><entry><title>Utilisation de biblatex</title><link href="http://loicseguin.com/blogue/2012/utilisation-de-biblatex/" rel="alternate"></link><published>2012-12-21T00:00:00-05:00</published><updated>2012-12-21T00:00:00-05:00</updated><author><name>Loïc Séguin-Charbonneau</name></author><id>tag:loicseguin.com,2012-12-21:/blogue/2012/utilisation-de-biblatex/</id><summary type="html">&lt;p class="first last"&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour
+accompagner LaTeX. Combiné avec &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt;, il remplace complètement
+le système &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;tt class="docutils literal"&gt;biblatex&lt;/tt&gt; est le logiciel de gestion bibliographique moderne pour accompagner
 LaTeX. Combiné avec &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt;, il remplace complètement le système &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt;.
 Il est aussi possible de conserver &lt;tt class="docutils literal"&gt;bibtex&lt;/tt&gt; comme engin d'arrière-plan, mais
 &lt;tt class="docutils literal"&gt;biber&lt;/tt&gt; présente de nombreux avantages :&lt;/p&gt;
@@ -2031,7 +834,10 @@ lieu le jeudi après-midi de 13h à 17h.
 &lt;p&gt;Le résultat est le suivant :&lt;/p&gt;
 &lt;img alt="Exemple de plan de cours avec bibliographie" src="http://loicseguin.com/images/biblatex-pdc.png" /&gt;
 &lt;/div&gt;
-</summary><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/bessel-functions-in-scipy/" rel="alternate"></link><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:blogue/2012/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt; where &lt;span class="math"&gt;\(l\)&lt;/span&gt; is an integer,
+</content><category term="latex"></category></entry><entry><title>Bessel functions in Scipy</title><link href="http://loicseguin.com/blogue/2012/bessel-functions-in-scipy/" rel="alternate"></link><published>2012-12-03T00:00:00-05:00</published><updated>2012-12-03T00:00:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-12-03:/blogue/2012/bessel-functions-in-scipy/</id><summary type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt; where &lt;span class="math"&gt;\(l\)&lt;/span&gt; is an integer,
+are found in &lt;tt class="docutils literal"&gt;scipy.special.jn&lt;/tt&gt;. This is a function that takes two arguments:
+the first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt; and the second one is the value of the
+point at which to evaluate the functions …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bessel functions of the first kind, &lt;span class="math"&gt;\(J_l\)&lt;/span&gt; where &lt;span class="math"&gt;\(l\)&lt;/span&gt; is an integer,
 are found in &lt;tt class="docutils literal"&gt;scipy.special.jn&lt;/tt&gt;. This is a function that takes two arguments:
 the first one is the value of &lt;span class="math"&gt;\(l\)&lt;/span&gt; and the second one is the value of the
 point at which to evaluate the functions. If one is interested in &lt;span class="math"&gt;\(J_0\)&lt;/span&gt;
@@ -2067,7 +873,11 @@ finding procedure. For instance, &lt;tt class="docutils literal"&gt;scipy.optimi
 well.&lt;/p&gt;
 &lt;p&gt;John D. Cook has a &lt;a class="reference external" href="http://www.johndcook.com/Bessel_functions.html"&gt;great page&lt;/a&gt; about Bessel functions and &lt;a class="reference external" href="http://www.johndcook.com/Bessel_python.html"&gt;another one&lt;/a&gt;
 about how to work with the implementation in Scipy.&lt;/p&gt;
-</summary><category term="programmation"></category><category term="maths"></category></entry><entry><title>Moins de Google</title><link href="http://loicseguin.com/blogue/2012/moins-de-google/" rel="alternate"></link><updated>2012-05-13T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-05-13:blogue/2012/moins-de-google/</id><summary type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
+</content><category term="programmation"></category><category term="maths"></category></entry><entry><title>Moins de Google</title><link href="http://loicseguin.com/blogue/2012/moins-de-google/" rel="alternate"></link><published>2012-05-13T00:00:00-04:00</published><updated>2012-05-13T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2012-05-13:/blogue/2012/moins-de-google/</id><summary type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
+d'utilisation et les politiques de confidentialité des divers services en ligne
+que j'utilise. Cet exercice est motivé par deux raisons : premièrement, je veux
+déterminer quels services utilisent mes données de façon responsable et
+transparente; deuxièmement, je veux minimiser la quantité …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dernièrement, j'ai entrepris la tâche ingrate de lire les conditions
 d'utilisation et les politiques de confidentialité des divers services en ligne
 que j'utilise. Cet exercice est motivé par deux raisons : premièrement, je veux
 déterminer quels services utilisent mes données de façon responsable et
@@ -2242,7 +1052,18 @@ MathSciNet, Web of Science, etc.).&lt;/p&gt;
 me concerne, j'utilise surtout &lt;a class="reference external" href="http://arxiv.org/"&gt;arXiv.org&lt;/a&gt; et &lt;a class="reference external" href="http://www.adsabs.harvard.edu/"&gt;SOA/NASA ADS&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</summary><category term="informatique"></category></entry><entry><title>Dictionnaire français pour Vim</title><link href="http://loicseguin.com/blogue/2011/dictionnaire-francais-pour-vim/" rel="alternate"></link><updated>2011-12-22T23:45:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-12-22:blogue/2011/dictionnaire-francais-pour-vim/</id><summary type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
+</content><category term="informatique"></category></entry><entry><title>Dictionnaire français pour Vim</title><link href="http://loicseguin.com/blogue/2011/dictionnaire-francais-pour-vim/" rel="alternate"></link><published>2011-12-22T23:45:00-05:00</published><updated>2011-12-22T23:45:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2011-12-22:/blogue/2011/dictionnaire-francais-pour-vim/</id><summary type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
+&lt;pre class="code vim literal-block"&gt;
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;puis on passe à l'erreur suivante avec &lt;tt class="docutils literal"&gt;]s&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Par défaut, seuls des dictionnaires anglais sont fournis avec MacVim.
+Installer un dictionnaire français se fait automatiquement si on définit
+la variable spelllang pour le français :&lt;/p&gt;
+&lt;pre class="code vim literal-block"&gt;
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;spelllang&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;fr
+&lt;/pre&gt;
+&lt;p&gt;Ensuite, il …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Vim possède un correcteur d'orthographe. On peut l'activer avec&lt;/p&gt;
 &lt;pre class="code vim literal-block"&gt;
 &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
 &lt;/pre&gt;
@@ -2258,7 +1079,11 @@ regarder MacVim se connecter à un serveur ftp pour y télécharger les
 fichiers nécessaires.
 Information trouvée dans les archives de comp.editors sur usenet
 (&lt;a class="reference external" href="http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html"&gt;http://newsgroups.derkeiler.com/Archive/Comp/comp.editors/2006-04/msg00241.html&lt;/a&gt;).&lt;/p&gt;
-</summary><category term="informatique"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/blogue/2010/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/" rel="alternate"></link><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:blogue/2010/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
+</content><category term="informatique"></category></entry><entry><title>Consommation d'énergie et émission de gaz à effet de serre au Canada</title><link href="http://loicseguin.com/blogue/2010/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/" rel="alternate"></link><published>2010-06-08T03:09:00-04:00</published><updated>2010-06-08T03:09:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2010-06-08:/blogue/2010/consommation-denergie-et-emission-de-gaz-a-effet-de-serre-au-canada/</id><summary type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
+données relatives à la consommation d'énergie et à l'émission de GES par
+les foyers canadiens pour la période de 1990 à 2007. Ces données sont
+rendues publiques par l'&lt;a class="reference external" href="http://oee.nrcan.gc.ca/"&gt;Office de l'efficacité énergétique&lt;/a&gt; de
+&lt;a class="reference external" href="http://www.nrcan-rncan.gc.ca/com/"&gt;Ressources naturelles Canada&lt;/a&gt;. Elles proviennent …&lt;/p&gt;</summary><content type="html">&lt;p&gt;En faisant quelques recherches sur Internet, je suis tombé sur des
 données relatives à la consommation d'énergie et à l'émission de GES par
 les foyers canadiens pour la période de 1990 à 2007. Ces données sont
 rendues publiques par l'&lt;a class="reference external" href="http://oee.nrcan.gc.ca/"&gt;Office de l'efficacité énergétique&lt;/a&gt; de
@@ -2279,12 +1104,21 @@ navrant qu'on parle d'augmentation alors que les objectifs du protocole
 de Kyoto étaient de réduire les émissions de GES par rapport à celles de
 1990. Néanmoins, si l'on en croit ces données, la situation n'est pas si
 terrible au Canada.&lt;/p&gt;
-</summary><category term="environnement"></category><category term="python"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/blogue/2009/protegeons-nous-avec-les-maths/" rel="alternate"></link><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:blogue/2009/protegeons-nous-avec-les-maths/</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
+</content><category term="environnement"></category><category term="python"></category></entry><entry><title>Protégeons-nous avec les maths</title><link href="http://loicseguin.com/blogue/2009/protegeons-nous-avec-les-maths/" rel="alternate"></link><published>2009-04-07T16:33:00-04:00</published><updated>2009-04-07T16:33:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-04-07:/blogue/2009/protegeons-nous-avec-les-maths/</id><summary type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
 &lt;blockquote&gt;
 It is insufficient to protect ourselves with laws; we need to
 protect ourselves with mathematics.&lt;/blockquote&gt;
 &lt;p&gt;Tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9780471117094"&gt;Applied Cryptography&lt;/a&gt; par Bruce Schneier.&lt;/p&gt;
-</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Copies de sauvegarde</title><link href="http://loicseguin.com/blogue/2009/copies-de-sauvegarde/" rel="alternate"></link><updated>2009-03-11T03:06:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-11:blogue/2009/copies-de-sauvegarde/</id><summary type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
+</summary><content type="html">&lt;p&gt;Une citation toute à l'honneur des mathématiques :&lt;/p&gt;
+&lt;blockquote&gt;
+It is insufficient to protect ourselves with laws; we need to
+protect ourselves with mathematics.&lt;/blockquote&gt;
+&lt;p&gt;Tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9780471117094"&gt;Applied Cryptography&lt;/a&gt; par Bruce Schneier.&lt;/p&gt;
+</content><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Copies de sauvegarde</title><link href="http://loicseguin.com/blogue/2009/copies-de-sauvegarde/" rel="alternate"></link><published>2009-03-11T03:06:00-04:00</published><updated>2009-03-11T03:06:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-03-11:/blogue/2009/copies-de-sauvegarde/</id><summary type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
+sauvegarde de mes documents importants : un shell script maison assez
+simple qui utilise le logiciel rsync (&lt;a class="reference external" href="http://samba.anu.edu.au/rsync/"&gt;informations sur ce site&lt;/a&gt;).
+rsync est un logiciel libre distribué sous licence GPL et disponible sur
+la plupart des plateformes Unix de même …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai finalement trouvé une solution convenable pour faire des copies de
 sauvegarde de mes documents importants : un shell script maison assez
 simple qui utilise le logiciel rsync (&lt;a class="reference external" href="http://samba.anu.edu.au/rsync/"&gt;informations sur ce site&lt;/a&gt;).
 rsync est un logiciel libre distribué sous licence GPL et disponible sur
@@ -2386,7 +1220,8 @@ première fois que le script fonctionne puisqu'il doit alors copier
 l'ensemble des fichiers).
 Prochaine étape : synchroniser mon Macbook et mon ordinateur de bureau
 roulant sous OpenBSD avec &lt;a class="reference external" href="http://www.cis.upenn.edu/%7Ebcpierce/unison/"&gt;Unison&lt;/a&gt;...&lt;/p&gt;
-</summary><category term="informatique"></category></entry><entry><title>Bonne fête Darwin !</title><link href="http://loicseguin.com/blogue/2009/bonne-fete-darwin/" rel="alternate"></link><updated>2009-02-12T15:02:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-12:blogue/2009/bonne-fete-darwin/</id><summary type="html">&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
+</content><category term="informatique"></category></entry><entry><title>Bonne fête Darwin !</title><link href="http://loicseguin.com/blogue/2009/bonne-fete-darwin/" rel="alternate"></link><published>2009-02-12T15:02:00-05:00</published><updated>2009-02-12T15:02:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-12:/blogue/2009/bonne-fete-darwin/</id><summary type="html">&lt;p class="first last"&gt;Célébrons le deux centième anniversaire de Charles Darwin.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Il y a 200 ans, le 12 février 1809, naît un homme qui va révolutionner
 notre compréhension de la nature : Charles Darwin. Darwin fût un
 naturaliste de grand renom qui a étudié, entre autre, la botanique et
 l'entomologie. Mais sa plus grande contribution à la science moderne est
@@ -2416,7 +1251,13 @@ Quelques liens intéressants :
 &lt;a class="reference external" href="http://www.darwinday.org/index.html"&gt;Darwin Day Celebration&lt;/a&gt;
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Charles_Darwin"&gt;Charles Darwin sur Wikipedia (en)&lt;/a&gt;
 &lt;a class="reference external" href="http://darwin-online.org.uk/"&gt;The Complete Work of Charles Darwin Online&lt;/a&gt;&lt;/p&gt;
-</summary><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.com/blogue/2009/des-axiomes-mathematiques/" rel="alternate"></link><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-06:blogue/2009/des-axiomes-mathematiques/</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
+</content><category term="philosophie"></category><category term="biologie"></category></entry><entry><title>Des axiomes mathématiques</title><link href="http://loicseguin.com/blogue/2009/des-axiomes-mathematiques/" rel="alternate"></link><published>2009-02-06T01:52:00-05:00</published><updated>2009-02-06T01:52:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2009-02-06:/blogue/2009/des-axiomes-mathematiques/</id><summary type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
+de Alan B. Wallace (tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782702128206"&gt;Science et Bouddhisme, à chacun sa
+réalité&lt;/a&gt;) :&lt;/p&gt;
+&lt;blockquote&gt;
+Les axiomes mathématiques étaient considérés jusqu'à récemment comme
+des évidences qu'il n'était pas nécessaire de prouver. Or au siècle
+dernier des mathématiciens ont suggéré …&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;En lisant &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782266079907"&gt;Le moine et le philosophe&lt;/a&gt;, je suis tombé sur cette citation
 de Alan B. Wallace (tirée de &lt;a class="reference external" href="http://www.worldcat.org/isbn/9782702128206"&gt;Science et Bouddhisme, à chacun sa
 réalité&lt;/a&gt;) :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2453,7 +1294,12 @@ théorèmes les plus complexes. Quiconque prétend que ces théorèmes
 s'appliquent au réel fait un acte de foi qui n'est pas plus valable et
 qui l'est tout autant que l'acte de foi que fait celui qui choisit de
 suivre une religion.&lt;/p&gt;
-</summary><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Optique 101 (partie 1)</title><link href="http://loicseguin.com/blogue/2008/optique-101-partie-1/" rel="alternate"></link><updated>2008-11-14T17:54:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-14:blogue/2008/optique-101-partie-1/</id><summary type="html">&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
+</content><category term="maths"></category><category term="philosophie"></category></entry><entry><title>Optique 101 (partie 1)</title><link href="http://loicseguin.com/blogue/2008/optique-101-partie-1/" rel="alternate"></link><published>2008-11-14T17:54:00-05:00</published><updated>2008-11-14T17:54:00-05:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-11-14:/blogue/2008/optique-101-partie-1/</id><summary type="html">&lt;p class="first last"&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
+appareil photographique, on doit d'abord connaître quelques principes
+fondamentaux d'optique géométrique. Nous verrons la propagation de la
+lumière en ligne droite, la loi de Snell-Descartes et les propriétés
+des lentilles minces.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Pour comprendre comment fonctionne la vue et comment fonctionne un
 appareil photographique, on doit d'abord connaître quelques principes
 fondamentaux d'optique géométrique. Nous verrons la propagation de la
 lumière en ligne droite, la loi de Snell-Descartes et les propriétés des
@@ -2529,13 +1375,13 @@ milieu le moins réfringent, il s'éloignera de la normale.
 La loi de Snell-Descartes est fondamentale pour comprendre le
 fonctionnement d'une partie cruciale d'un appareil photo : la lentille.
 Nous verrons dans le prochain article comment fonctionne une lentille.&lt;/p&gt;
-</summary><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/blogue/2008/lantre-de-la-bete/" rel="alternate"></link><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:blogue/2008/lantre-de-la-bete/</id><summary type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
+</content><category term="photographie"></category><category term="physique"></category></entry><entry><title>L'antre de la bête</title><link href="http://loicseguin.com/blogue/2008/lantre-de-la-bete/" rel="alternate"></link><published>2008-09-30T23:37:00-04:00</published><updated>2008-09-30T23:37:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-30:/blogue/2008/lantre-de-la-bete/</id><summary type="html"></summary><content type="html">&lt;p&gt;Dans un élan d'exhibitionnisme, je vous montre ici mon milieu de
 travail. On constate la grande organisation qui règne sur mon bureau...&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqSchJBI/AAAAAAAABf0/4IUUibpNjvY/s400/IMG_1143.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Et voici les instruments essentiels à la tâche du mathématicien :&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_HyYHulp_e30/SOKnqTgxthI/AAAAAAAABf8/jO9PyF3ESG8/s400/IMG_1146.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image2" src="https://blogger.googleusercontent.com/tracker/697344570467959391-4984607396283200774?l=mathfou.blogspot.com" /&gt;&lt;/p&gt;
-</summary><category term="ineptie"></category></entry><entry><title>Manipuler des symboles</title><link href="http://loicseguin.com/blogue/2008/manipuler-des-symboles/" rel="alternate"></link><updated>2008-09-23T23:15:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-23:blogue/2008/manipuler-des-symboles/</id><summary type="html">&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
+</content><category term="ineptie"></category></entry><entry><title>Manipuler des symboles</title><link href="http://loicseguin.com/blogue/2008/manipuler-des-symboles/" rel="alternate"></link><published>2008-09-23T23:15:00-04:00</published><updated>2008-09-23T23:15:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-23:/blogue/2008/manipuler-des-symboles/</id><summary type="html"></summary><content type="html">&lt;p&gt;Les mathématiques sont percues par beaucoup de gens, dont plusieurs
 mathématiciens, comme étant un ensemble de règles qui dictent comment
 manipuler des symboles. En manipulant ces symboles, on arrive à formuler
 les &amp;quot;phrases&amp;quot; mathématiques que sont les théorèmes. Bien sûr, la plupart
@@ -2561,7 +1407,8 @@ de la preuve.&lt;/p&gt;
 &lt;p&gt;Les idées sont plus importantes que les calculs. Et, étrangement, il est
 beaucoup plus difficile de formuler des idées que d'effectuer des
 calculs.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Triangulations créatives</title><link href="http://loicseguin.com/blogue/2008/triangulations-creatives/" rel="alternate"></link><updated>2008-09-12T16:30:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-12:blogue/2008/triangulations-creatives/</id><summary type="html">&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
+</content><category term="maths"></category></entry><entry><title>Triangulations créatives</title><link href="http://loicseguin.com/blogue/2008/triangulations-creatives/" rel="alternate"></link><published>2008-09-12T16:30:00-04:00</published><updated>2008-09-12T16:30:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-12:/blogue/2008/triangulations-creatives/</id><summary type="html">&lt;p class="first last"&gt;Jolies images obtenues en faisant des triangulations.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;On peut représenter les objets tridimensionnels par des triangles collés
 les uns aux autres de telle sorte qu'ils épousent les formes de l'objet.
 On appelle une telle construction une triangulation. Une fois qu'on a
 obtenu une triangulation, on peut la raffiner en divisant les triangles
@@ -2712,7 +1559,7 @@ ses images et m'avoir permis de les utiliser sur ce site. Je remercie
 également &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Efan/ron/"&gt;Ron Graham&lt;/a&gt; et &lt;a class="reference external" href="http://www.math.ucsd.edu/%7Esbutler/"&gt;Steve Butler&lt;/a&gt; pour m'avoir initié aux
 raffinements de triangulations lors de CCCG 2008.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.com/blogue/2008/le-lhc-demarre/" rel="alternate"></link><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-10:blogue/2008/le-lhc-demarre/</id><summary type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
+</content><category term="maths"></category></entry><entry><title>Le LHC démarre !</title><link href="http://loicseguin.com/blogue/2008/le-lhc-demarre/" rel="alternate"></link><published>2008-09-10T17:21:00-04:00</published><updated>2008-09-10T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-10:/blogue/2008/le-lhc-demarre/</id><summary type="html"></summary><content type="html">&lt;p&gt;Une grande nouvelle pour les physiciens et les curieux qui s'interrogent
 sur la nature de l'univers. Le Large Hadron Collider (LHC, grand
 collisioneur de proton en français), le plus grand accélérateur de
 particule construit par l'homme, a été mis en route aujourd'hui. Sa mise
@@ -2746,7 +1593,7 @@ les plus puissants du monde.&lt;/p&gt;
 &lt;li&gt;la nouvelle : &lt;a class="reference external" href="http://www.radio-canada.ca/nouvelles/Science-Sante/2008/09/09/002-collisionneur-reeves-Hawking.shtml"&gt;Radio-Canada.ca&lt;/a&gt;, &lt;a class="reference external" href="http://www.cyberpresse.ca/article/20080910/CPSCIENCES/80910007/1020/CPSCIENCES"&gt;Cyberpresse&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;le LHC : &lt;a class="reference external" href="http://public.web.cern.ch/Public/fr/LHC/LHC-fr.html"&gt;CERN&lt;/a&gt;, &lt;a class="reference external" href="http://www.youtube.com/watch?v=j50ZssEojtM"&gt;the LHC rap&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</summary><category term="physique"></category></entry><entry><title>Le dilemme du prisonnier</title><link href="http://loicseguin.com/blogue/2008/le-dilemme-du-prisonnier/" rel="alternate"></link><updated>2008-09-07T06:22:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-07:blogue/2008/le-dilemme-du-prisonnier/</id><summary type="html">&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
+</content><category term="physique"></category></entry><entry><title>Le dilemme du prisonnier</title><link href="http://loicseguin.com/blogue/2008/le-dilemme-du-prisonnier/" rel="alternate"></link><published>2008-09-07T06:22:00-04:00</published><updated>2008-09-07T06:22:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-09-07:/blogue/2008/le-dilemme-du-prisonnier/</id><summary type="html"></summary><content type="html">&lt;p&gt;Le &amp;quot;jeu&amp;quot;, au sens de la théorie des jeux, le plus connu est sans
 conteste le dilemme du prisonnier. Deux suspects sont arrêtés
 relativement à un crime donné. Ils sont interrogés séparément et ne
 peuvent communiquer d'aucune façon que ce soit. Ils connaissent tous
@@ -2783,7 +1630,7 @@ prison. Il existe pourtant une solution à ce jeu qui est beaucoup plus
 avantageuse &amp;quot;socialement&amp;quot;. Si les deux innocentent leur collègue, ils ne
 purgeront qu'un an chacun. La collaboration, dans ce contexte, est une
 bien meilleure option que l'avarice.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/blogue/2008/pourquoi-les-nombres-entiers-sont-parfois-essentiels/" rel="alternate"></link><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:blogue/2008/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</id><summary type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
+</content><category term="maths"></category></entry><entry><title>Pourquoi les nombres entiers sont parfois essentiels ?</title><link href="http://loicseguin.com/blogue/2008/pourquoi-les-nombres-entiers-sont-parfois-essentiels/" rel="alternate"></link><published>2008-05-11T17:24:00-04:00</published><updated>2008-05-11T17:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-05-11:/blogue/2008/pourquoi-les-nombres-entiers-sont-parfois-essentiels/</id><summary type="html"></summary><content type="html">&lt;p&gt;On a tendance à sous-estimer l'utilité et la signification des nombres
 entiers. Dans cet &lt;a class="reference external" href="http://www.theglobeandmail.com/servlet/story/RTGAM.20080510.wobama0510/BNStory/International/?page=rss&amp;amp;id=RTGAM.20080510.wobama0510"&gt;article&lt;/a&gt; du Globe and Mail du 10 mai, on peut lire
 cette charmante phrase :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2799,7 +1646,7 @@ fractionnaires n'a aucun sens.&lt;/p&gt;
 proportion. Or, ici, il est question d'un nombre de personnes, pas d'une
 proportion. Il est donc tout à fait déraisonnable de dire que madame
 Clinton a l'appui d'un demi-délégué.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>La programmation en nombres entiers.</title><link href="http://loicseguin.com/blogue/2008/la-programmation-en-nombres-entiers/" rel="alternate"></link><updated>2008-03-21T06:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-03-21:blogue/2008/la-programmation-en-nombres-entiers/</id><summary type="html">&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
+</content><category term="maths"></category></entry><entry><title>La programmation en nombres entiers.</title><link href="http://loicseguin.com/blogue/2008/la-programmation-en-nombres-entiers/" rel="alternate"></link><published>2008-03-21T06:23:00-04:00</published><updated>2008-03-21T06:23:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2008-03-21:/blogue/2008/la-programmation-en-nombres-entiers/</id><summary type="html"></summary><content type="html">&lt;p&gt;Qu'est-ce qui fait de la programmation en nombres entiers un sujet
 intéressant ? Pourquoi une poignée de mathématiciens dépensent-ils
 quelques milliers de dollars pour se réunir et en discuter ? Sans doute
 en saurais-je un peu plus à mon retour de la session de travail sur la
@@ -2825,7 +1672,7 @@ où on ne peut pas accepter des solutions fractionnaires. Par exemple, si
 on achemine un produit en petites quantités sur une courte période de
 temps.&lt;/p&gt;
 &lt;p&gt;Plus de détails à venir éventuellement !&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category><category term="maths"></category></entry><entry><title>Une citation mémorable du film Proof</title><link href="http://loicseguin.com/blogue/2007/une-citation-memorable-du-film-proof/" rel="alternate"></link><updated>2007-10-28T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-28:blogue/2007/une-citation-memorable-du-film-proof/</id><summary type="html">&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
+</content><category term="recherche opérationnelle"></category><category term="maths"></category></entry><entry><title>Une citation mémorable du film Proof</title><link href="http://loicseguin.com/blogue/2007/une-citation-memorable-du-film-proof/" rel="alternate"></link><published>2007-10-28T17:21:00-04:00</published><updated>2007-10-28T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-28:/blogue/2007/une-citation-memorable-du-film-proof/</id><summary type="html"></summary><content type="html">&lt;p&gt;Avant que quiconque ne m'envoie des messages haineux, je tiens à dire
 que je n'ai pas aimé ce film. La performances des acteurs est mauvaise,
 l'histoire, peu enivrante. Certaines personnes ont comparé ce film à &lt;em&gt;A
 Beautiful Mind&lt;/em&gt;, ce que je n'arrive pas à comprendre. Outre le fait que
@@ -2848,7 +1695,7 @@ approaches four. I will never be as cold now as I will in the future.
 The future of cold is infinite. The future of heat is the future of
 cold. The bookstores are infinite and so are never full except in
 September...&lt;/blockquote&gt;
-</summary><category term="maths"></category></entry><entry><title>Le problème du contrôle de groupes d'ascenseurs</title><link href="http://loicseguin.com/blogue/2007/le-probleme-du-controle-de-groupes-dascenseurs/" rel="alternate"></link><updated>2007-10-22T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-22:blogue/2007/le-probleme-du-controle-de-groupes-dascenseurs/</id><summary type="html">&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
+</content><category term="maths"></category></entry><entry><title>Le problème du contrôle de groupes d'ascenseurs</title><link href="http://loicseguin.com/blogue/2007/le-probleme-du-controle-de-groupes-dascenseurs/" rel="alternate"></link><published>2007-10-22T17:21:00-04:00</published><updated>2007-10-22T17:21:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-10-22:/blogue/2007/le-probleme-du-controle-de-groupes-dascenseurs/</id><summary type="html"></summary><content type="html">&lt;p&gt;Ceux qui ont déjà eu à prendre un ascenseur pour se rendre sur leur lieu
 de travail quotidiennement savent à quel point il peut y avoir de
 l'achalandage pour monter dans ces machines. Aux heures de pointe, il
 peut y avoir des gens qui veulent monter du rez-de-chaussée à presque
@@ -2876,7 +1723,7 @@ Plusieurs approches algorithmiques différentes ont été prises pour
 aborder le problème. Une simple recherche sur Google donne de nombreux
 liens vers des articles qui proposent des approches évolutives,
 neuronales, et autres. Je vous tiendrez au courant de mes lectures...&lt;/p&gt;
-</summary><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/resolution-du-probleme-des-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:blogue/2007/resolution-du-probleme-des-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
+</content><category term="recherche opérationnelle"></category></entry><entry><title>Résolution du problème des ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/resolution-du-probleme-des-ponts-de-konigsberg/" rel="alternate"></link><published>2007-08-24T06:24:00-04:00</published><updated>2007-08-24T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-24:/blogue/2007/resolution-du-probleme-des-ponts-de-konigsberg/</id><summary type="html"></summary><content type="html">&lt;p&gt;D'abord, on doit définir ce qu'est un graphe (en fait, ce qu'on va définir ici
 est appelé par certains un multigraphe). Un graphe G est simplement un ensemble
 de n points qu'on appelle des sommets &lt;span class="math"&gt;\(S = \{x_1, x_2, ..., x_n\}\)&lt;/span&gt; reliés
 par des arrêtes &lt;span class="math"&gt;\(A = \{(x_i x_j, 1), (x_i x_j, 2), (x_k x_l, 1), ..., (x_n
@@ -2915,7 +1762,7 @@ coup d'oeil à l'image de Königsberg et on trouve tout de suite des
 sommets de degré impair. Donc il est impossible de trouver un tour
 eulérien et la solution au problème des ponts de Königsberg est que
 c'est impossible.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/les-ponts-de-konigsberg/" rel="alternate"></link><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:blogue/2007/les-ponts-de-konigsberg/</id><summary type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
+</content><category term="maths"></category></entry><entry><title>Les ponts de Königsberg</title><link href="http://loicseguin.com/blogue/2007/les-ponts-de-konigsberg/" rel="alternate"></link><published>2007-08-22T06:24:00-04:00</published><updated>2007-08-22T06:24:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2007-08-22:/blogue/2007/les-ponts-de-konigsberg/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_HyYHulp_e30/Rsz7-V5PDZI/AAAAAAAAAAM/6QH_HwlYm20/s320/Konigsberg.jpeg" /&gt;&lt;/p&gt;
 &lt;p&gt;Maintenant que j'ai un blogue, voyons ce que je peux en faire.&lt;/p&gt;
 &lt;p&gt;Un des problèmes qui est à l'origine de la théorie des graphes est celui
 des ponts de Königsberg. Cette ville de Prusse (au temps où la Prusse
@@ -2932,7 +1779,8 @@ notions élémentaires de théorie des graphes. Maintenant que je vous ai
 mis l'eau à la bouche et que vous mourrez tous d'envie de connaître la
 preuve, je vais aller me coucher. La preuve viendra dans un futur
 rapproché.&lt;/p&gt;
-</summary><category term="maths"></category></entry><entry><title>Relativité restreinte</title><link href="http://loicseguin.com/blogue/2004/relativite-restreinte/" rel="alternate"></link><updated>2004-06-14T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2004-06-14:blogue/2004/relativite-restreinte/</id><summary type="html">&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
+</content><category term="maths"></category></entry><entry><title>Relativité restreinte</title><link href="http://loicseguin.com/blogue/2004/relativite-restreinte/" rel="alternate"></link><published>2004-06-14T00:00:00-04:00</published><updated>2004-06-14T00:00:00-04:00</updated><author><name>Loïc Séguin-C.</name></author><id>tag:loicseguin.com,2004-06-14:/blogue/2004/relativite-restreinte/</id><summary type="html">&lt;p class="first last"&gt;Résumé humoristique de l'histoire de la relativité restreinte.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Tout d'abord, Dieu créa la Terre et le Ciel, etc.&lt;/p&gt;
 &lt;p&gt;Puis, un beau jour d'il y a un ou deux siècles, un dénommé Maxwell (oui oui,
 comme le café) trouva les équations de l'électromagnétisme. Ce sont des
 équations qui décrivent tous les phénomènes électromagnétiques (comme la
@@ -2984,4 +1832,4 @@ des objets allant plus vite que la vitesse de la lumière ne puisse pas exister.
 De tels objets, nommés tachyons, seraient confinés à des vitesses supérieures à c
 et ne pourraient pas ralentir ou s'arrêter. Les tachyons n'ont jamais été
 observés expérimentalement à ce jour.&lt;/p&gt;
-</summary><category term="physique"></category></entry></feed>
+</content><category term="physique"></category></entry></feed>

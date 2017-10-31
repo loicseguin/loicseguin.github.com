@@ -28,7 +28,7 @@ TRANSLATION_FEED_ATOM = None
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
 THEME = "/Users/loic/code/pelican-themes/beseth"
-MD_EXTENSIONS = ['fenced_code', 'codehilite', 'toc', 'tables', 'footnotes',
+MARKDOWN = ['fenced_code', 'codehilite', 'toc', 'tables', 'footnotes',
 'smarty']
 
 # Minimize stuff that gets generated
@@ -41,7 +41,7 @@ DRAFT_SAVE_AS = ''
 DRAFT_LANG_SAVE_AS = ''
 
 # Fix docutils
-DOCUTILS_SETTINGS = [('math_output', 'MathJax')]
+DOCUTILS_SETTINGS = [('math_output', 'MathJax https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML')]
 
 # Social widget
 SOCIAL = (
@@ -53,5 +53,4 @@ SOCIAL = (
          )
 
 DEFAULT_PAGINATION = 8
-GOOGLE_ANALYTICS = 'UA-41506771-1'
 
