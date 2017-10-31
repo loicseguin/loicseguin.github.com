@@ -28,8 +28,17 @@ TRANSLATION_FEED_ATOM = None
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
 THEME = "/Users/loic/code/pelican-themes/beseth"
-MARKDOWN = ['fenced_code', 'codehilite', 'toc', 'tables', 'footnotes',
-'smarty']
+MARKDOWN = {
+        'extension_configs': {
+            'markdown.extensions.fenced_code': {},
+            'markdown.extensions.codehilite': {},
+            'markdown.extensions.toc': {},
+            'markdown.extensions.tables': {},
+            'markdown.extensions.footnotes': {},
+            'markdown.extensions.smarty': {},
+            },
+        'output_format': 'html5'
+        }
 
 # Minimize stuff that gets generated
 DIRECT_TEMPLATES = ('index', 'archives')
