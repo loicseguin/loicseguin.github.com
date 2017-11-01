@@ -50,7 +50,7 @@ DRAFT_SAVE_AS = ''
 DRAFT_LANG_SAVE_AS = ''
 
 # Fix docutils
-DOCUTILS_SETTINGS = [('math_output', 'MathJax https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML')]
+DOCUTILS_SETTINGS = [('math_output', 'mathjax https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML')]
 
 # Social widget
 SOCIAL = (
