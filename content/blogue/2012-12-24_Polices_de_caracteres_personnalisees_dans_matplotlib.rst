@@ -28,6 +28,6 @@ graphique.  Le code ci-dessous illustre comment s'y prendre.
 
 Le résultat est l'image suivante.
 
-.. image:: |filename|/images/custom_font_matplotlib.png
+.. image:: |static|/images/custom_font_matplotlib.png
    :alt: Police Chalkduster
 

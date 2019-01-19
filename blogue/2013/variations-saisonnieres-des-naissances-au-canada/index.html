@@ -3,23 +3,23 @@
     <head>
           <title>Loïc Séguin-C.</title>
         <meta charset="utf-8" />
-        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
-        <link href="http://loicseguin.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
+        <link href="https://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
+        <link href="https://loicseguin.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
 
 
 
     <meta name="tags" contents="programmation" />
     <meta name="tags" contents="statistique" />
 
-        <link href='http://fonts.googleapis.com/css?family=Alegreya|Alegreya+SC' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/beseth-min-201503182048.css" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Alegreya|Alegreya+SC' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://loicseguin.com/theme/css/beseth-min-201503182048.css" type="text/css" />
     </head>
 
     <body>
         <header id="banner">
             <div class="container">
                 <div>
-                <h1 class="site-title"><a class="site-title" href="http://loicseguin.com/">Loïc Séguin-C. <strong></strong></a></h1>
+                <h1 class="site-title"><a class="site-title" href="https://loicseguin.com/">Loïc Séguin-C. <strong></strong></a></h1>
 
                 <nav><ul class="nav-list plain">
                 </ul></nav>
@@ -74,10 +74,10 @@ devenir riche.</p>
 <a href="http://www5.statcan.gc.ca/cansim/a05?id=1024502&amp;retrLang=eng" title="Table 102-4502 Live births, by month, Canada, province and territories, annual">table 102-4502</a> du site de <a href="http://www.statcan.gc.ca" title="Statistique Canada">Statistique Canada</a>.
 Pour télécharger le fichier, le décompresser et le charger dans un
 <code>data.frame</code>, il suffit de deux commandes dans R.</p>
-<div class="codehilite"><pre><span></span>download.file<span class="p">(</span>
+<div class="codehilite"><pre><span></span><span class="nf">download.file</span><span class="p">(</span>
     <span class="s">&quot;http://www20.statcan.gc.ca/tables-tableaux/cansim/csv/01024502-eng.zip&quot;</span><span class="p">,</span>
-    dest <span class="o">=</span> <span class="s">&quot;01024502-eng.csv.zip&quot;</span><span class="p">)</span>
-rawdata <span class="o">=</span> read.csv<span class="p">(</span>unzip<span class="p">(</span><span class="s">&quot;01024502-eng.csv.zip&quot;</span><span class="p">),</span> strip.white <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+    <span class="n">dest</span> <span class="o">=</span> <span class="s">&quot;01024502-eng.csv.zip&quot;</span><span class="p">)</span>
+<span class="n">rawdata</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="nf">unzip</span><span class="p">(</span><span class="s">&quot;01024502-eng.csv.zip&quot;</span><span class="p">),</span> <span class="n">strip.white</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 
 
@@ -93,7 +93,7 @@ sélection doit se faire selon les chaînes de caractères contenues dans ces
 lignes.  Avant de se lancer dans le nettoyage, il est plus sage de d&rsquo;abord
 observer ce que nous avons entre les mains.  Les colonnes sont obtenues par
 la commande <code>names</code> :</p>
-<div class="codehilite"><pre><span></span><span class="kp">names</span><span class="p">(</span>rawdata<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
 </pre></div>
 
 
@@ -103,7 +103,7 @@ la commande <code>names</code> :</p>
 
 <p>Pour avoir un aperçu des données elles-mêmes, il suffit d&rsquo;extraire quelques
 lignes :</p>
-<div class="codehilite"><pre><span></span>rawdata<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="p">]</span>
+<div class="codehilite"><pre><span></span><span class="n">rawdata[1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="n">]</span>
 </pre></div>
 
 
@@ -127,7 +127,7 @@ mother</code> et <code>Total, month of birth</code> complique un peu les choses.
 <code>read.csv</code> définit automatiquement des facteurs pour toutes les colonnes qui
 contiennent des chaînes de caractères, nous pouvons donc obtenir facilement la
 liste des niveaux de chaque colonne.</p>
-<div class="codehilite"><pre><span></span><span class="kp">levels</span><span class="p">(</span>rawdata<span class="o">$</span>GEO<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">levels</span><span class="p">(</span><span class="n">rawdata</span><span class="o">$</span><span class="n">GEO</span><span class="p">)</span>
 </pre></div>
 
 
@@ -150,7 +150,7 @@ liste des niveaux de chaque colonne.</p>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kp">levels</span><span class="p">(</span>rawdata<span class="o">$</span>MONTHBIRTH<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">levels</span><span class="p">(</span><span class="n">rawdata</span><span class="o">$</span><span class="n">MONTHBIRTH</span><span class="p">)</span>
 </pre></div>
 
 
@@ -164,7 +164,7 @@ liste des niveaux de chaque colonne.</p>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kp">levels</span><span class="p">(</span>rawdata<span class="o">$</span>UNIT<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">levels</span><span class="p">(</span><span class="n">rawdata</span><span class="o">$</span><span class="n">UNIT</span><span class="p">)</span>
 </pre></div>
 
 
@@ -185,7 +185,7 @@ argument et une liste (ou un élément unique) comme second argument.  La
 fonction retourne une liste de valeurs booléennes qui indique si l&rsquo;expression
 régulière a été trouvée à chacune des positions de la liste d&rsquo;entrée.  Par
 exemple,</p>
-<div class="codehilite"><pre><span></span><span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;bon&quot;</span><span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;bonjour&quot;</span><span class="p">,</span> <span class="s">&quot;allo&quot;</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;bon&quot;</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;bonjour&quot;</span><span class="p">,</span> <span class="s">&quot;allo&quot;</span><span class="p">))</span>
 </pre></div>
 
 
@@ -197,23 +197,23 @@ exemple,</p>
 <code>GEO</code> commence par <code>Canada</code>, la colonne <code>UNIT</code> commence par <code>Number</code> et la
 colonne <code>MONTHBIRTH</code> commence par <code>Month</code>.  De plus, seules les colonnes
 d&rsquo;intérêt sont retenues.</p>
-<div class="codehilite"><pre><span></span>canada.births <span class="o">=</span> rawdata<span class="p">[</span><span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Canada&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>GEO<span class="p">)</span>
-                        <span class="o">&amp;</span> <span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Number&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>UNIT<span class="p">)</span>
-                        <span class="o">&amp;</span> <span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Month&quot;</span><span class="p">,</span> rawdata<span class="o">$</span>MONTHBIRTH<span class="p">),</span>
-                        <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Ref_Date&quot;</span><span class="p">,</span> <span class="s">&quot;MONTHBIRTH&quot;</span><span class="p">,</span> <span class="s">&quot;Value&quot;</span><span class="p">)]</span>
+<div class="codehilite"><pre><span></span><span class="n">canada.births</span> <span class="o">=</span> <span class="n">rawdata</span><span class="nf">[grepl</span><span class="p">(</span><span class="s">&quot;^Canada&quot;</span><span class="p">,</span> <span class="n">rawdata</span><span class="o">$</span><span class="n">GEO</span><span class="p">)</span>
+                        <span class="o">&amp;</span> <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;^Number&quot;</span><span class="p">,</span> <span class="n">rawdata</span><span class="o">$</span><span class="n">UNIT</span><span class="p">)</span>
+                        <span class="o">&amp;</span> <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;^Month&quot;</span><span class="p">,</span> <span class="n">rawdata</span><span class="o">$</span><span class="n">MONTHBIRTH</span><span class="p">),</span>
+                        <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Ref_Date&quot;</span><span class="p">,</span> <span class="s">&quot;MONTHBIRTH&quot;</span><span class="p">,</span> <span class="s">&quot;Value&quot;</span><span class="p">)</span><span class="n">]</span>
 </pre></div>
 
 
 <p>Le même résultat peut aussi être obtenu avec la commande <code>subset</code> :</p>
-<div class="codehilite"><pre><span></span>canada.births <span class="o">=</span> <span class="kp">subset</span><span class="p">(</span>rawdata<span class="p">,</span> <span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Canada&quot;</span><span class="p">,</span> GEO<span class="p">)</span>
-                                <span class="o">&amp;</span> <span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Number&quot;</span><span class="p">,</span> UNIT<span class="p">)</span>
-                                <span class="o">&amp;</span> <span class="kp">grepl</span><span class="p">(</span><span class="s">&quot;^Month&quot;</span><span class="p">,</span> MONTHBIRTH<span class="p">),</span>
-                       select <span class="o">=</span> <span class="kt">c</span><span class="p">(</span>Ref_Date<span class="p">,</span> MONTHBIRTH<span class="p">,</span> Value<span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="n">canada.births</span> <span class="o">=</span> <span class="nf">subset</span><span class="p">(</span><span class="n">rawdata</span><span class="p">,</span> <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;^Canada&quot;</span><span class="p">,</span> <span class="n">GEO</span><span class="p">)</span>
+                                <span class="o">&amp;</span> <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;^Number&quot;</span><span class="p">,</span> <span class="n">UNIT</span><span class="p">)</span>
+                                <span class="o">&amp;</span> <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;^Month&quot;</span><span class="p">,</span> <span class="n">MONTHBIRTH</span><span class="p">),</span>
+                       <span class="n">select</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">Ref_Date</span><span class="p">,</span> <span class="n">MONTHBIRTH</span><span class="p">,</span> <span class="n">Value</span><span class="p">))</span>
 </pre></div>
 
 
 <p>Ensuite, nous renommons chaque colonne avec un nom plus descriptif.</p>
-<div class="codehilite"><pre><span></span><span class="kp">names</span><span class="p">(</span>canada.births<span class="p">)</span> <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Year&quot;</span><span class="p">,</span> <span class="s">&quot;Month&quot;</span><span class="p">,</span> <span class="s">&quot;Births&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">canada.births</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Year&quot;</span><span class="p">,</span> <span class="s">&quot;Month&quot;</span><span class="p">,</span> <span class="s">&quot;Births&quot;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -224,9 +224,9 @@ pour cette tâche.  La fonction <code>gsub</code> remplace toutes les occurrence
 expression régulière dans une liste.  Si l&rsquo;expression à trouver contient des
 groupes (dénotés par des parenthèses), ces groupes peuvent être utilisés dans
 l&rsquo;expression de remplacement avec <code>\\1</code> à <code>\\9</code>.</p>
-<div class="codehilite"><pre><span></span><span class="kp">levels</span><span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">)</span> <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;Month of birth, ([a-zA-Z].)&quot;</span><span class="p">,</span> <span class="s">&quot;\\1&quot;</span><span class="p">,</span>
-                                   <span class="kp">levels</span><span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">))</span>
-<span class="kp">head</span><span class="p">(</span>canada.births<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">levels</span><span class="p">(</span><span class="n">canada.births</span><span class="o">$</span><span class="n">Month</span><span class="p">)</span> <span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;Month of birth, ([a-zA-Z].)&quot;</span><span class="p">,</span> <span class="s">&quot;\\1&quot;</span><span class="p">,</span>
+                                   <span class="nf">levels</span><span class="p">(</span><span class="n">canada.births</span><span class="o">$</span><span class="n">Month</span><span class="p">))</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">canada.births</span><span class="p">)</span>
 </pre></div>
 
 
@@ -244,8 +244,8 @@ l&rsquo;expression de remplacement avec <code>\\1</code> à <code>\\9</code>.</p
 comment ordonner ces niveaux.  Par défaut, les niveaux décrits par des chaînes
 de caractères sont ordonnés alphabétiquement.  La commande suivante place les
 mois en ordre chronologique.</p>
-<div class="codehilite"><pre><span></span>canada.births<span class="o">$</span>Month <span class="o">=</span> <span class="kp">factor</span><span class="p">(</span>canada.births<span class="o">$</span>Month<span class="p">,</span>
-    levels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;January&quot;</span><span class="p">,</span> <span class="s">&quot;February&quot;</span><span class="p">,</span> <span class="s">&quot;March&quot;</span><span class="p">,</span> <span class="s">&quot;April&quot;</span><span class="p">,</span> <span class="s">&quot;May&quot;</span><span class="p">,</span> <span class="s">&quot;June&quot;</span><span class="p">,</span>
+<div class="codehilite"><pre><span></span><span class="n">canada.births</span><span class="o">$</span><span class="n">Month</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">canada.births</span><span class="o">$</span><span class="n">Month</span><span class="p">,</span>
+    <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;January&quot;</span><span class="p">,</span> <span class="s">&quot;February&quot;</span><span class="p">,</span> <span class="s">&quot;March&quot;</span><span class="p">,</span> <span class="s">&quot;April&quot;</span><span class="p">,</span> <span class="s">&quot;May&quot;</span><span class="p">,</span> <span class="s">&quot;June&quot;</span><span class="p">,</span>
     <span class="s">&quot;July&quot;</span><span class="p">,</span> <span class="s">&quot;August&quot;</span><span class="p">,</span> <span class="s">&quot;September&quot;</span><span class="p">,</span> <span class="s">&quot;October&quot;</span><span class="p">,</span> <span class="s">&quot;November&quot;</span><span class="p">,</span> <span class="s">&quot;December&quot;</span><span class="p">))</span>
 </pre></div>
 
@@ -253,8 +253,8 @@ mois en ordre chronologique.</p>
 <p>Ces données forment une série temporelle et R possède justement une classe pour
 ce type de données.  Pour l&rsquo;utiliser, il faut d&rsquo;abord réorganiser les lignes de
 <code>canada.births</code> en ordre chronologique.</p>
-<div class="codehilite"><pre><span></span>canada.births <span class="o">=</span> canada.births<span class="p">[</span><span class="kp">with</span><span class="p">(</span>canada.births<span class="p">,</span> <span class="kp">order</span><span class="p">(</span>Year<span class="p">,</span> Month<span class="p">)),</span> <span class="p">]</span>
-<span class="kp">head</span><span class="p">(</span>canada.births<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">canada.births</span> <span class="o">=</span> <span class="n">canada.births</span><span class="nf">[with</span><span class="p">(</span><span class="n">canada.births</span><span class="p">,</span> <span class="nf">order</span><span class="p">(</span><span class="n">Year</span><span class="p">,</span> <span class="n">Month</span><span class="p">)),</span> <span class="n">]</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">canada.births</span><span class="p">)</span>
 </pre></div>
 
 
@@ -281,11 +281,11 @@ le nombre total de naissances chaque année nous regroupons les éléments de la
 colonne <code>Births</code> par <code>Year</code> avec la fonction somme.  Chaque élément est ensuite
 répété 12 fois pour obtenir une liste de la même longueur que l&rsquo;originale.  Il
 ne reste qu&rsquo;à ajouter la colonne désirée.</p>
-<div class="codehilite"><pre><span></span>births_per_year <span class="o">=</span> aggregate<span class="p">(</span>Births <span class="o">~</span> Year<span class="p">,</span> data <span class="o">=</span> canada.births<span class="p">,</span> FUN <span class="o">=</span> <span class="kp">sum</span><span class="p">)</span>
-relbirths <span class="o">=</span> canada.births
-relbirths<span class="o">$</span>RelBirths <span class="o">=</span> relbirths<span class="o">$</span>Births<span class="o">/</span><span class="kp">rep</span><span class="p">(</span>births_per_year<span class="o">$</span>Births<span class="p">,</span>
-                                           each <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
-<span class="kp">head</span><span class="p">(</span>relbirths<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">births_per_year</span> <span class="o">=</span> <span class="nf">aggregate</span><span class="p">(</span><span class="n">Births</span> <span class="o">~</span> <span class="n">Year</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">canada.births</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">sum</span><span class="p">)</span>
+<span class="n">relbirths</span> <span class="o">=</span> <span class="n">canada.births</span>
+<span class="n">relbirths</span><span class="o">$</span><span class="n">RelBirths</span> <span class="o">=</span> <span class="n">relbirths</span><span class="o">$</span><span class="n">Births</span><span class="o">/</span><span class="nf">rep</span><span class="p">(</span><span class="n">births_per_year</span><span class="o">$</span><span class="n">Births</span><span class="p">,</span>
+                                           <span class="n">each</span> <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">relbirths</span><span class="p">)</span>
 </pre></div>
 
 
@@ -301,10 +301,10 @@ relbirths<span class="o">$</span>RelBirths <span class="o">=</span> relbirths<sp
 
 <p>La deuxième façon de procéder est plus directe mais nécessite un paquetage
 additionnel, <code>data.table</code>.</p>
-<div class="codehilite"><pre><span></span><span class="kn">library</span><span class="p">(</span>data.table<span class="p">)</span>
-birthstable <span class="o">=</span> data.table<span class="p">(</span>canada.births<span class="p">)</span>
-birthstable <span class="o">=</span> birthstable<span class="p">[,</span> <span class="sb">`:=`</span><span class="p">(</span>RelBirths<span class="p">,</span> Births<span class="o">/</span><span class="kp">sum</span><span class="p">(</span>Births<span class="p">)),</span> by <span class="o">=</span> Year<span class="p">]</span>
-<span class="kp">head</span><span class="p">(</span>birthstable<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="n">birthstable</span> <span class="o">=</span> <span class="nf">data.table</span><span class="p">(</span><span class="n">canada.births</span><span class="p">)</span>
+<span class="n">birthstable</span> <span class="o">=</span> <span class="n">birthstable[</span><span class="p">,</span> <span class="nf">`:=`</span><span class="p">(</span><span class="n">RelBirths</span><span class="p">,</span> <span class="n">Births</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">Births</span><span class="p">)),</span> <span class="n">by</span> <span class="o">=</span> <span class="n">Year]</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">birthstable</span><span class="p">)</span>
 </pre></div>
 
 
@@ -321,9 +321,9 @@ birthstable <span class="o">=</span> birthstable<span class="p">[,</span> <span 
 <h3 id="creation-de-series-temporelles">Création de séries temporelles</h3>
 <p>Nous créons deux séries temporelles : une avec le nombre de naissances et
 l&rsquo;autre avec les fréquences relatives.</p>
-<div class="codehilite"><pre><span></span>births.ts <span class="o">=</span> ts<span class="p">(</span>data <span class="o">=</span> relbirths<span class="o">$</span>Births<span class="p">,</span> start <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1991</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> frequency <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
-relbirths.ts <span class="o">=</span> ts<span class="p">(</span>data <span class="o">=</span> relbirths<span class="o">$</span>RelBirths<span class="p">,</span> start <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1991</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
-                  frequency <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">births.ts</span> <span class="o">=</span> <span class="nf">ts</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">relbirths</span><span class="o">$</span><span class="n">Births</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1991</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">frequency</span> <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
+<span class="n">relbirths.ts</span> <span class="o">=</span> <span class="nf">ts</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">relbirths</span><span class="o">$</span><span class="n">RelBirths</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1991</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
+                  <span class="n">frequency</span> <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
 </pre></div>
 
 
@@ -334,13 +334,13 @@ relbirths.ts <span class="o">=</span> ts<span class="p">(</span>data <span class
 l&rsquo;année, il combine automatiquement les données de chaque année et produit un
 graphique en boîtes à moustache (mieux connu en anglais sous le nom de
 <em>box plot</em>).  Le trait pointillé horizontal correspond à 1/12.</p>
-<div class="codehilite"><pre><span></span>plot<span class="p">(</span>RelBirths <span class="o">~</span> Month<span class="p">,</span> data <span class="o">=</span> relbirths<span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;Mois&quot;</span><span class="p">,</span>
-     ylab <span class="o">=</span> <span class="s">&quot;Pourcentage des naissances annuelles&quot;</span><span class="p">)</span>
-abline<span class="p">(</span>h <span class="o">=</span> <span class="m">1</span><span class="o">/</span><span class="m">12</span><span class="p">,</span> lty <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">RelBirths</span> <span class="o">~</span> <span class="n">Month</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">relbirths</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Mois&quot;</span><span class="p">,</span>
+     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Pourcentage des naissances annuelles&quot;</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="m">1</span><span class="o">/</span><span class="m">12</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
 </pre></div>
 
 
-<p><img alt="Pourcentage des naissances en fonction du mois de l'année" src="http://loicseguin.com/images/births_vs_month.png"></p>
+<p><img alt="Pourcentage des naissances en fonction du mois de l'année" src="https://loicseguin.com/images/births_vs_month.png"></p>
 <p>Cette figure montre une variation claire du nombre de naissances au cours de
 l&rsquo;année.  Les mois de mars à octobre sont les plus achalandés alors que les
 mois de novembre à février le sont moins.  Par exemple, environ 7.6% des
@@ -349,45 +349,45 @@ que 1/12 correspond à environ 8.3%).</p>
 <p>Les graphiques des séries temporelles sont encore plus intéressants.  Le nombre
 de naissances en fonction du temps montre immédiatement qu&rsquo;il y a à la fois des
 variations saisonnières mais aussi des variations d&rsquo;année en année.</p>
-<div class="codehilite"><pre><span></span>plot.ts<span class="p">(</span>births.ts<span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;Temps&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;Nombre de naissances&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">plot.ts</span><span class="p">(</span><span class="n">births.ts</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Temps&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Nombre de naissances&quot;</span><span class="p">)</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk births_vs_time" src="http://loicseguin.com/images/births_vs_time.png"></p>
+<p><img alt="plot of chunk births_vs_time" src="https://loicseguin.com/images/births_vs_time.png"></p>
 <p>Si nous traçons plutôt les fréquences relatives, l&rsquo;effet des variations
 annuelles disparaît et il ne reste que les variations saisonnières.</p>
-<div class="codehilite"><pre><span></span>plot.ts<span class="p">(</span>relbirths.ts<span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;Temps&quot;</span><span class="p">,</span>
-        ylab <span class="o">=</span> <span class="s">&quot;Pourcentage des naissances annuelles&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">plot.ts</span><span class="p">(</span><span class="n">relbirths.ts</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Temps&quot;</span><span class="p">,</span>
+        <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Pourcentage des naissances annuelles&quot;</span><span class="p">)</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk relbirths_vs_time" src="http://loicseguin.com/images/relbirths_vs_time.png"></p>
+<p><img alt="plot of chunk relbirths_vs_time" src="https://loicseguin.com/images/relbirths_vs_time.png"></p>
 <h2 id="analyse-et-modelisation">Analyse et modélisation</h2>
 <p>C&rsquo;est probablement une déformation professionnelle, mais quand je vois un
 graphique de série temporelle qui a l&rsquo;air de celui ci-haut, je pense tout de
 suite à une faire une analyse de Fourier.</p>
-<div class="codehilite"><pre><span></span>ft <span class="o">=</span> fft<span class="p">(</span>relbirths<span class="o">$</span>RelBirth<span class="p">)</span>
-nft <span class="o">=</span> <span class="kp">length</span><span class="p">(</span>ft<span class="p">)</span>
-ft <span class="o">=</span> <span class="kp">Mod</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span>ft<span class="p">[(</span>nft<span class="o">/</span><span class="m">2</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span><span class="o">:</span>nft<span class="p">],</span> ft<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)]))</span>
-freqs <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="kp">seq</span><span class="p">(</span><span class="m">-0.5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> length.out <span class="o">=</span> <span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)),</span>
-          <span class="kp">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> length.out <span class="o">=</span> <span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)))</span>
-fftdata <span class="o">=</span> <span class="kt">data.frame</span><span class="p">(</span>freqs<span class="p">,</span> ft<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">ft</span> <span class="o">=</span> <span class="nf">fft</span><span class="p">(</span><span class="n">relbirths</span><span class="o">$</span><span class="n">RelBirth</span><span class="p">)</span>
+<span class="n">nft</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">ft</span><span class="p">)</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="nf">Mod</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">ft</span><span class="nf">[</span><span class="p">(</span><span class="n">nft</span><span class="o">/</span><span class="m">2</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span><span class="o">:</span><span class="n">nft]</span><span class="p">,</span> <span class="n">ft[1</span><span class="o">:</span><span class="p">(</span><span class="n">nft</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="n">]</span><span class="p">))</span>
+<span class="n">freqs</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">-0.5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="p">(</span><span class="n">nft</span><span class="o">/</span><span class="m">2</span><span class="p">)),</span>
+          <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="p">(</span><span class="n">nft</span><span class="o">/</span><span class="m">2</span><span class="p">)))</span>
+<span class="n">fftdata</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Voyons à quoi ressemble ce signal dans l&rsquo;espace des fréquences.</p>
-<div class="codehilite"><pre><span></span>plot<span class="p">(</span>fftdata<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">,</span> <span class="p">],</span> t <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> pch <span class="o">=</span> <span class="m">20</span><span class="p">,</span> cex <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span>
-     xlab <span class="o">=</span> <span class="s">&quot;Frequence (1/mois)&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;Amplitude&quot;</span><span class="p">)</span>
-freqmax <span class="o">=</span> freqs<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">][</span><span class="kp">which.max</span><span class="p">(</span>ft<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">])]</span>
-abline<span class="p">(</span>v <span class="o">=</span> freqmax<span class="p">,</span> lty <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-text<span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.63</span><span class="p">,</span> <span class="kp">paste</span><span class="p">(</span><span class="s">&quot;Frequence:&quot;</span><span class="p">,</span> <span class="kp">signif</span><span class="p">(</span>freqmax<span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="s">&quot;/ mois&quot;</span><span class="p">),</span>
-     adj <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
-text<span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="kp">paste</span><span class="p">(</span><span class="s">&quot;Periode&quot;</span><span class="p">,</span> <span class="kp">signif</span><span class="p">(</span><span class="m">1</span><span class="o">/</span>freqmax<span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="s">&quot;mois&quot;</span><span class="p">),</span>
-     adj <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">fftdata[130</span><span class="o">:</span><span class="m">230</span><span class="p">,</span> <span class="n">]</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span>
+     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Frequence (1/mois)&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Amplitude&quot;</span><span class="p">)</span>
+<span class="n">freqmax</span> <span class="o">=</span> <span class="n">freqs[130</span><span class="o">:</span><span class="m">230</span><span class="n">]</span><span class="nf">[which.max</span><span class="p">(</span><span class="n">ft[130</span><span class="o">:</span><span class="m">230</span><span class="n">]</span><span class="p">)</span><span class="n">]</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="n">freqmax</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+<span class="nf">text</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.63</span><span class="p">,</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Frequence:&quot;</span><span class="p">,</span> <span class="nf">signif</span><span class="p">(</span><span class="n">freqmax</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="s">&quot;/ mois&quot;</span><span class="p">),</span>
+     <span class="n">adj</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<span class="nf">text</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Periode&quot;</span><span class="p">,</span> <span class="nf">signif</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="n">freqmax</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="s">&quot;mois&quot;</span><span class="p">),</span>
+     <span class="n">adj</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk fourier" src="http://loicseguin.com/images/fourier.png"></p>
+<p><img alt="plot of chunk fourier" src="https://loicseguin.com/images/fourier.png"></p>
 <p>Il y a bel et bien une composante de fréquence 12 mois dans le signal, autrement
 dit, le pourcentage des naissances peut être modélisé par une fonction
 sinusoïdale de fréquence \(1 / 12\).  R nous permet de trouver cette
@@ -395,11 +395,11 @@ composante en faisant une régression non linéaire.  Pour diminuer le nombre de
 paramètres (3 au lieu de 4), il est approprié de soustraire la moyenne à la
 fréquence relative de sorte que le signal soit centré en 0.  Comme unité de
 temps, nous utiliserons le mois.</p>
-<div class="codehilite"><pre><span></span>y <span class="o">=</span> relbirths<span class="o">$</span>RelBirths <span class="o">-</span> <span class="m">1</span><span class="o">/</span><span class="m">12</span>
-x <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="kp">length</span><span class="p">(</span>y<span class="p">)</span>
-sine_fit <span class="o">=</span> nls<span class="p">(</span>y <span class="o">~</span> A <span class="o">*</span> <span class="kp">sin</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="kc">pi</span> <span class="o">*</span> f <span class="o">*</span> x <span class="o">+</span> k<span class="p">),</span>
-               start <span class="o">=</span> <span class="kt">list</span><span class="p">(</span>A <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> f <span class="o">=</span> <span class="m">1</span><span class="o">/</span><span class="m">12</span><span class="p">,</span> k <span class="o">=</span> <span class="m">0</span><span class="p">))</span>
-<span class="kp">summary</span><span class="p">(</span>sine_fit<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">relbirths</span><span class="o">$</span><span class="n">RelBirths</span> <span class="o">-</span> <span class="m">1</span><span class="o">/</span><span class="m">12</span>
+<span class="n">x</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">sine_fit</span> <span class="o">=</span> <span class="nf">nls</span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">A</span> <span class="o">*</span> <span class="nf">sin</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="kc">pi</span> <span class="o">*</span> <span class="n">f</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">k</span><span class="p">),</span>
+               <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">A</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="m">1</span><span class="o">/</span><span class="m">12</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="m">0</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">sine_fit</span><span class="p">)</span>
 </pre></div>
 
 
@@ -421,12 +421,12 @@ sine_fit <span class="o">=</span> nls<span class="p">(</span>y <span class="o">~
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>plot<span class="p">(</span>y <span class="o">~</span> x<span class="p">)</span>
-lines<span class="p">(</span>x<span class="p">,</span> fitted<span class="p">(</span>sine_fit<span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">x</span><span class="p">)</span>
+<span class="nf">lines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nf">fitted</span><span class="p">(</span><span class="n">sine_fit</span><span class="p">))</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk sine_fit" src="http://loicseguin.com/images/sine_fit.png"></p>
+<p><img alt="plot of chunk sine_fit" src="https://loicseguin.com/images/sine_fit.png"></p>
 <p>Tous les paramètres du modèle sont statistiquement significatifs.  Ainsi donc,
 on peut utiliser la relation
 \[ y = -0.00551 \sin(0.519x + 1.93) + 1/12\]
@@ -439,24 +439,24 @@ les intéressés, cette procédure est exactement la même que la méthode de
 <em>blanchissage</em> utilisée en astérosismologie pour déterminer les périodes de
 pulsation des étoiles (voir, par exemple,
 <a href="http://iopscience.iop.org/0004-637X/530/1/441">Billéres <em>et al.</em> (2000)</a>).</p>
-<div class="codehilite"><pre><span></span>ft <span class="o">=</span> fft<span class="p">(</span>residuals<span class="p">(</span>sine_fit<span class="p">))</span>
-nft <span class="o">=</span> <span class="kp">length</span><span class="p">(</span>ft<span class="p">)</span>
-ft <span class="o">=</span> <span class="kp">Mod</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span>ft<span class="p">[(</span>nft<span class="o">/</span><span class="m">2</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span><span class="o">:</span>nft<span class="p">],</span> ft<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)]))</span>
-freqs <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="kp">seq</span><span class="p">(</span><span class="m">-0.5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> length.out <span class="o">=</span> <span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)),</span>
-          <span class="kp">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> length.out <span class="o">=</span> <span class="p">(</span>nft<span class="o">/</span><span class="m">2</span><span class="p">)))</span>
-fftdata <span class="o">=</span> <span class="kt">data.frame</span><span class="p">(</span>freqs<span class="p">,</span> ft<span class="p">)</span>
-plot<span class="p">(</span>fftdata<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">,</span> <span class="p">],</span> t <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> pch <span class="o">=</span> <span class="m">20</span><span class="p">,</span> cex <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span>
-     xlab <span class="o">=</span> <span class="s">&quot;Frequence (1/mois)&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;Amplitude&quot;</span><span class="p">)</span>
-freqmax <span class="o">=</span> freqs<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">][</span><span class="kp">which.max</span><span class="p">(</span>ft<span class="p">[</span><span class="m">130</span><span class="o">:</span><span class="m">230</span><span class="p">])]</span>
-abline<span class="p">(</span>v <span class="o">=</span> freqmax<span class="p">,</span> lty <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-text<span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.16</span><span class="p">,</span> <span class="kp">paste</span><span class="p">(</span><span class="s">&quot;Frequence:&quot;</span><span class="p">,</span> <span class="kp">signif</span><span class="p">(</span>freqmax<span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="s">&quot;/ mois&quot;</span><span class="p">),</span>
-     adj <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
-text<span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.15</span><span class="p">,</span> <span class="kp">paste</span><span class="p">(</span><span class="s">&quot;Periode&quot;</span><span class="p">,</span> <span class="kp">signif</span><span class="p">(</span><span class="m">1</span><span class="o">/</span>freqmax<span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="s">&quot;mois&quot;</span><span class="p">),</span>
-     adj <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="n">ft</span> <span class="o">=</span> <span class="nf">fft</span><span class="p">(</span><span class="nf">residuals</span><span class="p">(</span><span class="n">sine_fit</span><span class="p">))</span>
+<span class="n">nft</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">ft</span><span class="p">)</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="nf">Mod</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">ft</span><span class="nf">[</span><span class="p">(</span><span class="n">nft</span><span class="o">/</span><span class="m">2</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span><span class="o">:</span><span class="n">nft]</span><span class="p">,</span> <span class="n">ft[1</span><span class="o">:</span><span class="p">(</span><span class="n">nft</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="n">]</span><span class="p">))</span>
+<span class="n">freqs</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">-0.5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="p">(</span><span class="n">nft</span><span class="o">/</span><span class="m">2</span><span class="p">)),</span>
+          <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="p">(</span><span class="n">nft</span><span class="o">/</span><span class="m">2</span><span class="p">)))</span>
+<span class="n">fftdata</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">fftdata[130</span><span class="o">:</span><span class="m">230</span><span class="p">,</span> <span class="n">]</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span>
+     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Frequence (1/mois)&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Amplitude&quot;</span><span class="p">)</span>
+<span class="n">freqmax</span> <span class="o">=</span> <span class="n">freqs[130</span><span class="o">:</span><span class="m">230</span><span class="n">]</span><span class="nf">[which.max</span><span class="p">(</span><span class="n">ft[130</span><span class="o">:</span><span class="m">230</span><span class="n">]</span><span class="p">)</span><span class="n">]</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="n">freqmax</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+<span class="nf">text</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.16</span><span class="p">,</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Frequence:&quot;</span><span class="p">,</span> <span class="nf">signif</span><span class="p">(</span><span class="n">freqmax</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="s">&quot;/ mois&quot;</span><span class="p">),</span>
+     <span class="n">adj</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<span class="nf">text</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.15</span><span class="p">,</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Periode&quot;</span><span class="p">,</span> <span class="nf">signif</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="n">freqmax</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="s">&quot;mois&quot;</span><span class="p">),</span>
+     <span class="n">adj</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk fourier_residuals" src="http://loicseguin.com/images/fourier_residuals.png"></p>
+<p><img alt="plot of chunk fourier_residuals" src="https://loicseguin.com/images/fourier_residuals.png"></p>
 <h2 id="conclusion">Conclusion</h2>
 <p>La distribution de probabilité du mois de naissance n&rsquo;est pas uniforme.  Elle
 suit plutôt une distribution sinusoïdale de période égale à un an.  Les mois

@@ -370,7 +370,7 @@ plot(RelBirths ~ Month, data = relbirths, xlab = "Mois",
 abline(h = 1/12, lty = 3)
 ```
 
-![Pourcentage des naissances en fonction du mois de l'année](|filename|/images/births_vs_month.png)
+![Pourcentage des naissances en fonction du mois de l'année](|static|/images/births_vs_month.png)
 
 
 Cette figure montre une variation claire du nombre de naissances au cours de
@@ -388,7 +388,7 @@ variations saisonnières mais aussi des variations d'année en année.
 plot.ts(births.ts, xlab = "Temps", ylab = "Nombre de naissances")
 ```
 
-![plot of chunk births_vs_time](|filename|/images/births_vs_time.png)
+![plot of chunk births_vs_time](|static|/images/births_vs_time.png)
 
 
 Si nous traçons plutôt les fréquences relatives, l'effet des variations
@@ -400,7 +400,7 @@ plot.ts(relbirths.ts, xlab = "Temps",
         ylab = "Pourcentage des naissances annuelles")
 ```
 
-![plot of chunk relbirths_vs_time](|filename|/images/relbirths_vs_time.png)
+![plot of chunk relbirths_vs_time](|static|/images/relbirths_vs_time.png)
 
 
 
@@ -435,7 +435,7 @@ text(0.1, 0.6, paste("Periode", signif(1/freqmax, 2), "mois"),
      adj = c(0, 0))
 ```
 
-![plot of chunk fourier](|filename|/images/fourier.png)
+![plot of chunk fourier](|static|/images/fourier.png)
 
 
 Il y a bel et bien une composante de fréquence 12 mois dans le signal, autrement
@@ -478,7 +478,7 @@ plot(y ~ x)
 lines(x, fitted(sine_fit))
 ```
 
-![plot of chunk sine_fit](|filename|/images/sine_fit.png)
+![plot of chunk sine_fit](|static|/images/sine_fit.png)
 
 
 Tous les paramètres du modèle sont statistiquement significatifs.  Ainsi donc,
@@ -512,7 +512,7 @@ text(0.2, 0.15, paste("Periode", signif(1/freqmax, 2), "mois"),
      adj = c(0, 0))
 ```
 
-![plot of chunk fourier_residuals](|filename|/images/fourier_residuals.png)
+![plot of chunk fourier_residuals](|static|/images/fourier_residuals.png)
 
 
 [Billeres2000]: http://iopscience.iop.org/0004-637X/530/1/441

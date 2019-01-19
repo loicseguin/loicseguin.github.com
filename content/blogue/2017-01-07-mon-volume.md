@@ -40,7 +40,7 @@ un rectangle arrondi. Les parois sont presque verticales, et pour simplifier
 l'analyse, j'ignorerai le faible angle qu'elles font avec la verticale.
 
 ![Baignoire pleine (oui, je sais, le jaune n'est plus tout à fait «au goût du 
-jour»)](|filename|/images/monvolume/baignoire-pleine.jpg "Baignoire pleine 
+jour»)](|static|/images/monvolume/baignoire-pleine.jpg "Baignoire pleine 
 (oui, je sais, le jaune n'est plus tout à fait «au goût du jour»)")
 
 La surface de l'eau dans la baignoire peut-être déterminée à partir de la 
@@ -53,7 +53,7 @@ soustraire est donc l'aire du carré moins celle du cercle soit
 (cette surface est illustrée par la zone hachurée dans la figure ci-dessous).
 
 ![Géométrie pour le calcul de la surface 
-d'eau](|filename|/images/monvolume/calcul-aire.jpg "Géométrie pour le calcul de 
+d'eau](|static|/images/monvolume/calcul-aire.jpg "Géométrie pour le calcul de 
 la surface d'eau")
 
 L'aire de la surface d'eau est donc
@@ -65,7 +65,7 @@ assécher la paroi de la baignoire avec une serviette sèche. Une des extrémit�
 de la règle se trouve sous la surface de l'eau. 
 
 ![Le montage très sophistiqué requis pour faire cette 
-expérience](|filename|/images/monvolume/montage.jpg "Le montage très 
+expérience](|static|/images/monvolume/montage.jpg "Le montage très 
 sophistiqué requis pour faire cette expérience")
 
 En faisant une lecture \\(x_0\\) sur la règle avant que je n'entre dans l'eau 
@@ -122,7 +122,7 @@ mesures sont pratiquement identiques. Il n'y a donc pas eu de changement
 significatif du volume d'eau au cours de l'expérience.
 
 ![Mesures avant et après que je ne sois entré dans la 
-baignoire](|filename|/images/monvolume/avant-apres.jpg)
+baignoire](|static|/images/monvolume/avant-apres.jpg)
 
 Lorsque je suis entré dans la baignoire, je me suis rapidement aperçu que je 
 n'arriverais jamais à me submerger complètement. La baignoire est trop petite 
@@ -148,7 +148,7 @@ Pour pallier à ces problèmes, j'ai répété chaque mesure deux fois. Je l'aur
 fait plus souvent si ce n'était du fait que la position recroquevillée pour 
 entrer dans la baignoire était vraiment inconfortable.
 
-![Mesures du niveau de l'eau](|filename|/images/monvolume/mesures.jpg)
+![Mesures du niveau de l'eau](|static|/images/monvolume/mesures.jpg)
 
 Les images ci-dessus montrent les quatre mesures effectuées. Étonnamment, les 
 deux essais donnent pratiquement les mêmes résultats. Par contre, la réflexion 

@@ -116,7 +116,7 @@ Fichier ``em.bib`` :
 
 Et voici le résultat :
 
-.. image:: |filename|/images/biblatex-simple.png
+.. image:: |static|/images/biblatex-simple.png
    :alt: Exemple de sortie BibLaTeX
 
 
@@ -272,6 +272,6 @@ Fichier ``em.bib`` :
 
 Le résultat est le suivant :
 
-.. image:: |filename|/images/biblatex-pdc.png
+.. image:: |static|/images/biblatex-pdc.png
    :alt: Exemple de plan de cours avec bibliographie
 

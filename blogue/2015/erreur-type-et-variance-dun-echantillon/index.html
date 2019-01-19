@@ -3,22 +3,22 @@
     <head>
           <title>Loïc Séguin-C.</title>
         <meta charset="utf-8" />
-        <link href="http://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
-        <link href="http://loicseguin.com/feeds/blogue.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
+        <link href="https://loicseguin.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Full Atom Feed" />
+        <link href="https://loicseguin.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Loïc Séguin-C. Categories Atom Feed" />
 
 
 
     <meta name="tags" contents="statistique" />
 
-        <link href='http://fonts.googleapis.com/css?family=Alegreya|Alegreya+SC' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://loicseguin.com/theme/css/beseth-min-201503182048.css" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Alegreya|Alegreya+SC' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://loicseguin.com/theme/css/beseth-min-201503182048.css" type="text/css" />
     </head>
 
     <body>
         <header id="banner">
             <div class="container">
                 <div>
-                <h1 class="site-title"><a class="site-title" href="http://loicseguin.com/">Loïc Séguin-C. <strong></strong></a></h1>
+                <h1 class="site-title"><a class="site-title" href="https://loicseguin.com/">Loïc Séguin-C. <strong></strong></a></h1>
 
                 <nav><ul class="nav-list plain">
                 </ul></nav>
@@ -86,7 +86,7 @@ est impossible de parcourir le Canada en entier et de mesurer la taille de tous
 ses habitants. Par conséquent, nous devons construire un échantillon en
 choisissant au hasard quelques Canadiens.</p>
 <p>La taille d&rsquo;un individu \(i\) choisi au hasard dans la population est une
-variable aléatoire \(X_i\)<sup id="fnref-varalea"><a class="footnote-ref" href="#fn-varalea">1</a></sup>.  L&rsquo;espérance de la taille de cet
+variable aléatoire \(X_i\)<sup id="fnref:varalea"><a class="footnote-ref" href="#fn:varalea" rel="footnote">1</a></sup>.  L&rsquo;espérance de la taille de cet
 individu est la <strong>moyenne de la population</strong> que nous notons par \(\mu\).
 En supposant que chaque Canadien a autant de chance d&rsquo;être choisi, la
 probabilité de choisir un individu en particulier parmi les \(N\) habitants
@@ -111,7 +111,7 @@ nous obtenons la moyenne de la population. Autrement dit, si nous construisons
 plusieurs échantillons, que nous calculons la moyenne de chacun d&rsquo;entre eux et
 que nous calculons la moyenne de ces moyennes, le résultat sera très
 probablement la moyenne de la population. L&rsquo;écart-type des moyennes des
-échantillons est ce qu&rsquo;on appelle l&rsquo;<strong>erreur-type de la moyenne</strong><sup id="fnref-erreurtype"><a class="footnote-ref" href="#fn-erreurtype">2</a></sup>.
+échantillons est ce qu&rsquo;on appelle l&rsquo;<strong>erreur-type de la moyenne</strong><sup id="fnref:erreurtype"><a class="footnote-ref" href="#fn:erreurtype" rel="footnote">2</a></sup>.
 Nous calculerons l&rsquo;erreur-type de la moyenne à la <a href="#erreur-type-de-la-moyenne">section
 suivante</a>.</p>
 <p>La variance des \(X_i\) est la <strong>variance de la population</strong></p>
@@ -179,7 +179,7 @@ linéarité de l&rsquo;espérance.
 \]
 Si nous supposons que les variables \(X_i\) et \(X_j\) sont indépendantes,
 l&rsquo;espérance du produit \(X_iX_j\) avec \(i\ne j\) est le produit des
-espérances<sup id="fnref-indep"><a class="footnote-ref" href="#fn-indep">3</a></sup>,
+espérances<sup id="fnref:indep"><a class="footnote-ref" href="#fn:indep" rel="footnote">3</a></sup>,
 \[\mathrm{E}[X_iX_j] = \mathrm{E} [X_i] \mathrm{E}[X_j] = \mu^2.\]
 L&rsquo;espérance de \(X_i^2\) est liée à la définition de la
 variance de la population. En effet,
@@ -286,19 +286,19 @@ non biaisé de la variance de la population.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-varalea">
+<li id="fn:varalea">
 <p>La taille d&rsquo;une personne n&rsquo;est pas aléatoire : je mesure 178 cm et
   Camille mesure 165 cm. Par contre, si nous choisissons une personne au
   hasard, la taille que nous obtiendrons est aléatoire. Si la population ne
   consiste que de Camille et moi, la probabilité que la taille d&rsquo;une personne
   choisie au hasard dans cette population soit 178 cm est de 50% et la
-  probabilité qu&rsquo;elle soit de 165 cm est aussi de 50%.&#160;<a class="footnote-backref" href="#fnref-varalea" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+  probabilité qu&rsquo;elle soit de 165 cm est aussi de 50%.&#160;<a class="footnote-backref" href="#fnref:varalea" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-erreurtype">
+<li id="fn:erreurtype">
 <p>En général, l&rsquo;erreur-type d&rsquo;une statistique est l&rsquo;écart-type de
-  cette statistique.&#160;<a class="footnote-backref" href="#fnref-erreurtype" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+  cette statistique.&#160;<a class="footnote-backref" href="#fnref:erreurtype" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn-indep">
+<li id="fn:indep">
 <p>Deux variables aléatoires sont indépendantes si la distribution de
   probabilité d&rsquo;une des variables n&rsquo;est pas affectée par la connaissance de la
   valeur de l&rsquo;autre variable. Dans l&rsquo;exemple de la taille des Canadiens, si les
@@ -309,7 +309,7 @@ non biaisé de la variance de la population.</p>
   Petits, alors savoir que la taille d&rsquo;un individu est de 145 cm nous informe
   que l&rsquo;échantillon est composé des membres du Club des Petits. Par conséquent,
   la taille d&rsquo;un autre individu dans l&rsquo;échantillon est probablement petite.
-  Dans ce cas, les tailles ne sont pas indépendantes.&#160;<a class="footnote-backref" href="#fnref-indep" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+  Dans ce cas, les tailles ne sont pas indépendantes.&#160;<a class="footnote-backref" href="#fnref:indep" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

@@ -46,7 +46,7 @@ région de volume :math:`V`.  À chaque élément de surface correspond un vecte
 direction est perpendiculaire au plan tangent à la surface et vers l'extérieur.
 La figure ci-contre illustre ces différentes quantités.
 
-.. figure:: |filename|/images/surf-elem.png
+.. figure:: |static|/images/surf-elem.png
     :alt: Élément de surface
     :scale: 40%
     :class: img-polaroid
@@ -110,7 +110,7 @@ perpendiculaire à l'élément de surface contribue au flux.  Par conséquent, l
 composante de la vitesse à considérer est :math:`\mathbf{u} \cdot
 \mathbf{\hat{n}}`.
 
-.. figure:: |filename|/images/vitesse-perpendiculaire.png
+.. figure:: |static|/images/vitesse-perpendiculaire.png
     :alt: Vitesse perpendiculaire
     :scale: 50%
 
@@ -127,7 +127,7 @@ temps :math:`\Delta t`, d'où un flux de masse de :math:`\rho \mathbf{u} \cdot
 \mathbf{\hat{n}} da` qui peut s'écrire de façon légèrement plus compacte comme
 :math:`\rho \mathbf{u} \cdot d\mathbf{a}`.
 
-.. figure:: |filename|/images/cylindre-de-matiere.png
+.. figure:: |static|/images/cylindre-de-matiere.png
     :alt: Cylindre de matière
     :scale: 50%
 

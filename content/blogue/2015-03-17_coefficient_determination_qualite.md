@@ -60,7 +60,7 @@ affichée.)
 
 Le graphique ci-dessous montre la relation entre l'élongation et la force.
 
-![Force exercée par un arc pour différentes élongation de la corde de l'arc.](|filename|/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_3_0.png)
+![Force exercée par un arc pour différentes élongation de la corde de l'arc.](|static|/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_3_0.png)
 
 La relation semble à peu près linéaire, ce qui concorde avec l'hypothèse que
 l'arc se comporte comme un ressort idéal régi par la [loi de
@@ -82,7 +82,7 @@ afficher le coefficient de détermination sur le graphique. Le graphique
 ci-dessous montre les données et les trois modèles.
 
 
-![Trois modèles polynomiaux pour expliquer les données ainsi que leur coefficient de détermination.](|filename|/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_6_0.png)
+![Trois modèles polynomiaux pour expliquer les données ainsi que leur coefficient de détermination.](|static|/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_6_0.png)
 
 
 Si on ne se fie qu'au coefficient de détermination, le modèle cubique est le
@@ -116,7 +116,7 @@ Un graphique de ces données avec les trois modèles élaborés jusqu'ici montre
 clairement lequel est le plus approprié.
 
 
-![Le modèle linéaire est celui qui tient le mieux compte des nouvelles données.](|filename|/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_8_0.png)
+![Le modèle linéaire est celui qui tient le mieux compte des nouvelles données.](|static|/images/2015-03-17_coefficient_determination_qualite_files/2015-03-17_coefficient_determination_qualite_8_0.png)
 
 
 On voit clairement que ni le modèle cubique ni le modèle quadratique n'arrivent

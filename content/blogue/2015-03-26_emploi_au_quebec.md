@@ -12,7 +12,7 @@ summary: Aujourd'hui, le ministre des finances du Québec, Carlos Leitao, a
 Aujourd'hui, le ministre des finances du Québec, Carlos Leitao, a déposé son deuxième budget. Sur le [site internet du budget](http://www.budget.finances.gouv.qc.ca/budget/2015-2016/index.asp) on nous montre le joli graphique suivant.
 
 
-![Emploi au Québec selon le gouvernement Couillard](|filename|/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_1_0.png)
+![Emploi au Québec selon le gouvernement Couillard](|static|/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_1_0.png)
 
 
 Je suis sidéré par la malhonnêteté de cette figure.
@@ -95,7 +95,7 @@ sns.despine(offset=10)
 ```
 
 
-![reproduction](|filename|/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_7_0.png)
+![reproduction](|static|/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_7_0.png)
 
 
 C'est bel et bien le graphique que nous montre le gouvernement. Maintenant,
@@ -110,7 +110,7 @@ sns.despine(offset=10)
 ```
 
 
-![réalisme](|filename|/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_9_0.png)
+![réalisme](|static|/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_9_0.png)
 
 
 Hum... un peu moins impressionnant. Pourquoi? Parce que l'*augmentation* que
@@ -142,7 +142,7 @@ sns.despine(offset=10, trim=True)
 ```
 
 
-![moyen terme](|filename|/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_11_0.png)
+![moyen terme](|static|/images/2015-03-26_emploi_au_quebec_files/2015-03-26_emploi_au_quebec_11_0.png)
 
 
 Depuis 2008, la tendance est à une augmentation du nombre d'emplois. Ce qui se

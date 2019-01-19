@@ -27,7 +27,7 @@ TRANSLATION_FEED_ATOM = None
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
-THEME = "/Users/loic/code/pelican-themes/beseth"
+THEME = "/home/lsc/code/pelican-themes/beseth"
 MARKDOWN = {
         'extension_configs': {
             'markdown.extensions.fenced_code': {},

@@ -341,7 +341,7 @@ atteint la distribution stationnaire, la longueur moyenne de la file d'attente
 est d'un client.  La figure ci-dessous montre la longueur de la queue en
 fonction de l'intensité du trafic.
 
-.. image:: |filename|/images/queue_length_vs_rho.png
+.. image:: |static|/images/queue_length_vs_rho.png
 
 Quiconque conçoit un système dans lequel il y aura une queue a donc tout
 intérêt à s'assurer que l'intensité du trafic soit suffisamment loin de 1 pour
